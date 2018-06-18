@@ -4,6 +4,7 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
+:root {font-family: 'roboto slab', times, serif;}
 
 /* Main column width */
 body.gutenberg-editor-page .editor-post-title,
@@ -49,4 +50,25 @@ blockquote:before {
 
 blockquote p,blockquote {
 	font:normal 1.8rem/2.1em 'Roboto Slab',sans-serif;
+}
+
+/* WordPress Core*/
+/* post content tables*/
+.wp-block-table, .wp-block-table tr td {
+	border: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+}
+
+.wp-block-table  tbody tr td {
+	background: #FFFFFF;
+	box-shadow: 0 -1px 0 0 #ECEEEF;
+}
+
+/* post content subheadings */
+p.wp-block-subhead {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-style: normal;
 }
