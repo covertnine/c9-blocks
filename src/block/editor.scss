@@ -4,14 +4,6 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-:root {font-family: 'roboto slab', times, serif;}
-
-/* Main column width */
-body.gutenberg-editor-page .editor-post-title,
-body.gutenberg-editor-page .editor-default-block-appender,
-body.gutenberg-editor-page .editor-block-list__block {
-    max-width: 970px;
-}
 
 /**
  * #.# Styles
@@ -19,56 +11,3 @@ body.gutenberg-editor-page .editor-block-list__block {
  * CSS for both Frontend+Backend.
  */
 
-.wp-block-cortex-blocks-block-cortex-blockquote  {
-	position: relative;
-}
-
-blockquote:before,blockquote:after,q:before,q:after {
-	content:"";
-}
-
-blockquote {
-	quotes:"" "";
-	position:relative;
-	margin: 0px 40px 20px 40px;
-	padding:0 35px;
-	border-left:3px solid #ca292c;
-}
-
-blockquote:before {
-	content:"\201C";
-	letter-spacing:.2rem;
-	text-transform:uppercase;
-	position:absolute;
-	top: 0;
-    left: -55px;
-    font-size: 3rem;
-	font-weight:700;
-	font-family: 'montserrat';
-	color:#ca292c;
-}
-
-blockquote p,blockquote {
-	font:normal 1.8rem/2.1em 'Roboto Slab',sans-serif;
-}
-
-/* WordPress Core*/
-/* post content tables*/
-.wp-block-table, .wp-block-table tr td {
-	border: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: none;
-}
-
-.wp-block-table  tbody tr td {
-	background: #FFFFFF;
-	box-shadow: 0 -1px 0 0 #ECEEEF;
-}
-
-/* post content subheadings */
-p.wp-block-subhead {
-	font-family: 'Oswald', sans-serif;
-	font-weight: 300;
-	font-style: normal;
-}
