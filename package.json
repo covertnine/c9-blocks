@@ -8,6 +8,11 @@
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
-    "cgb-scripts": "1.9.7"
+    "@wordpress/i18n": "^1.1.0",
+    "cgb-scripts": "1.9.7",
+    "classnames": "^2.2.5",
+    "memize": "^1.0.5",
+    "react": "^16.4.1",
+    "react-native": "^0.55.4"
   }
 }

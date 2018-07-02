@@ -9,30 +9,3 @@
  *
  * CSS for both Frontend+Backend.
  */
-.wp-block-cortex-blocks-block-cortex-blockquote {
-  position: relative; }
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: ""; }
-
-blockquote {
-  quotes: "" "";
-  position: relative;
-  margin: 0px 40px 20px 40px;
-  padding: 0 35px;
-  border-left: 3px solid #ca292c; }
-
-blockquote:before {
-  content: "\201C";
-  letter-spacing: .2rem;
-  text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  left: -55px;
-  font-size: 3rem;
-  font-weight: 700;
-  font-family: 'montserrat';
-  color: #ca292c; }
-
-blockquote p, blockquote {
-  font: normal 1.8rem/2.1em 'Roboto Slab',sans-serif; }
