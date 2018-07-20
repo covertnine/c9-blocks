@@ -8,7 +8,7 @@ import './style.scss';
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+const { RichText, InnerBlocks } = wp.editor;
 
 registerBlockType( 'covertnine-blocks/column-containers', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -22,7 +22,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
 		__( 'responsive' ),
 	],
 	supports: {
-		align: [ 'wide', 'full' ]
+		align: [ 'aligncenter', 'wide', 'full' ]
 	},
 
 	edit: props => {
