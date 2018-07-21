@@ -52,6 +52,13 @@ function cortex_blocks_cgb_editor_assets() {
 		true // Enqueue the script in the footer.
 	);
 
+	//dequeue core blocks we don't want users using
+	wp_enqueue_script(
+		'cortex_blocks-deregister-blocks',
+		plugins_url( '/src/deregister-blocks.js', dirname( __FILE__ ) ),
+		array( 'wp-blocks' )
+	);
+
 	// Styles.
 	wp_enqueue_style(
 		'bootstrap-css',
@@ -65,7 +72,8 @@ function cortex_blocks_cgb_editor_assets() {
 		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: filemtime — Gets file modification time.
 	);
+
 } // End function cortex_blocks_cgb_editor_assets().
 
 // Hook: Editor assets.
-add_action( 'enqueue_block_editor_assets', 'cortex_blocks_cgb_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'cortex_blocks_cgb_editor_assets', 9999 );
