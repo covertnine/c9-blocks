@@ -18,6 +18,21 @@ const attributes = {
         type: 'string',
         default: 'container',
     },
+    containerImgURL: {
+        type: 'string',
+        source: 'attribute',
+        attribute: 'src',
+        selector: 'img',
+    },
+    containerImgID: {
+        type: 'number',
+    },
+    containerImgAlt: {
+        type: 'string',
+        source: 'attribute',
+        attribute: 'alt',
+        selector: 'img',
+    },
 };
 
 registerBlockType( 'covertnine-blocks/column-containers', {
@@ -33,12 +48,21 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes, className, setAttributes } = props;
+    const { attributes, className, setAttributes, containerImgURL, containerImgID, containerImgAlt } = props;
 
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
         <div className={ className }>
+        { containerImgURL && !! containerImgURL.length && (
+            <div class="cortex-image-wrap">
+              <img 
+                class='cortex-bg-image'
+                src={ containerImgURL }
+                alt={ containerImgAlt }
+              />
+            </div>
+          ) }
           <div className="row">
             <div wat className={attributes.radioControl}>
               <div className="col-xs-12">

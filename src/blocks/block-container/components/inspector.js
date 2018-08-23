@@ -5,9 +5,11 @@ const { __ } = wp.i18n;
 const { Component } = wp.element;
 const {
     InspectorControls,
+    MediaUpload,
 } = wp.editor;
 const {
     RadioControl,
+    IconButton,
 } = wp.components;
 
 /**
@@ -20,7 +22,23 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: { radioControl }, setAttributes } = this.props;
+        const { attributes: { radioControl, containerImgURL, containerImgID, containerImgAlt }, setAttributes } = this.props;
+
+        const onSelectImage = img => {
+          setAttributes( {
+            containerImgID: img.id,
+            containerImgURL: img.url,
+            containerImgAlt: img.alt,
+          } );
+        };
+
+        const onRemoveImage = () => {
+          setAttributes({
+            containerImgID: null,
+            containerImgURL: null,
+            containerImgAlt: null,
+          });
+        }
 
         return (
             <InspectorControls>
@@ -34,6 +52,35 @@ export default class Inspector extends Component {
                     ] }
                     onChange={ radioControl => setAttributes( { radioControl } ) }
                 />
+                <MediaUpload
+                  onSelect={ onSelectImage }
+                  type="image"
+                  value={ containerImgID }
+                  render={ ( { open } ) => (
+                    <div>
+                      <IconButton
+                        className="ab-container-inspector-media"
+                        label={ __( 'Edit image' ) }
+                        icon="format-image"
+                        onClick={ open }
+                      >
+                        { __( 'Select Image' ) }
+                      </IconButton>
+
+                      { containerImgURL && !! containerImgURL.length && (
+                        <IconButton
+                          className="ab-container-inspector-media"
+                          label={ __( 'Remove Image' ) }
+                          icon="dismiss"
+                          onClick={ onRemoveImage }
+                        >
+                          { __( 'Remove' ) }
+                        </IconButton>
+                      ) }
+                    </div>
+                  ) }
+                >
+                </MediaUpload>
             </InspectorControls>
         );
     }
