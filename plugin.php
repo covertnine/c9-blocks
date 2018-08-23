@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: cortex-blocks
+ * Plugin Name: Cortex Blocks
  * Plugin URI: https://www.covertnine.com
  * Description: Cortex blocks for cortextoo WordPress theme
  * Author: COVERT NINE
