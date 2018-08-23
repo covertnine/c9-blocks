@@ -2,16 +2,17 @@
  * Block dependencies
  */
 import classnames from 'classnames';
+import Inspector from './column-inspector';
+import attributes from './column-attributes';
 import './style.scss';
 
 /**
  * Internal block libraries
  */
 const { __ } = wp.i18n;
-const { Dashicon, Tooltips, Button, PanelBody, Toolbar, withNotices } = wp.components;
+const { Dashicon, Tooltip, Button, PanelBody, Toolbar, withNotices } = wp.components;
 const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, BlockAlignmentToolbar, BlockControls } = wp.editor;
-
+const { InnerBlocks } = wp.editor;
 
 registerBlockType( 'covertnine-blocks/column-containers', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -24,56 +25,40 @@ registerBlockType( 'covertnine-blocks/column-containers', {
 		__( 'container', 'cortex-blocks'),
 		__( 'responsive', 'cortex-blocks' ),
 	],
-	attributes: {
-		columnContainer: {
-			type: 'string',
-			default: 'container',
-		},
-	},
-
-
+	attributes,
 	edit: props => {
-		const {attributes: columnContainer, className, setAttributes } = props;
+		const { attributes, className, setAttributes } = props;
 
 		// Creates a column container that can take other blocks
-		return (
+		return [
+            <Inspector { ...{ setAttributes, ...props} } />,
 				<div className={ className }>
-/*                    <BlockControls key="custom-controls">
-                        <Toolbar>
-                            <Tooltip text={ __( 'Normal Width', 'cortex-blocks' )  }>
-                                <Button
-                                    className={ classnames(
-                                        'components-icon-button',
-                                        'components-toolbar__control',
-                                        { 'is-active': highContrast },
-                                    ) }
-                                    onClick={ () => setAttributes( { highContrast: ! highContrast } ) }
-                                >
-                                    { icon }
-                                </Button>
-                            </Tooltip>
-                        </Toolbar>
-                    </BlockControls>*/
-					<div class="row">
-						<div>
-							<InnerBlocks />
+					<div className="row">
+						<div className={attributes.radioControl}>
+							<div className="col-xs-12">
+								<InnerBlocks />
+							</div>
 						</div>
 					</div>
 				</div>
-		);
+		];
 	},
 
-	save: function( className ) {
+	save: props => {
+        const { attributes, setAttributes } = props;
+		const containerWidth3 = attributes.radioControl;
 
 		return (
 				<div>
-					<div class="row">
-						<div class="container">
-						<InnerBlocks.Content />
+					<div className="row">
+						<div className={ containerWidth3 }>
+							<div className="col-xs-12">
+								<InnerBlocks.Content />
+							</div>
 						</div>
 					</div>
 				</div>
 		);
-	},
-} );
+	}, //end save
+} ); //end registerBlockType
 
