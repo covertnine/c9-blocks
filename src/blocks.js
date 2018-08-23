@@ -8,5 +8,5 @@
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
-
+import './blocks/i18n.js';
 import './blocks/block-container/index.js';
