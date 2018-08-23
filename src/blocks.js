@@ -9,6 +9,4 @@
  * Webpack is compiling as the input file.
  */
 
-import './block/i18n.js';
-import './block/block.js';
-import './block/column-container.js';
+import './blocks/block-container/index.js';
