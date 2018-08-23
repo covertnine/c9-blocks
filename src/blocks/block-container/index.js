@@ -3,7 +3,6 @@
  */
 import classnames from 'classnames';
 import Inspector from './components/inspector';
-import attributes from './components/column-attributes';
 import './styles/style.scss';
 
 /**
@@ -13,6 +12,13 @@ const { __ } = wp.i18n;
 const { Dashicon, Tooltip, Button, PanelBody, Toolbar, withNotices } = wp.components;
 const { registerBlockType, createBlock } = wp.blocks;
 const { InnerBlocks } = wp.editor;
+
+const attributes = {
+    radioControl: {
+        type: 'string',
+        default: 'container',
+    },
+};
 
 registerBlockType( 'covertnine-blocks/column-containers', {
   // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
