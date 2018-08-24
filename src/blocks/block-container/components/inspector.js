@@ -23,8 +23,6 @@ export default class Inspector extends Component {
 
     render() {
         const { attributes: {containerImgURL, radioControl, containerImgID, containerImgAlt}, setAttributes } = this.props;
-        console.log('inspector image url', containerImgURL);
-        console.log('inspector radio control', radioControl);
 
         const onSelectImage = img => {
           setAttributes( {
@@ -55,6 +53,7 @@ export default class Inspector extends Component {
                     onChange={ radioControl => setAttributes( { radioControl } ) }
                 />
                 <MediaUpload
+                  label={ __( 'Background Image', 'cortex-blocks' ) }
                   onSelect={ onSelectImage }
                   type="image"
                   value={ containerImgID }

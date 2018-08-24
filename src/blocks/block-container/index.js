@@ -20,9 +20,6 @@ const attributes = {
     },
     containerImgURL: {
         type: 'string',
-        source: 'attribute',
-        attribute: 'src',
-        selector: 'img',
     },
     containerImgID: {
         type: 'number',
@@ -49,21 +46,16 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   attributes,
   edit: props => {
     const { attributes: { containerImgURL, containerImgID, containerImgAlt, radioControl }, setAttributes, className } = props;
-    console.log('edit imageurl', containerImgURL);
 
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
-        <div className={ className }>
-        { containerImgURL && !! containerImgURL.length && (
-            <div class="cortex-image-wrap">
-              <img 
-                class='cortex-bg-image'
-                src={ containerImgURL }
-                alt={ containerImgAlt }
-              />
-            </div>
-          ) }
+        <div 
+          className={ classnames('container', className) } 
+          style={ containerImgURL && !! containerImgURL.length && 
+            { backgroundImage: `url(${ containerImgURL })`} 
+          } 
+          >
           <div className="row">
             <div className={radioControl}>
               <div className="col-xs-12">
@@ -82,16 +74,12 @@ registerBlockType( 'covertnine-blocks/column-containers', {
     return (
         <div>
           <div className="row">
-            <div className={ containerWidth3 }>
-            { containerImgURL && !! containerImgURL.length && (
-            <div class="cortex-image-wrap">
-              <img 
-                class='cortex-bg-image'
-                src={ containerImgURL }
-                alt={ containerImgAlt }
-              />
-            </div>
-          ) }
+            <div 
+              className={ classnames('container', className) } 
+              style={ containerImgURL && !! containerImgURL.length && 
+                { backgroundImage: `url(${ containerImgURL })`} 
+              } 
+              >
               <div className="col-xs-12">
                 <InnerBlocks.Content />
               </div>
@@ -101,4 +89,3 @@ registerBlockType( 'covertnine-blocks/column-containers', {
     );
   }, //end save
 } ); //end registerBlockType
-
