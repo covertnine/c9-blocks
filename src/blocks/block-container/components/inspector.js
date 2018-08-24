@@ -22,7 +22,9 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: { radioControl, containerImgURL, containerImgID, containerImgAlt }, setAttributes } = this.props;
+        const { attributes: {containerImgURL, radioControl, containerImgID, containerImgAlt}, setAttributes } = this.props;
+        console.log('inspector image url', containerImgURL);
+        console.log('inspector radio control', radioControl);
 
         const onSelectImage = img => {
           setAttributes( {

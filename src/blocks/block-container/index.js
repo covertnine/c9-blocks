@@ -48,7 +48,8 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes, className, setAttributes, containerImgURL, containerImgID, containerImgAlt } = props;
+    const { attributes: { containerImgURL, containerImgID, containerImgAlt, radioControl }, setAttributes, className } = props;
+    console.log('edit imageurl', containerImgURL);
 
     // Creates a column container that can take other blocks
     return [
@@ -64,7 +65,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
             </div>
           ) }
           <div className="row">
-            <div wat className={attributes.radioControl}>
+            <div className={radioControl}>
               <div className="col-xs-12">
                 <InnerBlocks />
               </div>
@@ -75,13 +76,22 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   },
 
   save: props => {
-    const { attributes, setAttributes } = props;
-    const containerWidth3 = attributes.radioControl;
+    const { attributes: { containerImgURL, containerImgID, containerImgAlt, radioControl}, setAttributes, className } = props;
+    const containerWidth3 = radioControl;
 
     return (
         <div>
           <div className="row">
             <div className={ containerWidth3 }>
+            { containerImgURL && !! containerImgURL.length && (
+            <div class="cortex-image-wrap">
+              <img 
+                class='cortex-bg-image'
+                src={ containerImgURL }
+                alt={ containerImgAlt }
+              />
+            </div>
+          ) }
               <div className="col-xs-12">
                 <InnerBlocks.Content />
               </div>
