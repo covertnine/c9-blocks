@@ -6,10 +6,14 @@ const { Component } = wp.element;
 const {
     InspectorControls,
     MediaUpload,
+    ColorPalette,
 } = wp.editor;
 const {
     RadioControl,
     IconButton,
+    PanelBody,
+    PanelRow,
+    PanelColor,
 } = wp.components;
 
 /**
@@ -22,7 +26,7 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: {containerImgURL, radioControl, containerImgID, containerImgAlt}, setAttributes } = this.props;
+        const { attributes: {containerImgURL, containerImgID, containerImgAlt, radioControl, bgImgSize, colorPaletteControl}, setAttributes } = this.props;
 
         const onSelectImage = img => {
           setAttributes( {
@@ -52,36 +56,58 @@ export default class Inspector extends Component {
                     ] }
                     onChange={ radioControl => setAttributes( { radioControl } ) }
                 />
-                <MediaUpload
-                  label={ __( 'Background Image', 'cortex-blocks' ) }
-                  onSelect={ onSelectImage }
-                  type="image"
-                  value={ containerImgID }
-                  render={ ( { open } ) => (
-                    <div>
-                      <IconButton
-                        className="ab-container-inspector-media"
-                        label={ __( 'Edit image' ) }
-                        icon="format-image"
-                        onClick={ open }
-                      >
-                        { __( 'Select Image' ) }
-                      </IconButton>
+                <PanelBody title={ __( 'Background' ) } initialOpen={ false }>
+                    <MediaUpload
+                      id="bg-image-select"
+                      label={ __( 'Background Image', 'cortex-blocks' ) }
+                      onSelect={ onSelectImage }
+                      type="image"
+                      value={ containerImgID }
+                      render={ ( { open } ) => (
+                        <div>
+                          <IconButton
+                            className="ab-container-inspector-media"
+                            label={ __( 'Edit image' ) }
+                            icon="format-image"
+                            onClick={ open }
+                          >
+                            { __( 'Background Image' ) }
+                          </IconButton>
 
-                      { containerImgURL && !! containerImgURL.length && (
-                        <IconButton
-                          className="ab-container-inspector-media"
-                          label={ __( 'Remove Image' ) }
-                          icon="dismiss"
-                          onClick={ onRemoveImage }
-                        >
-                          { __( 'Remove' ) }
-                        </IconButton>
+                          { containerImgURL && !! containerImgURL.length && (
+                            <IconButton
+                              className="ab-container-inspector-media"
+                              label={ __( 'Remove Image' ) }
+                              icon="dismiss"
+                              onClick={ onRemoveImage }
+                            >
+                              { __( 'Remove' ) }
+                            </IconButton>
+                          ) }
+                        </div>
                       ) }
-                    </div>
-                  ) }
+                    >
+                    </MediaUpload>
+                   <RadioControl
+                    label={ __( 'Background Size', 'cortex-blocks' ) }
+                    selected={ bgImgSize }
+                    options={ [
+                        { label: 'Contain', value: 'contain' },
+                        { label: 'Cover', value: 'cover' },
+                        { label: 'Tile', value: 'tile' },
+                    ] }
+                    onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
+                />
+                 <PanelColor
+                    title={ __( 'Overlay Color', 'cortex-blocks' ) }
+                    colorValue={ colorPaletteControl }
                 >
-                </MediaUpload>
+                    <ColorPalette
+                        value={ colorPaletteControl }
+                        onChange={ colorPaletteControl => setAttributes( { colorPaletteControl } ) }
+                    />
+                </PanelColor>
+                </PanelBody>
             </InspectorControls>
         );
     }

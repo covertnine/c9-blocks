@@ -18,17 +18,16 @@ const attributes = {
         type: 'string',
         default: 'container',
     },
+    bgImgSize: {
+        type: 'string',
+        default: 'cover',
+    },
     containerImgURL: {
         type: 'string',
     },
-    containerImgID: {
-        type: 'number',
-    },
-    containerImgAlt: {
+    colorPaletteControl: {
         type: 'string',
-        source: 'attribute',
-        attribute: 'alt',
-        selector: 'img',
+        default: undefined,
     },
 };
 
@@ -45,17 +44,16 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes: { containerImgURL, containerImgID, containerImgAlt, radioControl }, setAttributes, className } = props;
-
+    const { attributes: { containerImgURL, radioControl, bgImgSize, colorPaletteControl }, setAttributes, className } = props;
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
         <div 
           className={ classnames('container', className) } 
-          style={ containerImgURL && !! containerImgURL.length && 
-            { backgroundImage: `url(${ containerImgURL })`} 
-          } 
+          style={ cortexBackgroundStyles( containerImgURL, bgImgSize ) } 
           >
+        <div className="container-overlay" style={ overlayStyles( colorPaletteControl )} >
+        </div>
           <div className="row">
             <div className={radioControl}>
               <div className="col-xs-12">
@@ -68,17 +66,17 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   },
 
   save: props => {
-    const { attributes: { containerImgURL, containerImgID, containerImgAlt, radioControl}, setAttributes, className } = props;
+    const { attributes: { containerImgURL, radioControl, bgImgSize, colorPaletteControl}, setAttributes, className } = props;
     const containerWidth3 = radioControl;
 
     return (
         <div>
+        <div className="container-overlay" style={ overlayStyles( colorPaletteControl )} >
+        </div>
           <div className="row">
             <div 
               className={ classnames('container', className) } 
-              style={ containerImgURL && !! containerImgURL.length && 
-                { backgroundImage: `url(${ containerImgURL })`} 
-              } 
+              style={ cortexBackgroundStyles( containerImgURL, bgImgSize ) } 
               >
               <div className="col-xs-12">
                 <InnerBlocks.Content />
@@ -89,3 +87,21 @@ registerBlockType( 'covertnine-blocks/column-containers', {
     );
   }, //end save
 } ); //end registerBlockType
+
+function cortexBackgroundStyles( url, size, color ) {
+  return url ?
+    { 
+      backgroundImage: `url(${ url })`, 
+      backgroundSize: `${size}`,
+    } :
+    undefined;
+}
+
+function overlayStyles( color ) {
+  return color ?
+  {
+    backgroundColor: `${color}`,
+    opacity: .5,
+  } :
+  undefined;
+}
