@@ -14,7 +14,7 @@ const { registerBlockType, createBlock } = wp.blocks;
 const { InnerBlocks } = wp.editor;
 
 const attributes = {
-    radioControl: {
+    containerWidth: {
         type: 'string',
         default: 'container',
     },
@@ -25,9 +25,13 @@ const attributes = {
     containerImgURL: {
         type: 'string',
     },
-    colorPaletteControl: {
+    overlayHue: {
         type: 'string',
         default: undefined,
+    },
+    overlayOpacity: {
+        type: 'number',
+        default: '5',
     },
 };
 
@@ -44,7 +48,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes: { containerImgURL, radioControl, bgImgSize, colorPaletteControl }, setAttributes, className } = props;
+    const { attributes: { containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity }, setAttributes, className } = props;
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
@@ -52,10 +56,10 @@ registerBlockType( 'covertnine-blocks/column-containers', {
           className={ classnames('container', className) } 
           style={ cortexBackgroundStyles( containerImgURL, bgImgSize ) } 
           >
-        <div className="container-overlay" style={ overlayStyles( colorPaletteControl )} >
+        <div className="container-overlay" style={ overlayStyles( overlayHue, overlayOpacity )} >
         </div>
           <div className="row">
-            <div className={radioControl}>
+            <div className={containerWidth}>
               <div className="col-xs-12">
                 <InnerBlocks />
               </div>
@@ -66,12 +70,12 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   },
 
   save: props => {
-    const { attributes: { containerImgURL, radioControl, bgImgSize, colorPaletteControl}, setAttributes, className } = props;
-    const containerWidth3 = radioControl;
+    const { attributes: { containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity}, setAttributes, className } = props;
+    const containerWidth3 = containerWidth;
 
     return (
         <div>
-        <div className="container-overlay" style={ overlayStyles( colorPaletteControl )} >
+        <div className="container-overlay" style={ overlayStyles( overlayHue, overlayOpacity )} >
         </div>
           <div className="row">
             <div 
@@ -97,11 +101,11 @@ function cortexBackgroundStyles( url, size, color ) {
     undefined;
 }
 
-function overlayStyles( color ) {
+function overlayStyles( color, opacity ) {
   return color ?
   {
     backgroundColor: `${color}`,
-    opacity: .5,
+    opacity: `.${opacity}`,
   } :
   undefined;
 }

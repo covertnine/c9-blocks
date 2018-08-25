@@ -13,7 +13,8 @@ const {
     IconButton,
     PanelBody,
     PanelRow,
-    PanelColor,
+    RangeControl,
+    ToggleControl,
 } = wp.components;
 
 /**
@@ -26,7 +27,7 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: {containerImgURL, containerImgID, containerImgAlt, radioControl, bgImgSize, colorPaletteControl}, setAttributes } = this.props;
+        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, overlayHue, overlayOpacity}, setAttributes } = this.props;
 
         const onSelectImage = img => {
           setAttributes( {
@@ -48,13 +49,13 @@ export default class Inspector extends Component {
             <InspectorControls>
                 <RadioControl
                     label={ __( 'Container Width', 'cortex-blocks' ) }
-                    selected={ radioControl }
+                    selected={ containerWidth }
                     options={ [
                         { label: 'Fluid Width', value: 'container-fluid' },
                         { label: 'Normal Width', value: 'container' },
                         { label: 'Narrow Width', value: 'container-narrow' },
                     ] }
-                    onChange={ radioControl => setAttributes( { radioControl } ) }
+                    onChange={ containerWidth => setAttributes( { containerWidth } ) }
                 />
                 <PanelBody title={ __( 'Background' ) } initialOpen={ false }>
                     <MediaUpload
@@ -88,25 +89,33 @@ export default class Inspector extends Component {
                       ) }
                     >
                     </MediaUpload>
-                   <RadioControl
-                    label={ __( 'Background Size', 'cortex-blocks' ) }
-                    selected={ bgImgSize }
-                    options={ [
-                        { label: 'Contain', value: 'contain' },
-                        { label: 'Cover', value: 'cover' },
-                        { label: 'Tile', value: 'tile' },
-                    ] }
-                    onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
-                />
-                 <PanelColor
-                    title={ __( 'Overlay Color', 'cortex-blocks' ) }
-                    colorValue={ colorPaletteControl }
-                >
+                    { containerImgURL && !! containerImgURL.length && (
+                       <RadioControl
+                          label={ __( 'Background Size', 'cortex-blocks' ) }
+                          selected={ bgImgSize }
+                          options={ [
+                              { label: 'Contain', value: 'contain' },
+                              { label: 'Cover', value: 'cover' },
+                              { label: 'Scroll', value: 'scroll'},
+                          ] }
+                          onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
+                        /> 
+                      ) }
+
                     <ColorPalette
-                        value={ colorPaletteControl }
-                        onChange={ colorPaletteControl => setAttributes( { colorPaletteControl } ) }
+                        label={ __( 'Overlay Color', 'cortex-blocks' ) }
+                        value={ overlayHue }
+                        onChange={ overlayHue => setAttributes( { overlayHue } ) }
                     />
-                </PanelColor>
+                    <RangeControl
+                        beforeIcon="arrow-left-alt2"
+                        afterIcon="arrow-right-alt2"
+                        label={ __( 'Opacity', 'cortex-blocks' ) }
+                        value={ overlayOpacity }
+                        onChange={ overlayOpacity => setAttributes( { overlayOpacity } ) }
+                        min={ 1 }
+                        max={ 10 }
+                    />
                 </PanelBody>
             </InspectorControls>
         );
