@@ -91,12 +91,12 @@ export default class Inspector extends Component {
                     </MediaUpload>
                     { containerImgURL && !! containerImgURL.length && (
                        <RadioControl
-                          label={ __( 'Background Size', 'cortex-blocks' ) }
+                          label={ __( 'Background Style', 'cortex-blocks' ) }
                           selected={ bgImgSize }
                           options={ [
-                              { label: 'Contain', value: 'contain' },
                               { label: 'Cover', value: 'cover' },
-                              { label: 'Scroll', value: 'scroll'},
+                              { label: 'Tile', value: 'contain' },
+                              { label: 'Fixed', value: 'fixed'},
                           ] }
                           onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
                         /> 

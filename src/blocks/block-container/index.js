@@ -56,7 +56,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
           className={ classnames('container', className) } 
           style={ cortexBackgroundStyles( containerImgURL, bgImgSize ) } 
           >
-        <div className="container-overlay" style={ overlayStyles( overlayHue, overlayOpacity )} >
+        <div className="container-overlay" style={ cortexOverlayStyles( overlayHue, overlayOpacity )} >
         </div>
           <div className="row">
             <div className={containerWidth}>
@@ -75,7 +75,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
 
     return (
         <div>
-        <div className="container-overlay" style={ overlayStyles( overlayHue, overlayOpacity )} >
+        <div className="container-overlay" style={ cortexOverlayStyles( overlayHue, overlayOpacity )} >
         </div>
           <div className="row">
             <div 
@@ -93,15 +93,23 @@ registerBlockType( 'covertnine-blocks/column-containers', {
 } ); //end registerBlockType
 
 function cortexBackgroundStyles( url, size, color ) {
-  return url ?
-    { 
+  if ( url ) {
+    let styles = { 
       backgroundImage: `url(${ url })`, 
-      backgroundSize: `${size}`,
-    } :
-    undefined;
+    }
+    if ( size !== 'fixed' ) {
+      styles.backgroundSize = `${size}`;
+    } else {
+      styles.width = '100%';
+      styles.backgroundAttachment = 'fixed';
+    }
+    return styles;
+  } else {
+    return undefined;
+  }
 }
 
-function overlayStyles( color, opacity ) {
+function cortexOverlayStyles( color, opacity ) {
   return color ?
   {
     backgroundColor: `${color}`,
