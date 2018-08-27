@@ -10,3 +10,4 @@
  */
 import './blocks/i18n.js';
 import './blocks/block-container/index.js';
+import './blocks/block-footnote/index.js';

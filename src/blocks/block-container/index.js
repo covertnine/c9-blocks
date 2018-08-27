@@ -41,6 +41,9 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   description: __( 'A responsive container for columns of content', 'cortex-blocks' ),
   icon: 'columns',
   category: 'layout',
+  supports: {
+    alignwide: true,
+  },
   keywords: [
     __( 'column', 'cortex-blocks' ),
     __( 'container', 'cortex-blocks'),
