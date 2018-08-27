@@ -33,6 +33,14 @@ const attributes = {
         type: 'number',
         default: '5',
     },
+    bgImgPosX: {
+      type: 'number',
+      default: '5',
+    },
+    bgImgPosY: {
+      type: 'number',
+      default: '5',
+    },
 };
 
 registerBlockType( 'covertnine-blocks/column-containers', {
@@ -51,13 +59,13 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes: { containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity }, setAttributes, className } = props;
+    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity }, setAttributes, className } = props;
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
         <div 
           className={ classnames('container', className) } 
-          style={ cortexBackgroundStyles( containerImgURL, bgImgSize ) } 
+          style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgPosX, bgImgPosY ) } 
           >
         <div className="container-overlay" style={ cortexOverlayStyles( overlayHue, overlayOpacity )} >
         </div>
@@ -73,7 +81,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   },
 
   save: props => {
-    const { attributes: { containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity}, setAttributes, className } = props;
+    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity}, setAttributes, className } = props;
     const containerWidth3 = containerWidth;
 
     return (
@@ -83,7 +91,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
           <div className="row">
             <div 
               className={ classnames('container', className) } 
-              style={ cortexBackgroundStyles( containerImgURL, bgImgSize ) } 
+              style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgPosX, bgImgPosY ) } 
               >
               <div className="col-xs-12">
                 <InnerBlocks.Content />
@@ -95,7 +103,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   }, //end save
 } ); //end registerBlockType
 
-function cortexBackgroundStyles( url, size, color ) {
+function cortexBackgroundStyles( url, size, imgPosX, imgPosY ) {
   if ( url ) {
     let styles = { 
       backgroundImage: `url(${ url })`, 
@@ -106,6 +114,12 @@ function cortexBackgroundStyles( url, size, color ) {
       styles.width = '100%';
       styles.backgroundAttachment = 'fixed';
     }
+    
+    styles.backgroundPositionX = `${imgPosX}0%`;
+    styles.backgroundPositionY = `${imgPosY}0%`;
+
+    console.log(styles);
+    
     return styles;
   } else {
     return undefined;

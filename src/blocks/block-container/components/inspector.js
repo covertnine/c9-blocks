@@ -27,21 +27,18 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, overlayHue, overlayOpacity}, setAttributes } = this.props;
+        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, overlayHue, overlayOpacity, bgImgPosX, bgImgPosY}, setAttributes } = this.props;
 
         const onSelectImage = img => {
           setAttributes( {
-            containerImgID: img.id,
             containerImgURL: img.url,
-            containerImgAlt: img.alt,
           } );
         };
 
         const onRemoveImage = () => {
           setAttributes({
-            containerImgID: null,
             containerImgURL: null,
-            containerImgAlt: null,
+            bgImgSize: 'cover',
           });
         }
 
@@ -95,13 +92,34 @@ export default class Inspector extends Component {
                           selected={ bgImgSize }
                           options={ [
                               { label: 'Cover', value: 'cover' },
-                              { label: 'Tile', value: 'contain' },
                               { label: 'Fixed', value: 'fixed'},
+                              { label: 'Tile', value: 'contain' },
                           ] }
                           onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
                         /> 
                       ) }
-
+                    { containerImgURL && bgImgSize === 'cover' && (
+                      <div>
+                        <RangeControl
+                        beforeIcon="arrow-left-alt2"
+                        afterIcon="arrow-right-alt2"
+                        label={ __( 'Horizontal Position', 'cortex-blocks' ) }
+                        value={ bgImgPosX }
+                        onChange={ bgImgPosX => setAttributes( { bgImgPosX } ) }
+                        min={ 1 }
+                        max={ 10 }
+                        />
+                        <RangeControl
+                        beforeIcon="arrow-left-alt2"
+                        afterIcon="arrow-right-alt2"
+                        label={ __( 'Vertical Position', 'cortex-blocks' ) }
+                        value={ bgImgPosY }
+                        onChange={ bgImgPosY => setAttributes( { bgImgPosY } ) }
+                        min={ 1 }
+                        max={ 10 }
+                        />
+                        </div>
+                      ) }
                     <ColorPalette
                         label={ __( 'Overlay Color', 'cortex-blocks' ) }
                         value={ overlayHue }
