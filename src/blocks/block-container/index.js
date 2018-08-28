@@ -18,12 +18,18 @@ const attributes = {
         type: 'string',
         default: 'container',
     },
-    bgImgSize: {
-        type: 'string',
-        default: 'cover',
-    },
     containerImgURL: {
         type: 'string',
+    },
+    // true evaluates to backgroundSize cover, false to backgroundSize contain
+    bgImgSize: {
+        type: 'boolean',
+        default: true,
+    },
+    // true evaluates to backgroundAttachment scroll, false to fixed
+    bgImgAttach: {
+      type: 'boolen',
+      default: true,
     },
     overlayHue: {
         type: 'string',
@@ -108,10 +114,8 @@ function cortexBackgroundStyles( url, size, attachment, posX, posY ) {
     let styles = { 
       backgroundImage: `url(${ url })`, 
     }
-    console.log('size', size);
-    styles.backgroundSize = `${size}`;
-    console.log()
-    styles.backgroundAttachment = `${attachment}`;
+    styles.backgroundSize = size ? 'cover' : 'contain';
+    styles.backgroundAttachment = attachment ? 'scroll' : 'fixed';
     
     styles.backgroundPositionX = posX > 0 ? `${posX}0%` : `0`;
     styles.backgroundPositionY = posY > 0 ? `${posY}0%` : `0`;

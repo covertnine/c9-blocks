@@ -88,27 +88,19 @@ export default class Inspector extends Component {
                     </MediaUpload>
                     { containerImgURL && !! containerImgURL.length && (
                       <div>
-                      <RadioControl
-                          label={ __( 'Background Size', 'cortex-blocks' ) }
-                          selected={ bgImgSize }
-                          options={ [
-                              { label: 'Cover', value: 'cover' },
-                              { label: 'Contain', value: 'contain'},
-                          ] }
+                        <ToggleControl
+                          label={ __( 'Cover | Contain', 'cortex-blocks' ) }
+                          checked={ bgImgSize }
                           onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
-                        /> 
-                       <RadioControl
-                          label={ __( 'Background Attachment', 'cortex-blocks' ) }
-                          selected={ bgImgAttach }
-                          options={ [
-                              { label: 'Scroll', value: 'scroll' },
-                              { label: 'Fixed', value: 'fixed'},
-                          ] }
+                        />
+                        <ToggleControl
+                          label={ __( 'Scroll | Fixed', 'cortex-blocks' ) }
+                          checked={ bgImgAttach }
                           onChange={ bgImgAttach => setAttributes( { bgImgAttach } ) }
                         />
-                        </div>
+                      </div>
                       ) }
-                    { containerImgURL && bgImgSize === 'cover' && (
+                    { containerImgURL && bgImgSize && (
                       <div>
                         <RangeControl
                         beforeIcon="arrow-left-alt2"
