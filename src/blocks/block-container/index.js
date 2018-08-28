@@ -59,13 +59,13 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity }, setAttributes, className } = props;
+    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity }, setAttributes, className } = props;
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
         <div 
           className={ classnames('container', className) } 
-          style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgPosX, bgImgPosY ) } 
+          style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgAttach, bgImgPosX, bgImgPosY ) } 
           >
         <div className="container-overlay" style={ cortexOverlayStyles( overlayHue, overlayOpacity )} >
         </div>
@@ -81,7 +81,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   },
 
   save: props => {
-    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, overlayHue, overlayOpacity}, setAttributes, className } = props;
+    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity}, setAttributes, className } = props;
     const containerWidth3 = containerWidth;
 
     return (
@@ -91,7 +91,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
           <div className="row">
             <div 
               className={ classnames('container', className) } 
-              style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgPosX, bgImgPosY ) } 
+              style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgAttach, bgImgPosX, bgImgPosY ) } 
               >
               <div className="col-xs-12">
                 <InnerBlocks.Content />
@@ -103,24 +103,21 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   }, //end save
 } ); //end registerBlockType
 
-function cortexBackgroundStyles( url, size, imgPosX, imgPosY ) {
+function cortexBackgroundStyles( url, size, attachment, posX, posY ) {
   if ( url ) {
     let styles = { 
       backgroundImage: `url(${ url })`, 
     }
-    if ( size !== 'fixed' ) {
-      styles.backgroundSize = `${size}`;
-    } else {
-      styles.width = '100%';
-      styles.backgroundAttachment = 'fixed';
-    }
+    console.log('size', size);
+    styles.backgroundSize = `${size}`;
+    console.log()
+    styles.backgroundAttachment = `${attachment}`;
     
-    styles.backgroundPositionX = `${imgPosX}0%`;
-    styles.backgroundPositionY = `${imgPosY}0%`;
-
-    console.log(styles);
+    styles.backgroundPositionX = posX > 0 ? `${posX}0%` : `0`;
+    styles.backgroundPositionY = posY > 0 ? `${posY}0%` : `0`;
     
     return styles;
+
   } else {
     return undefined;
   }

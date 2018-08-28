@@ -17,7 +17,7 @@ const { RichText } = wp.editor;
  export default registerBlockType(
     'cortex-blocks/richtext',
     {
-        title: __( 'Cortex - RichText', 'cortex-blocks' ),
+        title: __( 'Cortex - Footnote', 'cortex-blocks' ),
         description: __( 'How to use the RichText component for building your own editable blocks.', 'cortex-blocks' ),
         category: 'common',
         keywords: [

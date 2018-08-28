@@ -27,7 +27,7 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, overlayHue, overlayOpacity, bgImgPosX, bgImgPosY}, setAttributes } = this.props;
+        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, bgImgPosX, bgImgPosY}, setAttributes } = this.props;
 
         const onSelectImage = img => {
           setAttributes( {
@@ -87,16 +87,26 @@ export default class Inspector extends Component {
                     >
                     </MediaUpload>
                     { containerImgURL && !! containerImgURL.length && (
-                       <RadioControl
-                          label={ __( 'Background Style', 'cortex-blocks' ) }
+                      <div>
+                      <RadioControl
+                          label={ __( 'Background Size', 'cortex-blocks' ) }
                           selected={ bgImgSize }
                           options={ [
                               { label: 'Cover', value: 'cover' },
-                              { label: 'Fixed', value: 'fixed'},
-                              { label: 'Tile', value: 'contain' },
+                              { label: 'Contain', value: 'contain'},
                           ] }
                           onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
                         /> 
+                       <RadioControl
+                          label={ __( 'Background Attachment', 'cortex-blocks' ) }
+                          selected={ bgImgAttach }
+                          options={ [
+                              { label: 'Scroll', value: 'scroll' },
+                              { label: 'Fixed', value: 'fixed'},
+                          ] }
+                          onChange={ bgImgAttach => setAttributes( { bgImgAttach } ) }
+                        />
+                        </div>
                       ) }
                     { containerImgURL && bgImgSize === 'cover' && (
                       <div>
@@ -106,7 +116,7 @@ export default class Inspector extends Component {
                         label={ __( 'Horizontal Position', 'cortex-blocks' ) }
                         value={ bgImgPosX }
                         onChange={ bgImgPosX => setAttributes( { bgImgPosX } ) }
-                        min={ 1 }
+                        min={ 0 }
                         max={ 10 }
                         />
                         <RangeControl
@@ -115,7 +125,7 @@ export default class Inspector extends Component {
                         label={ __( 'Vertical Position', 'cortex-blocks' ) }
                         value={ bgImgPosY }
                         onChange={ bgImgPosY => setAttributes( { bgImgPosY } ) }
-                        min={ 1 }
+                        min={ 0 }
                         max={ 10 }
                         />
                         </div>
@@ -125,6 +135,7 @@ export default class Inspector extends Component {
                         value={ overlayHue }
                         onChange={ overlayHue => setAttributes( { overlayHue } ) }
                     />
+                    { overlayHue && !! overlayHue.length && (
                     <RangeControl
                         beforeIcon="arrow-left-alt2"
                         afterIcon="arrow-right-alt2"
@@ -134,6 +145,7 @@ export default class Inspector extends Component {
                         min={ 1 }
                         max={ 10 }
                     />
+                    ) }
                 </PanelBody>
             </InspectorControls>
         );
