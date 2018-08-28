@@ -128,16 +128,28 @@ export default class Inspector extends Component {
                         onChange={ overlayHue => setAttributes( { overlayHue } ) }
                     />
                     { overlayHue && !! overlayHue.length && (
-                    <RangeControl
-                        beforeIcon="arrow-left-alt2"
-                        afterIcon="arrow-right-alt2"
-                        label={ __( 'Opacity', 'cortex-blocks' ) }
-                        value={ overlayOpacity }
-                        onChange={ overlayOpacity => setAttributes( { overlayOpacity } ) }
-                        min={ 1 }
-                        max={ 10 }
-                    />
-                    ) }
+                      <div>
+                        <RangeControl
+                            beforeIcon="arrow-left-alt2"
+                            afterIcon="arrow-right-alt2"
+                            label={ __( 'Opacity', 'cortex-blocks' ) }
+                            value={ overlayOpacity }
+                            onChange={ overlayOpacity => setAttributes( { overlayOpacity } ) }
+                            min={ 1 }
+                            max={ 10 }
+                        />
+                        <SelectControl
+                            label={ __( 'Select Control', 'jsforwpblocks' ) }
+                            value={ selectControl }
+                            options={ [
+                                { value: 'a', label: __( 'Option A', 'jsforwpblocks' ) },
+                                { value: 'b', label: __( 'Option B', 'jsforwpblocks' ) },
+                                { value: 'c', label: __( 'Option C', 'jsforwpblocks' ) },
+                            ] }
+                            onChange={ selectControl => setAttributes( { selectControl } ) }
+                        />
+                        ) }
+                      <div>
                 </PanelBody>
             </InspectorControls>
         );
