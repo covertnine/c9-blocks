@@ -47,6 +47,10 @@ const attributes = {
       type: 'number',
       default: '5',
     },
+    blendMode: {
+      type: 'string',
+      default: 'overlay',
+    }
 };
 
 registerBlockType( 'covertnine-blocks/column-containers', {
@@ -65,16 +69,23 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity }, setAttributes, className } = props;
+    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, blendMode}, setAttributes, className } = props;
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
         <div 
           className={ classnames('container', className) } 
-          style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgAttach, bgImgPosX, bgImgPosY ) } 
-          >
-        <div className="container-overlay" style={ cortexOverlayStyles( overlayHue, overlayOpacity )} >
-        </div>
+          style={ cortexBackgroundStyles( 
+                containerImgURL, 
+                bgImgSize, 
+                bgImgAttach, 
+                bgImgPosX, 
+                bgImgPosY, 
+                overlayHue,
+                overlayOpacity,
+                blendMode,
+                 ) } 
+              >
           <div className="row">
             <div className={containerWidth}>
               <div className="col-xs-12">
@@ -87,17 +98,24 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   },
 
   save: props => {
-    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity}, setAttributes, className } = props;
+    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, blendMode}, setAttributes, className } = props;
     const containerWidth3 = containerWidth;
 
     return (
         <div>
-        <div className="container-overlay" style={ cortexOverlayStyles( overlayHue, overlayOpacity )} >
-        </div>
           <div className="row">
             <div 
               className={ classnames('container', className) } 
-              style={ cortexBackgroundStyles( containerImgURL, bgImgSize, bgImgAttach, bgImgPosX, bgImgPosY ) } 
+              style={ cortexBackgroundStyles( 
+                containerImgURL, 
+                bgImgSize, 
+                bgImgAttach, 
+                bgImgPosX, 
+                bgImgPosY, 
+                overlayHue,
+                overlayOpacity,
+                blendMode,
+                 ) } 
               >
               <div className="col-xs-12">
                 <InnerBlocks.Content />
@@ -109,29 +127,38 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   }, //end save
 } ); //end registerBlockType
 
-function cortexBackgroundStyles( url, size, attachment, posX, posY ) {
+function cortexBackgroundStyles( url, size, attachment, posX, posY, hue, opacity, blend ) {
+  let styles = {};
   if ( url ) {
-    let styles = { 
-      backgroundImage: `url(${ url })`, 
-    }
+
+    styles.backgroundImage = `url(${ url })`, 
     styles.backgroundSize = size ? 'cover' : 'contain';
     styles.backgroundAttachment = attachment ? 'scroll' : 'fixed';
     
     styles.backgroundPositionX = posX > 0 ? `${posX}0%` : `0`;
     styles.backgroundPositionY = posY > 0 ? `${posY}0%` : `0`;
-    
-    return styles;
 
-  } else {
-    return undefined;
+    styles.backgroundBlendMode = `${blend}`;
+
+  } if ( hue ) {
+    styles.backgroundColor = hexToRGBA(hue, opacity);
   }
+  return styles;
 }
 
-function cortexOverlayStyles( color, opacity ) {
-  return color ?
-  {
-    backgroundColor: `${color}`,
-    opacity: `.${opacity}`,
-  } :
-  undefined;
+function hexToRGBA(hex, alpha) {
+    let r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+
+    return `rgba(${r},${g},${b},.${alpha})`;
 }
+
+// function cortexOverlayStyles( color, opacity ) {
+//   return color ?
+//   {
+//     backgroundColor: `${color}`,
+//     opacity: `.${opacity}`,
+//   } :
+//   undefined;
+// }

@@ -15,6 +15,7 @@ const {
     PanelRow,
     RangeControl,
     ToggleControl,
+    SelectControl,
 } = wp.components;
 
 /**
@@ -27,7 +28,7 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, bgImgPosX, bgImgPosY}, setAttributes } = this.props;
+        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, bgImgPosX, bgImgPosY, blendMode}, setAttributes } = this.props;
 
         const onSelectImage = img => {
           setAttributes( {
@@ -44,6 +45,7 @@ export default class Inspector extends Component {
 
         return (
             <InspectorControls>
+              <PanelBody title={ __( 'Spacing' ) } initialOpen={ true }>
                 <RadioControl
                     label={ __( 'Container Width', 'cortex-blocks' ) }
                     selected={ containerWidth }
@@ -54,6 +56,7 @@ export default class Inspector extends Component {
                     ] }
                     onChange={ containerWidth => setAttributes( { containerWidth } ) }
                 />
+              </PanelBody>
                 <PanelBody title={ __( 'Background' ) } initialOpen={ false }>
                     <MediaUpload
                       id="bg-image-select"
@@ -122,34 +125,49 @@ export default class Inspector extends Component {
                         />
                         </div>
                       ) }
+                    <span>Color Palette</span>
                     <ColorPalette
                         label={ __( 'Overlay Color', 'cortex-blocks' ) }
                         value={ overlayHue }
                         onChange={ overlayHue => setAttributes( { overlayHue } ) }
                     />
+
                     { overlayHue && !! overlayHue.length && (
-                      <div>
-                        <RangeControl
-                            beforeIcon="arrow-left-alt2"
-                            afterIcon="arrow-right-alt2"
-                            label={ __( 'Opacity', 'cortex-blocks' ) }
-                            value={ overlayOpacity }
-                            onChange={ overlayOpacity => setAttributes( { overlayOpacity } ) }
-                            min={ 1 }
-                            max={ 10 }
-                        />
-                        <SelectControl
-                            label={ __( 'Select Control', 'jsforwpblocks' ) }
-                            value={ selectControl }
-                            options={ [
-                                { value: 'a', label: __( 'Option A', 'jsforwpblocks' ) },
-                                { value: 'b', label: __( 'Option B', 'jsforwpblocks' ) },
-                                { value: 'c', label: __( 'Option C', 'jsforwpblocks' ) },
-                            ] }
-                            onChange={ selectControl => setAttributes( { selectControl } ) }
-                        />
-                        ) }
-                      <div>
+                          <RangeControl
+                              beforeIcon="arrow-left-alt2"
+                              afterIcon="arrow-right-alt2"
+                              label={ __( 'Opacity', 'cortex-blocks' ) }
+                              value={ overlayOpacity }
+                              onChange={ overlayOpacity => setAttributes( { overlayOpacity } ) }
+                              min={ 1 }
+                              max={ 9 }
+                          />
+                    ) }
+                    { overlayHue && containerImgURL && !!containerImgURL.length && (
+                          <SelectControl
+                              label={ __( 'Blend Mode', 'cortex-blocks' ) }
+                              value={ blendMode }
+                              options={ [
+                                  { value: 'overlay', label: __( 'Overlay', 'cortex-blocks' ) },
+                                  { value: 'normal', label: __( 'Normal', 'cortex-blocks' ) },
+                                  { value: 'multiply', label: __( 'Multiply', 'cortex-blocks' ) },
+                                  { value: 'screen', label: __( 'Screen', 'cortex-blocks' ) },
+                                  { value: 'darken', label: __( 'Darken', 'cortex-blocks' ) },
+                                  { value: 'lighten', label: __( 'Lighten', 'cortex-blocks' ) },
+                                  { value: 'color-dodge', label: __( 'Color Dodge', 'cortex-blocks' ) },
+                                  { value: 'color-burn', label: __( 'Color Burn', 'cortex-blocks' ) },
+                                  { value: 'hard-light', label: __( 'Hard Light', 'cortex-blocks' ) },
+                                  { value: 'soft-light', label: __( 'Soft Light', 'cortex-blocks' ) },
+                                  { value: 'difference', label: __( 'Difference', 'cortex-blocks' ) },
+                                  { value: 'exclusion', label: __( 'Exclusion', 'cortex-blocks' ) },
+                                  { value: 'hue', label: __( 'Hue', 'cortex-blocks' ) },
+                                  { value: 'saturation', label: __( 'Saturation', 'cortex-blocks' ) },
+                                  { value: 'color', label: __( 'Color', 'cortex-blocks' ) },
+                                  { value: 'luminosity', label: __( 'Luminosity', 'cortex-blocks' ) },
+                              ] }
+                              onChange={ blendMode => setAttributes( { blendMode } ) }
+                          />
+                      ) }
                 </PanelBody>
             </InspectorControls>
         );
