@@ -1,7 +1,7 @@
  /**
  * Internal block libraries
  */
-import CustomRadio from '../components/custom-radio';
+// import CustomRadio from '../components/custom-radio';
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const {
@@ -96,7 +96,7 @@ export default class Inspector extends Component {
             </ButtonGroup> */}
 
               <PanelBody title={ __( 'Spacing' ) } initialOpen={ true }>
-                <CustomRadio
+                <RadioControl
                     label={ __( 'Container Width', 'cortex-blocks' ) }
                     selected={ containerWidth }
                     options={ [
