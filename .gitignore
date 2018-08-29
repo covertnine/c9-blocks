@@ -11,6 +11,9 @@ node_modules/
 # ignore components loaded via Bower
 /bower_components
 
+# ignore the dist directory
+/dist
+
 # ignore jekyll build directory
 /_site
 
