@@ -1,46 +1,53 @@
- /**
+/**
  * External dependencies
  */
-import isEmpty from 'lodash/isEmpty';
-import classnames from 'classnames';
+import { map } from 'lodash';
 
 /**
  * WordPress dependencies
  */
+const { Fragment } = wp.element;
 
 /**
  * Internal dependencies
  */
-const { BaseControl } = wp.components;
+const { Button, ButtonGroup, RangeControl } = wp.components;
 
-function CustomRadio( { label, className, selected, help, instanceId, onChange, options = [] } ) {
-  const id = `inspector-custom-radio-control-${ instanceId }`;
-  const onChangeValue = ( event ) => onChange( event.target.value );
-
-  return ! isEmpty( options ) && (
-    <BaseControl label={ label } id={ id } help={ help } className={ classnames( className, 'components-custom-radio-control' ) }>
-      { options.map( ( option, index ) =>
-        <div
-          key={ `${ id }-${ index }` }
-          className="components-custom-radio-control__option"
+export default function CustomRadio( { sizes = [], fallbackFontSize, value, onChange } ) {
+  return (
+    <Fragment>
+      <div className="components-font-size-picker__buttons">
+        <ButtonGroup aria-label={ __( 'Font Size' ) }>
+          { map( sizes, ( { name, size, shortName } ) => (
+            <Button
+              key={ size }
+              isLarge
+              isPrimary={ value === size }
+              aria-pressed={ value === size }
+              onClick={ () => onChange( size ) }
+            >
+              { shortName || name }
+            </Button>
+          ) ) }
+        </ButtonGroup>
+        <Button
+          isLarge
+          onClick={ () => onChange( undefined ) }
         >
-          <input
-            id={ `${ id }-${ index }` }
-            className="components-custom-radio-control__input"
-            type="radio"
-            name={ id }
-            value={ option.value }
-            onChange={ onChangeValue }
-            checked={ option.value === selected }
-            aria-describedby={ !! help ? `${ id }__help` : undefined }
-          />
-          <label htmlFor={ `${ id }-${ index }` }>
-            { option.label }
-          </label>
-        </div>
-      ) }
-    </BaseControl>
+          { __( 'Reset' ) }
+        </Button>
+      </div>
+      <RangeControl
+        className="components-font-size-picker__custom-input"
+        label={ __( 'Custom Size' ) }
+        value={ value || '' }
+        initialPosition={ fallbackFontSize }
+        onChange={ onChange }
+        min={ 12 }
+        max={ 100 }
+        beforeIcon="editor-textcolor"
+        afterIcon="editor-textcolor"
+      />
+    </Fragment>
   );
 }
-
-export default CustomRadio;

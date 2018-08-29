@@ -1,7 +1,7 @@
  /**
  * Internal block libraries
  */
-// import CustomRadio from '../components/custom-radio';
+import CustomRadio from '../components/custom-radio';
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const {
@@ -83,8 +83,9 @@ export default class Inspector extends Component {
 
         return (
             <InspectorControls>
-            {/*<ButtonGroup aria-label={ __( 'Padding Size' ) }>
-                <Button
+            {
+            <ButtonGroup aria-label={ __( 'Padding Size' ) }>
+                <CustomButton
                   key={'100'}
                   isLarge
                   isPrimary={true}
@@ -92,9 +93,8 @@ export default class Inspector extends Component {
                   onClick={ () => setAttributes( paddingSize ) }
                 >
                   { paddingSize }
-                </Button>
-            </ButtonGroup> */}
-
+                </CustomButton>
+            </ButtonGroup> }
               <PanelBody title={ __( 'Spacing' ) } initialOpen={ true }>
                 <RadioControl
                     label={ __( 'Container Width', 'cortex-blocks' ) }
