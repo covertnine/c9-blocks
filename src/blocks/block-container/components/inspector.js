@@ -1,6 +1,7 @@
  /**
  * Internal block libraries
  */
+import CustomRadio from '../components/custom-radio';
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const {
@@ -82,20 +83,20 @@ export default class Inspector extends Component {
 
         return (
             <InspectorControls>
-     {/*       <ButtonGroup aria-label={ __( 'Font Size' ) }>
+            {/*<ButtonGroup aria-label={ __( 'Padding Size' ) }>
                 <Button
-                  key={ stockSizes.size }
+                  key={'100'}
                   isLarge
-                  isPrimary={ value === paddingSize }
-                  aria-pressed={ value === paddingSize }
-                  onClick={ () => onChange( paddingSize ) }
+                  isPrimary={true}
+                  aria-pressed={true}
+                  onClick={ () => setAttributes( paddingSize ) }
                 >
                   { paddingSize }
                 </Button>
-              ) ) }
-            </ButtonGroup>*/}
+            </ButtonGroup> */}
+
               <PanelBody title={ __( 'Spacing' ) } initialOpen={ true }>
-                <RadioControl
+                <CustomRadio
                     label={ __( 'Container Width', 'cortex-blocks' ) }
                     selected={ containerWidth }
                     options={ [
@@ -141,12 +142,12 @@ export default class Inspector extends Component {
                     { containerImgURL && !! containerImgURL.length && (
                       <div>
                         <ToggleControl
-                          label={ __( 'Cover | Contain', 'cortex-blocks' ) }
+                          label={ __( 'Contain | Cover', 'cortex-blocks' ) }
                           checked={ bgImgSize }
                           onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
                         />
                         <ToggleControl
-                          label={ __( 'Scroll | Fixed', 'cortex-blocks' ) }
+                          label={ __( 'Fixed | Scroll', 'cortex-blocks' ) }
                           checked={ bgImgAttach }
                           onChange={ bgImgAttach => setAttributes( { bgImgAttach } ) }
                         />

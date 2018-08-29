@@ -50,7 +50,11 @@ const attributes = {
     blendMode: {
       type: 'string',
       default: 'overlay',
-    }
+    },
+    paddingSize: {
+      type: 'number',
+      default: '20',
+    },
 };
 
 registerBlockType( 'covertnine-blocks/column-containers', {
@@ -159,7 +163,6 @@ registerBlockType( 'covertnine-blocks/column-containers', {
 function cortexBackgroundStyles( url, size, attachment, posX, posY, hue, opacity, blend ) {
   let styles = {};
   if ( url ) {
-
     styles.backgroundImage = `url(${ url })`, 
     styles.backgroundSize = size ? 'cover' : 'contain';
     styles.backgroundAttachment = attachment ? 'scroll' : 'fixed';
@@ -168,7 +171,6 @@ function cortexBackgroundStyles( url, size, attachment, posX, posY, hue, opacity
     styles.backgroundPositionY = posY > 0 ? `${posY}0%` : `0`;
 
     styles.backgroundBlendMode = `${blend}`;
-
   } if ( hue ) {
     styles.backgroundColor = hexToRGBA(hue, opacity);
   }
