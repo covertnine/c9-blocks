@@ -16,6 +16,8 @@ const {
     RangeControl,
     ToggleControl,
     SelectControl,
+    Button,
+    ButtonGroup,
 } = wp.components;
 
 /**
@@ -28,7 +30,42 @@ export default class Inspector extends Component {
     }
 
     render() {
-        const { attributes: {containerImgURL, containerImgID, containerImgAlt, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, bgImgPosX, bgImgPosY, blendMode}, setAttributes } = this.props;
+        const { 
+          attributes: {
+            containerImgURL, 
+            containerImgID, 
+            containerImgAlt, 
+            containerWidth, 
+            bgImgSize, 
+            bgImgAttach, 
+            overlayHue, 
+            overlayOpacity, 
+            bgImgPosX, 
+            bgImgPosY, 
+            blendMode, 
+            paddingSize
+          }, 
+          setAttributes,
+        } = this.props;
+
+        const stockSizes = {
+          'extraLarge' : {
+            'name' : 'Extra Large',
+            'shortName' : 'xl',
+          },
+          'large' : {
+            'name' : 'Large',
+            'shortName' : 'lg',
+          },
+          'medium' : {
+            'name' : 'Medium',
+            'shortName' : 'md',
+          },
+          'small' : {
+            'name' : 'Small',
+            'shortName' : 'sm',
+          },
+        };
 
         const onSelectImage = img => {
           setAttributes( {
@@ -45,6 +82,18 @@ export default class Inspector extends Component {
 
         return (
             <InspectorControls>
+     {/*       <ButtonGroup aria-label={ __( 'Font Size' ) }>
+                <Button
+                  key={ stockSizes.size }
+                  isLarge
+                  isPrimary={ value === paddingSize }
+                  aria-pressed={ value === paddingSize }
+                  onClick={ () => onChange( paddingSize ) }
+                >
+                  { paddingSize }
+                </Button>
+              ) ) }
+            </ButtonGroup>*/}
               <PanelBody title={ __( 'Spacing' ) } initialOpen={ true }>
                 <RadioControl
                     label={ __( 'Container Width', 'cortex-blocks' ) }

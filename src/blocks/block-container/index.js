@@ -69,7 +69,21 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   ],
   attributes,
   edit: props => {
-    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, blendMode}, setAttributes, className } = props;
+    const { 
+      attributes: { 
+        bgImgPosY, 
+        bgImgPosX, 
+        containerImgURL, 
+        containerWidth, 
+        bgImgSize, 
+        bgImgAttach, 
+        overlayHue, 
+        overlayOpacity, 
+        blendMode
+      }, 
+      setAttributes, 
+      className 
+    } = props;
     // Creates a column container that can take other blocks
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
@@ -98,7 +112,22 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   },
 
   save: props => {
-    const { attributes: { bgImgPosY, bgImgPosX, containerImgURL, containerWidth, bgImgSize, bgImgAttach, overlayHue, overlayOpacity, blendMode}, setAttributes, className } = props;
+    const { 
+      attributes: { 
+        bgImgPosY, 
+        bgImgPosX, 
+        containerImgURL, 
+        containerWidth, 
+        bgImgSize, 
+        bgImgAttach, 
+        overlayHue, 
+        overlayOpacity, 
+        blendMode
+      }, 
+      setAttributes, 
+      className 
+    } = props;
+    
     const containerWidth3 = containerWidth;
 
     return (
