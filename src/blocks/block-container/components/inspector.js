@@ -1,6 +1,7 @@
  /**
  * Internal block libraries
  */
+import map from 'lodash/map';
 import CustomRadio from '../components/custom-radio';
 const { __ } = wp.i18n;
 const { Component } = wp.element;
@@ -44,29 +45,33 @@ export default class Inspector extends Component {
             bgImgPosX, 
             bgImgPosY, 
             blendMode, 
-            paddingSize
+            paddingSize,
           }, 
           setAttributes,
         } = this.props;
 
-        const stockSizes = {
-          'extraLarge' : {
+        const customValues = [
+          {
             'name' : 'Extra Large',
+            'customValue' : '100',
             'shortName' : 'xl',
           },
-          'large' : {
+          {
             'name' : 'Large',
+            'customValue' : '75',
             'shortName' : 'lg',
           },
-          'medium' : {
+          {
             'name' : 'Medium',
+            'customValue' : '50',
             'shortName' : 'md',
           },
-          'small' : {
+          {
             'name' : 'Small',
+            'customValue' : '25',
             'shortName' : 'sm',
           },
-        };
+        ];
 
         const onSelectImage = img => {
           setAttributes( {
@@ -81,20 +86,14 @@ export default class Inspector extends Component {
           });
         }
 
+        const doAThing = (customValue) => {
+          setAttributes({
+            paddingSize: customValue,
+          });
+        }
+
         return (
             <InspectorControls>
-            {
-            <ButtonGroup aria-label={ __( 'Padding Size' ) }>
-                <CustomButton
-                  key={'100'}
-                  isLarge
-                  isPrimary={true}
-                  aria-pressed={true}
-                  onClick={ () => setAttributes( paddingSize ) }
-                >
-                  { paddingSize }
-                </CustomButton>
-            </ButtonGroup> }
               <PanelBody title={ __( 'Spacing' ) } initialOpen={ true }>
                 <RadioControl
                     label={ __( 'Container Width', 'cortex-blocks' ) }
@@ -106,6 +105,23 @@ export default class Inspector extends Component {
                     ] }
                     onChange={ containerWidth => setAttributes( { containerWidth } ) }
                 />
+                <ButtonGroup aria-label={ __( 'Padding Size' ) }>
+                  { customValues.map( ( { name, customValue, shortName } ) => {
+
+                    const isCurrent = paddingSize === customValue;
+                    return (
+                      <Button
+                        key={ customValue }
+                        isSmall
+                        isPrimary={ isCurrent }
+                        aria-pressed={ isCurrent }
+                        onClick={ () => doAThing(customValue) }
+                      >
+                        { customValue }px
+                      </Button>
+                    );
+                  } ) }
+                </ButtonGroup>
               </PanelBody>
                 <PanelBody title={ __( 'Background' ) } initialOpen={ false }>
                     <MediaUpload

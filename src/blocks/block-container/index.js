@@ -53,7 +53,7 @@ const attributes = {
     },
     paddingSize: {
       type: 'number',
-      default: '20',
+      default: '25',
     },
 };
 
@@ -83,7 +83,8 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         bgImgAttach, 
         overlayHue, 
         overlayOpacity, 
-        blendMode
+        blendMode,
+        paddingSize
       }, 
       setAttributes, 
       className 
@@ -126,7 +127,8 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         bgImgAttach, 
         overlayHue, 
         overlayOpacity, 
-        blendMode
+        blendMode,
+        paddingSize
       }, 
       setAttributes, 
       className 

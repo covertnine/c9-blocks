@@ -11,8 +11,15 @@
     "@wordpress/i18n": "^1.1.0",
     "cgb-scripts": "1.9.7",
     "classnames": "^2.2.5",
+    "lodash": "^4.17.10",
     "memize": "^1.0.5",
     "react": "^16.4.1",
     "react-native": "^0.55.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "eslint-plugin-lodash": "^2.7.0"
   }
 }

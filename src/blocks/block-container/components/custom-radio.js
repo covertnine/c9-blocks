@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { map } from 'lodash';
+import map from 'lodash/map';
 
 /**
  * WordPress dependencies
@@ -13,18 +13,19 @@ const { Fragment } = wp.element;
  */
 const { Button, ButtonGroup, RangeControl } = wp.components;
 
-export default function CustomRadio( { sizes = [], fallbackFontSize, value, onChange } ) {
+export default function CustomRadio( { label, customValues = [], defaultValue, currentValue, onChange } ) {
   return (
     <Fragment>
+    { label && <label className="custom-radio">{ label }</label> }
       <div className="components-font-size-picker__buttons">
-        <ButtonGroup aria-label={ __( 'Font Size' ) }>
-          { map( sizes, ( { name, size, shortName } ) => (
+        <ButtonGroup aria-label={ label }>
+          { map( customValues, ( { name, customValue, shortName } ) => (
             <Button
-              key={ size }
+              key={ customValue }
               isLarge
-              isPrimary={ value === size }
-              aria-pressed={ value === size }
-              onClick={ () => onChange( size ) }
+              isPrimary={ currentValue === customValue }
+              aria-pressed={ currentValue === customValue }
+              onClick={ () => onChange( customValue ) }
             >
               { shortName || name }
             </Button>
@@ -40,10 +41,10 @@ export default function CustomRadio( { sizes = [], fallbackFontSize, value, onCh
       <RangeControl
         className="components-font-size-picker__custom-input"
         label={ __( 'Custom Size' ) }
-        value={ value || '' }
-        initialPosition={ fallbackFontSize }
+        value={ currentValue || '' }
+        initialPosition={ fallbackCustomValue }
         onChange={ onChange }
-        min={ 12 }
+        min={ 0 }
         max={ 100 }
         beforeIcon="editor-textcolor"
         afterIcon="editor-textcolor"
