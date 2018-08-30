@@ -3,6 +3,7 @@
  */
 import map from 'lodash/map';
 import CustomRadio from '../components/custom-radio';
+
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const {
@@ -12,7 +13,6 @@ const {
 } = wp.editor;
 const {
     RadioControl,
-    IconButton,
     PanelBody,
     PanelRow,
     RangeControl,
@@ -20,6 +20,7 @@ const {
     SelectControl,
     Button,
     ButtonGroup,
+    IconButton,
 } = wp.components;
 
 /**
@@ -45,30 +46,31 @@ export default class Inspector extends Component {
             bgImgPosX, 
             bgImgPosY, 
             blendMode, 
-            paddingSize,
+            containerMargin,
+            containerPadding,
           }, 
           setAttributes,
         } = this.props;
 
-        const customValues = [
+        const spacingPresets = [
           {
             'name' : 'Extra Large',
-            'customValue' : '100',
+            'amount' : '100',
             'shortName' : 'xl',
           },
           {
             'name' : 'Large',
-            'customValue' : '75',
+            'amount' : '75',
             'shortName' : 'lg',
           },
           {
             'name' : 'Medium',
-            'customValue' : '50',
+            'amount' : '50',
             'shortName' : 'md',
           },
           {
             'name' : 'Small',
-            'customValue' : '25',
+            'amount' : '25',
             'shortName' : 'sm',
           },
         ];
@@ -84,13 +86,15 @@ export default class Inspector extends Component {
             containerImgURL: null,
             bgImgSize: 'cover',
           });
-        }
+        };
 
-        const doAThing = (customValue) => {
+        const toggleLinkage = (linked) => {
+          console.log(linked);
+          linked.linked = !linked.linked;
           setAttributes({
-            paddingSize: customValue,
+            containerPadding : linked,
           });
-        }
+        };
 
         return (
             <InspectorControls>
@@ -105,23 +109,11 @@ export default class Inspector extends Component {
                     ] }
                     onChange={ containerWidth => setAttributes( { containerWidth } ) }
                 />
-                <ButtonGroup aria-label={ __( 'Padding Size' ) }>
-                  { customValues.map( ( { name, customValue, shortName } ) => {
-
-                    const isCurrent = paddingSize === customValue;
-                    return (
-                      <Button
-                        key={ customValue }
-                        isSmall
-                        isPrimary={ isCurrent }
-                        aria-pressed={ isCurrent }
-                        onClick={ () => doAThing(customValue) }
-                      >
-                        { customValue }px
-                      </Button>
-                    );
-                  } ) }
-                </ButtonGroup>
+                <IconButton
+                  label={ __( 'Linked Padding Toggle', 'cortex-blocks' ) }
+                  icon={ containerPadding.linked ? 'admin-links' : 'editor-unlink' }
+                  onClick={ () => toggleLinkage(containerPadding)}
+                />
               </PanelBody>
                 <PanelBody title={ __( 'Background' ) } initialOpen={ false }>
                     <MediaUpload

@@ -4,6 +4,7 @@
 import classnames from 'classnames';
 import Inspector from './components/inspector';
 import './styles/style.scss';
+import attributes from './attributes';
 
 /**
  * Internal block libraries
@@ -12,50 +13,6 @@ const { __ } = wp.i18n;
 const { Dashicon, Tooltip, Button, PanelBody, Toolbar, withNotices } = wp.components;
 const { registerBlockType, createBlock } = wp.blocks;
 const { InnerBlocks } = wp.editor;
-
-const attributes = {
-    containerWidth: {
-        type: 'string',
-        default: 'container',
-    },
-    containerImgURL: {
-        type: 'string',
-    },
-    // true evaluates to backgroundSize cover, false to backgroundSize contain
-    bgImgSize: {
-        type: 'boolean',
-        default: true,
-    },
-    // true evaluates to backgroundAttachment scroll, false to fixed
-    bgImgAttach: {
-      type: 'boolen',
-      default: true,
-    },
-    overlayHue: {
-        type: 'string',
-        default: undefined,
-    },
-    overlayOpacity: {
-        type: 'number',
-        default: '5',
-    },
-    bgImgPosX: {
-      type: 'number',
-      default: '5',
-    },
-    bgImgPosY: {
-      type: 'number',
-      default: '5',
-    },
-    blendMode: {
-      type: 'string',
-      default: 'overlay',
-    },
-    paddingSize: {
-      type: 'number',
-      default: '25',
-    },
-};
 
 registerBlockType( 'covertnine-blocks/column-containers', {
   // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -84,7 +41,8 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         overlayHue, 
         overlayOpacity, 
         blendMode,
-        paddingSize
+        containerMargin,
+        containerPadding,
       }, 
       setAttributes, 
       className 
@@ -128,7 +86,8 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         overlayHue, 
         overlayOpacity, 
         blendMode,
-        paddingSize
+        containerMargin,
+        containerPadding,
       }, 
       setAttributes, 
       className 
@@ -186,12 +145,3 @@ function hexToRGBA(hex, alpha) {
 
     return `rgba(${r},${g},${b},.${alpha})`;
 }
-
-// function cortexOverlayStyles( color, opacity ) {
-//   return color ?
-//   {
-//     backgroundColor: `${color}`,
-//     opacity: `.${opacity}`,
-//   } :
-//   undefined;
-// }
