@@ -3,13 +3,12 @@ const updateMargin = (amount) => {
             marginSize: amount,
           });
         }
-
-        const updatePadding = (amount) => {
+const updatePadding = (amount) => {
           setAttributes({
             paddingSize: amount,
           });
         }
-        
+
 <ButtonGroup aria-label={ __( 'Margins' ) }>
   { spacingPresets.map( ( { name, amount, shortName } ) => {
     const isCurrent = marginSize === amount;

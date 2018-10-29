@@ -88,12 +88,9 @@ export default class Inspector extends Component {
           });
         };
 
-        const toggleLinkage = (linked) => {
-          console.log(linked);
-          linked.linked = !linked.linked;
-          setAttributes({
-            containerPadding : linked,
-          });
+        const toggleLinkage = (spacingObject) => {
+          console.log(spacingObject);
+          setAttributes( 'containerPadding', 'linked', !spacingObject.linked);
         };
 
         return (
