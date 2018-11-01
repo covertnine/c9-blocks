@@ -51,7 +51,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
     return [
         <Inspector { ...{ setAttributes, ...props} } />,
         <div 
-          className={ classnames('container', className) } 
+          className={ classnames(containerWidth) } 
           style={ cortexBackgroundStyles( 
                 containerImgURL, 
                 bgImgSize, 
@@ -99,7 +99,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         <div>
           <div className="row">
             <div 
-              className={ classnames('container', className) } 
+              className={ classnames(containerWidth) } 
               style={ cortexBackgroundStyles( 
                 containerImgURL, 
                 bgImgSize, 

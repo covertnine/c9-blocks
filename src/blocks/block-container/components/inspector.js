@@ -88,12 +88,9 @@ export default class Inspector extends Component {
           });
         };
 
-        const toggleLinkage = (linked) => {
-          console.log(linked);
-          linked.linked = !linked.linked;
-          setAttributes({
-            containerPadding : linked,
-          });
+        const toggleLinkage = (spacingObject) => {
+          console.log(spacingObject);
+          setAttributes( 'containerPadding', 'linked', !spacingObject.linked);
         };
 
         return (
@@ -125,7 +122,6 @@ export default class Inspector extends Component {
                       render={ ( { open } ) => (
                         <div>
                           <IconButton
-                            className="ab-container-inspector-media"
                             label={ __( 'Edit image' ) }
                             icon="format-image"
                             onClick={ open }
@@ -135,7 +131,6 @@ export default class Inspector extends Component {
 
                           { containerImgURL && !! containerImgURL.length && (
                             <IconButton
-                              className="ab-container-inspector-media"
                               label={ __( 'Remove Image' ) }
                               icon="dismiss"
                               onClick={ onRemoveImage }
