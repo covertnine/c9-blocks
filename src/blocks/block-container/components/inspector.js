@@ -100,7 +100,7 @@ export default class Inspector extends Component {
                     label={ __( 'Container Width', 'cortex-blocks' ) }
                     selected={ containerWidth }
                     options={ [
-                        { label: 'Fluid Width', value: 'container-fluid' },
+                        { label: 'Full Width', value: 'container-fluid' },
                         { label: 'Normal Width', value: 'container' },
                         { label: 'Narrow Width', value: 'container-narrow' },
                     ] }

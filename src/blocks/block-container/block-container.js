@@ -65,7 +65,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
               >
           <div className="row">
             <div className={containerWidth}>
-              <div className="col-xs-12">
+              <div className="col-xs-10">
                 <InnerBlocks />
               </div>
             </div>
@@ -111,7 +111,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
                 blendMode,
                  ) } 
               >
-              <div className="col-xs-12">
+              <div className="col-xs-10">
                 <InnerBlocks.Content />
               </div>
             </div>
