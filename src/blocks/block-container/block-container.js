@@ -21,6 +21,8 @@ const { registerBlockType, createBlock } = wp.blocks;
 const { InnerBlocks } = wp.editor;
 const { Fragment } = wp.element;
 
+const ALLOWED_BLOCKS = [ 'covertnine-blocks/column' ];
+
 /**
  * Returns the layouts configuration for a given number of columns.
  *
@@ -82,13 +84,11 @@ registerBlockType( 'covertnine-blocks/column-containers', {
                 blendMode,
                  ) } 
               >
-          <div className="row">
-            <div className={containerWidth}>
+            <div class="row">
               <InnerBlocks
                 template={ getColumnsTemplate( columns ) }
                 templateLock="all"
-                 />
-            </div>
+                allowedBlocks={ ALLOWED_BLOCKS } />
           </div>
         </div>
     ];
@@ -117,7 +117,6 @@ registerBlockType( 'covertnine-blocks/column-containers', {
 
     return (
         <div>
-          <div className="row">
             <div 
               className={ classnames(containerWidth) } 
               style={ cortexBackgroundStyles( 
@@ -131,10 +130,9 @@ registerBlockType( 'covertnine-blocks/column-containers', {
                 blendMode,
                  ) } 
               >
-              <div className="col-xs-10">
+              <div class="row">
                 <InnerBlocks.Content />
               </div>
-            </div>
           </div>
         </div>
     );

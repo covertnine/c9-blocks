@@ -3,3 +3,15 @@
  *
  * CSS for both Frontend+Backend.
  */
+ .container .row .editor-inner-blocks,  .container-fluid .row .editor-inner-blocks,  .container-narrow .row .editor-inner-blocks {
+  width: 100%
+ }
+.container .row > .editor-inner-blocks > .editor-block-list__layout ,  .container-narrow .row > .editor-inner-blocks > .editor-block-list__layout, .container-fluid .row > .editor-inner-blocks > .editor-block-list__layout  {
+  width: 100%;
+  display: flex;
+ }
+
+.container .row > .editor-inner-blocks > .editor-block-list__layout  .editor-block-list__block,  .container-narrow .row > .editor-inner-blocks > .editor-block-list__layout  .editor-block-list__block, .container-fluid .row > .editor-inner-blocks > .editor-block-list__layout  .editor-block-list__block {
+  flex-grow: 1;
+  flex-basis: 0px;
+ } 
