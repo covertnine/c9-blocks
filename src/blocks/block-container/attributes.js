@@ -1,4 +1,8 @@
 const attributes = {
+  columns: {
+      type: 'number',
+      default: 1,
+  },
   containerWidth: {
       type: 'string',
       default: 'container',

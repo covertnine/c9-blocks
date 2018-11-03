@@ -24,7 +24,7 @@ registerBlockType( 'covertnine-blocks/column', {
   },
 
   edit() {
-    return <InnerBlocks templateLock={ false } />;
+    return <div className="wrapper"><InnerBlocks className="col" templateLock={ false } /></div>;
   },
 
   save() {

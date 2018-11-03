@@ -1,7 +1,13 @@
+ /**
+ * External dependencies
+ */
+import memoize from 'memize';
+import times  from 'lodash/times';
+import classnames from 'classnames';
+
 /**
  * Block dependencies
  */
-import classnames from 'classnames';
 import Inspector from './components/inspector';
 import './styles/style.scss';
 import attributes from './attributes';
@@ -10,9 +16,21 @@ import attributes from './attributes';
  * Internal block libraries
  */
 const { __ } = wp.i18n;
-const { Dashicon, Tooltip, Button, PanelBody, Toolbar, withNotices } = wp.components;
+const { Dashicon, Tooltip, Button, PanelBody, Toolbar, withNotices, G, SVG, Path } = wp.components;
 const { registerBlockType, createBlock } = wp.blocks;
 const { InnerBlocks } = wp.editor;
+const { Fragment } = wp.element;
+
+/**
+ * Returns the layouts configuration for a given number of columns.
+ *
+ * @param {number} columns Number of columns.
+ *
+ * @return {Object[]} Columns layout configuration.
+ */
+const getColumnsTemplate = memoize( ( columns ) => {
+  return times( columns, () => [ 'covertnine-blocks/column' ] );
+} );
 
 registerBlockType( 'covertnine-blocks/column-containers', {
   // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -43,6 +61,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         blendMode,
         containerMargin,
         containerPadding,
+        columns,
       }, 
       setAttributes, 
       className 
@@ -65,9 +84,10 @@ registerBlockType( 'covertnine-blocks/column-containers', {
               >
           <div className="row">
             <div className={containerWidth}>
-              <div className="col-xs-10">
-                <InnerBlocks />
-              </div>
+              <InnerBlocks
+                template={ getColumnsTemplate( columns ) }
+                templateLock="all"
+                 />
             </div>
           </div>
         </div>

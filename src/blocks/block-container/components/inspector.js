@@ -48,6 +48,7 @@ export default class Inspector extends Component {
             blendMode, 
             containerMargin,
             containerPadding,
+            columns
           }, 
           setAttributes,
         } = this.props;
@@ -110,6 +111,19 @@ export default class Inspector extends Component {
                   label={ __( 'Linked Padding Toggle', 'cortex-blocks' ) }
                   icon={ containerPadding.linked ? 'admin-links' : 'editor-unlink' }
                   onClick={ () => toggleLinkage(containerPadding)}
+                />
+              </PanelBody>
+              <PanelBody>
+                <RangeControl
+                  label={ __( 'Columns' ) }
+                  value={ columns }
+                  onChange={ ( nextColumns ) => {
+                    setAttributes( {
+                      columns: nextColumns,
+                    } );
+                  } }
+                  min={ 1 }
+                  max={ 6 }
                 />
               </PanelBody>
                 <PanelBody title={ __( 'Background' ) } initialOpen={ false }>
