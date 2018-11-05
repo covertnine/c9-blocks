@@ -48,7 +48,8 @@ export default class Inspector extends Component {
             blendMode, 
             containerMargin,
             containerPadding,
-            columns
+            columns,
+            minScreenHeight,
           }, 
           setAttributes,
         } = this.props;
@@ -90,13 +91,32 @@ export default class Inspector extends Component {
         };
 
         const toggleLinkage = (spacingObject) => {
-          console.log(spacingObject);
-          setAttributes( 'containerPadding', 'linked', !spacingObject.linked);
+          console.log(spacingObject.linked);
+          containerPadding.linked = !containerPadding.linked;
         };
+
+        const updatePadding = (position, value) => {
+          console.log(containerPadding)
+          if ( containerPadding.linked ) {
+              setAttributes( {
+                      containerPadding: {
+                        'linked': true,
+                        'unit': 'px',
+                        'top': value,
+                        'bottom': value,
+                        'left': value,
+                        'right': value,
+                      },
+                    } )
+          } else {
+            containerPadding.top = value;
+            // containerPadding[position] = value;
+          }
+        }
 
         return (
             <InspectorControls>
-              <PanelBody title={ __( 'Spacing' ) } initialOpen={ true }>
+              <PanelBody title={ __( 'Layout & Spacing' ) } initialOpen={ true }>
                 <RadioControl
                     label={ __( 'Container Width', 'cortex-blocks' ) }
                     selected={ containerWidth }
@@ -107,13 +127,15 @@ export default class Inspector extends Component {
                     ] }
                     onChange={ containerWidth => setAttributes( { containerWidth } ) }
                 />
-                <IconButton
-                  label={ __( 'Linked Padding Toggle', 'cortex-blocks' ) }
-                  icon={ containerPadding.linked ? 'admin-links' : 'editor-unlink' }
-                  onClick={ () => toggleLinkage(containerPadding)}
-                />
-              </PanelBody>
-              <PanelBody>
+                  <RangeControl
+                      beforeIcon="arrow-left-alt2"
+                      afterIcon="arrow-right-alt2"
+                      label={ __( 'Minimum Height (vh)', 'cortex-blocks' ) }
+                      value={ minScreenHeight }
+                      onChange={ minScreenHeight => setAttributes( { minScreenHeight } ) }
+                      min={ 0 }
+                      max={ 100 }
+                    />
                 <RangeControl
                   label={ __( 'Columns' ) }
                   value={ columns }
@@ -124,6 +146,51 @@ export default class Inspector extends Component {
                   } }
                   min={ 1 }
                   max={ 6 }
+                />
+                <IconButton
+                  label={ __( 'Linked Padding Toggle', 'cortex-blocks' ) }
+                  icon={ containerPadding.linked ? 'admin-links' : 'editor-unlink' }
+                  onClick={ () => toggleLinkage(containerPadding)}
+                />
+                 <RangeControl
+                  label={ __( 'padding-top' ) }
+                  value={ containerPadding.top }
+                  onChange={ ( padding ) => {
+                    updatePadding( 'top', padding );
+                  }
+                }
+                  min={ 0 }
+                  max={ 300 }
+                />
+                 <RangeControl
+                  label={ __( 'padding-bottom' ) }
+                  value={ containerPadding.bottom }
+                  onChange={ ( padding ) => {
+                    updatePadding('bottom', padding );
+                    }
+                  }
+                  min={ 0 }
+                  max={ 300 }
+                />
+                 <RangeControl
+                  label={ __( 'padding-left' ) }
+                  value={ containerPadding.left }
+                  onChange={ ( padding ) => {
+                    updatePadding('left', padding );
+                    }
+                  }
+                  min={ 0 }
+                  max={ 300 }
+                />
+                <RangeControl
+                  label={ __( 'padding-right' ) }
+                  value={ containerPadding.right }
+                  onChange={ ( padding ) => {
+                    updatePadding('right', padding);
+                    } 
+                  }
+                  min={ 0 }
+                  max={ 300 }
                 />
               </PanelBody>
                 <PanelBody title={ __( 'Background' ) } initialOpen={ false }>

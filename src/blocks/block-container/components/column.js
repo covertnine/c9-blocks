@@ -24,11 +24,11 @@ registerBlockType( 'covertnine-blocks/column', {
   },
 
   edit() {
-    return <div className="col-sm"><InnerBlocks className="col-sm" templateLock={ false } /></div>;
+    return <div className="col"><InnerBlocks className="col" templateLock={ false } /></div>;
   },
 
   save() {
-    return <div className="col-sm"><InnerBlocks.Content /></div>;
+    return <div className="col"><InnerBlocks.Content /></div>;
   },
 
 });

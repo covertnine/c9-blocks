@@ -13,3 +13,4 @@ import './blocks/block-container/block-container.js';
 import './blocks/block-footnote/block-footnote.js';
 // import './blocks/block-columns/block-columns.js';
 import './blocks/block-container/components/column.js';
+import './blocks/block-bs-carousel/block-bs-carousel.js';

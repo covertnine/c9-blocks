@@ -44,6 +44,10 @@ const attributes = {
     type: 'boolean',
     default: true,
   },
+  minScreenHeight: {
+    type: 'number',
+    default: '60',
+  },
   containerMargin: {
     type: 'object',
     default: {

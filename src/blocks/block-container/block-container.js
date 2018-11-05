@@ -8,12 +8,12 @@ import classnames from 'classnames';
 /**
  * Block dependencies
  */
-import Inspector from './components/inspector';
+import Inspector from './components/block-container-inspector';
 import './styles/style.scss';
 import attributes from './attributes';
 
 /**
- * Internal block libraries
+ * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Dashicon, Tooltip, Button, PanelBody, Toolbar, withNotices, G, SVG, Path } = wp.components;
@@ -64,6 +64,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         containerMargin,
         containerPadding,
         columns,
+        minScreenHeight,
       }, 
       setAttributes, 
       className 
@@ -82,9 +83,10 @@ registerBlockType( 'covertnine-blocks/column-containers', {
                 overlayHue,
                 overlayOpacity,
                 blendMode,
+                minScreenHeight,
                  ) } 
               >
-            <div class="row">
+            <div class="row no-gutter">
               <InnerBlocks
                 template={ getColumnsTemplate( columns ) }
                 templateLock="all"
@@ -108,6 +110,7 @@ registerBlockType( 'covertnine-blocks/column-containers', {
         blendMode,
         containerMargin,
         containerPadding,
+        minScreenHeight,
       }, 
       setAttributes, 
       className 
@@ -128,9 +131,10 @@ registerBlockType( 'covertnine-blocks/column-containers', {
                 overlayHue,
                 overlayOpacity,
                 blendMode,
+                minScreenHeight,
                  ) } 
               >
-              <div class="row">
+              <div class="row no-gutter">
                 <InnerBlocks.Content />
               </div>
           </div>
@@ -139,8 +143,11 @@ registerBlockType( 'covertnine-blocks/column-containers', {
   }, //end save
 } ); //end registerBlockType
 
-function cortexBackgroundStyles( url, size, attachment, posX, posY, hue, opacity, blend ) {
+function cortexBackgroundStyles( url, size, attachment, posX, posY, hue, opacity, blend, height ) {
   let styles = {};
+  
+  styles.minHeight = `${height}vh`;
+
   if ( url ) {
     styles.backgroundImage = `url(${ url })`, 
     styles.backgroundSize = size ? 'cover' : 'contain';
@@ -150,6 +157,7 @@ function cortexBackgroundStyles( url, size, attachment, posX, posY, hue, opacity
     styles.backgroundPositionY = posY > 0 ? `${posY}0%` : `0`;
 
     styles.backgroundBlendMode = `${blend}`;
+
   } if ( hue ) {
     styles.backgroundColor = hexToRGBA(hue, opacity);
   }
