@@ -11,6 +11,7 @@
 import './blocks/i18n.js';
 import './blocks/block-container/block-container.js';
 import './blocks/block-footnote/block-footnote.js';
-// import './blocks/block-columns/block-columns.js';
 import './blocks/block-container/components/column.js';
 import './blocks/block-bs-carousel/block-bs-carousel.js';
+import './blocks/block-sharing/block-sharing.js';
+import './blocks/block-cta/block-cta.js';
