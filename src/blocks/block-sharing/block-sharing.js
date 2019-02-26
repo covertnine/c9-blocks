@@ -11,6 +11,11 @@ import ShareLinks from './components/sharing';
 import './styles/style.scss';
 import './styles/editor.scss';
 
+// Import Fontawesome Icon
+import { faShareSquare } from '@fortawesome/free-regular-svg-icons'
+import { makeIcon } from '../../helpers/awesomeGenerator'
+const iconEl = makeIcon(faShareSquare)
+
 // Components
 const { __ } = wp.i18n; 
 
@@ -38,14 +43,14 @@ const {
 
 // Register the block
 registerBlockType( 'covertnine-blocks/cortex-share', {
-	title: __( 'AB Sharing', 'covertnine-blocks' ),
+	title: __( 'Cortex Social Share', 'covertnine-blocks' ),
 	description: __( 'Add sharing buttons to your posts and pages.', 'covertnine-blocks' ),
-	icon: 'admin-links',
+	icon: iconEl,
 	category: 'covertnine-blocks',
 	keywords: [
-		__( 'sharing', 'covertnine-blocks' ),
+		__( 'share', 'covertnine-blocks' ),
 		__( 'social', 'covertnine-blocks' ),
-		__( 'atomic', 'covertnine-blocks' ),
+		__( 'cortex', 'covertnine-blocks' ),
 	],
 
 	// Render the block components

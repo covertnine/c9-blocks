@@ -9,7 +9,7 @@ const { registerBlockType, createBlock } = wp.blocks;
 
 registerBlockType( 'covertnine-blocks/column', {
 
-  title: __( 'Column', 'cortex-blocks'),
+  title: __( 'Column', 'covertnine-blocks'),
 
   category: 'common',
 

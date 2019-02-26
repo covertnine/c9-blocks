@@ -32,8 +32,8 @@ const getColumnsTemplate = memoize( ( columns ) => {
 } );
 
 registerBlockType('covertnine-blocks/columns', {
-  title: __( 'Content Columns', 'cortex-blocks' ),
-  description: __( 'Bootstrap columns based on the Wordpress column block', 'cortex-blocks' ),
+  title: __( 'Content Columns', 'covertnine-blocks' ),
+  description: __( 'Bootstrap columns based on the Wordpress column block', 'covertnine-blocks' ),
   icon: 'columns',
   category: 'layout',
   supports: {
@@ -41,9 +41,9 @@ registerBlockType('covertnine-blocks/columns', {
   },
   attributes,
   keywords: [
-    __( 'column', 'cortex-blocks' ),
-    __( 'container', 'cortex-blocks'),
-    __( 'responsive', 'cortex-blocks' ),
+    __( 'column', 'covertnine-blocks' ),
+    __( 'container', 'covertnine-blocks'),
+    __( 'responsive', 'covertnine-blocks' ),
   ],
   edit( { attributes, setAttributes, className } ) {
     const { columns } = attributes;

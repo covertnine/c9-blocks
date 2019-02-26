@@ -1,250 +1,430 @@
 /**
- * Block Cortex CTA
+ * BLOCK: Atomic Blocks Call-To-Action
  */
-import Inspector from './components/block-cta-inspector';
+
+// Import block dependencies and components
+import classnames from 'classnames';
+import Inspector from './components/inspector';
+import CallToAction from './components/cta';
+
+// Deprecated components
+import deprecated from './deprecated/deprecated';
+
+// Import CSS
 import './styles/style.scss';
-import attributes from './attributes';
-import ctaIcon from '../../../assets/cta';
+import './styles/editor.scss';
 
-/**
- * WordPress dependencies
- */
+// Import Icon
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
+import { makeIcon } from '../../helpers/awesomeGenerator'
+const iconEl = makeIcon(faExclamationCircle)
+
+// Components
 const { __ } = wp.i18n;
-const { Dashicon, Tooltip, Button, PanelBody, Toolbar, withNotices, G, SVG, Path } = wp.components;
-const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks } = wp.editor;
-const { Fragment } = wp.element;
 
-registerBlockType('covertnine-blocks/cortex-cta', {
-  // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-  title: __('Cortex CTA', 'covertnine-blocks'),
-  description: __('Call to Action', 'covertnine-blocks'),
-  icon: ctaIcon,
-  category: 'layout',
-  supports: {
-    alignwide: true,
-  },
-  keywords: [
-    __('cta', 'covertnine-blocks'),
-    __('call', 'covertnine-blocks'),
-    __('responsive', 'covertnine-blocks'),
-  ],
-  attributes,
-  edit: props => {
-    const {
-      attributes: {
-        buttonText,
-        buttonUrl,
-        buttonAlignment,
-        buttonBackgroundColor,
-        buttonTextColor,
-        buttonSize,
-        buttonShape,
-        buttonTarget,
-        ctaTitle,
-        ctaText,
-        ctaTitleFontSize,
-        titleFontSize,
-        ctaTextFontSize,
-        ctaWidth,
-        ctaBackgroundColor,
-        ctaTextColor,
-        imgURL,
-        imgID,
-        imgAlt,
-        dimRatio,
-      },
-      attributes,
-      isSelected,
-      editable,
-      className,
-      setAttributes
-    } = props;
-    // Creates a column container that can take other blocks
-    return [
-      // Show the alignment toolbar on focus
-      <BlockControls>
-        <BlockAlignmentToolbar
-          value={ctaWidth}
-          onChange={ctaWidth => setAttributes({ ctaWidth })}
-          controls={['center', 'wide', 'full']}
-        />
-        <AlignmentToolbar
-          value={buttonAlignment}
-          onChange={(value) => {
-            setAttributes({ buttonAlignment: value });
-          }}
-        />
-      </BlockControls>,
-      // Show the block controls on focus
-      <Inspector
-        {...{ setAttributes, ...this.props }}
-      />,
-      // Show the button markup in the editor
-      <CallToAction {...this.props}>
-        {imgURL && !!imgURL.length && (
-          <div class="cortex-cta-image-wrap">
-            <img
-              className={classnames(
-                'cortex-cta-image',
-                dimRatioToClass(dimRatio),
-                {
-                  'has-background-dim': dimRatio !== 0,
-                }
-              )}
-              src={imgURL}
-              alt={imgAlt}
-            />
-          </div>
-        )}
+// Extend component
+const { Component } = wp.element;
 
-        <div class="cortex-cta-content">
-          <RichText
-            tagName="h2"
-            placeholder={__('Call-To-Action Title', 'covertnine-blocks')}
-            keepPlaceholderOnFocus
-            value={ctaTitle}
-            className={classnames(
-              'cortex-cta-title',
-              'ab-font-size-' + titleFontSize,
-            )}
-            style={{
-              color: ctaTextColor,
-            }}
-            onChange={(value) => setAttributes({ ctaTitle: value })}
-          />
-          <RichText
-            tagName="div"
-            multiline="p"
-            placeholder={__('Call To Action Text', 'covertnine-blocks')}
-            keepPlaceholderOnFocus
-            value={ctaText}
-            className={classnames(
-              'cortex-cta-text',
-              'ab-font-size-' + ctaTextFontSize,
-            )}
-            style={{
-              color: ctaTextColor,
-            }}
-            onChange={(value) => setAttributes({ ctaText: value })}
-          />
-        </div>
-        <div class="cortex-cta-button">
-          <RichText
-            tagName="span"
-            placeholder={__('Button text...', 'covertnine-blocks')}
-            value={buttonText}
-            formattingControls={[]}
-            className={classnames(
-              'ab-button',
-              buttonShape,
-              buttonSize,
-            )}
-            style={{
-              color: buttonTextColor,
-              backgroundColor: buttonBackgroundColor,
-            }}
-            onChange={(value) => setAttributes({ buttonText: value })}
-          />
-          {isSelected && (
-            <form
-              key="form-link"
-              className={`blocks-button__inline-link ab-button-${buttonAlignment}`}
-              onSubmit={event => event.preventDefault()}
-              style={{
-                textAlign: buttonAlignment,
-              }}
-            >
-              <Dashicon icon={'admin-links'} />
-              <URLInput
-                className="button-url"
-                value={buttonUrl}
-                onChange={(value) => setAttributes({ buttonUrl: value })}
-              />
-              <IconButton
-                icon="editor-break"
-                label={__('Apply', 'covertnine-blocks')}
-                type="submit"
-              />
-            </form>
-          )}
-        </div>
-      </CallToAction>
-    ];
-  },
+// Register block
+const { registerBlockType } = wp.blocks;
 
-  save: props => {
-    const {
-      attributes: {
-        bgImgPosY,
-        bgImgPosX,
-        containerImgURL,
-        containerWidth,
-        bgImgSize,
-        bgImgAttach,
-        overlayHue,
-        overlayOpacity,
-        blendMode,
-        containerMargin,
-        containerPadding,
-        minScreenHeight,
-      },
-      setAttributes,
-      className
-    } = props;
+// Register editor components
+const {
+	AlignmentToolbar,
+	URLInput,
+	BlockControls,
+	BlockAlignmentToolbar,
+	MediaUpload,
+	RichText,
+} = wp.editor;
 
-    const containerWidth3 = containerWidth;
+// Register components
+const {
+	Button,
+	withFallbackStyles,
+	IconButton,
+	Dashicon,
+	Toolbar,
+} = wp.components;
 
-    return (
-      <div>
-        <div
-          className={classnames(containerWidth)}
-          style={cortexBackgroundStyles(
-            containerImgURL,
-            bgImgSize,
-            bgImgAttach,
-            bgImgPosX,
-            bgImgPosY,
-            overlayHue,
-            overlayOpacity,
-            blendMode,
-            minScreenHeight,
-          )}
-        >
-          <div class="row no-gutter">
-            <InnerBlocks.Content />
-          </div>
-        </div>
-      </div>
-    );
-  }, //end save
-}); //end registerBlockType
+const blockAttributes = {
+	buttonText: {
+		type: 'string',
+	},
+	buttonUrl: {
+		type: 'string',
+		source: 'attribute',
+		selector: 'a',
+		attribute: 'href',
+	},
+	buttonAlignment: {
+		type: 'string',
+		default: 'center'
+	},
+	buttonBackgroundColor: {
+		type: 'string',
+		default: '#3373dc'
+	},
+	buttonTextColor: {
+		type: 'string',
+		default: '#ffffff'
+	},
+	buttonSize: {
+		type: 'string',
+		default: 'ab-button-size-medium'
+	},
+	buttonShape: {
+		type: 'string',
+		default: 'ab-button-shape-rounded'
+	},
+	buttonTarget: {
+		type: 'boolean',
+		default: false
+	},
+	ctaTitle: {
+		type: 'array',
+		selector: '.ab-cta-title',
+		source: 'children',
+	},
+	titleFontSize: {
+		type: 'number',
+		default: '32',
+	},
+	ctaTextFontSize: {
+		type: 'number',
+	},
+	ctaText: {
+		type: 'array',
+		selector: '.ab-cta-text',
+		source: 'children',
+	},
+	ctaWidth: {
+		type: 'string',
+	},
+	ctaBackgroundColor: {
+		type: 'string',
+	},
+	ctaTextColor: {
+		type: 'string',
+		default: '#32373c'
+	},
+	imgURL: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'src',
+		selector: 'img',
+	},
+	imgID: {
+		type: 'number',
+	},
+	imgAlt: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'alt',
+		selector: 'img',
+	},
+	dimRatio: {
+		type: 'number',
+		default: 50,
+	},
 
-function cortexBackgroundStyles(url, size, attachment, posX, posY, hue, opacity, blend, height) {
-  let styles = {};
+	// Deprecated
+	ctaTitleFontSize: {
+		type: 'string',
+		default: '32'
+	},
+};
 
-  styles.minHeight = `${height}vh`;
+class ABCTABlock extends Component {
 
-  if (url) {
-    styles.backgroundImage = `url(${url})`,
-      styles.backgroundSize = size ? 'cover' : 'contain';
-    styles.backgroundAttachment = attachment ? 'scroll' : 'fixed';
+	render() {
 
-    styles.backgroundPositionX = posX > 0 ? `${posX}0%` : `0`;
-    styles.backgroundPositionY = posY > 0 ? `${posY}0%` : `0`;
+		// Setup the attributes
+		const {
+			attributes: {
+				buttonText,
+				buttonUrl,
+				buttonAlignment,
+				buttonBackgroundColor,
+				buttonTextColor,
+				buttonSize,
+				buttonShape,
+				buttonTarget,
+				ctaTitle,
+				ctaText,
+				ctaTitleFontSize,
+				titleFontSize,
+				ctaTextFontSize,
+				ctaWidth,
+				ctaBackgroundColor,
+				ctaTextColor,
+				imgURL,
+				imgID,
+				imgAlt,
+				dimRatio,
+			},
+			attributes,
+			isSelected,
+			editable,
+			className,
+			setAttributes
+		} = this.props;
 
-    styles.backgroundBlendMode = `${blend}`;
+		const onSelectImage = img => {
+			setAttributes( {
+				imgID: img.id,
+				imgURL: img.url,
+				imgAlt: img.alt,
+			} );
+		};
 
-  } if (hue) {
-    styles.backgroundColor = hexToRGBA(hue, opacity);
-  }
-  return styles;
+		return [
+			// Show the alignment toolbar on focus
+			<BlockControls>
+				<BlockAlignmentToolbar
+					value={ ctaWidth }
+					onChange={ ctaWidth => setAttributes( { ctaWidth } ) }
+					controls={ [ 'center', 'wide', 'full' ] }
+				/>
+				<AlignmentToolbar
+					value={ buttonAlignment }
+					onChange={ ( value ) => {
+						setAttributes( { buttonAlignment: value } );
+					} }
+				/>
+			</BlockControls>,
+			// Show the block controls on focus
+			<Inspector
+				{ ...{ setAttributes, ...this.props } }
+			/>,
+			// Show the button markup in the editor
+			<CallToAction { ...this.props }>
+				{ imgURL && !! imgURL.length && (
+					<div class="ab-cta-image-wrap">
+						<img
+							className={ classnames(
+								'ab-cta-image',
+								dimRatioToClass( dimRatio ),
+								{
+									'has-background-dim': dimRatio !== 0,
+								}
+							) }
+							src={ imgURL }
+							alt={ imgAlt }
+						/>
+					</div>
+				) }
+
+				<div class="ab-cta-content">
+					<RichText
+						tagName="h2"
+						placeholder={ __( 'Call-To-Action Title', 'atomic-blocks' ) }
+						keepPlaceholderOnFocus
+						value={ ctaTitle }
+						className={ classnames(
+							'ab-cta-title',
+							'ab-font-size-' + titleFontSize,
+						) }
+						style={ {
+							color: ctaTextColor,
+						} }
+						onChange={ (value) => setAttributes( { ctaTitle: value } ) }
+					/>
+					<RichText
+						tagName="div"
+						multiline="p"
+						placeholder={ __( 'Call To Action Text', 'atomic-blocks' ) }
+						keepPlaceholderOnFocus
+						value={ ctaText }
+						className={ classnames(
+							'ab-cta-text',
+							'ab-font-size-' + ctaTextFontSize,
+						) }
+						style={ {
+							color: ctaTextColor,
+						} }
+						onChange={ ( value ) => setAttributes( { ctaText: value } ) }
+					/>
+				</div>
+				<div class="ab-cta-button">
+					<RichText
+						tagName="span"
+						placeholder={ __( 'Button text...', 'atomic-blocks' ) }
+						value={ buttonText }
+						formattingControls={ [] }
+						className={ classnames(
+							'ab-button',
+							buttonShape,
+							buttonSize,
+						) }
+						style={ {
+							color: buttonTextColor,
+							backgroundColor: buttonBackgroundColor,
+						} }
+						onChange={ (value) => setAttributes( { buttonText: value } ) }
+					/>
+					{ isSelected && (
+						<form
+							key="form-link"
+							className={ `blocks-button__inline-link ab-button-${buttonAlignment}`}
+							onSubmit={ event => event.preventDefault() }
+							style={ {
+								textAlign: buttonAlignment,
+							} }
+						>
+							<Dashicon icon={ 'admin-links' } />
+							<URLInput
+								className="button-url"
+								value={ buttonUrl }
+								onChange={ ( value ) => setAttributes( { buttonUrl: value } ) }
+							/>
+							<IconButton
+								icon="editor-break"
+								label={ __( 'Apply', 'atomic-blocks' ) }
+								type="submit"
+							/>
+						</form>
+					) }
+				</div>
+			</CallToAction>
+		];
+	}
 }
 
-function hexToRGBA(hex, alpha) {
-  let r = parseInt(hex.slice(1, 3), 16),
-    g = parseInt(hex.slice(3, 5), 16),
-    b = parseInt(hex.slice(5, 7), 16);
+// Register the block
+registerBlockType( 'covertnine-blocks/c9-cta', {
+	title: __( 'Covertnine Call To Action', 'covertnine-blocks' ),
+	description: __( 'Add a call to action section with a title, text, and a button.', 'atomic-blocks' ),
+	icon: iconEl,
+	category: 'covertnine-blocks',
+	keywords: [
+		__( 'call to action', 'covertnine-blocks' ),
+		__( 'cta', 'covertnine-blocks' ),
+		__( 'atomic', 'covertnine-blocks' ),
+	],
 
-  return `rgba(${r},${g},${b},.${alpha})`;
+	attributes: blockAttributes,
+
+	getEditWrapperProps( { ctaWidth } ) {
+		if ( 'left' === ctaWidth || 'right' === ctaWidth || 'full' === ctaWidth ) {
+			return { 'data-align': ctaWidth };
+		}
+	},
+
+	// Render the block components
+	edit: ABCTABlock,
+
+	// Save the attributes and markup
+	save: function( props ) {
+
+		// Setup the attributes
+		const {
+			buttonText,
+			buttonUrl,
+			buttonAlignment,
+			buttonBackgroundColor,
+			buttonTextColor,
+			buttonSize,
+			buttonShape,
+			buttonTarget,
+			ctaTitle,
+			ctaText,
+			ctaTitleFontSize,
+			titleFontSize,
+			ctaTextFontSize,
+			ctaWidth,
+			ctaBackgroundColor,
+			ctaTextColor,
+			imgURL,
+			imgID,
+			imgAlt,
+			dimRatio,
+		} = props.attributes;
+
+		// Save the block markup for the front end
+		return (
+			<CallToAction { ...props }>
+				{ imgURL && !! imgURL.length && (
+					<div class="ab-cta-image-wrap">
+						<img
+							className={ classnames(
+								'ab-cta-image',
+								dimRatioToClass( dimRatio ),
+								{
+									'has-background-dim': dimRatio !== 0,
+								}
+							) }
+							src={ imgURL }
+							alt={ imgAlt }
+						/>
+					</div>
+				) }
+
+				<div class="ab-cta-content">
+					{ ctaTitle && (
+						<RichText.Content
+							tagName="h2"
+							className={ classnames(
+								'ab-cta-title',
+								'ab-font-size-' + titleFontSize,
+							) }
+							style={ {
+								color: ctaTextColor,
+							} }
+							value={ ctaTitle }
+						/>
+					) }
+					{ ctaText && (
+						<RichText.Content
+							tagName="div"
+							className={ classnames(
+								'ab-cta-text',
+								'ab-font-size-' + ctaTitleFontSize,
+							) }
+							style={ {
+								color: ctaTextColor,
+							} }
+							value={ ctaText }
+						/>
+					) }
+				</div>
+				{ buttonText && (
+					<div class="ab-cta-button">
+						<a
+							href={ buttonUrl }
+							target={ buttonTarget ? '_blank' : '_self' }
+							rel={ buttonTarget ? 'noopener noreferrer' : null }
+							className={ classnames(
+								'ab-button',
+								buttonShape,
+								buttonSize,
+							) }
+							style={ {
+								color: buttonTextColor,
+								backgroundColor: buttonBackgroundColor,
+							} }
+						>
+							<RichText.Content
+								value={ buttonText }
+							/>
+						</a>
+					</div>
+				) }
+			</CallToAction>
+		);
+	},
+
+	deprecated: deprecated,
+} );
+
+function dimRatioToClass( ratio ) {
+	return ( ratio === 0 || ratio === 50 ) ?
+		null :
+		'has-background-dim-' + ( 10 * Math.round( ratio / 10 ) );
+}
+
+function backgroundImageStyles( url ) {
+	return url ?
+		{ backgroundImage: `url(${ url })` } :
+		undefined;
 }

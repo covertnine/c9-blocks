@@ -13,6 +13,19 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Add custom block category
+add_filter( 'block_categories', function( $categories, $post ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'covertnine-blocks',
+				'title' => __( 'Covertnine Blocks', 'covertnine-blocks' ),
+			),
+		)
+	);
+}, 10, 2 );
+
 /**
  * Initialize the blocks
  */

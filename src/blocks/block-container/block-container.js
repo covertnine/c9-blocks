@@ -36,10 +36,10 @@ const getColumnsTemplate = memoize( ( columns ) => {
 
 registerBlockType( 'covertnine-blocks/column-containers', {
   // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-  title: __( 'Content Container', 'covertnine-blocks' ),
+  title: __( 'Covertnine Content Container', 'covertnine-blocks' ),
   description: __( 'A responsive container for columns of content', 'covertnine-blocks' ),
   icon: 'columns',
-  category: 'layout',
+  category: 'covertnine-blocks',
   supports: {
     alignwide: true,
   },

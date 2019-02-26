@@ -15,15 +15,15 @@ const { RichText } = wp.editor;
  * Register block
  */
  export default registerBlockType(
-    'cortex-blocks/richtext',
+    'covertnine-blocks/richtext',
     {
-        title: __( 'Cortex - Footnote', 'cortex-blocks' ),
-        description: __( 'How to use the RichText component for building your own editable blocks.', 'cortex-blocks' ),
+        title: __( 'Cortex - Footnote', 'covertnine-blocks' ),
+        description: __( 'How to use the RichText component for building your own editable blocks.', 'covertnine-blocks' ),
         category: 'common',
         keywords: [
-            __( 'Banner', 'cortex-blocks' ),
-            __( 'Call to Action', 'cortex-blocks' ),
-            __( 'Message', 'cortex-blocks' ),
+            __( 'Banner', 'covertnine-blocks' ),
+            __( 'Call to Action', 'covertnine-blocks' ),
+            __( 'Message', 'covertnine-blocks' ),
         ],
         attributes: {
             message: {
@@ -40,11 +40,11 @@ const { RichText } = wp.editor;
             const onChangeMessage = message => { setAttributes( { message } ) };
             return (
                 <div className={ className }>
-                    <h2>{ __( 'Call to Action', 'cortex-blocks' ) }</h2>
+                    <h2>{ __( 'Call to Action', 'covertnine-blocks' ) }</h2>
                     <RichText
                         tagName="div"
                         multiline="p"
-                        placeholder={ __( 'Add your custom message', 'cortex-blocks' ) }
+                        placeholder={ __( 'Add your custom message', 'covertnine-blocks' ) }
                       onChange={ onChangeMessage }
                       value={ message }
                   />
@@ -55,7 +55,7 @@ const { RichText } = wp.editor;
             const { attributes: { message } } = props;
             return (
                 <div>
-                    <h2>{ __( 'Call to Action', 'cortex-blocks' ) }</h2>
+                    <h2>{ __( 'Call to Action', 'covertnine-blocks' ) }</h2>
                     <div class="message-body">
                         { message }
                     </div>

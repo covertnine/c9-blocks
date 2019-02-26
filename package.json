@@ -1,5 +1,5 @@
 {
-  "name": "cortex-blocks-cgb-guten-block",
+  "name": "covertnine-blocks-cgb-guten-block",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,13 +8,18 @@
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@wordpress/i18n": "^1.1.0",
     "cgb-scripts": "1.9.7",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
     "memize": "^1.0.5",
     "react": "^16.4.1",
-    "react-native": "^0.55.4"
+    "react-native": "^0.58.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

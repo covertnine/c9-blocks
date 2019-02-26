@@ -118,7 +118,7 @@ export default class Inspector extends Component {
             <InspectorControls>
               <PanelBody title={ __( 'Layout & Spacing' ) } initialOpen={ true }>
                 <RadioControl
-                    label={ __( 'Container Width', 'cortex-blocks' ) }
+                    label={ __( 'Container Width', 'covertnine-blocks' ) }
                     selected={ containerWidth }
                     options={ [
                         { label: 'Full Width', value: 'container-fluid' },
@@ -130,7 +130,7 @@ export default class Inspector extends Component {
                   <RangeControl
                       beforeIcon="arrow-left-alt2"
                       afterIcon="arrow-right-alt2"
-                      label={ __( 'Minimum Height (vh)', 'cortex-blocks' ) }
+                      label={ __( 'Minimum Height (vh)', 'covertnine-blocks' ) }
                       value={ minScreenHeight }
                       onChange={ minScreenHeight => setAttributes( { minScreenHeight } ) }
                       min={ 0 }
@@ -148,7 +148,7 @@ export default class Inspector extends Component {
                   max={ 6 }
                 />
                 <IconButton
-                  label={ __( 'Linked Padding Toggle', 'cortex-blocks' ) }
+                  label={ __( 'Linked Padding Toggle', 'covertnine-blocks' ) }
                   icon={ containerPadding.linked ? 'admin-links' : 'editor-unlink' }
                   onClick={ () => toggleLinkage(containerPadding)}
                 />
@@ -196,7 +196,7 @@ export default class Inspector extends Component {
                 <PanelBody title={ __( 'Background' ) } initialOpen={ false }>
                     <MediaUpload
                       id="bg-image-select"
-                      label={ __( 'Background Image', 'cortex-blocks' ) }
+                      label={ __( 'Background Image', 'covertnine-blocks' ) }
                       onSelect={ onSelectImage }
                       type="image"
                       value={ containerImgID }
@@ -226,12 +226,12 @@ export default class Inspector extends Component {
                     { containerImgURL && !! containerImgURL.length && (
                       <div>
                         <ToggleControl
-                          label={ __( 'Contain | Cover', 'cortex-blocks' ) }
+                          label={ __( 'Contain | Cover', 'covertnine-blocks' ) }
                           checked={ bgImgSize }
                           onChange={ bgImgSize => setAttributes( { bgImgSize } ) }
                         />
                         <ToggleControl
-                          label={ __( 'Fixed | Scroll', 'cortex-blocks' ) }
+                          label={ __( 'Fixed | Scroll', 'covertnine-blocks' ) }
                           checked={ bgImgAttach }
                           onChange={ bgImgAttach => setAttributes( { bgImgAttach } ) }
                         />
@@ -242,7 +242,7 @@ export default class Inspector extends Component {
                         <RangeControl
                         beforeIcon="arrow-left-alt2"
                         afterIcon="arrow-right-alt2"
-                        label={ __( 'Horizontal Position', 'cortex-blocks' ) }
+                        label={ __( 'Horizontal Position', 'covertnine-blocks' ) }
                         value={ bgImgPosX }
                         onChange={ bgImgPosX => setAttributes( { bgImgPosX } ) }
                         min={ 0 }
@@ -251,7 +251,7 @@ export default class Inspector extends Component {
                         <RangeControl
                         beforeIcon="arrow-left-alt2"
                         afterIcon="arrow-right-alt2"
-                        label={ __( 'Vertical Position', 'cortex-blocks' ) }
+                        label={ __( 'Vertical Position', 'covertnine-blocks' ) }
                         value={ bgImgPosY }
                         onChange={ bgImgPosY => setAttributes( { bgImgPosY } ) }
                         min={ 0 }
@@ -261,7 +261,7 @@ export default class Inspector extends Component {
                       ) }
                     <span>Color Palette</span>
                     <ColorPalette
-                        label={ __( 'Overlay Color', 'cortex-blocks' ) }
+                        label={ __( 'Overlay Color', 'covertnine-blocks' ) }
                         value={ overlayHue }
                         onChange={ overlayHue => setAttributes( { overlayHue } ) }
                     />
@@ -270,7 +270,7 @@ export default class Inspector extends Component {
                           <RangeControl
                               beforeIcon="arrow-left-alt2"
                               afterIcon="arrow-right-alt2"
-                              label={ __( 'Opacity', 'cortex-blocks' ) }
+                              label={ __( 'Opacity', 'covertnine-blocks' ) }
                               value={ overlayOpacity }
                               onChange={ overlayOpacity => setAttributes( { overlayOpacity } ) }
                               min={ 1 }
@@ -279,25 +279,25 @@ export default class Inspector extends Component {
                     ) }
                     { overlayHue && containerImgURL && !!containerImgURL.length && (
                           <SelectControl
-                              label={ __( 'Blend Mode', 'cortex-blocks' ) }
+                              label={ __( 'Blend Mode', 'covertnine-blocks' ) }
                               value={ blendMode }
                               options={ [
-                                  { value: 'overlay', label: __( 'Overlay', 'cortex-blocks' ) },
-                                  { value: 'normal', label: __( 'Normal', 'cortex-blocks' ) },
-                                  { value: 'multiply', label: __( 'Multiply', 'cortex-blocks' ) },
-                                  { value: 'screen', label: __( 'Screen', 'cortex-blocks' ) },
-                                  { value: 'darken', label: __( 'Darken', 'cortex-blocks' ) },
-                                  { value: 'lighten', label: __( 'Lighten', 'cortex-blocks' ) },
-                                  { value: 'color-dodge', label: __( 'Color Dodge', 'cortex-blocks' ) },
-                                  { value: 'color-burn', label: __( 'Color Burn', 'cortex-blocks' ) },
-                                  { value: 'hard-light', label: __( 'Hard Light', 'cortex-blocks' ) },
-                                  { value: 'soft-light', label: __( 'Soft Light', 'cortex-blocks' ) },
-                                  { value: 'difference', label: __( 'Difference', 'cortex-blocks' ) },
-                                  { value: 'exclusion', label: __( 'Exclusion', 'cortex-blocks' ) },
-                                  { value: 'hue', label: __( 'Hue', 'cortex-blocks' ) },
-                                  { value: 'saturation', label: __( 'Saturation', 'cortex-blocks' ) },
-                                  { value: 'color', label: __( 'Color', 'cortex-blocks' ) },
-                                  { value: 'luminosity', label: __( 'Luminosity', 'cortex-blocks' ) },
+                                  { value: 'overlay', label: __( 'Overlay', 'covertnine-blocks' ) },
+                                  { value: 'normal', label: __( 'Normal', 'covertnine-blocks' ) },
+                                  { value: 'multiply', label: __( 'Multiply', 'covertnine-blocks' ) },
+                                  { value: 'screen', label: __( 'Screen', 'covertnine-blocks' ) },
+                                  { value: 'darken', label: __( 'Darken', 'covertnine-blocks' ) },
+                                  { value: 'lighten', label: __( 'Lighten', 'covertnine-blocks' ) },
+                                  { value: 'color-dodge', label: __( 'Color Dodge', 'covertnine-blocks' ) },
+                                  { value: 'color-burn', label: __( 'Color Burn', 'covertnine-blocks' ) },
+                                  { value: 'hard-light', label: __( 'Hard Light', 'covertnine-blocks' ) },
+                                  { value: 'soft-light', label: __( 'Soft Light', 'covertnine-blocks' ) },
+                                  { value: 'difference', label: __( 'Difference', 'covertnine-blocks' ) },
+                                  { value: 'exclusion', label: __( 'Exclusion', 'covertnine-blocks' ) },
+                                  { value: 'hue', label: __( 'Hue', 'covertnine-blocks' ) },
+                                  { value: 'saturation', label: __( 'Saturation', 'covertnine-blocks' ) },
+                                  { value: 'color', label: __( 'Color', 'covertnine-blocks' ) },
+                                  { value: 'luminosity', label: __( 'Luminosity', 'covertnine-blocks' ) },
                               ] }
                               onChange={ blendMode => setAttributes( { blendMode } ) }
                           />
