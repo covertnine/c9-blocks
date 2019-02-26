@@ -2,7 +2,6 @@
  * Internal block libraries
  */
 import map from 'lodash/map';
-import CustomRadio from '../components/custom-radio';
 
 const { __ } = wp.i18n;
 const { Component } = wp.element;
