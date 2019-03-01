@@ -41,7 +41,8 @@ export default class CallToAction extends Component {
 
 		const className = classnames( [
 			this.props.className,
-			'ab-block-cta',
+			'c9-block-cta',
+			'container'
 		], {
 			[ 'ab-font-size-' + ctaTextFontSize ]: ctaTextFontSize,
 			[ 'align' + ctaWidth ]: ctaWidth,
@@ -56,7 +57,7 @@ export default class CallToAction extends Component {
 			<div
 				style={ styles }
 				className={ className ? className : undefined }
-			>{ this.props.children }</div>
+			><div class="row">{ this.props.children }</div></div>
 		);
 	}
 }

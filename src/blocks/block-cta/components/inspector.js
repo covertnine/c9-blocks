@@ -6,17 +6,21 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 
+const { compose } = wp.compose;
+
 // Import block components
 const {
-  InspectorControls,
-  BlockDescription,
-  ColorPalette,
-  PanelColorSettings,
-  MediaUpload,
+	InspectorControls,
+	BlockDescription,
+	withColors,
+	ColorPalette,
+	PanelColorSettings,
+	MediaUpload,
 } = wp.editor;
 
 // Import Inspector components
 const {
+	withFallbackStyles,
 	Toolbar,
 	Button,
 	PanelBody,
@@ -28,13 +32,27 @@ const {
 	IconButton,
 } = wp.components;
 
+const { getComputedStyle } = window;
+
+// Apply fallback styles
+const applyFallbackStyles = withFallbackStyles((node, ownProps) => {
+	const { buttonBackgroundColor, buttonTextColor } = ownProps;
+	const buttonBackgroundColorValue = buttonBackgroundColor && buttonBackgroundColor.color;
+	const buttonTextColorValue = buttonTextColor && buttonTextColor.color
+	const buttonTextNode = !buttonTextColorValue && node ? node.querySelector('[contenteditable="true"]') : null;
+	return {
+		fallbackButtonBackgroundColor: buttonBackgroundColorValue || !node ? undefined : getComputedStyle(node).backgroundColor,
+		fallbackButtonTextColor: buttonTextColorValue || !buttonTextNode ? undefined : getComputedStyle(buttonTextNode).color,
+	};
+});
+
 /**
  * Create an Inspector Controls wrapper Component
  */
-export default class Inspector extends Component {
+class Inspector extends Component {
 
-	constructor( props ) {
-		super( ...arguments );
+	constructor(props) {
+		super(...arguments);
 	}
 
 	render() {
@@ -44,8 +62,6 @@ export default class Inspector extends Component {
 			buttonText,
 			buttonUrl,
 			buttonAlignment,
-			buttonBackgroundColor,
-			buttonTextColor,
 			buttonSize,
 			buttonShape,
 			buttonTarget,
@@ -58,44 +74,41 @@ export default class Inspector extends Component {
 			dimRatio,
 			imgURL,
 			imgID,
-			imgAlt,
+			imgAlt
 		} = this.props.attributes;
-		const { setAttributes } = this.props;
+
+		const { 
+			setAttributes, 
+			fallbackButtonBackgroundColor, 
+			fallbackButtonTextColor, 
+			buttonTextColor, 
+			buttonBackgroundColor,
+			setButtonTextColor,
+			setButtonBackgroundColor,
+		} = this.props;
 
 		// Button size values
 		const buttonSizeOptions = [
-			{ value: 'ab-button-size-small', label: __( 'Small' ) },
-			{ value: 'ab-button-size-medium', label: __( 'Medium' ) },
-			{ value: 'ab-button-size-large', label: __( 'Large' ) },
-			{ value: 'ab-button-size-extralarge', label: __( 'Extra Large' ) },
+			{ value: 'ab-button-size-small', label: __('Small') },
+			{ value: 'ab-button-size-medium', label: __('Medium') },
+			{ value: 'ab-button-size-large', label: __('Large') },
+			{ value: 'ab-button-size-extralarge', label: __('Extra Large') },
 		];
 
 		// Button shape
 		const buttonShapeOptions = [
-			{ value: 'ab-button-shape-square', label: __( 'Square' ) },
-			{ value: 'ab-button-shape-rounded', label: __( 'Rounded Square' ) },
-			{ value: 'ab-button-shape-circular', label: __( 'Circular' ) },
-		];
-
-		// Button colors
-		const buttonColors = [
-			{ color: '#392F43', name: 'black' },
-			{ color: '#3373dc', name: 'royal blue' },
-			{ color: '#2DBAA3', name: 'teal' },
-			{ color: '#209cef', name: 'sky blue' },
-			{ color: '#2BAD59', name: 'green' },
-			{ color: '#ff3860', name: 'pink' },
-			{ color: '#7941b6', name: 'purple' },
-			{ color: '#F7812B', name: 'orange' },
+			{ value: 'round', label: __('Round') },
+			{ value: 'square', label: __('Square') },
+			{ value: 'outline', label: __('Outline') },
 		];
 
 		// Change the image
 		const onSelectImage = img => {
-			setAttributes( {
+			setAttributes({
 				imgID: img.id,
 				imgURL: img.url,
 				imgAlt: img.alt,
-			} );
+			});
 		};
 
 		// Clear the image
@@ -108,151 +121,133 @@ export default class Inspector extends Component {
 		}
 
 		// Update color values
-		const onChangeBackgroundColor = value => setAttributes( { ctaBackgroundColor: value } );
-		const onChangeTextColor = value => setAttributes( { ctaTextColor: value } );
-		const onChangeButtonColor = value => setAttributes( { buttonBackgroundColor: value } );
-		const onChangeButtonTextColor = value => setAttributes( { buttonTextColor: value } );
+		const onChangeBackgroundColor = value => setAttributes({ ctaBackgroundColor: value });
+		const onChangeTextColor = value => setAttributes({ ctaTextColor: value });
+		const onChangeButtonColor = value => setAttributes({ buttonBackgroundColor: value });
+		const onChangeButtonTextColor = value => setAttributes({ buttonTextColor: value });
 
 		return (
-		<InspectorControls key="inspector">
-			<PanelBody title={ __( 'Text Options', 'atomic-blocks' ) } initialOpen={ true }>
-				<RangeControl
-					label={ __( 'Title Font Size', 'atomic-blocks' ) }
-					value={ titleFontSize }
-					onChange={ ( value ) => this.props.setAttributes( { titleFontSize: value } ) }
-					min={ 24 }
-					max={ 60 }
-					step={ 2 }
-				/>
+			<InspectorControls key="inspector">
+					<PanelColorSettings
+						title={__('Text Color', 'covertnine-blocks')}
+						initialOpen={true}
+						colorSettings={[{
+							value: ctaTextColor,
+							onChange: onChangeTextColor,
+							label: __('Text Color', 'covertnine-blocks'),
+						}]}
+					>
+					</PanelColorSettings>
+					<PanelColorSettings
+						title={__('Button Color', 'covertnine-blocks')}
+						initialOpen={true}
+						colorSettings={[{
+							value: buttonBackgroundColor,
+							onChange: onChangeButtonColor,
+							label: __('Button Color', 'covertnine-blocks'),
+						}]}
+					>
+					</PanelColorSettings>
 
-				<RangeControl
-					label={ __( 'Text Font Size', 'atomic-blocks' ) }
-					value={ ctaTextFontSize }
-					onChange={ ( value ) => this.props.setAttributes( { ctaTextFontSize: value } ) }
-					min={ 14 }
-					max={ 24 }
-					step={ 2 }
-				/>
+					<PanelColorSettings
+						title={__('Button Text Color', 'covertnine-blocks')}
+						initialOpen={true}
+						colorSettings={[{
+							value: buttonTextColor.color,
+							onChange: onChangeButtonTextColor,
+							label: __('Button Text Color', 'covertnine-blocks'),
+						}]}
+					>
+					</PanelColorSettings>
 
-				<PanelColorSettings
-					title={ __( 'Text Color', 'atomic-blocks' ) }
-					initialOpen={ false }
-					colorSettings={ [ {
-						value: ctaTextColor,
-						onChange: onChangeTextColor,
-						label: __( 'Text Color', 'atomic-blocks' ),
-					} ] }
-				>
-				</PanelColorSettings>
-			</PanelBody>
-
-			<PanelBody title={ __( 'Background Options', 'atomic-blocks' ) } initialOpen={ false }>
-				<p>{ __( 'Select a background image:', 'atomic-blocks' ) }</p>
-				<MediaUpload
-					onSelect={ onSelectImage }
-					type="image"
-					value={ imgID }
-					render={ ( { open } ) => (
-						<div>
-							<IconButton
-								className="ab-cta-inspector-media"
-								label={ __( 'Edit image', 'atomic-blocks' ) }
-								icon="format-image"
-								onClick={ open }
-							>
-								{ __( 'Select Image', 'atomic-blocks' ) }
-							</IconButton>
-
-							{ imgURL && !! imgURL.length && (
+				<PanelBody title={__('Background Options', 'covertnine-blocks')} initialOpen={false}>
+					<p>{__('Select a background image:', 'covertnine-blocks')}</p>
+					<MediaUpload
+						onSelect={onSelectImage}
+						type="image"
+						value={imgID}
+						render={({ open }) => (
+							<div>
 								<IconButton
 									className="ab-cta-inspector-media"
-									label={ __( 'Remove Image', 'atomic-blocks' ) }
-									icon="dismiss"
-									onClick={ onRemoveImage }
+									label={__('Edit image', 'covertnine-blocks')}
+									icon="format-image"
+									onClick={open}
 								>
-									{ __( 'Remove', 'atomic-blocks' ) }
+									{__('Select Image', 'covertnine-blocks')}
 								</IconButton>
-							) }
-						</div>
-					) }
-				>
-				</MediaUpload>
 
-				{ imgURL && !! imgURL.length && (
-					<RangeControl
-						label={ __( 'Image Opacity', 'atomic-blocks' ) }
-						value={ dimRatio }
-						onChange={ ( value ) => this.props.setAttributes( { dimRatio: value } ) }
-						min={ 0 }
-						max={ 100 }
-						step={ 10 }
+								{imgURL && !!imgURL.length && (
+									<IconButton
+										className="ab-cta-inspector-media"
+										label={__('Remove Image', 'covertnine-blocks')}
+										icon="dismiss"
+										onClick={onRemoveImage}
+									>
+										{__('Remove', 'covertnine-blocks')}
+									</IconButton>
+								)}
+							</div>
+						)}
+					>
+					</MediaUpload>
+
+					{imgURL && !!imgURL.length && (
+						<RangeControl
+							label={__('Image Opacity', 'covertnine-blocks')}
+							value={dimRatio}
+							onChange={(value) => this.props.setAttributes({ dimRatio: value })}
+							min={0}
+							max={100}
+							step={10}
+						/>
+					)}
+
+					<PanelColorSettings
+						title={__('Background Color', 'covertnine-blocks')}
+						initialOpen={false}
+						colorSettings={[{
+							value: ctaBackgroundColor,
+							onChange: onChangeBackgroundColor,
+							label: __('Overlay Color', 'covertnine-blocks'),
+						}]}
+					>
+					</PanelColorSettings>
+				</PanelBody>
+
+				<PanelBody title={__('Button Options', 'covertnine-blocks')} initialOpen={false}>
+					<ToggleControl
+						label={__('Open link in new window', 'covertnine-blocks')}
+						checked={buttonTarget}
+						onChange={() => this.props.setAttributes({ buttonTarget: !buttonTarget })}
 					/>
-				) }
 
-				<PanelColorSettings
-					title={ __( 'Background Color', 'atomic-blocks' ) }
-					initialOpen={ false }
-					colorSettings={ [ {
-						value: ctaBackgroundColor,
-						onChange: onChangeBackgroundColor,
-						label: __( 'Overlay Color', 'atomic-blocks' ),
-						colors: buttonColors,
-					} ] }
-				>
-				</PanelColorSettings>
-			</PanelBody>
+					<SelectControl
+						label={__('Button Size', 'covertnine-blocks')}
+						value={buttonSize}
+						options={buttonSizeOptions.map(({ value, label }) => ({
+							value: value,
+							label: label,
+						}))}
+						onChange={(value) => { this.props.setAttributes({ buttonSize: value }) }}
+					/>
 
-			<PanelBody title={ __( 'Button Options', 'atomic-blocks' ) } initialOpen={ false }>
-				<ToggleControl
-					label={ __( 'Open link in new window', 'atomic-blocks' ) }
-					checked={ buttonTarget }
-					onChange={ () => this.props.setAttributes( { buttonTarget: ! buttonTarget } ) }
-				/>
-
-				<SelectControl
-					label={ __( 'Button Size', 'atomic-blocks' ) }
-					value={ buttonSize }
-					options={ buttonSizeOptions.map( ({ value, label }) => ( {
-						value: value,
-						label: label,
-					} ) ) }
-					onChange={ ( value ) => { this.props.setAttributes( { buttonSize: value } ) } }
-				/>
-
-				<SelectControl
-					label={ __( 'Button Shape', 'atomic-blocks' ) }
-					value={ buttonShape }
-					options={ buttonShapeOptions.map( ({ value, label }) => ( {
-						value: value,
-						label: label,
-					} ) ) }
-					onChange={ ( value ) => { this.props.setAttributes( { buttonShape: value } ) } }
-				/>
-
-				<PanelColorSettings
-					title={ __( 'Button Color', 'atomic-blocks' ) }
-					initialOpen={ false }
-					colorSettings={ [ {
-						value: buttonBackgroundColor,
-						onChange: onChangeButtonColor,
-						label: __( 'Button Color', 'atomic-blocks' ),
-						colors: buttonColors,
-					} ] }
-				>
-				</PanelColorSettings>
-
-				<PanelColorSettings
-					title={ __( 'Button Text Color', 'atomic-blocks' ) }
-					initialOpen={ false }
-					colorSettings={ [ {
-						value: buttonTextColor,
-						onChange: onChangeButtonTextColor,
-						label: __( 'Button Text Color', 'atomic-blocks' ),
-					} ] }
-				>
-				</PanelColorSettings>
-			</PanelBody>
-		</InspectorControls>
+					<SelectControl
+						label={__('Button Shape', 'covertnine-blocks')}
+						value={buttonShape}
+						options={buttonShapeOptions.map(({ value, label }) => ({
+							value: value,
+							label: label,
+						}))}
+						onChange={(value) => { this.props.setAttributes({ buttonShape: value }) }}
+					/>
+				</PanelBody>
+			</InspectorControls>
 		);
 	}
 }
+
+export default compose([
+	withColors('buttonBackgroundColor', { buttonTextColor: 'color' }),
+	applyFallbackStyles,
+])(Inspector);

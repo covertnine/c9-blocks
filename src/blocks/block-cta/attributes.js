@@ -1,4 +1,4 @@
-const attributes = {
+const blockAttributes = {
 	buttonText: {
 		type: 'string',
 	},
@@ -14,7 +14,6 @@ const attributes = {
 	},
 	buttonBackgroundColor: {
 		type: 'string',
-		default: '#3373dc'
 	},
 	buttonTextColor: {
 		type: 'string',
@@ -57,7 +56,6 @@ const attributes = {
 	},
 	ctaTextColor: {
 		type: 'string',
-		default: '#32373c'
 	},
 	imgURL: {
 		type: 'string',
@@ -86,4 +84,4 @@ const attributes = {
 	},
 };
 
-export default attributes
+export default blockAttributes
