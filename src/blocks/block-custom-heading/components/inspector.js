@@ -35,18 +35,6 @@ const {
 
 const { getComputedStyle } = window;
 
-// Apply fallback styles
-const applyFallbackStyles = withFallbackStyles((node, ownProps) => {
-	const { buttonBackgroundColor, buttonTextColor } = ownProps;
-	const buttonBackgroundColorValue = buttonBackgroundColor && buttonBackgroundColor.color;
-	const buttonTextColorValue = buttonTextColor && buttonTextColor.color
-	const buttonTextNode = !buttonTextColorValue && node ? node.querySelector('[contenteditable="true"]') : null;
-	return {
-		fallbackButtonBackgroundColor: buttonBackgroundColorValue || !node ? undefined : getComputedStyle(node).backgroundColor,
-		fallbackButtonTextColor: buttonTextColorValue || !buttonTextNode ? undefined : getComputedStyle(buttonTextNode).color,
-	};
-});
-
 /**
  * Create an Inspector Controls wrapper Component
  */
@@ -60,67 +48,24 @@ class Inspector extends Component {
 
 		// Setup the attributes
 		const {
-			buttonText,
-			buttonUrl,
-			buttonAlignment,
-			buttonSize,
-			buttonShape,
-			buttonTarget,
-			ctaTitle,
-			ctaText,
-			titleFontSize,
-			ctaTextFontSize,
-			ctaBackgroundColor,
-			ctaTextColor,
-			ctaLayout,
-			dimRatio,
-			imgURL,
-			imgID,
-			imgAlt
-		} = this.props.attributes;
+			attributes: {
+				headingType,
+				headingColor,
+				subheadingTextColor,
+				headingClass,
+				subheadingClass,
+				customHeaderRule,
+			}
+		} = this.props;
 
 		const {
 			setAttributes,
-			fallbackButtonBackgroundColor,
-			fallbackButtonTextColor,
 			buttonTextColor,
 			buttonBackgroundColor,
 			setButtonTextColor,
 			setButtonBackgroundColor,
 		} = this.props;
 
-		// Button size values
-		const buttonSizeOptions = [
-			{ value: 'ab-button-size-small', label: __('Small') },
-			{ value: 'ab-button-size-medium', label: __('Medium') },
-			{ value: 'ab-button-size-large', label: __('Large') },
-			{ value: 'ab-button-size-extralarge', label: __('Extra Large') },
-		];
-
-		// Button shape
-		const buttonShapeOptions = [
-			{ value: 'round', label: __('Round') },
-			{ value: 'square', label: __('Square') },
-			{ value: 'outline', label: __('Outline') },
-		];
-
-		// Change the image
-		const onSelectImage = img => {
-			setAttributes({
-				imgID: img.id,
-				imgURL: img.url,
-				imgAlt: img.alt,
-			});
-		};
-
-		// Clear the image
-		const onRemoveImage = () => {
-			setAttributes({
-				imgID: null,
-				imgURL: null,
-				imgAlt: null,
-			});
-		}
 
 		// Update color values
 		const onChangeBackgroundColor = value => setAttributes({ ctaBackgroundColor: value });
@@ -130,27 +75,18 @@ class Inspector extends Component {
 
 		return (
 			<InspectorControls key="inspector">
-				<PanelColorSettings
-					title={__('Text Color', 'covertnine-blocks')}
-					initialOpen={true}
-					colorSettings={[{
-						value: ctaTextColor,
-						onChange: onChangeTextColor,
-						label: __('Text Color', 'covertnine-blocks'),
-					}]}
-				>
-				</PanelColorSettings>
-				<PanelColorSettings
-					title={__('Button Color', 'covertnine-blocks')}
-					initialOpen={true}
-					colorSettings={[{
-						value: buttonBackgroundColor,
-						onChange: onChangeButtonColor,
-						label: __('Button Color', 'covertnine-blocks'),
-					}]}
-				>
-				</PanelColorSettings>
-
+				<PanelBody title={__('Heading Options', 'covertnine-blocks')} initialOpen={false}>
+					<PanelColorSettings
+						title={__('Heading Color', 'covertnine-blocks')}
+						initialOpen={true}
+						colorSettings={[{
+							value: headingColor,
+							onChange: onChangeTextColor,
+							label: __('Text Color', 'covertnine-blocks'),
+						}]}
+					>
+					</PanelColorSettings>
+				</PanelBody>
 				<PanelColorSettings
 					title={__('Button Text Color', 'covertnine-blocks')}
 					initialOpen={true}
@@ -261,7 +197,4 @@ class Inspector extends Component {
 	}
 }
 
-export default compose([
-	withColors('buttonBackgroundColor', { buttonTextColor: 'color' }),
-	applyFallbackStyles,
-])(Inspector);
+export default Inspector

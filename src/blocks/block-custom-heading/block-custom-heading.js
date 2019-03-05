@@ -1,23 +1,20 @@
 /**
- * BLOCK: Atomic Blocks Call-To-Action
+ * BLOCK: Covertnine Blocks Custom Heading
  */
 
 // Import block dependencies and components
 import classnames from 'classnames';
 import Inspector from './components/inspector';
-import CallToAction from './components/cta';
-
-// Deprecated components
-import deprecated from './deprecated/deprecated';
+import CustomHeading from './components/custom-heading';
 
 // Import CSS
 import './styles/style.scss';
 import './styles/editor.scss';
 
 // Import Icon
-import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
+import { faHeading } from '@fortawesome/free-solid-svg-icons'
 import { makeIcon } from '../../helpers/awesomeGenerator'
-const iconEl = makeIcon(faExclamationCircle)
+const iconEl = makeIcon(faHeading)
 
 // Components
 const { __ } = wp.i18n;
@@ -49,49 +46,26 @@ const {
 
 import blockAttributes from './attributes'
 
-class C9CTABlock extends Component {
+class C9CustomHeading extends Component {
 
 	render() {
 
 		// Setup the attributes
 		const {
 			attributes: {
-				buttonText,
-				buttonUrl,
-				buttonAlignment,
-				buttonBackgroundColor,
-				buttonTextColor,
-				buttonSize,
-				buttonShape,
-				buttonTarget,
-				ctaTitle,
-				ctaText,
-				ctaTitleFontSize,
-				titleFontSize,
-				ctaTextFontSize,
-				ctaWidth,
-				ctaBackgroundColor,
-				ctaTextColor,
-				imgURL,
-				imgID,
-				imgAlt,
-				dimRatio,
-				ctaLayout,
+				headingType,
+				headingText,
+				subheadingText,
+				headingClass,
+				subheadingClass,
+				customHeaderRule,
 			},
-			attributes,
 			isSelected,
 			editable,
 			className,
 			setAttributes
 		} = this.props;
 
-		const onSelectImage = img => {
-			setAttributes({
-				imgID: img.id,
-				imgURL: img.url,
-				imgAlt: img.alt,
-			});
-		};
 
 		return [
 			// Show the alignment toolbar on focus
@@ -113,22 +87,7 @@ class C9CTABlock extends Component {
 				{...{ setAttributes, ...this.props }}
 			/>,
 			// Show the Button markup in the editor
-			<CallToAction {...this.props}>
-				{imgURL && !!imgURL.length && (
-					<div class="c9-cta-image-wrap">
-						<img
-							className={classnames(
-								'c9-cta-image',
-								dimRatioToClass(dimRatio),
-								{
-									'has-background-dim': dimRatio !== 0,
-								}
-							)}
-							src={imgURL}
-							alt={imgAlt}
-						/>
-					</div>
-				)}
+			<CustomHeading {...this.props}>
 
 				<div className={"ab-cta-content col-12 " + layoutClass(ctaLayout, 'text')}>
 					<RichText
@@ -188,21 +147,21 @@ class C9CTABlock extends Component {
 						</form>
 					)}
 				</div>
-			</CallToAction>
+			</CustomHeading>
 		];
 	}
 }
 
 // Register the block
-registerBlockType('covertnine-blocks/c9-cta', {
-	title: __('Covertnine Call To Action', 'covertnine-blocks'),
+registerBlockType('covertnine-blocks/c9-custom-heading', {
+	title: __('Covertnine Custom Heading', 'covertnine-blocks'),
 	description: __('Add a call to action section with text and a button.', 'covertnine-blocks'),
 	icon: iconEl,
 	category: 'covertnine-blocks',
 	keywords: [
-		__('call to action', 'covertnine-blocks'),
-		__('cta', 'covertnine-blocks'),
-		__('atomic', 'covertnine-blocks'),
+		__('custom heading', 'covertnine-blocks'),
+		__('cortex', 'covertnine-blocks'),
+		__('covertnine', 'covertnine-blocks'),
 	],
 
 	attributes: blockAttributes,
@@ -214,39 +173,30 @@ registerBlockType('covertnine-blocks/c9-cta', {
 	},
 
 	// Render the block components
-	edit: C9CTABlock,
+	edit: C9CustomHeading,
 
 	// Save the attributes and markup
 	save: function (props) {
 
 		// Setup the attributes
 		const {
-			buttonText,
-			buttonUrl,
-			buttonAlignment,
-			buttonBackgroundColor,
-			buttonTextColor,
-			buttonSize,
-			buttonShape,
-			buttonTarget,
-			ctaTitle,
-			ctaText,
-			ctaTitleFontSize,
-			titleFontSize,
-			ctaTextFontSize,
-			ctaWidth,
-			ctaBackgroundColor,
-			ctaTextColor,
-			imgURL,
-			imgID,
-			imgAlt,
-			dimRatio,
-			ctaLayout,
-		} = props.attributes;
+			attributes: {
+				headingType,
+				headingText,
+				subheadingText,
+				headingClass,
+				subheadingClass,
+				customHeaderRule,
+			},
+			isSelected,
+			editable,
+			className,
+			setAttributes
+		} = this.props;
 
 		// Save the block markup for the front end
 		return (
-			<CallToAction {...props}>
+			<CustomHeading {...props}>
 				{imgURL && !!imgURL.length && (
 					<div class="c9-cta-image-wrap">
 						<img
@@ -300,11 +250,10 @@ registerBlockType('covertnine-blocks/c9-cta', {
 						</a>
 					</div>
 				)}
-			</CallToAction>
+			</CustomHeading>
 		);
 	},
 
-	deprecated: deprecated,
 });
 
 function dimRatioToClass(ratio) {
@@ -328,9 +277,9 @@ function layoutClass(ctaWidth, textOrButton) {
 		}
 	} else if ( ctaWidth == 'three-quarters') {
 		if (textOrButton == 'text') {
-			return 'col-md-9'
+			return 'col-md-10'
 		} else {
-			return 'col-md-3'
+			return 'col-md-2'
 		}
 	}
 }

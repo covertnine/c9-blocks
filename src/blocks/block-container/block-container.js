@@ -8,7 +8,7 @@ import classnames from 'classnames';
 /**
  * Block dependencies
  */
-import Inspector from './components/block-container-inspector';
+import Inspector from './components/inspector';
 import './styles/style.scss';
 import attributes from './attributes';
 
