@@ -1,0 +1,36 @@
+/**
+ * External dependencies
+ */
+import range from 'lodash/range';
+
+/**
+ * WordPress dependencies
+ */
+import { __, sprintf } from wp.i18n;
+import { Component } from wp.element;
+import { Toolbar } from wp.components;
+
+import { faHeading } from '@fortawesome/free-solid-svg-icons'
+
+
+class HeadingToolbar extends Component {
+	createLevelControl( targetLevel, selectedLevel, onChange ) {
+		return {
+			icon: 'heading',
+			// translators: %s: heading level e.g: "1", "2", "3"
+			title: sprintf( __( 'Heading %d' ), targetLevel ),
+			isActive: targetLevel === selectedLevel,
+			onClick: () => onChange( targetLevel ),
+			subscript: String( targetLevel ),
+		};
+	}
+
+	render() {
+		const { minLevel, maxLevel, selectedLevel, onChange } = this.props;
+		return (
+			<Toolbar controls={ range( minLevel, maxLevel ).map( ( index ) => this.createLevelControl( index, selectedLevel, onChange ) ) } />
+		);
+	}
+}
+
+export default HeadingToolbar;
