@@ -7,6 +7,10 @@ const attributes = {
       type: 'string',
       default: 'container',
   },
+  verticalAlign: {
+    type: 'string',
+    default: 'center',
+  },
   containerImgURL: {
       type: 'string',
   },
