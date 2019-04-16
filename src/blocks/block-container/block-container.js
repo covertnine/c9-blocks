@@ -11,6 +11,7 @@ import classnames from 'classnames';
 import Inspector from './components/inspector';
 import './styles/style.scss';
 import attributes from './attributes';
+// import containerBar from './components/toolbar';
 
 /**
  * WordPress dependencies
