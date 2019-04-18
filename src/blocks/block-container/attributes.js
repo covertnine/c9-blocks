@@ -66,7 +66,7 @@ const attributes = {
   containerPadding: {
     type: 'object',
     default: {
-      'linked': true,
+      'linked': 'admin-links',
       'unit': 'px',
       'top': '25',
       'bottom': '25',

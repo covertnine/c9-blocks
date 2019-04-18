@@ -3,19 +3,81 @@
  *
  * CSS for both Frontend+Backend.
  */
- .container .row .editor-inner-blocks,  .container-fluid .row .editor-inner-blocks,  .container-narrow .row .editor-inner-blocks {
-  width: 100%
- }
-.container .row > .editor-inner-blocks > .editor-block-list__layout ,  .container-narrow .row > .editor-inner-blocks > .editor-block-list__layout, .container-fluid .row > .editor-inner-blocks > .editor-block-list__layout  {
-  width: 100%;
-  display: flex;
- }
+.container .row .editor-inner-blocks,
+.container-fluid .row .editor-inner-blocks,
+.container-narrow .row .editor-inner-blocks {
+    width: 100%
+}
 
-.container .row > .editor-inner-blocks > .editor-block-list__layout  .editor-block-list__block,  .container-narrow .row > .editor-inner-blocks > .editor-block-list__layout  .editor-block-list__block, .container-fluid .row > .editor-inner-blocks > .editor-block-list__layout  .editor-block-list__block {
-  flex-grow: 1;
-  flex-basis: 0px;
- } 
+.container .row>.editor-inner-blocks>.editor-block-list__layout,
+.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout,
+.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout {
+    width: 100%;
+    display: flex;
+}
 
- .wp-block-covertnine-blocks-column-containers .container-fluid .row {
-   flex-grow: 1;
- }
+.container .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
+.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
+.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block {
+    flex-grow: 1;
+    flex-basis: 0px;
+}
+
+.wp-block-covertnine-blocks-column-containers .container-fluid .row {
+    flex-grow: 1;
+}
+
+.padding-wrapper {
+    display: flex;
+}
+
+.padding-label {
+    margin-bottom: 0;
+}
+
+.padding .components-range-control__slider {
+    display: none;
+}
+
+.padding-top-wrapper {
+    justify-content: center;
+}
+
+.padding-bottom-wrapper {
+    justify-content: center;
+}
+
+.padding-wrapper .components-range-control .components-base-control__field {
+    align-items: flex-start;
+}
+
+.edit-post-sidebar .padding-wrapper input[type=number] {
+    margin-left: 0;
+}
+
+.padding-sides-wrapper,
+.padding-top-wrapper,
+.padding-bottom-wrapper {
+    display: flex;
+}
+
+.components-panel__body .padding {
+    text-align: center;
+}
+
+.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
+    margin: 0;
+}
+.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child, .components-range-control .components-base-control__field {
+  margin-bottom: 0;
+}
+.padding .components-range-control__number {
+  margin-left: 0;
+}
+.padding-sides-wrapper {
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.padding-sides-wrapper .padding {
+  width: 80px;
+}

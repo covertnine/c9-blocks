@@ -91,14 +91,20 @@ export default class Inspector extends Component {
       });
     };
 
-    const toggleLinkage = (spacingObject) => {
-      console.log(spacingObject.linked);
-      containerPadding.linked = !containerPadding.linked;
+    const toggleLinkage = (linkIcon) => {
+      if (linkIcon == 'admin-links') {
+        setAttributes({
+          containerPadding: {
+            'linked': 'editor-unlink'
+          }
+        })
+      } else {
+        containerPadding.linked = 'admin-links'
+      }
     };
 
     const updatePadding = (position, value) => {
-      console.log(containerPadding)
-      if (containerPadding.linked) {
+      if (containerPadding.linked == 'admin-links') {
         setAttributes({
           containerPadding: {
             'linked': true,
@@ -110,7 +116,7 @@ export default class Inspector extends Component {
           },
         })
       } else {
-        containerPadding.top = value;
+        setAttributes(containerPadding[position] = value)
         // containerPadding[position] = value;
       }
     }
@@ -162,51 +168,62 @@ export default class Inspector extends Component {
           />
         </PanelBody>
         <PanelBody title={__('Spacing')} initialOpen={false}>
-          <IconButton
-            label={__('Linked Padding Toggle', 'covertnine-blocks')}
-            icon={containerPadding.linked ? 'admin-links' : 'editor-unlink'}
-            onClick={() => toggleLinkage(containerPadding)}
-          />
-          <RangeControl
-            label={__('padding-top')}
-            value={containerPadding.top}
-            onChange={(padding) => {
-              updatePadding('top', padding);
-            }
-            }
-            min={0}
-            max={300}
-          />
-          <RangeControl
-            label={__('padding-bottom')}
-            value={containerPadding.bottom}
-            onChange={(padding) => {
-              updatePadding('bottom', padding);
-            }
-            }
-            min={0}
-            max={300}
-          />
-          <RangeControl
-            label={__('padding-left')}
-            value={containerPadding.left}
-            onChange={(padding) => {
-              updatePadding('left', padding);
-            }
-            }
-            min={0}
-            max={300}
-          />
-          <RangeControl
-            label={__('padding-right')}
-            value={containerPadding.right}
-            onChange={(padding) => {
-              updatePadding('right', padding);
-            }
-            }
-            min={0}
-            max={300}
-          />
+          <h5 class="padding-label">Padding</h5>
+          <div className="padding-top-wrapper">
+            <RangeControl
+              label={__('top')}
+              value={containerPadding.top}
+              onChange={(padding) => {
+                updatePadding('top', padding);
+              }
+              }
+              className="padding"
+              min={0}
+              max={300}
+            />
+          </div>
+          <div className="padding-sides-wrapper">
+            <RangeControl
+              label={__('bottom')}
+              value={containerPadding.bottom}
+              onChange={(padding) => {
+                updatePadding('bottom', padding);
+              }
+              }
+              className="padding"
+              min={0}
+              max={300}
+            />
+            <IconButton
+              label={__('Linked Padding Toggle', 'covertnine-blocks')}
+              icon={containerPadding.linked}
+              onClick={() => toggleLinkage(containerPadding)}
+            />
+            <RangeControl
+              label={__('left')}
+              value={containerPadding.left}
+              onChange={(padding) => {
+                updatePadding('left', padding);
+              }
+              }
+              className="padding"
+              min={0}
+              max={300}
+            />
+          </div>
+          <div className="padding-bottom-wrapper">
+            <RangeControl
+              label={__('right')}
+              value={containerPadding.right}
+              onChange={(padding) => {
+                updatePadding('right', padding);
+              }
+              }
+              className="padding"
+              min={0}
+              max={300}
+            />
+          </div>
         </PanelBody>
         <PanelBody title={__('Background')} initialOpen={false}>
           <MediaUpload

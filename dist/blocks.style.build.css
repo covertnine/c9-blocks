@@ -9,15 +9,21 @@
  *
  * CSS for both Frontend+Backend.
  */
-.container .row .editor-inner-blocks, .container-fluid .row .editor-inner-blocks, .container-narrow .row .editor-inner-blocks {
+.container .row .editor-inner-blocks,
+.container-fluid .row .editor-inner-blocks,
+.container-narrow .row .editor-inner-blocks {
   width: 100%; }
 
-.container .row > .editor-inner-blocks > .editor-block-list__layout, .container-narrow .row > .editor-inner-blocks > .editor-block-list__layout, .container-fluid .row > .editor-inner-blocks > .editor-block-list__layout {
+.container .row > .editor-inner-blocks > .editor-block-list__layout,
+.container-narrow .row > .editor-inner-blocks > .editor-block-list__layout,
+.container-fluid .row > .editor-inner-blocks > .editor-block-list__layout {
   width: 100%;
   display: -ms-flexbox;
   display: flex; }
 
-.container .row > .editor-inner-blocks > .editor-block-list__layout .editor-block-list__block, .container-narrow .row > .editor-inner-blocks > .editor-block-list__layout .editor-block-list__block, .container-fluid .row > .editor-inner-blocks > .editor-block-list__layout .editor-block-list__block {
+.container .row > .editor-inner-blocks > .editor-block-list__layout .editor-block-list__block,
+.container-narrow .row > .editor-inner-blocks > .editor-block-list__layout .editor-block-list__block,
+.container-fluid .row > .editor-inner-blocks > .editor-block-list__layout .editor-block-list__block {
   -ms-flex-positive: 1;
       flex-grow: 1;
   -ms-flex-preferred-size: 0px;
@@ -26,6 +32,58 @@
 .wp-block-covertnine-blocks-column-containers .container-fluid .row {
   -ms-flex-positive: 1;
       flex-grow: 1; }
+
+.padding-wrapper {
+  display: -ms-flexbox;
+  display: flex; }
+
+.padding-label {
+  margin-bottom: 0; }
+
+.padding .components-range-control__slider {
+  display: none; }
+
+.padding-top-wrapper {
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.padding-bottom-wrapper {
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.padding-wrapper .components-range-control .components-base-control__field {
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.edit-post-sidebar .padding-wrapper input[type=number] {
+  margin-left: 0; }
+
+.padding-sides-wrapper,
+.padding-top-wrapper,
+.padding-bottom-wrapper {
+  display: -ms-flexbox;
+  display: flex; }
+
+.components-panel__body .padding {
+  text-align: center; }
+
+.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
+  margin: 0; }
+
+.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child, .components-range-control .components-base-control__field {
+  margin-bottom: 0; }
+
+.padding .components-range-control__number {
+  margin-left: 0; }
+
+.padding-sides-wrapper {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: end;
+      align-items: flex-end; }
+
+.padding-sides-wrapper .padding {
+  width: 80px; }
 /**
  * #.# Common SCSS
  *

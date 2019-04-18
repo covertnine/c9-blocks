@@ -87,6 +87,7 @@ registerBlockType('covertnine-blocks/column-containers', {
           overlayOpacity,
           blendMode,
           minScreenHeight,
+          containerPadding,
         )}
       >
         <div class="row no-gutter">
@@ -137,6 +138,7 @@ registerBlockType('covertnine-blocks/column-containers', {
             overlayOpacity,
             blendMode,
             minScreenHeight,
+            containerPadding,
           )}
         >
           <div class="row no-gutter">
@@ -148,11 +150,15 @@ registerBlockType('covertnine-blocks/column-containers', {
   }, //end save
 }); //end registerBlockType
 
-function cortexBackgroundStyles(url, vertAlign, size, attachment, posX, posY, hue, opacity, blend, height) {
+function cortexBackgroundStyles(url, vertAlign, size, attachment, posX, posY, hue, opacity, blend, height, padding) {
   let styles = {};
-
-  styles.minHeight = `${height}vh`;
-
+  if (padding) {
+    styles.paddingTop = padding.top;
+    styles.paddingBottom = padding.bottom;
+    styles.paddingLeft = padding.left;
+    styles.paddingRight = padding.right;
+    styles.minHeight = `${height}vh`;
+  }
   if (url) {
     styles.backgroundImage = `url(${url})`,
       styles.backgroundSize = size ? 'cover' : 'contain';
@@ -163,7 +169,8 @@ function cortexBackgroundStyles(url, vertAlign, size, attachment, posX, posY, hu
 
     styles.backgroundBlendMode = `${blend}`;
 
-  } if (hue) {
+  }
+  if (hue) {
     styles.backgroundColor = hexToRGBA(hue, opacity);
   }
   styles.display = 'flex';
