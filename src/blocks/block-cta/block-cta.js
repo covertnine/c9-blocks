@@ -34,18 +34,11 @@ const {
 	URLInput,
 	BlockControls,
 	BlockAlignmentToolbar,
-	MediaUpload,
 	RichText
 } = wp.editor;
 
 // Register components
-const {
-	Button,
-	withFallbackStyles,
-	IconButton,
-	Dashicon,
-	Toolbar
-} = wp.components;
+const { IconButton, Dashicon } = wp.components;
 
 import blockAttributes from "./attributes";
 
@@ -61,25 +54,16 @@ class C9CTABlock extends Component {
 				buttonTextColor,
 				buttonSize,
 				buttonShape,
-				buttonTarget,
-				ctaTitle,
 				ctaText,
-				ctaTitleFontSize,
-				titleFontSize,
 				ctaTextFontSize,
 				ctaWidth,
-				ctaBackgroundColor,
 				ctaTextColor,
 				imgURL,
-				imgID,
 				imgAlt,
 				dimRatio,
 				ctaLayout
 			},
-			attributes,
 			isSelected,
-			editable,
-			className,
 			setAttributes
 		} = this.props;
 
@@ -223,7 +207,7 @@ registerBlockType("covertnine-blocks/c9-cta", {
 	edit: C9CTABlock,
 
 	// Save the attributes and markup
-	save: function(props) {
+	save: function saveCta(props) {
 		// Setup the attributes
 		const {
 			buttonText,
