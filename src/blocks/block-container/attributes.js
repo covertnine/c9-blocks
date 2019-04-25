@@ -1,56 +1,56 @@
 const attributes = {
 	columns: {
 		type: "number",
-		default: 1,
+		default: 1
 	},
 	containerWidth: {
 		type: "string",
-		default: "container",
+		default: "container"
 	},
 	verticalAlign: {
 		type: "string",
-		default: "center",
+		default: "center"
 	},
 	containerImgURL: {
-		type: "string",
+		type: "string"
 	},
 	// true evaluates to backgroundSize cover, false to backgroundSize contain
 	bgImgSize: {
 		type: "boolean",
-		default: true,
+		default: true
 	},
 	// true evaluates to backgroundAttachment scroll, false to fixed
 	bgImgAttach: {
 		type: "boolen",
-		default: true,
+		default: true
 	},
 	overlayHue: {
 		type: "string",
-		default: undefined,
+		default: undefined
 	},
 	overlayOpacity: {
 		type: "number",
-		default: "5",
+		default: "5"
 	},
 	bgImgPosX: {
 		type: "number",
-		default: "5",
+		default: "5"
 	},
 	bgImgPosY: {
 		type: "number",
-		default: "5",
+		default: "5"
 	},
 	blendMode: {
 		type: "string",
-		default: "overlay",
+		default: "overlay"
 	},
 	linkedValToggle: {
 		type: "boolean",
-		default: true,
+		default: true
 	},
 	minScreenHeight: {
 		type: "number",
-		default: "60",
+		default: "60"
 	},
 	containerMargin: {
 		type: "object",
@@ -60,8 +60,8 @@ const attributes = {
 			top: "25",
 			bottom: "25",
 			left: "25",
-			right: "25",
-		},
+			right: "25"
+		}
 	},
 	containerPadding: {
 		type: "object",
@@ -72,8 +72,8 @@ const attributes = {
 			// 'bottom': '25',
 			// 'left': '25',
 			// 'right': '25',
-		},
-	},
+		}
+	}
 };
 
 export default attributes;

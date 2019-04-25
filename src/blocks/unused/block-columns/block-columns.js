@@ -16,7 +16,7 @@ const { Fragment } = wp.element;
 const { registerBlockType, createBlock } = wp.blocks;
 const { InspectorControls, InnerBlocks } = wp.editor;
 
-const ALLOWED_BLOCKS = [ "covertnine-blocks/column" ];
+const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
 /**
  * Returns the layouts configuration for a given number of columns.
  *
@@ -24,12 +24,12 @@ const ALLOWED_BLOCKS = [ "covertnine-blocks/column" ];
  *
  * @return {Object[]} Columns layout configuration.
  */
-const getColumnsTemplate = memoize( columns => {
-	return times( columns, () => [ "covertnine-blocks/column" ] );
-} );
+const getColumnsTemplate = memoize(columns => {
+	return times(columns, () => ["covertnine-blocks/column"]);
+});
 
-registerBlockType( "covertnine-blocks/columns", {
-	title: __( "Content Columns", "covertnine-blocks" ),
+registerBlockType("covertnine-blocks/columns", {
+	title: __("Content Columns", "covertnine-blocks"),
 	description: __(
 		"Bootstrap columns based on the Wordpress column block",
 		"covertnine-blocks"
@@ -37,53 +37,53 @@ registerBlockType( "covertnine-blocks/columns", {
 	icon: "columns",
 	category: "layout",
 	supports: {
-		align: [ "wide", "full" ],
+		align: ["wide", "full"]
 	},
 	attributes,
 	keywords: [
-		__( "column", "covertnine-blocks" ),
-		__( "container", "covertnine-blocks" ),
-		__( "responsive", "covertnine-blocks" ),
+		__("column", "covertnine-blocks"),
+		__("container", "covertnine-blocks"),
+		__("responsive", "covertnine-blocks")
 	],
-	edit( { attributes, setAttributes, className } ) {
+	edit({ attributes, setAttributes, className }) {
 		const { columns } = attributes;
-		const classes = classnames( className, `has-${ columns }-columns` );
-		console.log( attributes );
+		const classes = classnames(className, `has-${columns}-columns`);
+		console.log(attributes);
 		return (
 			<Fragment>
 				<InspectorControls>
 					<PanelBody>
 						<RangeControl
-							label={ __( "Columns" ) }
-							value={ columns }
-							onChange={ nextColumns => {
-								setAttributes( {
-									columns: nextColumns,
-								} );
-							} }
-							min={ 1 }
-							max={ 6 }
+							label={__("Columns")}
+							value={columns}
+							onChange={nextColumns => {
+								setAttributes({
+									columns: nextColumns
+								});
+							}}
+							min={1}
+							max={6}
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classes }>
+				<div className={classes}>
 					<InnerBlocks
-						template={ getColumnsTemplate( columns ) }
+						template={getColumnsTemplate(columns)}
 						templateLock="all"
-						allowedBlocks={ ALLOWED_BLOCKS }
+						allowedBlocks={ALLOWED_BLOCKS}
 					/>
 				</div>
 			</Fragment>
 		);
 	},
 
-	save( { attributes } ) {
+	save({ attributes }) {
 		const { columns } = attributes;
 
 		return (
-			<div className={ `has-${ columns }-columns` }>
+			<div className={`has-${columns}-columns`}>
 				<InnerBlocks.Content />
 			</div>
 		);
-	},
-} );
+	}
+});

@@ -10,7 +10,7 @@ import CustomHeading from "./custom-heading";
 // Import Icon
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { makeIcon } from "../../helpers/awesomeGenerator";
-const iconEl = makeIcon( faHeading );
+const iconEl = makeIcon(faHeading);
 
 // Components
 const { __ } = wp.i18n;
@@ -28,7 +28,7 @@ const {
 	BlockControls,
 	BlockAlignmentToolbar,
 	MediaUpload,
-	RichText,
+	RichText
 } = wp.editor;
 
 // Register components
@@ -37,7 +37,7 @@ const {
 	withFallbackStyles,
 	IconButton,
 	Dashicon,
-	Toolbar,
+	Toolbar
 } = wp.components;
 
 import attributes from "./attributes";
@@ -52,7 +52,7 @@ class C9CustomHeading extends Component {
 			setButtonTextColor,
 			setButtonBackgroundColor,
 			className,
-			attributes: { heading, subheading, wrapper },
+			attributes: { heading, subheading, wrapper }
 		} = this.props;
 
 		return [
@@ -71,73 +71,73 @@ class C9CustomHeading extends Component {
 			// 	/>
 			// </BlockControls>
 			// Show the block controls on focus
-			<Inspector { ...{ setAttributes, ...this.props } } />,
+			<Inspector {...{ setAttributes, ...this.props }} />,
 			// Show the Button markup in the editor
-			<CustomHeading { ...this.props }>
-				{ heading && (
+			<CustomHeading {...this.props}>
+				{heading && (
 					<RichText
 						tagName="h3"
-						placeholder={ __( "Call To Action Text", "covertnine-blocks" ) }
+						placeholder={__("Call To Action Text", "covertnine-blocks")}
 						keepPlaceholderOnFocus
-						value={ heading }
-						onChange={ value => setAttributes( { heading: value } ) }
+						value={heading}
+						onChange={value => setAttributes({ heading: value })}
 					/>
-				) }
-				{ subheading && (
+				)}
+				{subheading && (
 					<RichText
 						tagName="h4"
-						placeholder={ __( "Call To Action Text", "covertnine-blocks" ) }
+						placeholder={__("Call To Action Text", "covertnine-blocks")}
 						keepPlaceholderOnFocus
-						value={ subheading }
-						onChange={ value => setAttributes( { subheading: value } ) }
+						value={subheading}
+						onChange={value => setAttributes({ subheading: value })}
 					/>
-				) }
-			</CustomHeading>,
+				)}
+			</CustomHeading>
 		];
 	}
 }
 
 // Register the block
-registerBlockType( "covertnine-blocks/c9-custom-heading", {
-	title: __( "Covertnine Custom Section Heading", "covertnine-blocks" ),
-	description: __( "Add a custom Section Heading.", "covertnine-blocks" ),
+registerBlockType("covertnine-blocks/c9-custom-heading", {
+	title: __("Covertnine Custom Section Heading", "covertnine-blocks"),
+	description: __("Add a custom Section Heading.", "covertnine-blocks"),
 	icon: iconEl,
 	category: "covertnine-blocks",
 	keywords: [
-		__( "custom heading", "covertnine-blocks" ),
-		__( "cortex", "covertnine-blocks" ),
-		__( "covertnine", "covertnine-blocks" ),
+		__("custom heading", "covertnine-blocks"),
+		__("cortex", "covertnine-blocks"),
+		__("covertnine", "covertnine-blocks")
 	],
 
 	attributes: attributes,
 
 	// Render the block components
-	edit: function( props ) {
+	edit: function(props) {
 		// Setup the attributes
 		const { heading, subheading, wrapper } = props.attributes;
 
 		// Save the block markup for the front end
 		return (
-			<CustomHeading { ...props }>
-				{ heading && subheading && (
-					<RichText.Content tagName="h3" value={ heading + subheading } />
-				) }
+			<CustomHeading {...props}>
+				{heading && subheading && (
+					<RichText.Content tagName="h3" value={heading + subheading} />
+				)}
 			</CustomHeading>
 		);
 	},
 
 	// Save the attributes and markup
-	save: function( props ) {
+	save: function(props) {
 		// Setup the attributes
 		const { heading, subheading, wrapper } = props.attributes;
 
 		// Save the block markup for the front end
 		return (
-			<CustomHeading { ...props }>
-				{ heading && subheading && (
-					<RichText.Content tagName="h3" value={ heading + subheading } />
-				) }
+			<CustomHeading {...props}>
+				{heading && subheading && (
+					<RichText.Content tagName="h3" value={heading + subheading} />
+				)}
 			</CustomHeading>
 		);
-	},
-} );
+	}
+});

@@ -2,12 +2,12 @@ const attributes = {
 	heading: {
 		type: "string",
 		source: "text",
-		default: "Heading Content Here",
+		default: "Heading Content Here"
 	},
 	subheading: {
 		type: "string",
 		source: "text",
-		default: "Subheading Content Here",
+		default: "Subheading Content Here"
 	},
 	wrapper: {
 		type: "array",
@@ -17,10 +17,10 @@ const attributes = {
 			class: {
 				type: "string",
 				source: "attribute",
-				attribute: "class",
-			},
-		},
-	},
+				attribute: "class"
+			}
+		}
+	}
 };
 
 export default attributes;

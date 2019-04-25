@@ -12,8 +12,8 @@ import classnames from "classnames";
  * Create a Accordion wrapper Component
  */
 export default class Accordion extends Component {
-	constructor( props ) {
-		super( ...arguments );
+	constructor(props) {
+		super(...arguments);
 	}
 
 	render() {
@@ -22,20 +22,20 @@ export default class Accordion extends Component {
 			accordionTitle,
 			accordionText,
 			accordionAlignment,
-			accordionFontSize,
+			accordionFontSize
 		} = this.props.attributes;
 
 		return (
 			<div
-				style={ {} }
-				className={ classnames(
+				style={{}}
+				className={classnames(
 					this.props.className,
 					accordionAlignment,
 					"ab-block-accordion",
 					"ab-font-size-" + accordionFontSize
-				) }
+				)}
 			>
-				{ this.props.children }
+				{this.props.children}
 			</div>
 		);
 	}

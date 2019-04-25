@@ -18,7 +18,7 @@ const { G, Path, SVG } = wp.components;
 import {
 	default as edit,
 	defaultColumnsNumber,
-	pickRelevantMediaFiles,
+	pickRelevantMediaFiles
 } from "./edit";
 
 const blockAttributes = {
@@ -31,49 +31,49 @@ const blockAttributes = {
 			url: {
 				source: "attribute",
 				selector: "img",
-				attribute: "src",
+				attribute: "src"
 			},
 			link: {
 				source: "attribute",
 				selector: "img",
-				attribute: "data-link",
+				attribute: "data-link"
 			},
 			alt: {
 				source: "attribute",
 				selector: "img",
 				attribute: "alt",
-				default: "",
+				default: ""
 			},
 			id: {
 				source: "attribute",
 				selector: "img",
-				attribute: "data-id",
+				attribute: "data-id"
 			},
 			caption: {
 				type: "string",
 				source: "html",
-				selector: "figcaption",
-			},
-		},
+				selector: "figcaption"
+			}
+		}
 	},
 	columns: {
-		type: "number",
+		type: "number"
 	},
 	imageCrop: {
 		type: "boolean",
-		default: true,
+		default: true
 	},
 	linkTo: {
 		type: "string",
-		default: "none",
-	},
+		default: "none"
+	}
 };
 
 export const name = "covertnine-blocks/carousel";
 
-registerBlockType( "covertnine-blocks/carousel", {
-	title: __( "Cortex Carousel" ),
-	description: __( "Display multiple images in a rich carousel." ),
+registerBlockType("covertnine-blocks/carousel", {
+	title: __("Cortex Carousel"),
+	description: __("Display multiple images in a rich carousel."),
 	icon: (
 		<SVG viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 			<Path fill="none" d="M0 0h24v24H0V0z" />
@@ -85,10 +85,10 @@ registerBlockType( "covertnine-blocks/carousel", {
 		</SVG>
 	),
 	category: "common",
-	keywords: [ __( "images" ), __( "photos" ) ],
+	keywords: [__("images"), __("photos")],
 	attributes: blockAttributes,
 	supports: {
-		align: true,
+		align: true
 	},
 
 	transforms: {
@@ -96,21 +96,21 @@ registerBlockType( "covertnine-blocks/carousel", {
 			{
 				type: "block",
 				isMultiBlock: true,
-				blocks: [ "covertnine-blocks/image" ],
+				blocks: ["covertnine-blocks/image"],
 				transform: attributes => {
-					const validImages = filter( attributes, ( { id, url } ) => id && url );
-					if ( validImages.length > 0 ) {
-						return createBlock( "covertnine-blocks/carousel", {
-							images: validImages.map( ( { id, url, alt, caption } ) => ( {
+					const validImages = filter(attributes, ({ id, url }) => id && url);
+					if (validImages.length > 0) {
+						return createBlock("covertnine-blocks/carousel", {
+							images: validImages.map(({ id, url, alt, caption }) => ({
 								id,
 								url,
 								alt,
-								caption,
-							} ) ),
-						} );
+								caption
+							}))
+						});
 					}
-					return createBlock( "covertnine-blocks/carousel" );
-				},
+					return createBlock("covertnine-blocks/carousel");
+				}
 			},
 			{
 				type: "shortcode",
@@ -118,91 +118,91 @@ registerBlockType( "covertnine-blocks/carousel", {
 				attributes: {
 					images: {
 						type: "array",
-						shortcode: ( { named: { ids } } ) => {
-							if ( ! ids ) {
+						shortcode: ({ named: { ids } }) => {
+							if (!ids) {
 								return [];
 							}
 
-							return ids.split( "," ).map( id => ( {
-								id: parseInt( id, 10 ),
-							} ) );
-						},
+							return ids.split(",").map(id => ({
+								id: parseInt(id, 10)
+							}));
+						}
 					},
 					columns: {
 						type: "number",
-						shortcode: ( { named: { columns = "3" } } ) => {
-							return parseInt( columns, 10 );
-						},
+						shortcode: ({ named: { columns = "3" } }) => {
+							return parseInt(columns, 10);
+						}
 					},
 					linkTo: {
 						type: "string",
-						shortcode: ( { named: { link = "attachment" } } ) => {
+						shortcode: ({ named: { link = "attachment" } }) => {
 							return link === "file" ? "media" : link;
-						},
-					},
-				},
+						}
+					}
+				}
 			},
 			{
 				// When created by drag and dropping multiple files on an insertion point
 				type: "files",
-				isMatch( files ) {
+				isMatch(files) {
 					return (
 						files.length !== 1 &&
-						every( files, file => file.type.indexOf( "image/" ) === 0 )
+						every(files, file => file.type.indexOf("image/") === 0)
 					);
 				},
-				transform( files, onChange ) {
-					const block = createBlock( "covertnine-blocks/carousel", {
-						images: files.map( file =>
-							pickRelevantMediaFiles( {
-								url: createBlobURL( file ),
-							} )
-						),
-					} );
-					mediaUpload( {
+				transform(files, onChange) {
+					const block = createBlock("covertnine-blocks/carousel", {
+						images: files.map(file =>
+							pickRelevantMediaFiles({
+								url: createBlobURL(file)
+							})
+						)
+					});
+					mediaUpload({
 						filesList: files,
 						onFileChange: images => {
-							onChange( block.clientId, {
-								images: images.map( image => pickRelevantMediaFiles( image ) ),
-							} );
+							onChange(block.clientId, {
+								images: images.map(image => pickRelevantMediaFiles(image))
+							});
 						},
-						allowedTypes: [ "image" ],
-					} );
+						allowedTypes: ["image"]
+					});
 					return block;
-				},
-			},
+				}
+			}
 		],
 		to: [
 			{
 				type: "block",
-				blocks: [ "covertnine-blocks/image" ],
-				transform: ( { images } ) => {
-					if ( images.length > 0 ) {
-						return images.map( ( { id, url, alt, caption } ) =>
-							createBlock( "covertnine-blocks/image", { id, url, alt, caption } )
+				blocks: ["covertnine-blocks/image"],
+				transform: ({ images }) => {
+					if (images.length > 0) {
+						return images.map(({ id, url, alt, caption }) =>
+							createBlock("covertnine-blocks/image", { id, url, alt, caption })
 						);
 					}
-					return createBlock( "covertnine-blocks/image" );
-				},
-			},
-		],
+					return createBlock("covertnine-blocks/image");
+				}
+			}
+		]
 	},
 
 	edit,
 
-	save( { attributes } ) {
+	save({ attributes }) {
 		const {
 			images,
-			columns = defaultColumnsNumber( attributes ),
+			columns = defaultColumnsNumber(attributes),
 			imageCrop,
-			linkTo,
+			linkTo
 		} = attributes;
 		return (
-			<ul className={ `columns-${ columns } ${ imageCrop ? "is-cropped" : "" }` }>
-				{ images.map( image => {
+			<ul className={`columns-${columns} ${imageCrop ? "is-cropped" : ""}`}>
+				{images.map(image => {
 					let href;
 
-					switch ( linkTo ) {
+					switch (linkTo) {
 						case "media":
 							href = image.url;
 							break;
@@ -213,28 +213,28 @@ registerBlockType( "covertnine-blocks/carousel", {
 
 					const img = (
 						<img
-							src={ image.url }
-							alt={ image.alt }
-							data-id={ image.id }
-							data-link={ image.link }
-							className={ image.id ? `wp-image-${ image.id }` : null }
+							src={image.url}
+							alt={image.alt}
+							data-id={image.id}
+							data-link={image.link}
+							className={image.id ? `wp-image-${image.id}` : null}
 						/>
 					);
 
 					return (
-						<li key={ image.id || image.url } className="blocks-carousel-item">
+						<li key={image.id || image.url} className="blocks-carousel-item">
 							<figure>
-								{ href ? <a href={ href }>{ img }</a> : img }
-								{ image.caption && image.caption.length > 0 && (
+								{href ? <a href={href}>{img}</a> : img}
+								{image.caption && image.caption.length > 0 && (
 									<RichText.Content
 										tagName="figcaption"
-										value={ image.caption }
+										value={image.caption}
 									/>
-								) }
+								)}
 							</figure>
 						</li>
 					);
-				} ) }
+				})}
 			</ul>
 		);
 	},
@@ -242,19 +242,19 @@ registerBlockType( "covertnine-blocks/carousel", {
 	deprecated: [
 		{
 			attributes: blockAttributes,
-			save( { attributes } ) {
+			save({ attributes }) {
 				const {
 					images,
-					columns = defaultColumnsNumber( attributes ),
+					columns = defaultColumnsNumber(attributes),
 					imageCrop,
-					linkTo,
+					linkTo
 				} = attributes;
 				return (
-					<ul className={ `columns-${ columns } ${ imageCrop ? "is-cropped" : "" }` }>
-						{ images.map( image => {
+					<ul className={`columns-${columns} ${imageCrop ? "is-cropped" : ""}`}>
+						{images.map(image => {
 							let href;
 
-							switch ( linkTo ) {
+							switch (linkTo) {
 								case "media":
 									href = image.url;
 									break;
@@ -265,65 +265,65 @@ registerBlockType( "covertnine-blocks/carousel", {
 
 							const img = (
 								<img
-									src={ image.url }
-									alt={ image.alt }
-									data-id={ image.id }
-									data-link={ image.link }
+									src={image.url}
+									alt={image.alt}
+									data-id={image.id}
+									data-link={image.link}
 								/>
 							);
 
 							return (
 								<li
-									key={ image.id || image.url }
+									key={image.id || image.url}
 									className="blocks-carousel-item"
 								>
 									<figure>
-										{ href ? <a href={ href }>{ img }</a> : img }
-										{ image.caption && image.caption.length > 0 && (
+										{href ? <a href={href}>{img}</a> : img}
+										{image.caption && image.caption.length > 0 && (
 											<RichText.Content
 												tagName="figcaption"
-												value={ image.caption }
+												value={image.caption}
 											/>
-										) }
+										)}
 									</figure>
 								</li>
 							);
-						} ) }
+						})}
 					</ul>
 				);
-			},
+			}
 		},
 		{
 			attributes: {
 				...blockAttributes,
 				images: {
 					...blockAttributes.images,
-					selector: "div.wp-block-carousel figure.blocks-carousel-image img",
+					selector: "div.wp-block-carousel figure.blocks-carousel-image img"
 				},
 				align: {
 					type: "string",
-					default: "none",
-				},
+					default: "none"
+				}
 			},
 
-			save( { attributes } ) {
+			save({ attributes }) {
 				const {
 					images,
-					columns = defaultColumnsNumber( attributes ),
+					columns = defaultColumnsNumber(attributes),
 					align,
 					imageCrop,
-					linkTo,
+					linkTo
 				} = attributes;
 				return (
 					<div
-						className={ `align${ align } columns-${ columns } ${
+						className={`align${align} columns-${columns} ${
 							imageCrop ? "is-cropped" : ""
-						}` }
+						}`}
 					>
-						{ images.map( image => {
+						{images.map(image => {
 							let href;
 
-							switch ( linkTo ) {
+							switch (linkTo) {
 								case "media":
 									href = image.url;
 									break;
@@ -333,21 +333,21 @@ registerBlockType( "covertnine-blocks/carousel", {
 							}
 
 							const img = (
-								<img src={ image.url } alt={ image.alt } data-id={ image.id } />
+								<img src={image.url} alt={image.alt} data-id={image.id} />
 							);
 
 							return (
 								<figure
-									key={ image.id || image.url }
+									key={image.id || image.url}
 									className="blocks-carousel-image"
 								>
-									{ href ? <a href={ href }>{ img }</a> : img }
+									{href ? <a href={href}>{img}</a> : img}
 								</figure>
 							);
-						} ) }
+						})}
 					</div>
 				);
-			},
-		},
-	],
-} );
+			}
+		}
+	]
+});

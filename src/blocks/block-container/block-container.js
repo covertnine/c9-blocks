@@ -17,18 +17,7 @@ import attributes from "./attributes";
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const {
-	Dashicon,
-	Tooltip,
-	Button,
-	PanelBody,
-	Toolbar,
-	withNotices,
-	G,
-	SVG,
-	Path
-} = wp.components;
-const { registerBlockType, createBlock } = wp.blocks;
+const { registerBlockType } = wp.blocks;
 const { InnerBlocks } = wp.editor;
 const { Fragment } = wp.element;
 
@@ -76,42 +65,42 @@ registerBlockType("covertnine-blocks/column-containers", {
 				overlayHue,
 				overlayOpacity,
 				blendMode,
-				containerMargin,
 				containerPadding,
 				columns,
 				minScreenHeight
 			},
-			setAttributes,
-			className
+			setAttributes
 		} = props;
 
 		// Creates a column container that can take other blocks
 		return [
-			<Inspector {...{ setAttributes, ...props }} />,
-			<div
-				className={classnames(containerWidth)}
-				style={cortexBackgroundStyles(
-					containerImgURL,
-					verticalAlign,
-					bgImgSize,
-					bgImgAttach,
-					bgImgPosX,
-					bgImgPosY,
-					overlayHue,
-					overlayOpacity,
-					blendMode,
-					minScreenHeight,
-					containerPadding
-				)}
-			>
-				<div className="row no-gutter">
-					<InnerBlocks
-						template={getColumnsTemplate(columns)}
-						templateLock="all"
-						allowedBlocks={ALLOWED_BLOCKS}
-					/>
+			<Fragment>
+				<Inspector {...{ setAttributes, ...props }} />,
+				<div
+					className={classnames(containerWidth)}
+					style={cortexBackgroundStyles(
+						containerImgURL,
+						verticalAlign,
+						bgImgSize,
+						bgImgAttach,
+						bgImgPosX,
+						bgImgPosY,
+						overlayHue,
+						overlayOpacity,
+						blendMode,
+						minScreenHeight,
+						containerPadding
+					)}
+				>
+					<div className="row no-gutter">
+						<InnerBlocks
+							template={getColumnsTemplate(columns)}
+							templateLock="all"
+							allowedBlocks={ALLOWED_BLOCKS}
+						/>
+					</div>
 				</div>
-			</div>
+			</Fragment>
 		];
 	},
 
@@ -128,13 +117,9 @@ registerBlockType("covertnine-blocks/column-containers", {
 				overlayHue,
 				overlayOpacity,
 				blendMode,
-				containerMargin,
 				containerPadding,
-				columns,
 				minScreenHeight
-			},
-			setAttributes,
-			className
+			}
 		} = props;
 
 		// const containerWidth3 = containerWidth;

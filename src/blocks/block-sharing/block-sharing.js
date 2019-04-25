@@ -14,7 +14,7 @@ import "./styles/editor.scss";
 // Import Fontawesome Icon
 import { faShareSquare } from "@fortawesome/free-regular-svg-icons";
 import { makeIcon } from "../../helpers/awesomeGenerator";
-const iconEl = makeIcon( faShareSquare );
+const iconEl = makeIcon(faShareSquare);
 
 // Components
 const { __ } = wp.i18n;
@@ -30,15 +30,15 @@ const {
 	RichText,
 	AlignmentToolbar,
 	BlockControls,
-	BlockAlignmentToolbar,
+	BlockAlignmentToolbar
 } = wp.editor;
 
 // Register components
 const { Button, withFallbackStyles, IconButton, Dashicon } = wp.components;
 
 // Register the block
-registerBlockType( "covertnine-blocks/cortex-share", {
-	title: __( "Cortex Social Share", "covertnine-blocks" ),
+registerBlockType("covertnine-blocks/cortex-share", {
+	title: __("Cortex Social Share", "covertnine-blocks"),
 	description: __(
 		"Add sharing buttons to your posts and pages.",
 		"covertnine-blocks"
@@ -46,9 +46,9 @@ registerBlockType( "covertnine-blocks/cortex-share", {
 	icon: iconEl,
 	category: "covertnine-blocks",
 	keywords: [
-		__( "share", "covertnine-blocks" ),
-		__( "social", "covertnine-blocks" ),
-		__( "cortex", "covertnine-blocks" ),
+		__("share", "covertnine-blocks"),
+		__("social", "covertnine-blocks"),
+		__("cortex", "covertnine-blocks")
 	],
 
 	// Render the block components
@@ -59,7 +59,7 @@ registerBlockType( "covertnine-blocks/cortex-share", {
 			isSelected,
 			editable,
 			className,
-			setAttributes,
+			setAttributes
 		} = props;
 
 		const {
@@ -73,107 +73,107 @@ registerBlockType( "covertnine-blocks/cortex-share", {
 			shareAlignment,
 			shareButtonStyle,
 			shareButtonShape,
-			shareButtonColor,
+			shareButtonColor
 		} = props.attributes;
 
 		return [
 			// Show the alignment toolbar on focus
 			<BlockControls key="controls">
 				<AlignmentToolbar
-					value={ shareAlignment }
-					onChange={ value => {
-						setAttributes( { shareAlignment: value } );
-					} }
+					value={shareAlignment}
+					onChange={value => {
+						setAttributes({ shareAlignment: value });
+					}}
 				/>
 			</BlockControls>,
 			// Show the block controls on focus
-			<Inspector { ...props } />,
+			<Inspector {...props} />,
 			// Show the button markup in the editor
-			<ShareLinks { ...props }>
+			<ShareLinks {...props}>
 				<ul className="ab-share-list">
-					{ twitter && (
+					{twitter && (
 						<li>
 							<a className="ab-share-twitter">
 								<i className="fab fa-twitter" />
-								<span className={ "ab-social-text" }>
-									{ __( "Share on Twitter", "covertnine-blocks" ) }
+								<span className={"ab-social-text"}>
+									{__("Share on Twitter", "covertnine-blocks")}
 								</span>
 							</a>
 						</li>
-					) }
+					)}
 
-					{ facebook && (
+					{facebook && (
 						<li>
 							<a className="ab-share-facebook">
 								<i className="fab fa-facebook-f" />
-								<span className={ "ab-social-text" }>
-									{ __( "Share on Facebook", "covertnine-blocks" ) }
+								<span className={"ab-social-text"}>
+									{__("Share on Facebook", "covertnine-blocks")}
 								</span>
 							</a>
 						</li>
-					) }
+					)}
 
-					{ google && (
+					{google && (
 						<li>
 							<a className="ab-share-google">
 								<i className="fab fa-google" />
-								<span className={ "ab-social-text" }>
-									{ __( "Share on Google", "covertnine-blocks" ) }
+								<span className={"ab-social-text"}>
+									{__("Share on Google", "covertnine-blocks")}
 								</span>
 							</a>
 						</li>
-					) }
+					)}
 
-					{ pinterest && (
+					{pinterest && (
 						<li>
 							<a className="ab-share-pinterest">
 								<i className="fab fa-pinterest-p" />
-								<span className={ "ab-social-text" }>
-									{ __( "Share on Pinterest", "covertnine-blocks" ) }
+								<span className={"ab-social-text"}>
+									{__("Share on Pinterest", "covertnine-blocks")}
 								</span>
 							</a>
 						</li>
-					) }
+					)}
 
-					{ linkedin && (
+					{linkedin && (
 						<li>
 							<a className="ab-share-linkedin">
 								<i className="fab fa-linkedin" />
-								<span className={ "ab-social-text" }>
-									{ __( "Share on LinkedIn", "covertnine-blocks" ) }
+								<span className={"ab-social-text"}>
+									{__("Share on LinkedIn", "covertnine-blocks")}
 								</span>
 							</a>
 						</li>
-					) }
+					)}
 
-					{ reddit && (
+					{reddit && (
 						<li>
 							<a className="ab-share-reddit">
 								<i className="fab fa-reddit-alien" />
-								<span className={ "ab-social-text" }>
-									{ __( "Share on reddit", "covertnine-blocks" ) }
+								<span className={"ab-social-text"}>
+									{__("Share on reddit", "covertnine-blocks")}
 								</span>
 							</a>
 						</li>
-					) }
+					)}
 
-					{ email && (
+					{email && (
 						<li>
 							<a className="ab-share-email">
 								<i className="fas fa-envelope" />
-								<span className={ "ab-social-text" }>
-									{ __( "Share via Email", "covertnine-blocks" ) }
+								<span className={"ab-social-text"}>
+									{__("Share via Email", "covertnine-blocks")}
 								</span>
 							</a>
 						</li>
-					) }
+					)}
 				</ul>
-			</ShareLinks>,
+			</ShareLinks>
 		];
 	},
 
 	// Render via PHP
 	save() {
 		return null;
-	},
-} );
+	}
+});

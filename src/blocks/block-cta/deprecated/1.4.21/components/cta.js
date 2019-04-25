@@ -12,8 +12,8 @@ import classnames from "classnames";
  * Create a CallToAction wrapper Component
  */
 export default class CallToAction_1_4_21 extends Component {
-	constructor( props ) {
-		super( ...arguments );
+	constructor(props) {
+		super(...arguments);
 	}
 
 	render() {
@@ -34,24 +34,24 @@ export default class CallToAction_1_4_21 extends Component {
 				ctaTextFontSize,
 				ctaWidth,
 				ctaBackgroundColor,
-				ctaTextColor,
-			},
+				ctaTextColor
+			}
 		} = this.props;
 
 		return (
 			<div
-				style={ {
+				style={{
 					backgroundColor: ctaBackgroundColor,
-					textAlign: buttonAlignment,
-				} }
-				className={ classnames(
+					textAlign: buttonAlignment
+				}}
+				className={classnames(
 					this.props.className,
-					`align${ ctaWidth }`,
+					`align${ctaWidth}`,
 					"ab-block-cta",
 					"ab-font-size-" + ctaTextFontSize
-				) }
+				)}
 			>
-				{ this.props.children }
+				{this.props.children}
 			</div>
 		);
 	}

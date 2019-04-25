@@ -6,12 +6,12 @@ const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
 const { registerBlockType, createBlock } = wp.blocks;
 
-registerBlockType( "covertnine-blocks/column", {
-	title: __( "Column", "covertnine-blocks" ),
+registerBlockType("covertnine-blocks/column", {
+	title: __("Column", "covertnine-blocks"),
 
 	category: "common",
 
-	parent: [ "covertnine-blocks/columns" ],
+	parent: ["covertnine-blocks/columns"],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -20,16 +20,16 @@ registerBlockType( "covertnine-blocks/column", {
 		</SVG>
 	),
 
-	description: __( "A single column within the columns block." ),
+	description: __("A single column within the columns block."),
 
 	supports: {
-		inserter: false,
+		inserter: false
 	},
 
 	edit() {
 		return (
 			<div className="wrapper">
-				<InnerBlocks className="col" templateLock={ false } />
+				<InnerBlocks className="col" templateLock={false} />
 			</div>
 		);
 	},
@@ -40,5 +40,5 @@ registerBlockType( "covertnine-blocks/column", {
 				<InnerBlocks.Content />
 			</div>
 		);
-	},
-} );
+	}
+});

@@ -1,8 +1,8 @@
 const attributes = {
 	columns: {
 		type: "number",
-		default: 2,
-	},
+		default: 2
+	}
 };
 
 export default attributes;

@@ -8,91 +8,91 @@ const { RichText } = wp.editor;
 
 export const callToAction_1_4_22_attr = {
 	buttonText: {
-		type: "string",
+		type: "string"
 	},
 	buttonUrl: {
 		type: "string",
 		source: "attribute",
 		selector: "a",
-		attribute: "href",
+		attribute: "href"
 	},
 	buttonAlignment: {
 		type: "string",
-		default: "center",
+		default: "center"
 	},
 	buttonBackgroundColor: {
 		type: "string",
-		default: "#3373dc",
+		default: "#3373dc"
 	},
 	buttonTextColor: {
 		type: "string",
-		default: "#ffffff",
+		default: "#ffffff"
 	},
 	buttonSize: {
 		type: "string",
-		default: "ab-button-size-medium",
+		default: "ab-button-size-medium"
 	},
 	buttonShape: {
 		type: "string",
-		default: "ab-button-shape-rounded",
+		default: "ab-button-shape-rounded"
 	},
 	buttonTarget: {
 		type: "boolean",
-		default: false,
+		default: false
 	},
 	ctaTitle: {
 		type: "array",
 		selector: ".ab-cta-title",
-		source: "children",
+		source: "children"
 	},
 	titleFontSize: {
 		type: "number",
-		default: "32",
+		default: "32"
 	},
 	ctaTextFontSize: {
-		type: "number",
+		type: "number"
 	},
 	ctaText: {
 		type: "array",
 		selector: ".ab-cta-text",
-		source: "children",
+		source: "children"
 	},
 	ctaWidth: {
 		type: "string",
-		default: "center",
+		default: "center"
 	},
 	ctaBackgroundColor: {
-		type: "string",
+		type: "string"
 	},
 	ctaTextColor: {
 		type: "string",
-		default: "#32373c",
+		default: "#32373c"
 	},
 	imgURL: {
 		type: "string",
 		source: "attribute",
 		attribute: "src",
-		selector: "img",
+		selector: "img"
 	},
 	imgID: {
-		type: "number",
+		type: "number"
 	},
 	imgAlt: {
 		type: "string",
 		source: "attribute",
 		attribute: "alt",
-		selector: "img",
+		selector: "img"
 	},
 	dimRatio: {
 		type: "number",
-		default: 50,
+		default: 50
 	},
 
 	// Deprecated
 	ctaTitleFontSize: {
 		type: "string",
-		default: "32",
-	},
+		default: "32"
+	}
 };
 
 // Version 1_4_22 save
@@ -117,67 +117,67 @@ export const callToAction_1_4_22_save = props => {
 		imgURL,
 		imgID,
 		imgAlt,
-		dimRatio,
+		dimRatio
 	} = props.attributes;
 
 	return (
-		<CallToAction_1_4_22 { ...props }>
-			{ props.attributes.imgURL && !! props.attributes.imgURL.length && (
+		<CallToAction_1_4_22 {...props}>
+			{props.attributes.imgURL && !!props.attributes.imgURL.length && (
 				<div className="ab-cta-image-wrap">
 					<img
-						className={ classnames( "ab-cta-image", dimRatioToClass( dimRatio ), {
-							"has-background-dim": dimRatio !== 0,
-						} ) }
-						src={ imgURL }
-						alt={ imgAlt }
+						className={classnames("ab-cta-image", dimRatioToClass(dimRatio), {
+							"has-background-dim": dimRatio !== 0
+						})}
+						src={imgURL}
+						alt={imgAlt}
 					/>
 				</div>
-			) }
+			)}
 
 			<div className="ab-cta-content">
-				{ ctaTitle && (
+				{ctaTitle && (
 					<RichText.Content
 						tagName="h2"
-						className={ classnames(
+						className={classnames(
 							"ab-cta-title",
 							"ab-font-size-" + ctaTitleFontSize
-						) }
-						style={ {
-							color: ctaTextColor,
-						} }
-						value={ ctaTitle }
+						)}
+						style={{
+							color: ctaTextColor
+						}}
+						value={ctaTitle}
 					/>
-				) }
-				{ ctaText && (
+				)}
+				{ctaText && (
 					<RichText.Content
 						tagName="div"
-						className={ classnames(
+						className={classnames(
 							"ab-cta-text",
 							"ab-font-size-" + ctaTextFontSize
-						) }
-						style={ {
-							color: ctaTextColor,
-						} }
-						value={ ctaText }
+						)}
+						style={{
+							color: ctaTextColor
+						}}
+						value={ctaText}
 					/>
-				) }
+				)}
 			</div>
-			{ buttonText && (
+			{buttonText && (
 				<div className="ab-cta-button">
 					<a
-						href={ buttonUrl }
-						target={ buttonTarget ? "_blank" : "_self" }
-						rel={ buttonTarget ? "noopener noreferrer" : null }
-						className={ classnames( "ab-button", buttonShape, buttonSize ) }
-						style={ {
+						href={buttonUrl}
+						target={buttonTarget ? "_blank" : "_self"}
+						rel={buttonTarget ? "noopener noreferrer" : null}
+						className={classnames("ab-button", buttonShape, buttonSize)}
+						style={{
 							color: buttonTextColor,
-							backgroundColor: buttonBackgroundColor,
-						} }
+							backgroundColor: buttonBackgroundColor
+						}}
 					>
-						<RichText.Content value={ buttonText } />
+						<RichText.Content value={buttonText} />
 					</a>
 				</div>
-			) }
+			)}
 		</CallToAction_1_4_22>
 	);
 };
@@ -186,87 +186,87 @@ export const callToAction_1_4_22_save = props => {
 
 export const callToAction_1_4_21_attr = {
 	buttonText: {
-		type: "string",
+		type: "string"
 	},
 	buttonUrl: {
 		type: "string",
 		source: "attribute",
 		selector: "a",
-		attribute: "href",
+		attribute: "href"
 	},
 	buttonAlignment: {
 		type: "string",
-		default: "center",
+		default: "center"
 	},
 	buttonBackgroundColor: {
 		type: "string",
-		default: "#3373dc",
+		default: "#3373dc"
 	},
 	buttonTextColor: {
 		type: "string",
-		default: "#ffffff",
+		default: "#ffffff"
 	},
 	buttonSize: {
 		type: "string",
-		default: "ab-button-size-medium",
+		default: "ab-button-size-medium"
 	},
 	buttonShape: {
 		type: "string",
-		default: "ab-button-shape-rounded",
+		default: "ab-button-shape-rounded"
 	},
 	buttonTarget: {
 		type: "boolean",
-		default: false,
+		default: false
 	},
 	ctaTitle: {
 		type: "array",
 		selector: ".ab-cta-title",
-		source: "children",
+		source: "children"
 	},
 	ctaTitleFontSize: {
 		type: "string",
-		default: "32",
+		default: "32"
 	},
 	ctaTextFontSize: {
 		type: "string",
-		default: "20",
+		default: "20"
 	},
 	ctaText: {
 		type: "array",
 		selector: ".ab-cta-text",
-		source: "children",
+		source: "children"
 	},
 	ctaWidth: {
 		type: "string",
-		default: "center",
+		default: "center"
 	},
 	ctaBackgroundColor: {
 		type: "string",
-		default: "#f2f2f2",
+		default: "#f2f2f2"
 	},
 	ctaTextColor: {
 		type: "string",
-		default: "#32373c",
+		default: "#32373c"
 	},
 	imgURL: {
 		type: "string",
 		source: "attribute",
 		attribute: "src",
-		selector: "img",
+		selector: "img"
 	},
 	imgID: {
-		type: "number",
+		type: "number"
 	},
 	imgAlt: {
 		type: "string",
 		source: "attribute",
 		attribute: "alt",
-		selector: "img",
+		selector: "img"
 	},
 	dimRatio: {
 		type: "number",
-		default: 50,
-	},
+		default: 50
+	}
 };
 
 // Version 1_4_21 save
@@ -291,74 +291,74 @@ export const callToAction_1_4_21_save = props => {
 		imgURL,
 		imgID,
 		imgAlt,
-		dimRatio,
+		dimRatio
 	} = props.attributes;
 
 	return (
-		<CallToAction_1_4_21 { ...props }>
-			{ props.attributes.imgURL && !! props.attributes.imgURL.length && (
+		<CallToAction_1_4_21 {...props}>
+			{props.attributes.imgURL && !!props.attributes.imgURL.length && (
 				<div className="ab-cta-image-wrap">
 					<img
-						className={ classnames(
+						className={classnames(
 							"ab-cta-image",
-							dimRatioToClass( props.attributes.dimRatio ),
+							dimRatioToClass(props.attributes.dimRatio),
 							{
-								"has-background-dim": props.attributes.dimRatio !== 0,
+								"has-background-dim": props.attributes.dimRatio !== 0
 							}
-						) }
-						src={ props.attributes.imgURL }
-						alt={ props.attributes.imgAlt }
+						)}
+						src={props.attributes.imgURL}
+						alt={props.attributes.imgAlt}
 					/>
 				</div>
-			) }
+			)}
 
 			<div className="ab-cta-content">
-				{ props.attributes.ctaTitle && (
+				{props.attributes.ctaTitle && (
 					<RichText.Content
 						tagName="h2"
-						className={ classnames(
+						className={classnames(
 							"ab-cta-title",
 							"ab-font-size-" + props.attributes.ctaTitleFontSize
-						) }
-						style={ {
-							color: props.attributes.ctaTextColor,
-						} }
-						value={ props.attributes.ctaTitle }
+						)}
+						style={{
+							color: props.attributes.ctaTextColor
+						}}
+						value={props.attributes.ctaTitle}
 					/>
-				) }
-				{ props.attributes.ctaText && (
+				)}
+				{props.attributes.ctaText && (
 					<RichText.Content
 						tagName="div"
-						className={ classnames(
+						className={classnames(
 							"ab-cta-text",
 							"ab-font-size-" + props.attributes.ctaTextFontSize
-						) }
-						style={ {
-							color: props.attributes.ctaTextColor,
-						} }
-						value={ props.attributes.ctaText }
+						)}
+						style={{
+							color: props.attributes.ctaTextColor
+						}}
+						value={props.attributes.ctaText}
 					/>
-				) }
+				)}
 			</div>
-			{ props.attributes.buttonText && (
+			{props.attributes.buttonText && (
 				<div className="ab-cta-button">
 					<a
-						href={ props.attributes.buttonUrl }
-						target={ props.attributes.buttonTarget ? "_blank" : "_self" }
-						className={ classnames(
+						href={props.attributes.buttonUrl}
+						target={props.attributes.buttonTarget ? "_blank" : "_self"}
+						className={classnames(
 							"ab-button",
 							props.attributes.buttonShape,
 							props.attributes.buttonSize
-						) }
-						style={ {
+						)}
+						style={{
 							color: props.attributes.buttonTextColor,
-							backgroundColor: props.attributes.buttonBackgroundColor,
-						} }
+							backgroundColor: props.attributes.buttonBackgroundColor
+						}}
 					>
-						<RichText.Content value={ props.attributes.buttonText } />
+						<RichText.Content value={props.attributes.buttonText} />
 					</a>
 				</div>
-			) }
+			)}
 		</CallToAction_1_4_21>
 	);
 };
@@ -369,7 +369,7 @@ const deprecated = [
 	// Version 1_4_22
 	{
 		attributes: callToAction_1_4_22_attr,
-		save: callToAction_1_4_22_save,
+		save: callToAction_1_4_22_save
 	},
 	// Version 1_4_21
 	{
@@ -378,10 +378,10 @@ const deprecated = [
 		migrate: attributes => {
 			return {
 				titleFontSize: attributes.ctaTitleFontSize,
-				...attributes,
+				...attributes
 			};
-		},
-	},
+		}
+	}
 ];
 
 export default deprecated;

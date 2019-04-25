@@ -1,91 +1,91 @@
 const blockAttributes = {
 	buttonText: {
-		type: "string",
+		type: "string"
 	},
 	buttonUrl: {
 		type: "string",
 		source: "attribute",
 		selector: "a",
-		attribute: "href",
+		attribute: "href"
 	},
 	buttonAlignment: {
 		type: "string",
-		default: "center",
+		default: "center"
 	},
 	buttonBackgroundColor: {
-		type: "string",
+		type: "string"
 	},
 	buttonTextColor: {
 		type: "string",
-		default: "#ffffff",
+		default: "#ffffff"
 	},
 	buttonSize: {
 		type: "string",
-		default: "ab-button-size-medium",
+		default: "ab-button-size-medium"
 	},
 	buttonShape: {
 		type: "string",
-		default: "ab-button-shape-rounded",
+		default: "ab-button-shape-rounded"
 	},
 	buttonTarget: {
 		type: "boolean",
-		default: false,
+		default: false
 	},
 	ctaTitle: {
 		type: "array",
 		selector: ".ab-cta-title",
-		source: "children",
+		source: "children"
 	},
 	titleFontSize: {
 		type: "number",
-		default: "32",
+		default: "32"
 	},
 	ctaLayout: {
 		type: "string",
-		default: "two-thirds",
+		default: "two-thirds"
 	},
 	ctaTextFontSize: {
-		type: "number",
+		type: "number"
 	},
 	ctaText: {
 		type: "array",
 		selector: ".ab-cta-text",
-		source: "children",
+		source: "children"
 	},
 	ctaWidth: {
-		type: "string",
+		type: "string"
 	},
 	ctaBackgroundColor: {
-		type: "string",
+		type: "string"
 	},
 	ctaTextColor: {
-		type: "string",
+		type: "string"
 	},
 	imgURL: {
 		type: "string",
 		source: "attribute",
 		attribute: "src",
-		selector: "img",
+		selector: "img"
 	},
 	imgID: {
-		type: "number",
+		type: "number"
 	},
 	imgAlt: {
 		type: "string",
 		source: "attribute",
 		attribute: "alt",
-		selector: "img",
+		selector: "img"
 	},
 	dimRatio: {
 		type: "number",
-		default: 50,
+		default: 50
 	},
 
 	// Deprecated
 	ctaTitleFontSize: {
 		type: "string",
-		default: "32",
-	},
+		default: "32"
+	}
 };
 
 export default blockAttributes;
