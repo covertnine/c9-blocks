@@ -75,7 +75,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 		// Creates a column container that can take other blocks
 		return [
 			<Fragment>
-				<Inspector {...{ setAttributes, ...props }} />,
+				<Inspector {...{ setAttributes, ...props }} />
 				<div
 					className={classnames(containerWidth)}
 					style={cortexBackgroundStyles(

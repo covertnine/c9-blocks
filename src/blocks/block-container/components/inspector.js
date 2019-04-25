@@ -44,28 +44,28 @@ export default class Inspector extends Component {
 			setAttributes
 		} = this.props;
 
-		const spacingPresets = [
-			{
-				name: "Extra Large",
-				amount: "100",
-				shortName: "xl"
-			},
-			{
-				name: "Large",
-				amount: "75",
-				shortName: "lg"
-			},
-			{
-				name: "Medium",
-				amount: "50",
-				shortName: "md"
-			},
-			{
-				name: "Small",
-				amount: "25",
-				shortName: "sm"
-			}
-		];
+		// const spacingPresets = [
+		// 	{
+		// 		name: "Extra Large",
+		// 		amount: "100",
+		// 		shortName: "xl"
+		// 	},
+		// 	{
+		// 		name: "Large",
+		// 		amount: "75",
+		// 		shortName: "lg"
+		// 	},
+		// 	{
+		// 		name: "Medium",
+		// 		amount: "50",
+		// 		shortName: "md"
+		// 	},
+		// 	{
+		// 		name: "Small",
+		// 		amount: "25",
+		// 		shortName: "sm"
+		// 	}
+		// ];
 
 		const onSelectImage = img => {
 			setAttributes({
@@ -81,8 +81,7 @@ export default class Inspector extends Component {
 		};
 
 		const toggleLinkage = spacingObject => {
-			console.log(spacingObject.linked);
-			containerPadding.linked = !containerPadding.linked;
+			spacingObject.linked = !containerPadding.linked;
 		};
 
 		const updatePadding = (position, value) => {
