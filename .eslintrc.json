@@ -3,9 +3,12 @@
 	"parser": "babel-eslint",
 	"extends": [
 		"wordpress",
+		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:jsx-a11y/recommended",
-		"plugin:jest/recommended"
+		"plugin:jest/recommended",
+		"prettier",
+		"prettier/react"
 	],
 	"env": {
 		"browser": false,
@@ -29,7 +32,8 @@
 	"plugins": ["react", "jsx-a11y", "jest", "lodash"],
 	"settings": {
 		"react": {
-			"pragma": "wp"
+			"pragma": "wp",
+			"version": "detect"
 		}
 	},
 	"rules": {
@@ -86,8 +90,7 @@
 		"no-restricted-syntax": [
 			"error",
 			{
-				"selector":
-					"ImportDeclaration[source.value=/^@wordpress\\u002F.+\\u002F/]",
+				"selector": "ImportDeclaration[source.value=/^@wordpress\\u002F.+\\u002F/]",
 				"message": "Path access on WordPress dependencies is not allowed."
 			},
 			{
@@ -123,18 +126,15 @@
 				"message": "Use @wordpress/utils as import path instead."
 			},
 			{
-				"selector":
-					"CallExpression[callee.name=/^__|_n|_x$/]:not([arguments.0.type=/^Literal|BinaryExpression$/])",
+				"selector": "CallExpression[callee.name=/^__|_n|_x$/]:not([arguments.0.type=/^Literal|BinaryExpression$/])",
 				"message": "Translate function arguments must be string literals."
 			},
 			{
-				"selector":
-					"CallExpression[callee.name=/^_n|_x$/]:not([arguments.1.type=/^Literal|BinaryExpression$/])",
+				"selector": "CallExpression[callee.name=/^_n|_x$/]:not([arguments.1.type=/^Literal|BinaryExpression$/])",
 				"message": "Translate function arguments must be string literals."
 			},
 			{
-				"selector":
-					"CallExpression[callee.name=_nx]:not([arguments.2.type=/^Literal|BinaryExpression$/])",
+				"selector": "CallExpression[callee.name=_nx]:not([arguments.2.type=/^Literal|BinaryExpression$/])",
 				"message": "Translate function arguments must be string literals."
 			}
 		],
@@ -162,11 +162,6 @@
 				"children": true
 			}
 		],
-		"react/jsx-equals-spacing": "error",
-		"react/jsx-indent": ["error", "tab"],
-		"react/jsx-indent-props": ["error", "tab"],
-		"react/jsx-key": "error",
-		"react/jsx-tag-spacing": "error",
 		"react/no-children-prop": "off",
 		"react/no-find-dom-node": "warn",
 		"react/prop-types": "off",

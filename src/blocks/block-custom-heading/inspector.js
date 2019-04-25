@@ -38,13 +38,11 @@ const { getComputedStyle } = window;
  * Create an Inspector Controls wrapper Component
  */
 class Inspector extends Component {
-
-	constructor(props) {
-		super(...arguments);
+	constructor( props ) {
+		super( ...arguments );
 	}
 
 	render() {
-
 		// Setup the attributes
 		const {
 			setAttributes,
@@ -52,27 +50,24 @@ class Inspector extends Component {
 			buttonBackgroundColor,
 			setButtonTextColor,
 			setButtonBackgroundColor,
-			attributes: {
-				heading,
-				subheading,
-				wrapper,
-			}
+			attributes: { heading, subheading, wrapper },
 		} = this.props;
 
 		// Update color values
 		return (
 			<InspectorControls key="inspector">
-				<PanelBody title={__('Heading Options', 'covertnine-blocks')} initialOpen={false}>
+				<PanelBody
+					title={ __( "Heading Options", "covertnine-blocks" ) }
+					initialOpen={ false }
+				>
 					<PanelColorSettings
-						title={__('Heading Class', 'covertnine-blocks')}
-						initialOpen={true}
-						
-					>
-					</PanelColorSettings>
+						title={ __( "Heading Class", "covertnine-blocks" ) }
+						initialOpen={ true }
+					/>
 				</PanelBody>
 			</InspectorControls>
 		);
 	}
 }
 
-export default Inspector
+export default Inspector;

@@ -6,20 +6,18 @@
 const { Component } = wp.element;
 
 // Import block dependencies and components
-import classnames from 'classnames';
+import classnames from "classnames";
 
 /**
  * Create a ShareLinks wrapper Component
  */
 export default class ShareLinks extends Component {
-
 	constructor( props ) {
 		super( ...arguments );
 	}
 
 	render() {
-
-		return (	
+		return (
 			<div
 				className={ classnames(
 					this.props.className,
@@ -28,7 +26,7 @@ export default class ShareLinks extends Component {
 					this.props.attributes.shareButtonSize,
 					this.props.attributes.shareButtonColor,
 					this.props.attributes.shareAlignment,
-					'ab-block-sharing'
+					"ab-block-sharing"
 				) }
 			>
 				{ this.props.children }
