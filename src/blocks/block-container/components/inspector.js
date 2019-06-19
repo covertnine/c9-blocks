@@ -3,7 +3,7 @@
  */
 // import CustomRadio from './custom-radio';
 
-import React from 'react';
+import React from "react";
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
@@ -23,9 +23,7 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: {
-				containerPadding,
-			},
+			attributes: { containerPadding },
 			setAttributes
 		} = this.props;
 		this.containerPadding = containerPadding;
@@ -34,11 +32,9 @@ export default class Inspector extends Component {
 		this.toggleLinkage = this.toggleLinkage.bind(this);
 	}
 
-	toggleLinkage = (spacingObject) => {
+	toggleLinkage = spacingObject => {
 		spacingObject.linked = !this.containerPadding.linked;
-		spacingObject.icon = spacingObject.linked
-			? "admin-links"
-			: "editor-unlink";
+		spacingObject.icon = spacingObject.linked ? "admin-links" : "editor-unlink";
 		this.setState({ containerPadding: spacingObject });
 	};
 
@@ -117,7 +113,7 @@ export default class Inspector extends Component {
 				// containerPadding[position] = value;
 			}
 		};
-		
+
 		return (
 			<InspectorControls>
 				<PanelBody title={__("Layout")} initialOpen={false}>
@@ -193,7 +189,7 @@ export default class Inspector extends Component {
 							label={__("Linked Padding Toggle", "covertnine-blocks")}
 							icon={this.containerPadding.icon}
 							onClick={() => this.toggleLinkage(containerPadding)}
-							ref = { this.linkedRef }
+							ref={this.linkedRef}
 						/>
 						<RangeControl
 							label={__("left")}
