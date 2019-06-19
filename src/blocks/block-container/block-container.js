@@ -73,7 +73,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 		} = props;
 
 		// Creates a column container that can take other blocks
-		return [
+		return (
 			<Fragment>
 				<Inspector {...{ setAttributes, ...props }} />
 				<div
@@ -101,7 +101,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 					</div>
 				</div>
 			</Fragment>
-		];
+		);
 	},
 
 	save: props => {
@@ -125,7 +125,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 		// const containerWidth3 = containerWidth;
 
 		return (
-			<div>
+			<Fragment>
 				<div
 					className={classnames(containerWidth)}
 					style={cortexBackgroundStyles(
@@ -146,7 +146,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						<InnerBlocks.Content />
 					</div>
 				</div>
-			</div>
+			</Fragment>
 		);
 	} //end save
 }); //end registerBlockType

@@ -66,12 +66,12 @@ const attributes = {
 	containerPadding: {
 		type: "object",
 		default: {
-			// 'linked': true,
-			// 'unit': 'px',
-			// 'top': '25',
-			// 'bottom': '25',
-			// 'left': '25',
-			// 'right': '25',
+			linked: true,
+			unit: "px",
+			top: "25",
+			bottom: "25",
+			left: "25",
+			right: "25"
 		}
 	}
 };
