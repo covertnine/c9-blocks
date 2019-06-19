@@ -92,7 +92,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						containerPadding
 					)}
 				>
-					<div className="row no-gutter">
+					<div className="row no-gutter" style={{ flexGrow: 1 }}>
 						<InnerBlocks
 							template={getColumnsTemplate(columns)}
 							templateLock="all"
@@ -142,7 +142,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						containerPadding
 					)}
 				>
-					<div className="row no-gutter">
+					<div className="row no-gutter" style={{ flexGrow: 1 }}>
 						<InnerBlocks.Content />
 					</div>
 				</div>
@@ -165,6 +165,7 @@ function cortexBackgroundStyles(
 	padding
 ) {
 	const styles = {};
+	styles.display = "flex";
 
 	if (height) {
 		styles.minHeight = `${height}vh`;
