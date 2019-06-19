@@ -67,6 +67,7 @@ const attributes = {
 		type: "object",
 		default: {
 			linked: true,
+			icon: "admin-links",
 			unit: "px",
 			top: "25",
 			bottom: "25",

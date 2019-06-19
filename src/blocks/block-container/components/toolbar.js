@@ -1,5 +1,6 @@
-import { Toolbar } from "@wordpress/components";
-import { withState } from "@wordpress/compose";
+const { Toolbar } = wp.components;
+const { withState } = wp.compose;
+
 
 export const containerBar = withState({
 	activeControl: "up"

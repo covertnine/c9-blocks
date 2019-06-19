@@ -3,6 +3,7 @@
  */
 // import CustomRadio from './custom-radio';
 
+import React from 'react';
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
@@ -21,7 +22,25 @@ const {
 export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
+		const {
+			attributes: {
+				containerPadding,
+			},
+			setAttributes
+		} = this.props;
+		this.containerPadding = containerPadding;
+		this.setAttributes = setAttributes;
+		this.linkedRef = React.createRef();
+		this.toggleLinkage = this.toggleLinkage.bind(this);
 	}
+
+	toggleLinkage = (spacingObject) => {
+		spacingObject.linked = !this.containerPadding.linked;
+		spacingObject.icon = spacingObject.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ containerPadding: spacingObject });
+	};
 
 	render() {
 		const {
@@ -80,20 +99,17 @@ export default class Inspector extends Component {
 			});
 		};
 
-		const toggleLinkage = spacingObject => {
-			spacingObject.linked = !containerPadding.linked;
-		};
-
 		const updatePadding = (position, value) => {
 			if (containerPadding.linked) {
 				setAttributes({
 					containerPadding: {
-						linked: true,
+						linked: containerPadding.linked,
 						unit: "px",
 						top: value,
 						bottom: value,
 						left: value,
-						right: value
+						right: value,
+						icon: containerPadding.icon
 					}
 				});
 			} else {
@@ -101,7 +117,7 @@ export default class Inspector extends Component {
 				// containerPadding[position] = value;
 			}
 		};
-
+		
 		return (
 			<InspectorControls>
 				<PanelBody title={__("Layout")} initialOpen={false}>
@@ -175,8 +191,9 @@ export default class Inspector extends Component {
 						/>
 						<IconButton
 							label={__("Linked Padding Toggle", "covertnine-blocks")}
-							icon={containerPadding.linked ? "admin-links" : "editor-unlink"}
-							onClick={() => toggleLinkage(containerPadding)}
+							icon={this.containerPadding.icon}
+							onClick={() => this.toggleLinkage(containerPadding)}
+							ref = { this.linkedRef }
 						/>
 						<RangeControl
 							label={__("left")}

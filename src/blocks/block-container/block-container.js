@@ -11,14 +11,13 @@ import classnames from "classnames";
 import Inspector from "./components/inspector";
 import "./styles/style.scss";
 import attributes from "./attributes";
-// import containerBar from './components/toolbar';
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.editor;
 const { Fragment } = wp.element;
 
 const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
@@ -75,6 +74,12 @@ registerBlockType("covertnine-blocks/column-containers", {
 		// Creates a column container that can take other blocks
 		return (
 			<Fragment>
+				<BlockControls key="controls">
+					{/* <BlockVerticalAlignmentToolbar
+						value={verticalAlign}
+						onChange={value => setAttributes({ verticalAlign: value })}
+					/> */}
+				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<div
 					className={classnames(containerWidth)}
