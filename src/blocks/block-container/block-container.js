@@ -17,7 +17,7 @@ import attributes from "./attributes";
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks, BlockControls } = wp.editor;
+const { InnerBlocks, BlockControls, BlockAlignmentToolbar } = wp.editor;
 const { Fragment } = wp.element;
 
 const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
@@ -75,10 +75,10 @@ registerBlockType("covertnine-blocks/column-containers", {
 		return (
 			<Fragment>
 				<BlockControls key="controls">
-					{/* <BlockVerticalAlignmentToolbar
-						value={verticalAlign}
-						onChange={value => setAttributes({ verticalAlign: value })}
-					/> */}
+					<BlockAlignmentToolbar
+						// value={verticalAlign}
+						// onChange={value => setAttributes({ verticalAlign: value })}
+					/>
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<div
