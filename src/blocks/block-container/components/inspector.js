@@ -33,9 +33,43 @@ export default class Inspector extends Component {
 	}
 
 	toggleLinkage = spacingObject => {
-		spacingObject.linked = !this.containerPadding.linked;
-		spacingObject.icon = spacingObject.linked ? "admin-links" : "editor-unlink";
+		this.containerPadding.linked = !this.containerPadding.linked;
+		this.containerPadding.icon = spacingObject.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ containerPadding: this.containerPadding });
+		this.setAttributes({ containerPadding: this.containerPadding });
+	};
+
+	setUnit = value => {
+		let spacingObject = Object.assign({}, this.containerPadding);
+		spacingObject.unit = value;
+		this.containerPadding = spacingObject;
 		this.setState({ containerPadding: spacingObject });
+		this.setAttributes({ containerPadding: spacingObject });
+	};
+
+	updatePadding = (position, value) => {
+		if (this.containerPadding.linked) {
+			let spacingObject = {
+				linked: this.containerPadding.linked,
+				unit: "px",
+				top: value,
+				bottom: value,
+				left: value,
+				right: value,
+				icon: this.containerPadding.icon
+			};
+			this.containerPadding = spacingObject;
+			this.setState({ containerPadding: spacingObject });
+			this.setAttributes({ containerPadding: spacingObject });
+		} else {
+			let spacingObject = Object.assign({}, this.containerPadding);
+			spacingObject[position] = value;
+			this.containerPadding = spacingObject;
+			this.setState({ containerPadding: spacingObject });
+			this.setAttributes({ containerPadding: spacingObject });
+		}
 	};
 
 	render() {
@@ -58,6 +92,12 @@ export default class Inspector extends Component {
 			},
 			setAttributes
 		} = this.props;
+
+		const cssUnits = [
+			{ value: "px", label: __("Pixel (px)", "atomic-blocks") },
+			{ value: "%", label: __("Percent (%)", "atomic-blocks") },
+			{ value: "em", label: __("Em (em)", "atomic-blocks") }
+		];
 
 		// const spacingPresets = [
 		// 	{
@@ -93,25 +133,6 @@ export default class Inspector extends Component {
 				containerImgURL: null,
 				bgImgSize: "cover"
 			});
-		};
-
-		const updatePadding = (position, value) => {
-			if (containerPadding.linked) {
-				setAttributes({
-					containerPadding: {
-						linked: containerPadding.linked,
-						unit: "px",
-						top: value,
-						bottom: value,
-						left: value,
-						right: value,
-						icon: containerPadding.icon
-					}
-				});
-			} else {
-				containerPadding.top = value;
-				// containerPadding[position] = value;
-			}
 		};
 
 		return (
@@ -161,13 +182,24 @@ export default class Inspector extends Component {
 					/>
 				</PanelBody>
 				<PanelBody title={__("Spacing")} initialOpen={false}>
+
 					<h5 className="padding-label">Padding</h5>
+
+					<SelectControl
+						label={__("Padding Unit", "covertnine-blocks")}
+						help={__("Choose between pixel, percent, or em units.")}
+						options={cssUnits}
+						value={containerPadding.unit}
+						onChange={value => this.setUnit(value)}
+					/>
+					<hr />
+
 					<div className="padding-top-wrapper">
 						<RangeControl
 							label={__("top")}
 							value={containerPadding.top}
 							onChange={padding => {
-								updatePadding("top", padding);
+								this.updatePadding("top", padding);
 							}}
 							className="padding"
 							min={0}
@@ -179,7 +211,7 @@ export default class Inspector extends Component {
 							label={__("bottom")}
 							value={containerPadding.bottom}
 							onChange={padding => {
-								updatePadding("bottom", padding);
+								this.updatePadding("bottom", padding);
 							}}
 							className="padding"
 							min={0}
@@ -188,14 +220,14 @@ export default class Inspector extends Component {
 						<IconButton
 							label={__("Linked Padding Toggle", "covertnine-blocks")}
 							icon={this.containerPadding.icon}
-							onClick={() => this.toggleLinkage(containerPadding)}
+							onClick={() => this.toggleLinkage(this.containerPadding)}
 							ref={this.linkedRef}
 						/>
 						<RangeControl
 							label={__("left")}
 							value={containerPadding.left}
 							onChange={padding => {
-								updatePadding("left", padding);
+								this.updatePadding("left", padding);
 							}}
 							className="padding"
 							min={0}
@@ -207,7 +239,7 @@ export default class Inspector extends Component {
 							label={__("right")}
 							value={containerPadding.right}
 							onChange={padding => {
-								updatePadding("right", padding);
+								this.updatePadding("right", padding);
 							}}
 							className="padding"
 							min={0}
