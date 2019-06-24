@@ -87,6 +87,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						containerImgURL,
 						verticalAlign,
 						bgImgSize,
+
 						bgImgAttach,
 						bgImgPosX,
 						bgImgPosY,
@@ -171,6 +172,7 @@ function cortexBackgroundStyles(
 ) {
 	const styles = {};
 	styles.display = "flex";
+	styles.backgroundRepeat = "no-repeat";
 
 	if (height) {
 		styles.minHeight = `${height}vh`;

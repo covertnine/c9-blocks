@@ -19,9 +19,13 @@ const attributes = {
 		type: "boolean",
 		default: true
 	},
+	bgImgRepeat: {
+		type: "string",
+		default: "no-repeat"
+	},
 	// true evaluates to backgroundAttachment scroll, false to fixed
 	bgImgAttach: {
-		type: "boolen",
+		type: "boolean",
 		default: true
 	},
 	overlayHue: {
