@@ -17,8 +17,9 @@ import attributes from "./attributes";
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks, BlockControls, BlockAlignmentToolbar } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.editor;
 const { Fragment } = wp.element;
+const { Toolbar } = wp.components;
 
 const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
 
@@ -71,14 +72,32 @@ registerBlockType("covertnine-blocks/column-containers", {
 			setAttributes
 		} = props;
 
+		const toolbarControls = [
+			{
+				icon: "arrow-up-alt2",
+				title: __("Vertical Align Top", "covertnine-blocks"),
+				isActive: verticalAlign === "flex-start",
+				onClick: () => setAttributes({ verticalAlign: "flex-start" })
+			},
+			{
+				icon: "minus",
+				title: __("Vertical Align Bottom", "covertnine-blocks"),
+				isActive: verticalAlign === "center",
+				onClick: () => setAttributes({ verticalAlign: "center" })
+			},
+			{
+				icon: "arrow-down-alt2",
+				title: __("Vertical Align Middle", "covertnine-blocks"),
+				isActive: verticalAlign === "flex-end",
+				onClick: () => setAttributes({ verticalAlign: "flex-end" })
+			}
+		];
+
 		// Creates a column container that can take other blocks
 		return (
 			<Fragment>
 				<BlockControls key="controls">
-					<BlockAlignmentToolbar
-						// value={verticalAlign}
-						// onChange={value => setAttributes({ verticalAlign: value })}
-					/>
+					<Toolbar controls={toolbarControls} />
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<div
@@ -87,7 +106,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 						containerImgURL,
 						verticalAlign,
 						bgImgSize,
-
 						bgImgAttach,
 						bgImgPosX,
 						bgImgPosY,
