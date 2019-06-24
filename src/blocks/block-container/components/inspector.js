@@ -34,9 +34,19 @@ export default class Inspector extends Component {
 
 	toggleLinkage = spacingObject => {
 		this.containerPadding.linked = !this.containerPadding.linked;
-		this.containerPadding.icon = spacingObject.linked ? "admin-links" : "editor-unlink";
+		this.containerPadding.icon = spacingObject.linked
+			? "admin-links"
+			: "editor-unlink";
 		this.setState({ containerPadding: this.containerPadding });
 		this.setAttributes({ containerPadding: this.containerPadding });
+	};
+
+	setUnit = value => {
+		let spacingObject = Object.assign({}, this.containerPadding);
+		spacingObject.unit = value;
+		this.containerPadding = spacingObject;
+		this.setState({ containerPadding: spacingObject });
+		this.setAttributes({ containerPadding: spacingObject });
 	};
 
 	updatePadding = (position, value) => {
@@ -82,6 +92,12 @@ export default class Inspector extends Component {
 			},
 			setAttributes
 		} = this.props;
+
+		const cssUnits = [
+			{ value: "px", label: __("Pixel (px)", "atomic-blocks") },
+			{ value: "%", label: __("Percent (%)", "atomic-blocks") },
+			{ value: "em", label: __("Em (em)", "atomic-blocks") }
+		];
 
 		// const spacingPresets = [
 		// 	{
@@ -166,7 +182,18 @@ export default class Inspector extends Component {
 					/>
 				</PanelBody>
 				<PanelBody title={__("Spacing")} initialOpen={false}>
+
 					<h5 className="padding-label">Padding</h5>
+
+					<SelectControl
+						label={__("Padding Unit", "covertnine-blocks")}
+						help={__("Choose between pixel, percent, or em units.")}
+						options={cssUnits}
+						value={containerPadding.unit}
+						onChange={value => this.setUnit(value)}
+					/>
+					<hr />
+
 					<div className="padding-top-wrapper">
 						<RangeControl
 							label={__("top")}
