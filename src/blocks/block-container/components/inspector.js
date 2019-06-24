@@ -271,7 +271,7 @@ export default class Inspector extends Component {
 											label={__("Focal Point Picker")}
 											url={containerImgURL}
 											value={focalPoint}
-											onChange={value => setAttributes({focalPoint: value})}
+											onChange={value => setAttributes({ focalPoint: value })}
 										/>
 										<IconButton
 											label={__("Remove Image")}

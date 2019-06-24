@@ -73,7 +73,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 			setAttributes
 		} = props;
 
-		const toolbarControls = [
+		const verticalAlignControls = [
 			{
 				icon: "arrow-up-alt2",
 				title: __("Vertical Align Top", "covertnine-blocks"),
@@ -94,11 +94,33 @@ registerBlockType("covertnine-blocks/column-containers", {
 			}
 		];
 
+		const widthControls = [
+			{
+				icon: "align-full-width",
+				title: __("Full Width", "covertnine-blocks"),
+				isActive: containerWidth === "container-fluid",
+				onClick: () => setAttributes({ containerWidth: "container-fluid" })
+			},
+			{
+				icon: "align-wide",
+				title: __("Normal Width", "covertnine-blocks"),
+				isActive: containerWidth === "container",
+				onClick: () => setAttributes({ containerWidth: "container" })
+			},
+			{
+				icon: "smiley",
+				title: __("Narrow Width", "covertnine-blocks"),
+				isActive: containerWidth === "container-narrow",
+				onClick: () => setAttributes({ containerWidth: "container-narrow" })
+			}
+		];
+
 		// Creates a column container that can take other blocks
 		return (
 			<Fragment>
 				<BlockControls key="controls">
-					<Toolbar controls={toolbarControls} />
+					<Toolbar controls={widthControls} />
+					<Toolbar controls={verticalAlignControls} />
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<div
@@ -211,7 +233,7 @@ function cortexBackgroundStyles(
 	}
 
 	if (focalPoint) {
-		styles.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
+		styles.backgroundPosition = `${focalPoint.x * 100}% ${focalPoint.y * 100}%`;
 	}
 
 	// styles.display = 'flex';
