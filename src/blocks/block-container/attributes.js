@@ -78,6 +78,10 @@ const attributes = {
 			left: "25",
 			right: "25"
 		}
+	},
+	focalPoint: {
+		type: "object",
+		default: undefined
 	}
 };
 

@@ -13,7 +13,8 @@ const {
 	RangeControl,
 	ToggleControl,
 	SelectControl,
-	IconButton
+	IconButton,
+	FocalPointPicker
 } = wp.components;
 
 /**
@@ -88,7 +89,8 @@ export default class Inspector extends Component {
 				blendMode,
 				containerPadding,
 				columns,
-				minScreenHeight
+				minScreenHeight,
+				focalPoint
 			},
 			setAttributes
 		} = this.props;
@@ -182,7 +184,6 @@ export default class Inspector extends Component {
 					/>
 				</PanelBody>
 				<PanelBody title={__("Spacing")} initialOpen={false}>
-
 					<h5 className="padding-label">Padding</h5>
 
 					<SelectControl
@@ -265,13 +266,21 @@ export default class Inspector extends Component {
 								</IconButton>
 
 								{containerImgURL && !!containerImgURL.length && (
-									<IconButton
-										label={__("Remove Image")}
-										icon="dismiss"
-										onClick={onRemoveImage}
-									>
-										{__("Remove")}
-									</IconButton>
+									<div>
+										<FocalPointPicker
+											label={__("Focal Point Picker")}
+											url={containerImgURL}
+											value={focalPoint}
+											onChange={value => setAttributes({focalPoint: value})}
+										/>
+										<IconButton
+											label={__("Remove Image")}
+											icon="dismiss"
+											onClick={onRemoveImage}
+										>
+											{__("Remove")}
+										</IconButton>
+									</div>
 								)}
 							</div>
 						)}

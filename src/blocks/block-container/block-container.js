@@ -67,7 +67,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 				blendMode,
 				containerPadding,
 				columns,
-				minScreenHeight
+				minScreenHeight,
+				focalPoint
 			},
 			setAttributes
 		} = props;
@@ -113,7 +114,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 						overlayOpacity,
 						blendMode,
 						minScreenHeight,
-						containerPadding
+						containerPadding,
+						focalPoint
 					)}
 				>
 					<div className="row no-gutter" style={{ flexGrow: 1 }}>
@@ -142,7 +144,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 				overlayOpacity,
 				blendMode,
 				containerPadding,
-				minScreenHeight
+				minScreenHeight,
+				focalPoint
 			}
 		} = props;
 
@@ -163,7 +166,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 						overlayOpacity,
 						blendMode,
 						minScreenHeight,
-						containerPadding
+						containerPadding,
+						focalPoint
 					)}
 				>
 					<div className="row no-gutter" style={{ flexGrow: 1 }}>
@@ -186,7 +190,8 @@ function cortexBackgroundStyles(
 	opacity,
 	blend,
 	height,
-	padding
+	padding,
+	focalPoint
 ) {
 	const styles = {};
 	styles.display = "flex";
@@ -203,6 +208,10 @@ function cortexBackgroundStyles(
 			: 0;
 		styles.paddingLeft = padding.left ? `${padding.left}${padding.unit}` : 0;
 		styles.paddingRight = padding.right ? `${padding.right}${padding.unit}` : 0;
+	}
+
+	if (focalPoint) {
+		styles.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
 	}
 
 	// styles.display = 'flex';
