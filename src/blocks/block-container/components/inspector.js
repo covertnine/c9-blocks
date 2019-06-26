@@ -18,6 +18,7 @@ const {
 	Button,
 	FocalPointPicker
 } = wp.components;
+const { select } = wp.data;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -76,14 +77,23 @@ export default class Inspector extends Component {
 		}
 	};
 
-	updateURL = (value) => {
+	updateURL = value => {
 		this.URL = value;
 		this.setState({ URL: value });
-	}
+	};
 
 	submitURL = () => {
-		this.setAttributes({ containerVideoURL: this.URL });
-	}
+		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false });
+		
+		const core = select("core");
+		const { getEmbedPreview, isPreviewEmbedFallback, isRequestingEmbedPreview, getThemeSupports } = core;
+		const preview = undefined !== this.URL && getEmbedPreview( this.URL );
+		console.log(this.URL, getEmbedPreview(this.URL));
+
+		if (preview) {
+			this.setAttributes({ previewHTML: preview.html });
+		}
+	};
 
 	render() {
 		const {
@@ -153,7 +163,8 @@ export default class Inspector extends Component {
 
 		const onSelectVideo = video => {
 			setAttributes({
-				containerVideoURL: video.url
+				containerVideoURL: video.url,
+				cannotEmbed: false
 			});
 		};
 
@@ -438,6 +449,7 @@ export default class Inspector extends Component {
 							onSelect={onSelectVideo}
 							type="video"
 							value={containerImgID}
+							allowedTypes={["video"]}
 							render={({ open }) => (
 								<div>
 									<IconButton
@@ -452,17 +464,19 @@ export default class Inspector extends Component {
 						/>
 					)}
 
-					{videoType == "upload" && containerVideoURL && !!containerVideoURL.length && (
-						<div>
-							<IconButton
-								label={__("Remove Video")}
-								icon="dismiss"
-								onClick={onRemoveVideo}
-							>
-								{__("Remove")}
-							</IconButton>
-						</div>
-					)}
+					{videoType == "upload" &&
+						containerVideoURL &&
+						!!containerVideoURL.length && (
+							<div>
+								<IconButton
+									label={__("Remove Video")}
+									icon="dismiss"
+									onClick={onRemoveVideo}
+								>
+									{__("Remove")}
+								</IconButton>
+							</div>
+						)}
 
 					{videoType == "embed" && (
 						<div>
@@ -471,10 +485,7 @@ export default class Inspector extends Component {
 								value={this.URL}
 								onChange={value => this.updateURL(value)}
 							/>
-							<Button 
-								isDefault
-								onClick={() => this.submitURL()}
-							>
+							<Button isDefault onClick={() => this.submitURL()}>
 								Submit
 							</Button>
 						</div>

@@ -6,6 +6,8 @@
 import React from "react";
 const { Component } = wp.element;
 
+import WpEmbedPreview from "./wp-embed-preview";
+
 /**
  * Create an VideoBox Controls wrapper Component
  */
@@ -14,15 +16,11 @@ export default class VideoBox extends Component {
 		super(...arguments);
 		this.videoRef = React.createRef();
 		this.canPlay = this.canPlay.bind(this);
-		console.log('test');
 	}
 
 	canPlay() {
-		console.log("ready!!!");
-
 		if (this.videoRef && this.videoRef.current) {
-			console.log(this.videoRef.current);
-			let op = 0;
+			// console.log(this.videoRef.current);
 
 			let element = this.videoRef.current;
 			element.style.opacity = 1;
@@ -48,7 +46,9 @@ export default class VideoBox extends Component {
 				minScreenHeight,
 				focalPoint,
 				videoType,
-				containerVideoURL
+				containerVideoURL,
+				cannotEmbed,
+				previewHTML
 			},
 			setAttributes
 		} = this.props;
@@ -79,10 +79,8 @@ export default class VideoBox extends Component {
 					<source src={`${containerVideoURL}`} type="video/mp4" />
 				</video>
 			);
-		} else if (containerVideoURL && videoType == "embed") {
-			return <div />;
 		} else {
-			return <div />;
+			return <WpEmbedPreview html={previewHTML} />;
 		}
 	}
 }

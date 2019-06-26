@@ -16,7 +16,7 @@ const iconEl = makeIcon(faHeading);
 const { __ } = wp.i18n;
 
 // Extend component
-const { Component } = wp.element;
+const { Component, Fragment } = wp.element;
 
 // Register block
 const { registerBlockType } = wp.blocks;
@@ -56,22 +56,6 @@ class C9CustomHeading extends Component {
 		} = this.props;
 
 		return [
-			// Show the alignment toolbar on focus
-			// <BlockControls>
-			// 	<BlockAlignmentToolbar
-			// 		value={ctaWidth}
-			// 		onChange={ctaWidth => setAttributes({ ctaWidth })}
-			// 		controls={['center', 'wide', 'full']}
-			// 	/>
-			// 	<AlignmentToolbar
-			// 		value={buttonAlignment}
-			// 		onChange={(value) => {
-			// 			setAttributes({ buttonAlignment: value });
-			// 		}}
-			// 	/>
-			// </BlockControls>
-			// Show the block controls on focus
-			<Inspector {...{ setAttributes, ...this.props }} />,
 			// Show the Button markup in the editor
 			<CustomHeading {...this.props}>
 				{heading && (
@@ -114,15 +98,27 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 	// Render the block components
 	edit: function(props) {
 		// Setup the attributes
-		const { heading, subheading, wrapper } = props.attributes;
+		const {
+			setAttributes,
+			attributes: { heading, subheading, wrapper }
+		} = props;
 
 		// Save the block markup for the front end
 		return (
-			<CustomHeading {...props}>
-				{heading && subheading && (
-					<RichText.Content tagName="h3" value={heading + subheading} />
-				)}
-			</CustomHeading>
+			<Fragment>
+				<BlockControls>
+					<BlockAlignmentToolbar
+					/>
+					<AlignmentToolbar
+					/>
+				</BlockControls>
+				<Inspector {...{ setAttributes, ...props }} />
+				<CustomHeading {...props}>
+					{heading && subheading && (
+						<RichText.Content tagName="h3" value={heading + subheading} />
+					)}
+				</CustomHeading>
+			</Fragment>
 		);
 	},
 
@@ -133,11 +129,13 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 
 		// Save the block markup for the front end
 		return (
-			<CustomHeading {...props}>
-				{heading && subheading && (
-					<RichText.Content tagName="h3" value={heading + subheading} />
-				)}
-			</CustomHeading>
+			<Fragment>
+				<CustomHeading {...props}>
+					{heading && subheading && (
+						<RichText.Content tagName="h3" value={heading + subheading} />
+					)}
+				</CustomHeading>
+			</Fragment>
 		);
 	}
 });

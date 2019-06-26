@@ -88,6 +88,14 @@ const attributes = {
 		default: "upload"
 	},
 	containerVideoURL: {
+		type: "string",
+		default: ""
+	},
+	cannotEmbed: {
+		type: "boolean",
+		default: false
+	},
+	previewHTML: {
 		type: "string"
 	}
 };

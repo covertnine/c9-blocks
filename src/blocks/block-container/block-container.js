@@ -71,7 +71,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 				minScreenHeight,
 				focalPoint,
 				videoType,
-				containerVideoURL
+				containerVideoURL,
+				cannotEmbed
 			},
 			setAttributes
 		} = props;
@@ -117,6 +118,43 @@ registerBlockType("covertnine-blocks/column-containers", {
 				onClick: () => setAttributes({ containerWidth: "container-narrow" })
 			}
 		];
+
+		if (!containerVideoURL || cannotEmbed) {
+			return (
+				<Fragment>
+					<BlockControls key="controls">
+						<Toolbar controls={widthControls} />
+						<Toolbar controls={verticalAlignControls} />
+					</BlockControls>
+					<Inspector {...{ setAttributes, ...props }} />
+					<div
+						className={classnames(containerWidth)}
+						style={cortexBackgroundStyles(
+							containerImgURL,
+							verticalAlign,
+							bgImgSize,
+							bgImgAttach,
+							bgImgPosX,
+							bgImgPosY,
+							overlayHue,
+							overlayOpacity,
+							blendMode,
+							minScreenHeight,
+							containerPadding,
+							focalPoint
+						)}
+					>
+						<div className="row no-gutter" style={{ flexGrow: 1 }}>
+							<InnerBlocks
+								template={getColumnsTemplate(columns)}
+								templateLock="all"
+								allowedBlocks={ALLOWED_BLOCKS}
+							/>
+						</div>
+					</div>
+				</Fragment>
+			);
+		}
 
 		// Creates a column container that can take other blocks
 		return (
@@ -173,12 +211,45 @@ registerBlockType("covertnine-blocks/column-containers", {
 				minScreenHeight,
 				focalPoint,
 				videoType,
-				containerVideoURL
+				containerVideoURL,
+				cannotEmbed
 			},
 			setAttributes
 		} = props;
 
 		// const containerWidth3 = containerWidth;
+
+		console.log(cannotEmbed);
+
+		if (!containerVideoURL || cannotEmbed) {
+			return (
+				<Fragment>
+					<div
+						className={classnames(containerWidth)}
+						style={cortexBackgroundStyles(
+							containerImgURL,
+							verticalAlign,
+							bgImgSize,
+							bgImgAttach,
+							bgImgPosX,
+							bgImgPosY,
+							overlayHue,
+							overlayOpacity,
+							blendMode,
+							minScreenHeight,
+							containerPadding,
+							focalPoint
+						)}
+					>
+						<div className="row no-gutter" style={{ flexGrow: 1 }}>
+							<InnerBlocks.Content />
+						</div>
+					</div>
+				</Fragment>
+			);
+		}
+
+		console.log(<VideoBox {...{ setAttributes, ...props }} />);
 
 		return (
 			<Fragment>
