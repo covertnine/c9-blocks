@@ -19,7 +19,7 @@
 		"@fortawesome/free-solid-svg-icons": "^5.7.2",
 		"@fortawesome/react-fontawesome": "^0.1.4",
 		"@wordpress/i18n": "^1.1.0",
-		"cgb-scripts": "^1.17.0",
+		"cgb-scripts": "^1.18.1",
 		"classnames": "^2.2.5",
 		"lodash": "^4.17.10",
 		"memize": "^1.0.5",

@@ -58,6 +58,7 @@ export default class VideoBox extends Component {
 			if (videoType == "upload") {
 				styles.opacity = 0;
 				styles.transition = "5000ms";
+				styles.maxWidth = "100%";
 			}
 
 			return styles;
