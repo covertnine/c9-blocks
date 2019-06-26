@@ -11,9 +11,11 @@ const {
 	RadioControl,
 	PanelBody,
 	RangeControl,
+	TextControl,
 	ToggleControl,
 	SelectControl,
 	IconButton,
+	Button,
 	FocalPointPicker
 } = wp.components;
 
@@ -31,6 +33,7 @@ export default class Inspector extends Component {
 		this.setAttributes = setAttributes;
 		this.linkedRef = React.createRef();
 		this.toggleLinkage = this.toggleLinkage.bind(this);
+		this.URL = "";
 	}
 
 	toggleLinkage = spacingObject => {
@@ -73,6 +76,15 @@ export default class Inspector extends Component {
 		}
 	};
 
+	updateURL = (value) => {
+		this.URL = value;
+		this.setState({ URL: value });
+	}
+
+	submitURL = () => {
+		this.setAttributes({ containerVideoURL: this.URL });
+	}
+
 	render() {
 		const {
 			attributes: {
@@ -90,7 +102,9 @@ export default class Inspector extends Component {
 				containerPadding,
 				columns,
 				minScreenHeight,
-				focalPoint
+				focalPoint,
+				videoType,
+				containerVideoURL
 			},
 			setAttributes
 		} = this.props;
@@ -134,6 +148,18 @@ export default class Inspector extends Component {
 			setAttributes({
 				containerImgURL: null,
 				bgImgSize: "cover"
+			});
+		};
+
+		const onSelectVideo = video => {
+			setAttributes({
+				containerVideoURL: video.url
+			});
+		};
+
+		const onRemoveVideo = () => {
+			setAttributes({
+				containerVideoURL: null
 			});
 		};
 
@@ -390,6 +416,68 @@ export default class Inspector extends Component {
 							]}
 							onChange={blendMode => setAttributes({ blendMode })}
 						/>
+					)}
+				</PanelBody>
+				<PanelBody title={__("Video")} initialOpen={false}>
+					<RadioControl
+						label={__("Media Type", "covertnine-blocks")}
+						selected={videoType}
+						options={[
+							{ label: "Upload File", value: "upload" },
+							{ label: "Embed URL", value: "embed" }
+						]}
+						onChange={videoType => setAttributes({ videoType })}
+					/>
+
+					<hr />
+
+					{videoType == "upload" && (
+						<MediaUpload
+							id="bg-video-select"
+							label={__("Background Video", "covertnine-blocks")}
+							onSelect={onSelectVideo}
+							type="video"
+							value={containerImgID}
+							render={({ open }) => (
+								<div>
+									<IconButton
+										label={__("Edit Video")}
+										icon="format-image"
+										onClick={open}
+									>
+										{__("Background Video")}
+									</IconButton>
+								</div>
+							)}
+						/>
+					)}
+
+					{videoType == "upload" && containerVideoURL && !!containerVideoURL.length && (
+						<div>
+							<IconButton
+								label={__("Remove Video")}
+								icon="dismiss"
+								onClick={onRemoveVideo}
+							>
+								{__("Remove")}
+							</IconButton>
+						</div>
+					)}
+
+					{videoType == "embed" && (
+						<div>
+							<TextControl
+								label="Video URL"
+								value={this.URL}
+								onChange={value => this.updateURL(value)}
+							/>
+							<Button 
+								isDefault
+								onClick={() => this.submitURL()}
+							>
+								Submit
+							</Button>
+						</div>
 					)}
 				</PanelBody>
 			</InspectorControls>

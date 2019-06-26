@@ -9,6 +9,7 @@ import classnames from "classnames";
  * Block dependencies
  */
 import Inspector from "./components/inspector";
+import VideoBox from "./components/video-box";
 import "./styles/style.scss";
 import attributes from "./attributes";
 
@@ -68,7 +69,9 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerPadding,
 				columns,
 				minScreenHeight,
-				focalPoint
+				focalPoint,
+				videoType,
+				containerVideoURL
 			},
 			setAttributes
 		} = props;
@@ -140,6 +143,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						focalPoint
 					)}
 				>
+					<VideoBox {...{ setAttributes, ...props }} />
 					<div className="row no-gutter" style={{ flexGrow: 1 }}>
 						<InnerBlocks
 							template={getColumnsTemplate(columns)}
@@ -167,8 +171,11 @@ registerBlockType("covertnine-blocks/column-containers", {
 				blendMode,
 				containerPadding,
 				minScreenHeight,
-				focalPoint
-			}
+				focalPoint,
+				videoType,
+				containerVideoURL
+			},
+			setAttributes
 		} = props;
 
 		// const containerWidth3 = containerWidth;
@@ -192,6 +199,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						focalPoint
 					)}
 				>
+					<VideoBox {...{ setAttributes, ...props }} />
 					<div className="row no-gutter" style={{ flexGrow: 1 }}>
 						<InnerBlocks.Content />
 					</div>

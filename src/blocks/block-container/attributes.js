@@ -82,6 +82,13 @@ const attributes = {
 	focalPoint: {
 		type: "object",
 		default: undefined
+	},
+	videoType: {
+		type: "string",
+		default: "upload"
+	},
+	containerVideoURL: {
+		type: "string"
 	}
 };
 

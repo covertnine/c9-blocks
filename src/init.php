@@ -106,3 +106,19 @@ function cortex_blocks_cgb_editor_assets()
 // Hook: Editor assets.
 add_action('enqueue_block_editor_assets', 'cortex_blocks_cgb_editor_assets', 9999);
 
+
+/**
+ * Initialize the blocks frontend
+ */
+function cortex_blocks_front_assets()
+{
+    // blocks frontend
+    wp_enqueue_script(
+        'cortex_blocks-frontend',
+        plugins_url('frontend.js', dirname(__FILE__)),
+        array('wp-element', 'wp-blocks', 'wp-i18n')
+    );
+}
+
+// Hook: Cortex Blocks Frontend
+add_action('wp_enqueue_scripts', 'cortex_blocks_front_assets');
