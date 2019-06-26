@@ -115,7 +115,7 @@ function cortex_blocks_front_assets()
     // blocks frontend
     wp_enqueue_script(
         'cortex_blocks-frontend',
-        plugins_url('frontend.js', dirname(__FILE__)),
+        plugins_url('dist/blocks.front.build.js', dirname(__FILE__)),
         array('wp-element', 'wp-blocks', 'wp-i18n')
     );
 }
