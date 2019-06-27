@@ -27,14 +27,14 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: { containerPadding },
+			attributes: { containerPadding, containerVideoURL },
 			setAttributes
 		} = this.props;
 		this.containerPadding = containerPadding;
 		this.setAttributes = setAttributes;
 		this.linkedRef = React.createRef();
 		this.toggleLinkage = this.toggleLinkage.bind(this);
-		this.URL = "";
+		this.URL = containerVideoURL || "";
 	}
 
 	toggleLinkage = spacingObject => {
@@ -84,15 +84,25 @@ export default class Inspector extends Component {
 
 	submitURL = () => {
 		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false });
-		
+
 		const core = select("core");
-		const { getEmbedPreview, isPreviewEmbedFallback, isRequestingEmbedPreview, getThemeSupports } = core;
-		const preview = undefined !== this.URL && getEmbedPreview( this.URL );
+		const {
+			getEmbedPreview,
+			isPreviewEmbedFallback,
+			isRequestingEmbedPreview,
+			getThemeSupports
+		} = core;
+		const preview = undefined !== this.URL && getEmbedPreview(this.URL);
 		console.log(this.URL, getEmbedPreview(this.URL));
 
 		if (preview) {
 			this.setAttributes({ previewHTML: preview.html });
 		}
+	};
+
+	resetURL = () => {
+		this.URL = "";
+		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false });
 	};
 
 	render() {
@@ -481,13 +491,24 @@ export default class Inspector extends Component {
 					{videoType == "embed" && (
 						<div>
 							<TextControl
-								label="Video URL"
+								label="YouTube URL or Youtube ID"
 								value={this.URL}
 								onChange={value => this.updateURL(value)}
 							/>
-							<Button isDefault onClick={() => this.submitURL()}>
-								Submit
-							</Button>
+
+							<div>
+								<Button
+									isDefault
+									onClick={() => this.submitURL()}
+									style={{ marginRight: "10px" }}
+								>
+									Set
+								</Button>
+
+								<Button isDefault onClick={() => this.resetURL()}>
+									Reset
+								</Button>
+							</div>
 						</div>
 					)}
 				</PanelBody>

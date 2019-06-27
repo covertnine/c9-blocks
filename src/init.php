@@ -112,6 +112,13 @@ add_action('enqueue_block_editor_assets', 'cortex_blocks_cgb_editor_assets', 999
  */
 function cortex_blocks_front_assets()
 {
+    // Youtube Player API
+    wp_enqueue_script(
+        'youtube-api',
+        'https://www.youtube.com/iframe_api',
+        false
+    );
+
     // blocks frontend
     wp_enqueue_script(
         'cortex_blocks-frontend',

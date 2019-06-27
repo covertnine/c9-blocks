@@ -249,8 +249,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 			);
 		}
 
-		console.log(<VideoBox {...{ setAttributes, ...props }} />);
-
 		return (
 			<Fragment>
 				<div
@@ -297,6 +295,7 @@ function cortexBackgroundStyles(
 	const styles = {};
 	styles.display = "flex";
 	styles.backgroundRepeat = "no-repeat";
+	styles.position = "relative";
 
 	if (height) {
 		styles.minHeight = `${height}vh`;

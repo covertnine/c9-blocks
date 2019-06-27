@@ -53,13 +53,20 @@ export default class VideoBox extends Component {
 			setAttributes
 		} = this.props;
 
-		const cortexVideoStyles = (videoType, containerVideoURL) => {
+		const cortexVideoStyles = (
+			videoType,
+			containerVideoURL,
+			minScreenHeight
+		) => {
 			const styles = {};
-			if (videoType == "upload") {
-				styles.opacity = 0;
-				styles.transition = "5000ms";
-				styles.maxWidth = "100%";
-			}
+			styles.opacity = 0;
+			styles.transition = "5000ms";
+			styles.width = "100%";
+
+			styles.position = "absolute";
+			styles.left = 0;
+			styles.top = 0;
+			styles.minHeight = `${minScreenHeight}vh`;
 
 			return styles;
 		};
@@ -74,13 +81,28 @@ export default class VideoBox extends Component {
 					loop="loop"
 					onCanPlayThrough={this.canPlay}
 					ref={this.videoRef}
-					style={cortexVideoStyles(videoType, containerVideoURL)}
+					style={cortexVideoStyles(
+						videoType,
+						containerVideoURL,
+						minScreenHeight
+					)}
 				>
 					<source src={`${containerVideoURL}`} type="video/mp4" />
 				</video>
 			);
 		} else {
-			return <WpEmbedPreview html={previewHTML} />;
+			// return <WpEmbedPreview html={previewHTML} />;
+			return (
+				<div
+					id="player"
+					video-url={containerVideoURL}
+					style={cortexVideoStyles(
+						videoType,
+						containerVideoURL,
+						minScreenHeight
+					)}
+				/>
+			);
 		}
 	}
 }
