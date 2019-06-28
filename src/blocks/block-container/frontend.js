@@ -44,17 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		vid.style.opacity = 1;
 	}
 
-    let url = document.getElementById("player").getAttribute("video-url");
-    
-    console.log(url);
-
-	let video_id = url.split("v=")[1];
-	let ampersandPosition = video_id.indexOf("&");
-	if (ampersandPosition != -1) {
-		video_id = video_id.substring(0, ampersandPosition);
-	}
-
-	console.log(video_id);
+    let id = document.getElementById("player").getAttribute("video-id");
 
 	// create the player and replace the div
 
@@ -62,5 +52,5 @@ document.addEventListener("DOMContentLoaded", function() {
 		console.log("ts");
 	}
 
-	readyYoutube(video_id);
+	readyYoutube(id);
 });

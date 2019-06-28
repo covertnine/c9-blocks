@@ -27,14 +27,14 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: { containerPadding, containerVideoURL, preview },
+			attributes: { containerPadding, containerVideoID, preview },
 			setAttributes
 		} = this.props;
 		this.containerPadding = containerPadding;
 		this.setAttributes = setAttributes;
 		this.linkedRef = React.createRef();
 		this.toggleLinkage = this.toggleLinkage.bind(this);
-		this.URL = containerVideoURL || "";
+		this.ID = containerVideoID || "";
 		this.preview = preview;
 	}
 
@@ -86,18 +86,34 @@ export default class Inspector extends Component {
 		}
 	};
 
-	updateURL = value => {
-		this.URL = value;
-		this.setState({ URL: value });
+	updateID = value => {
+		this.ID = value;
+		this.setState({ ID: value });
 	};
 
-	submitURL = () => {
-		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false });
+	submitID = () => {
+		// parse submitted item, check if valid id
+		let checkURL = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+		let checkAlphaNumeric = /^[a-zA-Z0-9-_]+$/;
+		let result;
 
-		let video_id = this.URL.split("v=")[1];
-		let ampersandPosition = video_id.indexOf("&");
-		if (ampersandPosition != -1) {
-			video_id = video_id.substring(0, ampersandPosition);
+		if (result = this.ID.match(checkURL)) {
+			this.setAttributes({ containerVideoID: result[1], cannotEmbed: false });
+			this.ID = result[1];
+			this.setState({ ID: result[1] });
+		}
+		else if (result = this.ID.match(checkAlphaNumeric)) {
+			this.setAttributes({ containerVideoID: result[0], cannotEmbed: false });
+			this.ID = result[0];
+			this.setState({ ID: result[0] });
+		}
+		else {
+			this.setAttributes({ cannotEmbed: true });
+		}
+
+		// check if player exists
+		if (this.preview && this.preview.i) {
+			this.preview.loadVideoById(this.ID);
 		}
 
 		// const core = select("core");
@@ -115,10 +131,10 @@ export default class Inspector extends Component {
 		// }
 	};
 
-	resetURL = () => {
-		this.URL = "";
+	resetID = () => {
+		this.ID = "";
 		this.preview.destroy();
-		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false, preview: this.preview });
+		this.setAttributes({ containerVideoID: this.ID, cannotEmbed: false, preview: this.preview });
 	};
 
 	render() {
@@ -464,12 +480,12 @@ export default class Inspector extends Component {
 							{ label: "Embed URL", value: "embed" }
 						]}
 						onChange={videoType => {
-							setAttributes({ videoType, containerVideoURL: "" });
-							this.URL = "";
-							this.setState({ URL: "" });
+							setAttributes({ videoType, containerVideoURL: "", containerVideoID: "" });
+							this.ID = "";
+							this.setState({ ID: "" });
 							
 							const { attributes: {preview}} = this.props;
-							if (preview.i) {
+							if (preview && preview.i) {
 								preview.destroy();
 							}
 						}}
@@ -517,20 +533,20 @@ export default class Inspector extends Component {
 						<div>
 							<TextControl
 								label="YouTube URL or Youtube ID"
-								value={this.URL}
-								onChange={value => this.updateURL(value)}
+								value={this.ID}
+								onChange={value => this.updateID(value)}
 							/>
 
 							<div>
 								<Button
 									isDefault
-									onClick={() => this.submitURL()}
+									onClick={() => this.submitID()}
 									style={{ marginRight: "10px" }}
 								>
 									Set
 								</Button>
 
-								<Button isDefault onClick={() => this.resetURL()}>
+								<Button isDefault onClick={() => this.resetID()}>
 									Reset
 								</Button>
 							</div>

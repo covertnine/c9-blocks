@@ -15,29 +15,29 @@ export default class VideoBox extends Component {
 	constructor() {
 		super(...arguments);
 		this.videoRef = React.createRef();
-		this.canPlay = this.canPlay.bind(this);
-		this.setYoutube = this.setYoutube.bind(this);
-
+		
 		const {
-			attributes: { containerVideoURL, preview },
+			attributes: { containerVideoURL, preview, containerVideoID },
 			setAttributes
 		} = this.props;
-
+		
 		this.containerVideoURL = containerVideoURL;
+		this.containerVideoID = containerVideoID;
 		this.setAttributes = setAttributes;
 		this.preview = preview;
+		
+		this.canPlay = this.canPlay.bind(this);
+		this.setYoutube = this.setYoutube.bind(this);
 	}
 
 	setYoutube() {
-		if (!this.containerVideoURL || window.YT) {
+		if (!this.containerVideoID || window.YT) {
 			return;
 		}
 
-		let video_id = this.containerVideoURL.split("v=")[1];
-		let ampersandPosition = video_id.indexOf("&");
-		if (ampersandPosition != -1) {
-			video_id = video_id.substring(0, ampersandPosition);
-		}
+		console.log(this.containerVideoID);
+
+		let video_id = this.containerVideoID;
 
 		let loadYT = window.YT;
 
@@ -98,12 +98,8 @@ export default class VideoBox extends Component {
 		} = this.props;
 
 		let loadYT = window.YT;
-		if (loadYT && !preview.i) {
-			let video_id = this.containerVideoURL.split("v=")[1];
-			let ampersandPosition = video_id.indexOf("&");
-			if (ampersandPosition != -1) {
-				video_id = video_id.substring(0, ampersandPosition);
-			}
+		if (loadYT && (!preview || !preview.i)) {
+			let video_id = this.containerVideoID;
 
 			let player = new loadYT.Player("player", {
 				playerVars: {
@@ -139,6 +135,7 @@ export default class VideoBox extends Component {
 				minScreenHeight,
 				videoType,
 				containerVideoURL,
+				containerVideoID
 			}
 		} = this.props;
 
@@ -185,7 +182,7 @@ export default class VideoBox extends Component {
 				<div dangerouslySetInnerHTML={this.setYoutube()}>
 					<div
 						id="player"
-						video-url={containerVideoURL}
+						video-id={containerVideoID}
 						style={cortexVideoStyles(
 							videoType,
 							containerVideoURL,

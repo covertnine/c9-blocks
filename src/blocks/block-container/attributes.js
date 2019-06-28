@@ -91,12 +91,13 @@ const attributes = {
 		type: "string",
 		default: ""
 	},
+	containerVideoID: {
+		type: "string",
+		default: ""
+	},
 	cannotEmbed: {
 		type: "boolean",
 		default: false
-	},
-	previewHTML: {
-		type: "string"
 	}
 };
 

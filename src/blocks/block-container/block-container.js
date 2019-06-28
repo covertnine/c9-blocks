@@ -72,6 +72,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 				focalPoint,
 				videoType,
 				containerVideoURL,
+				containerVideoID,
 				cannotEmbed
 			},
 			setAttributes
@@ -119,7 +120,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 			}
 		];
 
-		if (!containerVideoURL || cannotEmbed) {
+		if (!containerVideoURL && !containerVideoID || cannotEmbed) {
 			return (
 				<Fragment>
 					<BlockControls key="controls">
@@ -212,6 +213,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 				focalPoint,
 				videoType,
 				containerVideoURL,
+				containerVideoID,
 				cannotEmbed
 			},
 			setAttributes
@@ -221,7 +223,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 
 		console.log(cannotEmbed);
 
-		if (!containerVideoURL || cannotEmbed) {
+		if (!containerVideoURL && !containerVideoID || cannotEmbed) {
 			return (
 				<Fragment>
 					<div
