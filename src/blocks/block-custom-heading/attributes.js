@@ -32,6 +32,13 @@ const attributes = {
 	weight: {
 		type: "string",
 		default: "normal"
+	},
+	color: {
+		type: "object",
+		default: {
+			backgroundColor: "white",
+			textColor: "black"
+		}
 	}
 };
 

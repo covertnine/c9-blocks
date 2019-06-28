@@ -6,6 +6,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { AlignmentToolbar } = wp.editor;
+const { ContrastChecker } = wp.blockEditor;
 
 const { compose } = wp.compose;
 
@@ -53,7 +54,7 @@ class Inspector extends Component {
 			buttonBackgroundColor,
 			setButtonTextColor,
 			setButtonBackgroundColor,
-			attributes: { heading, subheading, wrapper, level, textAlign, weight }
+			attributes: { heading, subheading, wrapper, level, textAlign, weight, color }
 		} = this.props;
 
 		const weightTypes = [
@@ -69,11 +70,6 @@ class Inspector extends Component {
 					title={__("Heading Options", "covertnine-blocks")}
 					initialOpen={false}
 				>
-					<PanelColorSettings
-						title={__("Heading Class", "covertnine-blocks")}
-						initialOpen={true}
-					/>
-
 					<SelectControl
 						label={__("Font Weight", "covertnine-blocks")}
 						help={__("Choose between light, normal, or bold.")}
@@ -98,6 +94,32 @@ class Inspector extends Component {
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
 				</PanelBody>
+
+				<PanelColorSettings
+					title={__("Color Settings")}
+					initialOpen={false}
+					colorSettings={[
+						{
+							value: color.backgroundColor,
+							onChange: (value) => console.log(value),
+							label: __("Background Color")
+						},
+						{
+							value: color.textColor,
+							onChange: (value) => console.log(value),
+							label: __("Text Color")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							textColor: color.textColor,
+							backgroundColor: color.backgroundColor,
+							fallbackTextColor: "black",
+							fallbackBackgroundColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
 			</InspectorControls>
 		);
 	}
