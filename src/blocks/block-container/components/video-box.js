@@ -94,13 +94,11 @@ export default class VideoBox extends Component {
 	}
 	componentDidMount () {
 		const {
-			attributes: { containerVideoURL, preview }
+			attributes: { preview }
 		} = this.props;
-		console.log("didmount", this.preview);
 
 		let loadYT = window.YT;
 		if (loadYT && !preview.i) {
-			console.log(preview, containerVideoURL);
 			let video_id = this.containerVideoURL.split("v=")[1];
 			let ampersandPosition = video_id.indexOf("&");
 			if (ampersandPosition != -1) {
@@ -129,41 +127,19 @@ export default class VideoBox extends Component {
 					onReady: this.onPlayerReady
 				}
 			});
-			console.log(player);
 
 			this.setAttributes({ preview: player });
 			this.preview = player;
 		}
 	}
-	// componentDidUpdate() {
-	// 	const { containerVideoURL } = this.props;
-	// 	console.log("update?", containerVideoURL);
-	// }
 
 	render() {
 		const {
 			attributes: {
-				verticalAlign,
-				containerImgURL,
-				containerImgID,
-				containerWidth,
-				bgImgSize,
-				bgImgAttach,
-				overlayHue,
-				overlayOpacity,
-				bgImgPosX,
-				bgImgPosY,
-				blendMode,
-				containerPadding,
-				columns,
 				minScreenHeight,
-				focalPoint,
 				videoType,
 				containerVideoURL,
-				cannotEmbed,
-				previewHTML
-			},
-			setAttributes
+			}
 		} = this.props;
 
 		const cortexVideoStyles = (

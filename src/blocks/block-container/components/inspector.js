@@ -43,8 +43,6 @@ export default class Inspector extends Component {
 			attributes: { preview }
 		} = this.props;
 
-		console.log(preview);
-
 		this.preview = preview;
 	}
 
@@ -465,7 +463,16 @@ export default class Inspector extends Component {
 							{ label: "Upload File", value: "upload" },
 							{ label: "Embed URL", value: "embed" }
 						]}
-						onChange={videoType => setAttributes({ videoType, containerVideoURL: "" })}
+						onChange={videoType => {
+							setAttributes({ videoType, containerVideoURL: "" });
+							this.URL = "";
+							this.setState({ URL: "" });
+							
+							const { attributes: {preview}} = this.props;
+							if (preview.i) {
+								preview.destroy();
+							}
+						}}
 					/>
 
 					<hr />
