@@ -27,7 +27,7 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: { containerPadding, containerVideoURL },
+			attributes: { containerPadding, containerVideoURL, preview },
 			setAttributes
 		} = this.props;
 		this.containerPadding = containerPadding;
@@ -35,6 +35,17 @@ export default class Inspector extends Component {
 		this.linkedRef = React.createRef();
 		this.toggleLinkage = this.toggleLinkage.bind(this);
 		this.URL = containerVideoURL || "";
+		this.preview = preview;
+	}
+
+	componentDidUpdate() {
+		const {
+			attributes: { preview }
+		} = this.props;
+
+		console.log(preview);
+
+		this.preview = preview;
 	}
 
 	toggleLinkage = spacingObject => {
@@ -85,24 +96,31 @@ export default class Inspector extends Component {
 	submitURL = () => {
 		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false });
 
-		const core = select("core");
-		const {
-			getEmbedPreview,
-			isPreviewEmbedFallback,
-			isRequestingEmbedPreview,
-			getThemeSupports
-		} = core;
-		const preview = undefined !== this.URL && getEmbedPreview(this.URL);
-		console.log(this.URL, getEmbedPreview(this.URL));
-
-		if (preview) {
-			this.setAttributes({ previewHTML: preview.html });
+		let video_id = this.URL.split("v=")[1];
+		let ampersandPosition = video_id.indexOf("&");
+		if (ampersandPosition != -1) {
+			video_id = video_id.substring(0, ampersandPosition);
 		}
+
+		// const core = select("core");
+		// const {
+		// 	getEmbedPreview,
+		// 	isPreviewEmbedFallback,
+		// 	isRequestingEmbedPreview,
+		// 	getThemeSupports
+		// } = core;
+		// const preview = undefined !== this.URL && getEmbedPreview(this.URL);
+		// console.log(this.URL, getEmbedPreview(this.URL));
+
+		// if (preview) {
+		// 	this.setAttributes({ previewHTML: preview.html });
+		// }
 	};
 
 	resetURL = () => {
 		this.URL = "";
-		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false });
+		this.preview.destroy();
+		this.setAttributes({ containerVideoURL: this.URL, cannotEmbed: false, preview: this.preview });
 	};
 
 	render() {
@@ -447,7 +465,7 @@ export default class Inspector extends Component {
 							{ label: "Upload File", value: "upload" },
 							{ label: "Embed URL", value: "embed" }
 						]}
-						onChange={videoType => setAttributes({ videoType })}
+						onChange={videoType => setAttributes({ videoType, containerVideoURL: "" })}
 					/>
 
 					<hr />

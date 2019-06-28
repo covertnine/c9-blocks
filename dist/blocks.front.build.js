@@ -94,7 +94,7 @@ function onYouTubeIframeAPIReady() {
 
 function readyYoutube(video_id) {
 	if (typeof YT !== "undefined" && YT && YT.Player) {
-		player = new YT.Player("player", {
+		let player = new YT.Player("player", {
 			playerVars: {
 				autoplay: 1,
 				controls: 0,
@@ -151,8 +151,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	function onYouTubeIframeAPIReady() {
 		console.log("ts");
 	}
-
-	let player;
 
 	readyYoutube(video_id);
 });

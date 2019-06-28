@@ -16,6 +16,72 @@ export default class VideoBox extends Component {
 		super(...arguments);
 		this.videoRef = React.createRef();
 		this.canPlay = this.canPlay.bind(this);
+		this.setYoutube = this.setYoutube.bind(this);
+
+		const {
+			attributes: { containerVideoURL, preview },
+			setAttributes
+		} = this.props;
+
+		this.containerVideoURL = containerVideoURL;
+		this.setAttributes = setAttributes;
+		this.preview = preview;
+	}
+
+	setYoutube() {
+		if (!this.containerVideoURL || window.YT) {
+			return;
+		}
+
+		let video_id = this.containerVideoURL.split("v=")[1];
+		let ampersandPosition = video_id.indexOf("&");
+		if (ampersandPosition != -1) {
+			video_id = video_id.substring(0, ampersandPosition);
+		}
+
+		let loadYT = window.YT;
+
+		if (!loadYT) {
+			loadYT = new Promise(resolve => {
+				const tag = document.createElement("script");
+				tag.src = "https://www.youtube.com/iframe_api";
+				const firstScriptTag = document.getElementsByTagName("script")[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				window.onYouTubeIframeAPIReady = () => resolve(window.YT);
+			});
+			loadYT.then(YT => {
+				let player = new YT.Player("player", {
+					playerVars: {
+						autoplay: 1,
+						controls: 0,
+						disablekb: 0,
+						autohide: 1,
+						wmode: "opaque",
+						hd: 1,
+						enablejsapi: 1,
+						loop: 1,
+						showinfo: 0,
+						iv_load_policy: 3,
+						rel: 0,
+						playlist: video_id,
+						playsinline: 1,
+						modestbranding: 1
+					},
+					videoId: video_id,
+					events: {
+						onReady: this.onPlayerReady
+					}
+				});
+				this.setAttributes({ preview: player });
+			});
+		}
+	}
+
+	// API will call this function when the video player is ready.
+	onPlayerReady(event) {
+		event.target.mute();
+
+		event.target.getIframe().style.opacity = 1;
 	}
 
 	canPlay() {
@@ -26,6 +92,53 @@ export default class VideoBox extends Component {
 			element.style.opacity = 1;
 		}
 	}
+	componentDidMount () {
+		const {
+			attributes: { containerVideoURL, preview }
+		} = this.props;
+		console.log("didmount", this.preview);
+
+		let loadYT = window.YT;
+		if (loadYT && !preview.i) {
+			console.log(preview, containerVideoURL);
+			let video_id = this.containerVideoURL.split("v=")[1];
+			let ampersandPosition = video_id.indexOf("&");
+			if (ampersandPosition != -1) {
+				video_id = video_id.substring(0, ampersandPosition);
+			}
+
+			let player = new loadYT.Player("player", {
+				playerVars: {
+					autoplay: 1,
+					controls: 0,
+					disablekb: 0,
+					autohide: 1,
+					wmode: "opaque",
+					hd: 1,
+					enablejsapi: 1,
+					loop: 1,
+					showinfo: 0,
+					iv_load_policy: 3,
+					rel: 0,
+					playlist: video_id,
+					playsinline: 1,
+					modestbranding: 1
+				},
+				videoId: video_id,
+				events: {
+					onReady: this.onPlayerReady
+				}
+			});
+			console.log(player);
+
+			this.setAttributes({ preview: player });
+			this.preview = player;
+		}
+	}
+	// componentDidUpdate() {
+	// 	const { containerVideoURL } = this.props;
+	// 	console.log("update?", containerVideoURL);
+	// }
 
 	render() {
 		const {
@@ -93,15 +206,17 @@ export default class VideoBox extends Component {
 		} else {
 			// return <WpEmbedPreview html={previewHTML} />;
 			return (
-				<div
-					id="player"
-					video-url={containerVideoURL}
-					style={cortexVideoStyles(
-						videoType,
-						containerVideoURL,
-						minScreenHeight
-					)}
-				/>
+				<div dangerouslySetInnerHTML={this.setYoutube()}>
+					<div
+						id="player"
+						video-url={containerVideoURL}
+						style={cortexVideoStyles(
+							videoType,
+							containerVideoURL,
+							minScreenHeight
+						)}
+					/>
+				</div>
 			);
 		}
 	}

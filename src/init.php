@@ -123,7 +123,7 @@ function cortex_blocks_front_assets()
     wp_enqueue_script(
         'cortex_blocks-frontend',
         plugins_url('dist/blocks.front.build.js', dirname(__FILE__)),
-        array('wp-element', 'wp-blocks', 'wp-i18n')
+        array('youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n')
     );
 }
 
