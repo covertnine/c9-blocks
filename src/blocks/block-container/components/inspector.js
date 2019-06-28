@@ -166,9 +166,9 @@ export default class Inspector extends Component {
 		} = this.props;
 
 		const cssUnits = [
-			{ value: "px", label: __("Pixel (px)", "atomic-blocks") },
-			{ value: "%", label: __("Percent (%)", "atomic-blocks") },
-			{ value: "em", label: __("Em (em)", "atomic-blocks") }
+			{ value: "px", label: __("Pixel (px)", "covertnine-blocks") },
+			{ value: "%", label: __("Percent (%)", "covertnine-blocks") },
+			{ value: "em", label: __("Em (em)", "covertnine-blocks") }
 		];
 
 		// const spacingPresets = [

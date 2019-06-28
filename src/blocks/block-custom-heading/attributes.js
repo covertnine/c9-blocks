@@ -28,6 +28,10 @@ const attributes = {
 	textAlign: {
 		type: "string",
 		default: "left"
+	},
+	weight: {
+		type: "string",
+		default: "normal"
 	}
 };
 

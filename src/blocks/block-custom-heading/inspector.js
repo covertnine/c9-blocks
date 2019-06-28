@@ -5,10 +5,11 @@
 // Setup the block
 const { __ } = wp.i18n;
 const { Component } = wp.element;
+const { AlignmentToolbar } = wp.editor;
 
 const { compose } = wp.compose;
 
-import HeadingToolbar from './heading-toolbar';
+import HeadingToolbar from "./heading-toolbar";
 
 // Import block components
 const {
@@ -52,9 +53,14 @@ class Inspector extends Component {
 			buttonBackgroundColor,
 			setButtonTextColor,
 			setButtonBackgroundColor,
-			level,
-			attributes: { heading, subheading, wrapper }
+			attributes: { heading, subheading, wrapper, level, textAlign, weight }
 		} = this.props;
+
+		const weightTypes = [
+			{ value: "light", label: __("Light (300)", "covertnine-blocks") },
+			{ value: "normal", label: __("Normal (400)", "covertnine-blocks") },
+			{ value: "bold", label: __("Bold (700)", "covertnine-blocks") }
+		];
 
 		// Update color values
 		return (
@@ -67,7 +73,30 @@ class Inspector extends Component {
 						title={__("Heading Class", "covertnine-blocks")}
 						initialOpen={true}
 					/>
-					<HeadingToolbar minLevel={ 1 } maxLevel={ 7 } selectedLevel={ level } onChange={ ( newLevel ) => setAttributes( { level: newLevel } ) } />
+
+					<SelectControl
+						label={__("Font Weight", "covertnine-blocks")}
+						help={__("Choose between light, normal, or bold.")}
+						options={weightTypes}
+						value={weight}
+						onChange={value => setAttributes({ weight: value })}
+					/>
+
+					<hr />
+
+					<p>{__("Font Size")}</p>
+					<HeadingToolbar
+						minLevel={1}
+						maxLevel={7}
+						selectedLevel={level}
+						onChange={newLevel => setAttributes({ level: newLevel })}
+					/>
+
+					<p>{__("Text Alignment")}</p>
+					<AlignmentToolbar
+						value={textAlign}
+						onChange={value => setAttributes({ textAlign: value })}
+					/>
 				</PanelBody>
 			</InspectorControls>
 		);

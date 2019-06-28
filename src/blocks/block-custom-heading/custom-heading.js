@@ -19,14 +19,14 @@ export default class C9CustomHeading extends Component {
 	render() {
 		// Setup the attributes
 		const {
-			attributes: { heading, subheading, wrapper, level, textAlign }
+			attributes: { heading, subheading, wrapper, level, textAlign, weight }
 		} = this.props;
 
 		const className = classnames(["section-heading"]);
 
 		return (
 			// <div className={className ? className : undefined}>
-			<div className={`h${level}`} style={{ textAlign }}>
+			<div className={classnames([`h${level}`, `font-weight-${weight}`])} style={{ textAlign }}>
 				{this.props.children}
 			</div>
 		);
