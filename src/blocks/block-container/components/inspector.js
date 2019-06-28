@@ -204,10 +204,18 @@ export default class Inspector extends Component {
 		};
 
 		const onSelectVideo = video => {
+			let replace = containerVideoURL && !!containerVideoURL.length;
+
 			setAttributes({
 				containerVideoURL: video.url,
 				cannotEmbed: false
 			});
+
+			if (replace) {
+				let vidElement = document.getElementById("containerVideo");
+				vidElement.load();
+				vidElement.play();
+			}
 		};
 
 		const onRemoveVideo = () => {
