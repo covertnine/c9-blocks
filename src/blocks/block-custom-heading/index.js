@@ -7,7 +7,7 @@ import classnames from "classnames";
 import Inspector from "./inspector";
 import CustomHeading from "./custom-heading";
 
-import HeadingToolbar from './heading-toolbar';
+import HeadingToolbar from "./heading-toolbar";
 
 // Import Icon
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
@@ -63,7 +63,7 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 		// Setup the attributes
 		const {
 			setAttributes,
-			attributes: { heading, subheading, wrapper, level }
+			attributes: { heading, subheading, wrapper, level, textAlign }
 		} = props;
 
 		// Save the block markup for the front end
@@ -73,7 +73,10 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 					{/* <BlockAlignmentToolbar
 					/> */}
 
-					<AlignmentToolbar />
+					<AlignmentToolbar
+						value={textAlign}
+						onChange={value => setAttributes({ textAlign: value })}
+					/>
 					<HeadingToolbar
 						minLevel={1}
 						maxLevel={7}
@@ -84,7 +87,7 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 				<Inspector {...{ setAttributes, ...props }} />
 				<CustomHeading {...props}>
 					{heading && subheading && (
-						<RichText.Content tagName="h3" value={heading + subheading} />
+						<RichText.Content tagName="p" value={heading + subheading} />
 					)}
 				</CustomHeading>
 			</Fragment>
@@ -101,7 +104,7 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 			<Fragment>
 				<CustomHeading {...props}>
 					{heading && subheading && (
-						<RichText.Content tagName="h3" value={heading + subheading} />
+						<RichText.Content tagName="p" value={heading + subheading} />
 					)}
 				</CustomHeading>
 			</Fragment>

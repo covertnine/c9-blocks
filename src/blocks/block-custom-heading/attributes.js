@@ -24,6 +24,10 @@ const attributes = {
 	level: {
 		type: "int",
 		default: 1
+	},
+	textAlign: {
+		type: "string",
+		default: "left"
 	}
 };
 
