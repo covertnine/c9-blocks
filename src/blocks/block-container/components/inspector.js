@@ -108,6 +108,9 @@ export default class Inspector extends Component {
 			this.setState({ ID: result[0] });
 		}
 		else {
+			if (this.preview && this.preview.i) {
+				this.preview.destroy();
+			}
 			this.setAttributes({ cannotEmbed: true });
 		}
 
@@ -156,7 +159,8 @@ export default class Inspector extends Component {
 				minScreenHeight,
 				focalPoint,
 				videoType,
-				containerVideoURL
+				containerVideoURL,
+				cannotEmbed
 			},
 			setAttributes
 		} = this.props;
@@ -544,6 +548,10 @@ export default class Inspector extends Component {
 								value={this.ID}
 								onChange={value => this.updateID(value)}
 							/>
+
+							{cannotEmbed && (
+								<p class="text-danger">Given YouTube ID/URL is not correctly formatted!</p>
+							)}
 
 							<div>
 								<Button

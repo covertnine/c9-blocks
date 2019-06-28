@@ -221,8 +221,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 
 		// const containerWidth3 = containerWidth;
 
-		console.log(cannotEmbed);
-
 		if (!containerVideoURL && !containerVideoID || cannotEmbed) {
 			return (
 				<Fragment>

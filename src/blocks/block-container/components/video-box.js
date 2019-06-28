@@ -35,8 +35,6 @@ export default class VideoBox extends Component {
 			return;
 		}
 
-		console.log(this.containerVideoID);
-
 		let video_id = this.containerVideoID;
 
 		let loadYT = window.YT;
