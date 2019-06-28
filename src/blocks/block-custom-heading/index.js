@@ -7,6 +7,8 @@ import classnames from "classnames";
 import Inspector from "./inspector";
 import CustomHeading from "./custom-heading";
 
+import HeadingToolbar from './heading-toolbar';
+
 // Import Icon
 import { faHeading } from "@fortawesome/free-solid-svg-icons";
 import { makeIcon } from "../../helpers/awesomeGenerator";
@@ -42,45 +44,6 @@ const {
 
 import attributes from "./attributes";
 
-class C9CustomHeading extends Component {
-	render() {
-		// Setup the attributes
-		const {
-			setAttributes,
-			buttonTextColor,
-			buttonBackgroundColor,
-			setButtonTextColor,
-			setButtonBackgroundColor,
-			className,
-			attributes: { heading, subheading, wrapper }
-		} = this.props;
-
-		return [
-			// Show the Button markup in the editor
-			<CustomHeading {...this.props}>
-				{heading && (
-					<RichText
-						tagName="h3"
-						placeholder={__("Call To Action Text", "covertnine-blocks")}
-						keepPlaceholderOnFocus
-						value={heading}
-						onChange={value => setAttributes({ heading: value })}
-					/>
-				)}
-				{subheading && (
-					<RichText
-						tagName="h4"
-						placeholder={__("Call To Action Text", "covertnine-blocks")}
-						keepPlaceholderOnFocus
-						value={subheading}
-						onChange={value => setAttributes({ subheading: value })}
-					/>
-				)}
-			</CustomHeading>
-		];
-	}
-}
-
 // Register the block
 registerBlockType("covertnine-blocks/c9-custom-heading", {
 	title: __("Covertnine Custom Section Heading", "covertnine-blocks"),
@@ -100,16 +63,22 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 		// Setup the attributes
 		const {
 			setAttributes,
-			attributes: { heading, subheading, wrapper }
+			attributes: { heading, subheading, wrapper, level }
 		} = props;
 
 		// Save the block markup for the front end
 		return (
 			<Fragment>
 				<BlockControls>
-					<BlockAlignmentToolbar
-					/>
-					<AlignmentToolbar
+					{/* <BlockAlignmentToolbar
+					/> */}
+
+					<AlignmentToolbar />
+					<HeadingToolbar
+						minLevel={1}
+						maxLevel={7}
+						selectedLevel={level}
+						onChange={newLevel => setAttributes({ level: newLevel })}
 					/>
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />

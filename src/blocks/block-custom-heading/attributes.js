@@ -20,6 +20,10 @@ const attributes = {
 				attribute: "class"
 			}
 		}
+	},
+	level: {
+		type: "int",
+		default: 1
 	}
 };
 

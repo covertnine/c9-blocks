@@ -8,6 +8,8 @@ const { Component } = wp.element;
 
 const { compose } = wp.compose;
 
+import HeadingToolbar from './heading-toolbar';
+
 // Import block components
 const {
 	InspectorControls,
@@ -50,6 +52,7 @@ class Inspector extends Component {
 			buttonBackgroundColor,
 			setButtonTextColor,
 			setButtonBackgroundColor,
+			level,
 			attributes: { heading, subheading, wrapper }
 		} = this.props;
 
@@ -64,6 +67,7 @@ class Inspector extends Component {
 						title={__("Heading Class", "covertnine-blocks")}
 						initialOpen={true}
 					/>
+					<HeadingToolbar minLevel={ 1 } maxLevel={ 7 } selectedLevel={ level } onChange={ ( newLevel ) => setAttributes( { level: newLevel } ) } />
 				</PanelBody>
 			</InspectorControls>
 		);
