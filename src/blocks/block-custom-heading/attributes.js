@@ -25,6 +25,18 @@ const attributes = {
 		type: "int",
 		default: 1
 	},
+	type: {
+		type: "string",
+		default: "display-"
+	},
+	backgroundColor: {
+		type: "string",
+		default: ""
+	},
+	textColor: {
+		type: "string",
+		default: ""
+	},
 	textAlign: {
 		type: "string",
 		default: "left"
@@ -32,13 +44,6 @@ const attributes = {
 	weight: {
 		type: "string",
 		default: "normal"
-	},
-	color: {
-		type: "object",
-		default: {
-			backgroundColor: "white",
-			textColor: "black"
-		}
 	}
 };
 

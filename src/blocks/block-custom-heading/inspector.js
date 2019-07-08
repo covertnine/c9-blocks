@@ -15,25 +15,13 @@ import HeadingToolbar from "./heading-toolbar";
 // Import block components
 const {
 	InspectorControls,
-	BlockDescription,
-	withColors,
-	ColorPalette,
 	PanelColorSettings
 } = wp.editor;
 
 // Import Inspector components
 const {
-	withFallbackStyles,
-	Toolbar,
-	Button,
 	PanelBody,
-	PanelRow,
-	FormToggle,
-	RangeControl,
 	SelectControl,
-	ToggleControl,
-	IconButton,
-	RadioControl
 } = wp.components;
 
 const { getComputedStyle } = window;
@@ -50,11 +38,17 @@ class Inspector extends Component {
 		// Setup the attributes
 		const {
 			setAttributes,
-			buttonTextColor,
-			buttonBackgroundColor,
-			setButtonTextColor,
-			setButtonBackgroundColor,
-			attributes: { heading, subheading, wrapper, level, textAlign, weight, color }
+			attributes: {
+				heading,
+				subheading,
+				wrapper,
+				level,
+				textAlign,
+				type,
+				weight,
+				backgroundColor,
+				textColor
+			}
 		} = this.props;
 
 		const weightTypes = [
@@ -62,6 +56,17 @@ class Inspector extends Component {
 			{ value: "normal", label: __("Normal (400)", "covertnine-blocks") },
 			{ value: "bold", label: __("Bold (700)", "covertnine-blocks") }
 		];
+
+		const fontTypes = [
+			{ value: "display-", label: __("Display", "covertnine-blocks") },
+			{ value: "h", label: __("Heading", "covertnine-blocks") },
+			{ value: "", label: __("Body", "covertnine-blocks") }
+		];
+
+		let maxLevel = 7;
+		if (type != "h") {
+			maxLevel = 5;
+		}
 
 		// Update color values
 		return (
@@ -80,13 +85,28 @@ class Inspector extends Component {
 
 					<hr />
 
-					<p>{__("Font Size")}</p>
-					<HeadingToolbar
-						minLevel={1}
-						maxLevel={7}
-						selectedLevel={level}
-						onChange={newLevel => setAttributes({ level: newLevel })}
+					<SelectControl
+						label={__("Font Type", "covertnine-blocks")}
+						help={__("Choose between heading, display, or body.")}
+						options={fontTypes}
+						value={type}
+						onChange={value => setAttributes({ type: value })}
 					/>
+
+					<hr />
+
+					{!!type && (
+						<div>
+							<p>{__("Font Size")}</p>
+							<HeadingToolbar
+								minLevel={1}
+								maxLevel={maxLevel}
+								selectedLevel={level}
+								type={type}
+								onChange={newLevel => setAttributes({ level: newLevel })}
+							/>
+						</div>
+					)}
 
 					<p>{__("Text Alignment")}</p>
 					<AlignmentToolbar
@@ -100,21 +120,21 @@ class Inspector extends Component {
 					initialOpen={false}
 					colorSettings={[
 						{
-							value: color.backgroundColor,
-							onChange: (value) => console.log(value),
+							value: backgroundColor,
+							onChange: value => setAttributes({ backgroundColor: value }),
 							label: __("Background Color")
 						},
 						{
-							value: color.textColor,
-							onChange: (value) => console.log(value),
+							value: textColor,
+							onChange: value => setAttributes({ textColor: value }),
 							label: __("Text Color")
 						}
 					]}
 				>
 					<ContrastChecker
 						{...{
-							textColor: color.textColor,
-							backgroundColor: color.backgroundColor,
+							textColor: textColor,
+							backgroundColor: backgroundColor,
 							fallbackTextColor: "black",
 							fallbackBackgroundColor: "white"
 						}}

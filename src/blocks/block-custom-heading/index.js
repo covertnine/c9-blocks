@@ -15,7 +15,7 @@ import { makeIcon } from "../../helpers/awesomeGenerator";
 const iconEl = makeIcon(faHeading);
 
 // Components
-const { __ } = wp.i18n;
+const { __, _x } = wp.i18n;
 
 // Extend component
 const { Component, Fragment } = wp.element;
@@ -63,8 +63,21 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 		// Setup the attributes
 		const {
 			setAttributes,
-			attributes: { heading, subheading, wrapper, level, textAlign }
+			attributes: {
+				heading,
+				subheading,
+				wrapper,
+				level,
+				textAlign,
+				backgroundColor, textColor,
+				type
+			}
 		} = props;
+
+		let maxLevel = 7;
+		if (type != "h") {
+			maxLevel = 5;
+		}
 
 		// Save the block markup for the front end
 		return (
@@ -77,17 +90,31 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 						value={textAlign}
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
-					<HeadingToolbar
-						minLevel={1}
-						maxLevel={7}
-						selectedLevel={level}
-						onChange={newLevel => setAttributes({ level: newLevel })}
-					/>
+
+					{!!type && (
+						<HeadingToolbar
+							minLevel={1}
+							maxLevel={maxLevel}
+							selectedLevel={level}
+							type={type}
+							onChange={newLevel => setAttributes({ level: newLevel })}
+						/>
+					)}
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<CustomHeading {...props}>
 					{heading && subheading && (
-						<RichText.Content tagName="p" value={heading + subheading} />
+						<RichText
+							tagName="p"
+							style={{
+								backgroundColor: backgroundColor,
+								color: textColor
+							}}
+							placeholder={"Start writing"}
+							wrapperClassName="wp-block-heading"
+							value={heading}
+							onChange={value => setAttributes({ heading: value })}
+						/>
 					)}
 				</CustomHeading>
 			</Fragment>
@@ -97,14 +124,21 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 	// Save the attributes and markup
 	save: function(props) {
 		// Setup the attributes
-		const { heading, subheading, wrapper } = props.attributes;
+		const { heading, subheading, wrapper, backgroundColor, textColor } = props.attributes;
 
 		// Save the block markup for the front end
 		return (
 			<Fragment>
 				<CustomHeading {...props}>
 					{heading && subheading && (
-						<RichText.Content tagName="p" value={heading + subheading} />
+						<RichText.Content
+							tagName="p"
+							style={{
+								backgroundColor: backgroundColor,
+								color: textColor
+							}}
+							value={heading}
+						/>
 					)}
 				</CustomHeading>
 			</Fragment>
