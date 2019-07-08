@@ -67,7 +67,7 @@ export default class Inspector extends Component {
 		if (this.containerPadding.linked) {
 			let spacingObject = {
 				linked: this.containerPadding.linked,
-				unit: "px",
+				unit: this.containerPadding.unit,
 				top: value,
 				bottom: value,
 				left: value,
