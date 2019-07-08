@@ -6,8 +6,6 @@
 import React from "react";
 const { Component } = wp.element;
 
-import WpEmbedPreview from "./wp-embed-preview";
-
 /**
  * Create an VideoBox Controls wrapper Component
  */

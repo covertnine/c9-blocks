@@ -4,10 +4,12 @@
 
 // Import block dependencies and components
 import classnames from "classnames";
-import Inspector from "./inspector";
-import CustomHeading from "./custom-heading";
+import Inspector from "./components/inspector";
+import CustomHeading from "./components/custom-heading";
 
-import HeadingToolbar from "./heading-toolbar";
+import HeadingToolbar from "./components/heading-toolbar";
+
+import "./styles/style.scss";
 
 // Import Icon
 import { faHeading } from "@fortawesome/free-solid-svg-icons";

@@ -14,4 +14,4 @@ import "./blocks/block-footnote/block-footnote.js";
 import "./blocks/block-container/components/column.js";
 import "./blocks/block-sharing/block-sharing.js";
 import "./blocks/block-cta/block-cta.js";
-import "./blocks/block-custom-heading/index.js";
+import "./blocks/block-custom-heading/block-custom-heading.js";

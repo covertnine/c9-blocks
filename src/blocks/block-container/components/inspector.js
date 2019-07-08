@@ -18,7 +18,6 @@ const {
 	Button,
 	FocalPointPicker
 } = wp.components;
-const { select } = wp.data;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -118,20 +117,6 @@ export default class Inspector extends Component {
 		if (this.preview && this.preview.i) {
 			this.preview.loadVideoById(this.ID);
 		}
-
-		// const core = select("core");
-		// const {
-		// 	getEmbedPreview,
-		// 	isPreviewEmbedFallback,
-		// 	isRequestingEmbedPreview,
-		// 	getThemeSupports
-		// } = core;
-		// const preview = undefined !== this.URL && getEmbedPreview(this.URL);
-		// console.log(this.URL, getEmbedPreview(this.URL));
-
-		// if (preview) {
-		// 	this.setAttributes({ previewHTML: preview.html });
-		// }
 	};
 
 	resetID = () => {
