@@ -21,13 +21,17 @@ const attributes = {
 			}
 		}
 	},
-	level: {
+	tagLevel: {
+		type: "int",
+		default: 1
+	},
+	displayLevel: {
 		type: "int",
 		default: 1
 	},
 	type: {
 		type: "string",
-		default: "display-"
+		default: "h"
 	},
 	backgroundColor: {
 		type: "string",

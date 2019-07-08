@@ -8,29 +8,19 @@ const { Component } = wp.element;
 const { AlignmentToolbar } = wp.editor;
 const { ContrastChecker } = wp.blockEditor;
 
-const { compose } = wp.compose;
-
 import HeadingToolbar from "./heading-toolbar";
 
 // Import block components
-const {
-	InspectorControls,
-	PanelColorSettings
-} = wp.editor;
+const { InspectorControls, PanelColorSettings } = wp.editor;
 
 // Import Inspector components
-const {
-	PanelBody,
-	SelectControl,
-} = wp.components;
-
-const { getComputedStyle } = window;
+const { PanelBody, SelectControl } = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
  */
 class Inspector extends Component {
-	constructor(props) {
+	constructor() {
 		super(...arguments);
 	}
 
@@ -39,15 +29,13 @@ class Inspector extends Component {
 		const {
 			setAttributes,
 			attributes: {
-				heading,
-				subheading,
-				wrapper,
-				level,
+				displayLevel,
 				textAlign,
 				type,
 				weight,
 				backgroundColor,
-				textColor
+				textColor,
+				tagLevel
 			}
 		} = this.props;
 
@@ -58,21 +46,58 @@ class Inspector extends Component {
 		];
 
 		const fontTypes = [
-			{ value: "display-", label: __("Display", "covertnine-blocks") },
 			{ value: "h", label: __("Heading", "covertnine-blocks") },
-			{ value: "", label: __("Body", "covertnine-blocks") }
+			{ value: "subhead-h", label: __("Subheading", "covertnine-blocks") },
+			{ value: "display-", label: __("Text-XL", "covertnine-blocks") }
 		];
 
-		let maxLevel = 7;
-		if (type != "h") {
-			maxLevel = 5;
-		}
+		const tagTypes = [
+			{ value: 1, label: __("H1", "covertnine-blocks") },
+			{ value: 2, label: __("H2", "covertnine-blocks") },
+			{ value: 3, label: __("H3", "covertnine-blocks") },
+			{ value: 4, label: __("H4", "covertnine-blocks") },
+			{ value: 5, label: __("H5", "covertnine-blocks") },
+			{ value: 6, label: __("H6", "covertnine-blocks") }
+		];
 
 		// Update color values
 		return (
 			<InspectorControls key="inspector">
 				<PanelBody
 					title={__("Heading Options", "covertnine-blocks")}
+					initialOpen={false}
+				>
+					<SelectControl
+						label={__("Element Tag Type", "covertnine-blocks")}
+						help={__("Choose between different heading tags.")}
+						options={tagTypes}
+						value={tagLevel}
+						onChange={value => setAttributes({ tagLevel: value })}
+					/>
+
+					<hr />
+
+					<SelectControl
+						label={__("Font Text Type", "covertnine-blocks")}
+						help={__("Choose between heading, subheading, or text-xl.")}
+						options={fontTypes}
+						value={type}
+						onChange={value => setAttributes({ type: value })}
+					/>
+
+					<hr />
+
+					<p>{__("Font Size")}</p>
+					<HeadingToolbar
+						minLevel={1}
+						maxLevel={7}
+						selectedLevel={displayLevel}
+						onChange={newLevel => setAttributes({ displayLevel: newLevel })}
+					/>
+				</PanelBody>
+
+				<PanelBody
+					title={__("Text Settings", "covertnine-blocks")}
 					initialOpen={false}
 				>
 					<SelectControl
@@ -84,29 +109,6 @@ class Inspector extends Component {
 					/>
 
 					<hr />
-
-					<SelectControl
-						label={__("Font Type", "covertnine-blocks")}
-						help={__("Choose between heading, display, or body.")}
-						options={fontTypes}
-						value={type}
-						onChange={value => setAttributes({ type: value })}
-					/>
-
-					<hr />
-
-					{!!type && (
-						<div>
-							<p>{__("Font Size")}</p>
-							<HeadingToolbar
-								minLevel={1}
-								maxLevel={maxLevel}
-								selectedLevel={level}
-								type={type}
-								onChange={newLevel => setAttributes({ level: newLevel })}
-							/>
-						</div>
-					)}
 
 					<p>{__("Text Alignment")}</p>
 					<AlignmentToolbar

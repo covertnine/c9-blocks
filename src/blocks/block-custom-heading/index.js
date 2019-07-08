@@ -15,32 +15,16 @@ import { makeIcon } from "../../helpers/awesomeGenerator";
 const iconEl = makeIcon(faHeading);
 
 // Components
-const { __, _x } = wp.i18n;
+const { __ } = wp.i18n;
 
 // Extend component
-const { Component, Fragment } = wp.element;
+const { Fragment } = wp.element;
 
 // Register block
 const { registerBlockType } = wp.blocks;
 
 // Register editor components
-const {
-	AlignmentToolbar,
-	URLInput,
-	BlockControls,
-	BlockAlignmentToolbar,
-	MediaUpload,
-	RichText
-} = wp.editor;
-
-// Register components
-const {
-	Button,
-	withFallbackStyles,
-	IconButton,
-	Dashicon,
-	Toolbar
-} = wp.components;
+const { AlignmentToolbar, BlockControls, RichText } = wp.editor;
 
 import attributes from "./attributes";
 
@@ -66,18 +50,15 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 			attributes: {
 				heading,
 				subheading,
-				wrapper,
-				level,
+				displayLevel,
+				tagLevel,
 				textAlign,
-				backgroundColor, textColor,
-				type
+				backgroundColor,
+				textColor,
+				type,
+				weight
 			}
 		} = props;
-
-		let maxLevel = 7;
-		if (type != "h") {
-			maxLevel = 5;
-		}
 
 		// Save the block markup for the front end
 		return (
@@ -91,27 +72,28 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
 
-					{!!type && (
-						<HeadingToolbar
-							minLevel={1}
-							maxLevel={maxLevel}
-							selectedLevel={level}
-							type={type}
-							onChange={newLevel => setAttributes({ level: newLevel })}
-						/>
-					)}
+					<HeadingToolbar
+						minLevel={1}
+						maxLevel={7}
+						selectedLevel={displayLevel}
+						onChange={newLevel => setAttributes({ displayLevel: newLevel })}
+					/>
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<CustomHeading {...props}>
 					{heading && subheading && (
 						<RichText
-							tagName="p"
+							tagName={`h${tagLevel}`}
+							className={classnames([
+								`${type}${displayLevel}`,
+								`font-weight-${weight}`,
+								`text-${textAlign}`
+							])}
 							style={{
 								backgroundColor: backgroundColor,
 								color: textColor
 							}}
 							placeholder={"Start writing"}
-							wrapperClassName="wp-block-heading"
 							value={heading}
 							onChange={value => setAttributes({ heading: value })}
 						/>
@@ -124,7 +106,17 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 	// Save the attributes and markup
 	save: function(props) {
 		// Setup the attributes
-		const { heading, subheading, wrapper, backgroundColor, textColor } = props.attributes;
+		const {
+			heading,
+			subheading,
+			backgroundColor,
+			textColor,
+			tagLevel,
+			type,
+			displayLevel,
+			weight,
+			textAlign
+		} = props.attributes;
 
 		// Save the block markup for the front end
 		return (
@@ -132,7 +124,12 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 				<CustomHeading {...props}>
 					{heading && subheading && (
 						<RichText.Content
-							tagName="p"
+							tagName={`h${tagLevel}`}
+							className={classnames([
+								`${type}${displayLevel}`,
+								`font-weight-${weight}`,
+								`text-${textAlign}`
+							])}
 							style={{
 								backgroundColor: backgroundColor,
 								color: textColor
