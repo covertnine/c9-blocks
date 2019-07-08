@@ -101,7 +101,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 
 		const widthControls = [
 			{
-				icon: "align-full-width",
+				icon: "align-center",
 				title: __("Full Width", "covertnine-blocks"),
 				isActive: containerWidth === "container-fluid",
 				onClick: () => setAttributes({ containerWidth: "container-fluid" })
@@ -113,14 +113,14 @@ registerBlockType("covertnine-blocks/column-containers", {
 				onClick: () => setAttributes({ containerWidth: "container" })
 			},
 			{
-				icon: "smiley",
+				icon: "align-full-width",
 				title: __("Narrow Width", "covertnine-blocks"),
 				isActive: containerWidth === "container-narrow",
 				onClick: () => setAttributes({ containerWidth: "container-narrow" })
 			}
 		];
 
-		if (!containerVideoURL && !containerVideoID || cannotEmbed) {
+		if ((!containerVideoURL && !containerVideoID) || cannotEmbed) {
 			return (
 				<Fragment>
 					<BlockControls key="controls">
@@ -221,7 +221,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 
 		// const containerWidth3 = containerWidth;
 
-		if (!containerVideoURL && !containerVideoID || cannotEmbed) {
+		if ((!containerVideoURL && !containerVideoID) || cannotEmbed) {
 			return (
 				<Fragment>
 					<div

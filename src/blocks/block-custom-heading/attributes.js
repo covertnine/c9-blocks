@@ -2,12 +2,7 @@ const attributes = {
 	heading: {
 		type: "string",
 		source: "text",
-		default: "Heading Content Here"
-	},
-	subheading: {
-		type: "string",
-		source: "text",
-		default: "Subheading Content Here"
+		default: ""
 	},
 	wrapper: {
 		type: "array",

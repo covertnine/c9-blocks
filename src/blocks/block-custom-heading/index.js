@@ -49,7 +49,6 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 			setAttributes,
 			attributes: {
 				heading,
-				subheading,
 				displayLevel,
 				tagLevel,
 				textAlign,
@@ -81,23 +80,22 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<CustomHeading {...props}>
-					{heading && subheading && (
-						<RichText
-							tagName={`h${tagLevel}`}
-							className={classnames([
-								`${type}${displayLevel}`,
-								`font-weight-${weight}`,
-								`text-${textAlign}`
-							])}
-							style={{
-								backgroundColor: backgroundColor,
-								color: textColor
-							}}
-							placeholder={"Start writing"}
-							value={heading}
-							onChange={value => setAttributes({ heading: value })}
-						/>
-					)}
+					<RichText
+						tagName={`h${tagLevel}`}
+						className={classnames([
+							`${type}${displayLevel}`,
+							`font-weight-${weight}`,
+							`text-${textAlign}`
+						])}
+						style={{
+							backgroundColor: backgroundColor,
+							color: textColor
+						}}
+						keepPlaceholderOnFocus={true}
+						placeholder={__("Write heading…")}
+						value={heading}
+						onChange={value => setAttributes({ heading: value })}
+					/>
 				</CustomHeading>
 			</Fragment>
 		);
@@ -108,7 +106,6 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 		// Setup the attributes
 		const {
 			heading,
-			subheading,
 			backgroundColor,
 			textColor,
 			tagLevel,
@@ -122,21 +119,19 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 		return (
 			<Fragment>
 				<CustomHeading {...props}>
-					{heading && subheading && (
-						<RichText.Content
-							tagName={`h${tagLevel}`}
-							className={classnames([
-								`${type}${displayLevel}`,
-								`font-weight-${weight}`,
-								`text-${textAlign}`
-							])}
-							style={{
-								backgroundColor: backgroundColor,
-								color: textColor
-							}}
-							value={heading}
-						/>
-					)}
+					<RichText.Content
+						tagName={`h${tagLevel}`}
+						className={classnames([
+							`${type}${displayLevel}`,
+							`font-weight-${weight}`,
+							`text-${textAlign}`
+						])}
+						style={{
+							backgroundColor: backgroundColor,
+							color: textColor
+						}}
+						value={heading}
+					/>
 				</CustomHeading>
 			</Fragment>
 		);

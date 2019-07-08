@@ -550,7 +550,7 @@ export default class Inspector extends Component {
 							/>
 
 							{cannotEmbed && (
-								<p class="text-danger">Given YouTube ID/URL is not correctly formatted!</p>
+								<p className="text-danger">Given YouTube ID/URL is not correctly formatted!</p>
 							)}
 
 							<div>
