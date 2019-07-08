@@ -13,17 +13,17 @@ export default class VideoBox extends Component {
 	constructor() {
 		super(...arguments);
 		this.videoRef = React.createRef();
-		
+
 		const {
 			attributes: { containerVideoURL, preview, containerVideoID },
 			setAttributes
 		} = this.props;
-		
+
 		this.containerVideoURL = containerVideoURL;
 		this.containerVideoID = containerVideoID;
 		this.setAttributes = setAttributes;
 		this.preview = preview;
-		
+
 		this.canPlay = this.canPlay.bind(this);
 		this.setYoutube = this.setYoutube.bind(this);
 	}
@@ -88,7 +88,7 @@ export default class VideoBox extends Component {
 			element.style.opacity = 1;
 		}
 	}
-	componentDidMount () {
+	componentDidMount() {
 		const {
 			attributes: { preview }
 		} = this.props;
@@ -155,6 +155,7 @@ export default class VideoBox extends Component {
 
 		if (containerVideoURL && videoType == "upload") {
 			return (
+				// eslint-disable-next-line jsx-a11y/media-has-caption
 				<video
 					id="containerVideo"
 					playsinline="playsinline"

@@ -1,3 +1,4 @@
+/* eslint-disable no-cond-assign */
 /**
  * Internal block libraries
  */
@@ -92,7 +93,7 @@ export default class Inspector extends Component {
 
 	submitID = () => {
 		// parse submitted item, check if valid id
-		let checkURL = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+		let checkURL = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|&v(?:i)?=))([^#&?]*).*/;
 		let checkAlphaNumeric = /^[a-zA-Z0-9-_]+$/;
 		let result;
 

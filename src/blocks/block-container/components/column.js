@@ -29,7 +29,7 @@ registerBlockType("covertnine-blocks/column", {
 	edit() {
 		return (
 			<div className="col">
-				<InnerBlocks className="col" templateLock={false} />
+				<InnerBlocks templateLock={false} templateInsertUpdatesSelection={ false } />
 			</div>
 		);
 	},

@@ -12,15 +12,15 @@ import classnames from "classnames";
  * Create a C9CustomHeading wrapper Component
  */
 export default class C9CustomHeading extends Component {
-	constructor(props) {
+	constructor() {
 		super(...arguments);
 	}
 
 	render() {
 		// Setup the attributes
-		const {
-			attributes: { heading, subheading, wrapper, type, displayLevel, textAlign, weight }
-		} = this.props;
+		// const {
+		// 	attributes: { heading, subheading, wrapper, type, displayLevel, textAlign, weight }
+		// } = this.props;
 
 		const className = classnames(["section-heading"]);
 
