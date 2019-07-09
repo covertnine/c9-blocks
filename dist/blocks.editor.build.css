@@ -55,7 +55,7 @@
  *
  * CSS for both Frontend+Backend.
  */
-.container
+div[class^="container"]
 .block-editor-block-list__layout
 > .block-editor-block-list__block
 > .block-editor-block-list__block-edit,
