@@ -9,7 +9,9 @@ import CustomHeading from "./components/custom-heading";
 
 import HeadingToolbar from "./components/heading-toolbar";
 
+// Import CSS
 import "./styles/style.scss";
+import "./styles/editor.scss";
 
 // Import Icon
 import { faHeading } from "@fortawesome/free-solid-svg-icons";

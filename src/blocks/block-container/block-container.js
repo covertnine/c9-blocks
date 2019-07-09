@@ -10,8 +10,11 @@ import classnames from "classnames";
  */
 import Inspector from "./components/inspector";
 import VideoBox from "./components/video-box";
-import "./styles/style.scss";
 import attributes from "./attributes";
+
+// Import CSS
+import "./styles/style.scss";
+import "./styles/editor.scss";
 
 /**
  * WordPress dependencies
