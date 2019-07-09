@@ -33,21 +33,9 @@ registerBlockType("covertnine-blocks/column", {
 		}
 	},
 
-	edit: (props) => {
-		const {
-			attributes: {
-				width
-			}
-		} = props;
-
-		let className = "col";
-
-		if (width > 0) {
-			className += `-${width}`;
-		}
-
+	edit: () => {
 		return (
-			<div className={className}>
+			<div className="col">
 				<div>
 					<InnerBlocks
 						templateLock={false}
