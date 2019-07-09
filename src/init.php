@@ -89,7 +89,12 @@ function cortex_blocks_cgb_editor_assets()
     );
 
     // Styles.
-    wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), '4.3.1');
+    wp_enqueue_style(
+        'bootstrap-css',
+        'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+        array('wp-blocks', 'wp-il8n', 'wp-element'),
+        true
+    );
     wp_enqueue_style(
         'cortex_blocks-cgb-block-editor-css', // Handle.
         plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)), // Block editor CSS.
