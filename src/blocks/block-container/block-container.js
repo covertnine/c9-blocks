@@ -73,7 +73,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 				columns,
 				minScreenHeight,
 				focalPoint,
-				videoType,
 				containerVideoURL,
 				containerVideoID,
 				cannotEmbed
@@ -214,7 +213,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerPadding,
 				minScreenHeight,
 				focalPoint,
-				videoType,
 				containerVideoURL,
 				containerVideoID,
 				cannotEmbed

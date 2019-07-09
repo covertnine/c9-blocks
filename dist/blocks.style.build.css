@@ -405,3 +405,32 @@
  *
  * CSS for both Frontend+Backend.
  */
+.display-5 {
+  font-size: 3.25rem;
+  line-height: 1.2; }
+
+.display-6 {
+  font-size: 3rem;
+  line-height: 1.2; }
+
+.subhead {
+  color: #6c757d !important;
+  line-height: 1.2; }
+
+.subhead-h1 {
+  font-size: 2rem; }
+
+.subhead-h2 {
+  font-size: 1.6rem; }
+
+.subhead-h3 {
+  font-size: 1.4rem; }
+
+.subhead-h4 {
+  font-size: 1.2rem; }
+
+.subhead-h5 {
+  font-size: 1rem; }
+
+.subhead-h6 {
+  font-size: 0.8rem; }

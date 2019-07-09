@@ -47,7 +47,7 @@ class Inspector extends Component {
 
 		const fontTypes = [
 			{ value: "h", label: __("Heading", "covertnine-blocks") },
-			{ value: "subhead-h", label: __("Subheading", "covertnine-blocks") },
+			{ value: "subhead subhead-h", label: __("Subheading", "covertnine-blocks") },
 			{ value: "display-", label: __("Text-XL", "covertnine-blocks") }
 		];
 
@@ -65,7 +65,6 @@ class Inspector extends Component {
 			<InspectorControls key="inspector">
 				<PanelBody
 					title={__("Heading Options", "covertnine-blocks")}
-					initialOpen={false}
 				>
 					<SelectControl
 						label={__("Element Tag Type", "covertnine-blocks")}
