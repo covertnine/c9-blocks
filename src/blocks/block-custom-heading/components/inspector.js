@@ -51,7 +51,7 @@ class Inspector extends Component {
 			{ value: "display-", label: __("Text-XL", "covertnine-blocks") }
 		];
 
-		const tagTypes = [
+		const sizeTypes = [
 			{ value: 1, label: __("H1", "covertnine-blocks") },
 			{ value: 2, label: __("H2", "covertnine-blocks") },
 			{ value: 3, label: __("H3", "covertnine-blocks") },
@@ -66,18 +66,18 @@ class Inspector extends Component {
 				<PanelBody
 					title={__("Heading Options", "covertnine-blocks")}
 				>
-					<SelectControl
-						label={__("Element Tag Type", "covertnine-blocks")}
-						help={__("Choose between different heading tags.")}
-						options={tagTypes}
-						value={tagLevel}
-						onChange={value => setAttributes({ tagLevel: value })}
+					<p>{__("Element Tag Type")}</p>
+					<HeadingToolbar
+						minLevel={1}
+						maxLevel={7}
+						selectedLevel={tagLevel}
+						onChange={newLevel => setAttributes({ tagLevel: newLevel })}
 					/>
 
 					<hr />
 
 					<SelectControl
-						label={__("Font Text Type", "covertnine-blocks")}
+						label={__("Font Type", "covertnine-blocks")}
 						help={__("Choose between heading, subheading, or text-xl.")}
 						options={fontTypes}
 						value={type}
@@ -86,11 +86,11 @@ class Inspector extends Component {
 
 					<hr />
 
-					<p>{__("Font Size")}</p>
-					<HeadingToolbar
-						minLevel={1}
-						maxLevel={7}
-						selectedLevel={displayLevel}
+					<SelectControl
+						label={__("Font Size", "covertnine-blocks")}
+						help={__("Choose between different heading sizes.")}
+						options={sizeTypes}
+						value={displayLevel}
 						onChange={newLevel => setAttributes({ displayLevel: newLevel })}
 					/>
 				</PanelBody>

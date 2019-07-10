@@ -78,8 +78,8 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 					<HeadingToolbar
 						minLevel={1}
 						maxLevel={7}
-						selectedLevel={displayLevel}
-						onChange={newLevel => setAttributes({ displayLevel: newLevel })}
+						selectedLevel={tagLevel}
+						onChange={newLevel => setAttributes({ tagLevel: newLevel })}
 					/>
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
