@@ -15,7 +15,6 @@ import attributes from "./attributes";
 // Import CSS
 import "./styles/style.scss";
 import "./styles/editor.scss";
-
 /**
  * WordPress dependencies
  */
@@ -35,7 +34,10 @@ const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
  * @return {Object[]} Columns layout configuration.
  */
 const getColumnsTemplate = memoize(columns => {
-	return times(columns, () => ["covertnine-blocks/column"]);
+	return times(columns, () => [
+		"covertnine-blocks/column",
+		{ width: Math.round(12 / columns) }
+	]);
 });
 
 registerBlockType("covertnine-blocks/column-containers", {
@@ -73,7 +75,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 				columns,
 				minScreenHeight,
 				focalPoint,
-				videoType,
 				containerVideoURL,
 				containerVideoID,
 				cannotEmbed
@@ -214,7 +215,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerPadding,
 				minScreenHeight,
 				focalPoint,
-				videoType,
 				containerVideoURL,
 				containerVideoID,
 				cannotEmbed
