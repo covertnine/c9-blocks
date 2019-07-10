@@ -8,6 +8,7 @@ import React from "react";
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
+const { select, dispatch } = wp.data;
 const {
 	RadioControl,
 	PanelBody,
@@ -128,6 +129,7 @@ export default class Inspector extends Component {
 
 	render() {
 		const {
+			clientId,
 			attributes: {
 				verticalAlign,
 				containerImgURL,
@@ -252,6 +254,9 @@ export default class Inspector extends Component {
 						label={__("Columns")}
 						value={columns}
 						onChange={nextColumns => {
+							let children = select('core/editor').getBlocksByClientId(clientId)[0].innerBlocks;
+							let nextWidth = Math.round(12 / nextColumns);
+							children.map(c => dispatch('core/editor').updateBlockAttributes(c.clientId, {width: nextWidth}));
 							setAttributes({
 								columns: nextColumns
 							});
