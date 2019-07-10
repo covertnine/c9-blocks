@@ -121,7 +121,7 @@ function cortex_blocks_front_assets()
         array('youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n')
     );
 
-    wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), '4.3.1');
+    wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(''), '4.3.1');
 }
 
 // Hook: Cortex Blocks Frontend
