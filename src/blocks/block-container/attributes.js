@@ -87,7 +87,10 @@ const attributes = {
 	},
 	focalPoint: {
 		type: "object",
-		default: undefined
+		default: {
+			x: 0,
+			y: 0
+		}
 	},
 	videoType: {
 		type: "string",

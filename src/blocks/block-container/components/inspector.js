@@ -333,29 +333,95 @@ export default class Inspector extends Component {
 							onClick={() => this.toggleLinkage(this.containerPadding)}
 							ref={this.linkedRef}
 						/>
-						<div className="padding-bottom-wrapper">
-							<RangeControl
-								label={__("right")}
-								value={containerPadding.right}
-								onChange={padding => {
-									this.updatePadding("right", padding);
-								}}
-								className="padding"
-								min={0}
-								max={300}
-							/>
-						</div>
+						<RangeControl
+							label={__("right")}
+							value={containerPadding.right}
+							onChange={padding => {
+								this.updatePadding("right", padding);
+							}}
+							className="padding"
+							min={0}
+							max={300}
+						/>
 					</div>
-					<RangeControl
-						label={__("bottom")}
-						value={containerPadding.bottom}
-						onChange={padding => {
-							this.updatePadding("bottom", padding);
-						}}
-						className="padding"
-						min={0}
-						max={300}
+					<div className="padding-bottom-wrapper">
+						<RangeControl
+							label={__("bottom")}
+							value={containerPadding.bottom}
+							onChange={padding => {
+								this.updatePadding("bottom", padding);
+							}}
+							className="padding"
+							min={0}
+							max={300}
+						/>
+					</div>
+
+					<hr />
+
+					<h5 className="margin-label">Margins</h5>
+
+					<SelectControl
+						label={__("Margin Unit", "covertnine-blocks")}
+						help={__("Choose between pixel, percent, or em units.")}
+						options={cssUnits}
+						value={containerPadding.unit}
+						onChange={value => this.setUnit(value)}
 					/>
+					<hr />
+
+					<div className="margin-top-wrapper">
+						<RangeControl
+							label={__("top")}
+							value={containerPadding.top}
+							onChange={padding => {
+								this.updatePadding("top", padding);
+							}}
+							className="margin"
+							min={0}
+							max={300}
+						/>
+					</div>
+					<div className="margin-sides-wrapper">
+						<RangeControl
+							label={__("left")}
+							value={containerPadding.left}
+							onChange={padding => {
+								this.updatePadding("left", padding);
+							}}
+							className="margin"
+							min={0}
+							max={300}
+						/>
+						<IconButton
+							label={__("Linked Padding Toggle", "covertnine-blocks")}
+							icon={this.containerPadding.icon}
+							onClick={() => this.toggleLinkage(this.containerPadding)}
+							ref={this.linkedRef}
+						/>
+						<RangeControl
+							label={__("right")}
+							value={containerPadding.right}
+							onChange={padding => {
+								this.updatePadding("right", padding);
+							}}
+							className="margin"
+							min={0}
+							max={300}
+						/>
+					</div>
+					<div className="margin-bottom-wrapper">
+						<RangeControl
+							label={__("bottom")}
+							value={containerPadding.bottom}
+							onChange={padding => {
+								this.updatePadding("bottom", padding);
+							}}
+							className="margin"
+							min={0}
+							max={300}
+						/>
+					</div>
 				</PanelBody>
 				<PanelBody title={__("Background")} initialOpen={false}>
 					<MediaUpload
@@ -440,27 +506,23 @@ export default class Inspector extends Component {
 														}}
 													/>
 													{this.customX && (
-														<div>
+														<div style={{ display: "flex" }}>
+															<RangeControl
+																value={this.bgCustomX.size}
+																onChange={value =>
+																	this.updateBgX("size", value)
+																}
+																className="bgSize"
+																min={0}
+																max={Number.MAX_SAFE_INTEGER}
+															/>
 															<SelectControl
-																label={__("Size Unit", "covertnine-blocks")}
-																help={__(
-																	"Choose between pixel, percent, or em units."
-																)}
 																options={cssUnits}
 																value={this.bgCustomX.unit}
 																onChange={value =>
 																	this.updateBgX("unit", value)
 																}
-															/>
-															<RangeControl
-																label={__("Size Value", "covertnine-blocks")}
-																value={this.bgCustomX.size}
-																onChange={value => {
-																	this.updateBgX("size", value);
-																}}
 																className="bgSize"
-																min={0}
-																max={Number.MAX_SAFE_INTEGER}
 															/>
 														</div>
 													)}
@@ -481,27 +543,23 @@ export default class Inspector extends Component {
 														}}
 													/>
 													{this.customY && (
-														<div>
+														<div style={{ display: "flex" }}>
+															<RangeControl
+																value={this.bgCustomY.size}
+																onChange={value =>
+																	this.updateBgY("size", value)
+																}
+																className="bgSize"
+																min={0}
+																max={Number.MAX_SAFE_INTEGER}
+															/>
 															<SelectControl
-																label={__("Size Unit", "covertnine-blocks")}
-																help={__(
-																	"Choose between pixel, percent, or em units."
-																)}
 																options={cssUnits}
 																value={this.bgCustomY.unit}
 																onChange={value =>
 																	this.updateBgY("unit", value)
 																}
-															/>
-															<RangeControl
-																label={__("Size Value", "covertnine-blocks")}
-																value={this.bgCustomY.size}
-																onChange={value => {
-																	this.updateBgY("size", value);
-																}}
 																className="bgSize"
-																min={0}
-																max={Number.MAX_SAFE_INTEGER}
 															/>
 														</div>
 													)}
