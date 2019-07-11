@@ -90,6 +90,58 @@ div[class^="container"]
 
 .bgSize .components-select-control__input {
   margin-top: 0; }
+
+.padding-label,
+.margin-label {
+  margin-bottom: 0; }
+
+.padding-top-wrapper,
+.margin-top-wrapper {
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.padding-sides-wrapper,
+.padding-top-wrapper,
+.padding-bottom-wrapper,
+.margin-sides-wrapper,
+.margin-top-wrapper,
+.margin-bottom-wrapper {
+  display: -ms-flexbox;
+  display: flex; }
+
+.padding .components-range-control__slider,
+.margin .components-range-control__slider {
+  display: none; }
+
+.padding .components-range-control__number {
+  margin-left: 0; }
+
+.padding-sides-wrapper, .margin-sides-wrapper {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: end;
+      align-items: flex-end; }
+
+.padding-sides-wrapper .padding, .margin-sides-wrapper .margin {
+  width: 80px; }
+
+.padding-wrapper {
+  display: -ms-flexbox;
+  display: flex; }
+
+.padding-bottom-wrapper, .margin-bottom-wrapper {
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.padding-wrapper .components-range-control .components-base-control__field {
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.edit-post-sidebar .padding-wrapper input[type="number"] {
+  margin-left: 0; }
+
+.components-panel__body .padding, .components-panel__body .margin {
+  text-align: center; }
 /**
  * #.# Common SCSS
  *
