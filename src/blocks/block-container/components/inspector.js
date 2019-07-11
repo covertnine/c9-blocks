@@ -147,6 +147,7 @@ export default class Inspector extends Component {
 				containerWidth,
 				bgImgSize,
 				bgImgAttach,
+				bgImgRepeat,
 				overlayHue,
 				overlayOpacity,
 				blendMode,
@@ -171,6 +172,13 @@ export default class Inspector extends Component {
 			{ value: "cover", label: __("Cover", "covertnine-blocks") },
 			{ value: "contain", label: __("Contain", "covertnine-blocks") },
 			{ value: "", label: __("Custom", "covertnine-blocks") }
+		];
+
+		const repeatTypes = [
+			{ value: "no-repeat", label: __("no-repeat", "covertnine-blocks") },
+			{ value: "repeat", label: __("repeat", "covertnine-blocks") },
+			{ value: "round", label: __("round", "covertnine-blocks") },
+			{ value: "space", label: __("space", "covertnine-blocks") }
 		];
 
 		const onSelectImage = img => {
@@ -384,8 +392,8 @@ export default class Inspector extends Component {
 										<hr />
 
 										<div>
+											<h5>Size</h5>
 											<SelectControl
-												label={__("Size", "covertnine-blocks")}
 												help={__("Choose between cover, contain, or custom.")}
 												options={sizeTypes}
 												value={bgImgSize}
@@ -459,6 +467,19 @@ export default class Inspector extends Component {
 													)}
 												</div>
 											)}
+											<hr />
+
+											<h5>Repeat</h5>
+											<SelectControl
+												help={__(
+													"Choose between no-repeat, repeat, round or space."
+												)}
+												options={repeatTypes}
+												value={bgImgRepeat}
+												onChange={value =>
+													setAttributes({ bgImgRepeat: value })
+												}
+											/>
 										</div>
 									</div>
 								)}

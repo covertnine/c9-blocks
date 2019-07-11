@@ -68,6 +68,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerWidth,
 				bgImgSize,
 				bgImgAttach,
+				bgImgRepeat,
 				overlayHue,
 				overlayOpacity,
 				blendMode,
@@ -141,6 +142,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 							bgImgAttach,
 							bgImgPosX,
 							bgImgPosY,
+							bgImgRepeat,
 							overlayHue,
 							overlayOpacity,
 							blendMode,
@@ -178,6 +180,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						bgImgAttach,
 						bgImgPosX,
 						bgImgPosY,
+						bgImgRepeat,
 						overlayHue,
 						overlayOpacity,
 						blendMode,
@@ -209,6 +212,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerWidth,
 				bgImgSize,
 				bgImgAttach,
+				bgImgRepeat,
 				overlayHue,
 				overlayOpacity,
 				blendMode,
@@ -236,6 +240,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 							bgImgAttach,
 							bgImgPosX,
 							bgImgPosY,
+							bgImgRepeat,
 							overlayHue,
 							overlayOpacity,
 							blendMode,
@@ -263,6 +268,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 						bgImgAttach,
 						bgImgPosX,
 						bgImgPosY,
+						bgImgRepeat,
 						overlayHue,
 						overlayOpacity,
 						blendMode,
@@ -288,6 +294,7 @@ function cortexBackgroundStyles(
 	attachment,
 	posX,
 	posY,
+	repeat,
 	hue,
 	opacity,
 	blend,
@@ -297,7 +304,6 @@ function cortexBackgroundStyles(
 ) {
 	const styles = {};
 	styles.display = "flex";
-	styles.backgroundRepeat = "no-repeat";
 	styles.position = "relative";
 
 	if (height) {
@@ -325,6 +331,7 @@ function cortexBackgroundStyles(
 	if (url) {
 		styles.backgroundImage = `url(${url})`;
 		styles.backgroundSize = size;
+		styles.backgroundRepeat = repeat;
 		styles.backgroundAttachment = attachment ? "fixed" : "scroll";
 
 		styles.backgroundPositionX = posX > 0 ? `${posX}0%` : "0";
