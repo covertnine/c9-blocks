@@ -434,10 +434,8 @@ export default class Inspector extends Component {
 															if (value) {
 																this.updateBgX("unit", "%");
 																this.updateBgX("size", 100);
-																console.log(this.bgCustomX);
 															} else {
 																this.updateBgX("size", "auto");
-																console.log(this.bgCustomX);
 															}
 														}}
 													/>

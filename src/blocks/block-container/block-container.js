@@ -61,14 +61,14 @@ registerBlockType("covertnine-blocks/column-containers", {
 	edit: props => {
 		const {
 			attributes: {
-				bgImgPosY,
-				bgImgPosX,
 				verticalAlign,
 				containerImgURL,
 				containerWidth,
 				bgImgSize,
 				bgImgAttach,
 				bgImgRepeat,
+				bgCustomX,
+				bgCustomY,
 				overlayHue,
 				overlayOpacity,
 				blendMode,
@@ -139,9 +139,9 @@ registerBlockType("covertnine-blocks/column-containers", {
 							containerImgURL,
 							verticalAlign,
 							bgImgSize,
+							bgCustomX,
+							bgCustomY,
 							bgImgAttach,
-							bgImgPosX,
-							bgImgPosY,
 							bgImgRepeat,
 							overlayHue,
 							overlayOpacity,
@@ -177,9 +177,9 @@ registerBlockType("covertnine-blocks/column-containers", {
 						containerImgURL,
 						verticalAlign,
 						bgImgSize,
+						bgCustomX,
+						bgCustomY,
 						bgImgAttach,
-						bgImgPosX,
-						bgImgPosY,
 						bgImgRepeat,
 						overlayHue,
 						overlayOpacity,
@@ -205,14 +205,14 @@ registerBlockType("covertnine-blocks/column-containers", {
 	save: props => {
 		const {
 			attributes: {
-				bgImgPosY,
-				bgImgPosX,
 				verticalAlign,
 				containerImgURL,
 				containerWidth,
 				bgImgSize,
 				bgImgAttach,
 				bgImgRepeat,
+				bgCustomX,
+				bgCustomY,
 				overlayHue,
 				overlayOpacity,
 				blendMode,
@@ -237,9 +237,9 @@ registerBlockType("covertnine-blocks/column-containers", {
 							containerImgURL,
 							verticalAlign,
 							bgImgSize,
+							bgCustomX,
+							bgCustomY,
 							bgImgAttach,
-							bgImgPosX,
-							bgImgPosY,
 							bgImgRepeat,
 							overlayHue,
 							overlayOpacity,
@@ -265,9 +265,9 @@ registerBlockType("covertnine-blocks/column-containers", {
 						containerImgURL,
 						verticalAlign,
 						bgImgSize,
+						bgCustomX,
+						bgCustomY,
 						bgImgAttach,
-						bgImgPosX,
-						bgImgPosY,
 						bgImgRepeat,
 						overlayHue,
 						overlayOpacity,
@@ -291,9 +291,9 @@ function cortexBackgroundStyles(
 	url,
 	vertAlign,
 	size,
+	bgX,
+	bgY,
 	attachment,
-	posX,
-	posY,
 	repeat,
 	hue,
 	opacity,
@@ -330,14 +330,15 @@ function cortexBackgroundStyles(
 
 	if (url) {
 		styles.backgroundImage = `url(${url})`;
-		styles.backgroundSize = size;
 		styles.backgroundRepeat = repeat;
 		styles.backgroundAttachment = attachment ? "fixed" : "scroll";
-
-		styles.backgroundPositionX = posX > 0 ? `${posX}0%` : "0";
-		styles.backgroundPositionY = posY > 0 ? `${posY}0%` : "0";
-
 		styles.backgroundBlendMode = `${blend}`;
+	}
+	if (size.length > 0) {
+		styles.backgroundSize = size;
+	}
+	else {
+		styles.backgroundSize = `${bgX.size}${bgX.unit} ${bgY.size}${bgY.unit}`;
 	}
 	if (hue) {
 		styles.backgroundColor = hexToRGBA(hue, opacity);
