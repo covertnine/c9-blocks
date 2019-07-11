@@ -440,27 +440,23 @@ export default class Inspector extends Component {
 														}}
 													/>
 													{this.customX && (
-														<div>
+														<div style={{ display: "flex" }}>
+															<RangeControl
+																value={this.bgCustomX.size}
+																onChange={value =>
+																	this.updateBgX("size", value)
+																}
+																className="bgSize"
+																min={0}
+																max={Number.MAX_SAFE_INTEGER}
+															/>
 															<SelectControl
-																label={__("Size Unit", "covertnine-blocks")}
-																help={__(
-																	"Choose between pixel, percent, or em units."
-																)}
 																options={cssUnits}
 																value={this.bgCustomX.unit}
 																onChange={value =>
 																	this.updateBgX("unit", value)
 																}
-															/>
-															<RangeControl
-																label={__("Size Value", "covertnine-blocks")}
-																value={this.bgCustomX.size}
-																onChange={value => {
-																	this.updateBgX("size", value);
-																}}
 																className="bgSize"
-																min={0}
-																max={Number.MAX_SAFE_INTEGER}
 															/>
 														</div>
 													)}
@@ -481,27 +477,23 @@ export default class Inspector extends Component {
 														}}
 													/>
 													{this.customY && (
-														<div>
+														<div style={{ display: "flex" }}>
+															<RangeControl
+																value={this.bgCustomY.size}
+																onChange={value =>
+																	this.updateBgY("size", value)
+																}
+																className="bgSize"
+																min={0}
+																max={Number.MAX_SAFE_INTEGER}
+															/>
 															<SelectControl
-																label={__("Size Unit", "covertnine-blocks")}
-																help={__(
-																	"Choose between pixel, percent, or em units."
-																)}
 																options={cssUnits}
 																value={this.bgCustomY.unit}
 																onChange={value =>
 																	this.updateBgY("unit", value)
 																}
-															/>
-															<RangeControl
-																label={__("Size Value", "covertnine-blocks")}
-																value={this.bgCustomY.size}
-																onChange={value => {
-																	this.updateBgY("size", value);
-																}}
 																className="bgSize"
-																min={0}
-																max={Number.MAX_SAFE_INTEGER}
 															/>
 														</div>
 													)}

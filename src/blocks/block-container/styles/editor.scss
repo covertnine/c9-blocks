@@ -33,9 +33,14 @@ div[class^="container"]
 
 .bgSize .components-range-control__number {
     margin-left: 0;
+    margin-right: 6px;
 }
 
 .bgSize .components-base-control__field {
     justify-content: space-between;
     margin-bottom: 15px !important;
+}
+
+.bgSize .components-select-control__input {
+    margin-top: 0;
 }
