@@ -159,29 +159,6 @@ export default class Inspector extends Component {
 			{ value: "em", label: __("Em (em)", "covertnine-blocks") }
 		];
 
-		// const spacingPresets = [
-		// 	{
-		// 		name: "Extra Large",
-		// 		amount: "100",
-		// 		shortName: "xl"
-		// 	},
-		// 	{
-		// 		name: "Large",
-		// 		amount: "75",
-		// 		shortName: "lg"
-		// 	},
-		// 	{
-		// 		name: "Medium",
-		// 		amount: "50",
-		// 		shortName: "md"
-		// 	},
-		// 	{
-		// 		name: "Small",
-		// 		amount: "25",
-		// 		shortName: "sm"
-		// 	}
-		// ];
-
 		const onSelectImage = img => {
 			setAttributes({
 				containerImgURL: img.url
@@ -349,12 +326,6 @@ export default class Inspector extends Component {
 
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
-										<FocalPointPicker
-											label={__("Focal Point Picker")}
-											url={containerImgURL}
-											value={focalPoint}
-											onChange={value => setAttributes({ focalPoint: value })}
-										/>
 										<IconButton
 											label={__("Remove Image")}
 											icon="dismiss"
@@ -362,6 +333,12 @@ export default class Inspector extends Component {
 										>
 											{__("Remove")}
 										</IconButton>
+										<FocalPointPicker
+											label={__("Focal Point Picker")}
+											url={containerImgURL}
+											value={focalPoint}
+											onChange={value => setAttributes({ focalPoint: value })}
+										/>
 									</div>
 								)}
 							</div>
