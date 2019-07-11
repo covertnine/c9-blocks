@@ -16,8 +16,16 @@ const attributes = {
 	},
 	// true evaluates to backgroundSize cover, false to backgroundSize contain
 	bgImgSize: {
-		type: "boolean",
-		default: true
+		type: "string",
+		default: "cover"
+	},
+	bgCustomX: {
+		type: "string",
+		default: "auto"
+	},
+	bgCustomY: {
+		type: "string",
+		default: "auto"
 	},
 	bgImgRepeat: {
 		type: "string",
@@ -26,21 +34,13 @@ const attributes = {
 	// true evaluates to backgroundAttachment scroll, false to fixed
 	bgImgAttach: {
 		type: "boolean",
-		default: true
+		default: false
 	},
 	overlayHue: {
 		type: "string",
 		default: undefined
 	},
 	overlayOpacity: {
-		type: "number",
-		default: "5"
-	},
-	bgImgPosX: {
-		type: "number",
-		default: "5"
-	},
-	bgImgPosY: {
 		type: "number",
 		default: "5"
 	},

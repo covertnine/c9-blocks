@@ -323,9 +323,9 @@ function cortexBackgroundStyles(
 	}
 
 	if (url) {
-		(styles.backgroundImage = `url(${url})`),
-			(styles.backgroundSize = size ? "cover" : "contain");
-		styles.backgroundAttachment = attachment ? "scroll" : "fixed";
+		styles.backgroundImage = `url(${url})`;
+		styles.backgroundSize = size;
+		styles.backgroundAttachment = attachment ? "fixed" : "scroll";
 
 		styles.backgroundPositionX = posX > 0 ? `${posX}0%` : "0";
 		styles.backgroundPositionY = posY > 0 ? `${posY}0%` : "0";

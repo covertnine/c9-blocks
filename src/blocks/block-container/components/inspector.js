@@ -28,7 +28,7 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: { containerPadding, containerVideoID, preview },
+			attributes: { containerPadding, containerVideoID, preview, bgCustomX, bgCustomY },
 			setAttributes
 		} = this.props;
 		this.containerPadding = containerPadding;
@@ -37,6 +37,8 @@ export default class Inspector extends Component {
 		this.toggleLinkage = this.toggleLinkage.bind(this);
 		this.ID = containerVideoID || "";
 		this.preview = preview;
+		this.autoX = bgCustomX != "auto";
+		this.autoY = bgCustomY != "auto";
 	}
 
 	componentDidUpdate() {
@@ -141,8 +143,6 @@ export default class Inspector extends Component {
 				bgImgAttach,
 				overlayHue,
 				overlayOpacity,
-				bgImgPosX,
-				bgImgPosY,
 				blendMode,
 				containerPadding,
 				columns,
@@ -159,6 +159,12 @@ export default class Inspector extends Component {
 			{ value: "px", label: __("Pixel (px)", "covertnine-blocks") },
 			{ value: "%", label: __("Percent (%)", "covertnine-blocks") },
 			{ value: "em", label: __("Em (em)", "covertnine-blocks") }
+		];
+
+		const sizeTypes = [
+			{ value: "cover", label: __("Cover", "covertnine-blocks") },
+			{ value: "contain", label: __("Contain", "covertnine-blocks") },
+			{ value: "", label: __("Custom", "covertnine-blocks") }
 		];
 
 		const onSelectImage = img => {
@@ -342,35 +348,36 @@ export default class Inspector extends Component {
 											{__("Remove")}
 										</IconButton>
 										<div>
-											<h6>Size</h6>
-											<ToggleControl
-												label={__("Contain | Cover", "covertnine-blocks")}
-												checked={bgImgSize}
-												onChange={bgImgSize => setAttributes({ bgImgSize })}
+											<SelectControl
+												label={__("Size", "covertnine-blocks")}
+												help={__("Choose between cover, contain, or custom.")}
+												options={sizeTypes}
+												value={bgImgSize}
+												onChange={value => setAttributes({ bgImgSize: value })}
 											/>
+											{!bgImgSize && (
+												<div>
+												<ToggleControl
+													label={__("Auto | Manual", "covertnine-blocks")}
+													checked={this.autoX}
+													onChange={value => {
+														this.autoX = value;
+														this.setState({ autoX: value });
+													}
+													}
+												/>
+												<ToggleControl
+													label={__("Auto | Manual", "covertnine-blocks")}
+													checked={this.autoY}
+													onChange={value => {
+														this.autoY = value;
+														this.setState({ autoY: value });
+													}
+													}
+												/>
+												</div>
+											)}
 										</div>
-										{bgImgSize && (
-											<div>
-												<RangeControl
-													beforeIcon="arrow-left-alt2"
-													afterIcon="arrow-right-alt2"
-													label={__("Horizontal Position", "covertnine-blocks")}
-													value={bgImgPosX}
-													onChange={bgImgPosX => setAttributes({ bgImgPosX })}
-													min={0}
-													max={10}
-												/>
-												<RangeControl
-													beforeIcon="arrow-left-alt2"
-													afterIcon="arrow-right-alt2"
-													label={__("Vertical Position", "covertnine-blocks")}
-													value={bgImgPosY}
-													onChange={bgImgPosY => setAttributes({ bgImgPosY })}
-													min={0}
-													max={10}
-												/>
-											</div>
-										)}
 										<hr />
 										<h6>Position</h6>
 										<FocalPointPicker
@@ -379,8 +386,9 @@ export default class Inspector extends Component {
 											value={focalPoint}
 											onChange={value => setAttributes({ focalPoint: value })}
 										/>
+										<h6>Attachment</h6>
 										<ToggleControl
-											label={__("Fixed | Scroll", "covertnine-blocks")}
+											label={__("Scroll | Fixed", "covertnine-blocks")}
 											checked={bgImgAttach}
 											onChange={bgImgAttach => setAttributes({ bgImgAttach })}
 										/>

@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
 function readyYoutube(video_id) {
 	if (typeof YT !== "undefined" && YT && YT.Player) {
+		// eslint-disable-next-line no-unused-vars
 		let player = new YT.Player("player", {
 			playerVars: {
 				autoplay: 1,
