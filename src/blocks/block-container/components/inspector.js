@@ -30,6 +30,7 @@ export default class Inspector extends Component {
 		const {
 			attributes: {
 				containerPadding,
+				containerMargin,
 				containerVideoID,
 				preview,
 				bgCustomX,
@@ -38,9 +39,14 @@ export default class Inspector extends Component {
 			setAttributes
 		} = this.props;
 		this.containerPadding = containerPadding;
+		this.containerMargin = containerMargin;
 		this.setAttributes = setAttributes;
-		this.linkedRef = React.createRef();
-		this.toggleLinkage = this.toggleLinkage.bind(this);
+
+		this.linkedPaddingRef = React.createRef();
+		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
+		this.linkedMarginRef = React.createRef();
+		this.toggleMarginLinkage = this.toggleMarginLinkage.bind(this);
+
 		this.ID = containerVideoID || "";
 		this.preview = preview;
 		this.customX = bgCustomX.size != "auto";
@@ -56,23 +62,6 @@ export default class Inspector extends Component {
 
 		this.preview = preview;
 	}
-
-	toggleLinkage = spacingObject => {
-		this.containerPadding.linked = !this.containerPadding.linked;
-		this.containerPadding.icon = spacingObject.linked
-			? "admin-links"
-			: "editor-unlink";
-		this.setState({ containerPadding: this.containerPadding });
-		this.setAttributes({ containerPadding: this.containerPadding });
-	};
-
-	setUnit = value => {
-		let spacingObject = Object.assign({}, this.containerPadding);
-		spacingObject.unit = value;
-		this.containerPadding = spacingObject;
-		this.setState({ containerPadding: spacingObject });
-		this.setAttributes({ containerPadding: spacingObject });
-	};
 
 	updateBgX = (position, value) => {
 		let sizeObject = Object.assign({}, this.bgCustomX);
@@ -92,6 +81,23 @@ export default class Inspector extends Component {
 		this.bgCustomY = sizeObject;
 		this.setState({ bgCustomY: sizeObject });
 		this.setAttributes({ bgCustomY: sizeObject });
+	};
+
+	togglePaddingLinkage = spacingObject => {
+		this.containerPadding.linked = !this.containerPadding.linked;
+		this.containerPadding.icon = spacingObject.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ containerPadding: this.containerPadding });
+		this.setAttributes({ containerPadding: this.containerPadding });
+	};
+
+	setPaddingUnit = value => {
+		let spacingObject = Object.assign({}, this.containerPadding);
+		spacingObject.unit = value;
+		this.containerPadding = spacingObject;
+		this.setState({ containerPadding: spacingObject });
+		this.setAttributes({ containerPadding: spacingObject });
 	};
 
 	updatePadding = (position, value) => {
@@ -114,6 +120,46 @@ export default class Inspector extends Component {
 			this.containerPadding = spacingObject;
 			this.setState({ containerPadding: spacingObject });
 			this.setAttributes({ containerPadding: spacingObject });
+		}
+	};
+
+	toggleMarginLinkage = spacingObject => {
+		this.containerMargin.linked = !this.containerMargin.linked;
+		this.containerMargin.icon = spacingObject.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ containerMargin: this.containerMargin });
+		this.setAttributes({ containerMargin: this.containerMargin });
+	};
+
+	setMarginUnit = value => {
+		let spacingObject = Object.assign({}, this.containerMargin);
+		spacingObject.unit = value;
+		this.containerMargin = spacingObject;
+		this.setState({ containerMargin: spacingObject });
+		this.setAttributes({ containerMargin: spacingObject });
+	};
+
+	updateMargin = (position, value) => {
+		if (this.containerMargin.linked) {
+			let spacingObject = {
+				linked: this.containerMargin.linked,
+				unit: this.containerMargin.unit,
+				top: value,
+				bottom: value,
+				left: value,
+				right: value,
+				icon: this.containerMargin.icon
+			};
+			this.containerMargin = spacingObject;
+			this.setState({ containerMargin: spacingObject });
+			this.setAttributes({ containerMargin: spacingObject });
+		} else {
+			let spacingObject = Object.assign({}, this.containerMargin);
+			spacingObject[position] = value;
+			this.containerMargin = spacingObject;
+			this.setState({ containerMargin: spacingObject });
+			this.setAttributes({ containerMargin: spacingObject });
 		}
 	};
 
@@ -174,6 +220,7 @@ export default class Inspector extends Component {
 				overlayOpacity,
 				blendMode,
 				containerPadding,
+				containerMargin,
 				columns,
 				minScreenHeight,
 				focalPoint,
@@ -300,7 +347,7 @@ export default class Inspector extends Component {
 						help={__("Choose between pixel, percent, or em units.")}
 						options={cssUnits}
 						value={containerPadding.unit}
-						onChange={value => this.setUnit(value)}
+						onChange={value => this.setPaddingUnit(value)}
 					/>
 					<hr />
 
@@ -330,8 +377,8 @@ export default class Inspector extends Component {
 						<IconButton
 							label={__("Linked Padding Toggle", "covertnine-blocks")}
 							icon={this.containerPadding.icon}
-							onClick={() => this.toggleLinkage(this.containerPadding)}
-							ref={this.linkedRef}
+							onClick={() => this.togglePaddingLinkage(this.containerPadding)}
+							ref={this.linkedPaddingRef}
 						/>
 						<RangeControl
 							label={__("right")}
@@ -365,17 +412,17 @@ export default class Inspector extends Component {
 						label={__("Margin Unit", "covertnine-blocks")}
 						help={__("Choose between pixel, percent, or em units.")}
 						options={cssUnits}
-						value={containerPadding.unit}
-						onChange={value => this.setUnit(value)}
+						value={containerMargin.unit}
+						onChange={value => this.setMarginUnit(value)}
 					/>
 					<hr />
 
 					<div className="margin-top-wrapper">
 						<RangeControl
 							label={__("top")}
-							value={containerPadding.top}
-							onChange={padding => {
-								this.updatePadding("top", padding);
+							value={containerMargin.top}
+							onChange={margin => {
+								this.updateMargin("top", margin);
 							}}
 							className="margin"
 							min={0}
@@ -385,9 +432,9 @@ export default class Inspector extends Component {
 					<div className="margin-sides-wrapper">
 						<RangeControl
 							label={__("left")}
-							value={containerPadding.left}
-							onChange={padding => {
-								this.updatePadding("left", padding);
+							value={containerMargin.left}
+							onChange={margin => {
+								this.updateMargin("left", margin);
 							}}
 							className="margin"
 							min={0}
@@ -395,15 +442,15 @@ export default class Inspector extends Component {
 						/>
 						<IconButton
 							label={__("Linked Padding Toggle", "covertnine-blocks")}
-							icon={this.containerPadding.icon}
-							onClick={() => this.toggleLinkage(this.containerPadding)}
-							ref={this.linkedRef}
+							icon={this.containerMargin.icon}
+							onClick={() => this.toggleMarginLinkage(this.containerMargin)}
+							ref={this.linkedMarginRef}
 						/>
 						<RangeControl
 							label={__("right")}
-							value={containerPadding.right}
-							onChange={padding => {
-								this.updatePadding("right", padding);
+							value={containerMargin.right}
+							onChange={margin => {
+								this.updateMargin("right", margin);
 							}}
 							className="margin"
 							min={0}
@@ -413,9 +460,9 @@ export default class Inspector extends Component {
 					<div className="margin-bottom-wrapper">
 						<RangeControl
 							label={__("bottom")}
-							value={containerPadding.bottom}
-							onChange={padding => {
-								this.updatePadding("bottom", padding);
+							value={containerMargin.bottom}
+							onChange={margin => {
+								this.updateMargin("bottom", margin);
 							}}
 							className="margin"
 							min={0}
