@@ -5,8 +5,7 @@
  * that are used across the project.
 */
 .row .editor-block-list__layout {
-  display: -ms-flexbox;
-  display: flex; }
+  display: block; }
 
 .wp-block {
   max-width: none; }
@@ -50,8 +49,7 @@
  * that are used across the project.
 */
 .row .editor-block-list__layout {
-  display: -ms-flexbox;
-  display: flex; }
+  display: block; }
 
 .wp-block {
   max-width: none; }
@@ -101,8 +99,7 @@
  * that are used across the project.
 */
 .row .editor-block-list__layout {
-  display: -ms-flexbox;
-  display: flex; }
+  display: block; }
 
 .wp-block {
   max-width: none; }
