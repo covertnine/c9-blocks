@@ -276,10 +276,10 @@ export default class Inspector extends Component {
 					</div>
 					<div className="padding-sides-wrapper">
 						<RangeControl
-							label={__("bottom")}
-							value={containerPadding.bottom}
+							label={__("left")}
+							value={containerPadding.left}
 							onChange={padding => {
-								this.updatePadding("bottom", padding);
+								this.updatePadding("left", padding);
 							}}
 							className="padding"
 							min={0}
@@ -291,29 +291,29 @@ export default class Inspector extends Component {
 							onClick={() => this.toggleLinkage(this.containerPadding)}
 							ref={this.linkedRef}
 						/>
-						<RangeControl
-							label={__("left")}
-							value={containerPadding.left}
-							onChange={padding => {
-								this.updatePadding("left", padding);
-							}}
-							className="padding"
-							min={0}
-							max={300}
-						/>
+						<div className="padding-bottom-wrapper">
+							<RangeControl
+								label={__("right")}
+								value={containerPadding.right}
+								onChange={padding => {
+									this.updatePadding("right", padding);
+								}}
+								className="padding"
+								min={0}
+								max={300}
+							/>
+						</div>
 					</div>
-					<div className="padding-bottom-wrapper">
-						<RangeControl
-							label={__("right")}
-							value={containerPadding.right}
-							onChange={padding => {
-								this.updatePadding("right", padding);
-							}}
-							className="padding"
-							min={0}
-							max={300}
-						/>
-					</div>
+					<RangeControl
+						label={__("bottom")}
+						value={containerPadding.bottom}
+						onChange={padding => {
+							this.updatePadding("bottom", padding);
+						}}
+						className="padding"
+						min={0}
+						max={300}
+					/>
 				</PanelBody>
 				<PanelBody title={__("Background")} initialOpen={false}>
 					<MediaUpload
