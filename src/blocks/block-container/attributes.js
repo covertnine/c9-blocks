@@ -20,12 +20,18 @@ const attributes = {
 		default: "cover"
 	},
 	bgCustomX: {
-		type: "string",
-		default: "auto"
+		type: "object",
+		default: {
+			size: "auto",
+			unit: "px"
+		}
 	},
 	bgCustomY: {
-		type: "string",
-		default: "auto"
+		type: "object",
+		default: {
+			size: "auto",
+			unit: "px"
+		}
 	},
 	bgImgRepeat: {
 		type: "string",
