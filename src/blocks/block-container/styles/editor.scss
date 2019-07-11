@@ -26,3 +26,12 @@ div[class^="container"]
 .components-color-palette {
     margin-top: 10px;
 }
+
+.bgSize .components-range-control__slider {
+    display: none;
+}
+
+.bgSize .components-base-control__field {
+    justify-content: space-between;
+    margin-bottom: 15px !important;
+}

@@ -28,7 +28,13 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: { containerPadding, containerVideoID, preview, bgCustomX, bgCustomY },
+			attributes: {
+				containerPadding,
+				containerVideoID,
+				preview,
+				bgCustomX,
+				bgCustomY
+			},
 			setAttributes
 		} = this.props;
 		this.containerPadding = containerPadding;
@@ -37,8 +43,8 @@ export default class Inspector extends Component {
 		this.toggleLinkage = this.toggleLinkage.bind(this);
 		this.ID = containerVideoID || "";
 		this.preview = preview;
-		this.autoX = bgCustomX != "auto";
-		this.autoY = bgCustomY != "auto";
+		this.customX = bgCustomX != "auto";
+		this.customY = bgCustomY != "auto";
 	}
 
 	componentDidUpdate() {
@@ -347,6 +353,36 @@ export default class Inspector extends Component {
 										>
 											{__("Remove")}
 										</IconButton>
+
+										<h5>Position</h5>
+										<FocalPointPicker
+											label={__("Focal Point Picker")}
+											url={containerImgURL}
+											value={focalPoint}
+											onChange={value => setAttributes({ focalPoint: value })}
+										/>
+
+										<hr />
+
+										<h5>Attachment</h5>
+										<ToggleControl
+											label={__("Scroll | Fixed", "covertnine-blocks")}
+											checked={bgImgAttach}
+											onChange={bgImgAttach => setAttributes({ bgImgAttach })}
+										/>
+
+										<hr />
+
+										<h5>Overlay</h5>
+										<span>Color Palette</span>
+										<ColorPalette
+											label={__("Overlay Color", "covertnine-blocks")}
+											value={overlayHue}
+											onChange={overlayHue => setAttributes({ overlayHue })}
+										/>
+
+										<hr />
+
 										<div>
 											<SelectControl
 												label={__("Size", "covertnine-blocks")}
@@ -357,53 +393,77 @@ export default class Inspector extends Component {
 											/>
 											{!bgImgSize && (
 												<div>
-												<ToggleControl
-													label={__("Auto | Manual", "covertnine-blocks")}
-													checked={this.autoX}
-													onChange={value => {
-														this.autoX = value;
-														this.setState({ autoX: value });
-													}
-													}
-												/>
-												<ToggleControl
-													label={__("Auto | Manual", "covertnine-blocks")}
-													checked={this.autoY}
-													onChange={value => {
-														this.autoY = value;
-														this.setState({ autoY: value });
-													}
-													}
-												/>
+													<h5>Horizontal</h5>
+													<ToggleControl
+														label={__("Auto | Manual", "covertnine-blocks")}
+														checked={this.customX}
+														onChange={value => {
+															this.customX = value;
+															this.setState({ customX: value });
+														}}
+													/>
+													{this.customX && (
+														<div>
+															<SelectControl
+																label={__("Size Unit", "covertnine-blocks")}
+																help={__(
+																	"Choose between pixel, percent, or em units."
+																)}
+																options={cssUnits}
+																value={containerPadding.unit}
+																onChange={value => this.setUnit(value)}
+															/>
+															<RangeControl
+																label={__("Size Value", "covertnine-blocks")}
+																value={containerPadding.top}
+																onChange={padding => {
+																	this.updatePadding("top", padding);
+																}}
+																className="bgSize"
+																min={0}
+																max={Number.MAX_SAFE_INTEGER}
+															/>
+														</div>
+													)}
+													<h5>Vertical</h5>
+													<ToggleControl
+														label={__("Auto | Manual", "covertnine-blocks")}
+														checked={this.customY}
+														onChange={value => {
+															this.customY = value;
+															this.setState({ customY: value });
+														}}
+													/>
+													{this.customY && (
+														<div>
+															<SelectControl
+																label={__("Size Unit", "covertnine-blocks")}
+																help={__(
+																	"Choose between pixel, percent, or em units."
+																)}
+																options={cssUnits}
+																value={containerPadding.unit}
+																onChange={value => this.setUnit(value)}
+															/>
+															<RangeControl
+																label={__("Size Value", "covertnine-blocks")}
+																value={containerPadding.top}
+																onChange={padding => {
+																	this.updatePadding("top", padding);
+																}}
+																className="bgSize"
+																min={0}
+																max={Number.MAX_SAFE_INTEGER}
+															/>
+														</div>
+													)}
 												</div>
 											)}
 										</div>
-										<hr />
-										<h6>Position</h6>
-										<FocalPointPicker
-											label={__("Focal Point Picker")}
-											url={containerImgURL}
-											value={focalPoint}
-											onChange={value => setAttributes({ focalPoint: value })}
-										/>
-										<h6>Attachment</h6>
-										<ToggleControl
-											label={__("Scroll | Fixed", "covertnine-blocks")}
-											checked={bgImgAttach}
-											onChange={bgImgAttach => setAttributes({ bgImgAttach })}
-										/>
 									</div>
 								)}
 							</div>
 						)}
-					/>
-					<hr />
-					<h6>Overlay</h6>
-					<span>Color Palette</span>
-					<ColorPalette
-						label={__("Overlay Color", "covertnine-blocks")}
-						value={overlayHue}
-						onChange={overlayHue => setAttributes({ overlayHue })}
 					/>
 
 					{overlayHue && !!overlayHue.length && (
