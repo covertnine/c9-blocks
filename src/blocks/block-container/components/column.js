@@ -6,6 +6,12 @@ const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
 const { registerBlockType } = wp.blocks;
 
+// Register editor components
+const { AlignmentToolbar, BlockControls } = wp.editor;
+
+// Extend component
+const { Fragment } = wp.element;
+
 registerBlockType("covertnine-blocks/column", {
 	title: __("Column", "covertnine-blocks"),
 
@@ -30,26 +36,47 @@ registerBlockType("covertnine-blocks/column", {
 		width: {
 			type: "int",
 			default: -1
+		},
+		textAlign: {
+			type: "string",
+			default: "left"
 		}
 	},
 
-	edit: () => {
+	edit: (props) => {
+		const {
+			attributes: {
+				textAlign
+			},
+			setAttributes
+		} = props;
+
 		return (
-			<div className="col">
-				<div>
+			<Fragment>
+				<BlockControls>
+					{/* <BlockAlignmentToolbar
+					/> */}
+
+					<AlignmentToolbar
+						value={textAlign}
+						onChange={value => setAttributes({ textAlign: value })}
+					/>
+				</BlockControls>
+				<div style={{textAlign: textAlign}} className="col">
 					<InnerBlocks
 						templateLock={false}
 						templateInsertUpdatesSelection={false}
 					/>
 				</div>
-			</div>
+			</Fragment>
 		);
 	},
 
 	save: (props) => {
 		const {
 			attributes: {
-				width
+				width,
+				textAlign
 			}
 		} = props;
 
@@ -60,11 +87,11 @@ registerBlockType("covertnine-blocks/column", {
 		}
 
 		return (
-			<div className={className}>
-				<div>
+			<Fragment>
+				<div style={{textAlign: textAlign}} className={className}>
 					<InnerBlocks.Content />
 				</div>
-			</div>
+			</Fragment>
 		);
 	}
 });
