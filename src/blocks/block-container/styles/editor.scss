@@ -31,6 +31,10 @@ div[class^="container"]
     display: none;
 }
 
+.bgSize .components-range-control__number {
+    margin-left: 0;
+}
+
 .bgSize .components-base-control__field {
     justify-content: space-between;
     margin-bottom: 15px !important;

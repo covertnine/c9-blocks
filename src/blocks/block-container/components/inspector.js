@@ -43,8 +43,10 @@ export default class Inspector extends Component {
 		this.toggleLinkage = this.toggleLinkage.bind(this);
 		this.ID = containerVideoID || "";
 		this.preview = preview;
-		this.customX = bgCustomX != "auto";
-		this.customY = bgCustomY != "auto";
+		this.customX = bgCustomX.size != "auto";
+		this.customY = bgCustomY.size != "auto";
+		this.bgCustomX = bgCustomX;
+		this.bgCustomY = bgCustomY;
 	}
 
 	componentDidUpdate() {
@@ -70,6 +72,26 @@ export default class Inspector extends Component {
 		this.containerPadding = spacingObject;
 		this.setState({ containerPadding: spacingObject });
 		this.setAttributes({ containerPadding: spacingObject });
+	};
+
+	updateBgX = (position, value) => {
+		let sizeObject = Object.assign({}, this.bgCustomX);
+
+		sizeObject[position] = value;
+
+		sizeObject[position] = value;
+		this.bgCustomX = sizeObject;
+		this.setState({ bgCustomX: sizeObject });
+		this.setAttributes({ bgCustomX: sizeObject });
+	};
+
+	updateBgY = (position, value) => {
+		let sizeObject = Object.assign({}, this.bgCustomY);
+
+		sizeObject[position] = value;
+		this.bgCustomY = sizeObject;
+		this.setState({ bgCustomY: sizeObject });
+		this.setAttributes({ bgCustomY: sizeObject });
 	};
 
 	updatePadding = (position, value) => {
@@ -408,6 +430,15 @@ export default class Inspector extends Component {
 														onChange={value => {
 															this.customX = value;
 															this.setState({ customX: value });
+
+															if (value) {
+																this.updateBgX("unit", "%");
+																this.updateBgX("size", 100);
+																console.log(this.bgCustomX);
+															} else {
+																this.updateBgX("size", "auto");
+																console.log(this.bgCustomX);
+															}
 														}}
 													/>
 													{this.customX && (
@@ -418,14 +449,16 @@ export default class Inspector extends Component {
 																	"Choose between pixel, percent, or em units."
 																)}
 																options={cssUnits}
-																value={containerPadding.unit}
-																onChange={value => this.setUnit(value)}
+																value={this.bgCustomX.unit}
+																onChange={value =>
+																	this.updateBgX("unit", value)
+																}
 															/>
 															<RangeControl
 																label={__("Size Value", "covertnine-blocks")}
-																value={containerPadding.top}
-																onChange={padding => {
-																	this.updatePadding("top", padding);
+																value={this.bgCustomX.size}
+																onChange={value => {
+																	this.updateBgX("size", value);
 																}}
 																className="bgSize"
 																min={0}
@@ -440,6 +473,13 @@ export default class Inspector extends Component {
 														onChange={value => {
 															this.customY = value;
 															this.setState({ customY: value });
+
+															if (value) {
+																this.updateBgY("unit", "%");
+																this.updateBgY("size", 100);
+															} else {
+																this.updateBgY("size", "auto");
+															}
 														}}
 													/>
 													{this.customY && (
@@ -450,14 +490,16 @@ export default class Inspector extends Component {
 																	"Choose between pixel, percent, or em units."
 																)}
 																options={cssUnits}
-																value={containerPadding.unit}
-																onChange={value => this.setUnit(value)}
+																value={this.bgCustomY.unit}
+																onChange={value =>
+																	this.updateBgY("unit", value)
+																}
 															/>
 															<RangeControl
 																label={__("Size Value", "covertnine-blocks")}
-																value={containerPadding.top}
-																onChange={padding => {
-																	this.updatePadding("top", padding);
+																value={this.bgCustomY.size}
+																onChange={value => {
+																	this.updateBgY("size", value);
 																}}
 																className="bgSize"
 																min={0}
