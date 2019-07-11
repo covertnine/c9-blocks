@@ -98,17 +98,15 @@ export default class Inspector extends Component {
 		let checkAlphaNumeric = /^[a-zA-Z0-9-_]+$/;
 		let result;
 
-		if (result = this.ID.match(checkURL)) {
+		if ((result = this.ID.match(checkURL))) {
 			this.setAttributes({ containerVideoID: result[1], cannotEmbed: false });
 			this.ID = result[1];
 			this.setState({ ID: result[1] });
-		}
-		else if (result = this.ID.match(checkAlphaNumeric)) {
+		} else if ((result = this.ID.match(checkAlphaNumeric))) {
 			this.setAttributes({ containerVideoID: result[0], cannotEmbed: false });
 			this.ID = result[0];
 			this.setState({ ID: result[0] });
-		}
-		else {
+		} else {
 			if (this.preview && this.preview.i) {
 				this.preview.destroy();
 			}
@@ -124,7 +122,11 @@ export default class Inspector extends Component {
 	resetID = () => {
 		this.ID = "";
 		this.preview.destroy();
-		this.setAttributes({ containerVideoID: this.ID, cannotEmbed: false, preview: this.preview });
+		this.setAttributes({
+			containerVideoID: this.ID,
+			cannotEmbed: false,
+			preview: this.preview
+		});
 	};
 
 	render() {
@@ -231,9 +233,15 @@ export default class Inspector extends Component {
 						label={__("Columns")}
 						value={columns}
 						onChange={nextColumns => {
-							let children = select('core/editor').getBlocksByClientId(clientId)[0].innerBlocks;
+							let children = select("core/editor").getBlocksByClientId(
+								clientId
+							)[0].innerBlocks;
 							let nextWidth = Math.round(12 / nextColumns);
-							children.map(c => dispatch('core/editor').updateBlockAttributes(c.clientId, {width: nextWidth}));
+							children.map(c =>
+								dispatch("core/editor").updateBlockAttributes(c.clientId, {
+									width: nextWidth
+								})
+							);
 							setAttributes({
 								columns: nextColumns
 							});
@@ -333,6 +341,7 @@ export default class Inspector extends Component {
 										>
 											{__("Remove")}
 										</IconButton>
+										<h6>Position</h6>
 										<FocalPointPicker
 											label={__("Focal Point Picker")}
 											url={containerImgURL}
@@ -346,6 +355,8 @@ export default class Inspector extends Component {
 					/>
 					{containerImgURL && !!containerImgURL.length && (
 						<div>
+							<hr></hr>
+							<h6>Size</h6>
 							<ToggleControl
 								label={__("Contain | Cover", "covertnine-blocks")}
 								checked={bgImgSize}
@@ -380,6 +391,8 @@ export default class Inspector extends Component {
 							/>
 						</div>
 					)}
+					<hr></hr>
+					<h6>Overlay</h6>
 					<span>Color Palette</span>
 					<ColorPalette
 						label={__("Overlay Color", "covertnine-blocks")}
@@ -460,11 +473,17 @@ export default class Inspector extends Component {
 							{ label: "Embed URL", value: "embed" }
 						]}
 						onChange={videoType => {
-							setAttributes({ videoType, containerVideoURL: "", containerVideoID: "" });
+							setAttributes({
+								videoType,
+								containerVideoURL: "",
+								containerVideoID: ""
+							});
 							this.ID = "";
 							this.setState({ ID: "" });
-							
-							const { attributes: {preview}} = this.props;
+
+							const {
+								attributes: { preview }
+							} = this.props;
 							if (preview && preview.i) {
 								preview.destroy();
 							}
@@ -518,7 +537,9 @@ export default class Inspector extends Component {
 							/>
 
 							{cannotEmbed && (
-								<p className="text-danger">Given YouTube ID/URL is not correctly formatted!</p>
+								<p className="text-danger">
+									Given YouTube ID/URL is not correctly formatted!
+								</p>
 							)}
 
 							<div>
