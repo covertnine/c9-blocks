@@ -341,6 +341,37 @@ export default class Inspector extends Component {
 										>
 											{__("Remove")}
 										</IconButton>
+										<div>
+											<h6>Size</h6>
+											<ToggleControl
+												label={__("Contain | Cover", "covertnine-blocks")}
+												checked={bgImgSize}
+												onChange={bgImgSize => setAttributes({ bgImgSize })}
+											/>
+										</div>
+										{bgImgSize && (
+											<div>
+												<RangeControl
+													beforeIcon="arrow-left-alt2"
+													afterIcon="arrow-right-alt2"
+													label={__("Horizontal Position", "covertnine-blocks")}
+													value={bgImgPosX}
+													onChange={bgImgPosX => setAttributes({ bgImgPosX })}
+													min={0}
+													max={10}
+												/>
+												<RangeControl
+													beforeIcon="arrow-left-alt2"
+													afterIcon="arrow-right-alt2"
+													label={__("Vertical Position", "covertnine-blocks")}
+													value={bgImgPosY}
+													onChange={bgImgPosY => setAttributes({ bgImgPosY })}
+													min={0}
+													max={10}
+												/>
+											</div>
+										)}
+										<hr />
 										<h6>Position</h6>
 										<FocalPointPicker
 											label={__("Focal Point Picker")}
@@ -348,50 +379,17 @@ export default class Inspector extends Component {
 											value={focalPoint}
 											onChange={value => setAttributes({ focalPoint: value })}
 										/>
+										<ToggleControl
+											label={__("Fixed | Scroll", "covertnine-blocks")}
+											checked={bgImgAttach}
+											onChange={bgImgAttach => setAttributes({ bgImgAttach })}
+										/>
 									</div>
 								)}
 							</div>
 						)}
 					/>
-					{containerImgURL && !!containerImgURL.length && (
-						<div>
-							<hr></hr>
-							<h6>Size</h6>
-							<ToggleControl
-								label={__("Contain | Cover", "covertnine-blocks")}
-								checked={bgImgSize}
-								onChange={bgImgSize => setAttributes({ bgImgSize })}
-							/>
-							<ToggleControl
-								label={__("Fixed | Scroll", "covertnine-blocks")}
-								checked={bgImgAttach}
-								onChange={bgImgAttach => setAttributes({ bgImgAttach })}
-							/>
-						</div>
-					)}
-					{containerImgURL && bgImgSize && (
-						<div>
-							<RangeControl
-								beforeIcon="arrow-left-alt2"
-								afterIcon="arrow-right-alt2"
-								label={__("Horizontal Position", "covertnine-blocks")}
-								value={bgImgPosX}
-								onChange={bgImgPosX => setAttributes({ bgImgPosX })}
-								min={0}
-								max={10}
-							/>
-							<RangeControl
-								beforeIcon="arrow-left-alt2"
-								afterIcon="arrow-right-alt2"
-								label={__("Vertical Position", "covertnine-blocks")}
-								value={bgImgPosY}
-								onChange={bgImgPosY => setAttributes({ bgImgPosY })}
-								min={0}
-								max={10}
-							/>
-						</div>
-					)}
-					<hr></hr>
+					<hr />
 					<h6>Overlay</h6>
 					<span>Color Palette</span>
 					<ColorPalette
