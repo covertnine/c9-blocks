@@ -338,7 +338,9 @@ function cortexBackgroundStyles(
 		styles.backgroundSize = size;
 	}
 	else {
-		styles.backgroundSize = `${bgX.size}${bgX.unit} ${bgY.size}${bgY.unit}`;
+		let horizontal = bgX.size != "auto" ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+		let vertical = bgY.size != "auto" ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+		styles.backgroundSize = `${horizontal} ${vertical}`;
 	}
 	if (hue) {
 		styles.backgroundColor = hexToRGBA(hue, opacity);
