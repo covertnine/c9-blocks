@@ -46,18 +46,19 @@ class Inspector extends Component {
 		];
 
 		const fontTypes = [
-			{ value: "h", label: __("Heading", "covertnine-blocks") },
+			{ value: "", label: __("Heading", "covertnine-blocks") },
 			{ value: "subhead subhead-h", label: __("Subheading", "covertnine-blocks") },
 			{ value: "display-", label: __("Text-XL", "covertnine-blocks") }
 		];
 
 		const sizeTypes = [
-			{ value: 1, label: __("H1", "covertnine-blocks") },
-			{ value: 2, label: __("H2", "covertnine-blocks") },
-			{ value: 3, label: __("H3", "covertnine-blocks") },
-			{ value: 4, label: __("H4", "covertnine-blocks") },
-			{ value: 5, label: __("H5", "covertnine-blocks") },
-			{ value: 6, label: __("H6", "covertnine-blocks") }
+			{ value: "", label: __("Same as Tag", "covertnine-blocks") },
+			{ value: "1", label: __("H1", "covertnine-blocks") },
+			{ value: "2", label: __("H2", "covertnine-blocks") },
+			{ value: "3", label: __("H3", "covertnine-blocks") },
+			{ value: "4", label: __("H4", "covertnine-blocks") },
+			{ value: "5", label: __("H5", "covertnine-blocks") },
+			{ value: "6", label: __("H6", "covertnine-blocks") }
 		];
 
 		// Update color values

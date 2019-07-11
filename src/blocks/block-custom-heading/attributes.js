@@ -21,20 +21,20 @@ const attributes = {
 		default: 1
 	},
 	displayLevel: {
-		type: "int",
-		default: 1
+		type: "string",
+		default: ""
 	},
 	type: {
 		type: "string",
-		default: "h"
+		default: ""
 	},
 	backgroundColor: {
 		type: "string",
-		default: ""
+		default: "#ffffff"
 	},
 	textColor: {
 		type: "string",
-		default: ""
+		default: "#000000"
 	},
 	textAlign: {
 		type: "string",
