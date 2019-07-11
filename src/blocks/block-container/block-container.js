@@ -10,9 +10,11 @@ import classnames from "classnames";
  */
 import Inspector from "./components/inspector";
 import VideoBox from "./components/video-box";
-import "./styles/style.scss";
 import attributes from "./attributes";
 
+// Import CSS
+import "./styles/style.scss";
+import "./styles/editor.scss";
 /**
  * WordPress dependencies
  */
@@ -32,7 +34,10 @@ const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
  * @return {Object[]} Columns layout configuration.
  */
 const getColumnsTemplate = memoize(columns => {
-	return times(columns, () => ["covertnine-blocks/column"]);
+	return times(columns, () => [
+		"covertnine-blocks/column",
+		{ width: Math.round(12 / columns) }
+	]);
 });
 
 registerBlockType("covertnine-blocks/column-containers", {
@@ -70,7 +75,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 				columns,
 				minScreenHeight,
 				focalPoint,
-				videoType,
 				containerVideoURL,
 				containerVideoID,
 				cannotEmbed
@@ -101,7 +105,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 
 		const widthControls = [
 			{
-				icon: "align-full-width",
+				icon: "align-center",
 				title: __("Full Width", "covertnine-blocks"),
 				isActive: containerWidth === "container-fluid",
 				onClick: () => setAttributes({ containerWidth: "container-fluid" })
@@ -113,14 +117,14 @@ registerBlockType("covertnine-blocks/column-containers", {
 				onClick: () => setAttributes({ containerWidth: "container" })
 			},
 			{
-				icon: "smiley",
+				icon: "align-full-width",
 				title: __("Narrow Width", "covertnine-blocks"),
 				isActive: containerWidth === "container-narrow",
 				onClick: () => setAttributes({ containerWidth: "container-narrow" })
 			}
 		];
 
-		if (!containerVideoURL && !containerVideoID || cannotEmbed) {
+		if ((!containerVideoURL && !containerVideoID) || cannotEmbed) {
 			return (
 				<Fragment>
 					<BlockControls key="controls">
@@ -211,7 +215,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerPadding,
 				minScreenHeight,
 				focalPoint,
-				videoType,
 				containerVideoURL,
 				containerVideoID,
 				cannotEmbed
@@ -221,7 +224,7 @@ registerBlockType("covertnine-blocks/column-containers", {
 
 		// const containerWidth3 = containerWidth;
 
-		if (!containerVideoURL && !containerVideoID || cannotEmbed) {
+		if ((!containerVideoURL && !containerVideoID) || cannotEmbed) {
 			return (
 				<Fragment>
 					<div

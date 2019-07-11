@@ -2,12 +2,7 @@ const attributes = {
 	heading: {
 		type: "string",
 		source: "text",
-		default: "Heading Content Here"
-	},
-	subheading: {
-		type: "string",
-		source: "text",
-		default: "Subheading Content Here"
+		default: ""
 	},
 	wrapper: {
 		type: "array",
@@ -21,9 +16,25 @@ const attributes = {
 			}
 		}
 	},
-	level: {
+	tagLevel: {
 		type: "int",
 		default: 1
+	},
+	displayLevel: {
+		type: "int",
+		default: 1
+	},
+	type: {
+		type: "string",
+		default: "h"
+	},
+	backgroundColor: {
+		type: "string",
+		default: ""
+	},
+	textColor: {
+		type: "string",
+		default: ""
 	},
 	textAlign: {
 		type: "string",
@@ -32,13 +43,6 @@ const attributes = {
 	weight: {
 		type: "string",
 		default: "normal"
-	},
-	color: {
-		type: "object",
-		default: {
-			backgroundColor: "white",
-			textColor: "black"
-		}
 	}
 };
 

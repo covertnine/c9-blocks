@@ -1,3 +1,4 @@
+/* eslint-disable no-cond-assign */
 /**
  * Internal block libraries
  */
@@ -7,6 +8,7 @@ import React from "react";
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
+const { select, dispatch } = wp.data;
 const {
 	RadioControl,
 	PanelBody,
@@ -18,7 +20,6 @@ const {
 	Button,
 	FocalPointPicker
 } = wp.components;
-const { select } = wp.data;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -67,7 +68,7 @@ export default class Inspector extends Component {
 		if (this.containerPadding.linked) {
 			let spacingObject = {
 				linked: this.containerPadding.linked,
-				unit: "px",
+				unit: this.containerPadding.unit,
 				top: value,
 				bottom: value,
 				left: value,
@@ -93,7 +94,7 @@ export default class Inspector extends Component {
 
 	submitID = () => {
 		// parse submitted item, check if valid id
-		let checkURL = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+		let checkURL = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|&v(?:i)?=))([^#&?]*).*/;
 		let checkAlphaNumeric = /^[a-zA-Z0-9-_]+$/;
 		let result;
 
@@ -118,20 +119,6 @@ export default class Inspector extends Component {
 		if (this.preview && this.preview.i) {
 			this.preview.loadVideoById(this.ID);
 		}
-
-		// const core = select("core");
-		// const {
-		// 	getEmbedPreview,
-		// 	isPreviewEmbedFallback,
-		// 	isRequestingEmbedPreview,
-		// 	getThemeSupports
-		// } = core;
-		// const preview = undefined !== this.URL && getEmbedPreview(this.URL);
-		// console.log(this.URL, getEmbedPreview(this.URL));
-
-		// if (preview) {
-		// 	this.setAttributes({ previewHTML: preview.html });
-		// }
 	};
 
 	resetID = () => {
@@ -142,6 +129,7 @@ export default class Inspector extends Component {
 
 	render() {
 		const {
+			clientId,
 			attributes: {
 				verticalAlign,
 				containerImgURL,
@@ -266,6 +254,9 @@ export default class Inspector extends Component {
 						label={__("Columns")}
 						value={columns}
 						onChange={nextColumns => {
+							let children = select('core/editor').getBlocksByClientId(clientId)[0].innerBlocks;
+							let nextWidth = Math.round(12 / nextColumns);
+							children.map(c => dispatch('core/editor').updateBlockAttributes(c.clientId, {width: nextWidth}));
 							setAttributes({
 								columns: nextColumns
 							});
@@ -550,7 +541,7 @@ export default class Inspector extends Component {
 							/>
 
 							{cannotEmbed && (
-								<p class="text-danger">Given YouTube ID/URL is not correctly formatted!</p>
+								<p className="text-danger">Given YouTube ID/URL is not correctly formatted!</p>
 							)}
 
 							<div>

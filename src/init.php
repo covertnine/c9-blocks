@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Blocks Initializer
  *
@@ -14,30 +15,35 @@ if (!defined('ABSPATH')) {
 }
 
 // Add custom block category
-add_filter( 'block_categories', function( $categories, $post ) {
-	return array_merge(
-		$categories,
-		array(
-			array(
-				'slug' => 'covertnine-blocks',
-				'title' => __( 'Covertnine Blocks', 'covertnine-blocks' ),
-			),
-		)
-	);
-}, 10, 2 );
+add_filter('block_categories', function ($categories, $post) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'covertnine-blocks',
+                'title' => __('Covertnine Blocks', 'covertnine-blocks'),
+            ),
+        )
+    );
+}, 10, 2);
 
 /**
  * Initialize the blocks
  */
-function cortex_blocks_loader() {
+function cortex_blocks_loader()
+{
 
-	/**
-	 * Load Social Block PHP
-	 */
-	require_once plugin_dir_path( __FILE__ ) . 'blocks/block-sharing/index.php';
+    /**
+     * Load Social Block PHP
+     */
+    require_once plugin_dir_path(__FILE__) . 'blocks/block-sharing/index.php';
 
+    /**
+     * Load Post Grid PHP
+     */
+    require_once plugin_dir_path(__FILE__) . 'blocks/block-post-grid/index.php';
 }
-add_action( 'plugins_loaded', 'cortex_blocks_loader' );
+add_action('plugins_loaded', 'cortex_blocks_loader');
 
 
 /**
@@ -52,9 +58,9 @@ function cortex_blocks_cgb_block_assets()
     // Styles.
     wp_enqueue_style(
         'cortex_blocks-cgb-style-css', // Handle.
-        plugins_url('dist/blocks.style.build.css', dirname(__FILE__)), // Block style CSS.
-        array('wp-blocks') // Dependency to include the CSS after it.
-        // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: filemtime — Gets file modification time.
+        plugins_url('/dist/blocks.style.build.css', dirname(__FILE__)), // Block style CSS.
+        array(), // Dependency to include the CSS after it.
+        filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.style.build.css') // Version: filemtime — Gets file modification time.
     );
 } // End function cortex_blocks_cgb_block_assets().
 
@@ -77,7 +83,7 @@ function cortex_blocks_cgb_editor_assets()
         'cortex_blocks-cgb-block-js', // Handle.
         plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
         array('wp-blocks', 'wp-i18n', 'wp-element'), // Dependencies, defined above.
-        filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
+        filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.js'), // Version: filemtime — Gets file modification time.
         true // Enqueue the script in the footer.
     );
 
@@ -91,7 +97,7 @@ function cortex_blocks_cgb_editor_assets()
     // Styles.
     wp_enqueue_style(
         'bootstrap-css',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+        'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
         array('wp-blocks', 'wp-il8n', 'wp-element'),
         true
     );
@@ -125,7 +131,21 @@ function cortex_blocks_front_assets()
         plugins_url('dist/blocks.front.build.js', dirname(__FILE__)),
         array('youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n')
     );
+
+    wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(''), '4.3.1');
 }
 
 // Hook: Cortex Blocks Frontend
 add_action('wp_enqueue_scripts', 'cortex_blocks_front_assets');
+
+
+/**
+ * Add image sizes
+ */
+function cortex_blocks_image_sizes()
+{
+    // Post Grid Block.
+    add_image_size('ab-block-post-grid-landscape', 600, 400, true);
+    add_image_size('ab-block-post-grid-square', 600, 600, true);
+}
+add_action('after_setup_theme', 'cortex_blocks_image_sizes');

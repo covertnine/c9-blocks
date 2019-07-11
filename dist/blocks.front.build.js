@@ -88,10 +88,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 1 */
 /***/ (function(module, exports) {
 
-function onYouTubeIframeAPIReady() {
-	console.log("ts");
-}
-
 function readyYoutube(video_id) {
 	if (typeof YT !== "undefined" && YT && YT.Player) {
 		let player = new YT.Player("player", {
@@ -134,13 +130,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		vid.style.opacity = 1;
 	}
 
-    let id = document.getElementById("player").getAttribute("video-id");
+	let id = document.getElementById("player");
+	
+	if (!id) {
+		return;
+	}
+
+	id = id.getAttribute("video-id");
 
 	// create the player and replace the div
-
-	function onYouTubeIframeAPIReady() {
-		console.log("ts");
-	}
 
 	readyYoutube(id);
 });

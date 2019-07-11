@@ -350,3 +350,282 @@
 
 .wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(248, 240, 213, 0.8); }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.row .editor-block-list__layout {
+  display: block; }
+
+.wp-block {
+  max-width: none; }
+
+.blocks-button__inline-link.ab-button-center {
+  display: -ms-flexbox;
+  display: flex;
+  width: 366px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.wp-block-covertnine-blocks-c9-cta .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.block-editor-rich-text__editable[data-is-placeholder-visible=true] {
+  position: absolute;
+  left: 0; }
+
+.editor-rich-text__editable.wp-block-button__link {
+  width: 100%; }
+
+.editor-rich-text__editable.wp-block-button__link.square {
+  border-radius: 0; }
+
+.edit-post-layout__content {
+  padding-bottom: 5vh; }
+
+.wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(248, 240, 213, 0.8); }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.display-5 {
+  font-size: 3.25rem;
+  line-height: 1.2; }
+
+.display-6 {
+  font-size: 3rem;
+  line-height: 1.2; }
+
+.subhead {
+  color: #6c757d !important;
+  line-height: 1.2; }
+
+.subhead-h1 {
+  font-size: 2rem; }
+
+.subhead-h2 {
+  font-size: 1.6rem; }
+
+.subhead-h3 {
+  font-size: 1.4rem; }
+
+.subhead-h4 {
+  font-size: 1.2rem; }
+
+.subhead-h5 {
+  font-size: 1rem; }
+
+.subhead-h6 {
+  font-size: 0.8rem; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.row .editor-block-list__layout {
+  display: block; }
+
+.wp-block {
+  max-width: none; }
+
+.blocks-button__inline-link.ab-button-center {
+  display: -ms-flexbox;
+  display: flex;
+  width: 366px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.wp-block-covertnine-blocks-c9-cta .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.block-editor-rich-text__editable[data-is-placeholder-visible=true] {
+  position: absolute;
+  left: 0; }
+
+.editor-rich-text__editable.wp-block-button__link {
+  width: 100%; }
+
+.editor-rich-text__editable.wp-block-button__link.square {
+  border-radius: 0; }
+
+.edit-post-layout__content {
+  padding-bottom: 5vh; }
+
+.wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(248, 240, 213, 0.8); }
+
+/**
+ * Post grid styles
+ * Loads on front end and back end
+ */
+.ab-block-post-grid {
+  margin: 0 0 1.2em 0;
+  position: relative; }
+  .ab-block-post-grid .is-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0 2em; }
+    @media all and (-ms-high-contrast: none) {
+      .ab-block-post-grid .is-grid {
+        display: block; } }
+    .ab-block-post-grid .is-grid article {
+      margin-bottom: 2.5em;
+      min-width: 0; }
+      @media all and (-ms-high-contrast: none) {
+        .ab-block-post-grid .is-grid article {
+          padding-left: 10px;
+          padding-right: 10px;
+          display: inline-block;
+          vertical-align: top; } }
+  .ab-block-post-grid .is-grid.columns-2 {
+    grid-template-columns: 1fr 1fr; }
+    @media all and (-ms-high-contrast: none) {
+      .ab-block-post-grid .is-grid.columns-2 article {
+        width: 48%; } }
+  .ab-block-post-grid .is-grid.columns-3 {
+    grid-template-columns: 1fr 1fr 1fr; }
+    @media all and (-ms-high-contrast: none) {
+      .ab-block-post-grid .is-grid.columns-3 article {
+        width: 32%; } }
+  .ab-block-post-grid .is-grid.columns-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+    @media all and (-ms-high-contrast: none) {
+      .ab-block-post-grid .is-grid.columns-4 article {
+        width: 24%; } }
+  @media only screen and (max-width: 600px) {
+    .ab-block-post-grid div[class*="columns"].is-grid {
+      grid-template-columns: 1fr; } }
+  .ab-block-post-grid .ab-post-grid-section-title {
+    text-align: left; }
+  .ab-block-post-grid .ab-block-post-grid-image {
+    margin-bottom: 1.2em; }
+    .ab-block-post-grid .ab-block-post-grid-image img {
+      display: block;
+      width: 100%; }
+  .ab-block-post-grid .ab-block-post-grid-text {
+    text-align: left; }
+  .ab-block-post-grid a {
+    text-decoration: none; }
+  .ab-block-post-grid header .ab-block-post-grid-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+    line-height: 1.2; }
+    .ab-block-post-grid header .ab-block-post-grid-title a {
+      color: black;
+      text-decoration: none; }
+      .ab-block-post-grid header .ab-block-post-grid-title a:hover {
+        text-decoration: underline;
+        color: inherit; }
+  .ab-block-post-grid .ab-block-post-grid-byline {
+    font-size: 14px;
+    color: #EEEEEE;
+    margin-bottom: 15px; }
+  .ab-block-post-grid .ab-block-post-grid-author,
+  .ab-block-post-grid .ab-block-post-grid-date {
+    display: inline-block; }
+    .ab-block-post-grid .ab-block-post-grid-author:not(:last-child):after,
+    .ab-block-post-grid .ab-block-post-grid-date:not(:last-child):after {
+      content: "\B7";
+      vertical-align: middle;
+      margin: 0 5px;
+      line-height: 1; }
+  .ab-block-post-grid .ab-block-post-grid-author a {
+    color: inherit;
+    text-decoration: none; }
+    .ab-block-post-grid .ab-block-post-grid-author a:hover {
+      color: inherit;
+      text-decoration: underline; }
+  .ab-block-post-grid .ab-block-post-grid-text p {
+    margin: 0 0 15px 0;
+    font-size: inherit; }
+    .ab-block-post-grid .ab-block-post-grid-text p:last-of-type {
+      margin-bottom: 0; }
+  .ab-block-post-grid .ab-block-post-grid-more-link {
+    display: inline-block;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+    font-weight: bold;
+    color: black;
+    text-decoration: none; }
+    .ab-block-post-grid .ab-block-post-grid-more-link:hover {
+      text-decoration: underline; }
+  .ab-block-post-grid .ab-block-post-grid-excerpt div + p {
+    margin-top: 15px; }
+  .ab-block-post-grid .is-list article {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0 2em; }
+    @media all and (-ms-high-contrast: none) {
+      .ab-block-post-grid .is-list article {
+        display: block; } }
+    .ab-block-post-grid .is-list article:before {
+      display: none; }
+    .ab-block-post-grid .is-list article:not(:last-child) {
+      margin-bottom: 5%;
+      padding-bottom: 5%; }
+    @media only screen and (min-width: 600px) {
+      .ab-block-post-grid .is-list article:not(:last-child) {
+        border-bottom: solid 1px #eee; } }
+    @media only screen and (max-width: 600px) {
+      .ab-block-post-grid .is-list article {
+        grid-template-columns: 1fr; } }
+  .ab-block-post-grid .is-list article:not(.has-post-thumbnail) {
+    grid-template-columns: 1fr; }
+  .ab-block-post-grid .is-list .ab-block-post-grid-image {
+    margin-bottom: 0; }
+    @media all and (-ms-high-contrast: none) {
+      .ab-block-post-grid .is-list .ab-block-post-grid-image {
+        width: 30%;
+        display: inline-block;
+        vertical-align: top; } }
+    @media only screen and (max-width: 600px) {
+      .ab-block-post-grid .is-list .ab-block-post-grid-image {
+        margin-bottom: 5%; } }
+  @media all and (-ms-high-contrast: none) {
+    .ab-block-post-grid .is-list .ab-block-post-grid-text {
+      width: 65%;
+      padding-left: 5%;
+      display: inline-block;
+      vertical-align: top; }
+    .ab-block-post-grid .is-list .post:not(.has-post-thumbnail) .ab-block-post-grid-text {
+      width: 100%;
+      padding-left: 0; } }
+  @media only screen and (min-width: 600px) {
+    .ab-block-post-grid .is-list .ab-block-post-grid-title {
+      font-size: 34px; } }
+  .ab-block-post-grid .is-list .no-thumb .ab-block-post-grid-text {
+    grid-column: span 2; }
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; }

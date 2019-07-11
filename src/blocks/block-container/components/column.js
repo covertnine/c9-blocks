@@ -26,18 +26,44 @@ registerBlockType("covertnine-blocks/column", {
 		inserter: false
 	},
 
-	edit() {
+	attributes:{
+		width: {
+			type: "int",
+			default: -1
+		}
+	},
+
+	edit: () => {
 		return (
 			<div className="col">
-				<InnerBlocks className="col" templateLock={false} />
+				<div>
+					<InnerBlocks
+						templateLock={false}
+						templateInsertUpdatesSelection={false}
+					/>
+				</div>
 			</div>
 		);
 	},
 
-	save() {
+	save: (props) => {
+		const {
+			attributes: {
+				width
+			}
+		} = props;
+
+		let className = "col";
+
+		if (width > 0) {
+			className += `-${width}`;
+		}
+
 		return (
-			<div className="col">
-				<InnerBlocks.Content />
+			<div className={className}>
+				<div>
+					<InnerBlocks.Content />
+				</div>
 			</div>
 		);
 	}

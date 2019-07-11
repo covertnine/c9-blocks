@@ -42,6 +42,72 @@
 
 .wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(248, 240, 213, 0.8); }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+div[class^="container"]
+.block-editor-block-list__layout
+> .block-editor-block-list__block
+> .block-editor-block-list__block-edit,
+.editor-styles-wrapper .wp-block-paragraph {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.block-editor-block-list__block .block-editor-block-list__layout {
+  margin: 0; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.row .editor-block-list__layout {
+  display: block; }
+
+.wp-block {
+  max-width: none; }
+
+.blocks-button__inline-link.ab-button-center {
+  display: -ms-flexbox;
+  display: flex;
+  width: 366px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.wp-block-covertnine-blocks-c9-cta .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.block-editor-rich-text__editable[data-is-placeholder-visible=true] {
+  position: absolute;
+  left: 0; }
+
+.editor-rich-text__editable.wp-block-button__link {
+  width: 100%; }
+
+.editor-rich-text__editable.wp-block-button__link.square {
+  border-radius: 0; }
+
+.edit-post-layout__content {
+  padding-bottom: 5vh; }
+
+.wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(248, 240, 213, 0.8); }
 /**
  * #.# Common SCSS
  *
@@ -159,3 +225,162 @@
 
 .ab-block-cta h2.editor-rich-text__tinymce.mce-content-body {
   line-height: 1.2; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.row .editor-block-list__layout {
+  display: block; }
+
+.wp-block {
+  max-width: none; }
+
+.blocks-button__inline-link.ab-button-center {
+  display: -ms-flexbox;
+  display: flex;
+  width: 366px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.wp-block-covertnine-blocks-c9-cta .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.block-editor-rich-text__editable[data-is-placeholder-visible=true] {
+  position: absolute;
+  left: 0; }
+
+.editor-rich-text__editable.wp-block-button__link {
+  width: 100%; }
+
+.editor-rich-text__editable.wp-block-button__link.square {
+  border-radius: 0; }
+
+.edit-post-layout__content {
+  padding-bottom: 5vh; }
+
+.wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(248, 240, 213, 0.8); }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.row .editor-block-list__layout {
+  display: block; }
+
+.wp-block {
+  max-width: none; }
+
+.blocks-button__inline-link.ab-button-center {
+  display: -ms-flexbox;
+  display: flex;
+  width: 366px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.wp-block-covertnine-blocks-c9-cta .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.block-editor-rich-text__editable[data-is-placeholder-visible=true] {
+  position: absolute;
+  left: 0; }
+
+.editor-rich-text__editable.wp-block-button__link {
+  width: 100%; }
+
+.editor-rich-text__editable.wp-block-button__link.square {
+  border-radius: 0; }
+
+.edit-post-layout__content {
+  padding-bottom: 5vh; }
+
+.wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(248, 240, 213, 0.8); }
+
+/**
+ * Editor styles for the admin
+ */
+.ab-block-post-grid .ab-block-post-grid-title a {
+  text-decoration: none; }
+
+.atomic-blocks-hide-query .components-base-control:nth-of-type(3) {
+  display: none; }
+
+.ab-block-post-grid-markup-settings .components-base-control__help {
+  margin-top: 8px; }
+
+.block-editor__container .editor-block-list__block .ab-block-post-grid a {
+  color: inherit; }
+
+.ab-block-post-grid-image {
+  position: relative; }
+  .ab-block-post-grid-image:hover .ab-post-grid-no-image-placeholder {
+    opacity: 1;
+    z-index: 1; }
+
+.ab-post-grid-no-image-placeholder {
+  padding: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: #f3f3f4;
+  -webkit-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease; }
+  .ab-post-grid-no-image-placeholder svg {
+    margin-bottom: 10px; }
+
+.ab-post-grid-no-image-icon {
+  position: absolute;
+  top: 10px;
+  background: #ffe606;
+  right: 10px;
+  padding: 6px;
+  line-height: 1;
+  height: 32px;
+  -webkit-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+  border-radius: 5px;
+  z-index: 1; }
+
+.block-editor__container .components-placeholder__fieldset .ab-post-grid-image-help {
+  display: inline-block;
+  font-weight: bold; }
+  .block-editor__container .components-placeholder__fieldset .ab-post-grid-image-help a {
+    color: #0073aa;
+    text-decoration: underline; }
+    .block-editor__container .components-placeholder__fieldset .ab-post-grid-image-help a:hover {
+      color: #00a0d2; }
