@@ -487,6 +487,16 @@ export default class Inspector extends Component {
 									{__("Background Image")}
 								</IconButton>
 
+								<h5>Color Overlay</h5>
+								<span>Color Palette</span>
+								<ColorPalette
+									label={__("Overlay Color", "covertnine-blocks")}
+									value={overlayHue}
+									onChange={overlayHue => setAttributes({ overlayHue })}
+								/>
+
+								<hr />
+
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
 										<IconButton
@@ -512,16 +522,6 @@ export default class Inspector extends Component {
 											label={__("Scroll | Fixed", "covertnine-blocks")}
 											checked={bgImgAttach}
 											onChange={bgImgAttach => setAttributes({ bgImgAttach })}
-										/>
-
-										<hr />
-
-										<h5>Overlay</h5>
-										<span>Color Palette</span>
-										<ColorPalette
-											label={__("Overlay Color", "covertnine-blocks")}
-											value={overlayHue}
-											onChange={overlayHue => setAttributes({ overlayHue })}
 										/>
 
 										<hr />
@@ -640,7 +640,7 @@ export default class Inspector extends Component {
 							value={overlayOpacity}
 							onChange={overlayOpacity => setAttributes({ overlayOpacity })}
 							min={1}
-							max={9}
+							max={10}
 						/>
 					)}
 					{overlayHue && containerImgURL && !!containerImgURL.length && (

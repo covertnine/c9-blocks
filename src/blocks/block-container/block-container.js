@@ -328,9 +328,7 @@ function cortexBackgroundStyles(
 
 	if (margin) {
 		styles.marginTop = margin.top ? `${margin.top}${margin.unit}` : 0;
-		styles.marginBottom = margin.bottom
-			? `${margin.bottom}${margin.unit}`
-			: 0;
+		styles.marginBottom = margin.bottom ? `${margin.bottom}${margin.unit}` : 0;
 		styles.marginLeft = margin.left ? `${margin.left}${margin.unit}` : 0;
 		styles.marginRight = margin.right ? `${margin.right}${margin.unit}` : 0;
 	}
@@ -352,10 +350,11 @@ function cortexBackgroundStyles(
 	}
 	if (size.length > 0) {
 		styles.backgroundSize = size;
-	}
-	else {
-		let horizontal = bgX.size != "auto" ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
-		let vertical = bgY.size != "auto" ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+	} else {
+		let horizontal =
+			bgX.size != "auto" ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+		let vertical =
+			bgY.size != "auto" ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 		styles.backgroundSize = `${horizontal} ${vertical}`;
 	}
 	if (hue) {
@@ -370,5 +369,13 @@ function hexToRGBA(hex, alpha) {
 		g = parseInt(hex.slice(3, 5), 16),
 		b = parseInt(hex.slice(5, 7), 16);
 
-	return `rgba(${r},${g},${b},.${alpha})`;
+	var opacity;
+
+	if (alpha === 10) {
+		opacity = 1;
+	} else {
+		opacity = "." + alpha;
+	}
+
+	return `rgba(${r},${g},${b},${opacity})`;
 }
