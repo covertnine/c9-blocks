@@ -326,12 +326,12 @@ function cortexBackgroundStyles(
 		styles.paddingRight = padding.right ? `${padding.right}${padding.unit}` : 0;
 	}
 
-	if (margin) {
-		styles.marginTop = margin.top ? `${margin.top}${margin.unit}` : 0;
-		styles.marginBottom = margin.bottom ? `${margin.bottom}${margin.unit}` : 0;
-		styles.marginLeft = margin.left ? `${margin.left}${margin.unit}` : 0;
-		styles.marginRight = margin.right ? `${margin.right}${margin.unit}` : 0;
-	}
+	// if (margin) {
+	// 	styles.marginTop = margin.top ? `${margin.top}${margin.unit}` : 0;
+	// 	styles.marginBottom = margin.bottom ? `${margin.bottom}${margin.unit}` : 0;
+	// 	styles.marginLeft = margin.left ? `${margin.left}${margin.unit}` : "auto";
+	// 	styles.marginRight = margin.right ? `${margin.right}${margin.unit}` : "auto";
+	// }
 
 	if (focalPoint) {
 		styles.backgroundPosition = `${focalPoint.x * 100}% ${focalPoint.y * 100}%`;
