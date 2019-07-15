@@ -1,5 +1,5 @@
 /**
- * Gutenberg Blocks Frontend
+ * Gutenberg Blocks Frontend JS
  *
  * All blocks frontend related JavaScript files should be imported here.
  * You can create a new block folder in this dir and include code
