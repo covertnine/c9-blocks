@@ -29,12 +29,10 @@ const attributes = {
 		default: ""
 	},
 	backgroundColor: {
-		type: "string",
-		default: "#ffffff"
+		type: "string"
 	},
 	textColor: {
-		type: "string",
-		default: "#000000"
+		type: "string"
 	},
 	textAlign: {
 		type: "string",
