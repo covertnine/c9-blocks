@@ -238,23 +238,25 @@ export default class Inspector extends Component {
 		];
 
 		const paddingOptions = [
-			{ value: -1, label: __("None", "covertnine-blocks") },
-			{ value: 0, label: __("Auto", "covertnine-blocks") },
-			{ value: 1, label: __("Padding 1", "covertnine-blocks") },
-			{ value: 2, label: __("Padding 2", "covertnine-blocks") },
-			{ value: 3, label: __("Padding 3", "covertnine-blocks") },
-			{ value: 4, label: __("Padding 4", "covertnine-blocks") },
-			{ value: 5, label: __("Padding 5", "covertnine-blocks") }
+			{ value: "-1", label: __("None", "covertnine-blocks") },
+			{ value: "0", label: __("Padding 0", "covertnine-blocks") },
+			{ value: "1", label: __("Padding 1", "covertnine-blocks") },
+			{ value: "2", label: __("Padding 2", "covertnine-blocks") },
+			{ value: "3", label: __("Padding 3", "covertnine-blocks") },
+			{ value: "4", label: __("Padding 4", "covertnine-blocks") },
+			{ value: "5", label: __("Padding 5", "covertnine-blocks") },
+			{ value: "auto", label: __("Auto", "covertnine-blocks") }
 		];
 
 		const marginOptions = [
-			{ value: -1, label: __("None", "covertnine-blocks") },
-			{ value: 0, label: __("Auto", "covertnine-blocks") },
-			{ value: 1, label: __("Margin 1", "covertnine-blocks") },
-			{ value: 2, label: __("Margin 2", "covertnine-blocks") },
-			{ value: 3, label: __("Margin 3", "covertnine-blocks") },
-			{ value: 4, label: __("Margin 4", "covertnine-blocks") },
-			{ value: 5, label: __("Margin 5", "covertnine-blocks") }
+			{ value: "-1", label: __("None", "covertnine-blocks") },
+			{ value: "0", label: __("Margin 0", "covertnine-blocks") },
+			{ value: "1", label: __("Margin 1", "covertnine-blocks") },
+			{ value: "2", label: __("Margin 2", "covertnine-blocks") },
+			{ value: "3", label: __("Margin 3", "covertnine-blocks") },
+			{ value: "4", label: __("Margin 4", "covertnine-blocks") },
+			{ value: "5", label: __("Margin 5", "covertnine-blocks") },
+			{ value: "auto", label: __("Auto", "covertnine-blocks") }
 		];
 
 		const sizeTypes = [
@@ -427,7 +429,7 @@ export default class Inspector extends Component {
 						<SelectControl
 							options={marginOptions}
 							value={containerMargin.bottom}
-							onChange={value => this.updateMargin("top", value)}
+							onChange={value => this.updateMargin("bottom", value)}
 						/>
 					</div>
 				</PanelBody>
