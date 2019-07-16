@@ -724,13 +724,15 @@ div[data-type="covertnine-blocks/column-containers"] {
 .block-editor-block-list__insertion-point-inserter {
   height: 15px; }
 
-<<<<<<< HEAD
 .edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
   margin-left: -15px;
   margin-right: -15px; }
-=======
-.dashicons-insert {
-  background: white; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
 /**
  * #.# Common SCSS
  *
@@ -811,13 +813,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected
 .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(0, 0, 0, 0.8); }
 
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit {
-  background: white;
-  border: 8px solid white; }
-
 div[data-type="core/paragraph"].wp-block,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
   margin-bottom: 5px; }
@@ -829,9 +824,9 @@ div[data-type="covertnine-blocks/column-containers"] {
 .block-editor-block-list__insertion-point-inserter {
   height: 15px; }
 
-.dashicons-insert {
-  background: white; }
->>>>>>> d22819e9e609c7e58472f6200b255353e89a5603
+.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
+  margin-left: -15px;
+  margin-right: -15px; }
 
 /**
  * Post grid styles
