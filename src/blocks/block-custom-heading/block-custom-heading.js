@@ -59,7 +59,8 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 				backgroundColor,
 				textColor,
 				type,
-				weight
+				weight,
+				overrideStyle
 			}
 		} = props;
 
@@ -87,7 +88,7 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 					<RichText
 						tagName={`h${tagLevel}`}
 						className={classnames([
-							`${type}${displayLevel}`,
+							cortexTextStyleConfig(type, displayLevel, overrideStyle),
 							`font-weight-${weight}`,
 							`text-${textAlign}`
 						])}
@@ -116,7 +117,8 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 			type,
 			displayLevel,
 			weight,
-			textAlign
+			textAlign,
+			overrideStyle
 		} = props.attributes;
 
 		// Save the block markup for the front end
@@ -126,7 +128,7 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 					<RichText.Content
 						tagName={`h${tagLevel}`}
 						className={classnames([
-							`${type}${displayLevel}`,
+							cortexTextStyleConfig(type, displayLevel, overrideStyle),
 							`font-weight-${weight}`,
 							`text-${textAlign}`
 						])}
@@ -141,3 +143,12 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 		);
 	}
 });
+
+function cortexTextStyleConfig(type, level, override) {
+	if (level == 0 || !override) {
+		return "";
+	}
+	else {
+		return `${type}${level}`;
+	}
+}
