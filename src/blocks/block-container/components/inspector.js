@@ -430,31 +430,11 @@ export default class Inspector extends Component {
 						/>
 					</div>
 					<div className="margin-sides-wrapper">
-						<RangeControl
-							label={__("left")}
-							value={containerMargin.left}
-							onChange={margin => {
-								this.updateMargin("left", margin);
-							}}
-							className="margin"
-							min={0}
-							max={300}
-						/>
 						<IconButton
 							label={__("Linked Padding Toggle", "covertnine-blocks")}
 							icon={this.containerMargin.icon}
 							onClick={() => this.toggleMarginLinkage(this.containerMargin)}
 							ref={this.linkedMarginRef}
-						/>
-						<RangeControl
-							label={__("right")}
-							value={containerMargin.right}
-							onChange={margin => {
-								this.updateMargin("right", margin);
-							}}
-							className="margin"
-							min={0}
-							max={300}
 						/>
 					</div>
 					<div className="margin-bottom-wrapper">

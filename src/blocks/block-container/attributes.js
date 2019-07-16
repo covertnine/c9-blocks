@@ -14,7 +14,6 @@ const attributes = {
 	containerImgURL: {
 		type: "string"
 	},
-	// true evaluates to backgroundSize cover, false to backgroundSize contain
 	bgImgSize: {
 		type: "string",
 		default: "cover"
@@ -69,9 +68,7 @@ const attributes = {
 			icon: "admin-links",
 			unit: "px",
 			top: "0",
-			bottom: "0",
-			left: "auto",
-			right: "auto"
+			bottom: "0"
 		}
 	},
 	containerPadding: {
