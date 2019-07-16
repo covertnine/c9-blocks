@@ -23,6 +23,7 @@ const { registerBlockType } = wp.blocks;
 const { InnerBlocks, BlockControls } = wp.editor;
 const { Fragment } = wp.element;
 const { Toolbar } = wp.components;
+const { select } = wp.data;
 
 const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
 
@@ -81,8 +82,14 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerVideoID,
 				cannotEmbed
 			},
-			setAttributes
+			setAttributes,
+			clientId
 		} = props;
+
+		const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
+
+		let selected =
+			isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true);
 
 		const verticalAlignControls = [
 			{
@@ -151,7 +158,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 							overlayOpacity,
 							blendMode,
 							minScreenHeight,
-							focalPoint
+							focalPoint,
+							selected
 						)}
 					>
 						<div className="row no-gutter" style={{ flexGrow: 1 }}>
@@ -191,7 +199,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 						overlayOpacity,
 						blendMode,
 						minScreenHeight,
-						focalPoint
+						focalPoint,
+						selected
 					)}
 				>
 					<VideoBox {...{ setAttributes, ...props }} />
@@ -350,7 +359,8 @@ function cortexBackgroundStyles(
 	opacity,
 	blend,
 	height,
-	focalPoint
+	focalPoint,
+	selected = true
 ) {
 	const styles = {};
 	styles.display = "flex";
@@ -370,7 +380,12 @@ function cortexBackgroundStyles(
 	}
 
 	if (url) {
-		styles.backgroundImage = `url(${url})`;
+		if (selected) {
+			styles.backgroundImage = `url(${url})`;
+		}
+		else {
+			styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
+		}
 		styles.backgroundRepeat = repeat;
 		styles.backgroundAttachment = attachment ? "fixed" : "scroll";
 		styles.backgroundBlendMode = `${blend}`;
