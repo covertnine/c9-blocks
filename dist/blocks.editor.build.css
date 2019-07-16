@@ -148,7 +148,8 @@ div[class^="container"] .block-editor-block-list__layout > .block-editor-block-l
 .padding-bottom-wrapper,
 .margin-bottom-wrapper {
   -ms-flex-pack: center;
-      justify-content: center; }
+      justify-content: center;
+  margin-top: 5px; }
 
 .padding-wrapper .components-range-control .components-base-control__field {
   -ms-flex-align: start;

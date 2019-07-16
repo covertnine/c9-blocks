@@ -67,8 +67,8 @@ const attributes = {
 			linked: true,
 			icon: "admin-links",
 			unit: "px",
-			top: "0",
-			bottom: "0"
+			top: "-1",
+			bottom: "-1"
 		}
 	},
 	containerPadding: {
@@ -77,10 +77,10 @@ const attributes = {
 			linked: true,
 			icon: "admin-links",
 			unit: "px",
-			top: "25",
-			bottom: "25",
-			left: "25",
-			right: "25"
+			top: "-1",
+			bottom: "-1",
+			left: "-1",
+			right: "-1"
 		}
 	},
 	focalPoint: {

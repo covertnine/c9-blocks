@@ -23,6 +23,7 @@ const { registerBlockType } = wp.blocks;
 const { InnerBlocks, BlockControls } = wp.editor;
 const { Fragment } = wp.element;
 const { Toolbar } = wp.components;
+const { select } = wp.data;
 
 const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
 
@@ -81,8 +82,14 @@ registerBlockType("covertnine-blocks/column-containers", {
 				containerVideoID,
 				cannotEmbed
 			},
-			setAttributes
+			setAttributes,
+			clientId
 		} = props;
+
+		const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
+
+		let selected =
+			isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true);
 
 		const verticalAlignControls = [
 			{
@@ -135,7 +142,10 @@ registerBlockType("covertnine-blocks/column-containers", {
 					</BlockControls>
 					<Inspector {...{ setAttributes, ...props }} />
 					<div
-						className={classnames(containerWidth)}
+						className={classnames(
+							containerWidth,
+							cortexSpacingConfig(containerPadding, containerMargin)
+						)}
 						style={cortexBackgroundStyles(
 							containerImgURL,
 							verticalAlign,
@@ -148,9 +158,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 							overlayOpacity,
 							blendMode,
 							minScreenHeight,
-							containerPadding,
-							containerMargin,
-							focalPoint
+							focalPoint,
+							selected
 						)}
 					>
 						<div className="row no-gutter" style={{ flexGrow: 1 }}>
@@ -174,7 +183,10 @@ registerBlockType("covertnine-blocks/column-containers", {
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...props }} />
 				<div
-					className={classnames(containerWidth)}
+					className={classnames(
+						containerWidth,
+						cortexSpacingConfig(containerPadding, containerMargin)
+					)}
 					style={cortexBackgroundStyles(
 						containerImgURL,
 						verticalAlign,
@@ -187,9 +199,8 @@ registerBlockType("covertnine-blocks/column-containers", {
 						overlayOpacity,
 						blendMode,
 						minScreenHeight,
-						containerPadding,
-						containerMargin,
-						focalPoint
+						focalPoint,
+						selected
 					)}
 				>
 					<VideoBox {...{ setAttributes, ...props }} />
@@ -236,7 +247,10 @@ registerBlockType("covertnine-blocks/column-containers", {
 			return (
 				<Fragment>
 					<div
-						className={classnames(containerWidth)}
+						className={classnames(
+							containerWidth,
+							cortexSpacingConfig(containerPadding, containerMargin)
+						)}
 						style={cortexBackgroundStyles(
 							containerImgURL,
 							verticalAlign,
@@ -249,8 +263,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 							overlayOpacity,
 							blendMode,
 							minScreenHeight,
-							containerPadding,
-							containerMargin,
 							focalPoint
 						)}
 					>
@@ -265,7 +277,10 @@ registerBlockType("covertnine-blocks/column-containers", {
 		return (
 			<Fragment>
 				<div
-					className={classnames(containerWidth)}
+					className={classnames(
+						containerWidth,
+						cortexSpacingConfig(containerPadding, containerMargin)
+					)}
 					style={cortexBackgroundStyles(
 						containerImgURL,
 						verticalAlign,
@@ -278,8 +293,6 @@ registerBlockType("covertnine-blocks/column-containers", {
 						overlayOpacity,
 						blendMode,
 						minScreenHeight,
-						containerPadding,
-						containerMargin,
 						focalPoint
 					)}
 				>
@@ -293,6 +306,47 @@ registerBlockType("covertnine-blocks/column-containers", {
 	} //end save
 }); //end registerBlockType
 
+function cortexSpacingConfig(padding, margin) {
+	let classes = [];
+	// abstract side class assignment
+	function assignSideClasses(sideClass, level) {
+		if (level != -1) {
+			classes.push(`${sideClass}-${level}`);
+		}
+	}
+
+	// padding
+	if (
+		padding.top === padding.left &&
+		padding.top === padding.bottom &&
+		padding.top === padding.right &&
+		padding.top != -1
+	) {
+		classes.push(`p-${padding.top}`);
+	} else if (padding.top === padding.bottom && padding.top >= 0) {
+		classes.push(`py-${padding.top}`);
+		assignSideClasses("pl", padding.left);
+		assignSideClasses("pr", padding.right);
+	} else if (padding.left === padding.right && padding.left >= 0) {
+		classes.push(`px-${padding.left}`);
+		assignSideClasses("pt", padding.top);
+		assignSideClasses("pb", padding.bottom);
+	} else {
+		["top", "bottom", "left", "right"].map(s =>
+			assignSideClasses(`p${s[0]}`, padding[s])
+		);
+	}
+
+	// margin
+	if (margin.top === margin.bottom && margin.top != -1) {
+		classes.push(`my-${margin.top}`);
+	} else {
+		["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+	}
+
+	return classes;
+}
+
 function cortexBackgroundStyles(
 	url,
 	vertAlign,
@@ -305,9 +359,8 @@ function cortexBackgroundStyles(
 	opacity,
 	blend,
 	height,
-	padding,
-	margin,
-	focalPoint
+	focalPoint,
+	selected = true
 ) {
 	const styles = {};
 	styles.display = "flex";
@@ -315,20 +368,6 @@ function cortexBackgroundStyles(
 
 	if (height) {
 		styles.minHeight = `${height}vh`;
-	}
-
-	if (padding) {
-		styles.paddingTop = padding.top ? `${padding.top}${padding.unit}` : 0;
-		styles.paddingBottom = padding.bottom
-			? `${padding.bottom}${padding.unit}`
-			: 0;
-		styles.paddingLeft = padding.left ? `${padding.left}${padding.unit}` : 0;
-		styles.paddingRight = padding.right ? `${padding.right}${padding.unit}` : 0;
-	}
-
-	if (margin) {
-		styles.marginTop = margin.top ? `${margin.top}${margin.unit}` : 0;
-		styles.marginBottom = margin.bottom ? `${margin.bottom}${margin.unit}` : 0;
 	}
 
 	if (focalPoint) {
@@ -341,7 +380,12 @@ function cortexBackgroundStyles(
 	}
 
 	if (url) {
-		styles.backgroundImage = `url(${url})`;
+		if (selected) {
+			styles.backgroundImage = `url(${url})`;
+		}
+		else {
+			styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
+		}
 		styles.backgroundRepeat = repeat;
 		styles.backgroundAttachment = attachment ? "fixed" : "scroll";
 		styles.backgroundBlendMode = `${blend}`;

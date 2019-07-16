@@ -237,6 +237,28 @@ export default class Inspector extends Component {
 			{ value: "em", label: __("Em (em)", "covertnine-blocks") }
 		];
 
+		const paddingOptions = [
+			{ value: "-1", label: __("None", "covertnine-blocks") },
+			{ value: "0", label: __("Padding 0", "covertnine-blocks") },
+			{ value: "1", label: __("Padding 1", "covertnine-blocks") },
+			{ value: "2", label: __("Padding 2", "covertnine-blocks") },
+			{ value: "3", label: __("Padding 3", "covertnine-blocks") },
+			{ value: "4", label: __("Padding 4", "covertnine-blocks") },
+			{ value: "5", label: __("Padding 5", "covertnine-blocks") },
+			{ value: "auto", label: __("Auto", "covertnine-blocks") }
+		];
+
+		const marginOptions = [
+			{ value: "-1", label: __("None", "covertnine-blocks") },
+			{ value: "0", label: __("Margin 0", "covertnine-blocks") },
+			{ value: "1", label: __("Margin 1", "covertnine-blocks") },
+			{ value: "2", label: __("Margin 2", "covertnine-blocks") },
+			{ value: "3", label: __("Margin 3", "covertnine-blocks") },
+			{ value: "4", label: __("Margin 4", "covertnine-blocks") },
+			{ value: "5", label: __("Margin 5", "covertnine-blocks") },
+			{ value: "auto", label: __("Auto", "covertnine-blocks") }
+		];
+
 		const sizeTypes = [
 			{ value: "cover", label: __("Cover", "covertnine-blocks") },
 			{ value: "contain", label: __("Contain", "covertnine-blocks") },
@@ -342,37 +364,22 @@ export default class Inspector extends Component {
 				<PanelBody title={__("Spacing")} initialOpen={false}>
 					<h5 className="padding-label">Padding</h5>
 
-					<SelectControl
-						label={__("Padding Unit", "covertnine-blocks")}
-						help={__("Choose between pixel, percent, or em units.")}
-						options={cssUnits}
-						value={containerPadding.unit}
-						onChange={value => this.setPaddingUnit(value)}
-					/>
-					<hr />
+					<p className="components-base-control__label">
+						Configure between different levels of padding for each side.
+					</p>
 
 					<div className="padding-top-wrapper">
-						<RangeControl
-							label={__("top")}
+						<SelectControl
+							options={paddingOptions}
 							value={containerPadding.top}
-							onChange={padding => {
-								this.updatePadding("top", padding);
-							}}
-							className="padding"
-							min={0}
-							max={300}
+							onChange={value => this.updatePadding("top", value)}
 						/>
 					</div>
 					<div className="padding-sides-wrapper">
-						<RangeControl
-							label={__("left")}
+						<SelectControl
+							options={paddingOptions}
 							value={containerPadding.left}
-							onChange={padding => {
-								this.updatePadding("left", padding);
-							}}
-							className="padding"
-							min={0}
-							max={300}
+							onChange={value => this.updatePadding("left", value)}
 						/>
 						<IconButton
 							label={__("Linked Padding Toggle", "covertnine-blocks")}
@@ -380,27 +387,17 @@ export default class Inspector extends Component {
 							onClick={() => this.togglePaddingLinkage(this.containerPadding)}
 							ref={this.linkedPaddingRef}
 						/>
-						<RangeControl
-							label={__("right")}
+						<SelectControl
+							options={paddingOptions}
 							value={containerPadding.right}
-							onChange={padding => {
-								this.updatePadding("right", padding);
-							}}
-							className="padding"
-							min={0}
-							max={300}
+							onChange={value => this.updatePadding("right", value)}
 						/>
 					</div>
 					<div className="padding-bottom-wrapper">
-						<RangeControl
-							label={__("bottom")}
+						<SelectControl
+							options={paddingOptions}
 							value={containerPadding.bottom}
-							onChange={padding => {
-								this.updatePadding("bottom", padding);
-							}}
-							className="padding"
-							min={0}
-							max={300}
+							onChange={value => this.updatePadding("bottom", value)}
 						/>
 					</div>
 
@@ -408,25 +405,16 @@ export default class Inspector extends Component {
 
 					<h5 className="margin-label">Margins</h5>
 
-					<SelectControl
-						label={__("Margin Unit", "covertnine-blocks")}
-						help={__("Choose between pixel, percent, or em units.")}
-						options={cssUnits}
-						value={containerMargin.unit}
-						onChange={value => this.setMarginUnit(value)}
-					/>
-					<hr />
+					<p className="components-base-control__label">
+						Configure between different levels of margin for top and bottom
+						sides.
+					</p>
 
 					<div className="margin-top-wrapper">
-						<RangeControl
-							label={__("top")}
+						<SelectControl
+							options={marginOptions}
 							value={containerMargin.top}
-							onChange={margin => {
-								this.updateMargin("top", margin);
-							}}
-							className="margin"
-							min={0}
-							max={300}
+							onChange={value => this.updateMargin("top", value)}
 						/>
 					</div>
 					<div className="margin-sides-wrapper">
@@ -438,15 +426,10 @@ export default class Inspector extends Component {
 						/>
 					</div>
 					<div className="margin-bottom-wrapper">
-						<RangeControl
-							label={__("bottom")}
+						<SelectControl
+							options={marginOptions}
 							value={containerMargin.bottom}
-							onChange={margin => {
-								this.updateMargin("bottom", margin);
-							}}
-							className="margin"
-							min={0}
-							max={300}
+							onChange={value => this.updateMargin("bottom", value)}
 						/>
 					</div>
 				</PanelBody>
