@@ -55,43 +55,19 @@ $red: orangered;
 	padding-right: 30px;
 }
 
-div[data-type="covertnine-blocks/column-containers"].wp-block
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-	border: 1px solid rgba(0, 0, 0, 0.8);
-}
-
-.block-editor-block-list__layout
-	.block-editor-block-list__block.is-selected
-	> .block-editor-block-list__block-edit:before {
-	border: 2px solid black;
-}
-
-.wp-block
-	.wp-block
-	.block-editor-rich-text__editable[data-is-placeholder-visible="true"]
-	+ .block-editor-rich-text__editable.wp-block-paragraph {
+.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"]+.block-editor-rich-text__editable.wp-block-paragraph {
 	padding: 0;
 	font-size: 0;
 }
 
-.edit-post-visual-editor
-	.block-editor-block-list__block
-	.block-editor-block-list__block-edit {
+.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
 	margin-left: -35px;
 	margin-right: -35px;
 }
 
-div[data-type="core/paragraph"].wp-block
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
 	border: none;
-}
-div[data-type="core/paragraph"].wp-block.is-selected
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-	border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 div[data-type="core/paragraph"].wp-block,
@@ -99,10 +75,7 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
 	margin-bottom: 5px;
 }
 
-div[data-type="covertnine-blocks/column-containers"] {
-	margin-bottom: 10px;
-}
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
+.block-editor-block-list__block>.block-editor-block-list__insertion-point,
 .block-editor-block-list__insertion-point-inserter {
 	height: 15px;
 }

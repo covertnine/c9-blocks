@@ -23,7 +23,7 @@
 		"@wordpress/i18n": "^1.1.0",
 		"cgb-scripts": "^1.18.1",
 		"classnames": "^2.2.5",
-		"lodash": "^4.17.10",
+		"lodash": "^4.17.14",
 		"memize": "^1.0.5",
 		"moment": "^2.24.0",
 		"react": "^16.4.1",
