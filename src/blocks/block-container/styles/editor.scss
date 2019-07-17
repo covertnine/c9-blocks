@@ -5,21 +5,15 @@
  * which makes it higher in priority.
  */
 
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
- */
+// div[class^="container"] .block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit,
+// .editor-styles-wrapper .wp-block-paragraph {
+// 	margin-top: 0;
+// 	margin-bottom: 0;
+// }
 
-div[class^="container"] .block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit,
-.editor-styles-wrapper .wp-block-paragraph {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.block-editor-block-list__block .block-editor-block-list__layout {
-	margin: 0;
-}
+// .block-editor-block-list__block .block-editor-block-list__layout {
+// 	margin: 0;
+// }
 
 .components-color-palette {
 	margin-top: 10px;
@@ -106,7 +100,7 @@ div[class^="container"] .block-editor-block-list__layout>.block-editor-block-lis
 }
 
 /****************************************************************************************/
-/***************************** c9 custom block edits for backend only
+/***************************** C9 Container block edits for backend only
 /****************************************************************************************/
 
 /*cortex column container innerblocks set to full width + innerblock full width */
@@ -168,34 +162,38 @@ div[class^="container"] .block-editor-block-list__layout>.block-editor-block-lis
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
-		width: calc(100vw - 440px);
-		max-width: calc(100vw - 440px); //subtract the width of the document options sidebar
-		margin-left: calc((-100vw + 440px) / 2 + (100% / 2));
-		margin-right: calc((-100vw + 440px) / 2 + (100% / 2));
+		// width: calc(85vw - 440px);
+		width: 100%;
+		max-width: calc(85vw - 440px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 440px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 440px) / 2 + (100% / 2));
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin folded side bar
 	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
-		width: calc(100vw - 316px);
-		max-width: calc(100vw - 316px); //subtract the width of the document options sidebar
-		margin-left: calc((-100vw + 316px) / 2 + (100% / 2));
-		margin-right: calc((-100vw + 316px) / 2 + (100% / 2));
+		// width: calc(85vw - 316px);
+		width: 100%;
+		max-width: calc(85vw - 316px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 316px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 316px) / 2 + (100% / 2));
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin side bar
 	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
-		width: calc(100vw - 160px);
-		max-width: calc(100vw - 160px); //subtract the width of the document options sidebar
-		margin-left: calc((-100vw + 160px) / 2 + (100% / 2));
-		margin-right: calc((-100vw + 160px) / 2 + (100% / 2));
+		// width: calc(85vw - 160px);
+		width: 100%;
+		max-width: calc(85vw - 160px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 160px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 160px) / 2 + (100% / 2));
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin folded side bar
 	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
-		width: calc(100vw - 36px);
-		max-width: calc(100vw - 36px); //subtract the width of the document options sidebar
-		margin-left: calc((-100vw + 36px) / 2 + (100% / 2));
-		margin-right: calc((-100vw + 36px) / 2 + (100% / 2));
+		// width: calc(85vw - 36px);
+		width: 100%;
+		max-width: calc(85vw - 36px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 36px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 36px) / 2 + (100% / 2));
 	}
 
 }

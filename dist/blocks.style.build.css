@@ -4,38 +4,6 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.row .editor-block-list__layout {
-  display: block; }
-
-.wp-block {
-  max-width: none; }
-
-.blocks-button__inline-link.ab-button-center {
-  display: -ms-flexbox;
-  display: flex;
-  width: 366px;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-  position: absolute;
-  left: 0; }
-
-.editor-rich-text__editable.wp-block-button__link {
-  width: 100%; }
-
-.editor-rich-text__editable.wp-block-button__link.square {
-  border-radius: 0; }
-
-.edit-post-layout__content {
-  padding-bottom: 5vh; }
-
-.block-editor-block-list__layout .block-editor-block-list__block {
-  padding-left: 30px;
-  padding-right: 30px; }
-
 div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -43,37 +11,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .edito
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
-
-.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"] + .block-editor-rich-text__editable.wp-block-paragraph {
-  padding: 0;
-  font-size: 0; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -35px;
-  margin-right: -35px; }
-
-div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: none; }
-
-div[data-type="core/paragraph"].wp-block,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
-  margin-bottom: 5px; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__insertion-point-inserter {
-  height: 15px; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-  margin: 0; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-  margin-bottom: 0; }
 
 /****************************************************************************************/
 /* C9 Container Blocks for Bootstrap-like containers */
@@ -186,38 +123,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.row .editor-block-list__layout {
-  display: block; }
-
-.wp-block {
-  max-width: none; }
-
-.blocks-button__inline-link.ab-button-center {
-  display: -ms-flexbox;
-  display: flex;
-  width: 366px;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-  position: absolute;
-  left: 0; }
-
-.editor-rich-text__editable.wp-block-button__link {
-  width: 100%; }
-
-.editor-rich-text__editable.wp-block-button__link.square {
-  border-radius: 0; }
-
-.edit-post-layout__content {
-  padding-bottom: 5vh; }
-
-.block-editor-block-list__layout .block-editor-block-list__block {
-  padding-left: 30px;
-  padding-right: 30px; }
-
 div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -225,75 +130,12 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .edito
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
-
-.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"] + .block-editor-rich-text__editable.wp-block-paragraph {
-  padding: 0;
-  font-size: 0; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -35px;
-  margin-right: -35px; }
-
-div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: none; }
-
-div[data-type="core/paragraph"].wp-block,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
-  margin-bottom: 5px; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__insertion-point-inserter {
-  height: 15px; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-  margin: 0; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-  margin-bottom: 0; }
 /**
  * #.# Common SCSS
  *
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.row .editor-block-list__layout {
-  display: block; }
-
-.wp-block {
-  max-width: none; }
-
-.blocks-button__inline-link.ab-button-center {
-  display: -ms-flexbox;
-  display: flex;
-  width: 366px;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-  position: absolute;
-  left: 0; }
-
-.editor-rich-text__editable.wp-block-button__link {
-  width: 100%; }
-
-.editor-rich-text__editable.wp-block-button__link.square {
-  border-radius: 0; }
-
-.edit-post-layout__content {
-  padding-bottom: 5vh; }
-
-.block-editor-block-list__layout .block-editor-block-list__block {
-  padding-left: 30px;
-  padding-right: 30px; }
-
 div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -301,37 +143,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .edito
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
-
-.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"] + .block-editor-rich-text__editable.wp-block-paragraph {
-  padding: 0;
-  font-size: 0; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -35px;
-  margin-right: -35px; }
-
-div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: none; }
-
-div[data-type="core/paragraph"].wp-block,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
-  margin-bottom: 5px; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__insertion-point-inserter {
-  height: 15px; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-  margin: 0; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-  margin-bottom: 0; }
 
 /**
  * Sharing styles
@@ -433,38 +244,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.row .editor-block-list__layout {
-  display: block; }
-
-.wp-block {
-  max-width: none; }
-
-.blocks-button__inline-link.ab-button-center {
-  display: -ms-flexbox;
-  display: flex;
-  width: 366px;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-  position: absolute;
-  left: 0; }
-
-.editor-rich-text__editable.wp-block-button__link {
-  width: 100%; }
-
-.editor-rich-text__editable.wp-block-button__link.square {
-  border-radius: 0; }
-
-.edit-post-layout__content {
-  padding-bottom: 5vh; }
-
-.block-editor-block-list__layout .block-editor-block-list__block {
-  padding-left: 30px;
-  padding-right: 30px; }
-
 div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -472,37 +251,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .edito
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
-
-.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"] + .block-editor-rich-text__editable.wp-block-paragraph {
-  padding: 0;
-  font-size: 0; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -35px;
-  margin-right: -35px; }
-
-div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: none; }
-
-div[data-type="core/paragraph"].wp-block,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
-  margin-bottom: 5px; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__insertion-point-inserter {
-  height: 15px; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-  margin: 0; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-  margin-bottom: 0; }
 
 /********************************* Call To Action Bar ***********************************/
 .c9-block-cta {
@@ -535,38 +283,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.row .editor-block-list__layout {
-  display: block; }
-
-.wp-block {
-  max-width: none; }
-
-.blocks-button__inline-link.ab-button-center {
-  display: -ms-flexbox;
-  display: flex;
-  width: 366px;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-  position: absolute;
-  left: 0; }
-
-.editor-rich-text__editable.wp-block-button__link {
-  width: 100%; }
-
-.editor-rich-text__editable.wp-block-button__link.square {
-  border-radius: 0; }
-
-.edit-post-layout__content {
-  padding-bottom: 5vh; }
-
-.block-editor-block-list__layout .block-editor-block-list__block {
-  padding-left: 30px;
-  padding-right: 30px; }
-
 div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -574,37 +290,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .edito
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
-
-.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"] + .block-editor-rich-text__editable.wp-block-paragraph {
-  padding: 0;
-  font-size: 0; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -35px;
-  margin-right: -35px; }
-
-div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: none; }
-
-div[data-type="core/paragraph"].wp-block,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
-  margin-bottom: 5px; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__insertion-point-inserter {
-  height: 15px; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-  margin: 0; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-  margin-bottom: 0; }
 
 /**
  * #.# Styles
@@ -646,38 +331,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.row .editor-block-list__layout {
-  display: block; }
-
-.wp-block {
-  max-width: none; }
-
-.blocks-button__inline-link.ab-button-center {
-  display: -ms-flexbox;
-  display: flex;
-  width: 366px;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-  position: absolute;
-  left: 0; }
-
-.editor-rich-text__editable.wp-block-button__link {
-  width: 100%; }
-
-.editor-rich-text__editable.wp-block-button__link.square {
-  border-radius: 0; }
-
-.edit-post-layout__content {
-  padding-bottom: 5vh; }
-
-.block-editor-block-list__layout .block-editor-block-list__block {
-  padding-left: 30px;
-  padding-right: 30px; }
-
 div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -685,37 +338,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .edito
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
-
-.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"] + .block-editor-rich-text__editable.wp-block-paragraph {
-  padding: 0;
-  font-size: 0; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -35px;
-  margin-right: -35px; }
-
-div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: none; }
-
-div[data-type="core/paragraph"].wp-block,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
-  margin-bottom: 5px; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__insertion-point-inserter {
-  height: 15px; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-  margin: 0; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-  margin-bottom: 0; }
 
 /**
  * #.# Styles
@@ -728,38 +350,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.row .editor-block-list__layout {
-  display: block; }
-
-.wp-block {
-  max-width: none; }
-
-.blocks-button__inline-link.ab-button-center {
-  display: -ms-flexbox;
-  display: flex;
-  width: 366px;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-  position: absolute;
-  left: 0; }
-
-.editor-rich-text__editable.wp-block-button__link {
-  width: 100%; }
-
-.editor-rich-text__editable.wp-block-button__link.square {
-  border-radius: 0; }
-
-.edit-post-layout__content {
-  padding-bottom: 5vh; }
-
-.block-editor-block-list__layout .block-editor-block-list__block {
-  padding-left: 30px;
-  padding-right: 30px; }
-
 div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -767,37 +357,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .edito
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
-
-.wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"] + .block-editor-rich-text__editable.wp-block-paragraph {
-  padding: 0;
-  font-size: 0; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -35px;
-  margin-right: -35px; }
-
-div[data-type="core/paragraph"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: none; }
-
-div[data-type="core/paragraph"].wp-block,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
-  margin-bottom: 5px; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__insertion-point-inserter {
-  height: 15px; }
-
-.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-  margin: 0; }
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-  margin-bottom: 0; }
 
 /**
  * Post grid styles

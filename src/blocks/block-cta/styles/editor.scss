@@ -1,6 +1,11 @@
 /**
  * Editor styles for the admin
  */
+
+.wp-block {
+	max-width: 1140px;
+}
+
 .wp-block-covertnine-blocks-c9-cta .row {
 	display: flex;
 	align-items: center;
