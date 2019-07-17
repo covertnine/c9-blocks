@@ -1,8 +1,16 @@
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
- */
+/****************************************************************************************/
+/* C9 Container Blocks for Bootstrap-like containers */
+/****************************************************************************************/
+
+/* background overlay */
+.container-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
 .container .row .editor-inner-blocks,
 .container-fluid .row .editor-inner-blocks,
 .container-narrow .row .editor-inner-blocks {
@@ -27,27 +35,6 @@
 	flex-grow: 1;
 }
 
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
-	margin: 0;
-}
-
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.components-range-control .components-base-control__field {
-	margin-bottom: 0;
-}
-
-/****************************************************************************************/
-/* C9 Custom Blocks for new WordPress Gutenberg */
-/****************************************************************************************/
-
-/* content container */
-.container-overlay {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-}
 
 @media only screen and (min-width: 1px) {
 	.page-template-default .entry-content>.wp-block-covertnine-blocks-column-containers {
@@ -88,7 +75,8 @@
 
 @media only screen and (min-width: 768px) {
 
-	.page-template-default .entry-content>.wp-block-covertnine-blocks-column-containers {
+	.page-template-default .entry-content>.wp-block-covertnine-blocks-column-containers,
+	.page-template-default .entry-content>.container-fluid {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 100%) / 2);

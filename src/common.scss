@@ -6,7 +6,7 @@
 */
 
 // Colors.
-$black: rgb(41, 41, 41);
+$black: rgba(41, 41, 41, .15);
 $white: #f4f4f4;
 $gray: #dedede;
 $green: #bada55;
@@ -25,12 +25,6 @@ $red: orangered;
 	width: 366px;
 	align-items: center;
 	justify-content: center;
-}
-
-.wp-block-covertnine-blocks-c9-cta .row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 }
 
 .block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
@@ -55,12 +49,14 @@ $red: orangered;
 	padding-right: 30px;
 }
 
-div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-	border: 1px solid rgba(0, 0, 0, 0.8);
+div[data-type="covertnine-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+	border: 1px solid $black;
 }
 
 .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit:before {
-	border: 2px solid black;
+	border: 2px solid $black;
 }
 
 .wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"]+.block-editor-rich-text__editable.wp-block-paragraph {
@@ -78,11 +74,6 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block .editor-block-list
 	border: none;
 }
 
-div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="covertnine-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-	border: 1px solid rgba(0, 0, 0, 0.8);
-}
-
 div[data-type="core/paragraph"].wp-block,
 div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
 	margin-bottom: 5px;
@@ -96,4 +87,13 @@ div[data-type="covertnine-blocks/c9-custom-heading"].wp-block {
 .edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
+	margin: 0;
+}
+
+.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
+.components-range-control .components-base-control__field {
+	margin-bottom: 0;
 }
