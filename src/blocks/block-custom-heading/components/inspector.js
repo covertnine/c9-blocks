@@ -14,7 +14,7 @@ import HeadingToolbar from "./heading-toolbar";
 const { InspectorControls, PanelColorSettings } = wp.editor;
 
 // Import Inspector components
-const { PanelBody, SelectControl } = wp.components;
+const { PanelBody, SelectControl, ToggleControl } = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -35,7 +35,8 @@ class Inspector extends Component {
 				weight,
 				backgroundColor,
 				textColor,
-				tagLevel
+				tagLevel,
+				overrideStyle
 			}
 		} = this.props;
 
@@ -46,13 +47,16 @@ class Inspector extends Component {
 		];
 
 		const fontTypes = [
-			{ value: "", label: __("Heading", "covertnine-blocks") },
-			{ value: "subhead subhead-h", label: __("Subheading", "covertnine-blocks") },
+			{ value: "h", label: __("Heading", "covertnine-blocks") },
+			{
+				value: "subhead subhead-h",
+				label: __("Subheading", "covertnine-blocks")
+			},
 			{ value: "display-", label: __("Text-XL", "covertnine-blocks") }
 		];
 
 		const sizeTypes = [
-			{ value: "", label: __("Same as Tag", "covertnine-blocks") },
+			{ value: "0", label: __("Same as Tag", "covertnine-blocks") },
 			{ value: "1", label: __("H1", "covertnine-blocks") },
 			{ value: "2", label: __("H2", "covertnine-blocks") },
 			{ value: "3", label: __("H3", "covertnine-blocks") },
@@ -64,9 +68,7 @@ class Inspector extends Component {
 		// Update color values
 		return (
 			<InspectorControls key="inspector">
-				<PanelBody
-					title={__("Heading Options", "covertnine-blocks")}
-				>
+				<PanelBody title={__("Heading Options", "covertnine-blocks")}>
 					<p>{__("Element Tag Type")}</p>
 					<HeadingToolbar
 						minLevel={1}
@@ -87,13 +89,21 @@ class Inspector extends Component {
 
 					<hr />
 
-					<SelectControl
-						label={__("Font Size", "covertnine-blocks")}
-						help={__("Choose between different heading sizes.")}
-						options={sizeTypes}
-						value={displayLevel}
-						onChange={newLevel => setAttributes({ displayLevel: newLevel })}
+					<ToggleControl
+						label={__("Override Base Tag Style", "covertnine-blocks")}
+						checked={overrideStyle}
+						onChange={value => setAttributes({ overrideStyle: value })}
 					/>
+
+					{overrideStyle && (
+						<SelectControl
+							label={__("Font Size", "covertnine-blocks")}
+							help={__("Choose between different heading sizes.")}
+							options={sizeTypes}
+							value={displayLevel}
+							onChange={newLevel => setAttributes({ displayLevel: newLevel })}
+						/>
+					)}
 				</PanelBody>
 
 				<PanelBody

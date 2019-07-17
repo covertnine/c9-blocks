@@ -41,6 +41,10 @@ const attributes = {
 	weight: {
 		type: "string",
 		default: "normal"
+	},
+	overrideStyle: {
+		type: "boolean",
+		default: false
 	}
 };
 
