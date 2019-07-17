@@ -21,6 +21,7 @@ add_filter('block_categories', function ($categories, $post) {
             array(
                 'slug' => 'covertnine-blocks',
                 'title' => __('Covertnine Blocks', 'covertnine-blocks'),
+                'icon' => 'wordpress'
             ),
         ),
         $categories
