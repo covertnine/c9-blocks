@@ -10,3 +10,4 @@
  */
 
 import "./blocks/block-container/frontend.js"
+import "./blocks/block-tabs/frontend.js"

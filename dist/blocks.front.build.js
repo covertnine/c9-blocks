@@ -71,8 +71,10 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_container_frontend_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_container_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__blocks_block_container_frontend_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__);
 /**
- * Gutenberg Blocks Frontend
+ * Gutenberg Blocks Frontend JS
  *
  * All blocks frontend related JavaScript files should be imported here.
  * You can create a new block folder in this dir and include code
@@ -84,12 +86,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
+/* eslint-disable no-undef */
 function readyYoutube(video_id) {
 	if (typeof YT !== "undefined" && YT && YT.Player) {
+		// eslint-disable-next-line no-unused-vars
 		let player = new YT.Player("player", {
 			playerVars: {
 				autoplay: 1,
@@ -142,6 +147,71 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	readyYoutube(id);
 });
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+document.addEventListener("DOMContentLoaded", function() {
+	const $ = window.jQuery;
+
+	const pageHash = window.location.hash;
+
+	$(".tabs:not(.tabs-ready)").each(function() {
+		const $this = $(this);
+		const tabsActive = $this.attr("data-tab-active");
+
+		// pageHash
+
+		$this.addClass("tabs-ready");
+
+		// click action
+		$this.on("click", ".tabs-buttons-item", function(e) {
+			e.preventDefault();
+
+			const $thisBtn = $(this);
+			const tabName = $thisBtn.attr("data-tab") || this.hash;
+
+			activateTab($this, tabName);
+		});
+
+		// activate by page hash
+		let tabActivated = false;
+		if (pageHash) {
+			tabActivated = activateTab($this, pageHash);
+		}
+
+		if (!tabActivated && tabsActive) {
+			tabActivated = activateTab($this, `#${tabsActive}`);
+		}
+	});
+});
+
+function activateTab($tabs, tabName) {
+	let $activeBtn = false;
+	const $activeTab = $tabs
+		.children(".tabs-content")
+		.children(`[data-tab="${tabName.replace(/^#/, "")}"]`);
+
+	$activeBtn = $tabs.find(".tabs-buttons").find(`[href="${tabName}"]`);
+
+	if (!$activeBtn || !$activeBtn.length || !$activeTab.length) {
+		return false;
+	}
+
+	$activeBtn
+		.addClass("tabs-buttons-item-active")
+		.siblings()
+		.removeClass("tabs-buttons-item-active");
+
+	$activeTab
+		.addClass("tab-active")
+		.siblings()
+		.removeClass("tab-active");
+
+	return true;
+}
 
 
 /***/ })
