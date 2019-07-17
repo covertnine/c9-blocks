@@ -1,9 +1,16 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/frontend.js',
+    entry: {
+        frontend: './src/frontend.js',
+        'register-category-icon': './src/register-category-icon.js'
+    },
+    loader: {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'blocks.front.build.js'
+        filename: 'blocks.[name].build.js'
     }
   }

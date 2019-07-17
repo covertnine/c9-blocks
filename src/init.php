@@ -17,13 +17,14 @@ if (!defined('ABSPATH')) {
 // Add custom block category
 add_filter('block_categories', function ($categories, $post) {
     return array_merge(
-        $categories,
         array(
             array(
                 'slug' => 'covertnine-blocks',
                 'title' => __('Covertnine Blocks', 'covertnine-blocks'),
+                'icon' => 'wordpress'
             ),
-        )
+        ),
+        $categories
     );
 }, 10, 2);
 
@@ -92,6 +93,13 @@ function cortex_blocks_cgb_editor_assets()
         'cortex_blocks-deregister-blocks',
         plugins_url('/src/deregister-blocks.js', dirname(__FILE__)),
         array('wp-blocks')
+    );
+
+    //dequeue core blocks we don't want users using
+    wp_enqueue_script(
+        'cortex_blocks-register-category-icon',
+        plugins_url('dist/blocks.register-category-icon.build.js', dirname(__FILE__)),
+        true
     );
 
     // Styles.

@@ -26,7 +26,7 @@ const attributes = {
 	},
 	type: {
 		type: "string",
-		default: ""
+		default: "h"
 	},
 	backgroundColor: {
 		type: "string"
