@@ -450,16 +450,6 @@ export default class Inspector extends Component {
 									{__("Background Image")}
 								</IconButton>
 
-								<h5>Color Overlay</h5>
-								<span>Color Palette</span>
-								<ColorPalette
-									label={__("Overlay Color", "c9-blocks")}
-									value={overlayHue}
-									onChange={overlayHue => setAttributes({ overlayHue })}
-								/>
-
-								<hr />
-
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
 										<IconButton
@@ -477,9 +467,87 @@ export default class Inspector extends Component {
 											value={focalPoint}
 											onChange={value => setAttributes({ focalPoint: value })}
 										/>
+										</div>
+								)}
 
-										<hr />
+								<h5>Color Overlay</h5>
+								<span>Color Palette</span>
+								<ColorPalette
+									label={__("Overlay Color", "c9-blocks")}
+									value={overlayHue}
+									onChange={overlayHue => setAttributes({ overlayHue })}
+								/>
 
+								{overlayHue && !!overlayHue.length && (
+									<RangeControl
+										beforeIcon="arrow-left-alt2"
+										afterIcon="arrow-right-alt2"
+										label={__("Opacity", "c9-blocks")}
+										value={overlayOpacity}
+										onChange={overlayOpacity =>
+											setAttributes({ overlayOpacity })
+										}
+										min={1}
+										max={10}
+									/>
+								)}
+								{overlayHue && containerImgURL && !!containerImgURL.length && (
+									<SelectControl
+										label={__("Blend Mode", "c9-blocks")}
+										value={blendMode}
+										options={[
+											{ value: "overlay", label: __("Overlay", "c9-blocks") },
+											{ value: "normal", label: __("Normal", "c9-blocks") },
+											{
+												value: "multiply",
+												label: __("Multiply", "c9-blocks")
+											},
+											{ value: "screen", label: __("Screen", "c9-blocks") },
+											{ value: "darken", label: __("Darken", "c9-blocks") },
+											{ value: "lighten", label: __("Lighten", "c9-blocks") },
+											{
+												value: "color-dodge",
+												label: __("Color Dodge", "c9-blocks")
+											},
+											{
+												value: "color-burn",
+												label: __("Color Burn", "c9-blocks")
+											},
+											{
+												value: "hard-light",
+												label: __("Hard Light", "c9-blocks")
+											},
+											{
+												value: "soft-light",
+												label: __("Soft Light", "c9-blocks")
+											},
+											{
+												value: "difference",
+												label: __("Difference", "c9-blocks")
+											},
+											{
+												value: "exclusion",
+												label: __("Exclusion", "c9-blocks")
+											},
+											{ value: "hue", label: __("Hue", "c9-blocks") },
+											{
+												value: "saturation",
+												label: __("Saturation", "c9-blocks")
+											},
+											{ value: "color", label: __("Color", "c9-blocks") },
+											{
+												value: "luminosity",
+												label: __("Luminosity", "c9-blocks")
+											}
+										]}
+										onChange={blendMode => setAttributes({ blendMode })}
+									/>
+								)}
+
+								<hr />
+
+								{containerImgURL && !!containerImgURL.length && (
+									<div>
 										<h5>Attachment</h5>
 										<ToggleControl
 											label={__("Scroll | Fixed", "c9-blocks")}
@@ -594,70 +662,6 @@ export default class Inspector extends Component {
 							</div>
 						)}
 					/>
-
-					{overlayHue && !!overlayHue.length && (
-						<RangeControl
-							beforeIcon="arrow-left-alt2"
-							afterIcon="arrow-right-alt2"
-							label={__("Opacity", "c9-blocks")}
-							value={overlayOpacity}
-							onChange={overlayOpacity => setAttributes({ overlayOpacity })}
-							min={1}
-							max={10}
-						/>
-					)}
-					{overlayHue && containerImgURL && !!containerImgURL.length && (
-						<SelectControl
-							label={__("Blend Mode", "c9-blocks")}
-							value={blendMode}
-							options={[
-								{ value: "overlay", label: __("Overlay", "c9-blocks") },
-								{ value: "normal", label: __("Normal", "c9-blocks") },
-								{
-									value: "multiply",
-									label: __("Multiply", "c9-blocks")
-								},
-								{ value: "screen", label: __("Screen", "c9-blocks") },
-								{ value: "darken", label: __("Darken", "c9-blocks") },
-								{ value: "lighten", label: __("Lighten", "c9-blocks") },
-								{
-									value: "color-dodge",
-									label: __("Color Dodge", "c9-blocks")
-								},
-								{
-									value: "color-burn",
-									label: __("Color Burn", "c9-blocks")
-								},
-								{
-									value: "hard-light",
-									label: __("Hard Light", "c9-blocks")
-								},
-								{
-									value: "soft-light",
-									label: __("Soft Light", "c9-blocks")
-								},
-								{
-									value: "difference",
-									label: __("Difference", "c9-blocks")
-								},
-								{
-									value: "exclusion",
-									label: __("Exclusion", "c9-blocks")
-								},
-								{ value: "hue", label: __("Hue", "c9-blocks") },
-								{
-									value: "saturation",
-									label: __("Saturation", "c9-blocks")
-								},
-								{ value: "color", label: __("Color", "c9-blocks") },
-								{
-									value: "luminosity",
-									label: __("Luminosity", "c9-blocks")
-								}
-							]}
-							onChange={blendMode => setAttributes({ blendMode })}
-						/>
-					)}
 				</PanelBody>
 				<PanelBody title={__("Video")} initialOpen={false}>
 					<RadioControl
