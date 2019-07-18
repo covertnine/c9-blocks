@@ -3,39 +3,40 @@
  */
 
 // Import block dependencies and components
-import edit from './components/edit';
+import edit from "./components/edit";
 
 // Import CSS
-import './styles/style.scss';
-import './styles/editor.scss';
+import "./styles/style.scss";
+import "./styles/editor.scss";
 
 // Components
 const { __ } = wp.i18n;
 
 // Register block controls
-const {
-	registerBlockType,
-} = wp.blocks;
+const { registerBlockType } = wp.blocks;
 
 // Register alignments
-const validAlignments = [ 'center', 'wide', 'full' ];
+const validAlignments = ["center", "wide", "full"];
 
 // Register the block
-registerBlockType( 'covertnine-blocks/ab-post-grid', {
-	title: __( 'Post and Page Grid', 'covertnine-blocks' ),
-	description: __( 'Add a grid or list of customizable posts or pages.', 'covertnine-blocks' ),
-	icon: 'grid-view',
-	category: 'covertnine-blocks',
+registerBlockType("c9-blocks/ab-post-grid", {
+	title: __("Post and Page Grid", "c9-blocks"),
+	description: __(
+		"Add a grid or list of customizable posts or pages.",
+		"c9-blocks"
+	),
+	icon: "grid-view",
+	category: "c9-blocks",
 	keywords: [
-		__( 'post', 'covertnine-blocks' ),
-		__( 'page', 'covertnine-blocks' ),
-		__( 'grid', 'covertnine-blocks' ),
+		__("post", "c9-blocks"),
+		__("page", "c9-blocks"),
+		__("grid", "c9-blocks")
 	],
 
-	getEditWrapperProps( attributes ) {
+	getEditWrapperProps(attributes) {
 		const { align } = attributes;
-		if ( -1 !== validAlignments.indexOf( align ) ) {
-			return { 'data-align': align };
+		if (-1 !== validAlignments.indexOf(align)) {
+			return { "data-align": align };
 		}
 	},
 
@@ -44,5 +45,5 @@ registerBlockType( 'covertnine-blocks/ab-post-grid', {
 	// Render via PHP
 	save() {
 		return null;
-	},
-} );
+	}
+});

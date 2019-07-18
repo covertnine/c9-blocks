@@ -33,15 +33,15 @@ const { AlignmentToolbar, BlockControls, RichText } = wp.editor;
 import attributes from "./attributes";
 
 // Register the block
-registerBlockType("covertnine-blocks/c9-custom-heading", {
-	title: __("Covertnine Custom Section Heading", "covertnine-blocks"),
-	description: __("Add a custom Section Heading.", "covertnine-blocks"),
+registerBlockType("c9-blocks/c9-custom-heading", {
+	title: __("Covertnine Custom Section Heading", "c9-blocks"),
+	description: __("Add a custom Section Heading.", "c9-blocks"),
 	icon: iconEl,
-	category: "covertnine-blocks",
+	category: "c9-blocks",
 	keywords: [
-		__("custom heading", "covertnine-blocks"),
-		__("cortex", "covertnine-blocks"),
-		__("covertnine", "covertnine-blocks")
+		__("custom heading", "c9-blocks"),
+		__("cortex", "c9-blocks"),
+		__("covertnine", "c9-blocks")
 	],
 
 	attributes: attributes,
@@ -147,8 +147,7 @@ registerBlockType("covertnine-blocks/c9-custom-heading", {
 function cortexTextStyleConfig(type, level, override) {
 	if (level == 0 || !override) {
 		return "";
-	}
-	else {
+	} else {
 		return `${type}${level}`;
 	}
 }

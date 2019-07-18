@@ -12,12 +12,12 @@ const { AlignmentToolbar, BlockControls } = wp.editor;
 // Extend component
 const { Fragment } = wp.element;
 
-registerBlockType("covertnine-blocks/column", {
-	title: __("Column", "covertnine-blocks"),
+registerBlockType("c9-blocks/column", {
+	title: __("Column", "c9-blocks"),
 
 	category: "common",
 
-	parent: ["covertnine-blocks/columns"],
+	parent: ["c9-blocks/columns"],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@ registerBlockType("covertnine-blocks/column", {
 		inserter: false
 	},
 
-	attributes:{
+	attributes: {
 		width: {
 			type: "int",
 			default: -1
@@ -43,11 +43,9 @@ registerBlockType("covertnine-blocks/column", {
 		}
 	},
 
-	edit: (props) => {
+	edit: props => {
 		const {
-			attributes: {
-				textAlign
-			},
+			attributes: { textAlign },
 			setAttributes
 		} = props;
 
@@ -62,7 +60,7 @@ registerBlockType("covertnine-blocks/column", {
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
 				</BlockControls>
-				<div style={{textAlign: textAlign}} className="col">
+				<div style={{ textAlign: textAlign }} className="col">
 					<InnerBlocks
 						templateLock={false}
 						templateInsertUpdatesSelection={false}
@@ -72,12 +70,9 @@ registerBlockType("covertnine-blocks/column", {
 		);
 	},
 
-	save: (props) => {
+	save: props => {
 		const {
-			attributes: {
-				width,
-				textAlign
-			}
+			attributes: { width, textAlign }
 		} = props;
 
 		let className = "col";
@@ -88,7 +83,7 @@ registerBlockType("covertnine-blocks/column", {
 
 		return (
 			<Fragment>
-				<div style={{textAlign: textAlign}} className={className}>
+				<div style={{ textAlign: textAlign }} className={className}>
 					<InnerBlocks.Content />
 				</div>
 			</Fragment>

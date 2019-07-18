@@ -41,34 +41,34 @@ class Inspector extends Component {
 		} = this.props;
 
 		const weightTypes = [
-			{ value: "light", label: __("Light (300)", "covertnine-blocks") },
-			{ value: "normal", label: __("Normal (400)", "covertnine-blocks") },
-			{ value: "bold", label: __("Bold (700)", "covertnine-blocks") }
+			{ value: "light", label: __("Light (300)", "c9-blocks") },
+			{ value: "normal", label: __("Normal (400)", "c9-blocks") },
+			{ value: "bold", label: __("Bold (700)", "c9-blocks") }
 		];
 
 		const fontTypes = [
-			{ value: "h", label: __("Heading", "covertnine-blocks") },
+			{ value: "h", label: __("Heading", "c9-blocks") },
 			{
 				value: "subhead subhead-h",
-				label: __("Subheading", "covertnine-blocks")
+				label: __("Subheading", "c9-blocks")
 			},
-			{ value: "display-", label: __("Text-XL", "covertnine-blocks") }
+			{ value: "display-", label: __("Text-XL", "c9-blocks") }
 		];
 
 		const sizeTypes = [
-			{ value: "0", label: __("Same as Tag", "covertnine-blocks") },
-			{ value: "1", label: __("H1", "covertnine-blocks") },
-			{ value: "2", label: __("H2", "covertnine-blocks") },
-			{ value: "3", label: __("H3", "covertnine-blocks") },
-			{ value: "4", label: __("H4", "covertnine-blocks") },
-			{ value: "5", label: __("H5", "covertnine-blocks") },
-			{ value: "6", label: __("H6", "covertnine-blocks") }
+			{ value: "0", label: __("Same as Tag", "c9-blocks") },
+			{ value: "1", label: __("H1", "c9-blocks") },
+			{ value: "2", label: __("H2", "c9-blocks") },
+			{ value: "3", label: __("H3", "c9-blocks") },
+			{ value: "4", label: __("H4", "c9-blocks") },
+			{ value: "5", label: __("H5", "c9-blocks") },
+			{ value: "6", label: __("H6", "c9-blocks") }
 		];
 
 		// Update color values
 		return (
 			<InspectorControls key="inspector">
-				<PanelBody title={__("Heading Options", "covertnine-blocks")}>
+				<PanelBody title={__("Heading Options", "c9-blocks")}>
 					<p>{__("Element Tag Type")}</p>
 					<HeadingToolbar
 						minLevel={1}
@@ -80,7 +80,7 @@ class Inspector extends Component {
 					<hr />
 
 					<SelectControl
-						label={__("Font Type", "covertnine-blocks")}
+						label={__("Font Type", "c9-blocks")}
 						help={__("Choose between heading, subheading, or text-xl.")}
 						options={fontTypes}
 						value={type}
@@ -90,14 +90,14 @@ class Inspector extends Component {
 					<hr />
 
 					<ToggleControl
-						label={__("Override Base Tag Style", "covertnine-blocks")}
+						label={__("Override Base Tag Style", "c9-blocks")}
 						checked={overrideStyle}
 						onChange={value => setAttributes({ overrideStyle: value })}
 					/>
 
 					{overrideStyle && (
 						<SelectControl
-							label={__("Font Size", "covertnine-blocks")}
+							label={__("Font Size", "c9-blocks")}
 							help={__("Choose between different heading sizes.")}
 							options={sizeTypes}
 							value={displayLevel}
@@ -106,12 +106,9 @@ class Inspector extends Component {
 					)}
 				</PanelBody>
 
-				<PanelBody
-					title={__("Text Settings", "covertnine-blocks")}
-					initialOpen={false}
-				>
+				<PanelBody title={__("Text Settings", "c9-blocks")} initialOpen={false}>
 					<SelectControl
-						label={__("Font Weight", "covertnine-blocks")}
+						label={__("Font Weight", "c9-blocks")}
 						help={__("Choose between light, normal, or bold.")}
 						options={weightTypes}
 						value={weight}

@@ -37,18 +37,15 @@ const {
 const { Button, withFallbackStyles, IconButton, Dashicon } = wp.components;
 
 // Register the block
-registerBlockType("covertnine-blocks/cortex-share", {
-	title: __("Cortex Social Share", "covertnine-blocks"),
-	description: __(
-		"Add sharing buttons to your posts and pages.",
-		"covertnine-blocks"
-	),
+registerBlockType("c9-blocks/cortex-share", {
+	title: __("Cortex Social Share", "c9-blocks"),
+	description: __("Add sharing buttons to your posts and pages.", "c9-blocks"),
 	icon: iconEl,
-	category: "covertnine-blocks",
+	category: "c9-blocks",
 	keywords: [
-		__("share", "covertnine-blocks"),
-		__("social", "covertnine-blocks"),
-		__("cortex", "covertnine-blocks")
+		__("share", "c9-blocks"),
+		__("social", "c9-blocks"),
+		__("cortex", "c9-blocks")
 	],
 
 	// Render the block components
@@ -96,7 +93,7 @@ registerBlockType("covertnine-blocks/cortex-share", {
 							<a className="ab-share-twitter">
 								<i className="fab fa-twitter" />
 								<span className={"ab-social-text"}>
-									{__("Share on Twitter", "covertnine-blocks")}
+									{__("Share on Twitter", "c9-blocks")}
 								</span>
 							</a>
 						</li>
@@ -107,7 +104,7 @@ registerBlockType("covertnine-blocks/cortex-share", {
 							<a className="ab-share-facebook">
 								<i className="fab fa-facebook-f" />
 								<span className={"ab-social-text"}>
-									{__("Share on Facebook", "covertnine-blocks")}
+									{__("Share on Facebook", "c9-blocks")}
 								</span>
 							</a>
 						</li>
@@ -118,7 +115,7 @@ registerBlockType("covertnine-blocks/cortex-share", {
 							<a className="ab-share-google">
 								<i className="fab fa-google" />
 								<span className={"ab-social-text"}>
-									{__("Share on Google", "covertnine-blocks")}
+									{__("Share on Google", "c9-blocks")}
 								</span>
 							</a>
 						</li>
@@ -129,7 +126,7 @@ registerBlockType("covertnine-blocks/cortex-share", {
 							<a className="ab-share-pinterest">
 								<i className="fab fa-pinterest-p" />
 								<span className={"ab-social-text"}>
-									{__("Share on Pinterest", "covertnine-blocks")}
+									{__("Share on Pinterest", "c9-blocks")}
 								</span>
 							</a>
 						</li>
@@ -140,7 +137,7 @@ registerBlockType("covertnine-blocks/cortex-share", {
 							<a className="ab-share-linkedin">
 								<i className="fab fa-linkedin" />
 								<span className={"ab-social-text"}>
-									{__("Share on LinkedIn", "covertnine-blocks")}
+									{__("Share on LinkedIn", "c9-blocks")}
 								</span>
 							</a>
 						</li>
@@ -151,7 +148,7 @@ registerBlockType("covertnine-blocks/cortex-share", {
 							<a className="ab-share-reddit">
 								<i className="fab fa-reddit-alien" />
 								<span className={"ab-social-text"}>
-									{__("Share on reddit", "covertnine-blocks")}
+									{__("Share on reddit", "c9-blocks")}
 								</span>
 							</a>
 						</li>
@@ -162,7 +159,7 @@ registerBlockType("covertnine-blocks/cortex-share", {
 							<a className="ab-share-email">
 								<i className="fas fa-envelope" />
 								<span className={"ab-social-text"}>
-									{__("Share via Email", "covertnine-blocks")}
+									{__("Share via Email", "c9-blocks")}
 								</span>
 							</a>
 						</li>

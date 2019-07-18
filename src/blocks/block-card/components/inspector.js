@@ -40,7 +40,7 @@ class Inspector extends Component {
 		// Update color values
 		return (
 			<InspectorControls key="inspector">
-				<PanelBody title={__("Card Options", "covertnine-blocks")} />
+				<PanelBody title={__("Card Options", "c9-blocks")} />
 
 				<PanelColorSettings
 					title={__("Color Settings")}

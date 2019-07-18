@@ -19,8 +19,8 @@ add_filter('block_categories', function ($categories, $post) {
     return array_merge(
         array(
             array(
-                'slug' => 'covertnine-blocks',
-                'title' => __('Covertnine Blocks', 'covertnine-blocks'),
+                'slug' => 'c9-blocks',
+                'title' => __('COVERT NINE Blocks', 'c9-blocks'),
                 'icon' => 'wordpress'
             ),
         ),
@@ -102,13 +102,13 @@ function cortex_blocks_cgb_editor_assets()
         true
     );
 
-    // Styles.
-    wp_enqueue_style(
-        'bootstrap-css',
-        'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
-        array('wp-blocks', 'wp-il8n', 'wp-element'),
-        true
-    );
+    // // Styles.
+    // wp_enqueue_style(
+    //     'bootstrap-css',
+    //     'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+    //     array('wp-blocks', 'wp-il8n', 'wp-element'),
+    //     true
+    // );
     wp_enqueue_style(
         'cortex_blocks-cgb-block-editor-css', // Handle.
         plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)), // Block editor CSS.
@@ -140,7 +140,7 @@ function cortex_blocks_front_assets()
         array('youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n')
     );
 
-    wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(''), '4.3.1');
+    // wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(''), '4.3.1');
 }
 
 // Hook: Cortex Blocks Frontend

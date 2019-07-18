@@ -6,12 +6,12 @@ const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
 const { registerBlockType, createBlock } = wp.blocks;
 
-registerBlockType("covertnine-blocks/column", {
-	title: __("Column", "covertnine-blocks"),
+registerBlockType("c9-blocks/column", {
+	title: __("Column", "c9-blocks"),
 
 	category: "common",
 
-	parent: ["covertnine-blocks/columns"],
+	parent: ["c9-blocks/columns"],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

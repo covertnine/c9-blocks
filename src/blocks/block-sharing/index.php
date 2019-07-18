@@ -18,8 +18,8 @@ function cortex_blocks_register_sharing() {
 
 	// Register the sharing block
 	register_block_type(
-		'covertnine-blocks/ab-sharing', array(
-			'style' => 'covertnine-blocks-style-css',
+		'c9-blocks/ab-sharing', array(
+			'style' => 'c9-blocks-style-css',
 			'attributes' => array(
                 'facebook' => array(
 					'type'    => 'boolean',
@@ -140,7 +140,7 @@ function cortex_blocks_render_sharing( $attributes ) {
 				</a>
 			</li>',
 			esc_url( $twitter_url ),
-			esc_html__( 'Share on Twitter', 'covertnine-blocks' )
+			esc_html__( 'Share on Twitter', 'c9-blocks' )
 		);
 	}
 
@@ -156,7 +156,7 @@ function cortex_blocks_render_sharing( $attributes ) {
 				</a>
 			</li>',
 			esc_url( $facebook_url ),
-			esc_html__( 'Share on Facebook', 'covertnine-blocks' )
+			esc_html__( 'Share on Facebook', 'c9-blocks' )
 		);
 	}
 
@@ -172,7 +172,7 @@ function cortex_blocks_render_sharing( $attributes ) {
 				</a>
 			</li>',
 			esc_url( $google_url ),
-			esc_html__( 'Share on Google', 'covertnine-blocks' )
+			esc_html__( 'Share on Google', 'c9-blocks' )
 		);
 	}
 
@@ -188,7 +188,7 @@ function cortex_blocks_render_sharing( $attributes ) {
 				</a>
 			</li>',
 			esc_url( $pinterest_url ),
-			esc_html__( 'Share on Pinterest', 'covertnine-blocks' )
+			esc_html__( 'Share on Pinterest', 'c9-blocks' )
 		);
 	}
 
@@ -204,7 +204,7 @@ function cortex_blocks_render_sharing( $attributes ) {
 				</a>
 			</li>',
 			esc_url( $linkedin_url ),
-			esc_html__( 'Share on LinkedIn', 'covertnine-blocks' )
+			esc_html__( 'Share on LinkedIn', 'c9-blocks' )
 		);
 	}
 
@@ -220,7 +220,7 @@ function cortex_blocks_render_sharing( $attributes ) {
 				</a>
 			</li>',
 			esc_url( $reddit_url ),
-			esc_html__( 'Share on Reddit', 'covertnine-blocks' )
+			esc_html__( 'Share on Reddit', 'c9-blocks' )
 		);
 	}
 
@@ -235,13 +235,13 @@ function cortex_blocks_render_sharing( $attributes ) {
 				</a>
 			</li>',
 			esc_url( $email_url ),
-			esc_html__( 'Share via Email', 'covertnine-blocks' )
+			esc_html__( 'Share via Email', 'c9-blocks' )
 		);
 	}
 
 	// Render the list of share links
 	$block_content = sprintf(
-		'<div class="wp-block-covertnine-blocks-ab-sharing ab-block-sharing %2$s %3$s %4$s %5$s %6$s">
+		'<div class="wp-block-c9-blocks-ab-sharing ab-block-sharing %2$s %3$s %4$s %5$s %6$s">
 			<ul class="ab-share-list">%1$s</ul>
 		</div>',
 		$share_url,

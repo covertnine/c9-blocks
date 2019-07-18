@@ -117,7 +117,7 @@ class C9CTABlock extends Component {
 						<RichText
 							tagName="div"
 							multiline="p"
-							placeholder={__("Call To Action Text", "covertnine-blocks")}
+							placeholder={__("Call To Action Text", "c9-blocks")}
 							keepPlaceholderOnFocus
 							value={ctaText}
 							className={classnames(
@@ -138,7 +138,7 @@ class C9CTABlock extends Component {
 					>
 						<RichText
 							tagName="a"
-							placeholder={__("Button text...", "covertnine-blocks")}
+							placeholder={__("Button text...", "c9-blocks")}
 							value={buttonText}
 							formattingControls={[]}
 							className={classnames(
@@ -169,7 +169,7 @@ class C9CTABlock extends Component {
 								/>
 								<IconButton
 									icon="editor-break"
-									label={__("Apply", "covertnine-blocks")}
+									label={__("Apply", "c9-blocks")}
 									type="submit"
 								/>
 							</form>
@@ -182,18 +182,18 @@ class C9CTABlock extends Component {
 }
 
 // Register the block
-registerBlockType("covertnine-blocks/c9-cta", {
-	title: __("Covertnine Call To Action", "covertnine-blocks"),
+registerBlockType("c9-blocks/c9-cta", {
+	title: __("Covertnine Call To Action", "c9-blocks"),
 	description: __(
 		"Add a call to action section with text and a button.",
-		"covertnine-blocks"
+		"c9-blocks"
 	),
 	icon: iconEl,
-	category: "covertnine-blocks",
+	category: "c9-blocks",
 	keywords: [
-		__("call to action", "covertnine-blocks"),
-		__("cta", "covertnine-blocks"),
-		__("atomic", "covertnine-blocks")
+		__("call to action", "c9-blocks"),
+		__("cta", "c9-blocks"),
+		__("atomic", "c9-blocks")
 	],
 
 	attributes: blockAttributes,

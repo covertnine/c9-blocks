@@ -39,7 +39,7 @@ export default class Edit extends Component {
 		const result = [];
 
 		tabsData.forEach(tabData => {
-			result.push(["covertnine-blocks/tabs-tab", tabData]);
+			result.push(["c9-blocks/tabs-tab", tabData]);
 		});
 
 		return result;
@@ -107,7 +107,10 @@ export default class Edit extends Component {
 				</BlockControls>
 
 				<Inspector {...this.props} />
-				<div className={classnames(className, "tabs")} data-tab-active={tabActive}>
+				<div
+					className={classnames(className, "tabs")}
+					data-tab-active={tabActive}
+				>
 					<div
 						className={classnames(
 							"tabs-buttons",
@@ -196,7 +199,7 @@ export default class Edit extends Component {
 						<InnerBlocks
 							template={this.getTabsTemplate()}
 							templateLock="all"
-							allowedBlocks={["covertnine-blocks/tabs-tab"]}
+							allowedBlocks={["c9-blocks/tabs-tab"]}
 						/>
 					</div>
 				</div>

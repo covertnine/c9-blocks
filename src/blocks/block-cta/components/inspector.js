@@ -142,45 +142,42 @@ class Inspector extends Component {
 		return (
 			<InspectorControls key="inspector">
 				<PanelColorSettings
-					title={__("Text Color", "covertnine-blocks")}
+					title={__("Text Color", "c9-blocks")}
 					initialOpen={true}
 					colorSettings={[
 						{
 							value: ctaTextColor,
 							onChange: onChangeTextColor,
-							label: __("Text Color", "covertnine-blocks")
+							label: __("Text Color", "c9-blocks")
 						}
 					]}
 				/>
 				<PanelColorSettings
-					title={__("Button Color", "covertnine-blocks")}
+					title={__("Button Color", "c9-blocks")}
 					initialOpen={true}
 					colorSettings={[
 						{
 							value: buttonBackgroundColor,
 							onChange: onChangeButtonColor,
-							label: __("Button Color", "covertnine-blocks")
+							label: __("Button Color", "c9-blocks")
 						}
 					]}
 				/>
 
 				<PanelColorSettings
-					title={__("Button Text Color", "covertnine-blocks")}
+					title={__("Button Text Color", "c9-blocks")}
 					initialOpen={true}
 					colorSettings={[
 						{
 							value: buttonTextColor.color,
 							onChange: onChangeButtonTextColor,
-							label: __("Button Text Color", "covertnine-blocks")
+							label: __("Button Text Color", "c9-blocks")
 						}
 					]}
 				/>
-				<PanelBody
-					title={__("Layout", "covertnine-blocks")}
-					initialOpen={false}
-				>
+				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={false}>
 					<RadioControl
-						label={__("Content Width", "covertnine-blocks")}
+						label={__("Content Width", "c9-blocks")}
 						selected={ctaLayout}
 						options={[
 							{ label: "2/3", value: "two-thirds" },
@@ -192,10 +189,10 @@ class Inspector extends Component {
 				</PanelBody>
 
 				<PanelBody
-					title={__("Background Options", "covertnine-blocks")}
+					title={__("Background Options", "c9-blocks")}
 					initialOpen={false}
 				>
-					<p>{__("Select a background image:", "covertnine-blocks")}</p>
+					<p>{__("Select a background image:", "c9-blocks")}</p>
 					<MediaUpload
 						onSelect={onSelectImage}
 						type="image"
@@ -204,21 +201,21 @@ class Inspector extends Component {
 							<div>
 								<IconButton
 									className="ab-cta-inspector-media"
-									label={__("Edit image", "covertnine-blocks")}
+									label={__("Edit image", "c9-blocks")}
 									icon="format-image"
 									onClick={open}
 								>
-									{__("Select Image", "covertnine-blocks")}
+									{__("Select Image", "c9-blocks")}
 								</IconButton>
 
 								{imgURL && !!imgURL.length && (
 									<IconButton
 										className="ab-cta-inspector-media"
-										label={__("Remove Image", "covertnine-blocks")}
+										label={__("Remove Image", "c9-blocks")}
 										icon="dismiss"
 										onClick={onRemoveImage}
 									>
-										{__("Remove", "covertnine-blocks")}
+										{__("Remove", "c9-blocks")}
 									</IconButton>
 								)}
 							</div>
@@ -227,7 +224,7 @@ class Inspector extends Component {
 
 					{imgURL && !!imgURL.length && (
 						<RangeControl
-							label={__("Image Opacity", "covertnine-blocks")}
+							label={__("Image Opacity", "c9-blocks")}
 							value={dimRatio}
 							onChange={value => this.props.setAttributes({ dimRatio: value })}
 							min={0}
@@ -237,24 +234,24 @@ class Inspector extends Component {
 					)}
 
 					<PanelColorSettings
-						title={__("Background Color", "covertnine-blocks")}
+						title={__("Background Color", "c9-blocks")}
 						initialOpen={false}
 						colorSettings={[
 							{
 								value: ctaBackgroundColor,
 								onChange: onChangeBackgroundColor,
-								label: __("Overlay Color", "covertnine-blocks")
+								label: __("Overlay Color", "c9-blocks")
 							}
 						]}
 					/>
 				</PanelBody>
 
 				<PanelBody
-					title={__("Button Options", "covertnine-blocks")}
+					title={__("Button Options", "c9-blocks")}
 					initialOpen={false}
 				>
 					<ToggleControl
-						label={__("Open link in new window", "covertnine-blocks")}
+						label={__("Open link in new window", "c9-blocks")}
 						checked={buttonTarget}
 						onChange={() =>
 							this.props.setAttributes({ buttonTarget: !buttonTarget })
@@ -262,7 +259,7 @@ class Inspector extends Component {
 					/>
 
 					<SelectControl
-						label={__("Button Size", "covertnine-blocks")}
+						label={__("Button Size", "c9-blocks")}
 						value={buttonSize}
 						options={buttonSizeOptions.map(({ value, label }) => ({
 							value: value,
@@ -274,7 +271,7 @@ class Inspector extends Component {
 					/>
 
 					<SelectControl
-						label={__("Button Shape", "covertnine-blocks")}
+						label={__("Button Shape", "c9-blocks")}
 						value={buttonShape}
 						options={buttonShapeOptions.map(({ value, label }) => ({
 							value: value,

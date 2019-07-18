@@ -18,18 +18,18 @@ const { withSelect, withDispatch } = wp.data;
 const { registerBlockType } = wp.blocks;
 
 // Register the block
-registerBlockType("covertnine-blocks/tabs", {
-	title: __("Covertnine Tabs", "covertnine-blocks"),
-	description: __("Responsive tabs for content", "covertnine-blocks"),
+registerBlockType("c9-blocks/tabs", {
+	title: __("Covertnine Tabs", "c9-blocks"),
+	description: __("Responsive tabs for content", "c9-blocks"),
 	icon: "category",
-	category: "covertnine-blocks",
+	category: "c9-blocks",
 	supports: {
 		// fill in features
 	},
 	keywords: [
-		__("tabs", "covertnine-blocks"),
-		__("container", "covertnine-blocks"),
-		__("responsive", "covertnine-blocks")
+		__("tabs", "c9-blocks"),
+		__("container", "c9-blocks"),
+		__("responsive", "c9-blocks")
 	],
 	attributes,
 	// Render the block components

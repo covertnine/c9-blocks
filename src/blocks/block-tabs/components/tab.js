@@ -39,12 +39,12 @@ export default class Tab extends Component {
 	}
 }
 
-registerBlockType("covertnine-blocks/tabs-tab", {
-	title: __("Covertnine Tab", "covertnine-blocks"),
+registerBlockType("c9-blocks/tabs-tab", {
+	title: __("Covertnine Tab", "c9-blocks"),
 
 	category: "common",
 
-	parent: ["covertnine-blocks/tabs"],
+	parent: ["c9-blocks/tabs"],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

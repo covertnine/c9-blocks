@@ -104,14 +104,14 @@
 /****************************************************************************************/
 
 /*cortex column container innerblocks set to full width + innerblock full width */
-.wp-block[data-type="covertnine-blocks/column-containers"] .editor-inner-blocks {
+.wp-block[data-type="c9-blocks/column-containers"] .editor-inner-blocks {
 	width: 100%;
 }
 
 @media only screen and (min-width: 576px) {
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		width: 100%;
 		max-width: calc(100vw - 440px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -119,7 +119,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin folded side bar
-	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		width: 100%;
 		max-width: calc(100vw - 316px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -127,7 +127,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin side bar
-	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		width: 100%;
 		max-width: calc(100vw - 160px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -135,7 +135,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin folded side bar
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		width: 100%;
 		max-width: calc(100vw - 36px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -143,7 +143,7 @@
 	}
 
 	// move the custom mover to the top so its not hidden
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"]>.editor-block-mover {
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"]>.editor-block-mover {
 		top: -44px;
 		left: auto;
 		right: 0px;
@@ -152,7 +152,7 @@
 		opacity: 1;
 	}
 
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"]>.editor-block-mover .editor-block-mover__control {
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"]>.editor-block-mover .editor-block-mover__control {
 		float: left;
 	}
 
@@ -161,7 +161,7 @@
 @media only screen and (min-width: 992px) {
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		// width: calc(85vw - 440px);
 		width: 100%;
 		max-width: calc(85vw - 440px); //subtract the width of the document options sidebar
@@ -170,7 +170,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin folded side bar
-	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		// width: calc(85vw - 316px);
 		width: 100%;
 		max-width: calc(85vw - 316px); //subtract the width of the document options sidebar
@@ -179,7 +179,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin side bar
-	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		// width: calc(85vw - 160px);
 		width: 100%;
 		max-width: calc(85vw - 160px); //subtract the width of the document options sidebar
@@ -188,7 +188,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin folded side bar
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="covertnine-blocks/column-containers"] {
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
 		// width: calc(85vw - 36px);
 		width: 100%;
 		max-width: calc(85vw - 36px); //subtract the width of the document options sidebar

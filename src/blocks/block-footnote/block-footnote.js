@@ -14,17 +14,17 @@ const { RichText } = wp.editor;
 /**
  * Register block
  */
-export default registerBlockType("covertnine-blocks/richtext", {
-	title: __("Cortex - Footnote", "covertnine-blocks"),
+export default registerBlockType("c9-blocks/richtext", {
+	title: __("Cortex - Footnote", "c9-blocks"),
 	description: __(
 		"How to use the RichText component for building your own editable blocks.",
-		"covertnine-blocks"
+		"c9-blocks"
 	),
 	category: "common",
 	keywords: [
-		__("Banner", "covertnine-blocks"),
-		__("Call to Action", "covertnine-blocks"),
-		__("Message", "covertnine-blocks")
+		__("Banner", "c9-blocks"),
+		__("Call to Action", "c9-blocks"),
+		__("Message", "c9-blocks")
 	],
 	attributes: {
 		message: {
@@ -47,11 +47,11 @@ export default registerBlockType("covertnine-blocks/richtext", {
 		};
 		return (
 			<div className={className}>
-				<h2>{__("Call to Action", "covertnine-blocks")}</h2>
+				<h2>{__("Call to Action", "c9-blocks")}</h2>
 				<RichText
 					tagName="div"
 					multiline="p"
-					placeholder={__("Add your custom message", "covertnine-blocks")}
+					placeholder={__("Add your custom message", "c9-blocks")}
 					onChange={onChangeMessage}
 					value={message}
 				/>
@@ -64,7 +64,7 @@ export default registerBlockType("covertnine-blocks/richtext", {
 		} = props;
 		return (
 			<div>
-				<h2>{__("Call to Action", "covertnine-blocks")}</h2>
+				<h2>{__("Call to Action", "c9-blocks")}</h2>
 				<div className="message-body">{message}</div>
 			</div>
 		);

@@ -16,22 +16,22 @@ const { BlockControls } = wp.editor;
 const { Fragment } = wp.element;
 // const { Toolbar } = wp.components;
 
-registerBlockType("covertnine-blocks/c9-card", {
+registerBlockType("c9-blocks/c9-card", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("Covertnine Card Container", "covertnine-blocks"),
+	title: __("Covertnine Card Container", "c9-blocks"),
 	description: __(
 		"A flexible and extensible content container",
-		"covertnine-blocks"
+		"c9-blocks"
 	),
 	icon: "id-alt",
-	category: "covertnine-blocks",
+	category: "c9-blocks",
 	supports: {
 		alignwide: true
 	},
 	keywords: [
-		__("card", "covertnine-blocks"),
-		__("container", "covertnine-blocks"),
-		__("responsive", "covertnine-blocks")
+		__("card", "c9-blocks"),
+		__("container", "c9-blocks"),
+		__("responsive", "c9-blocks")
 	],
 	attributes,
 	edit: props => {

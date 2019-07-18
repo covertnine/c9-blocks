@@ -69,9 +69,9 @@ const blockAttributes = {
 	}
 };
 
-export const name = "covertnine-blocks/carousel";
+export const name = "c9-blocks/carousel";
 
-registerBlockType("covertnine-blocks/carousel", {
+registerBlockType("c9-blocks/carousel", {
 	title: __("Cortex Carousel"),
 	description: __("Display multiple images in a rich carousel."),
 	icon: (
@@ -96,11 +96,11 @@ registerBlockType("covertnine-blocks/carousel", {
 			{
 				type: "block",
 				isMultiBlock: true,
-				blocks: ["covertnine-blocks/image"],
+				blocks: ["c9-blocks/image"],
 				transform: attributes => {
 					const validImages = filter(attributes, ({ id, url }) => id && url);
 					if (validImages.length > 0) {
-						return createBlock("covertnine-blocks/carousel", {
+						return createBlock("c9-blocks/carousel", {
 							images: validImages.map(({ id, url, alt, caption }) => ({
 								id,
 								url,
@@ -109,7 +109,7 @@ registerBlockType("covertnine-blocks/carousel", {
 							}))
 						});
 					}
-					return createBlock("covertnine-blocks/carousel");
+					return createBlock("c9-blocks/carousel");
 				}
 			},
 			{
@@ -152,7 +152,7 @@ registerBlockType("covertnine-blocks/carousel", {
 					);
 				},
 				transform(files, onChange) {
-					const block = createBlock("covertnine-blocks/carousel", {
+					const block = createBlock("c9-blocks/carousel", {
 						images: files.map(file =>
 							pickRelevantMediaFiles({
 								url: createBlobURL(file)
@@ -175,14 +175,14 @@ registerBlockType("covertnine-blocks/carousel", {
 		to: [
 			{
 				type: "block",
-				blocks: ["covertnine-blocks/image"],
+				blocks: ["c9-blocks/image"],
 				transform: ({ images }) => {
 					if (images.length > 0) {
 						return images.map(({ id, url, alt, caption }) =>
-							createBlock("covertnine-blocks/image", { id, url, alt, caption })
+							createBlock("c9-blocks/image", { id, url, alt, caption })
 						);
 					}
-					return createBlock("covertnine-blocks/image");
+					return createBlock("c9-blocks/image");
 				}
 			}
 		]

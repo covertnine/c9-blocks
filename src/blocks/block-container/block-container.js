@@ -25,7 +25,7 @@ const { Fragment } = wp.element;
 const { Toolbar } = wp.components;
 const { select } = wp.data;
 
-const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
+const ALLOWED_BLOCKS = ["c9-blocks/column"];
 
 /**
  * Returns the layouts configuration for a given number of columns.
@@ -36,27 +36,24 @@ const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
  */
 const getColumnsTemplate = memoize(columns => {
 	return times(columns, () => [
-		"covertnine-blocks/column",
+		"c9-blocks/column",
 		{ width: Math.round(12 / columns) }
 	]);
 });
 
-registerBlockType("covertnine-blocks/column-containers", {
+registerBlockType("c9-blocks/column-containers", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("Covertnine Content Container", "covertnine-blocks"),
-	description: __(
-		"A responsive container for columns of content",
-		"covertnine-blocks"
-	),
+	title: __("Covertnine Content Container", "c9-blocks"),
+	description: __("A responsive container for columns of content", "c9-blocks"),
 	icon: "columns",
-	category: "covertnine-blocks",
+	category: "c9-blocks",
 	supports: {
 		alignwide: true
 	},
 	keywords: [
-		__("column", "covertnine-blocks"),
-		__("container", "covertnine-blocks"),
-		__("responsive", "covertnine-blocks")
+		__("column", "c9-blocks"),
+		__("container", "c9-blocks"),
+		__("responsive", "c9-blocks")
 	],
 	attributes,
 	edit: props => {
@@ -94,19 +91,19 @@ registerBlockType("covertnine-blocks/column-containers", {
 		const verticalAlignControls = [
 			{
 				icon: "arrow-up-alt2",
-				title: __("Vertical Align Top", "covertnine-blocks"),
+				title: __("Vertical Align Top", "c9-blocks"),
 				isActive: verticalAlign === "flex-start",
 				onClick: () => setAttributes({ verticalAlign: "flex-start" })
 			},
 			{
 				icon: "minus",
-				title: __("Vertical Align Bottom", "covertnine-blocks"),
+				title: __("Vertical Align Bottom", "c9-blocks"),
 				isActive: verticalAlign === "center",
 				onClick: () => setAttributes({ verticalAlign: "center" })
 			},
 			{
 				icon: "arrow-down-alt2",
-				title: __("Vertical Align Middle", "covertnine-blocks"),
+				title: __("Vertical Align Middle", "c9-blocks"),
 				isActive: verticalAlign === "flex-end",
 				onClick: () => setAttributes({ verticalAlign: "flex-end" })
 			}
@@ -115,19 +112,19 @@ registerBlockType("covertnine-blocks/column-containers", {
 		const widthControls = [
 			{
 				icon: "align-center",
-				title: __("Full Width", "covertnine-blocks"),
+				title: __("Full Width", "c9-blocks"),
 				isActive: containerWidth === "container-fluid",
 				onClick: () => setAttributes({ containerWidth: "container-fluid" })
 			},
 			{
 				icon: "align-wide",
-				title: __("Normal Width", "covertnine-blocks"),
+				title: __("Normal Width", "c9-blocks"),
 				isActive: containerWidth === "container",
 				onClick: () => setAttributes({ containerWidth: "container" })
 			},
 			{
 				icon: "align-full-width",
-				title: __("Narrow Width", "covertnine-blocks"),
+				title: __("Narrow Width", "c9-blocks"),
 				isActive: containerWidth === "container-narrow",
 				onClick: () => setAttributes({ containerWidth: "container-narrow" })
 			}
@@ -382,8 +379,7 @@ function cortexBackgroundStyles(
 	if (url) {
 		if (selected) {
 			styles.backgroundImage = `url(${url})`;
-		}
-		else {
+		} else {
 			styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
 		}
 		styles.backgroundRepeat = repeat;

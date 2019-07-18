@@ -43,5 +43,5 @@ const logo = (
 );
 
 if (updateCategory) {
-	updateCategory("covertnine-blocks", { icon: logo });
+	updateCategory("c9-blocks", { icon: logo });
 }

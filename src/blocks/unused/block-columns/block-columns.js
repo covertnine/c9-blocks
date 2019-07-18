@@ -16,7 +16,7 @@ const { Fragment } = wp.element;
 const { registerBlockType, createBlock } = wp.blocks;
 const { InspectorControls, InnerBlocks } = wp.editor;
 
-const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
+const ALLOWED_BLOCKS = ["c9-blocks/column"];
 /**
  * Returns the layouts configuration for a given number of columns.
  *
@@ -25,14 +25,14 @@ const ALLOWED_BLOCKS = ["covertnine-blocks/column"];
  * @return {Object[]} Columns layout configuration.
  */
 const getColumnsTemplate = memoize(columns => {
-	return times(columns, () => ["covertnine-blocks/column"]);
+	return times(columns, () => ["c9-blocks/column"]);
 });
 
-registerBlockType("covertnine-blocks/columns", {
-	title: __("Content Columns", "covertnine-blocks"),
+registerBlockType("c9-blocks/columns", {
+	title: __("Content Columns", "c9-blocks"),
 	description: __(
 		"Bootstrap columns based on the Wordpress column block",
-		"covertnine-blocks"
+		"c9-blocks"
 	),
 	icon: "columns",
 	category: "layout",
@@ -41,9 +41,9 @@ registerBlockType("covertnine-blocks/columns", {
 	},
 	attributes,
 	keywords: [
-		__("column", "covertnine-blocks"),
-		__("container", "covertnine-blocks"),
-		__("responsive", "covertnine-blocks")
+		__("column", "c9-blocks"),
+		__("container", "c9-blocks"),
+		__("responsive", "c9-blocks")
 	],
 	edit({ attributes, setAttributes, className }) {
 		const { columns } = attributes;

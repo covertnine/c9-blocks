@@ -232,44 +232,44 @@ export default class Inspector extends Component {
 		} = this.props;
 
 		const cssUnits = [
-			{ value: "px", label: __("Pixel (px)", "covertnine-blocks") },
-			{ value: "%", label: __("Percent (%)", "covertnine-blocks") },
-			{ value: "em", label: __("Em (em)", "covertnine-blocks") }
+			{ value: "px", label: __("Pixel (px)", "c9-blocks") },
+			{ value: "%", label: __("Percent (%)", "c9-blocks") },
+			{ value: "em", label: __("Em (em)", "c9-blocks") }
 		];
 
 		const paddingOptions = [
-			{ value: "-1", label: __("None", "covertnine-blocks") },
-			{ value: "0", label: __("Padding 0", "covertnine-blocks") },
-			{ value: "1", label: __("Padding 1", "covertnine-blocks") },
-			{ value: "2", label: __("Padding 2", "covertnine-blocks") },
-			{ value: "3", label: __("Padding 3", "covertnine-blocks") },
-			{ value: "4", label: __("Padding 4", "covertnine-blocks") },
-			{ value: "5", label: __("Padding 5", "covertnine-blocks") },
-			{ value: "auto", label: __("Auto", "covertnine-blocks") }
+			{ value: "-1", label: __("None", "c9-blocks") },
+			{ value: "0", label: __("Padding 0", "c9-blocks") },
+			{ value: "1", label: __("Padding 1", "c9-blocks") },
+			{ value: "2", label: __("Padding 2", "c9-blocks") },
+			{ value: "3", label: __("Padding 3", "c9-blocks") },
+			{ value: "4", label: __("Padding 4", "c9-blocks") },
+			{ value: "5", label: __("Padding 5", "c9-blocks") },
+			{ value: "auto", label: __("Auto", "c9-blocks") }
 		];
 
 		const marginOptions = [
-			{ value: "-1", label: __("None", "covertnine-blocks") },
-			{ value: "0", label: __("Margin 0", "covertnine-blocks") },
-			{ value: "1", label: __("Margin 1", "covertnine-blocks") },
-			{ value: "2", label: __("Margin 2", "covertnine-blocks") },
-			{ value: "3", label: __("Margin 3", "covertnine-blocks") },
-			{ value: "4", label: __("Margin 4", "covertnine-blocks") },
-			{ value: "5", label: __("Margin 5", "covertnine-blocks") },
-			{ value: "auto", label: __("Auto", "covertnine-blocks") }
+			{ value: "-1", label: __("None", "c9-blocks") },
+			{ value: "0", label: __("Margin 0", "c9-blocks") },
+			{ value: "1", label: __("Margin 1", "c9-blocks") },
+			{ value: "2", label: __("Margin 2", "c9-blocks") },
+			{ value: "3", label: __("Margin 3", "c9-blocks") },
+			{ value: "4", label: __("Margin 4", "c9-blocks") },
+			{ value: "5", label: __("Margin 5", "c9-blocks") },
+			{ value: "auto", label: __("Auto", "c9-blocks") }
 		];
 
 		const sizeTypes = [
-			{ value: "cover", label: __("Cover", "covertnine-blocks") },
-			{ value: "contain", label: __("Contain", "covertnine-blocks") },
-			{ value: "", label: __("Custom", "covertnine-blocks") }
+			{ value: "cover", label: __("Cover", "c9-blocks") },
+			{ value: "contain", label: __("Contain", "c9-blocks") },
+			{ value: "", label: __("Custom", "c9-blocks") }
 		];
 
 		const repeatTypes = [
-			{ value: "no-repeat", label: __("no-repeat", "covertnine-blocks") },
-			{ value: "repeat", label: __("repeat", "covertnine-blocks") },
-			{ value: "round", label: __("round", "covertnine-blocks") },
-			{ value: "space", label: __("space", "covertnine-blocks") }
+			{ value: "no-repeat", label: __("no-repeat", "c9-blocks") },
+			{ value: "repeat", label: __("repeat", "c9-blocks") },
+			{ value: "round", label: __("round", "c9-blocks") },
+			{ value: "space", label: __("space", "c9-blocks") }
 		];
 
 		const onSelectImage = img => {
@@ -310,7 +310,7 @@ export default class Inspector extends Component {
 			<InspectorControls>
 				<PanelBody title={__("Layout")} initialOpen={false}>
 					<RadioControl
-						label={__("Container Width", "covertnine-blocks")}
+						label={__("Container Width", "c9-blocks")}
 						selected={containerWidth}
 						options={[
 							{ label: "Full Width", value: "container-fluid" },
@@ -322,14 +322,14 @@ export default class Inspector extends Component {
 					<RangeControl
 						beforeIcon="arrow-left-alt2"
 						afterIcon="arrow-right-alt2"
-						label={__("Minimum Height (vh)", "covertnine-blocks")}
+						label={__("Minimum Height (vh)", "c9-blocks")}
 						value={minScreenHeight}
 						onChange={minScreenHeight => setAttributes({ minScreenHeight })}
 						min={0}
 						max={100}
 					/>
 					<RadioControl
-						label={__("Vertically Align Content", "covertnine-blocks")}
+						label={__("Vertically Align Content", "c9-blocks")}
 						selected={verticalAlign}
 						options={[
 							{ label: "Top", value: "flex-start" },
@@ -382,7 +382,7 @@ export default class Inspector extends Component {
 							onChange={value => this.updatePadding("left", value)}
 						/>
 						<IconButton
-							label={__("Linked Padding Toggle", "covertnine-blocks")}
+							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.containerPadding.icon}
 							onClick={() => this.togglePaddingLinkage(this.containerPadding)}
 							ref={this.linkedPaddingRef}
@@ -419,7 +419,7 @@ export default class Inspector extends Component {
 					</div>
 					<div className="margin-sides-wrapper">
 						<IconButton
-							label={__("Linked Padding Toggle", "covertnine-blocks")}
+							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.containerMargin.icon}
 							onClick={() => this.toggleMarginLinkage(this.containerMargin)}
 							ref={this.linkedMarginRef}
@@ -436,7 +436,7 @@ export default class Inspector extends Component {
 				<PanelBody title={__("Background")} initialOpen={false}>
 					<MediaUpload
 						id="bg-image-select"
-						label={__("Background Image", "covertnine-blocks")}
+						label={__("Background Image", "c9-blocks")}
 						onSelect={onSelectImage}
 						type="image"
 						value={containerImgID}
@@ -453,7 +453,7 @@ export default class Inspector extends Component {
 								<h5>Color Overlay</h5>
 								<span>Color Palette</span>
 								<ColorPalette
-									label={__("Overlay Color", "covertnine-blocks")}
+									label={__("Overlay Color", "c9-blocks")}
 									value={overlayHue}
 									onChange={overlayHue => setAttributes({ overlayHue })}
 								/>
@@ -482,7 +482,7 @@ export default class Inspector extends Component {
 
 										<h5>Attachment</h5>
 										<ToggleControl
-											label={__("Scroll | Fixed", "covertnine-blocks")}
+											label={__("Scroll | Fixed", "c9-blocks")}
 											checked={bgImgAttach}
 											onChange={bgImgAttach => setAttributes({ bgImgAttach })}
 										/>
@@ -501,7 +501,7 @@ export default class Inspector extends Component {
 												<div>
 													<h5>Horizontal</h5>
 													<ToggleControl
-														label={__("Auto | Manual", "covertnine-blocks")}
+														label={__("Auto | Manual", "c9-blocks")}
 														checked={this.customX}
 														onChange={value => {
 															this.customX = value;
@@ -538,7 +538,7 @@ export default class Inspector extends Component {
 													)}
 													<h5>Vertical</h5>
 													<ToggleControl
-														label={__("Auto | Manual", "covertnine-blocks")}
+														label={__("Auto | Manual", "c9-blocks")}
 														checked={this.customY}
 														onChange={value => {
 															this.customY = value;
@@ -599,7 +599,7 @@ export default class Inspector extends Component {
 						<RangeControl
 							beforeIcon="arrow-left-alt2"
 							afterIcon="arrow-right-alt2"
-							label={__("Opacity", "covertnine-blocks")}
+							label={__("Opacity", "c9-blocks")}
 							value={overlayOpacity}
 							onChange={overlayOpacity => setAttributes({ overlayOpacity })}
 							min={1}
@@ -608,51 +608,51 @@ export default class Inspector extends Component {
 					)}
 					{overlayHue && containerImgURL && !!containerImgURL.length && (
 						<SelectControl
-							label={__("Blend Mode", "covertnine-blocks")}
+							label={__("Blend Mode", "c9-blocks")}
 							value={blendMode}
 							options={[
-								{ value: "overlay", label: __("Overlay", "covertnine-blocks") },
-								{ value: "normal", label: __("Normal", "covertnine-blocks") },
+								{ value: "overlay", label: __("Overlay", "c9-blocks") },
+								{ value: "normal", label: __("Normal", "c9-blocks") },
 								{
 									value: "multiply",
-									label: __("Multiply", "covertnine-blocks")
+									label: __("Multiply", "c9-blocks")
 								},
-								{ value: "screen", label: __("Screen", "covertnine-blocks") },
-								{ value: "darken", label: __("Darken", "covertnine-blocks") },
-								{ value: "lighten", label: __("Lighten", "covertnine-blocks") },
+								{ value: "screen", label: __("Screen", "c9-blocks") },
+								{ value: "darken", label: __("Darken", "c9-blocks") },
+								{ value: "lighten", label: __("Lighten", "c9-blocks") },
 								{
 									value: "color-dodge",
-									label: __("Color Dodge", "covertnine-blocks")
+									label: __("Color Dodge", "c9-blocks")
 								},
 								{
 									value: "color-burn",
-									label: __("Color Burn", "covertnine-blocks")
+									label: __("Color Burn", "c9-blocks")
 								},
 								{
 									value: "hard-light",
-									label: __("Hard Light", "covertnine-blocks")
+									label: __("Hard Light", "c9-blocks")
 								},
 								{
 									value: "soft-light",
-									label: __("Soft Light", "covertnine-blocks")
+									label: __("Soft Light", "c9-blocks")
 								},
 								{
 									value: "difference",
-									label: __("Difference", "covertnine-blocks")
+									label: __("Difference", "c9-blocks")
 								},
 								{
 									value: "exclusion",
-									label: __("Exclusion", "covertnine-blocks")
+									label: __("Exclusion", "c9-blocks")
 								},
-								{ value: "hue", label: __("Hue", "covertnine-blocks") },
+								{ value: "hue", label: __("Hue", "c9-blocks") },
 								{
 									value: "saturation",
-									label: __("Saturation", "covertnine-blocks")
+									label: __("Saturation", "c9-blocks")
 								},
-								{ value: "color", label: __("Color", "covertnine-blocks") },
+								{ value: "color", label: __("Color", "c9-blocks") },
 								{
 									value: "luminosity",
-									label: __("Luminosity", "covertnine-blocks")
+									label: __("Luminosity", "c9-blocks")
 								}
 							]}
 							onChange={blendMode => setAttributes({ blendMode })}
@@ -661,7 +661,7 @@ export default class Inspector extends Component {
 				</PanelBody>
 				<PanelBody title={__("Video")} initialOpen={false}>
 					<RadioControl
-						label={__("Media Type", "covertnine-blocks")}
+						label={__("Media Type", "c9-blocks")}
 						selected={videoType}
 						options={[
 							{ label: "Upload File", value: "upload" },
@@ -690,7 +690,7 @@ export default class Inspector extends Component {
 					{videoType == "upload" && (
 						<MediaUpload
 							id="bg-video-select"
-							label={__("Background Video", "covertnine-blocks")}
+							label={__("Background Video", "c9-blocks")}
 							onSelect={onSelectVideo}
 							type="video"
 							value={containerImgID}
