@@ -45,7 +45,7 @@ export default class CallToAction_1_4_21 extends Component {
 					textAlign: buttonAlignment
 				}}
 				className={classnames(
-					this.props.className,
+					this.applyFilters("c9-blocks.blocks.className", props.className),
 					`align${ctaWidth}`,
 					"ab-block-cta",
 					"ab-font-size-" + ctaTextFontSize

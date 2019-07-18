@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
 	entry: {
 		"frontend": "./src/frontend.js",
-		"register-category-icon": "./src/register-category-icon.jsx"
+		"update-category": "./src/update-category.jsx"
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),

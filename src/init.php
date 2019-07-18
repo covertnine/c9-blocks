@@ -88,17 +88,10 @@ function cortex_blocks_cgb_editor_assets()
         true // Enqueue the script in the footer.
     );
 
-    //dequeue core blocks we don't want users using
+    // update category, e.g. add icon and dequeue core blocks we don't want users using
     wp_enqueue_script(
-        'cortex_blocks-deregister-blocks',
-        plugins_url('/src/deregister-blocks.js', dirname(__FILE__)),
-        array('wp-blocks')
-    );
-
-    //dequeue core blocks we don't want users using
-    wp_enqueue_script(
-        'cortex_blocks-register-category-icon',
-        plugins_url('dist/blocks.register-category-icon.build.js', dirname(__FILE__)),
+        'cortex_blocks-update-category',
+        plugins_url('dist/blocks.update-category.build.js', dirname(__FILE__)),
         true
     );
 

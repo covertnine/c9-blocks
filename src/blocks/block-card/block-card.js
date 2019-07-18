@@ -1,3 +1,5 @@
+const { applyFilters } = wp.hooks;
+
 /**
  * Block dependencies
  */
@@ -36,7 +38,8 @@ registerBlockType("c9-blocks/c9-card", {
 	edit: props => {
 		const {
 			attributes: { containerPadding },
-			setAttributes
+			setAttributes,
+			className = ""
 		} = props;
 
 		// Creates a column container that can take other blocks
@@ -45,7 +48,10 @@ registerBlockType("c9-blocks/c9-card", {
 				<BlockControls key="controls" />
 				<Inspector {...{ setAttributes, ...props }} />
 				<div
-					className={classNames("card", props.className)}
+					className={classNames(
+						"card",
+						applyFilters("c9-blocks.blocks.className", className)
+					)}
 					style={{ width: "26rem" }}
 				>
 					<img
@@ -69,13 +75,17 @@ registerBlockType("c9-blocks/c9-card", {
 
 	save: props => {
 		const {
-			attributes: { containerPadding }
+			attributes: { containerPadding },
+			className = ""
 		} = props;
 
 		return (
 			<Fragment>
 				<div
-					className={classNames("card", props.className)}
+					className={classNames(
+						"card",
+						applyFilters("c9-blocks.blocks.className", className)
+					)}
 					style={{ width: "26rem" }}
 				>
 					<img

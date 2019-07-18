@@ -25,6 +25,8 @@ const { Fragment } = wp.element;
 const { Toolbar } = wp.components;
 const { select } = wp.data;
 
+const { applyFilters } = wp.hooks;
+
 const ALLOWED_BLOCKS = ["c9-blocks/column"];
 
 /**
@@ -80,7 +82,8 @@ registerBlockType("c9-blocks/column-containers", {
 				cannotEmbed
 			},
 			setAttributes,
-			clientId
+			clientId,
+			className = ""
 		} = props;
 
 		const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
@@ -141,7 +144,7 @@ registerBlockType("c9-blocks/column-containers", {
 					<div
 						className={classnames(
 							containerWidth,
-							props.className,
+							applyFilters("c9-blocks.blocks.className", className),
 							cortexSpacingConfig(containerPadding, containerMargin)
 						)}
 						style={cortexBackgroundStyles(
@@ -183,7 +186,7 @@ registerBlockType("c9-blocks/column-containers", {
 				<div
 					className={classnames(
 						containerWidth,
-						props.className,
+						applyFilters("c9-blocks.blocks.className", className),
 						cortexSpacingConfig(containerPadding, containerMargin)
 					)}
 					style={cortexBackgroundStyles(
@@ -237,7 +240,8 @@ registerBlockType("c9-blocks/column-containers", {
 				containerVideoID,
 				cannotEmbed
 			},
-			setAttributes
+			setAttributes,
+			className = ""
 		} = props;
 
 		// const containerWidth3 = containerWidth;
@@ -247,7 +251,7 @@ registerBlockType("c9-blocks/column-containers", {
 				<div
 					className={classnames(
 						containerWidth,
-						props.className,
+						applyFilters("c9-blocks.blocks.className", className),
 						cortexSpacingConfig(containerPadding, containerMargin)
 					)}
 					style={cortexBackgroundStyles(
@@ -276,7 +280,7 @@ registerBlockType("c9-blocks/column-containers", {
 			<div
 				className={classnames(
 					containerWidth,
-					props.className,
+					applyFilters("c9-blocks.blocks.className", className),
 					cortexSpacingConfig(containerPadding, containerMargin)
 				)}
 				style={cortexBackgroundStyles(

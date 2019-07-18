@@ -23,9 +23,16 @@ const { Placeholder, Spinner, Toolbar } = wp.components;
 
 const { BlockAlignmentToolbar, BlockControls } = wp.editor;
 
+const { applyFilters } = wp.hooks;
+
 class LatestPostsBlock extends Component {
 	render() {
-		const { attributes, setAttributes, latestPosts } = this.props;
+		const {
+			attributes,
+			setAttributes,
+			latestPosts,
+			className = ""
+		} = this.props;
 
 		// Check if there are posts
 		const hasPosts = Array.isArray(latestPosts) && latestPosts.length;
@@ -100,7 +107,10 @@ class LatestPostsBlock extends Component {
 					<Toolbar controls={layoutControls} />
 				</BlockControls>
 				<SectionTag
-					className={classnames(this.props.className, "ab-block-post-grid")}
+					className={classnames(
+						applyFilters("c9-blocks.blocks.className", className),
+						"ab-block-post-grid"
+					)}
 				>
 					{attributes.displaySectionTitle && attributes.sectionTitle && (
 						<SectionTitleTag className="ab-post-grid-section-title">

@@ -13,6 +13,8 @@ const { IconButton, Tooltip } = wp.components;
 
 const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
 
+const { applyFilters } = wp.hooks;
+
 // External Dependencies.
 import classnames from "classnames";
 import slugify from "slugify";
@@ -87,10 +89,9 @@ export default class Edit extends Component {
 			attributes,
 			setAttributes,
 			updateBlockAttributes,
-			isSelectedBlockInRoot
+			isSelectedBlockInRoot,
+			className = ""
 		} = this.props;
-
-		let { className = "" } = this.props;
 
 		const { tabActive, buttonsAlign, tabsData = [] } = attributes;
 
@@ -108,7 +109,10 @@ export default class Edit extends Component {
 
 				<Inspector {...this.props} />
 				<div
-					className={classnames(className, "tabs")}
+					className={classnames(
+						applyFilters("c9-blocks.blocks.className", className),
+						"tabs"
+					)}
 					data-tab-active={tabActive}
 				>
 					<div

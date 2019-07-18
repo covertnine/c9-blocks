@@ -1,6 +1,8 @@
 // External Dependencies.
 import classnames from "classnames";
 
+const { applyFilters } = wp.hooks;
+
 /**
  * WordPress dependencies
  */
@@ -13,10 +15,24 @@ export default class Save extends Component {
 	}
 
 	render() {
-		const { tabActive, buttonsAlign, tabsData = [] } = this.props.attributes;
+		const {
+			tabActive,
+			buttonsAlign,
+			tabsData = [],
+		} = this.props.attributes;
+
+		const {
+			className = ""
+		} = this.props;
 
 		return [
-			<div className={classnames("tabs", this.props.className)} data-tab-active={tabActive}>
+			<div
+				className={classnames(
+					"tabs",
+					applyFilters("c9-blocks.blocks.className", className)
+				)}
+				data-tab-active={tabActive}
+			>
 				<div
 					className={classnames(
 						"tabs-buttons",

@@ -2,6 +2,8 @@
  * BLOCK: Covertnine Blocks Custom Heading
  */
 
+import Save from "./save";
+
 // Import block dependencies and components
 import classnames from "classnames";
 import Inspector from "./components/inspector";
@@ -30,10 +32,12 @@ const { registerBlockType } = wp.blocks;
 // Register editor components
 const { AlignmentToolbar, BlockControls, RichText } = wp.editor;
 
+const { applyFilters } = wp.hooks;
+
 import attributes from "./attributes";
 
 // Register the block
-registerBlockType("c9-blocks/c9-custom-heading", {
+registerBlockType("c9-blocks/custom-heading", {
 	title: __("Covertnine Custom Section Heading", "c9-blocks"),
 	description: __("Add a custom Section Heading.", "c9-blocks"),
 	icon: iconEl,
@@ -50,7 +54,7 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 	attributes: attributes,
 
 	// Render the block components
-	edit: function(props) {
+	edit: props => {
 		// Setup the attributes
 		const {
 			setAttributes,
@@ -64,8 +68,11 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 				type,
 				weight,
 				overrideStyle
-			}
+			},
+			className
 		} = props;
+
+		// console.log(className, props, "edit")
 
 		// Save the block markup for the front end
 		return (
@@ -91,7 +98,12 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 					<RichText
 						tagName={`h${tagLevel}`}
 						className={classnames([
-							cortexTextStyleConfig(type, displayLevel, tagLevel, overrideStyle),
+							cortexTextStyleConfig(
+								type,
+								displayLevel,
+								tagLevel,
+								overrideStyle
+							),
 							`font-weight-${weight}`,
 							`text-${textAlign}`
 						])}
@@ -110,40 +122,8 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 	},
 
 	// Save the attributes and markup
-	save: function(props) {
-		// Setup the attributes
-		const {
-			heading,
-			backgroundColor,
-			textColor,
-			tagLevel,
-			type,
-			displayLevel,
-			weight,
-			textAlign,
-			overrideStyle
-		} = props.attributes;
-
-		// Save the block markup for the front end
-		return (
-			<Fragment>
-				<CustomHeading {...props}>
-					<RichText.Content
-						tagName={`h${tagLevel}`}
-						className={classnames([
-							cortexTextStyleConfig(type, displayLevel, tagLevel, overrideStyle),
-							`font-weight-${weight}`,
-							`text-${textAlign}`
-						])}
-						style={{
-							backgroundColor: backgroundColor,
-							color: textColor
-						}}
-						value={heading}
-					/>
-				</CustomHeading>
-			</Fragment>
-		);
+	save: props => {
+		return <Save {...props} />;
 	}
 });
 
@@ -151,7 +131,7 @@ function cortexTextStyleConfig(type, display, tag, override) {
 	if (!override) {
 		return "";
 	} else if (display == 0) {
-		return `${type}${tag}`
+		return `${type}${tag}`;
 	} else {
 		return `${type}${display}`;
 	}

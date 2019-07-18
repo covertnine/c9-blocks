@@ -8,19 +8,23 @@ const { Component } = wp.element;
 // Import block dependencies and components
 import classnames from "classnames";
 
+const { applyFilters } = wp.hooks;
+
 /**
  * Create a ShareLinks wrapper Component
  */
 export default class ShareLinks extends Component {
-	constructor(props) {
+	constructor() {
 		super(...arguments);
 	}
 
 	render() {
+		const { className = "" } = this.props;
+
 		return (
 			<div
 				className={classnames(
-					this.props.className,
+					applyFilters("c9-blocks.blocks.className", className),
 					this.props.attributes.shareButtonStyle,
 					this.props.attributes.shareButtonShape,
 					this.props.attributes.shareButtonSize,

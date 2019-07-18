@@ -5,6 +5,8 @@
 // Setup the block
 const { Component } = wp.element;
 
+const { applyFilters } = wp.hooks;
+
 // Import block dependencies and components
 import classnames from "classnames";
 
@@ -17,10 +19,17 @@ export default class C9CustomHeading extends Component {
 	}
 
 	render() {
-		const className = classnames("section-heading", this.props.className);
+		const { className = "" } = this.props;
 
 		return (
-			<div className={className}>{this.props.children}</div>
+			<div
+				className={classnames(
+					"section-heading",
+					applyFilters("c9-blocks.blocks.className", className)
+				)}
+			>
+				{this.props.children}
+			</div>
 		);
 	}
 }

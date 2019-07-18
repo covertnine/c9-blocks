@@ -5,6 +5,8 @@
 // Setup the block
 const { Component } = wp.element;
 
+const { applyFilters } = wp.hooks;
+
 // Import block dependencies and components
 import classnames from "classnames";
 
@@ -35,16 +37,9 @@ export default class CallToAction extends Component {
 				ctaWidth,
 				ctaBackgroundColor,
 				ctaTextColor
-			}
+			},
+			className = ""
 		} = this.props;
-
-		const className = classnames(
-			[this.props.className, "c9-block-cta", "container"],
-			{
-				["ab-font-size-" + ctaTextFontSize]: ctaTextFontSize,
-				["align" + ctaWidth]: ctaWidth
-			}
-		);
 
 		const styles = {
 			backgroundColor: ctaBackgroundColor ? ctaBackgroundColor : undefined,
@@ -52,7 +47,20 @@ export default class CallToAction extends Component {
 		};
 
 		return (
-			<div style={styles} className={className ? className : undefined}>
+			<div
+				style={styles}
+				className={classnames(
+					[
+						applyFilters("c9-blocks.blocks.className", className),
+						"c9-block-cta",
+						"container"
+					],
+					{
+						["ab-font-size-" + ctaTextFontSize]: ctaTextFontSize,
+						["align" + ctaWidth]: ctaWidth
+					}
+				)}
+			>
 				<div className="row">{this.props.children}</div>
 			</div>
 		);

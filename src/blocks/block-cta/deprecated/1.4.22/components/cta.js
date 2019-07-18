@@ -38,9 +38,15 @@ export default class CallToAction_1_4_22 extends Component {
 			}
 		} = this.props;
 
-		const className = classnames([this.props.className, "ab-block-cta"], {
-			["ab-font-size-" + ctaTextFontSize]: ctaTextFontSize
-		});
+		const className = classnames(
+			[
+				this.applyFilters("c9-blocks.blocks.className", props.className),
+				"ab-block-cta"
+			],
+			{
+				["ab-font-size-" + ctaTextFontSize]: ctaTextFontSize
+			}
+		);
 
 		const styles = {
 			backgroundColor: ctaBackgroundColor ? ctaBackgroundColor : undefined,
