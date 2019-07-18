@@ -39,14 +39,13 @@ export default registerBlockType("c9-blocks/richtext", {
 	edit: props => {
 		const {
 			attributes: { message },
-			className,
 			setAttributes
 		} = props;
 		const onChangeMessage = message => {
 			setAttributes({ message });
 		};
 		return (
-			<div className={className}>
+			<div className={props.className}>
 				<h2>{__("Call to Action", "c9-blocks")}</h2>
 				<RichText
 					tagName="div"
@@ -63,7 +62,7 @@ export default registerBlockType("c9-blocks/richtext", {
 			attributes: { message }
 		} = props;
 		return (
-			<div>
+			<div className={props.className}>
 				<h2>{__("Call to Action", "c9-blocks")}</h2>
 				<div className="message-body">{message}</div>
 			</div>

@@ -20,7 +20,7 @@
 	margin-top: 12px;
 }
 
-.tabs {
+div[data-type="c9-blocks/tabs"] .tabs {
 	.tabs-buttons {
 		display: flex;
 		flex-wrap: wrap;
@@ -83,5 +83,12 @@
 
 	.tabs-content [data-tab] {
 		display: none;
+	}
+
+	.tabs-content .tab {
+		position: static;
+		width: auto;
+		height: auto;
+		opacity: 1;
 	}
 }

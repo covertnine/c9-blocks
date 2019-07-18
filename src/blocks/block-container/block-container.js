@@ -141,6 +141,7 @@ registerBlockType("c9-blocks/column-containers", {
 					<div
 						className={classnames(
 							containerWidth,
+							props.className,
 							cortexSpacingConfig(containerPadding, containerMargin)
 						)}
 						style={cortexBackgroundStyles(
@@ -182,6 +183,7 @@ registerBlockType("c9-blocks/column-containers", {
 				<div
 					className={classnames(
 						containerWidth,
+						props.className,
 						cortexSpacingConfig(containerPadding, containerMargin)
 					)}
 					style={cortexBackgroundStyles(
@@ -242,40 +244,10 @@ registerBlockType("c9-blocks/column-containers", {
 
 		if ((!containerVideoURL && !containerVideoID) || cannotEmbed) {
 			return (
-				<Fragment>
-					<div
-						className={classnames(
-							containerWidth,
-							cortexSpacingConfig(containerPadding, containerMargin)
-						)}
-						style={cortexBackgroundStyles(
-							containerImgURL,
-							verticalAlign,
-							bgImgSize,
-							bgCustomX,
-							bgCustomY,
-							bgImgAttach,
-							bgImgRepeat,
-							overlayHue,
-							overlayOpacity,
-							blendMode,
-							minScreenHeight,
-							focalPoint
-						)}
-					>
-						<div className="row no-gutter" style={{ flexGrow: 1 }}>
-							<InnerBlocks.Content />
-						</div>
-					</div>
-				</Fragment>
-			);
-		}
-
-		return (
-			<Fragment>
 				<div
 					className={classnames(
 						containerWidth,
+						props.className,
 						cortexSpacingConfig(containerPadding, containerMargin)
 					)}
 					style={cortexBackgroundStyles(
@@ -293,12 +265,40 @@ registerBlockType("c9-blocks/column-containers", {
 						focalPoint
 					)}
 				>
-					<VideoBox {...{ setAttributes, ...props }} />
 					<div className="row no-gutter" style={{ flexGrow: 1 }}>
 						<InnerBlocks.Content />
 					</div>
 				</div>
-			</Fragment>
+			);
+		}
+
+		return (
+			<div
+				className={classnames(
+					containerWidth,
+					props.className,
+					cortexSpacingConfig(containerPadding, containerMargin)
+				)}
+				style={cortexBackgroundStyles(
+					containerImgURL,
+					verticalAlign,
+					bgImgSize,
+					bgCustomX,
+					bgCustomY,
+					bgImgAttach,
+					bgImgRepeat,
+					overlayHue,
+					overlayOpacity,
+					blendMode,
+					minScreenHeight,
+					focalPoint
+				)}
+			>
+				<VideoBox {...{ setAttributes, ...props }} />
+				<div className="row no-gutter" style={{ flexGrow: 1 }}>
+					<InnerBlocks.Content />
+				</div>
+			</div>
 		);
 	} //end save
 }); //end registerBlockType

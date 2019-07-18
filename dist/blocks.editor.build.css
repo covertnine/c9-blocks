@@ -320,27 +320,27 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
 > .editor-block-list__block-edit {
   margin-top: 12px; }
 
-.tabs .tabs-buttons {
+div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 20px;
   border-bottom: 1px solid #dee2e6; }
-  .tabs .tabs-buttons.tabs-buttons-align-left {
+  div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons.tabs-buttons-align-left {
     -ms-flex-pack: start;
         justify-content: flex-start; }
-  .tabs .tabs-buttons.tabs-buttons-align-center {
+  div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons.tabs-buttons-align-center {
     -ms-flex-pack: center;
         justify-content: center; }
-  .tabs .tabs-buttons.tabs-buttons-align-right {
+  div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons.tabs-buttons-align-right {
     -ms-flex-pack: end;
         justify-content: flex-end; }
-  .tabs .tabs-buttons .edit-post-visual-editor,
-  .tabs .tabs-buttons .edit-post-visual-editor p,
-  .tabs .tabs-buttons .editor-rich-text__tinymce.mce-content-body {
+  div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons .edit-post-visual-editor,
+  div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons .edit-post-visual-editor p,
+  div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons .editor-rich-text__tinymce.mce-content-body {
     line-height: inherit; }
-  .tabs .tabs-buttons .tabs-buttons-item {
+  div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons .tabs-buttons-item {
     position: relative;
     display: block;
     padding: 8px 20px;
@@ -360,19 +360,25 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
     -o-transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
     transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
     will-change: border-color, background-color, opacity; }
-    .tabs .tabs-buttons .tabs-buttons-item:hover {
+    div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons .tabs-buttons-item:hover {
       border-color: #dee2e6;
       opacity: 1; }
-    .tabs .tabs-buttons .tabs-buttons-item.tabs-buttons-item-active {
+    div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons .tabs-buttons-item.tabs-buttons-item-active {
       background-color: #fff;
       border-color: #dee2e6;
       border-bottom-color: #fff;
       opacity: 1; }
-    .tabs .tabs-buttons .tabs-buttons-item:not(:hover) > .component-remove-button {
+    div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons .tabs-buttons-item:not(:hover) > .component-remove-button {
       opacity: 0; }
 
-.tabs .tabs-content [data-tab] {
+div[data-type="c9-blocks/tabs"] .tabs .tabs-content [data-tab] {
   display: none; }
+
+div[data-type="c9-blocks/tabs"] .tabs .tabs-content .tab {
+  position: static;
+  width: auto;
+  height: auto;
+  opacity: 1; }
 /**
  * #.# Common SCSS
  *
