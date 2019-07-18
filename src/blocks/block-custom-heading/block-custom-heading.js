@@ -88,7 +88,7 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 					<RichText
 						tagName={`h${tagLevel}`}
 						className={classnames([
-							cortexTextStyleConfig(type, displayLevel, overrideStyle),
+							cortexTextStyleConfig(type, displayLevel, tagLevel, overrideStyle),
 							`font-weight-${weight}`,
 							`text-${textAlign}`
 						])}
@@ -128,7 +128,7 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 					<RichText.Content
 						tagName={`h${tagLevel}`}
 						className={classnames([
-							cortexTextStyleConfig(type, displayLevel, overrideStyle),
+							cortexTextStyleConfig(type, displayLevel, tagLevel, overrideStyle),
 							`font-weight-${weight}`,
 							`text-${textAlign}`
 						])}
@@ -144,10 +144,12 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 	}
 });
 
-function cortexTextStyleConfig(type, level, override) {
-	if (level == 0 || !override) {
+function cortexTextStyleConfig(type, display, tag, override) {
+	if (!override) {
 		return "";
+	} else if (display == 0) {
+		return `${type}${tag}`
 	} else {
-		return `${type}${level}`;
+		return `${type}${display}`;
 	}
 }

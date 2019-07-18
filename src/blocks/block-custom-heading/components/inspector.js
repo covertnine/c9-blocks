@@ -47,12 +47,12 @@ class Inspector extends Component {
 		];
 
 		const fontTypes = [
-			{ value: "h", label: __("Heading", "c9-blocks") },
+			{ value: "c9-h h", label: __("Heading", "c9-blocks") },
 			{
-				value: "subhead subhead-h",
+				value: "c9-sh subhead-h",
 				label: __("Subheading", "c9-blocks")
 			},
-			{ value: "display-", label: __("Text-XL", "c9-blocks") }
+			{ value: "c9-txl display-", label: __("Text-XL", "c9-blocks") }
 		];
 
 		const sizeTypes = [
