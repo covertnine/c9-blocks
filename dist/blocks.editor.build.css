@@ -378,7 +378,8 @@ div[data-type="c9-blocks/tabs"] .tabs .tabs-content .tab {
   position: static;
   width: auto;
   height: auto;
-  opacity: 1; }
+  opacity: 1;
+  overflow: visible; }
 /**
  * #.# Common SCSS
  *

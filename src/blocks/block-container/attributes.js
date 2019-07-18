@@ -5,7 +5,7 @@ const attributes = {
 	},
 	containerWidth: {
 		type: "string",
-		default: "container"
+		default: "container-fluid"
 	},
 	verticalAlign: {
 		type: "string",

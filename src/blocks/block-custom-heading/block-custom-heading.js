@@ -38,6 +38,9 @@ registerBlockType("c9-blocks/c9-custom-heading", {
 	description: __("Add a custom Section Heading.", "c9-blocks"),
 	icon: iconEl,
 	category: "c9-blocks",
+	supports: {
+		align: ["wide", "full"]
+	},
 	keywords: [
 		__("custom heading", "c9-blocks"),
 		__("cortex", "c9-blocks"),

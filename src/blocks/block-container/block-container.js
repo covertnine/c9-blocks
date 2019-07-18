@@ -112,21 +112,21 @@ registerBlockType("c9-blocks/column-containers", {
 		const widthControls = [
 			{
 				icon: "align-center",
-				title: __("Full Width", "c9-blocks"),
-				isActive: containerWidth === "container-fluid",
-				onClick: () => setAttributes({ containerWidth: "container-fluid" })
+				title: __("Narrow Width", "c9-blocks"),
+				isActive: containerWidth === "container-narrow",
+				onClick: () => setAttributes({ containerWidth: "container-narrow" })
 			},
 			{
 				icon: "align-wide",
-				title: __("Normal Width", "c9-blocks"),
+				title: __("Wide Width", "c9-blocks"),
 				isActive: containerWidth === "container",
 				onClick: () => setAttributes({ containerWidth: "container" })
 			},
 			{
 				icon: "align-full-width",
-				title: __("Narrow Width", "c9-blocks"),
-				isActive: containerWidth === "container-narrow",
-				onClick: () => setAttributes({ containerWidth: "container-narrow" })
+				title: __("Full Width", "c9-blocks"),
+				isActive: containerWidth === "container-fluid",
+				onClick: () => setAttributes({ containerWidth: "container-fluid" })
 			}
 		];
 
