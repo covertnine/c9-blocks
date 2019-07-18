@@ -32,8 +32,6 @@ const { registerBlockType } = wp.blocks;
 // Register editor components
 const { AlignmentToolbar, BlockControls, RichText } = wp.editor;
 
-const { applyFilters } = wp.hooks;
-
 import attributes from "./attributes";
 
 // Register the block
@@ -68,11 +66,8 @@ registerBlockType("c9-blocks/custom-heading", {
 				type,
 				weight,
 				overrideStyle
-			},
-			className
+			}
 		} = props;
-
-		// console.log(className, props, "edit")
 
 		// Save the block markup for the front end
 		return (

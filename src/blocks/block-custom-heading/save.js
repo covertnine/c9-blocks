@@ -1,8 +1,6 @@
 // External Dependencies.
 import classnames from "classnames";
 
-const { applyFilters } = wp.hooks;
-
 import CustomHeading from "./components/custom-heading";
 
 /**
@@ -42,15 +40,12 @@ export default class Save extends Component {
 			}
 		} = this.props;
 
-		const { className = "" } = this.props;
-
 		// Save the block markup for the front end
 		return (
 			<CustomHeading {...this.props}>
 				<RichText.Content
 					tagName={`h${tagLevel}`}
 					className={classnames([
-						applyFilters("c9-blocks.blocks.className", className),
 						this.cortexTextStyleConfig(
 							type,
 							displayLevel,

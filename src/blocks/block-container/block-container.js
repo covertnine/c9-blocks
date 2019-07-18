@@ -11,6 +11,7 @@ import classnames from "classnames";
 import Inspector from "./components/inspector";
 import VideoBox from "./components/video-box";
 import attributes from "./attributes";
+import Save from "./save";
 
 // Import CSS
 import "./styles/style.scss";
@@ -219,91 +220,7 @@ registerBlockType("c9-blocks/column-containers", {
 	},
 
 	save: props => {
-		const {
-			attributes: {
-				verticalAlign,
-				containerImgURL,
-				containerWidth,
-				bgImgSize,
-				bgImgAttach,
-				bgImgRepeat,
-				bgCustomX,
-				bgCustomY,
-				overlayHue,
-				overlayOpacity,
-				blendMode,
-				containerPadding,
-				containerMargin,
-				minScreenHeight,
-				focalPoint,
-				containerVideoURL,
-				containerVideoID,
-				cannotEmbed
-			},
-			setAttributes,
-			className = ""
-		} = props;
-
-		// const containerWidth3 = containerWidth;
-
-		if ((!containerVideoURL && !containerVideoID) || cannotEmbed) {
-			return (
-				<div
-					className={classnames(
-						containerWidth,
-						applyFilters("c9-blocks.blocks.className", className),
-						cortexSpacingConfig(containerPadding, containerMargin)
-					)}
-					style={cortexBackgroundStyles(
-						containerImgURL,
-						verticalAlign,
-						bgImgSize,
-						bgCustomX,
-						bgCustomY,
-						bgImgAttach,
-						bgImgRepeat,
-						overlayHue,
-						overlayOpacity,
-						blendMode,
-						minScreenHeight,
-						focalPoint
-					)}
-				>
-					<div className="row no-gutter" style={{ flexGrow: 1 }}>
-						<InnerBlocks.Content />
-					</div>
-				</div>
-			);
-		}
-
-		return (
-			<div
-				className={classnames(
-					containerWidth,
-					applyFilters("c9-blocks.blocks.className", className),
-					cortexSpacingConfig(containerPadding, containerMargin)
-				)}
-				style={cortexBackgroundStyles(
-					containerImgURL,
-					verticalAlign,
-					bgImgSize,
-					bgCustomX,
-					bgCustomY,
-					bgImgAttach,
-					bgImgRepeat,
-					overlayHue,
-					overlayOpacity,
-					blendMode,
-					minScreenHeight,
-					focalPoint
-				)}
-			>
-				<VideoBox {...{ setAttributes, ...props }} />
-				<div className="row no-gutter" style={{ flexGrow: 1 }}>
-					<InnerBlocks.Content />
-				</div>
-			</div>
-		);
+		return <Save {...props} />;
 	} //end save
 }); //end registerBlockType
 
