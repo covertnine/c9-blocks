@@ -1,11 +1,14 @@
-// External Dependencies.
-import classnames from "classnames";
+/**
+ * Internal dependencies
+ */
+import Container from "./components/container";
 
 /**
  * WordPress dependencies
  */
 const { Component } = wp.element;
-const { RichText, InnerBlocks } = wp.editor;
+
+const { InnerBlocks } = wp.editor;
 
 export default class Save extends Component {
 	constructor() {
@@ -13,11 +16,11 @@ export default class Save extends Component {
 	}
 
 	render() {
-		const { tabActive, buttonsAlign, tabsData = [] } = this.props.attributes;
-
-		let className = "tabs";
 
 		return (
-    );
+			<Container {...this.props}>
+				<InnerBlocks.Content />
+			</Container>
+		);
 	}
 }

@@ -638,3 +638,51 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
   position: absolute !important;
   width: 1px;
   word-wrap: normal !important; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+div[data-type="c9-blocks/column-containers"].wp-block
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(41, 41, 41, 0.15); }
+
+.block-editor-block-list__layout
+.block-editor-block-list__block.is-selected
+> .block-editor-block-list__block-edit:before {
+  border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+div[data-type="c9-blocks/column-containers"].wp-block
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(41, 41, 41, 0.15); }
+
+.block-editor-block-list__layout
+.block-editor-block-list__block.is-selected
+> .block-editor-block-list__block-edit:before {
+  border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */

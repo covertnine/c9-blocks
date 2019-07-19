@@ -1,0 +1,74 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+ .padding-label,
+.margin-label {
+	margin-bottom: 0;
+}
+
+.padding-top-wrapper,
+.margin-top-wrapper {
+	justify-content: center;
+}
+
+.padding-sides-wrapper,
+.padding-top-wrapper,
+.padding-bottom-wrapper,
+.margin-sides-wrapper,
+.margin-top-wrapper,
+.margin-bottom-wrapper {
+	display: flex;
+}
+
+.padding .components-range-control__slider,
+.margin .components-range-control__slider {
+	display: none;
+}
+
+.padding .components-range-control__number {
+	margin-left: 0;
+}
+
+.padding-sides-wrapper,
+.margin-sides-wrapper {
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.padding-sides-wrapper .padding,
+.margin-sides-wrapper .margin {
+	width: 80px;
+}
+
+.padding-wrapper {
+	display: flex;
+}
+
+.padding-bottom-wrapper,
+.margin-bottom-wrapper {
+	justify-content: center;
+	margin-top: 5px;
+}
+
+.padding-wrapper .components-range-control .components-base-control__field {
+	align-items: flex-start;
+}
+
+.edit-post-sidebar .padding-wrapper input[type="number"] {
+	margin-left: 0;
+}
+
+.components-panel__body .padding,
+.components-panel__body .margin {
+	text-align: center;
+}

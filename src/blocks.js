@@ -18,4 +18,6 @@ import "./blocks/block-custom-heading/block-custom-heading.js";
 import "./blocks/block-card/block-card.js";
 import "./blocks/block-tabs/block-tabs.js";
 import "./blocks/block-tabs/components/tab.js";
-import "./blocks/block-post-grid/index.js";
+import "./blocks/block-post-grid";
+import "./blocks/block-grid-container/block-grid-container.js";
+import "./blocks/block-column-container/block-column-container.js";

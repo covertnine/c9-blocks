@@ -12,22 +12,22 @@ import "./styles/editor.scss";
 const { __ } = wp.i18n;
 
 const { compose } = wp.compose;
-const { withSelect, withDispatch } = wp.data;
+const { withSelect } = wp.data;
 
 // Register block
 const { registerBlockType } = wp.blocks;
 
 // Register the block
-registerBlockType("c9-blocks/tabs", {
-	title: __("Covertnine Tabs", "c9-blocks"),
-	description: __("Responsive tabs for content", "c9-blocks"),
-	icon: "category",
+registerBlockType("c9-blocks/grid-container", {
+	title: __("Covertnine Grid Container", "c9-blocks"),
+	description: __("A responsive container for columns of content", "c9-blocks"),
+	icon: "columns",
 	category: "c9-blocks",
 	supports: {
 		// fill in features
+		align: ["wide", "full"]
 	},
 	keywords: [
-		__("tabs", "c9-blocks"),
 		__("container", "c9-blocks"),
 		__("responsive", "c9-blocks")
 	],
@@ -35,24 +35,13 @@ registerBlockType("c9-blocks/tabs", {
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { getBlock, isBlockSelected, hasSelectedInnerBlock } = select(
-				"core/editor"
-			);
+			const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
 
 			const { clientId } = ownProps;
 
 			return {
-				block: getBlock(clientId),
 				isSelectedBlockInRoot:
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
-			};
-		}),
-		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch("core/editor");
-
-			return {
-				updateBlockAttributes,
-				removeBlock
 			};
 		})
 	])(Edit),
