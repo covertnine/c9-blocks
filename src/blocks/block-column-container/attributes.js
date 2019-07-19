@@ -2,6 +2,21 @@ const attributes = {
 	columns: {
 		type: "number"
 	},
+	columnMaxWidth: {
+		type: "number"
+	},
+	centerColumns: {
+		type: "boolean",
+		default: true
+	},
+	columnsGap: {
+		type: 'number',
+		default: 2
+	},
+	responsiveToggle: {
+		type: "boolean",
+		default: true
+	},
 	layout: {
 		type: "string"
 	},
@@ -68,7 +83,6 @@ const attributes = {
 		default: {
 			linked: true,
 			icon: "admin-links",
-			unit: "px",
 			top: "-1",
 			bottom: "-1"
 		}
@@ -78,7 +92,6 @@ const attributes = {
 		default: {
 			linked: true,
 			icon: "admin-links",
-			unit: "px",
 			top: "-1",
 			bottom: "-1",
 			left: "-1",

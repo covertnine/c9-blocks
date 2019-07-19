@@ -75,7 +75,6 @@ export default class Container extends Component {
         selected = true
     ) {
         const styles = {};
-        styles.display = "flex";
         styles.position = "relative";
     
         if (height) {

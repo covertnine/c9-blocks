@@ -11,6 +11,9 @@ const { AlignmentToolbar, BlockControls } = wp.editor;
 
 // Extend component
 const { Fragment } = wp.element;
+const { applyFilters } = wp.hooks;
+
+import classnames from "classnames";
 
 registerBlockType("c9-blocks/column", {
 	title: __("Column", "c9-blocks"),
@@ -33,10 +36,6 @@ registerBlockType("c9-blocks/column", {
 	},
 
 	attributes: {
-		width: {
-			type: "int",
-			default: -1
-		},
 		textAlign: {
 			type: "string",
 			default: "left"
@@ -46,7 +45,8 @@ registerBlockType("c9-blocks/column", {
 	edit: props => {
 		const {
 			attributes: { textAlign },
-			setAttributes
+			setAttributes,
+			className = ""
 		} = props;
 
 		return (
@@ -60,7 +60,13 @@ registerBlockType("c9-blocks/column", {
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
 				</BlockControls>
-				<div style={{ textAlign: textAlign }} className="col">
+				<div
+					style={{ textAlign: textAlign }}
+					className={classnames(
+						"c9-block-layout-column",
+						applyFilters("c9-blocks.blocks.className", className)
+					)}
+				>
 					<InnerBlocks
 						templateLock={false}
 						templateInsertUpdatesSelection={false}
@@ -72,21 +78,20 @@ registerBlockType("c9-blocks/column", {
 
 	save: props => {
 		const {
-			attributes: { width, textAlign }
+			attributes: { textAlign },
+			className = ""
 		} = props;
 
-		let className = "col";
-
-		if (width > 0) {
-			className += `-${width}`;
-		}
-
 		return (
-			<Fragment>
-				<div style={{ textAlign: textAlign }} className={className}>
-					<InnerBlocks.Content />
-				</div>
-			</Fragment>
+			<div
+				style={{ textAlign: textAlign }}
+				className={classnames(
+					"c9-block-layout-column",
+					applyFilters("c9-blocks.blocks.className", className)
+				)}
+			>
+				<InnerBlocks.Content />
+			</div>
 		);
 	}
 });

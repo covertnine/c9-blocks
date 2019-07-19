@@ -72,11 +72,10 @@ const attributes = {
 		default: {
 			linked: true,
 			icon: "admin-links",
-			unit: "px",
-			top: "-1",
-			bottom: "-1",
-			left: "-1",
-			right: "-1"
+			top: "5",
+			bottom: "5",
+			left: "5",
+			right: "5"
 		}
 	},
 	focalPoint: {

@@ -1,11 +1,18 @@
 /**
+ * External dependencies
+ */
+import classnames from "classnames";
+
+/**
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
 import Container from "./components/container";
 
 import icons from "../../../assets/c9-col-layout-icons";
+import memoize from 'memize';
 import map from "lodash/map";
+import _times from 'lodash/times';
 
 /**
  * WordPress dependencies
@@ -19,6 +26,11 @@ const { InnerBlocks, BlockControls } = wp.editor;
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
+const getLayoutTemplate = memoize( ( columns ) => {
+	return _times( columns, () => [ 'c9-blocks/column' ]);
+});
+
+
 export default class Edit extends Component {
 	constructor() {
 		super(...arguments);
@@ -30,7 +42,15 @@ export default class Edit extends Component {
 
 	render() {
 		const {
-			attributes: { verticalAlign, containerWidth, layout, columns },
+			attributes: {
+				verticalAlign,
+				containerWidth,
+				layout,
+				columns,
+				columnsGap,
+				responsiveToggle,
+				columnMaxWidth
+			},
 			setAttributes
 		} = this.props;
 
@@ -121,8 +141,7 @@ export default class Edit extends Component {
 												});
 
 												{
-													1 === columns &&
-														this.setState({ pickLayout: false });
+													1 === columns && this.setState({ pickLayout: false });
 												}
 											}}
 										>
@@ -184,7 +203,22 @@ export default class Edit extends Component {
 				<Inspector {...this.props} />
 
 				<Container {...this.props}>
-					<p>stuff</p>
+					<div
+						className={classnames(
+							"c9-layout-column-wrap-admin",
+							"c9-block-layout-column-gap-" + columnsGap,
+							responsiveToggle ? "c9-is-responsive-column" : null
+						)}
+						style={{
+							maxWidth: columnMaxWidth ? columnMaxWidth : null
+						}}
+					>
+						<InnerBlocks
+						template={ getLayoutTemplate( columns ) }
+						templateLock="all"
+						allowedBlocks={ ALLOWED_BLOCKS }
+					/>
+					</div>
 				</Container>
 			</Fragment>
 		);
