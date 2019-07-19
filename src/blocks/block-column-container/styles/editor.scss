@@ -73,7 +73,7 @@
 	text-align: center;
 }
 
-.editor-styles-wrapper [data-type="c9-blocks/columns"] .wp-block {
+.editor-styles-wrapper [data-type="c9-blocks/column-container"] .wp-block {
 	max-width: 100%;
 }
 
@@ -271,7 +271,7 @@
 	}
 }
 
-[data-type="c9-blocks/columns"] {
+[data-type="c9-blocks/column-container"] {
 	.components-placeholder {
 		padding: 30px;
 	}

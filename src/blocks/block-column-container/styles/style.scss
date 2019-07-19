@@ -4,10 +4,6 @@
  * CSS for both Frontend+Backend.
  */
 
- .wp-block-c9-blocks-c9-layout {
-	margin-bottom: 1.5em;
-}
-
 .c9-layout-column-wrap {
 	display: grid;
     grid-template-rows: 1fr;
@@ -32,14 +28,6 @@
 
 	&.c9-is-vertically-aligned-bottom {
 		align-self: flex-end;
-	}
-}
-
-.wp-block-c9-blocks-c9-layout.alignfull {
-	padding: 0 2em;
-
-	@media only screen and (max-width: 600px) {
-		padding: 0 15px;
 	}
 }
 
