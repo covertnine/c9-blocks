@@ -21,14 +21,13 @@ const { registerBlockType } = wp.blocks;
 registerBlockType("c9-blocks/grid-container", {
 	title: __("Covertnine Grid Container", "c9-blocks"),
 	description: __("A responsive container for columns of content", "c9-blocks"),
-	icon: "columns",
+	icon: "editor-table",
 	category: "c9-blocks",
 	supports: {
 		// fill in features
 		align: ["wide", "full"]
 	},
 	keywords: [
-		__("container", "c9-blocks"),
 		__("responsive", "c9-blocks")
 	],
 	attributes,

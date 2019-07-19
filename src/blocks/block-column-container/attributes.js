@@ -1,7 +1,9 @@
 const attributes = {
 	columns: {
-		type: "number",
-		default: 1
+		type: "number"
+	},
+	layout: {
+		type: "string"
 	},
 	containerWidth: {
 		type: "string",
