@@ -40,7 +40,7 @@ export default class Tab extends Component {
 }
 
 registerBlockType("c9-blocks/tabs-tab", {
-	title: __("Covertnine Tab", "c9-blocks"),
+	title: __("C9 Tab", "c9-blocks"),
 
 	category: "common",
 

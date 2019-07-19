@@ -18,18 +18,16 @@ const { withSelect } = wp.data;
 const { registerBlockType } = wp.blocks;
 
 // Register the block
-registerBlockType("c9-blocks/grid-container", {
-	title: __("Covertnine Grid Container", "c9-blocks"),
-	description: __("A responsive container for columns of content", "c9-blocks"),
+registerBlockType("c9-blocks/grid", {
+	title: __("C9 Grid", "c9-blocks"),
+	description: __("A responsive grid for columns of content", "c9-blocks"),
 	icon: "editor-table",
 	category: "c9-blocks",
 	supports: {
 		// fill in features
 		align: ["wide", "full"]
 	},
-	keywords: [
-		__("responsive", "c9-blocks")
-	],
+	keywords: [__("responsive", "c9-blocks")],
 	attributes,
 	// Render the block components
 	edit: compose([

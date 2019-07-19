@@ -46,7 +46,7 @@ const getColumnsTemplate = memoize(columns => {
 
 registerBlockType("c9-blocks/column-containers", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("Covertnine Content Container", "c9-blocks"),
+	title: __("C9 Content Container", "c9-blocks"),
 	description: __("A responsive container for columns of content", "c9-blocks"),
 	icon: "columns",
 	category: "c9-blocks",

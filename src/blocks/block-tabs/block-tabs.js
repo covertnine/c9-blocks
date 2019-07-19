@@ -19,7 +19,7 @@ const { registerBlockType } = wp.blocks;
 
 // Register the block
 registerBlockType("c9-blocks/tabs", {
-	title: __("Covertnine Tabs", "c9-blocks"),
+	title: __("C9 Tabs", "c9-blocks"),
 	description: __("Responsive tabs for content", "c9-blocks"),
 	icon: "category",
 	category: "c9-blocks",

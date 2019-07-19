@@ -22,7 +22,7 @@ const { Fragment } = wp.element;
 
 registerBlockType("c9-blocks/c9-card", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("Covertnine Card Container", "c9-blocks"),
+	title: __("C9 Card", "c9-blocks"),
 	description: __("A flexible and extensible content container", "c9-blocks"),
 	icon: "id-alt",
 	category: "c9-blocks",

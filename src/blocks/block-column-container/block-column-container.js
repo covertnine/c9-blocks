@@ -19,7 +19,7 @@ const { registerBlockType } = wp.blocks;
 
 // Register the block
 registerBlockType("c9-blocks/column-container", {
-	title: __("Covertnine Column Container", "c9-blocks"),
+	title: __("C9 Column Container", "c9-blocks"),
 	description: __("A responsive container for columns of content", "c9-blocks"),
 	icon: "layout",
 	category: "common",
@@ -27,10 +27,7 @@ registerBlockType("c9-blocks/column-container", {
 	supports: {
 		// fill in features
 	},
-	keywords: [
-		__("container", "c9-blocks"),
-		__("responsive", "c9-blocks")
-	],
+	keywords: [__("container", "c9-blocks"), __("responsive", "c9-blocks")],
 	attributes,
 	// Render the block components
 	edit: compose([

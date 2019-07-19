@@ -183,7 +183,7 @@ class C9CTABlock extends Component {
 
 // Register the block
 registerBlockType("c9-blocks/c9-cta", {
-	title: __("Covertnine Call To Action", "c9-blocks"),
+	title: __("C9 Call To Action", "c9-blocks"),
 	description: __(
 		"Add a call to action section with text and a button.",
 		"c9-blocks"
