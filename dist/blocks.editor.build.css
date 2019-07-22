@@ -543,6 +543,12 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
 .components-panel__body .padding,
 .components-panel__body .margin {
   text-align: center; }
+
+.c9-grid > .editor-inner-blocks {
+  height: 100%; }
+  .c9-grid > .editor-inner-blocks > .editor-block-list__layout {
+    display: grid;
+    height: 100%; }
 /**
  * #.# Common SCSS
  *
@@ -567,11 +573,6 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  *
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
- */
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
  */
 .padding-label,
 .margin-label {
@@ -630,8 +631,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
 .components-panel__body .margin {
   text-align: center; }
 
-.editor-styles-wrapper [data-type="c9-blocks/columns"] .wp-block {
-  max-width: 100%; }
+.editor-styles-wrapper [data-type="c9-blocks/column-container"] .wp-block {
+  max-width: 100%;
+  word-break: break-word; }
 
 .edit-post-visual-editor .editor-block-list__block [data-type="c9-blocks/column"] {
   margin-left: 0;
@@ -770,6 +772,18 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
   margin-left: auto;
   margin-right: auto; }
 
+[data-type="c9-blocks/column-container"].c9-is-vertically-aligned-top {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+
+[data-type="c9-blocks/column-container"].c9-is-vertically-aligned-center {
+  -ms-flex-item-align: center;
+      align-self: center; }
+
+[data-type="c9-blocks/column-container"].c9-is-vertically-aligned-bottom {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+
 [data-type="c9-blocks/column"].c9-is-vertically-aligned-top {
   -ms-flex-item-align: start;
       align-self: flex-start; }
@@ -782,10 +796,10 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
   -ms-flex-item-align: end;
       align-self: flex-end; }
 
-[data-type="c9-blocks/columns"] .components-placeholder {
+[data-type="c9-blocks/column-container"] .components-placeholder {
   padding: 30px; }
 
-[data-type="c9-blocks/columns"] .components-placeholder__fieldset {
+[data-type="c9-blocks/column-container"] .components-placeholder__fieldset {
   max-width: 100%; }
 
 .column-selector-button-back {

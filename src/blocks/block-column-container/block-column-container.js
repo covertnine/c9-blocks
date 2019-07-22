@@ -48,3 +48,36 @@ registerBlockType("c9-blocks/column-container", {
 		return <Save {...props} />;
 	}
 });
+
+/* Add the vertical column alignment class to the column container block. */
+const withClientIdClassName = wp.compose.createHigherOrderComponent(
+	BlockListBlock => {
+		return props => {
+			const blockName = props.block.name;
+
+			if (
+				props.attributes.verticalAlign &&
+				blockName === "c9-blocks/column-container"
+			) {
+				return (
+					<BlockListBlock
+						{...props}
+						className={
+							"c9-is-vertically-aligned-" + props.attributes.verticalAlign
+						}
+					/>
+				);
+			} else {
+				return <BlockListBlock {...props} />;
+			}
+		};
+	},
+	"withClientIdClassName"
+);
+
+wp.hooks.addFilter(
+	"editor.BlockListBlock",
+	"c9-blocks/add-vertical-align-class",
+	withClientIdClassName
+);
+

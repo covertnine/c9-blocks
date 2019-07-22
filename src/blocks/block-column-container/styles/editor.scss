@@ -5,12 +5,6 @@
  * which makes it higher in priority.
  */
 
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
- */
-
  .padding-label,
 .margin-label {
 	margin-bottom: 0;
@@ -75,6 +69,7 @@
 
 .editor-styles-wrapper [data-type="c9-blocks/column-container"] .wp-block {
 	max-width: 100%;
+	word-break: break-word;
 }
 
 .edit-post-visual-editor .editor-block-list__block [data-type="c9-blocks/column"] {
@@ -255,6 +250,20 @@
 .c9-block-layout-column .editor-block-list__block[data-align=wide] {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+[data-type="c9-blocks/column-container"] {
+	&.c9-is-vertically-aligned-top {
+		align-self: flex-start;
+	}
+
+	&.c9-is-vertically-aligned-center {
+		align-self: center;
+	}
+
+	&.c9-is-vertically-aligned-bottom {
+		align-self: flex-end;
+	}
 }
 
 [data-type="c9-blocks/column"] {

@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-const { Path, SVG } = wp.components;
+const { Path, SVG, Toolbar } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
 const { registerBlockType } = wp.blocks;
@@ -39,38 +39,63 @@ registerBlockType("c9-blocks/column", {
 		textAlign: {
 			type: "string",
 			default: "left"
+		},
+		verticalAlign: {
+			type: "string"
 		}
 	},
 
 	edit: props => {
 		const {
-			attributes: { textAlign },
+			attributes: { textAlign, verticalAlign },
 			setAttributes,
 			className = ""
 		} = props;
 
+		const verticalAlignControls = [
+			{
+				icon: "arrow-up-alt2",
+				title: __("Vertical Align Top", "c9-blocks"),
+				isActive: verticalAlign === "top",
+				onClick: () => setAttributes({ verticalAlign: "top" })
+			},
+			{
+				icon: "minus",
+				title: __("Vertical Align Bottom", "c9-blocks"),
+				isActive: verticalAlign === "center",
+				onClick: () => setAttributes({ verticalAlign: "center" })
+			},
+			{
+				icon: "arrow-down-alt2",
+				title: __("Vertical Align Middle", "c9-blocks"),
+				isActive: verticalAlign === "bottom",
+				onClick: () => setAttributes({ verticalAlign: "bottom" })
+			}
+		];
+
 		return (
 			<Fragment>
 				<BlockControls>
-					{/* <BlockAlignmentToolbar
-					/> */}
-
 					<AlignmentToolbar
 						value={textAlign}
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
+					<Toolbar controls={verticalAlignControls} />
 				</BlockControls>
 				<div
 					style={{ textAlign: textAlign }}
 					className={classnames(
 						"c9-block-layout-column",
-						applyFilters("c9-blocks.blocks.className", className)
+						applyFilters("c9-blocks.blocks.className", className),
+						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
 					)}
 				>
-					<InnerBlocks
-						templateLock={false}
-						templateInsertUpdatesSelection={false}
-					/>
+					<div className="c9-column-innner">
+						<InnerBlocks
+							templateLock={false}
+							templateInsertUpdatesSelection={false}
+						/>
+					</div>
 				</div>
 			</Fragment>
 		);
@@ -78,7 +103,7 @@ registerBlockType("c9-blocks/column", {
 
 	save: props => {
 		const {
-			attributes: { textAlign },
+			attributes: { textAlign, verticalAlign },
 			className = ""
 		} = props;
 
@@ -87,11 +112,46 @@ registerBlockType("c9-blocks/column", {
 				style={{ textAlign: textAlign }}
 				className={classnames(
 					"c9-block-layout-column",
-					applyFilters("c9-blocks.blocks.className", className)
+					applyFilters("c9-blocks.blocks.className", className),
+					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
 				)}
 			>
-				<InnerBlocks.Content />
+				<div className="c9-column-innner">
+					<InnerBlocks.Content />
+				</div>
 			</div>
 		);
 	}
 });
+
+/* Add the vertical column alignment class to the block wrapper. */
+const withClientIdClassName = wp.compose.createHigherOrderComponent(
+	BlockListBlock => {
+		return props => {
+			const blockName = props.block.name;
+
+			if (
+				props.attributes.verticalAlign &&
+				blockName === "c9-blocks/column"
+			) {
+				return (
+					<BlockListBlock
+						{...props}
+						className={
+							"c9-is-vertically-aligned-" + props.attributes.verticalAlign
+						}
+					/>
+				);
+			} else {
+				return <BlockListBlock {...props} />;
+			}
+		};
+	},
+	"withClientIdClassName"
+);
+
+wp.hooks.addFilter(
+	"editor.BlockListBlock",
+	"c9-blocks/add-vertical-align-class",
+	withClientIdClassName
+);

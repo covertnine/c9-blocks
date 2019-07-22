@@ -61,7 +61,6 @@ export default class Container extends Component {
     
     cortexBackgroundStyles(
         url,
-        vertAlign,
         size,
         bgX,
         bgY,
@@ -86,9 +85,6 @@ export default class Container extends Component {
         }
     
         // styles.display = 'flex';
-        if (vertAlign) {
-            styles.alignItems = vertAlign;
-        }
     
         if (url) {
             if (selected) {
@@ -135,7 +131,6 @@ export default class Container extends Component {
 	render() {
 		const {
 			attributes: {
-				verticalAlign,
 				containerImgURL,
 				bgImgSize,
 				bgImgAttach,
@@ -165,7 +160,6 @@ export default class Container extends Component {
 				)}
 				style={this.cortexBackgroundStyles(
 					containerImgURL,
-					verticalAlign,
 					bgImgSize,
 					bgCustomX,
 					bgCustomY,

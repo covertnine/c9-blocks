@@ -662,6 +662,8 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  *
  * CSS for both Frontend+Backend.
  */
+.c9-grid {
+  display: grid; }
 /**
  * #.# Common SCSS
  *
@@ -686,8 +688,17 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  *
  * CSS for both Frontend+Backend.
  */
-.wp-block-c9-blocks-c9-layout {
-  margin-bottom: 1.5em; }
+.c9-column-container.c9-is-vertically-aligned-top {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+
+.c9-column-container.c9-is-vertically-aligned-center {
+  -ms-flex-item-align: center;
+      align-self: center; }
+
+.c9-column-container.c9-is-vertically-aligned-bottom {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
 
 .c9-layout-column-wrap {
   display: grid;
@@ -711,12 +722,6 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
 .c9-block-layout-column.c9-is-vertically-aligned-bottom {
   -ms-flex-item-align: end;
       align-self: flex-end; }
-
-.wp-block-c9-blocks-c9-layout.alignfull {
-  padding: 0 2em; }
-  @media only screen and (max-width: 600px) {
-    .wp-block-c9-blocks-c9-layout.alignfull {
-      padding: 0 15px; } }
 
 .c9-block-layout-column {
   display: block;

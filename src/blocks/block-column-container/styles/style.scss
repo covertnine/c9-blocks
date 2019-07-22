@@ -4,6 +4,20 @@
  * CSS for both Frontend+Backend.
  */
 
+ .c9-column-container {
+	&.c9-is-vertically-aligned-top {
+		align-self: flex-start;
+	}
+
+	&.c9-is-vertically-aligned-center {
+		align-self: center;
+	}
+
+	&.c9-is-vertically-aligned-bottom {
+		align-self: flex-end;
+	}
+}
+
 .c9-layout-column-wrap {
 	display: grid;
     grid-template-rows: 1fr;

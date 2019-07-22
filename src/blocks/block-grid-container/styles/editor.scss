@@ -11,7 +11,7 @@
  * CSS for both Frontend+Backend.
  */
 
- .padding-label,
+.padding-label,
 .margin-label {
 	margin-bottom: 0;
 }
@@ -71,4 +71,13 @@
 .components-panel__body .padding,
 .components-panel__body .margin {
 	text-align: center;
+}
+
+.c9-grid > .editor-inner-blocks {
+	height: 100%;
+
+	> .editor-block-list__layout {
+		display: grid;
+		height: 100%;
+	}
 }

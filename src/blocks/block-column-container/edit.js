@@ -64,8 +64,8 @@ export default class Edit extends Component {
 			{
 				icon: "arrow-up-alt2",
 				title: __("Vertical Align Top", "c9-blocks"),
-				isActive: verticalAlign === "flex-start",
-				onClick: () => setAttributes({ verticalAlign: "flex-start" })
+				isActive: verticalAlign === "top",
+				onClick: () => setAttributes({ verticalAlign: "top" })
 			},
 			{
 				icon: "minus",
@@ -76,8 +76,8 @@ export default class Edit extends Component {
 			{
 				icon: "arrow-down-alt2",
 				title: __("Vertical Align Middle", "c9-blocks"),
-				isActive: verticalAlign === "flex-end",
-				onClick: () => setAttributes({ verticalAlign: "flex-end" })
+				isActive: verticalAlign === "bottom",
+				onClick: () => setAttributes({ verticalAlign: "bottom" })
 			}
 		];
 
@@ -347,8 +347,6 @@ const columnLayouts = {
 			icon: icons.fiveEqual
 		}
 	],
-
-	/* 6 column layouts. */
 	6: [
 		{
 			name: __("6 Columns", "c9-blocks"),

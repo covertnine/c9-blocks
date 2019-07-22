@@ -86,11 +86,6 @@ export default class Container extends Component {
 				100}%`;
 		}
 
-		// styles.display = 'flex';
-		if (vertAlign) {
-			styles.alignItems = vertAlign;
-		}
-
 		if (url) {
 			if (selected) {
 				styles.backgroundImage = `url(${url})`;
@@ -170,12 +165,12 @@ export default class Container extends Component {
 					applyFilters("c9-blocks.blocks.className", className),
 					this.cortexSpacingConfig(containerPadding, containerMargin),
 					"c9-layout-columns-" + columns,
+					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null,
 					layout,
 					columnMaxWidth && centerColumns ? "c9-columns-center" : null
 				)}
 				style={this.cortexBackgroundStyles(
 					containerImgURL,
-					verticalAlign,
 					bgImgSize,
 					bgCustomX,
 					bgCustomY,
