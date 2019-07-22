@@ -86,19 +86,19 @@ export default class Edit extends Component {
 				icon: "align-center",
 				title: __("Narrow Width", "c9-blocks"),
 				isActive: containerWidth === "container-narrow",
-				onClick: () => setAttributes({ containerWidth: "container-narrow" })
+				onClick: () => setAttributes({ containerWidth: "container-narrow", align: "" })
 			},
 			{
 				icon: "align-wide",
 				title: __("Wide Width", "c9-blocks"),
 				isActive: containerWidth === "container",
-				onClick: () => setAttributes({ containerWidth: "container" })
+				onClick: () => setAttributes({ containerWidth: "container", align: "wide" })
 			},
 			{
 				icon: "align-full-width",
 				title: __("Full Width", "c9-blocks"),
 				isActive: containerWidth === "container-fluid",
-				onClick: () => setAttributes({ containerWidth: "container-fluid" })
+				onClick: () => setAttributes({ containerWidth: "container-fluid", align: "full" })
 			}
 		];
 

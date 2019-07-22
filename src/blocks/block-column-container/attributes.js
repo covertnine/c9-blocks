@@ -1,4 +1,8 @@
 const attributes = {
+	align: {
+		type: "string",
+		default: "full"
+	},
 	columns: {
 		type: "number"
 	},

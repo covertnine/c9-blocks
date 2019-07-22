@@ -143,6 +143,7 @@ export default class VideoBox extends Component {
 			const styles = {};
 			styles.opacity = 0;
 			styles.transition = "5000ms";
+			styles.height = "100%";
 			styles.width = "100%";
 
 			styles.position = "absolute";

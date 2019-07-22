@@ -29,6 +29,19 @@ registerBlockType("c9-blocks/column-container", {
 	},
 	keywords: [__("container", "c9-blocks"), __("responsive", "c9-blocks")],
 	attributes,
+
+	/* Add alignment to block wrapper. */
+	getEditWrapperProps({ align }) {
+		if (
+			"left" === align ||
+			"right" === align ||
+			"full" === align ||
+			"wide" === align
+		) {
+			return { "data-align": align };
+		}
+	},
+
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
@@ -80,4 +93,3 @@ wp.hooks.addFilter(
 	"c9-blocks/add-vertical-align-class",
 	withClientIdClassName
 );
-
