@@ -16,6 +16,8 @@
 	&.c9-is-vertically-aligned-bottom {
 		align-self: flex-end;
 	}
+
+	display: grid;
 }
 
 .c9-layout-column-wrap {

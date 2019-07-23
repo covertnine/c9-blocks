@@ -61,7 +61,6 @@ export default class Container extends Component {
 
 	cortexBackgroundStyles(
 		url,
-		vertAlign,
 		size,
 		bgX,
 		bgY,

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -353,16 +353,17 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /***/ }),
 /* 2 */,
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deregister_blocks__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__register_filters__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(8);
 /**
  * Internal dependencies
  */
@@ -432,7 +433,7 @@ if (updateCategory) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 //disable core blocks we don't want users using
@@ -443,7 +444,7 @@ wp.blocks.unregisterBlockType( 'core/text-columns' );
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 const { addFilter } = wp.hooks;
@@ -466,13 +467,13 @@ addFilter(
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(14);
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
@@ -570,11 +571,11 @@ registerPlugin("c9-blocks", {
 });
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(9);
+var content = __webpack_require__(10);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -588,7 +589,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(11)(content, options);
+var update = __webpack_require__(12)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -620,16 +621,16 @@ if(false) {
 }
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(11)(false);
 // Module
 exports.push([module.i, "/**\n * Editor Styles\n */\n.edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg {\n  display: block;\n  height: 16px; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg * {\n    stroke: initial !important; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg [fill=\"#fff\"] {\n    fill: #fff !important; }\n\n.edit-post-pinned-plugins .components-icon-button .c9-plugin-icon span {\n  margin: -2px; }\n\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nspan\n[fill=\"#fff\"] {\n  fill: #555d66 !important; }\n\n.plugin-c9-panel .plugin-c9-panel-button {\n  display: block;\n  width: 100%;\n  height: auto;\n  padding: 15px 10px;\n  margin-bottom: 16px;\n  flex-shrink: 0;\n  overflow: hidden;\n  color: inherit;\n  text-align: center;\n  cursor: pointer;\n  background: none;\n  border: 1px solid;\n  border-radius: 4px;\n  transition: 0.2s color, 0.2s background-color, 0.2s border-color, 0.2s box-shadow; }\n  .plugin-c9-panel .plugin-c9-panel-button, .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    border-color: rgba(79, 89, 105, 0.2);\n    box-shadow: none; }\n  .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    color: #191e23;\n    background-color: #f8f9f9; }\n  .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled {\n    color: #191e23;\n    border-color: #007fac;\n    box-shadow: 0 0 0 2px #00a0d2; }\n  .plugin-c9-panel .plugin-c9-panel-button span {\n    display: block;\n    margin: 0 auto;\n    margin-top: 3px;\n    text-align: center;\n    height: 24px; }\n", ""]);
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -725,7 +726,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -794,7 +795,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(12);
+var	fixUrls = __webpack_require__(13);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -1131,7 +1132,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 
@@ -1226,11 +1227,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1256,22 +1257,22 @@ var SvgC9FeatherLogoGray = function SvgC9FeatherLogoGray(props) {
 /* harmony default export */ __webpack_exports__["a"] = (SvgC9FeatherLogoGray);
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(15);
-} else {
   module.exports = __webpack_require__(16);
+} else {
+  module.exports = __webpack_require__(17);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1303,7 +1304,7 @@ unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_Y
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1325,7 +1326,7 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var _assign = __webpack_require__(1);
-var checkPropTypes = __webpack_require__(17);
+var checkPropTypes = __webpack_require__(18);
 
 // TODO: this is special because it gets imported during build.
 
@@ -3212,7 +3213,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3228,7 +3229,7 @@ module.exports = react;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(18);
+  var ReactPropTypesSecret = __webpack_require__(19);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -3322,7 +3323,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -81,7 +81,7 @@ export default class Edit extends Component {
 								overrideStyle
 							),
 							`font-weight-${weight}`,
-							`text-${textAlign}`
+							textAlign ? `text-${textAlign}` : "text-left"
 						])}
 						style={{
 							backgroundColor: backgroundColor,

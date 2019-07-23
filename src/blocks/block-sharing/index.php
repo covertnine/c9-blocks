@@ -241,7 +241,7 @@ function cortex_blocks_render_sharing( $attributes ) {
 
 	// Render the list of share links
 	$block_content = sprintf(
-		'<div class="wp-block-c9-blocks-ab-sharing ab-block-sharing %2$s %3$s %4$s %5$s %6$s">
+		'<div class="c9-blocks-ab-sharing ab-block-sharing %2$s %3$s %4$s %5$s %6$s">
 			<ul class="ab-share-list">%1$s</ul>
 		</div>',
 		$share_url,

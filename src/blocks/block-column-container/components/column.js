@@ -61,13 +61,13 @@ registerBlockType("c9-blocks/column", {
 			},
 			{
 				icon: "minus",
-				title: __("Vertical Align Bottom", "c9-blocks"),
+				title: __("Vertical Align Middle", "c9-blocks"),
 				isActive: verticalAlign === "center",
 				onClick: () => setAttributes({ verticalAlign: "center" })
 			},
 			{
 				icon: "arrow-down-alt2",
-				title: __("Vertical Align Middle", "c9-blocks"),
+				title: __("Vertical Align Bottom", "c9-blocks"),
 				isActive: verticalAlign === "bottom",
 				onClick: () => setAttributes({ verticalAlign: "bottom" })
 			}
