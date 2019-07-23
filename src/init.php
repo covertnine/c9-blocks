@@ -92,7 +92,7 @@ function cortex_blocks_cgb_editor_assets()
     wp_enqueue_script(
         'cortex_blocks-update-category',
         plugins_url('dist/blocks.update-category.build.js', dirname(__FILE__)),
-        array('wp-hooks', 'wp-blocks', 'wp-components')
+        array('wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element')
     );
 
     // // Styles.

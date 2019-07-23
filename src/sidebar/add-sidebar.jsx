@@ -1,5 +1,5 @@
-const { registerPlugin, PluginSidebarMoreMenuItem } = wp.plugins;
-const { PluginSidebar } = wp.editPost;
+const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
 const { Fragment } = wp.element;
 
@@ -25,7 +25,13 @@ class C9 extends Component {
 
 		return (
 			<Fragment>
-				<PluginSidebar name="c9-blocks" title={__("C9 Blocks")}>
+				<PluginSidebarMoreMenuItem
+					icon={<Logo style={{ width: "20px", margin: "0 10px 0 6px" }} />}
+					target="c9-blocks"
+				>
+					{__("C9 Blocks")}
+				</PluginSidebarMoreMenuItem>
+				<PluginSidebar name="c9-blocks" id="c9-blocks" title={__("C9 Blocks")}>
 					<PanelBody className="plugin-c9-panel">
 						<Button
 							className="plugin-c9-panel-button"

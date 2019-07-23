@@ -474,8 +474,8 @@ addFilter(
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(14);
-const { registerPlugin, PluginSidebarMoreMenuItem } = wp.plugins;
-const { PluginSidebar } = wp.editPost;
+const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
 const { Fragment } = wp.element;
 
@@ -503,8 +503,16 @@ class C9 extends Component {
 			Fragment,
 			null,
 			React.createElement(
+				PluginSidebarMoreMenuItem,
+				{
+					icon: React.createElement(__WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__["a" /* default */], { style: { width: "20px", margin: "0 10px 0 6px" } }),
+					target: "c9-blocks"
+				},
+				__("C9 Blocks")
+			),
+			React.createElement(
 				PluginSidebar,
-				{ name: "c9-blocks", title: __("C9 Blocks") },
+				{ name: "c9-blocks", id: "c9-blocks", title: __("C9 Blocks") },
 				React.createElement(
 					PanelBody,
 					{ className: "plugin-c9-panel" },
