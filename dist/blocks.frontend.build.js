@@ -63,34 +63,9 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/******/ ({
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_container_frontend_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_container_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__blocks_block_container_frontend_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__);
-/**
- * Gutenberg Blocks Frontend JS
- *
- * All blocks frontend related JavaScript files should be imported here.
- * You can create a new block folder in this dir and include code
- * for that block here as well.
- *
- * All blocks should be included here since this is the file that
- * Webpack is compiling as the input file.
- */
-
-
-
-
-/***/ }),
-/* 3 */
+/***/ 19:
 /***/ (function(module, exports) {
 
 /* eslint-disable no-undef */
@@ -152,7 +127,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /***/ }),
-/* 4 */
+
+/***/ 2:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__);
+/**
+ * Gutenberg Blocks Frontend JS
+ *
+ * All blocks frontend related JavaScript files should be imported here.
+ * You can create a new block folder in this dir and include code
+ * for that block here as well.
+ *
+ * All blocks should be included here since this is the file that
+ * Webpack is compiling as the input file.
+ */
+
+
+
+
+/***/ }),
+
+/***/ 3:
 /***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -217,4 +218,5 @@ function activateTab($tabs, tabName) {
 
 
 /***/ })
-/******/ ]);
+
+/******/ });

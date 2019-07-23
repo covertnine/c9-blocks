@@ -9,5 +9,5 @@
  * Webpack is compiling as the input file.
  */
 
-import "./blocks/block-container/frontend.js"
+import "./blocks/block-grid-container/frontend.js"
 import "./blocks/block-tabs/frontend.js"

@@ -2,6 +2,7 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
+import RemoveButton from "./components/remove-button";
 
 /**
  * WordPress dependencies
@@ -90,6 +91,7 @@ export default class Edit extends Component {
 			setAttributes,
 			updateBlockAttributes,
 			isSelectedBlockInRoot,
+			block,
 			className = ""
 		} = this.props;
 
@@ -169,6 +171,26 @@ export default class Edit extends Component {
 										formattingControls={["bold", "italic", "strikethrough"]}
 										keepPlaceholderOnFocus
 									/>
+									<RemoveButton
+                                            show={ isSelectedBlockInRoot }
+                                            tooltipText={ __( 'Remove tab?' ) }
+                                            onRemove={ () => {
+                                                if ( block.innerBlocks.length <= 1 ) {
+                                                    this.props.removeBlock( block.clientId );
+                                                } else if ( block.innerBlocks[ i ] ) {
+                                                    this.props.removeBlock( block.innerBlocks[ i ].clientId );
+
+                                                    if ( tabsData[ i ] ) {
+                                                        const newTabsData = Object.assign( [], tabsData );
+                                                        newTabsData.splice( i, 1 );
+
+                                                        setAttributes( {
+                                                            tabsData: newTabsData,
+                                                        } );
+                                                    }
+                                                }
+                                            } }
+                                        />
 								</div>
 							);
 						})}

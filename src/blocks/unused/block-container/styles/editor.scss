@@ -1,0 +1,201 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+// div[class^="container"] .block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit,
+// .editor-styles-wrapper .wp-block-paragraph {
+// 	margin-top: 0;
+// 	margin-bottom: 0;
+// }
+
+// .block-editor-block-list__block .block-editor-block-list__layout {
+// 	margin: 0;
+// }
+
+.components-color-palette {
+	margin-top: 10px;
+}
+
+.bgSize .components-range-control__slider {
+	display: none;
+}
+
+.bgSize .components-range-control__number {
+	margin-left: 0;
+	margin-right: 6px;
+}
+
+.bgSize .components-base-control__field {
+	justify-content: space-between;
+	margin-bottom: 15px !important;
+}
+
+.bgSize .components-select-control__input {
+	margin-top: 0;
+}
+
+.padding-label,
+.margin-label {
+	margin-bottom: 0;
+}
+
+.padding-top-wrapper,
+.margin-top-wrapper {
+	justify-content: center;
+}
+
+.padding-sides-wrapper,
+.padding-top-wrapper,
+.padding-bottom-wrapper,
+.margin-sides-wrapper,
+.margin-top-wrapper,
+.margin-bottom-wrapper {
+	display: flex;
+}
+
+.padding .components-range-control__slider,
+.margin .components-range-control__slider {
+	display: none;
+}
+
+.padding .components-range-control__number {
+	margin-left: 0;
+}
+
+.padding-sides-wrapper,
+.margin-sides-wrapper {
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.padding-sides-wrapper .padding,
+.margin-sides-wrapper .margin {
+	width: 80px;
+}
+
+.padding-wrapper {
+	display: flex;
+}
+
+.padding-bottom-wrapper,
+.margin-bottom-wrapper {
+	justify-content: center;
+	margin-top: 5px;
+}
+
+.padding-wrapper .components-range-control .components-base-control__field {
+	align-items: flex-start;
+}
+
+.edit-post-sidebar .padding-wrapper input[type="number"] {
+	margin-left: 0;
+}
+
+.components-panel__body .padding,
+.components-panel__body .margin {
+	text-align: center;
+}
+
+/****************************************************************************************/
+/***************************** C9 Container block edits for backend only
+/****************************************************************************************/
+
+/*cortex column container innerblocks set to full width + innerblock full width */
+.wp-block[data-type="c9-blocks/column-containers"] .editor-inner-blocks {
+	width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		width: 100%;
+		max-width: calc(100vw - 440px); //subtract the width of the document options sidebar
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin folded side bar
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		width: 100%;
+		max-width: calc(100vw - 316px); //subtract the width of the document options sidebar
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the admin side bar
+	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		width: 100%;
+		max-width: calc(100vw - 160px); //subtract the width of the document options sidebar
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the admin folded side bar
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		width: 100%;
+		max-width: calc(100vw - 36px); //subtract the width of the document options sidebar
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	// move the custom mover to the top so its not hidden
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"]>.editor-block-mover {
+		top: -44px;
+		left: auto;
+		right: 0px;
+		width: 86px;
+		height: 24px;
+		opacity: 1;
+	}
+
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"]>.editor-block-mover .editor-block-mover__control {
+		float: left;
+	}
+
+}
+
+@media only screen and (min-width: 992px) {
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		// width: calc(85vw - 440px);
+		width: 100%;
+		max-width: calc(85vw - 440px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 440px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 440px) / 2 + (100% / 2));
+	}
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin folded side bar
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		// width: calc(85vw - 316px);
+		width: 100%;
+		max-width: calc(85vw - 316px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 316px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 316px) / 2 + (100% / 2));
+	}
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the admin side bar
+	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		// width: calc(85vw - 160px);
+		width: 100%;
+		max-width: calc(85vw - 160px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 160px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 160px) / 2 + (100% / 2));
+	}
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the admin folded side bar
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/column-containers"] {
+		// width: calc(85vw - 36px);
+		width: 100%;
+		max-width: calc(85vw - 36px); //subtract the width of the document options sidebar
+		margin-left: calc((-85vw + 36px) / 2 + (100% / 2));
+		margin-right: calc((-85vw + 36px) / 2 + (100% / 2));
+	}
+
+}
+
+/****************************************************************************************/

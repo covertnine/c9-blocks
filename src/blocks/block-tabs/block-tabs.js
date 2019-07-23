@@ -14,6 +14,7 @@ const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
+
 // Register block
 const { registerBlockType } = wp.blocks;
 
