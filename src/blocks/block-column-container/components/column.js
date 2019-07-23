@@ -4,7 +4,7 @@
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
-const { registerBlockType } = wp.blocks;
+const { registerBlockType, getBlockTypes } = wp.blocks;
 
 // Register editor components
 const { AlignmentToolbar, BlockControls } = wp.editor;
@@ -19,7 +19,7 @@ import classnames from "classnames";
 registerBlockType("c9-blocks/column", {
 	title: __("Column", "c9-blocks"),
 
-	category: "common",
+	category: "c9-blocks",
 
 	parent: ["c9-blocks/columns"],
 
@@ -53,6 +53,12 @@ registerBlockType("c9-blocks/column", {
 			className = ""
 		} = props;
 
+		const ALLOWED_BLOCKS = getBlockTypes()
+			.map(block => block.name)
+			.filter(
+				name => name != "c9-blocks/grid" && name != "c9-blocks/column-container"
+			);
+
 		return (
 			<Fragment>
 				<BlockControls>
@@ -77,6 +83,7 @@ registerBlockType("c9-blocks/column", {
 				>
 					<div className="c9-column-innner">
 						<InnerBlocks
+							allowedBlocks={ALLOWED_BLOCKS}
 							templateLock={false}
 							templateInsertUpdatesSelection={false}
 						/>
@@ -120,7 +127,9 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 					<BlockListBlock
 						{...props}
 						className={
-							props.attributes.verticalAlign ? "c9-is-vertically-aligned-" + props.attributes.verticalAlign : "c9-is-vertically-aligned-top"
+							props.attributes.verticalAlign
+								? "c9-is-vertically-aligned-" + props.attributes.verticalAlign
+								: "c9-is-vertically-aligned-top"
 						}
 					/>
 				);

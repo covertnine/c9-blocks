@@ -957,6 +957,10 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
   margin-top: 0;
   margin-bottom: 0; }
 
+[data-type="c9-blocks/column-container"] .block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content {
+  margin-top: 0;
+  margin-bottom: 0; }
+
 [data-type="c9-blocks/column"].c9-is-vertically-aligned-top {
   -ms-flex-item-align: start;
       align-self: flex-start; }
