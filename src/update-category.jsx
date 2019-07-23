@@ -49,3 +49,4 @@ if (updateCategory) {
 import "./deregister-blocks";
 import "./register-filters";
 import "./sidebar/add-sidebar.jsx";
+import "./page-template-selector/add-template-status.jsx";

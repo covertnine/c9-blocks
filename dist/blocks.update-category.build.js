@@ -364,6 +364,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__register_filters__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page_template_selector_add_template_status_jsx__ = __webpack_require__(20);
 /**
  * Internal dependencies
  */
@@ -427,6 +428,7 @@ const logo = React.createElement(
 if (updateCategory) {
 	updateCategory("c9-blocks", { icon: logo });
 }
+
 
 
 
@@ -3339,6 +3341,127 @@ module.exports = checkPropTypes;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
+const { registerPlugin } = wp.plugins;
+const { PluginPostStatusInfo } = wp.editPost;
+
+const { __ } = wp.i18n;
+const { Component } = wp.element;
+
+const { Button } = wp.components;
+const { select } = wp.data;
+
+
+
+class PageTemplateSelector extends Component {
+	constructor() {
+		super(...arguments);
+
+		this.template = this.getClassName();
+	}
+
+	getClassName() {
+		let url = select("core/editor").getEditedPostAttribute("template");
+
+		if (url.length == 0) {
+			return "";
+		}
+
+		let result = url.substring(url.lastIndexOf("/") + 1).replace(".php", "");
+		return `page-template-${result}`;
+	}
+
+	render() {
+		return React.createElement(
+			PluginPostStatusInfo,
+			null,
+			React.createElement(
+				Button,
+				{
+					className: "c9-preview-page-template-button",
+					onClick: () => {
+						let body = document.getElementsByTagName("body")[0];
+						body.classList.remove(this.template);
+
+						this.template = this.getClassName();
+
+						body.classList.add(this.template);
+						// console.log(body);
+					}
+				},
+				"Preview Page Template CSS"
+			)
+		);
+	}
+}
+
+registerPlugin("post-status-info-test", { render: PageTemplateSelector });
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(22);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(12)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
+		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(false);
+// Module
+exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-button {\n  border-color: #ccc;\n  background: #f7f7f7;\n  box-shadow: 0 1px 0 #ccc;\n  padding: 6px 8px;\n  border-radius: 3px;\n  color: #555; }\n", ""]);
 
 
 /***/ })
