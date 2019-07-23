@@ -9,6 +9,7 @@ import classnames from "classnames";
 import Inspector from "./components/inspector";
 import Container from "./components/container";
 import WidthToolbar from "./components/width-toolbar";
+import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
 
 import icons from "../../../assets/c9-col-layout-icons";
 import memoize from "memize";
@@ -21,7 +22,7 @@ import _times from "lodash/times";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 
-const { Toolbar, Tooltip, Placeholder, ButtonGroup, Button } = wp.components;
+const { Tooltip, Placeholder, ButtonGroup, Button } = wp.components;
 
 const { InnerBlocks, BlockControls } = wp.editor;
 
@@ -61,36 +62,13 @@ export default class Edit extends Component {
 			selectedRows = parseInt(columns.toString().split("-"));
 		}
 
-		const verticalAlignControls = [
-			{
-				icon: "arrow-up-alt2",
-				title: __("Vertical Align Top", "c9-blocks"),
-				isActive: verticalAlign === "top",
-				onClick: () => setAttributes({ verticalAlign: "top" })
-			},
-			{
-				icon: "minus",
-				title: __("Vertical Align Middle", "c9-blocks"),
-				isActive: verticalAlign === "center",
-				onClick: () => setAttributes({ verticalAlign: "center" })
-			},
-			{
-				icon: "arrow-down-alt2",
-				title: __("Vertical Align Bottom", "c9-blocks"),
-				isActive: verticalAlign === "bottom",
-				onClick: () => setAttributes({ verticalAlign: "bottom" })
-			}
-		];
-
 		let currWidth;
 		if (align.length != 0) {
 			if (containerWidth == "container") {
 				currWidth = "wide";
-			}
-			else if (containerWidth == "container-fluid") {
+			} else if (containerWidth == "container-fluid") {
 				currWidth = "full";
-			}
-			else {
+			} else {
 				currWidth = "narrow";
 			}
 		}
@@ -197,15 +175,26 @@ export default class Edit extends Component {
 							if (value == "wide") {
 								setAttributes({ containerWidth: "container", align: "wide" });
 							} else if (value == "full") {
-								setAttributes({ containerWidth: "container-fluid", align: "full" });
+								setAttributes({
+									containerWidth: "container-fluid",
+									align: "full"
+								});
 							} else if (value == "narrow") {
-								setAttributes({ containerWidth: "container-narrow", align: "narrow" });
+								setAttributes({
+									containerWidth: "container-narrow",
+									align: "narrow"
+								});
 							} else {
 								setAttributes({ containerWidth: "container", align: "" });
 							}
 						}}
 					/>
-					<Toolbar controls={verticalAlignControls} />
+					<VerticalAlignmentToolbar
+						value={verticalAlign}
+						onChange={value => {
+							setAttributes({ verticalAlign: value });
+						}}
+					/>
 				</BlockControls>
 				<Inspector {...this.props} />
 
