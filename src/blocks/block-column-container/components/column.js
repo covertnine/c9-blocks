@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-const { Path, SVG, Toolbar } = wp.components;
+const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
 const { registerBlockType } = wp.blocks;

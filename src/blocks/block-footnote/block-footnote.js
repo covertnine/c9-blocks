@@ -22,7 +22,7 @@ export default registerBlockType("c9-blocks/richtext", {
 		"How to use the RichText component for building your own editable blocks.",
 		"c9-blocks"
 	),
-	category: "common",
+	category: "c9-blocks",
 	keywords: [
 		__("Banner", "c9-blocks"),
 		__("Call to Action", "c9-blocks"),

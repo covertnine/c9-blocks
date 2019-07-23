@@ -166,7 +166,11 @@ export default class Container extends Component {
 					"c9-layout-columns-" + columns,
 					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null,
 					layout,
-					columnMaxWidth && centerColumns ? "c9-columns-center" : null
+					columnMaxWidth && centerColumns ? "c9-columns-center" : null,
+					containerImgURL ? "c9-columns-has-background" : null,
+					(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
+						? "c9-columns-has-video"
+						: null
 				)}
 				style={this.cortexBackgroundStyles(
 					containerImgURL,
