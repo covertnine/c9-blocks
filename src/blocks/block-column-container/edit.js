@@ -8,11 +8,12 @@ import classnames from "classnames";
  */
 import Inspector from "./components/inspector";
 import Container from "./components/container";
+import WidthToolbar from "./components/width-toolbar";
 
 import icons from "../../../assets/c9-col-layout-icons";
-import memoize from 'memize';
+import memoize from "memize";
 import map from "lodash/map";
-import _times from 'lodash/times';
+import _times from "lodash/times";
 
 /**
  * WordPress dependencies
@@ -26,10 +27,9 @@ const { InnerBlocks, BlockControls } = wp.editor;
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
-const getLayoutTemplate = memoize( ( columns ) => {
-	return _times( columns, () => [ 'c9-blocks/column' ]);
+const getLayoutTemplate = memoize(columns => {
+	return _times(columns, () => ["c9-blocks/column"]);
 });
-
 
 export default class Edit extends Component {
 	constructor() {
@@ -49,7 +49,8 @@ export default class Edit extends Component {
 				columns,
 				columnsGap,
 				responsiveToggle,
-				columnMaxWidth
+				columnMaxWidth,
+				align
 			},
 			setAttributes
 		} = this.props;
@@ -81,26 +82,18 @@ export default class Edit extends Component {
 			}
 		];
 
-		const widthControls = [
-			{
-				icon: "align-center",
-				title: __("Narrow Width", "c9-blocks"),
-				isActive: containerWidth === "container-narrow",
-				onClick: () => setAttributes({ containerWidth: "container-narrow", align: "" })
-			},
-			{
-				icon: "align-wide",
-				title: __("Wide Width", "c9-blocks"),
-				isActive: containerWidth === "container",
-				onClick: () => setAttributes({ containerWidth: "container", align: "wide" })
-			},
-			{
-				icon: "align-full-width",
-				title: __("Full Width", "c9-blocks"),
-				isActive: containerWidth === "container-fluid",
-				onClick: () => setAttributes({ containerWidth: "container-fluid", align: "full" })
+		let currWidth;
+		if (align.length != 0) {
+			if (containerWidth == "container") {
+				currWidth = "wide";
 			}
-		];
+			else if (containerWidth == "container-fluid") {
+				currWidth = "full";
+			}
+			else {
+				currWidth = "narrow";
+			}
+		}
 
 		// show placeholder when nothing is set
 		if (!layout && this.state.pickLayout) {
@@ -197,7 +190,21 @@ export default class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls key="controls">
-					<Toolbar controls={widthControls} />
+					{/* <Toolbar controls={widthControls} /> */}
+					<WidthToolbar
+						value={currWidth}
+						onChange={value => {
+							if (value == "wide") {
+								setAttributes({ containerWidth: "container", align: "wide" });
+							} else if (value == "full") {
+								setAttributes({ containerWidth: "container-fluid", align: "full" });
+							} else if (value == "narrow") {
+								setAttributes({ containerWidth: "container-narrow", align: "narrow" });
+							} else {
+								setAttributes({ containerWidth: "container", align: "" });
+							}
+						}}
+					/>
 					<Toolbar controls={verticalAlignControls} />
 				</BlockControls>
 				<Inspector {...this.props} />
@@ -214,10 +221,10 @@ export default class Edit extends Component {
 						}}
 					>
 						<InnerBlocks
-						template={ getLayoutTemplate( columns ) }
-						templateLock="all"
-						allowedBlocks={ ALLOWED_BLOCKS }
-					/>
+							template={getLayoutTemplate(columns)}
+							templateLock="all"
+							allowedBlocks={ALLOWED_BLOCKS}
+						/>
 					</div>
 				</Container>
 			</Fragment>

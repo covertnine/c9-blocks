@@ -3,6 +3,7 @@ import Edit from "./edit";
 import Save from "./save";
 
 import attributes from "./attributes";
+import classnames from "classnames";
 
 // Import CSS
 import "./styles/style.scss";
@@ -33,10 +34,10 @@ registerBlockType("c9-blocks/column-container", {
 	/* Add alignment to block wrapper. */
 	getEditWrapperProps({ align }) {
 		if (
-			"left" === align ||
-			"right" === align ||
 			"full" === align ||
-			"wide" === align
+			"wide" === align ||
+			"narrow" === align ||
+			"" === align
 		) {
 			return { "data-align": align };
 		}
@@ -75,9 +76,10 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 				return (
 					<BlockListBlock
 						{...props}
-						className={
-							"c9-is-vertically-aligned-" + props.attributes.verticalAlign
-						}
+						className={classnames(
+							"c9-is-vertically-aligned-" + props.attributes.verticalAlign,
+							props.attributes.containerWidth
+						)}
 					/>
 				);
 			} else {
