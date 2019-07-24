@@ -895,3 +895,163 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
       background: #fff; }
   .c9-column-selector button.components-button.is-button:last-child {
     border-radius: 5px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+div[data-type="c9-blocks/column-containers"].wp-block
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(41, 41, 41, 0.15); }
+
+.block-editor-block-list__layout
+.block-editor-block-list__block.is-selected
+> .block-editor-block-list__block-edit:before {
+  border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.c9-grid {
+  display: grid; }
+
+/****************************************************************************************/
+/* C9 Container Blocks for Bootstrap-like containers */
+/****************************************************************************************/
+/* background overlay */
+.container-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0; }
+
+.container .row .editor-inner-blocks,
+.container-fluid .row .editor-inner-blocks,
+.container-narrow .row .editor-inner-blocks {
+  width: 100%; }
+
+.container .row > .editor-inner-blocks > .editor-block-list__layout,
+.container-narrow .row > .editor-inner-blocks > .editor-block-list__layout,
+.container-fluid .row > .editor-inner-blocks > .editor-block-list__layout {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex; }
+
+.container
+.row
+> .editor-inner-blocks
+> .editor-block-list__layout
+.editor-block-list__block,
+.container-narrow
+.row
+> .editor-inner-blocks
+> .editor-block-list__layout
+.editor-block-list__block,
+.container-fluid
+.row
+> .editor-inner-blocks
+> .editor-block-list__layout
+.editor-block-list__block {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-preferred-size: 0px;
+      flex-basis: 0px; }
+
+.c9-blocks-column-containers .container-fluid .row {
+  -ms-flex-positive: 1;
+      flex-grow: 1; }
+
+@media only screen and (min-width: 1px) {
+  .page-template-default
+.entry-content
+> .c9-blocks-column-containers {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0px; }
+  .c9-blocks-column-containers p:only-of-type {
+    margin-bottom: 0px; }
+  .c9-blocks-column-containers .container-narrow {
+    max-width: 100%;
+    padding: 0px 15px; }
+  .single .c9-blocks-column-containers {
+    margin-left: -15px;
+    margin-right: -15px; } }
+
+@media only screen and (min-width: 576px) {
+  .page-template-default
+.entry-content
+> .c9-blocks-column-containers {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc((-100vw + 100%) / 2);
+    margin-right: calc((-100vw + 100%) / 2); }
+  .c9-blocks-column-containers .container-narrow {
+    max-width: 540px; } }
+
+@media only screen and (min-width: 768px) {
+  .page-template-default .entry-content > .c9-blocks-column-containers,
+  .page-template-default .entry-content > .container-fluid {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc((-100vw + 100%) / 2);
+    margin-right: calc((-100vw + 100%) / 2); }
+  .c9-blocks-column-containers .columns.alignwide {
+    margin: 0px auto;
+    padding: 0px 15px; }
+  .c9-blocks-column-containers .container-narrow {
+    max-width: 720px; } }
+
+@media only screen and (min-width: 992px) {
+  .page-template-default
+.entry-content
+> .container
+.c9-blocks-column-containers {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc((-100vw + 100%) / 2);
+    margin-right: calc((-100vw + 100%) / 2); }
+  .editor-styles-wrapper
+.wp-block[data-type="c9-blocks/column-containers"]
+.container-narrow
+.wp-block[data-type="c9-blocks/column"] {
+    width: 960px;
+    max-width: 960px; }
+  .c9-blocks-column-containers .container-narrow {
+    max-width: 960px; } }
+
+@media only screen and (min-width: 1200px) {
+  .page-template-default
+.entry-content
+> .container
+.c9-blocks-column-containers {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc((-100vw + 1110px) / 2);
+    margin-right: calc((-100vw + 1110px) / 2); }
+  .c9-blocks-column-containers .columns:not(.alignfull),
+  .c9-blocks-column-containers .columns.alignwide {
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto; }
+  .c9-blocks-column-containers .columns.alignwide {
+    max-width: 1170px;
+    padding: 0px; }
+  .c9-blocks-column-containers .columns.alignfull {
+    max-width: 100%;
+    margin-left: 0px;
+    margin-right: 0px; }
+  .editor-styles-wrapper
+.wp-block[data-type="c9-blocks/column"]:only-child:not(.container-narrow),
+  .editor-styles-wrapper
+.wp-block[data-type="c9-blocks/column-containers"]
+.wp-block[data-type="core/columns"][data-align="wide"] {
+    width: 1170px;
+    max-width: 1170px; } }

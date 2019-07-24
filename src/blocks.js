@@ -20,3 +20,4 @@ import "./blocks/block-post-grid";
 import "./blocks/block-grid-container/block-grid-container.js";
 import "./blocks/block-column-container/block-column-container.js";
 import "./blocks/block-column-container/components/column.js";
+import "./blocks/block-toggles/block-toggles.js";

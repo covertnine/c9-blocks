@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -258,384 +258,6 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-
-/* eslint-disable no-unused-vars */
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-function toObject(val) {
-	if (val === null || val === undefined) {
-		throw new TypeError('Object.assign cannot be called with null or undefined');
-	}
-
-	return Object(val);
-}
-
-function shouldUseNative() {
-	try {
-		if (!Object.assign) {
-			return false;
-		}
-
-		// Detect buggy property enumeration order in older V8 versions.
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
-		test1[5] = 'de';
-		if (Object.getOwnPropertyNames(test1)[0] === '5') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test2 = {};
-		for (var i = 0; i < 10; i++) {
-			test2['_' + String.fromCharCode(i)] = i;
-		}
-		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-			return test2[n];
-		});
-		if (order2.join('') !== '0123456789') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test3 = {};
-		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-			test3[letter] = letter;
-		});
-		if (Object.keys(Object.assign({}, test3)).join('') !==
-				'abcdefghijklmnopqrst') {
-			return false;
-		}
-
-		return true;
-	} catch (err) {
-		// We don't expect any of the above to throw, but better to be safe.
-		return false;
-	}
-}
-
-module.exports = shouldUseNative() ? Object.assign : function (target, source) {
-	var from;
-	var to = toObject(target);
-	var symbols;
-
-	for (var s = 1; s < arguments.length; s++) {
-		from = Object(arguments[s]);
-
-		for (var key in from) {
-			if (hasOwnProperty.call(from, key)) {
-				to[key] = from[key];
-			}
-		}
-
-		if (getOwnPropertySymbols) {
-			symbols = getOwnPropertySymbols(from);
-			for (var i = 0; i < symbols.length; i++) {
-				if (propIsEnumerable.call(from, symbols[i])) {
-					to[symbols[i]] = from[symbols[i]];
-				}
-			}
-		}
-	}
-
-	return to;
-};
-
-
-/***/ }),
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deregister_blocks__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__register_filters__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page_template_selector_add_template_status_jsx__ = __webpack_require__(20);
-/**
- * Internal dependencies
- */
-const { updateCategory } = wp.blocks;
-const { G, Path, SVG } = wp.components;
-
-/**
- * Icon
- */
-
-const logo = React.createElement(
-	SVG,
-	{ xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 234.92 174.65" },
-	React.createElement(
-		"defs",
-		null,
-		React.createElement(
-			"style",
-			null,
-			`.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}`
-		),
-		React.createElement(
-			"linearGradient",
-			{
-				id: "linear-gradient",
-				x1: "79.12",
-				y1: "23.81",
-				x2: "166.4",
-				y2: "158.22",
-				gradientUnits: "userSpaceOnUse"
-			},
-			React.createElement("stop", { offset: "0", stopColor: "#61cae5" }),
-			React.createElement("stop", { offset: "0.12", stopColor: "#64c6e1" }),
-			React.createElement("stop", { offset: "0.25", stopColor: "#6dbad3" }),
-			React.createElement("stop", { offset: "0.39", stopColor: "#7ba7bd" }),
-			React.createElement("stop", { offset: "0.54", stopColor: "#8f8b9f" }),
-			React.createElement("stop", { offset: "0.68", stopColor: "#a96877" }),
-			React.createElement("stop", { offset: "0.83", stopColor: "#c93d48" }),
-			React.createElement("stop", { offset: "0.92", stopColor: "#df1f26" })
-		)
-	),
-	React.createElement(
-		"title",
-		null,
-		"c9-feather-logo-icon"
-	),
-	React.createElement(
-		G,
-		{ id: "Layer_2", "data-name": "Layer 2" },
-		React.createElement(
-			G,
-			{ id: "logo_gradient", "data-name": "logo gradient" },
-			React.createElement(Path, {
-				className: "cls-1",
-				d: "M47,138.06C40.37,123.9,40.84,36.41,83.54,22.4c0,0-15.64,7.29-10.12,27.45,7.2-13.68,20.33-37.22,57.77-43.46,24-2.89-13.15,1.1-6,22.22.24-8.88,59.41-45,108-19.81C246.43,104.69,177,110.06,177,110.06h0s14.95,2.38,23.83-.5c-9.12,39.84-63.13,42.14-63.13,42.14s20.51,5.11,34.92,2.47c-49.45,32.4-116.86-4.86-116.86-4.86-.27.08-.83-.43-1.58-1.31l112-78a25.09,25.09,0,1,0-6-6.27L79.9,120.4l-2.23-3.25-30.59,21M183.72,33.74a16.25,16.25,0,1,1-18.84,13.17,16.24,16.24,0,0,1,18.84-13.17ZM54.17,148l-.39-.55.43.52,0,0Zm-34.43-6.55,8.45-5.5,5.5,8.44-8.44,5.5-5.51-8.44Zm-4.37,14.87-5.5-8.44,8.45-5.5,5.5,8.44-8.45,5.5ZM5.5,162.79,0,154.34l8.45-5.5,5.5,8.44L5.5,162.79Zm46.86-13.87L13.41,174.65,6.46,164.31,45,139.3l7.33,9.62Z"
-			})
-		)
-	)
-);
-
-if (updateCategory) {
-	updateCategory("c9-blocks", { icon: logo });
-}
-
-
-
-
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-//disable core blocks we don't want users using
-/*wp.blocks.unregisterBlockType( 'core/pullquote' );
-wp.blocks.unregisterBlockType( 'core/verse' );
-wp.blocks.unregisterBlockType( 'core/text-columns' );
-*/
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-const { addFilter } = wp.hooks;
-
-function formatClassName(className) {
-	const result = className.replace("wp-block-c9-blocks", "c9");
-	return result;
-}
-
-addFilter(
-	"c9-blocks.editor.className",
-	"c9-blocks/format-classname",
-	formatClassName
-);
-addFilter(
-	"c9-blocks.blocks.className",
-	"c9-blocks/format-classname",
-	formatClassName
-);
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(14);
-const { registerPlugin } = wp.plugins;
-const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-
-const { Fragment } = wp.element;
-
-const { __ } = wp.i18n;
-const { Component } = wp.element;
-
-const { Button, PanelBody } = wp.components;
-
-
-
-
-class C9 extends Component {
-	constructor() {
-		super(...arguments);
-
-		this.state = {
-			isModalOpen: false
-		};
-	}
-
-	render() {
-		const { isModalOpen } = this.state;
-
-		return React.createElement(
-			Fragment,
-			null,
-			React.createElement(
-				PluginSidebarMoreMenuItem,
-				{
-					icon: React.createElement(__WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__["a" /* default */], { style: { width: "20px", margin: "0 10px 0 6px" } }),
-					target: "c9-blocks"
-				},
-				__("C9 Blocks")
-			),
-			React.createElement(
-				PluginSidebar,
-				{ name: "c9-blocks", id: "c9-blocks", title: __("C9 Blocks") },
-				React.createElement(
-					PanelBody,
-					{ className: "plugin-c9-panel" },
-					React.createElement(
-						Button,
-						{
-							className: "plugin-c9-panel-button",
-							isDefault: true,
-							isLarge: true,
-							onClick: () => {
-								this.setState({ isModalOpen: "templates" });
-							}
-						},
-						React.createElement("span", { className: "dashicons dashicons-schedule" }),
-						__("Templates")
-					),
-					React.createElement(
-						Button,
-						{
-							className: "plugin-c9-panel-button",
-							isDefault: true,
-							isLarge: true,
-							onClick: () => {
-								this.setState({ isModalOpen: "custom-code" });
-							}
-						},
-						React.createElement("span", { className: "dashicons dashicons-editor-code" }),
-						__("CSS & JavaScript")
-					),
-					React.createElement(
-						Button,
-						{
-							className: "plugin-c9-panel-button",
-							isDefault: true,
-							isLarge: true,
-							onClick: () => {
-								this.setState({ isModalOpen: "customizer" });
-							}
-						},
-						React.createElement("span", { className: "dashicons dashicons-admin-settings" }),
-						__("Customizer")
-					)
-				)
-			)
-		);
-	}
-}
-
-registerPlugin("c9-blocks", {
-	icon: React.createElement(
-		"div",
-		{ className: "c9-plugin-icon" },
-		React.createElement(__WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__["a" /* default */], null)
-	),
-	render: C9
-});
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(10);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(12)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
-		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(11)(false);
-// Module
-exports.push([module.i, "/**\n * Editor Styles\n */\n.edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg {\n  display: block;\n  height: 16px; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg * {\n    stroke: initial !important; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg [fill=\"#fff\"] {\n    fill: #fff !important; }\n\n.edit-post-pinned-plugins .components-icon-button .c9-plugin-icon span {\n  margin: -2px; }\n\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nspan\n[fill=\"#fff\"] {\n  fill: #555d66 !important; }\n\n.plugin-c9-panel .plugin-c9-panel-button {\n  display: block;\n  width: 100%;\n  height: auto;\n  padding: 15px 10px;\n  margin-bottom: 16px;\n  flex-shrink: 0;\n  overflow: hidden;\n  color: inherit;\n  text-align: center;\n  cursor: pointer;\n  background: none;\n  border: 1px solid;\n  border-radius: 4px;\n  transition: 0.2s color, 0.2s background-color, 0.2s border-color, 0.2s box-shadow; }\n  .plugin-c9-panel .plugin-c9-panel-button, .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    border-color: rgba(79, 89, 105, 0.2);\n    box-shadow: none; }\n  .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    color: #191e23;\n    background-color: #f8f9f9; }\n  .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled {\n    color: #191e23;\n    border-color: #007fac;\n    box-shadow: 0 0 0 2px #00a0d2; }\n  .plugin-c9-panel .plugin-c9-panel-button span {\n    display: block;\n    margin: 0 auto;\n    margin-top: 3px;\n    text-align: center;\n    height: 24px; }\n", ""]);
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 
 
 /*
@@ -728,7 +350,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 12 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -1134,6 +756,384 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deregister_blocks__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__register_filters__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page_template_selector_add_template_status_jsx__ = __webpack_require__(20);
+/**
+ * Internal dependencies
+ */
+const { updateCategory } = wp.blocks;
+const { G, Path, SVG } = wp.components;
+
+/**
+ * Icon
+ */
+
+const logo = React.createElement(
+	SVG,
+	{ xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 234.92 174.65" },
+	React.createElement(
+		"defs",
+		null,
+		React.createElement(
+			"style",
+			null,
+			`.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}`
+		),
+		React.createElement(
+			"linearGradient",
+			{
+				id: "linear-gradient",
+				x1: "79.12",
+				y1: "23.81",
+				x2: "166.4",
+				y2: "158.22",
+				gradientUnits: "userSpaceOnUse"
+			},
+			React.createElement("stop", { offset: "0", stopColor: "#61cae5" }),
+			React.createElement("stop", { offset: "0.12", stopColor: "#64c6e1" }),
+			React.createElement("stop", { offset: "0.25", stopColor: "#6dbad3" }),
+			React.createElement("stop", { offset: "0.39", stopColor: "#7ba7bd" }),
+			React.createElement("stop", { offset: "0.54", stopColor: "#8f8b9f" }),
+			React.createElement("stop", { offset: "0.68", stopColor: "#a96877" }),
+			React.createElement("stop", { offset: "0.83", stopColor: "#c93d48" }),
+			React.createElement("stop", { offset: "0.92", stopColor: "#df1f26" })
+		)
+	),
+	React.createElement(
+		"title",
+		null,
+		"c9-feather-logo-icon"
+	),
+	React.createElement(
+		G,
+		{ id: "Layer_2", "data-name": "Layer 2" },
+		React.createElement(
+			G,
+			{ id: "logo_gradient", "data-name": "logo gradient" },
+			React.createElement(Path, {
+				className: "cls-1",
+				d: "M47,138.06C40.37,123.9,40.84,36.41,83.54,22.4c0,0-15.64,7.29-10.12,27.45,7.2-13.68,20.33-37.22,57.77-43.46,24-2.89-13.15,1.1-6,22.22.24-8.88,59.41-45,108-19.81C246.43,104.69,177,110.06,177,110.06h0s14.95,2.38,23.83-.5c-9.12,39.84-63.13,42.14-63.13,42.14s20.51,5.11,34.92,2.47c-49.45,32.4-116.86-4.86-116.86-4.86-.27.08-.83-.43-1.58-1.31l112-78a25.09,25.09,0,1,0-6-6.27L79.9,120.4l-2.23-3.25-30.59,21M183.72,33.74a16.25,16.25,0,1,1-18.84,13.17,16.24,16.24,0,0,1,18.84-13.17ZM54.17,148l-.39-.55.43.52,0,0Zm-34.43-6.55,8.45-5.5,5.5,8.44-8.44,5.5-5.51-8.44Zm-4.37,14.87-5.5-8.44,8.45-5.5,5.5,8.44-8.45,5.5ZM5.5,162.79,0,154.34l8.45-5.5,5.5,8.44L5.5,162.79Zm46.86-13.87L13.41,174.65,6.46,164.31,45,139.3l7.33,9.62Z"
+			})
+		)
+	)
+);
+
+if (updateCategory) {
+	updateCategory("c9-blocks", { icon: logo });
+}
+
+
+
+
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+//disable core blocks we don't want users using
+/*wp.blocks.unregisterBlockType( 'core/pullquote' );
+wp.blocks.unregisterBlockType( 'core/verse' );
+wp.blocks.unregisterBlockType( 'core/text-columns' );
+*/
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+const { addFilter } = wp.hooks;
+
+function formatClassName(className) {
+	const result = className.replace("wp-block-c9-blocks", "c9");
+	return result;
+}
+
+addFilter(
+	"c9-blocks.editor.className",
+	"c9-blocks/format-classname",
+	formatClassName
+);
+addFilter(
+	"c9-blocks.blocks.className",
+	"c9-blocks/format-classname",
+	formatClassName
+);
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(14);
+const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
+
+const { Fragment } = wp.element;
+
+const { __ } = wp.i18n;
+const { Component } = wp.element;
+
+const { Button, PanelBody } = wp.components;
+
+
+
+
+class C9 extends Component {
+	constructor() {
+		super(...arguments);
+
+		this.state = {
+			isModalOpen: false
+		};
+	}
+
+	render() {
+		const { isModalOpen } = this.state;
+
+		return React.createElement(
+			Fragment,
+			null,
+			React.createElement(
+				PluginSidebarMoreMenuItem,
+				{
+					icon: React.createElement(__WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__["a" /* default */], { style: { width: "20px", margin: "0 10px 0 6px" } }),
+					target: "c9-blocks"
+				},
+				__("C9 Blocks")
+			),
+			React.createElement(
+				PluginSidebar,
+				{ name: "c9-blocks", id: "c9-blocks", title: __("C9 Blocks") },
+				React.createElement(
+					PanelBody,
+					{ className: "plugin-c9-panel" },
+					React.createElement(
+						Button,
+						{
+							className: "plugin-c9-panel-button",
+							isDefault: true,
+							isLarge: true,
+							onClick: () => {
+								this.setState({ isModalOpen: "templates" });
+							}
+						},
+						React.createElement("span", { className: "dashicons dashicons-schedule" }),
+						__("Templates")
+					),
+					React.createElement(
+						Button,
+						{
+							className: "plugin-c9-panel-button",
+							isDefault: true,
+							isLarge: true,
+							onClick: () => {
+								this.setState({ isModalOpen: "custom-code" });
+							}
+						},
+						React.createElement("span", { className: "dashicons dashicons-editor-code" }),
+						__("CSS & JavaScript")
+					),
+					React.createElement(
+						Button,
+						{
+							className: "plugin-c9-panel-button",
+							isDefault: true,
+							isLarge: true,
+							onClick: () => {
+								this.setState({ isModalOpen: "customizer" });
+							}
+						},
+						React.createElement("span", { className: "dashicons dashicons-admin-settings" }),
+						__("Customizer")
+					)
+				)
+			)
+		);
+	}
+}
+
+registerPlugin("c9-blocks", {
+	icon: React.createElement(
+		"div",
+		{ className: "c9-plugin-icon" },
+		React.createElement(__WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__["a" /* default */], null)
+	),
+	render: C9
+});
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(12);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(2)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
+		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// Module
+exports.push([module.i, "/**\n * Editor Styles\n */\n.edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg {\n  display: block;\n  height: 16px; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg * {\n    stroke: initial !important; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg [fill=\"#fff\"] {\n    fill: #fff !important; }\n\n.edit-post-pinned-plugins .components-icon-button .c9-plugin-icon span {\n  margin: -2px; }\n\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nspan\n[fill=\"#fff\"] {\n  fill: #555d66 !important; }\n\n.plugin-c9-panel .plugin-c9-panel-button {\n  display: block;\n  width: 100%;\n  height: auto;\n  padding: 15px 10px;\n  margin-bottom: 16px;\n  flex-shrink: 0;\n  overflow: hidden;\n  color: inherit;\n  text-align: center;\n  cursor: pointer;\n  background: none;\n  border: 1px solid;\n  border-radius: 4px;\n  transition: 0.2s color, 0.2s background-color, 0.2s border-color, 0.2s box-shadow; }\n  .plugin-c9-panel .plugin-c9-panel-button, .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    border-color: rgba(79, 89, 105, 0.2);\n    box-shadow: none; }\n  .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    color: #191e23;\n    background-color: #f8f9f9; }\n  .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled {\n    color: #191e23;\n    border-color: #007fac;\n    box-shadow: 0 0 0 2px #00a0d2; }\n  .plugin-c9-panel .plugin-c9-panel-button span {\n    display: block;\n    margin: 0 auto;\n    margin-top: 3px;\n    text-align: center;\n    height: 24px; }\n", ""]);
+
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
@@ -1287,7 +1287,7 @@ if (process.env.NODE_ENV === 'production') {
  * LICENSE file in the root directory of this source tree.
  */
 
-var k=__webpack_require__(1),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.concurrent_mode"):60111,y=n?Symbol.for("react.forward_ref"):60112,z=n?Symbol.for("react.suspense"):60113,aa=n?Symbol.for("react.memo"):
+var k=__webpack_require__(3),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.concurrent_mode"):60111,y=n?Symbol.for("react.forward_ref"):60112,z=n?Symbol.for("react.suspense"):60113,aa=n?Symbol.for("react.memo"):
 60115,ba=n?Symbol.for("react.lazy"):60116,A="function"===typeof Symbol&&Symbol.iterator;function ca(a,b,d,c,e,g,h,f){if(!a){a=void 0;if(void 0===b)a=Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var l=[d,c,e,g,h,f],m=0;a=Error(b.replace(/%s/g,function(){return l[m++]}));a.name="Invariant Violation"}a.framesToPop=1;throw a;}}
 function B(a){for(var b=arguments.length-1,d="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=0;c<b;c++)d+="&args[]="+encodeURIComponent(arguments[c+1]);ca(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",d)}var C={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},D={};
 function E(a,b,d){this.props=a;this.context=b;this.refs=D;this.updater=d||C}E.prototype.isReactComponent={};E.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?B("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};E.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};function F(){}F.prototype=E.prototype;function G(a,b,d){this.props=a;this.context=b;this.refs=D;this.updater=d||C}var H=G.prototype=new F;
@@ -1327,7 +1327,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(1);
+var _assign = __webpack_require__(3);
 var checkPropTypes = __webpack_require__(18);
 
 // TODO: this is special because it gets imported during build.
@@ -3353,7 +3353,6 @@ module.exports = ReactPropTypesSecret;
 const { registerPlugin } = wp.plugins;
 const { PluginPostStatusInfo } = wp.editPost;
 
-const { __ } = wp.i18n;
 const { Component } = wp.element;
 
 const { Button } = wp.components;
@@ -3424,7 +3423,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(12)(content, options);
+var update = __webpack_require__(2)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -3459,7 +3458,7 @@ if(false) {
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(1)(false);
 // Module
 exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-button {\n  border-color: #ccc;\n  background: #f7f7f7;\n  box-shadow: 0 1px 0 #ccc;\n  padding: 6px 8px;\n  border-radius: 3px;\n  color: #555; }\n", ""]);
 

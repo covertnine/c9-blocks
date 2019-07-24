@@ -1,11 +1,11 @@
 const attributes = {
 	heading: {
 		type: "string",
-		default: ""
+		default: "sample head"
 	},
 	subheading: {
 		type: "string",
-		default: ""
+		default: "sample subhead"
 	},
 	addSubheading: {
 		type: "boolean",

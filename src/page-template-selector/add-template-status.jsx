@@ -1,7 +1,6 @@
 const { registerPlugin } = wp.plugins;
 const { PluginPostStatusInfo } = wp.editPost;
 
-const { __ } = wp.i18n;
 const { Component } = wp.element;
 
 const { Button } = wp.components;
