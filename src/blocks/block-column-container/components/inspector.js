@@ -5,8 +5,10 @@
 // import CustomRadio from './custom-radio';
 
 import React from "react";
+import map from "lodash/map";
+import icons from "../../../../assets/c9-col-layout-icons";
 const { __ } = wp.i18n;
-const { Component } = wp.element;
+const { Component, Fragment } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
 const {
 	RadioControl,
@@ -18,7 +20,9 @@ const {
 	IconButton,
 	Button,
 	FocalPointPicker,
-	BaseControl
+	BaseControl,
+	ButtonGroup,
+	Tooltip
 } = wp.components;
 
 /**
@@ -223,10 +227,20 @@ export default class Inspector extends Component {
 				focalPoint,
 				videoType,
 				containerVideoURL,
-				cannotEmbed
+				cannotEmbed,
+				columnsGap,
+				columnMaxWidth,
+				centerColumns,
+				responsiveToggle
 			},
 			setAttributes
 		} = this.props;
+
+		let selectedRows = 1;
+
+		if (columns) {
+			selectedRows = parseInt(columns.toString().split("-"));
+		}
 
 		const cssUnits = [
 			{ value: "px", label: __("Pixel (px)", "c9-blocks") },
@@ -304,7 +318,7 @@ export default class Inspector extends Component {
 		};
 
 		return (
-			<InspectorControls>
+			<InspectorControls key="inspector">
 				<BaseControl>
 					<RangeControl
 						className="c9-height-range-control"
@@ -323,7 +337,8 @@ export default class Inspector extends Component {
 						value={columns}
 						onChange={nextColumns => {
 							setAttributes({
-								columns: nextColumns
+								columns: nextColumns,
+								layout: `c9-${nextColumns}-col-equal`
 							});
 						}}
 						min={1}
@@ -332,6 +347,93 @@ export default class Inspector extends Component {
 							"Note: Changing the column count can cause loss of content.",
 							"c9-blocks"
 						)}
+					/>
+
+					<hr />
+
+					{(2 == columns || 3 == columns || 4 == columns) && (
+						<Fragment>
+							<p>{__("Column Layout", "c9-blocks")}</p>
+							<ButtonGroup aria-label={__("Column Layout", "c9-blocks")}>
+								{map(columnLayouts[selectedRows], ({ name, key, icon }) => (
+									<Tooltip text={name} key={key}>
+										<Button
+											key={key}
+											className="c9-column-selector-button"
+											isSmall
+											onClick={() => {
+												setAttributes({
+													layout: key
+												});
+												this.setState({ selectLayout: false });
+											}}
+										>
+											{icon}
+										</Button>
+									</Tooltip>
+								))}
+							</ButtonGroup>
+							<p>
+								<i>{__("Change the layout of your columns.", "c9-blocks")}</i>
+							</p>
+							<hr />
+						</Fragment>
+					)}
+					<RangeControl
+						label={__("Column Gap", "c9-blocks")}
+						help={__("Adjust the spacing between columns.", "c9-blocks")}
+						value={columnsGap}
+						onChange={value => setAttributes({ columnsGap: value })}
+						min={0}
+						max={10}
+						step={1}
+					/>
+
+					<hr />
+
+					<RangeControl
+						label={__("Column Inner Max Width (px)")}
+						help={__(
+							"Adjust the width of the content inside the container wrapper.",
+							"c9-blocks"
+						)}
+						value={columnMaxWidth}
+						onChange={value => setAttributes({ columnMaxWidth: value })}
+						min={0}
+						max={2000}
+						step={1}
+					/>
+
+					{0 < columnMaxWidth && (
+						<ToggleControl
+							label={__("Center Columns In Container", "c9-blocks")}
+							help={__(
+								"Center the columns in the container when max-width is used.",
+								"c9-blocks"
+							)}
+							checked={centerColumns}
+							onChange={() =>
+								setAttributes({
+									centerColumns: !centerColumns
+								})
+							}
+						/>
+					)}
+
+					<hr />
+
+					<ToggleControl
+						label={__("Responsive Columns", "c9-blocks")}
+						help={__(
+							"Columns will be adjusted to fit on tablets and mobile devices.",
+							"c9-blocks"
+						)}
+						checked={responsiveToggle}
+						onChange={() =>
+							setAttributes({
+								responsiveToggle: !responsiveToggle
+							})
+						}
 					/>
 				</PanelBody>
 				<PanelBody title={__("Spacing")} initialOpen={false}>
@@ -734,3 +836,96 @@ export default class Inspector extends Component {
 		);
 	}
 }
+
+const columnLayouts = {
+	1: [
+		{
+			name: __("1 Column", "c9-blocks"),
+			key: "c9-1-col-equal",
+			col: 1,
+			icon: icons.oneEqual
+		}
+	],
+	2: [
+		{
+			name: __("2 Columns - 50/50", "c9-blocks"),
+			key: "c9-2-col-equal",
+			col: 2,
+			icon: icons.twoEqual
+		},
+		{
+			name: __("2 Columns - 75/25", "c9-blocks"),
+			key: "c9-2-col-wideleft",
+			col: 2,
+			icon: icons.twoLeftWide
+		},
+		{
+			name: __("2 Columns - 25/75", "c9-blocks"),
+			key: "c9-2-col-wideright",
+			col: 2,
+			icon: icons.twoRightWide
+		}
+	],
+	3: [
+		{
+			name: __("3 Columns - 33/33/33", "c9-blocks"),
+			key: "c9-3-col-equal",
+			col: 3,
+			icon: icons.threeEqual
+		},
+		{
+			name: __("3 Columns - 25/50/25", "c9-blocks"),
+			key: "c9-3-col-widecenter",
+			col: 3,
+			icon: icons.threeWideCenter
+		},
+		{
+			name: __("3 Columns - 50/25/25", "c9-blocks"),
+			key: "c9-3-col-wideleft",
+			col: 3,
+			icon: icons.threeWideLeft
+		},
+		{
+			name: __("3 Columns - 25/25/50", "c9-blocks"),
+			key: "c9-3-col-wideright",
+			col: 3,
+			icon: icons.threeWideRight
+		}
+	],
+	4: [
+		{
+			name: __("4 Columns - 25/25/25/25", "c9-blocks"),
+			key: "c9-4-col-equal",
+			col: 4,
+			icon: icons.fourEqual
+		},
+		{
+			name: __("4 Columns - 40/20/20/20", "c9-blocks"),
+			key: "c9-4-col-wideleft",
+			col: 4,
+			icon: icons.fourLeft
+		},
+		{
+			name: __("4 Columns - 20/20/20/40", "c9-blocks"),
+			key: "c9-4-col-wideright",
+			col: 4,
+			icon: icons.fourRight
+		}
+	],
+	5: [
+		{
+			name: __("5 Columns", "c9-blocks"),
+			key: "c9-5-col-equal",
+			col: 5,
+			icon: icons.fiveEqual
+		}
+	],
+	6: [
+		{
+			name: __("6 Columns", "c9-blocks"),
+			key: "c9-6-col-equal",
+			col: 6,
+			icon: icons.sixEqual
+		}
+	]
+};

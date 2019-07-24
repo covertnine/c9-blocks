@@ -957,7 +957,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
   margin-top: 0;
   margin-bottom: 0; }
 
-[data-type="c9-blocks/column-container"] .block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content {
+[data-type="c9-blocks/column-container"] .block-editor-block-list__layout
+.block-editor-default-block-appender
+> .block-editor-default-block-appender__content {
   margin-top: 0;
   margin-bottom: 0; }
 
@@ -979,22 +981,22 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
 [data-type="c9-blocks/column-container"] .components-placeholder__fieldset {
   max-width: 100%; }
 
-.column-selector-button-back {
+.c9-column-selector-button-back {
   margin-top: 23px;
   line-height: 1.4;
   display: inherit;
   vertical-align: middle;
   width: 100%; }
-  .column-selector-button-back:hover {
+  .c9-column-selector-button-back:hover {
     color: #007cba; }
-  .column-selector-button-back:active, .column-selector-button-back:focus, .column-selector-button-back:focus:enabled {
+  .c9-column-selector-button-back:active, .c9-column-selector-button-back:focus, .c9-column-selector-button-back:focus:enabled {
     background-color: transparent;
     -webkit-box-shadow: none;
             box-shadow: none; }
-  .column-selector-button-back:before {
+  .c9-column-selector-button-back:before {
     content: "\2190";
     margin-right: 5px; }
-  .column-selector-button-back svg {
+  .c9-column-selector-button-back svg {
     width: 16px;
     margin-right: 5px; }
 
@@ -1009,10 +1011,15 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
 .column-select-panel .components-base-control__field + .components-base-control__help {
   margin-top: 8px; }
 
-.columns-center .c9-layout-column-wrap-admin {
+.c9-columns-center .c9-layout-column-wrap-admin {
   margin: 0 auto; }
 
 .c9-block-layout-column .wp-block-image,
 .c9-block-layout-column .wp-block-image .components-resizable-box__container {
   max-width: 100% !important;
   display: block; }
+
+.components-button-group > .components-button.is-button.c9-column-selector-button {
+  height: auto;
+  padding: 8px;
+  margin: 0 5px 5px 0; }
