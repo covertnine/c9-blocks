@@ -36,11 +36,13 @@ class Inspector extends Component {
 				backgroundColor,
 				textColor,
 				tagLevel,
-				overrideStyle
+				overrideStyle,
+				addSubheading
 			}
 		} = this.props;
 
 		const weightTypes = [
+			{ value: undefined, label: __("Default", "c9-blocks") },
 			{ value: "light", label: __("Light (300)", "c9-blocks") },
 			{ value: "normal", label: __("Normal (400)", "c9-blocks") },
 			{ value: "bold", label: __("Bold (700)", "c9-blocks") }
@@ -121,6 +123,17 @@ class Inspector extends Component {
 					<AlignmentToolbar
 						value={textAlign}
 						onChange={value => setAttributes({ textAlign: value })}
+					/>
+				</PanelBody>
+
+				<PanelBody
+					title={__("Subheading Options", "c9-blocks")}
+					initialOpen={false}
+				>
+					<ToggleControl
+						label={__("Enable Additional Subheading", "c9-blocks")}
+						checked={addSubheading}
+						onChange={value => setAttributes({ addSubheading: value })}
 					/>
 				</PanelBody>
 

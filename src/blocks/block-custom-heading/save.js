@@ -29,14 +29,15 @@ export default class Save extends Component {
 		const {
 			attributes: {
 				heading,
-				backgroundColor,
+				subheading,
 				textColor,
 				tagLevel,
 				type,
 				displayLevel,
 				weight,
 				textAlign,
-				overrideStyle
+				overrideStyle,
+				addSubheading
 			}
 		} = this.props;
 
@@ -52,15 +53,32 @@ export default class Save extends Component {
 							tagLevel,
 							overrideStyle
 						),
-						`font-weight-${weight}`,
+						weight ? `font-weight-${weight}` : null,
 						textAlign ? `text-${textAlign}` : "text-left"
 					])}
 					style={{
-						backgroundColor: backgroundColor,
 						color: textColor
 					}}
 					value={heading}
 				/>
+
+				{addSubheading && (
+					<div
+						className={((type, display, tag) => {
+							if (display == 0) {
+								return `${type}${tag}`;
+							} else {
+								return `${type}${display}`;
+							}
+						})(type, displayLevel, tagLevel)}
+					>
+						<small className="text-muted">
+							{subheading.startsWith("&nbsp;")
+								? subheading
+								: "&nbsp;" + subheading}
+						</small>
+					</div>
+				)}
 			</CustomHeading>
 		);
 	}

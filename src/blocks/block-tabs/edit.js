@@ -172,25 +172,25 @@ export default class Edit extends Component {
 										keepPlaceholderOnFocus
 									/>
 									<RemoveButton
-                                            show={ isSelectedBlockInRoot }
-                                            tooltipText={ __( 'Remove tab?' ) }
-                                            onRemove={ () => {
-                                                if ( block.innerBlocks.length <= 1 ) {
-                                                    this.props.removeBlock( block.clientId );
-                                                } else if ( block.innerBlocks[ i ] ) {
-                                                    this.props.removeBlock( block.innerBlocks[ i ].clientId );
+										show={isSelectedBlockInRoot}
+										tooltipText={__("Remove tab?")}
+										onRemove={() => {
+											if (block.innerBlocks.length <= 1) {
+												this.props.removeBlock(block.clientId);
+											} else if (block.innerBlocks[i]) {
+												this.props.removeBlock(block.innerBlocks[i].clientId);
 
-                                                    if ( tabsData[ i ] ) {
-                                                        const newTabsData = Object.assign( [], tabsData );
-                                                        newTabsData.splice( i, 1 );
+												if (tabsData[i]) {
+													const newTabsData = Object.assign([], tabsData);
+													newTabsData.splice(i, 1);
 
-                                                        setAttributes( {
-                                                            tabsData: newTabsData,
-                                                        } );
-                                                    }
-                                                }
-                                            } }
-                                        />
+													setAttributes({
+														tabsData: newTabsData
+													});
+												}
+											}
+										}}
+									/>
 								</div>
 							);
 						})}

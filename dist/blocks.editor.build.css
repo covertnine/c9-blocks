@@ -122,6 +122,8 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  *
  * CSS for both Frontend+Backend.
  */
+[data-type="c9-blocks/heading"] small.block-editor-rich-text__editable.editor-rich-text__editable.text-muted {
+  margin-left: 0.5em; }
 /**
  * #.# Common SCSS
  *

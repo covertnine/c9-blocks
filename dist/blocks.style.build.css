@@ -226,6 +226,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
 
 .subhead-h6 {
   font-size: 0.8rem; }
+
+.c9-heading > * {
+  display: inline-block; }
 /**
  * #.# Common SCSS
  *

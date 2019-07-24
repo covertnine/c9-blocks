@@ -11,6 +11,7 @@ const { Fragment } = wp.element;
 import CustomHeading from "./components/custom-heading";
 import Inspector from "./components/inspector";
 import HeadingToolbar from "./components/heading-toolbar";
+import SubheadingToolbar from "./components/subheading-toolbar";
 const { __ } = wp.i18n;
 
 /**
@@ -46,7 +47,9 @@ export default class Edit extends Component {
 				textColor,
 				type,
 				weight,
-				overrideStyle
+				overrideStyle,
+				subheading,
+				addSubheading
 			}
 		} = this.props;
 
@@ -54,19 +57,21 @@ export default class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls>
-					{/* <BlockAlignmentToolbar
-					/> */}
-
 					<AlignmentToolbar
 						value={textAlign}
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
-
 					<HeadingToolbar
 						minLevel={1}
 						maxLevel={7}
 						selectedLevel={tagLevel}
 						onChange={newLevel => setAttributes({ tagLevel: newLevel })}
+					/>
+					<SubheadingToolbar
+						value={addSubheading}
+						onChange={value => {
+							setAttributes({ addSubheading: value });
+						}}
 					/>
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...this.props }} />
@@ -80,7 +85,7 @@ export default class Edit extends Component {
 								tagLevel,
 								overrideStyle
 							),
-							`font-weight-${weight}`,
+							weight ? `font-weight-${weight}` : null,
 							textAlign ? `text-${textAlign}` : "text-left"
 						])}
 						style={{
@@ -92,6 +97,26 @@ export default class Edit extends Component {
 						value={heading}
 						onChange={value => setAttributes({ heading: value })}
 					/>
+
+					{addSubheading && (
+						<div
+							className={((type, display, tag) => {
+								if (display == 0) {
+									return `${type}${tag}`;
+								} else {
+									return `${type}${display}`;
+								}
+							})(type, displayLevel, tagLevel)}
+						>
+							<RichText
+								tagName="small"
+								className="text-muted"
+								placeholder={__("Write subheading…")}
+								value={subheading}
+								onChange={value => setAttributes({ subheading: value })}
+							/>
+						</div>
+					)}
 				</CustomHeading>
 			</Fragment>
 		);

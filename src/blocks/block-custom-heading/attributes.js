@@ -1,8 +1,15 @@
 const attributes = {
 	heading: {
 		type: "string",
-		source: "text",
 		default: ""
+	},
+	subheading: {
+		type: "string",
+		default: ""
+	},
+	addSubheading: {
+		type: "boolean",
+		default: false
 	},
 	wrapper: {
 		type: "array",
@@ -39,8 +46,7 @@ const attributes = {
 		default: "left"
 	},
 	weight: {
-		type: "string",
-		default: "normal"
+		type: "string"
 	},
 	overrideStyle: {
 		type: "boolean",

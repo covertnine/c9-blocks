@@ -27,6 +27,7 @@ export default class C9CustomHeading extends Component {
 					"section-heading",
 					applyFilters("c9-blocks.blocks.className", className)
 				)}
+				style={{ backgroundColor: this.props.attributes.backgroundColor }}
 			>
 				{this.props.children}
 			</div>
