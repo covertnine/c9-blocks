@@ -8,7 +8,6 @@ import React from "react";
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
-const { select, dispatch } = wp.data;
 const {
 	RadioControl,
 	PanelBody,
@@ -18,7 +17,8 @@ const {
 	SelectControl,
 	IconButton,
 	Button,
-	FocalPointPicker
+	FocalPointPicker,
+	BaseControl
 } = wp.components;
 
 /**
@@ -207,12 +207,9 @@ export default class Inspector extends Component {
 
 	render() {
 		const {
-			clientId,
 			attributes: {
-				verticalAlign,
 				containerImgURL,
 				containerImgID,
-				containerWidth,
 				bgImgSize,
 				bgImgAttach,
 				bgImgRepeat,
@@ -308,18 +305,9 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls>
-				<PanelBody title={__("Layout")} initialOpen={false}>
-					<RadioControl
-						label={__("Container Width", "c9-blocks")}
-						selected={containerWidth}
-						options={[
-							{ label: "Full Width", value: "container-fluid" },
-							{ label: "Normal Width", value: "container" },
-							{ label: "Narrow Width", value: "container-narrow" }
-						]}
-						onChange={containerWidth => setAttributes({ containerWidth })}
-					/>
+				<BaseControl>
 					<RangeControl
+						className="c9-height-range-control"
 						beforeIcon="arrow-left-alt2"
 						afterIcon="arrow-right-alt2"
 						label={__("Window Height (vh)", "c9-blocks")}
@@ -328,37 +316,22 @@ export default class Inspector extends Component {
 						min={10}
 						max={100}
 					/>
-					<RadioControl
-						label={__("Vertically Align Content", "c9-blocks")}
-						selected={verticalAlign}
-						options={[
-							{ label: "Top", value: "flex-start" },
-							{ label: "Middle", value: "center" },
-							{ label: "Bottom", value: "flex-end" },
-							{ label: "Stretch", value: "stretch" },
-							{ label: "Baseline", value: "baseline" }
-						]}
-						onChange={verticalAlign => setAttributes({ verticalAlign })}
-					/>
+				</BaseControl>
+				<PanelBody title={__("Layout")} initialOpen={false}>
 					<RangeControl
 						label={__("Columns")}
 						value={columns}
 						onChange={nextColumns => {
-							let children = select("core/editor").getBlocksByClientId(
-								clientId
-							)[0].innerBlocks;
-							let nextWidth = Math.round(12 / nextColumns);
-							children.map(c =>
-								dispatch("core/editor").updateBlockAttributes(c.clientId, {
-									width: nextWidth
-								})
-							);
 							setAttributes({
 								columns: nextColumns
 							});
 						}}
 						min={1}
 						max={6}
+						help={__(
+							"Note: Changing the column count can cause loss of content.",
+							"c9-blocks"
+						)}
 					/>
 				</PanelBody>
 				<PanelBody title={__("Spacing")} initialOpen={false}>
@@ -467,7 +440,7 @@ export default class Inspector extends Component {
 											value={focalPoint}
 											onChange={value => setAttributes({ focalPoint: value })}
 										/>
-										</div>
+									</div>
 								)}
 
 								<h5>Color Overlay</h5>

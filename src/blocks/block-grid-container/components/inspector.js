@@ -306,6 +306,7 @@ export default class Inspector extends Component {
 			<InspectorControls>
 				<BaseControl>
 					<RangeControl
+						className="c9-height-range-control"
 						beforeIcon="arrow-left-alt2"
 						afterIcon="arrow-right-alt2"
 						label={__("Window Height (vh)", "c9-blocks")}
