@@ -21,3 +21,5 @@ import "./blocks/block-grid-container/block-grid-container.js";
 import "./blocks/block-column-container/block-column-container.js";
 import "./blocks/block-column-container/components/column.js";
 import "./blocks/block-toggles/block-toggles.js";
+import "./blocks/block-tabs-v2/block-tabs-v2.js";
+import "./blocks/block-tabs-v2/components/tab-v2.js";
