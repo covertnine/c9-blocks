@@ -4,36 +4,72 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 /**
  * #.# Common SCSS
  *
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * Editor styles for the admin
@@ -46,18 +82,36 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * Editor styles for the admin
@@ -98,18 +152,36 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * #.# Editor Styles
@@ -130,18 +202,36 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * #.# Editor Styles
@@ -301,18 +391,36 @@ div[data-type="c9-blocks/tabs"] .tabs .tabs-content .tab {
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * Editor styles for the admin
@@ -378,18 +486,36 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * #.# Editor Styles
@@ -648,18 +774,36 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * #.# Editor Styles
@@ -1031,18 +1175,36 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * #.# Editor Styles
@@ -1301,18 +1463,36 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * #.# Editor Styles
@@ -1410,18 +1590,36 @@ div[data-type="c9-blocks/tabs-v2"] .c9-tabs-v2 .nav-item {
  * Can include things like variables and mixins
  * that are used across the project.
 */
-div[data-type="c9-blocks/column-containers"].wp-block
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
   border: 1px solid rgba(41, 41, 41, 0.15); }
 
-.block-editor-block-list__layout
-.block-editor-block-list__block.is-selected
-> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
   border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
 
 /**
  * #.# Editor Styles

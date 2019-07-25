@@ -28,20 +28,53 @@ $red: orangered;
 // 	left: 0;
 // }
 
-div[data-type="c9-blocks/column-containers"].wp-block
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
-	.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
 	border: 1px solid $black;
 }
 
-.block-editor-block-list__layout
-	.block-editor-block-list__block.is-selected
-	> .block-editor-block-list__block-edit:before {
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit:before {
 	border: 2px solid $black;
 }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+	overflow: visible;
+	transform: rotate(90deg) translateY(80px);
+	margin-top: 125px;
+}
+
+.c9-height-range-control .components-base-control__label {
+	text-align: right;
+}
+
+.c9-height-range-control .components-range-control .dashicon {
+	margin-right: 0px;
+}
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+	transform: rotate(-90deg);
+}
+
+.c9-container-base-control>.components-base-control__field {
+	min-height: 160px;
+}
+
+// .c9-height-range-control .dashicons-arrow-left-alt2 path,
+// .c9-height-range-control .dashicons-arrow-right-alt2 path {
+// 	transform: rotate(90deg);
+// 	display: inline-block;
+// }
+
+// .c9-height-range-control .dashicons-arrow-left-alt2 {
+// 	margin-right: -15px;
+// }
+
+// .c9-height-range-control .dashicons-arrow-right-alt2 {
+// 	margin-left: 23px;
+// }
 
 // .wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"]+.block-editor-rich-text__editable.wp-block-paragraph {
 // 	padding: 0;
