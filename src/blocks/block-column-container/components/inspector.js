@@ -319,7 +319,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls key="inspector">
-				<BaseControl>
+				<BaseControl className="c9-container-base-control">
 					<RangeControl
 						className="c9-height-range-control"
 						beforeIcon="arrow-left-alt2"
