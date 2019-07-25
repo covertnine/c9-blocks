@@ -12,7 +12,7 @@ import "./blocks/i18n.js";
 import "./blocks/block-footnote/block-footnote.js";
 import "./blocks/block-sharing/block-sharing.js";
 import "./blocks/block-cta/block-cta.js";
-import "./blocks/block-custom-heading/block-custom-heading.js";
+import "./blocks/block-heading/block-heading.js";
 import "./blocks/block-card/block-card.js";
 import "./blocks/block-tabs/block-tabs.js";
 import "./blocks/block-tabs/components/tab.js";

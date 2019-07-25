@@ -26,7 +26,6 @@ registerBlockType("c9-blocks/tabs", {
 	category: "c9-blocks",
 	supports: {
 		// fill in features
-		align: ["wide", "full"]
 	},
 	keywords: [
 		__("tabs", "c9-blocks"),

@@ -29,7 +29,6 @@ registerBlockType("c9-blocks/heading", {
 	icon: iconEl,
 	category: "c9-blocks",
 	supports: {
-		align: ["wide", "full"]
 	},
 	keywords: [
 		__("heading", "c9-blocks"),
