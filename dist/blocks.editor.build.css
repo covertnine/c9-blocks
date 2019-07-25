@@ -1404,3 +1404,114 @@ div[data-type="c9-blocks/tabs-v2"] .c9-tabs-v2 .nav-item {
   display: block;
   color: #7e8993;
   text-align: center; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+div[data-type="c9-blocks/column-containers"].wp-block
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected
+.editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(41, 41, 41, 0.15); }
+
+.block-editor-block-list__layout
+.block-editor-block-list__block.is-selected
+> .block-editor-block-list__block-edit:before {
+  border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .tab-content [data-tab] {
+  display: none; }
+
+div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .nav-item {
+  -webkit-transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
+  -o-transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
+  transition: 0.15s border-color, 0.15s background-color, 0.15s opacity; }
+
+div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper {
+  position: relative; }
+  div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper:not(:hover) > .c9-component-remove-button {
+    opacity: 0; }
+
+.c9-component-remove-button {
+  position: absolute;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin-top: -10px;
+  margin-right: -10px;
+  color: #fff;
+  background-color: #4f5969;
+  border-radius: 50%;
+  opacity: 0.7;
+  -webkit-transition: 0.2s opacity, 0.2s background-color;
+  -o-transition: 0.2s opacity, 0.2s background-color;
+  transition: 0.2s opacity, 0.2s background-color; }
+  .c9-component-remove-button:hover {
+    background-color: #c9586c;
+    opacity: 1; }
+  .c9-component-remove-button svg {
+    width: auto;
+    height: 0.8em; }
+
+.c9-component-remove-button-confirm .c9-component-remove-button-confirm-yep,
+.c9-component-remove-button-confirm .c9-component-remove-button-confirm-nope {
+  padding: 0;
+  margin-left: 5px; }
+  .c9-component-remove-button-confirm .c9-component-remove-button-confirm-yep:hover, .c9-component-remove-button-confirm .c9-component-remove-button-confirm-yep:focus,
+  .c9-component-remove-button-confirm .c9-component-remove-button-confirm-nope:hover,
+  .c9-component-remove-button-confirm .c9-component-remove-button-confirm-nope:focus {
+    text-decoration: underline; }
+  .c9-component-remove-button-confirm .c9-component-remove-button-confirm-yep, .c9-component-remove-button-confirm .c9-component-remove-button-confirm-yep:focus,
+  .c9-component-remove-button-confirm .c9-component-remove-button-confirm-nope,
+  .c9-component-remove-button-confirm .c9-component-remove-button-confirm-nope:focus {
+    background: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
+.c9-component-remove-button-confirm .c9-component-remove-button-confirm-yep,
+.c9-component-remove-button-confirm .c9-component-remove-button-confirm-yep:focus {
+  color: #c9586c; }
+
+.c9-component-remove-button-confirm .c9-component-remove-button-confirm-nope,
+.c9-component-remove-button-confirm .c9-component-remove-button-confirm-nope:focus {
+  color: #999; }
+
+.c9-component-remove-button-confirm.components-popover::before {
+  border-color: transparent; }
+
+.c9-component-remove-button-confirm.components-popover.is-top::after {
+  border-top-color: #191e23; }
+
+.c9-component-remove-button-confirm.components-popover.is-bottom::after {
+  border-bottom-color: #191e23; }
+
+.c9-component-remove-button-confirm .components-popover__content {
+  padding: 4px 12px;
+  color: #f4f4f4;
+  white-space: nowrap;
+  background: #191e23;
+  border-width: 0; }
+
+.c9-component-remove-button-confirm:not(.is-mobile) .components-popover__content {
+  min-width: 0; }
+
+.c9-component-remove-button-confirm .components-tooltip__shortcut {
+  display: block;
+  color: #7e8993;
+  text-align: center; }
