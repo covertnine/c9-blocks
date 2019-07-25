@@ -15,7 +15,7 @@ export default class Save extends Component {
 	}
 
 	render() {
-		const { tabActive, buttonsAlign, tabsData = [] } = this.props.attributes;
+		const { tabActive, buttonsAlign, tabsData = [], ver } = this.props.attributes;
 
 		const { className = "" } = this.props;
 
@@ -27,7 +27,7 @@ export default class Save extends Component {
 				<ul
 					className={classnames(
 						"nav nav-tabs d-flex",
-						`justify-content-${buttonsAlign}`
+						buttonsAlign ? `justify-content-${buttonsAlign}` : "nav-justified"
 					)}
 					role="tablist"
 				>
@@ -40,7 +40,7 @@ export default class Save extends Component {
 									tagName="a"
 									data-toggle="tab"
 									role="tab"
-									href={`#tab-${slug}`}
+									href={`#tab-${slug}-${ver}`}
 									className={classnames("nav-link", selected ? "active" : "")}
 									id={`tab-button-${slug}`}
 									value={title}

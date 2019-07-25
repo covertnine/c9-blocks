@@ -24,7 +24,7 @@ export default class Tab extends Component {
 	}
 
 	render() {
-		const { tabActive, slug } = this.props.attributes;
+		const { tabActive, slug, id } = this.props.attributes;
 		// eslint-disable-next-line no-unused-vars
 		let { className = "" } = this.props;
 
@@ -35,7 +35,7 @@ export default class Tab extends Component {
 		);
 
 		return (
-			<div className={className} role="tabpanel" id={`tab-${slug}`} aria-labelledby={slug}>
+			<div className={className} role="tabpanel" id={`tab-${slug}-${id}`} aria-labelledby={slug}>
 				<InnerBlocks
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
@@ -71,6 +71,9 @@ registerBlockType("c9-blocks/tabs-tab-v2", {
 		},
 		tabActive: {
 			type: "string"
+		},
+		id: {
+			type: "number"
 		}
 	},
 
@@ -81,7 +84,7 @@ registerBlockType("c9-blocks/tabs-tab-v2", {
 	},
 
 	save: function(props) {
-		const { slug, tabActive } = props.attributes;
+		const { slug, tabActive, id } = props.attributes;
 		let { className = "" } = props;
 
 		className = classnames(
@@ -91,7 +94,7 @@ registerBlockType("c9-blocks/tabs-tab-v2", {
 		);
 
 		return (
-			<div className={className} role="tabpanel" id={`tab-${slug}`} aria-labelledby={slug}>
+			<div className={className} role="tabpanel" id={`tab-${slug}-${id}`} aria-labelledby={slug}>
 				<InnerBlocks.Content />
 			</div>
 		);

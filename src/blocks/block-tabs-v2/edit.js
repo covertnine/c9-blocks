@@ -31,7 +31,12 @@ export default class Edit extends Component {
 		this.isUniqueSlug = this.isUniqueSlug.bind(this);
 		this.getUniqueSlug = this.getUniqueSlug.bind(this);
 
-		this.id = this.props.attributes.ver || new Date().getTime();
+		this.id = this.props.attributes.ver;
+
+		if (this.id == null) {
+			this.id = new Date().getTime();
+			this.props.setAttributes({ ver: this.id });
+		}
 	}
 
 	/**
@@ -46,7 +51,10 @@ export default class Edit extends Component {
 		const result = [];
 
 		tabsData.forEach(tabData => {
-			result.push(["c9-blocks/tabs-tab-v2", { ...tabData, tabActive }]);
+			result.push([
+				"c9-blocks/tabs-tab-v2",
+				{ ...tabData, tabActive, id: this.id }
+			]);
 		});
 
 		return result;
@@ -147,7 +155,7 @@ export default class Edit extends Component {
 					<ul
 						className={classnames(
 							"nav nav-tabs d-flex",
-							`justify-content-${buttonsAlign}`
+							buttonsAlign ? `justify-content-${buttonsAlign}` : "nav-justified"
 						)}
 						role="tablist"
 					>
@@ -161,7 +169,7 @@ export default class Edit extends Component {
 										tagName="a"
 										data-toggle="tab"
 										role="tab"
-										href={`#tab-${slug}`}
+										href={`#tab-${slug}-${this.id}`}
 										className={classnames("nav-link", selected ? "active" : "")}
 										id={`tab-button-${slug}`}
 										placeholder={__("Tab label")}
