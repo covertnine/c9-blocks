@@ -108,7 +108,14 @@ export default class Edit extends Component {
 			clientId
 		} = this.props;
 
-		const { tabActive, tabsData = [] } = attributes;
+		const {
+			tabActive,
+			tabsData = [],
+			tabBackgroundColor,
+			tabTextColor,
+			tabContentBackgroundColor,
+			tabContentTextColor
+		} = attributes;
 
 		const tabs = this.getTabs();
 
@@ -122,8 +129,7 @@ export default class Edit extends Component {
 
 		return (
 			<Fragment>
-				<BlockControls>
-				</BlockControls>
+				<BlockControls />
 
 				<Inspector {...this.props} />
 				<div
@@ -135,9 +141,7 @@ export default class Edit extends Component {
 				>
 					<div className="col-xs-12 col-sm-3">
 						<div
-							className={classnames(
-								"nav flex-column nav-pills"
-							)}
+							className={classnames("nav flex-column nav-pills")}
 							role="tablist"
 						>
 							{tabsData.map((tabData, i) => {
@@ -147,6 +151,10 @@ export default class Edit extends Component {
 								return (
 									<div className="c9-tab-admin-wrapper">
 										<RichText
+											style={{
+												backgroundColor: tabBackgroundColor,
+												color: tabTextColor
+											}}
 											tagName="a"
 											data-toggle="pill"
 											role="tab"
@@ -242,7 +250,13 @@ export default class Edit extends Component {
 						</div>
 					</div>
 					<div className="col-xs-12 col-sm-9">
-						<div className="c9-tabs-content tab-content">
+						<div
+							className="c9-tabs-content tab-content"
+							style={{
+								backgroundColor: tabContentBackgroundColor,
+								color: tabContentTextColor
+							}}
+						>
 							<InnerBlocks
 								template={this.getTabsTemplate()}
 								templateLock="all"

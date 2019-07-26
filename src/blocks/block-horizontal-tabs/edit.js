@@ -108,7 +108,15 @@ export default class Edit extends Component {
 			clientId
 		} = this.props;
 
-		const { tabActive, buttonsAlign, tabsData = [] } = attributes;
+		const {
+			tabActive,
+			buttonsAlign,
+			tabsData = [],
+			tabBackgroundColor,
+			tabTextColor,
+			tabContentBackgroundColor,
+			tabContentTextColor
+		} = attributes;
 
 		const tabs = this.getTabs();
 
@@ -166,6 +174,7 @@ export default class Edit extends Component {
 							return (
 								<li className="nav-item">
 									<RichText
+										style={{ backgroundColor: tabBackgroundColor, color: tabTextColor }}
 										tagName="a"
 										data-toggle="tab"
 										role="tab"
@@ -256,7 +265,13 @@ export default class Edit extends Component {
 							""
 						)}
 					</ul>
-					<div className="c9-tabs-content tab-content">
+					<div
+						className="c9-tabs-content tab-content"
+						style={{
+							backgroundColor: tabContentBackgroundColor,
+							color: tabContentTextColor
+						}}
+					>
 						<InnerBlocks
 							template={this.getTabsTemplate()}
 							templateLock="all"
