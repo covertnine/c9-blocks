@@ -19,8 +19,7 @@ export default class Inspector extends Component {
 			buttonsAlign,
 			tabBackgroundColor,
 			tabTextColor,
-			tabContentBackgroundColor,
-			tabContentTextColor
+			tabContentBackgroundColor
 		} = attributes;
 
 		return (
@@ -66,17 +65,11 @@ export default class Inspector extends Component {
 							onChange: value =>
 								setAttributes({ tabContentBackgroundColor: value }),
 							label: __("Background Color")
-						},
-						{
-							value: tabContentTextColor,
-							onChange: value => setAttributes({ tabContentTextColor: value }),
-							label: __("Text Color")
 						}
 					]}
 				>
 					<ContrastChecker
 						{...{
-							textColor: tabContentTextColor,
 							backgroundColor: tabContentBackgroundColor,
 							fallbackTextColor: "black",
 							fallbackBackgroundColor: "white"

@@ -113,8 +113,7 @@ export default class Edit extends Component {
 			tabsData = [],
 			tabBackgroundColor,
 			tabTextColor,
-			tabContentBackgroundColor,
-			tabContentTextColor
+			tabContentBackgroundColor
 		} = attributes;
 
 		const tabs = this.getTabs();
@@ -253,8 +252,7 @@ export default class Edit extends Component {
 						<div
 							className="c9-tabs-content tab-content"
 							style={{
-								backgroundColor: tabContentBackgroundColor,
-								color: tabContentTextColor
+								backgroundColor: tabContentBackgroundColor
 							}}
 						>
 							<InnerBlocks

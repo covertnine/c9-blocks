@@ -15,7 +15,15 @@ export default class Save extends Component {
 	}
 
 	render() {
-		const { tabActive, buttonsAlign, tabsData = [], ver } = this.props.attributes;
+		const {
+			tabActive,
+			buttonsAlign,
+			tabsData = [],
+			ver,
+			tabBackgroundColor,
+			tabTextColor,
+			tabContentBackgroundColor
+		} = this.props.attributes;
 
 		const { className = "" } = this.props;
 
@@ -37,6 +45,10 @@ export default class Save extends Component {
 						return (
 							<li className="nav-item">
 								<RichText.Content
+									style={{
+										backgroundColor: tabBackgroundColor,
+										color: tabTextColor
+									}}
 									tagName="a"
 									data-toggle="tab"
 									role="tab"
@@ -49,7 +61,12 @@ export default class Save extends Component {
 						);
 					})}
 				</ul>
-				<div className="c9-tabs-content tab-content">
+				<div
+					className="c9-tabs-content tab-content"
+					style={{
+						backgroundColor: tabContentBackgroundColor
+					}}
+				>
 					<InnerBlocks.Content />
 				</div>
 			</div>

@@ -19,7 +19,10 @@ export default class Save extends Component {
 			tabActive,
 			buttonsAlign,
 			tabsData = [],
-			ver
+			ver,
+			tabBackgroundColor,
+			tabTextColor,
+			tabContentBackgroundColor
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -45,6 +48,10 @@ export default class Save extends Component {
 							const selected = tabActive === slug;
 							return (
 								<RichText.Content
+									style={{
+										backgroundColor: tabBackgroundColor,
+										color: tabTextColor
+									}}
 									tagName="a"
 									data-toggle="pill"
 									role="tab"
@@ -58,7 +65,12 @@ export default class Save extends Component {
 					</div>
 				</div>
 				<div className="col-xs-12 col-sm-9">
-					<div className="c9-tabs-content tab-content">
+					<div
+						className="c9-tabs-content tab-content"
+						style={{
+							backgroundColor: tabContentBackgroundColor
+						}}
+					>
 						<InnerBlocks.Content />
 					</div>
 				</div>

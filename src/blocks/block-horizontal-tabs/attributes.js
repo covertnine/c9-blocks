@@ -31,9 +31,6 @@ const attributes = {
 	},
 	tabContentBackgroundColor: {
 		type: "string"
-	},
-	tabContentTextColor: {
-		type: "string"
 	}
 };
 
