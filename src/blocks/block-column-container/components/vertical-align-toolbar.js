@@ -4,19 +4,21 @@
 const { __ } = wp.i18n;
 const { Toolbar } = wp.components;
 
+import icons from "../../../../assets/c9-vertical-alignment-icons";
+
 const DEFAULT_ALIGN_CONTROLS = [
 	{
-        icon: "arrow-up-alt2",
+        icon: icons.top,
         title: __("Vertical Align Top", "c9-blocks"),
         align: "top"
     },
     {
-        icon: "minus",
+        icon: icons.center,
         title: __("Vertical Align Middle", "c9-blocks"),
         align: "center"
     },
     {
-        icon: "arrow-down-alt2",
+        icon: icons.bottom,
         title: __("Vertical Align Bottom", "c9-blocks"),
         align: "bottom"
     }
