@@ -4,9 +4,11 @@
 const { __ } = wp.i18n;
 const { Toolbar } = wp.components;
 
+import Icon from "../../../../assets/text-muted-icon";
+
 const DEFAULT_ENABLE_CONTROLS = [
 	{
-        icon: "wordpress",
+        icon: Icon,
         title: __("Enable Subheading", "c9-blocks"),
         enabled: true
     }
