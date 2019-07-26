@@ -205,6 +205,10 @@
 .c9-layout-columns-1 .editor-block-list__layout {
 	grid-template-columns: 1fr;
 	grid-template-areas: "col1";
+
+	> [data-type="c9-blocks/column"] {
+		margin: 0;
+	}
 }
 
 /* Two column grid. */

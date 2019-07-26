@@ -939,6 +939,8 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 .c9-layout-columns-1 .editor-block-list__layout {
   grid-template-columns: 1fr;
   grid-template-areas: "col1"; }
+  .c9-layout-columns-1 .editor-block-list__layout > [data-type="c9-blocks/column"] {
+    margin: 0; }
 
 /* Two column grid. */
 .c9-layout-columns-2 > .c9-layout-column-wrap-admin > .editor-inner-blocks > .editor-block-list__layout {

@@ -1,7 +1,8 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { AlignmentToolbar, InspectorControls } = wp.editor;
+const { AlignmentToolbar, InspectorControls, PanelColorSettings } = wp.editor;
 const { BaseControl } = wp.components;
+const { ContrastChecker } = wp.blockEditor;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -14,7 +15,13 @@ export default class Inspector extends Component {
 	render() {
 		const { attributes, setAttributes } = this.props;
 
-		const { buttonsAlign } = attributes;
+		const {
+			buttonsAlign,
+			tabBackgroundColor,
+			tabTextColor,
+			tabContentBackgroundColor,
+			tabContentTextColor
+		} = attributes;
 
 		let align;
 		if (buttonsAlign == "start") {
@@ -42,6 +49,56 @@ export default class Inspector extends Component {
 						controls={["left", "center", "right"]}
 					/>
 				</BaseControl>
+				<PanelColorSettings
+					title={__("Tab Color Settings")}
+					initialOpen={false}
+					colorSettings={[
+						{
+							value: tabBackgroundColor,
+							onChange: value => setAttributes({ tabBackgroundColor: value }),
+							label: __("Background Color")
+						},
+						{
+							value: tabTextColor,
+							onChange: value => setAttributes({ tabTextColor: value }),
+							label: __("Text Color")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							textColor: tabTextColor,
+							backgroundColor: tabBackgroundColor,
+							fallbackTextColor: "black",
+							fallbackBackgroundColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
+				<PanelColorSettings
+					title={__("Tab Content Color Settings")}
+					initialOpen={false}
+					colorSettings={[
+						{
+							value: tabContentBackgroundColor,
+							onChange: value => setAttributes({ tabContentBackgroundColor: value }),
+							label: __("Background Color")
+						},
+						{
+							value: tabContentTextColor,
+							onChange: value => setAttributes({ tabContentTextColor: value }),
+							label: __("Text Color")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							textColor: tabContentTextColor,
+							backgroundColor: tabContentBackgroundColor,
+							fallbackTextColor: "black",
+							fallbackBackgroundColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
 			</InspectorControls>
 		);
 	}

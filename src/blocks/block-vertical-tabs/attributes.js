@@ -22,6 +22,18 @@ const attributes = {
 	},
 	ver: {
 		type: "number"
+	},
+	tabBackgroundColor: {
+		type: "string"
+	},
+	tabTextColor: {
+		type: "string"
+	},
+	tabContentBackgroundColor: {
+		type: "string"
+	},
+	tabContentTextColor: {
+		type: "string"
 	}
 };
 
