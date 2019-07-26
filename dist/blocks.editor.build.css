@@ -244,12 +244,17 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  *
  * CSS for both Frontend+Backend.
  */
-.tabs-content
-> .editor-inner-blocks
-> .editor-block-list__layout
-> .editor-block-list__block
-> .editor-block-list__block-edit {
+.tabs-content > .editor-inner-blocks > .editor-block-list__layout > .editor-block-list__block > .editor-block-list__block-edit {
   margin-top: 12px; }
+
+div[data-type="c9-blocks/tabs-v2"] {
+  margin-top: 60px; }
+
+.c9-tabs-v2 .c9-tabs-content {
+  position: relative; }
+
+.c9-tabs-v2 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
+  top: 0px !important; }
 
 div[data-type="c9-blocks/tabs"] .tabs .tabs-buttons {
   display: -ms-flexbox;

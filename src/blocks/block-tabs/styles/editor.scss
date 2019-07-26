@@ -12,12 +12,21 @@
  */
 
 // fix top margin for tabs content
-.tabs-content
-	> .editor-inner-blocks
-	> .editor-block-list__layout
-	> .editor-block-list__block
-	> .editor-block-list__block-edit {
+.tabs-content>.editor-inner-blocks>.editor-block-list__layout>.editor-block-list__block>.editor-block-list__block-edit {
 	margin-top: 12px;
+}
+
+//make room for insertion point and items placed above tabs so we can select tab titles easier
+div[data-type="c9-blocks/tabs-v2"] {
+	margin-top: 60px;
+}
+
+.c9-tabs-v2 .c9-tabs-content {
+	position: relative;
+}
+
+.c9-tabs-v2 .block-editor-block-list__block>.block-editor-block-list__insertion-point {
+	top: 0px !important;
 }
 
 div[data-type="c9-blocks/tabs"] .tabs {
@@ -30,9 +39,11 @@ div[data-type="c9-blocks/tabs"] .tabs {
 		&.tabs-buttons-align-left {
 			justify-content: flex-start;
 		}
+
 		&.tabs-buttons-align-center {
 			justify-content: center;
 		}
+
 		&.tabs-buttons-align-right {
 			justify-content: flex-end;
 		}
@@ -75,7 +86,7 @@ div[data-type="c9-blocks/tabs"] .tabs {
 			}
 
 			// show remove button on hover.
-			&:not(:hover) > .c9-component-remove-button {
+			&:not(:hover)>.c9-component-remove-button {
 				opacity: 0;
 			}
 		}
@@ -123,6 +134,7 @@ div[data-type="c9-blocks/tabs"] .tabs {
 }
 
 .c9-component-remove-button-confirm {
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-nope {
 		padding: 0;
@@ -139,10 +151,12 @@ div[data-type="c9-blocks/tabs"] .tabs {
 			box-shadow: none;
 		}
 	}
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-yep:focus {
 		color: #c9586c;
 	}
+
 	.c9-component-remove-button-confirm-nope,
 	.c9-component-remove-button-confirm-nope:focus {
 		color: #999;
