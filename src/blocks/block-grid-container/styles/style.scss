@@ -4,11 +4,11 @@
  * CSS for both Frontend+Backend.
  */
 
- .c9-grid {
-     display: grid;
- }
+.c9-grid {
+	display: grid;
+}
 
- /****************************************************************************************/
+/****************************************************************************************/
 /* C9 Container Blocks for Bootstrap-like containers */
 /****************************************************************************************/
 
@@ -27,28 +27,16 @@
 	width: 100%;
 }
 
-.container .row > .editor-inner-blocks > .editor-block-list__layout,
-.container-narrow .row > .editor-inner-blocks > .editor-block-list__layout,
-.container-fluid .row > .editor-inner-blocks > .editor-block-list__layout {
+.container .row>.editor-inner-blocks>.editor-block-list__layout,
+.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout,
+.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout {
 	width: 100%;
 	display: flex;
 }
 
-.container
-	.row
-	> .editor-inner-blocks
-	> .editor-block-list__layout
-	.editor-block-list__block,
-.container-narrow
-	.row
-	> .editor-inner-blocks
-	> .editor-block-list__layout
-	.editor-block-list__block,
-.container-fluid
-	.row
-	> .editor-inner-blocks
-	> .editor-block-list__layout
-	.editor-block-list__block {
+.container .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
+.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
+.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block {
 	flex-grow: 1;
 	flex-basis: 0px;
 }
@@ -58,9 +46,7 @@
 }
 
 @media only screen and (min-width: 1px) {
-	.page-template-default
-		.entry-content
-		> .c9-blocks-column-containers {
+	.page-template-default .entry-content>.c9-blocks-column-containers {
 		width: 100vw;
 		max-width: 100vw;
 		margin: 0px;
@@ -82,9 +68,7 @@
 }
 
 @media only screen and (min-width: 576px) {
-	.page-template-default
-		.entry-content
-		> .c9-blocks-column-containers {
+	.page-template-default .entry-content>.c9-blocks-column-containers {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 100%) / 2);
@@ -97,8 +81,9 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.page-template-default .entry-content > .c9-blocks-column-containers,
-	.page-template-default .entry-content > .container-fluid {
+
+	.page-template-default .entry-content>.c9-blocks-column-containers,
+	.page-template-default .entry-content>.container-fluid {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 100%) / 2);
@@ -116,20 +101,14 @@
 }
 
 @media only screen and (min-width: 992px) {
-	.page-template-default
-		.entry-content
-		> .container
-		.c9-blocks-column-containers {
+	.page-template-default .entry-content>.container .c9-blocks-column-containers {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 100%) / 2);
 		margin-right: calc((-100vw + 100%) / 2);
 	}
 
-	.editor-styles-wrapper
-		.wp-block[data-type="c9-blocks/column-containers"]
-		.container-narrow
-		.wp-block[data-type="c9-blocks/column"] {
+	.editor-styles-wrapper .wp-block[data-type="c9-blocks/column-containers"] .container-narrow .wp-block[data-type="c9-blocks/column"] {
 		width: 960px;
 		max-width: 960px;
 	}
@@ -140,10 +119,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-	.page-template-default
-		.entry-content
-		> .container
-		.c9-blocks-column-containers {
+	.page-template-default .entry-content>.container .c9-blocks-column-containers {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 1110px) / 2);
@@ -168,12 +144,9 @@
 		margin-right: 0px;
 	}
 
-	.editor-styles-wrapper
-		.wp-block[data-type="c9-blocks/column"]:only-child:not(.container-narrow),
-	.editor-styles-wrapper
-		.wp-block[data-type="c9-blocks/column-containers"]
-		.wp-block[data-type="core/columns"][data-align="wide"] {
+	.editor-styles-wrapper .wp-block[data-type="c9-blocks/column"]:only-child:not(.container-narrow),
+	.editor-styles-wrapper .wp-block[data-type="c9-blocks/column-containers"] .wp-block[data-type="core/columns"][data-align="wide"] {
 		width: 1170px;
-		max-width: 1170px;
+		max-width: 100%;
 	}
 }
