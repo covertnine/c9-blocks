@@ -4,7 +4,31 @@
  * CSS for both Frontend+Backend.
  */
 
- .tabs {
+/* frontend tab spacing styling */
+.entry-content .c9-tabs-v2 .nav-tabs,
+.editor-styles-wrapper .c9-tabs-v2 .nav-tabs {
+	border: 0px;
+}
+
+.entry-content .c9-tabs-v2 .nav-tabs,
+.editor-styles-wrapper .c9-tabs-v2 .nav-tabs,
+.entry-content .c9-tabs-v2 .nav-tabs .nav-item,
+.editor-styles-wrapper .c9-tabs-v2 .nav-tabs .nav-item {
+	margin: 0px;
+}
+
+.entry-content .c9-tabs-v2 .nav-tabs .nav-item,
+.editor-styles-wrapper .c9-tabs-v2 .nav-tabs .nav-item {
+	line-height: 1;
+}
+
+.entry-content .c9-tabs-v2 .nav-tabs .nav-item .nav-link,
+.editor-styles-wrapper .c9-tabs-v2 .nav-tabs .nav-item .nav-link {
+	padding: 12px 16px;
+	border-radius: 0;
+}
+
+.tabs {
 	.tabs-buttons {
 		display: flex;
 		flex-wrap: wrap;
@@ -14,14 +38,16 @@
 		&.tabs-buttons-align-left {
 			justify-content: flex-start;
 		}
+
 		&.tabs-buttons-align-center {
 			justify-content: center;
 		}
+
 		&.tabs-buttons-align-right {
 			justify-content: flex-end;
 		}
 
-		> .tabs-buttons-item {
+		>.tabs-buttons-item {
 			padding: 0.5em 1.5em;
 			margin-bottom: -1px;
 			font-weight: 500;
@@ -48,6 +74,7 @@
 			}
 		}
 	}
+
 	.tabs-content .tab {
 		position: absolute;
 		width: 1px;
