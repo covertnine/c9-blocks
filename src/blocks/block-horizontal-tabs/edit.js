@@ -180,7 +180,7 @@ export default class Edit extends Component {
 										href={`#tab-${slug}-${this.id}`}
 										className={classnames("nav-link", selected ? "active" : "")}
 										id={`tab-button-${slug}`}
-										placeholder={__("Tab label")}
+										placeholder={__("Tab label", "c9-blocks")}
 										value={title}
 										unstableOnFocus={() => setAttributes({ tabActive: slug })}
 										onChange={value => {
@@ -216,7 +216,7 @@ export default class Edit extends Component {
 									/>
 									<RemoveButton
 										show={isSelectedBlockInRoot}
-										tooltipText={__("Remove tab?")}
+										tooltipText={__("Remove tab?", "c9-blocks")}
 										onRemove={() => {
 											if (block.innerBlocks.length <= 1) {
 												this.props.removeBlock(block.clientId);
@@ -238,7 +238,7 @@ export default class Edit extends Component {
 							);
 						})}
 						{isSelectedBlockInRoot ? (
-							<Tooltip text={__("Add Tab")}>
+							<Tooltip text={__("Add Tab", "c9-blocks")}>
 								<IconButton
 									icon={"insert"}
 									onClick={() => {

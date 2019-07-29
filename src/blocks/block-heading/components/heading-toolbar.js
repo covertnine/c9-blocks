@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { range } from 'lodash';
+import { range } from "lodash";
 
 /**
  * WordPress dependencies
@@ -11,14 +11,14 @@ const { Component } = wp.element;
 const { Toolbar } = wp.components;
 
 class HeadingToolbar extends Component {
-	createLevelControl( targetLevel, selectedLevel, onChange ) {
+	createLevelControl(targetLevel, selectedLevel, onChange) {
 		return {
 			icon: "heading",
 			// translators: %s: heading level e.g: "1", "2", "3"
-			title: sprintf( __( 'Heading %d' ), targetLevel ),
+			title: sprintf(__("Heading %d"), targetLevel),
 			isActive: targetLevel === selectedLevel,
-			onClick: () => onChange( targetLevel ),
-			subscript: String( targetLevel ),
+			onClick: () => onChange(targetLevel),
+			subscript: String(targetLevel)
 		};
 	}
 
@@ -26,7 +26,11 @@ class HeadingToolbar extends Component {
 		const { minLevel, maxLevel, selectedLevel, onChange } = this.props;
 
 		return (
-			<Toolbar controls={ range( minLevel, maxLevel ).map( ( index ) => this.createLevelControl( index, selectedLevel, onChange ) ) } />
+			<Toolbar
+				controls={range(minLevel, maxLevel).map(index =>
+					this.createLevelControl(index, selectedLevel, onChange)
+				)}
+			/>
 		);
 	}
 }

@@ -33,7 +33,7 @@ export function WidthToolbar({
 
 	return (
 		<Toolbar
-			label={__("Change Widths")}
+			label={__("Change Widths", "c9-blocks")}
 			controls={widthControls.map(control => {
 				const { width } = control;
 				const isActive = value === width;

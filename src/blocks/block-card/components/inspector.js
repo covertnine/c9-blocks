@@ -43,18 +43,18 @@ class Inspector extends Component {
 				<PanelBody title={__("Card Options", "c9-blocks")} />
 
 				<PanelColorSettings
-					title={__("Color Settings")}
+					title={__("Color Settings", "c9-blocks")}
 					initialOpen={false}
 					colorSettings={[
 						{
 							value: backgroundColor,
 							onChange: value => setAttributes({ backgroundColor: value }),
-							label: __("Background Color")
+							label: __("Background Color", "c9-blocks")
 						},
 						{
 							value: textColor,
 							onChange: value => setAttributes({ textColor: value }),
-							label: __("Text Color")
+							label: __("Text Color", "c9-blocks")
 						}
 					]}
 				>

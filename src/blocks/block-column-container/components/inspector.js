@@ -331,9 +331,9 @@ export default class Inspector extends Component {
 						max={100}
 					/>
 				</BaseControl>
-				<PanelBody title={__("Layout")} initialOpen={false}>
+				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={false}>
 					<RangeControl
-						label={__("Columns")}
+						label={__("Columns", "c9-blocks")}
 						value={columns}
 						onChange={nextColumns => {
 							setAttributes({
@@ -436,7 +436,7 @@ export default class Inspector extends Component {
 						}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Spacing")} initialOpen={false}>
+				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
 					<h5 className="padding-label">Padding</h5>
 
 					<p className="components-base-control__label">
@@ -508,7 +508,7 @@ export default class Inspector extends Component {
 						/>
 					</div>
 				</PanelBody>
-				<PanelBody title={__("Background")} initialOpen={false}>
+				<PanelBody title={__("Background", "c9-blocks")} initialOpen={false}>
 					<MediaUpload
 						id="bg-image-select"
 						label={__("Background Image", "c9-blocks")}
@@ -518,26 +518,26 @@ export default class Inspector extends Component {
 						render={({ open }) => (
 							<div>
 								<IconButton
-									label={__("Edit image")}
+									label={__("Edit image", "c9-blocks")}
 									icon="format-image"
 									onClick={open}
 								>
-									{__("Background Image")}
+									{__("Background Image", "c9-blocks")}
 								</IconButton>
 
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
 										<IconButton
-											label={__("Remove Image")}
+											label={__("Remove Image", "c9-blocks")}
 											icon="dismiss"
 											onClick={onRemoveImage}
 										>
-											{__("Remove")}
+											{__("Remove", "c9-blocks")}
 										</IconButton>
 
 										<h5>Position</h5>
 										<FocalPointPicker
-											label={__("Focal Point Picker")}
+											label={__("Focal Point Picker", "c9-blocks")}
 											url={containerImgURL}
 											value={focalPoint}
 											onChange={value => setAttributes({ focalPoint: value })}
@@ -635,7 +635,7 @@ export default class Inspector extends Component {
 										<div>
 											<h5>Size</h5>
 											<SelectControl
-												help={__("Choose between cover, contain, or custom.")}
+												help={__("Choose between cover, contain, or custom.", "c9-blocks")}
 												options={sizeTypes}
 												value={bgImgSize}
 												onChange={value => setAttributes({ bgImgSize: value })}
@@ -723,7 +723,7 @@ export default class Inspector extends Component {
 											<h5>Repeat</h5>
 											<SelectControl
 												help={__(
-													"Choose between no-repeat, repeat, round or space."
+													"Choose between no-repeat, repeat, round or space.", "c9-blocks"
 												)}
 												options={repeatTypes}
 												value={bgImgRepeat}
@@ -738,7 +738,7 @@ export default class Inspector extends Component {
 						)}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Video")} initialOpen={false}>
+				<PanelBody title={__("Video", "c9-blocks")} initialOpen={false}>
 					<RadioControl
 						label={__("Media Type", "c9-blocks")}
 						selected={videoType}
@@ -777,11 +777,11 @@ export default class Inspector extends Component {
 							render={({ open }) => (
 								<div>
 									<IconButton
-										label={__("Edit Video")}
+										label={__("Edit Video", "c9-blocks")}
 										icon="format-image"
 										onClick={open}
 									>
-										{__("Background Video")}
+										{__("Background Video", "c9-blocks")}
 									</IconButton>
 								</div>
 							)}
@@ -793,11 +793,11 @@ export default class Inspector extends Component {
 						!!containerVideoURL.length && (
 							<div>
 								<IconButton
-									label={__("Remove Video")}
+									label={__("Remove Video", "c9-blocks")}
 									icon="dismiss"
 									onClick={onRemoveVideo}
 								>
-									{__("Remove")}
+									{__("Remove", "c9-blocks")}
 								</IconButton>
 							</div>
 						)}
@@ -812,7 +812,7 @@ export default class Inspector extends Component {
 
 							{cannotEmbed && (
 								<p className="text-danger">
-									Given YouTube ID/URL is not correctly formatted!
+									{__("Given YouTube ID/URL is not correctly formatted!", "c9-blocks")}
 								</p>
 							)}
 

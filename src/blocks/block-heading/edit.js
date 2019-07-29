@@ -93,7 +93,7 @@ export default class Edit extends Component {
 							color: textColor
 						}}
 						keepPlaceholderOnFocus={true}
-						placeholder={__("Write heading…")}
+						placeholder={__("Write heading…", "c9-blocks")}
 						value={heading}
 						onChange={value => setAttributes({ heading: value })}
 					/>
@@ -111,7 +111,7 @@ export default class Edit extends Component {
 							<RichText
 								tagName="small"
 								className="text-muted"
-								placeholder={__("Write subheading…")}
+								placeholder={__("Write subheading…", "c9-blocks")}
 								value={subheading}
 								onChange={value => setAttributes({ subheading: value })}
 							/>

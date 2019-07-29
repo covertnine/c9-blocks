@@ -25,7 +25,7 @@ export function SubheadingToolbar({
 
 	return (
 		<Toolbar
-			label={__("Change Vertical Alignment")}
+			label={__("Change Vertical Alignment", "c9-blocks")}
 			controls={enableControls.map(control => {
 				const { enabled } = control;
 				const isActive = value === enabled;

@@ -316,11 +316,14 @@ export default class Inspector extends Component {
 						max={100}
 					/>
 				</BaseControl>
-				<PanelBody title={__("Spacing")} initialOpen={false}>
-					<h5 className="padding-label">Padding</h5>
+				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
 
 					<p className="components-base-control__label">
-						Configure between different levels of padding for each side.
+						{__(
+							"Configure between different levels of padding for each side.",
+							"c9-blocks"
+						)}
 					</p>
 
 					<div className="padding-top-wrapper">
@@ -361,8 +364,10 @@ export default class Inspector extends Component {
 					<h5 className="margin-label">Margins</h5>
 
 					<p className="components-base-control__label">
-						Configure between different levels of margin for top and bottom
-						sides.
+						{__(
+							"Configure between different levels of margin for top and bottom sides.",
+							"c9-blocks"
+						)}
 					</p>
 
 					<div className="margin-top-wrapper">
@@ -388,7 +393,7 @@ export default class Inspector extends Component {
 						/>
 					</div>
 				</PanelBody>
-				<PanelBody title={__("Background")} initialOpen={false}>
+				<PanelBody title={__("Background", "c9-blocks")} initialOpen={false}>
 					<MediaUpload
 						id="bg-image-select"
 						label={__("Background Image", "c9-blocks")}
@@ -398,26 +403,26 @@ export default class Inspector extends Component {
 						render={({ open }) => (
 							<div>
 								<IconButton
-									label={__("Edit image")}
+									label={__("Edit image", "c9-blocks")}
 									icon="format-image"
 									onClick={open}
 								>
-									{__("Background Image")}
+									{__("Background Image", "c9-blocks")}
 								</IconButton>
 
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
 										<IconButton
-											label={__("Remove Image")}
+											label={__("Remove Image", "c9-blocks")}
 											icon="dismiss"
 											onClick={onRemoveImage}
 										>
-											{__("Remove")}
+											{__("Remove", "c9-blocks")}
 										</IconButton>
 
 										<h5>Position</h5>
 										<FocalPointPicker
-											label={__("Focal Point Picker")}
+											label={__("Focal Point Picker", "c9-blocks")}
 											url={containerImgURL}
 											value={focalPoint}
 											onChange={value => setAttributes({ focalPoint: value })}
@@ -425,8 +430,8 @@ export default class Inspector extends Component {
 									</div>
 								)}
 
-								<h5>Color Overlay</h5>
-								<span>Color Palette</span>
+								<h5>{__("Color Overlay", "c9-blocks")}</h5>
+								<span>{__("Color Palette", "c9-blocks")}</span>
 								<ColorPalette
 									label={__("Overlay Color", "c9-blocks")}
 									value={overlayHue}
@@ -503,7 +508,7 @@ export default class Inspector extends Component {
 
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
-										<h5>Attachment</h5>
+										<h5>{__("Attachment", "c9-blocks")}</h5>
 										<ToggleControl
 											label={__("Scroll | Fixed", "c9-blocks")}
 											checked={bgImgAttach}
@@ -513,16 +518,19 @@ export default class Inspector extends Component {
 										<hr />
 
 										<div>
-											<h5>Size</h5>
+											<h5>{__("Size", "c9-blocks")}</h5>
 											<SelectControl
-												help={__("Choose between cover, contain, or custom.")}
+												help={__(
+													"Choose between cover, contain, or custom.",
+													"c9-blocks"
+												)}
 												options={sizeTypes}
 												value={bgImgSize}
 												onChange={value => setAttributes({ bgImgSize: value })}
 											/>
 											{!bgImgSize && (
 												<div>
-													<h5>Horizontal</h5>
+													<h5>{__("Horizontal", "c9-blocks")}</h5>
 													<ToggleControl
 														label={__("Auto | Manual", "c9-blocks")}
 														checked={this.customX}
@@ -559,7 +567,7 @@ export default class Inspector extends Component {
 															/>
 														</div>
 													)}
-													<h5>Vertical</h5>
+													<h5>{__("Vertical", "c9-blocks")}</h5>
 													<ToggleControl
 														label={__("Auto | Manual", "c9-blocks")}
 														checked={this.customY}
@@ -600,10 +608,11 @@ export default class Inspector extends Component {
 											)}
 											<hr />
 
-											<h5>Repeat</h5>
+											<h5>{__("Repeat", "c9-blocks")}</h5>
 											<SelectControl
 												help={__(
-													"Choose between no-repeat, repeat, round or space."
+													"Choose between no-repeat, repeat, round or space.",
+													"c9-blocks"
 												)}
 												options={repeatTypes}
 												value={bgImgRepeat}
@@ -618,7 +627,7 @@ export default class Inspector extends Component {
 						)}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Video")} initialOpen={false}>
+				<PanelBody title={__("Video", "c9-blocks")} initialOpen={false}>
 					<RadioControl
 						label={__("Media Type", "c9-blocks")}
 						selected={videoType}
@@ -657,11 +666,11 @@ export default class Inspector extends Component {
 							render={({ open }) => (
 								<div>
 									<IconButton
-										label={__("Edit Video")}
+										label={__("Edit Video", "c9-blocks")}
 										icon="format-image"
 										onClick={open}
 									>
-										{__("Background Video")}
+										{__("Background Video", "c9-blocks")}
 									</IconButton>
 								</div>
 							)}
@@ -673,11 +682,11 @@ export default class Inspector extends Component {
 						!!containerVideoURL.length && (
 							<div>
 								<IconButton
-									label={__("Remove Video")}
+									label={__("Remove Video", "c9-blocks")}
 									icon="dismiss"
 									onClick={onRemoveVideo}
 								>
-									{__("Remove")}
+									{__("Remove", "c9-blocks")}
 								</IconButton>
 							</div>
 						)}
@@ -692,7 +701,10 @@ export default class Inspector extends Component {
 
 							{cannotEmbed && (
 								<p className="text-danger">
-									Given YouTube ID/URL is not correctly formatted!
+									{__(
+										"Given YouTube ID/URL is not correctly formatted!",
+										"c9-blocks"
+									)}
 								</p>
 							)}
 
@@ -702,11 +714,11 @@ export default class Inspector extends Component {
 									onClick={() => this.submitID()}
 									style={{ marginRight: "10px" }}
 								>
-									Set
+									{__("Set", "c9-blocks")}
 								</Button>
 
 								<Button isDefault onClick={() => this.resetID()}>
-									Reset
+									{__("Reset", "c9-blocks")}
 								</Button>
 							</div>
 						</div>

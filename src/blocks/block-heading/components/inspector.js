@@ -71,7 +71,7 @@ class Inspector extends Component {
 		return (
 			<InspectorControls key="inspector">
 				<PanelBody title={__("Heading Options", "c9-blocks")}>
-					<p>{__("Element Tag Type")}</p>
+					<p>{__("Element Tag Type", "c9-blocks")}</p>
 					<HeadingToolbar
 						minLevel={1}
 						maxLevel={7}
@@ -83,7 +83,7 @@ class Inspector extends Component {
 
 					<SelectControl
 						label={__("Font Type", "c9-blocks")}
-						help={__("Choose between heading, subheading, or text-xl.")}
+						help={__("Choose between heading, subheading, or text-xl.", "c9-blocks")}
 						options={fontTypes}
 						value={type}
 						onChange={value => setAttributes({ type: value })}
@@ -100,7 +100,7 @@ class Inspector extends Component {
 					{overrideStyle && (
 						<SelectControl
 							label={__("Font Size", "c9-blocks")}
-							help={__("Choose between different heading sizes.")}
+							help={__("Choose between different heading sizes.", "c9-blocks")}
 							options={sizeTypes}
 							value={displayLevel}
 							onChange={newLevel => setAttributes({ displayLevel: newLevel })}
@@ -111,7 +111,7 @@ class Inspector extends Component {
 				<PanelBody title={__("Text Settings", "c9-blocks")} initialOpen={false}>
 					<SelectControl
 						label={__("Font Weight", "c9-blocks")}
-						help={__("Choose between light, normal, or bold.")}
+						help={__("Choose between light, normal, or bold.", "c9-blocks")}
 						options={weightTypes}
 						value={weight}
 						onChange={value => setAttributes({ weight: value })}
@@ -119,7 +119,7 @@ class Inspector extends Component {
 
 					<hr />
 
-					<p>{__("Text Alignment")}</p>
+					<p>{__("Text Alignment", "c9-blocks")}</p>
 					<AlignmentToolbar
 						value={textAlign}
 						onChange={value => setAttributes({ textAlign: value })}
@@ -138,18 +138,18 @@ class Inspector extends Component {
 				</PanelBody>
 
 				<PanelColorSettings
-					title={__("Color Settings")}
+					title={__("Color Settings", "c9-blocks")}
 					initialOpen={false}
 					colorSettings={[
 						{
 							value: backgroundColor,
 							onChange: value => setAttributes({ backgroundColor: value }),
-							label: __("Background Color")
+							label: __("Background Color", "c9-blocks")
 						},
 						{
 							value: textColor,
 							onChange: value => setAttributes({ textColor: value }),
-							label: __("Text Color")
+							label: __("Text Color", "c9-blocks")
 						}
 					]}
 				>

@@ -35,7 +35,7 @@ export function VerticalAlignmentToolbar({
 
 	return (
 		<Toolbar
-			label={__("Change Vertical Alignment")}
+			label={__("Change Vertical Alignment", "c9-blocks")}
 			controls={alignControls.map(control => {
 				const { align } = control;
 				const isActive = value === align;

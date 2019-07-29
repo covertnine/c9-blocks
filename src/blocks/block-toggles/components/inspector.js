@@ -23,7 +23,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls>
-				<BaseControl label={__("Tabs Align")}>
+				<BaseControl label={__("Tabs Align", "c9-blocks")}>
 					<AlignmentToolbar
 						value={buttonsAlign}
 						onChange={value => setAttributes({ buttonsAlign: value })}

@@ -29,9 +29,9 @@ class C9 extends Component {
 					icon={<Logo style={{ width: "20px", margin: "0 10px 0 6px" }} />}
 					target="c9-blocks"
 				>
-					{__("C9 Blocks")}
+					{__("C9 Blocks", "c9-blocks")}
 				</PluginSidebarMoreMenuItem>
-				<PluginSidebar name="c9-blocks" id="c9-blocks" title={__("C9 Blocks")}>
+				<PluginSidebar name="c9-blocks" id="c9-blocks" title={__("C9 Blocks", "c9-blocks")}>
 					<PanelBody className="plugin-c9-panel">
 						<Button
 							className="plugin-c9-panel-button"
@@ -42,7 +42,7 @@ class C9 extends Component {
 							}}
 						>
 							<span className="dashicons dashicons-schedule" />
-							{__("Templates")}
+							{__("Templates", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
@@ -53,7 +53,7 @@ class C9 extends Component {
 							}}
 						>
 							<span className="dashicons dashicons-editor-code" />
-							{__("CSS & JavaScript")}
+							{__("CSS & JavaScript", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
@@ -64,7 +64,7 @@ class C9 extends Component {
 							}}
 						>
 							<span className="dashicons dashicons-admin-settings" />
-							{__("Customizer")}
+							{__("Customizer", "c9-blocks")}
 						</Button>
 					</PanelBody>
 				</PluginSidebar>

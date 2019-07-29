@@ -20,9 +20,9 @@ export default class RemoveButton extends Component {
 			onRemove,
 			show,
 			style,
-			tooltipText = __("Remove block?"),
-			tooltipRemoveText = __("Remove"),
-			tooltipCancelText = __("Cancel")
+			tooltipText = __("Remove block?", "c9-blocks"),
+			tooltipRemoveText = __("Remove", "c9-blocks"),
+			tooltipCancelText = __("Cancel", "c9-blocks")
 		} = this.props;
 
 		const { confirmed } = this.state;

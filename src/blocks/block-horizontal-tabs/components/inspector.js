@@ -33,7 +33,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls>
-				<BaseControl label={__("Tabs Align")}>
+				<BaseControl label={__("Tabs Align", "c9-blocks")}>
 					<AlignmentToolbar
 						value={align}
 						onChange={value => {
@@ -49,18 +49,18 @@ export default class Inspector extends Component {
 					/>
 				</BaseControl>
 				<PanelColorSettings
-					title={__("Tab Color Settings")}
+					title={__("Tab Color Settings", "c9-blocks")}
 					initialOpen={false}
 					colorSettings={[
 						{
 							value: tabBackgroundColor,
 							onChange: value => setAttributes({ tabBackgroundColor: value }),
-							label: __("Background Color")
+							label: __("Background Color", "c9-blocks")
 						},
 						{
 							value: tabTextColor,
 							onChange: value => setAttributes({ tabTextColor: value }),
-							label: __("Text Color")
+							label: __("Text Color", "c9-blocks")
 						}
 					]}
 				>
@@ -74,13 +74,13 @@ export default class Inspector extends Component {
 					/>
 				</PanelColorSettings>
 				<PanelColorSettings
-					title={__("Tab Content Color Settings")}
+					title={__("Tab Content Color Settings", "c9-blocks")}
 					initialOpen={false}
 					colorSettings={[
 						{
 							value: tabContentBackgroundColor,
 							onChange: value => setAttributes({ tabContentBackgroundColor: value }),
-							label: __("Background Color")
+							label: __("Background Color", "c9-blocks")
 						}
 					]}
 				>

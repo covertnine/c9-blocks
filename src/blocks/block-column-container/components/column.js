@@ -30,7 +30,7 @@ registerBlockType("c9-blocks/column", {
 		</SVG>
 	),
 
-	description: __("A single column within the columns block."),
+	description: __("A single column within the columns block.", "c9-blocks"),
 
 	supports: {
 		inserter: false
