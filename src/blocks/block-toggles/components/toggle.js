@@ -53,9 +53,6 @@ class ToggleBlock extends Component {
 				<div className={"c9-toggles-toggle"}>
 					<div
 						className="c9-toggles-item-heading"
-						data-toggle="collapse"
-						data-target={`#collapse${attributes.toggleNumber}-${attributes.id}`}
-						onClick={() => setAttributes({ active: !active })}
 					>
 						<h2 className="mb-0">
 							<RichText
@@ -75,6 +72,8 @@ class ToggleBlock extends Component {
 								className="c9-toggles-item-collapse"
 								onClick={() => setAttributes({ active: !active })}
 								ref={this.toggleBtnRef}
+								data-toggle="collapse"
+								data-target={`#collapse${attributes.toggleNumber}-${attributes.id}`}
 							>
 								<span className="fas fa-angle-right" />
 							</button>
@@ -85,8 +84,7 @@ class ToggleBlock extends Component {
 									this.props.removeBlock(this.props.clientId);
 								}}
 								style={{
-									top: "50%",
-									marginTop: -11
+									top: "10px"
 								}}
 							/>
 						</h2>
