@@ -4,8 +4,17 @@
  * CSS for both Frontend+Backend.
  */
 
+.c9-fixed {
+	background-attachment: fixed;
+}
+
+.c9-scroll {
+	background-attachment: scroll;
+}
+
 .c9-grid {
 	display: grid;
+	position: relative;
 }
 
 .c9-video {

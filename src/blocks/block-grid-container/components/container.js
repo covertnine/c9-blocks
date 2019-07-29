@@ -64,7 +64,6 @@ export default class Container extends Component {
 		size,
 		bgX,
 		bgY,
-		attachment,
 		repeat,
 		hue,
 		opacity,
@@ -74,7 +73,6 @@ export default class Container extends Component {
 		selected = true
 	) {
 		const styles = {};
-		styles.position = "relative";
 
 		if (height) {
 			styles.minHeight = `${height}vh`;
@@ -85,8 +83,6 @@ export default class Container extends Component {
 				100}%`;
 		}
 
-		// styles.display = 'flex';
-
 		if (url) {
 			if (selected) {
 				styles.backgroundImage = `url(${url})`;
@@ -94,7 +90,6 @@ export default class Container extends Component {
 				styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
 			}
 			styles.backgroundRepeat = repeat;
-			styles.backgroundAttachment = attachment ? "fixed" : "scroll";
 			styles.backgroundBlendMode = `${blend}`;
 		}
 		if (size.length > 0) {
@@ -158,6 +153,7 @@ export default class Container extends Component {
 				className={classnames(
 					applyFilters("c9-blocks.blocks.className", className),
 					this.c9SpacingConfig(containerPadding, containerMargin),
+					bgImgAttach ? "c9-fixed" : "c9-scroll",
 					containerImgURL ? "c9-grid-has-background" : null,
 					(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
 						? "c9-grid-has-video"
@@ -168,7 +164,6 @@ export default class Container extends Component {
 					bgImgSize,
 					bgCustomX,
 					bgCustomY,
-					bgImgAttach,
 					bgImgRepeat,
 					overlayHue,
 					overlayOpacity,

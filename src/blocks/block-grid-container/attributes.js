@@ -28,7 +28,7 @@ const attributes = {
 		type: "string",
 		default: "no-repeat"
 	},
-	// true evaluates to backgroundAttachment scroll, false to fixed
+	// true evaluates to backgroundAttachment fixed, false to scroll
 	bgImgAttach: {
 		type: "boolean",
 		default: false

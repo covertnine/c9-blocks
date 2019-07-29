@@ -659,8 +659,15 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  *
  * CSS for both Frontend+Backend.
  */
+.c9-fixed {
+  background-attachment: fixed; }
+
+.c9-scroll {
+  background-attachment: scroll; }
+
 .c9-grid {
-  display: grid; }
+  display: grid;
+  position: relative; }
 
 .c9-video {
   opacity: 0;
@@ -862,7 +869,8 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  * CSS for both Frontend+Backend.
  */
 .c9-column-container {
-  display: grid; }
+  display: grid;
+  position: relative; }
   .c9-column-container.c9-is-vertically-aligned-top {
     -ms-flex-item-align: start;
         align-self: flex-start; }

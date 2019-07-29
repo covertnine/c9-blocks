@@ -64,7 +64,6 @@ export default class Container extends Component {
 		size,
 		bgX,
 		bgY,
-		attachment,
 		repeat,
 		hue,
 		opacity,
@@ -74,7 +73,6 @@ export default class Container extends Component {
 		selected = true
 	) {
 		const styles = {};
-		styles.position = "relative";
 
 		if (height) {
 			styles.minHeight = `${height}vh`;
@@ -92,7 +90,6 @@ export default class Container extends Component {
 				styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
 			}
 			styles.backgroundRepeat = repeat;
-			styles.backgroundAttachment = attachment ? "fixed" : "scroll";
 			styles.backgroundBlendMode = `${blend}`;
 		}
 		if (size.length > 0) {
@@ -163,6 +160,7 @@ export default class Container extends Component {
 					containerWidth,
 					applyFilters("c9-blocks.blocks.className", className),
 					this.c9SpacingConfig(containerPadding, containerMargin),
+					bgImgAttach ? "c9-fixed" : "c9-scroll",
 					"c9-layout-columns-" + columns,
 					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null,
 					layout,
@@ -177,7 +175,6 @@ export default class Container extends Component {
 					bgImgSize,
 					bgCustomX,
 					bgCustomY,
-					bgImgAttach,
 					bgImgRepeat,
 					overlayHue,
 					overlayOpacity,
