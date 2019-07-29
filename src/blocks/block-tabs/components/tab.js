@@ -42,7 +42,7 @@ export default class Tab extends Component {
 registerBlockType("c9-blocks/tabs-tab", {
 	title: __("C9 Tab", "c9-blocks"),
 
-	category: "common",
+	category: "c9-blocks",
 
 	parent: ["c9-blocks/tabs"],
 
@@ -56,7 +56,8 @@ registerBlockType("c9-blocks/tabs-tab", {
 	description: __("A single tab within the tabs block.", "c9-blocks"),
 
 	supports: {
-		inserter: false
+		inserter: false,
+		className: false
 	},
 
 	attributes: {

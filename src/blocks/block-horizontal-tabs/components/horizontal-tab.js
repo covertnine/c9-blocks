@@ -10,7 +10,6 @@ const { __ } = wp.i18n;
 
 const { InnerBlocks } = wp.editor;
 const { registerBlockType } = wp.blocks;
-const { applyFilters } = wp.hooks;
 
 // Import block dependencies and components
 import classnames from "classnames";
@@ -29,13 +28,18 @@ export default class Tab extends Component {
 		let { className = "" } = this.props;
 
 		className = classnames(
-			applyFilters("c9-blocks.blocks.className", className),
+			"c9-horizontal-tabs-tab",
 			"tab-pane fade",
 			tabActive === slug ? "show active" : null
 		);
 
 		return (
-			<div className={className} role="tabpanel" id={`tab-${slug}-${id}`} aria-labelledby={slug}>
+			<div
+				className={className}
+				role="tabpanel"
+				id={`tab-${slug}-${id}`}
+				aria-labelledby={slug}
+			>
 				<InnerBlocks
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
@@ -45,12 +49,12 @@ export default class Tab extends Component {
 	}
 }
 
-registerBlockType("c9-blocks/tabs-tab-v2", {
-	title: __("C9 Tab V2", "c9-blocks"),
+registerBlockType("c9-blocks/horizontal-tabs-tab", {
+	title: __("C9 Horizontal Tab", "c9-blocks"),
 
-	category: "common",
+	category: "c9-blocks",
 
-	parent: ["c9-blocks/tabs-v2"],
+	parent: ["c9-blocks/horizontal-tabs"],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -62,7 +66,8 @@ registerBlockType("c9-blocks/tabs-tab-v2", {
 	description: __("A single tab within the tabs block."),
 
 	supports: {
-		inserter: false
+		inserter: false,
+		className: false
 	},
 
 	attributes: {
@@ -88,13 +93,18 @@ registerBlockType("c9-blocks/tabs-tab-v2", {
 		let { className = "" } = props;
 
 		className = classnames(
-			applyFilters("c9-blocks.blocks.className", className),
+			"c9-horizontal-tabs-tab",
 			"tab-pane fade",
 			tabActive === slug ? "show active" : null
 		);
 
 		return (
-			<div className={className} role="tabpanel" id={`tab-${slug}-${id}`} aria-labelledby={slug}>
+			<div
+				className={className}
+				role="tabpanel"
+				id={`tab-${slug}-${id}`}
+				aria-labelledby={slug}
+			>
 				<InnerBlocks.Content />
 			</div>
 		);

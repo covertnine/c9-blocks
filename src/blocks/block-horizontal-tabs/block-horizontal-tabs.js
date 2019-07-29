@@ -14,12 +14,11 @@ const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-
 // Register block
 const { registerBlockType } = wp.blocks;
 
 // Register the block
-registerBlockType("c9-blocks/tabs-v2", {
+registerBlockType("c9-blocks/horizontal-tabs", {
 	title: __("C9 Horizontal Tabs", "c9-blocks"),
 	description: __("Responsive tabs for content", "c9-blocks"),
 	icon: "category",

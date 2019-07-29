@@ -10,7 +10,6 @@ const { __ } = wp.i18n;
 
 const { InnerBlocks } = wp.editor;
 const { registerBlockType } = wp.blocks;
-const { applyFilters } = wp.hooks;
 
 // Import block dependencies and components
 import classnames from "classnames";
@@ -29,13 +28,18 @@ export default class VerticalTab extends Component {
 		let { className = "" } = this.props;
 
 		className = classnames(
-			applyFilters("c9-blocks.blocks.className", className),
+			"c9-vertical-tabs-tab",
 			"tab-pane fade",
 			tabActive === slug ? "show active" : null
 		);
 
 		return (
-			<div className={className} role="tabpanel" id={`tab-${slug}-${id}`} aria-labelledby={slug}>
+			<div
+				className={className}
+				role="tabpanel"
+				id={`tab-${slug}-${id}`}
+				aria-labelledby={slug}
+			>
 				<InnerBlocks
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
@@ -46,9 +50,9 @@ export default class VerticalTab extends Component {
 }
 
 registerBlockType("c9-blocks/vertical-tabs-tab", {
-	title: __("C9 Tab V2", "c9-blocks"),
+	title: __("Vertical Tab", "c9-blocks"),
 
-	category: "common",
+	category: "c9-blocks",
 
 	parent: ["c9-blocks/vertical-tabs"],
 
@@ -62,7 +66,8 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 	description: __("A single tab within the tabs block.", "c9-blocks"),
 
 	supports: {
-		inserter: false
+		inserter: false,
+		className: false
 	},
 
 	attributes: {
@@ -88,13 +93,18 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 		let { className = "" } = props;
 
 		className = classnames(
-			applyFilters("c9-blocks.blocks.className", className),
+			"c9-vertical-tabs-tab",
 			"tab-pane fade",
 			tabActive === slug ? "show active" : null
 		);
 
 		return (
-			<div className={className} role="tabpanel" id={`tab-${slug}-${id}`} aria-labelledby={slug}>
+			<div
+				className={className}
+				role="tabpanel"
+				id={`tab-${slug}-${id}`}
+				aria-labelledby={slug}
+			>
 				<InnerBlocks.Content />
 			</div>
 		);

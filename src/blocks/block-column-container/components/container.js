@@ -4,7 +4,6 @@
 
 // Setup the block
 const { Component } = wp.element;
-const { applyFilters } = wp.hooks;
 
 // Import block dependencies and components
 import classnames from "classnames";
@@ -150,7 +149,6 @@ export default class Container extends Component {
 				columnMaxWidth,
 				centerColumns
 			},
-			className = "",
 			isSelectedBlockInRoot
 		} = this.props;
 
@@ -158,7 +156,7 @@ export default class Container extends Component {
 			<div
 				className={classnames(
 					containerWidth,
-					applyFilters("c9-blocks.blocks.className", className),
+					"c9-column-container",
 					this.c9SpacingConfig(containerPadding, containerMargin),
 					bgImgAttach ? "c9-fixed" : "c9-scroll",
 					"c9-layout-columns-" + columns,

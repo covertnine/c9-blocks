@@ -15,17 +15,19 @@ const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
 // Register block
-const { registerBlockType } = wp.blocks;
+const { registerBlockType, createBlock } = wp.blocks;
 
 // Register the block
 registerBlockType("c9-blocks/toggles", {
 	title: __("C9 Toggles", "c9-blocks"),
-	description: __("A responsive set of toggles for lists of content", "c9-blocks"),
+	description: __(
+		"A responsive set of toggles for lists of content",
+		"c9-blocks"
+	),
 	icon: "editor-table",
 	category: "c9-blocks",
 	supports: {
 		// fill in features
-		align: ["wide", "full"]
 	},
 	keywords: [__("responsive", "c9-blocks")],
 	attributes,
@@ -44,12 +46,19 @@ registerBlockType("c9-blocks/toggles", {
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
 			};
 		}),
-		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch("core/editor");
+		withDispatch((dispatch, ownProps) => {
+			const { insertBlock, updateBlockAttributes } = dispatch("core/editor");
+
+			const { clientId } = ownProps;
 
 			return {
 				updateBlockAttributes,
-				removeBlock
+				addToggle: id =>
+					insertBlock(
+						createBlock("c9-blocks/toggles-toggle", { id }),
+						undefined,
+						clientId
+					)
 			};
 		})
 	])(Edit),

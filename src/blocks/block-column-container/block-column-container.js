@@ -27,6 +27,7 @@ registerBlockType("c9-blocks/column-container", {
 	parent: ["c9-blocks/grid-container"],
 	supports: {
 		// fill in features
+		className: false
 	},
 	keywords: [__("container", "c9-blocks"), __("responsive", "c9-blocks")],
 	attributes,

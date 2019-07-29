@@ -11,7 +11,6 @@ const { AlignmentToolbar, BlockControls } = wp.editor;
 
 // Extend component
 const { Fragment } = wp.element;
-const { applyFilters } = wp.hooks;
 
 import VerticalAlignmentToolbar from "./vertical-align-toolbar";
 import classnames from "classnames";
@@ -33,7 +32,8 @@ registerBlockType("c9-blocks/column", {
 	description: __("A single column within the columns block.", "c9-blocks"),
 
 	supports: {
-		inserter: false
+		inserter: false,
+		className: false
 	},
 
 	attributes: {
@@ -49,8 +49,7 @@ registerBlockType("c9-blocks/column", {
 	edit: props => {
 		const {
 			attributes: { textAlign, verticalAlign },
-			setAttributes,
-			className = ""
+			setAttributes
 		} = props;
 
 		const ALLOWED_BLOCKS = getBlockTypes()
@@ -77,7 +76,7 @@ registerBlockType("c9-blocks/column", {
 					style={{ textAlign: textAlign }}
 					className={classnames(
 						"c9-block-layout-column",
-						applyFilters("c9-blocks.blocks.className", className),
+						"c9-column",
 						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
 					)}
 				>
@@ -95,8 +94,7 @@ registerBlockType("c9-blocks/column", {
 
 	save: props => {
 		const {
-			attributes: { textAlign, verticalAlign },
-			className = ""
+			attributes: { textAlign, verticalAlign }
 		} = props;
 
 		return (
@@ -104,7 +102,7 @@ registerBlockType("c9-blocks/column", {
 				style={{ textAlign: textAlign }}
 				className={classnames(
 					"c9-block-layout-column",
-					applyFilters("c9-blocks.blocks.className", className),
+					"c9-column",
 					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
 				)}
 			>
