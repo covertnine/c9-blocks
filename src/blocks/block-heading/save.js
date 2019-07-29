@@ -14,7 +14,7 @@ export default class Save extends Component {
 		super(...arguments);
 	}
 
-	cortexTextStyleConfig(type, display, tag, override) {
+	c9TextStyleConfig(type, display, tag, override) {
 		if (!override) {
 			return "";
 		} else if (display == 0) {
@@ -47,12 +47,7 @@ export default class Save extends Component {
 				<RichText.Content
 					tagName={`h${tagLevel}`}
 					className={classnames([
-						this.cortexTextStyleConfig(
-							type,
-							displayLevel,
-							tagLevel,
-							overrideStyle
-						),
+						this.c9TextStyleConfig(type, displayLevel, tagLevel, overrideStyle),
 						weight ? `font-weight-${weight}` : null,
 						textAlign ? `text-${textAlign}` : "text-left"
 					])}

@@ -135,7 +135,7 @@ export default class VideoBox extends Component {
 			}
 		} = this.props;
 
-		const cortexVideoStyles = (
+		const c9VideoStyles = (
 			videoType,
 			containerVideoURL,
 			minScreenHeight
@@ -165,7 +165,7 @@ export default class VideoBox extends Component {
 					loop="loop"
 					onCanPlayThrough={this.canPlay}
 					ref={this.videoRef}
-					style={cortexVideoStyles(
+					style={c9VideoStyles(
 						videoType,
 						containerVideoURL,
 						minScreenHeight
@@ -181,7 +181,7 @@ export default class VideoBox extends Component {
 					<div
 						id="player"
 						video-id={containerVideoID}
-						style={cortexVideoStyles(
+						style={c9VideoStyles(
 							videoType,
 							containerVideoURL,
 							minScreenHeight

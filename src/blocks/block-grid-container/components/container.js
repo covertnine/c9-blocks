@@ -18,7 +18,7 @@ export default class Container extends Component {
 		super(...arguments);
 	}
 
-	cortexSpacingConfig(padding, margin) {
+	c9SpacingConfig(padding, margin) {
 		let classes = [];
 		// abstract side class assignment
 		function assignSideClasses(sideClass, level) {
@@ -59,7 +59,7 @@ export default class Container extends Component {
 		return classes;
 	}
 
-	cortexBackgroundStyles(
+	c9BackgroundStyles(
 		url,
 		size,
 		bgX,
@@ -157,13 +157,13 @@ export default class Container extends Component {
 			<div
 				className={classnames(
 					applyFilters("c9-blocks.blocks.className", className),
-					this.cortexSpacingConfig(containerPadding, containerMargin),
+					this.c9SpacingConfig(containerPadding, containerMargin),
 					containerImgURL ? "c9-grid-has-background" : null,
 					(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
 						? "c9-grid-has-video"
 						: null
 				)}
-				style={this.cortexBackgroundStyles(
+				style={this.c9BackgroundStyles(
 					containerImgURL,
 					bgImgSize,
 					bgCustomX,

@@ -18,7 +18,7 @@ export default class Container extends Component {
 		super(...arguments);
 	}
 
-	cortexSpacingConfig(padding, margin) {
+	c9SpacingConfig(padding, margin) {
 		let classes = [];
 		// abstract side class assignment
 		function assignSideClasses(sideClass, level) {
@@ -59,7 +59,7 @@ export default class Container extends Component {
 		return classes;
 	}
 
-	cortexBackgroundStyles(
+	c9BackgroundStyles(
 		url,
 		size,
 		bgX,
@@ -162,7 +162,7 @@ export default class Container extends Component {
 				className={classnames(
 					containerWidth,
 					applyFilters("c9-blocks.blocks.className", className),
-					this.cortexSpacingConfig(containerPadding, containerMargin),
+					this.c9SpacingConfig(containerPadding, containerMargin),
 					"c9-layout-columns-" + columns,
 					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null,
 					layout,
@@ -172,7 +172,7 @@ export default class Container extends Component {
 						? "c9-columns-has-video"
 						: null
 				)}
-				style={this.cortexBackgroundStyles(
+				style={this.c9BackgroundStyles(
 					containerImgURL,
 					bgImgSize,
 					bgCustomX,

@@ -14,7 +14,7 @@ const attributes = {
 		default: true
 	},
 	columnsGap: {
-		type: 'number',
+		type: "number",
 		default: 2
 	},
 	responsiveToggle: {

@@ -1,8 +1,8 @@
 const attributes = {
-    align: {
-        type: "string",
-        default: "full"
-    },
+	align: {
+		type: "string",
+		default: "full"
+	},
 	containerImgURL: {
 		type: "string"
 	},

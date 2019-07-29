@@ -32,7 +32,7 @@ registerBlockType("c9-blocks/heading", {
 	},
 	keywords: [
 		__("heading", "c9-blocks"),
-		__("cortex", "c9-blocks"),
+		__("c9", "c9-blocks"),
 		__("covertnine", "c9-blocks")
 	],
 

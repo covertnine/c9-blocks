@@ -24,7 +24,7 @@ export default class Edit extends Component {
 		super(...arguments);
 	}
 
-	cortexTextStyleConfig(type, display, tag, override) {
+	c9TextStyleConfig(type, display, tag, override) {
 		if (!override) {
 			return "";
 		} else if (display == 0) {
@@ -79,7 +79,7 @@ export default class Edit extends Component {
 					<RichText
 						tagName={`h${tagLevel}`}
 						className={classnames([
-							this.cortexTextStyleConfig(
+							this.c9TextStyleConfig(
 								type,
 								displayLevel,
 								tagLevel,

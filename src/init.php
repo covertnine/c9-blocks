@@ -31,7 +31,7 @@ add_filter('block_categories', function ($categories, $post) {
 /**
  * Initialize the blocks
  */
-function cortex_blocks_loader()
+function c9_blocks_loader()
 {
 
     /**
@@ -44,7 +44,7 @@ function cortex_blocks_loader()
      */
     require_once plugin_dir_path(__FILE__) . 'blocks/block-post-grid/index.php';
 }
-add_action('plugins_loaded', 'cortex_blocks_loader');
+add_action('plugins_loaded', 'c9_blocks_loader');
 
 
 /**
@@ -54,7 +54,7 @@ add_action('plugins_loaded', 'cortex_blocks_loader');
  *
  * @since 1.0.0
  */
-function cortex_blocks_cgb_block_assets()
+function c9_blocks_cgb_block_assets()
 {
     // Styles.
     wp_enqueue_style(
@@ -63,10 +63,10 @@ function cortex_blocks_cgb_block_assets()
         array(), // Dependency to include the CSS after it.
         filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.style.build.css') // Version: filemtime — Gets file modification time.
     );
-} // End function cortex_blocks_cgb_block_assets().
+} // End function c9_blocks_cgb_block_assets().
 
 // Hook: Frontend assets.
-add_action('enqueue_block_assets', 'cortex_blocks_cgb_block_assets');
+add_action('enqueue_block_assets', 'c9_blocks_cgb_block_assets');
 
 /**
  * Enqueue Gutenberg block assets for backend editor.
@@ -77,11 +77,11 @@ add_action('enqueue_block_assets', 'cortex_blocks_cgb_block_assets');
  *
  * @since 1.0.0
  */
-function cortex_blocks_cgb_editor_assets()
+function c9_blocks_cgb_editor_assets()
 {
     // Scripts.
     wp_enqueue_script(
-        'cortex_blocks-cgb-block-js', // Handle.
+        'c9_blocks-cgb-block-js', // Handle.
         plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
         array('wp-blocks', 'wp-i18n', 'wp-element'), // Dependencies, defined above.
         filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.js'), // Version: filemtime — Gets file modification time.
@@ -90,7 +90,7 @@ function cortex_blocks_cgb_editor_assets()
 
     // update category, e.g. add icon and dequeue core blocks we don't want users using
     wp_enqueue_script(
-        'cortex_blocks-update-category',
+        'c9_blocks-update-category',
         plugins_url('dist/blocks.update-category.build.js', dirname(__FILE__)),
         array('wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element')
     );
@@ -103,21 +103,21 @@ function cortex_blocks_cgb_editor_assets()
     //     true
     // );
     wp_enqueue_style(
-        'cortex_blocks-cgb-block-editor-css', // Handle.
+        'c9_blocks-cgb-block-editor-css', // Handle.
         plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)), // Block editor CSS.
         array('wp-edit-blocks') // Dependency to include the CSS after it.
         // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: filemtime — Gets file modification time.
     );
-} // End function cortex_blocks_cgb_editor_assets().
+} // End function c9_blocks_cgb_editor_assets().
 
 // Hook: Editor assets.
-add_action('enqueue_block_editor_assets', 'cortex_blocks_cgb_editor_assets', 9999);
+add_action('enqueue_block_editor_assets', 'c9_blocks_cgb_editor_assets', 9999);
 
 
 /**
  * Initialize the blocks frontend
  */
-function cortex_blocks_front_assets()
+function c9_blocks_front_assets()
 {
     // Youtube Player API
     wp_enqueue_script(
@@ -128,7 +128,7 @@ function cortex_blocks_front_assets()
 
     // blocks frontend
     wp_enqueue_script(
-        'cortex_blocks-frontend',
+        'c9_blocks-frontend',
         plugins_url('dist/blocks.front.build.js', dirname(__FILE__)),
         array('youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n')
     );
@@ -136,17 +136,17 @@ function cortex_blocks_front_assets()
     // wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(''), '4.3.1');
 }
 
-// Hook: Cortex Blocks Frontend
-add_action('wp_enqueue_scripts', 'cortex_blocks_front_assets');
+// Hook: c9 Blocks Frontend
+add_action('wp_enqueue_scripts', 'c9_blocks_front_assets');
 
 
 /**
  * Add image sizes
  */
-function cortex_blocks_image_sizes()
+function c9_blocks_image_sizes()
 {
     // Post Grid Block.
     add_image_size('ab-block-post-grid-landscape', 600, 400, true);
     add_image_size('ab-block-post-grid-square', 600, 600, true);
 }
-add_action('after_setup_theme', 'cortex_blocks_image_sizes');
+add_action('after_setup_theme', 'c9_blocks_image_sizes');
