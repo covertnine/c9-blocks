@@ -150,14 +150,14 @@
 
 /* One column grid. */
 
-.c9-layout-columns-1>.c9-layout-column-wrap {
+.c9-layout-columns-1 > .c9-layout-column-wrap {
 	grid-template-columns: 1fr;
 	grid-template-areas: "col1";
 }
 
 /* Two column grid. */
 
-.c9-layout-columns-2>.c9-layout-column-wrap {
+.c9-layout-columns-2 > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: "col1 col2";
 
@@ -171,17 +171,17 @@
 	}
 }
 
-.c9-2-col-wideleft>.c9-layout-column-wrap {
+.c9-2-col-wideleft > .c9-layout-column-wrap {
 	grid-template-columns: 2fr 1fr;
 }
 
-.c9-2-col-wideright>.c9-layout-column-wrap {
+.c9-2-col-wideright > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 2fr;
 }
 
 /* Three column grid. */
 
-.c9-layout-columns-3>.c9-layout-column-wrap {
+.c9-layout-columns-3 > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas: "col1 col2 col3";
 
@@ -196,7 +196,7 @@
 	}
 }
 
-.c9-3-col-widecenter>.c9-layout-column-wrap {
+.c9-3-col-widecenter > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 2fr 1fr;
 
 	&.c9-is-responsive-column {
@@ -206,7 +206,7 @@
 	}
 }
 
-.c9-3-col-wideleft>.c9-layout-column-wrap {
+.c9-3-col-wideleft > .c9-layout-column-wrap {
 	grid-template-columns: 2fr 1fr 1fr;
 
 	&.c9-is-responsive-column {
@@ -216,7 +216,7 @@
 	}
 }
 
-.c9-3-col-wideright>.c9-layout-column-wrap {
+.c9-3-col-wideright > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 1fr 2fr;
 
 	&.c9-is-responsive-column {
@@ -228,7 +228,7 @@
 
 /* Four column grid. */
 
-.c9-layout-columns-4>.c9-layout-column-wrap {
+.c9-layout-columns-4 > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-areas: "col1 col2 col3 col4";
 
@@ -252,17 +252,17 @@
 	}
 }
 
-.c9-4-col-wideleft>.c9-layout-column-wrap {
+.c9-4-col-wideleft > .c9-layout-column-wrap {
 	grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
-.c9-4-col-wideright>.c9-layout-column-wrap {
+.c9-4-col-wideright > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 1fr 1fr 2fr;
 }
 
 /* Five column grid. */
 
-.c9-layout-columns-5>.c9-layout-column-wrap {
+.c9-layout-columns-5 > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas: "col1 col2 col3 col4 col5";
 
@@ -279,7 +279,7 @@
 	}
 }
 
-.c9-layout-columns-6>.c9-layout-column-wrap {
+.c9-layout-columns-6 > .c9-layout-column-wrap {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas: "col1 col2 col3 col4 col5 col6";
 

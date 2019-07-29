@@ -135,20 +135,8 @@ export default class VideoBox extends Component {
 			}
 		} = this.props;
 
-		const c9VideoStyles = (
-			videoType,
-			containerVideoURL,
-			minScreenHeight
-		) => {
+		const c9VideoStyles = (videoType, containerVideoURL, minScreenHeight) => {
 			const styles = {};
-			styles.opacity = 0;
-			styles.transition = "5000ms";
-			styles.height = "100%";
-			styles.width = "100%";
-
-			styles.position = "absolute";
-			styles.left = 0;
-			styles.top = 0;
 			styles.minHeight = `${minScreenHeight}vh`;
 
 			return styles;
@@ -159,17 +147,14 @@ export default class VideoBox extends Component {
 				// eslint-disable-next-line jsx-a11y/media-has-caption
 				<video
 					id="containerVideo"
+					className="c9-video"
 					playsinline="playsinline"
 					autoPlay="autoplay"
 					muted="muted"
 					loop="loop"
 					onCanPlayThrough={this.canPlay}
 					ref={this.videoRef}
-					style={c9VideoStyles(
-						videoType,
-						containerVideoURL,
-						minScreenHeight
-					)}
+					style={c9VideoStyles(videoType, containerVideoURL, minScreenHeight)}
 				>
 					<source src={`${containerVideoURL}`} type="video/mp4" />
 				</video>
@@ -180,12 +165,9 @@ export default class VideoBox extends Component {
 				<div dangerouslySetInnerHTML={this.setYoutube()}>
 					<div
 						id="player"
+						className="c9-video"
 						video-id={containerVideoID}
-						style={c9VideoStyles(
-							videoType,
-							containerVideoURL,
-							minScreenHeight
-						)}
+						style={c9VideoStyles(videoType, containerVideoURL, minScreenHeight)}
 					/>
 				</div>
 			);
