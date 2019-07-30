@@ -59,7 +59,10 @@ class ToggleBlock extends Component {
 					/>
 				</BlockControls>
 				<div className={"c9-toggles-toggle"}>
-					<div className="c9-toggles-item-heading">
+					<div
+						className="c9-toggles-item-heading"
+						id={`c9-toggles-heading${attributes.toggleNumber}-${attributes.id}`}
+					>
 						<h2 className="mb-0">
 							<RichText
 								tagName="button"
@@ -88,7 +91,7 @@ class ToggleBlock extends Component {
 								}}
 								ref={this.toggleBtnRef}
 								data-toggle="collapse"
-								data-target={`#collapse${attributes.toggleNumber}-${
+								data-target={`#c9-toggles-collapse${attributes.toggleNumber}-${
 									attributes.id
 								}`}
 							>
@@ -109,7 +112,9 @@ class ToggleBlock extends Component {
 					<div
 						className="c9-toggles-item-content collapse"
 						ref={this.toggleDisplayRef}
-						id={`collapse${attributes.toggleNumber}-${attributes.id}`}
+						id={`c9-toggles-collapse${attributes.toggleNumber}-${
+							attributes.id
+						}`}
 						data-parent={`#accordion-${attributes.id}`}
 					>
 						<InnerBlocks templateLock={false} />
@@ -187,8 +192,9 @@ registerBlockType("c9-blocks/toggles-toggle", {
 			<div className={"c9-toggles-toggle"}>
 				<div
 					className="c9-toggles-item-heading"
+					id={`c9-toggles-heading${toggleNumber}-${id}`}
 					data-toggle="collapse"
-					data-target={`#collapse${toggleNumber}-${id}`}
+					data-target={`#c9-toggles-collapse${toggleNumber}-${id}`}
 				>
 					<h2 className="mb-0">
 						<RichText.Content
@@ -197,14 +203,14 @@ registerBlockType("c9-blocks/toggles-toggle", {
 							className="c9-toggles-toggle-label btn btn-link"
 							value={heading}
 						/>
-						<span className="c9-accordion-item-collapse">
+						<span className="c9-toggles-item-collapse">
 							<span className="fas fa-angle-right" />
 						</span>
 					</h2>
 				</div>
 				<div
 					className="c9-toggles-item-content collapse"
-					id={`collapse${toggleNumber}-${id}`}
+					id={`c9-toggles-collapse${toggleNumber}-${id}`}
 					data-parent={`#accordion-${id}`}
 				>
 					<InnerBlocks.Content />

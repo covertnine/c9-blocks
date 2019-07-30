@@ -9,13 +9,25 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 46px;
 		font-size: 0.7em;
 		cursor: pointer;
 		background: none;
 		border: none;
 		outline: none;
 		transition: 0.15s transform;
-		will-change: trasnform;
+		will-change: transform;
+		height: 100%;
+
+		> svg {
+			height: 100%;
+		}
+
+		.c9-toggle-item-expand {
+			transform: rotate(90deg);
+		}
+	}
+
+	.c9-toggles-item-heading {
+		position: relative;
 	}
 }

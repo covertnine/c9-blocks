@@ -65,10 +65,47 @@ export default class Edit extends Component {
 			for (let child of block.innerBlocks) {
 				if (child.attributes.toggleNumber != k) {
 					updateBlockAttributes(child.clientId, { toggleNumber: k });
+
+					if (
+						child.attributes.toggleNumber &&
+						child.attributes.toggleNumber > k
+					) {
+						const $ = window.jQuery;
+						$(
+							`div[data-block="${child.clientId}"] .c9-toggles-toggle`
+						).removeClass("toggle-collapse-ready");
+					}
 				}
 				k += 1;
 			}
 		}
+
+		const $ = window.jQuery;
+
+		setTimeout(() => {
+			$(".c9-toggles-toggle:not(.toggle-collapse-ready)").each(function() {
+				const $this = $(this);
+				$this.addClass("toggle-collapse-ready");
+
+				// grab collapse id
+				const id = $(".c9-toggles-item-content.collapse", this).attr("id");
+
+				// grab rotate arrow id
+				const iconId = $(".c9-toggles-item-heading", this).attr("id");
+
+				// insert hook into collapse and expand event
+				$(`#${id}`).on("show.bs.collapse", () => {
+					$(`#${iconId} button.c9-toggles-item-collapse > svg`).toggleClass(
+						"c9-toggle-item-expand"
+					);
+				});
+				$(`#${id}`).on("hide.bs.collapse", () => {
+					$(`#${iconId} button.c9-toggles-item-collapse > svg`).toggleClass(
+						"c9-toggle-item-expand"
+					);
+				});
+			});
+		}, 350);
 	}
 
 	render() {

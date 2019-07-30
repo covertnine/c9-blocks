@@ -1225,7 +1225,6 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   position: absolute;
   top: 0;
   right: 0;
-  width: 46px;
   font-size: 0.7em;
   cursor: pointer;
   background: none;
@@ -1236,4 +1235,14 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   -o-transition: 0.15s transform;
   transition: 0.15s transform;
   transition: 0.15s transform, 0.15s -webkit-transform;
-  will-change: trasnform; }
+  will-change: transform;
+  height: 100%; }
+  .c9-toggles .c9-toggles-item-collapse > svg {
+    height: 100%; }
+  .c9-toggles .c9-toggles-item-collapse .c9-toggle-item-expand {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg); }
+
+.c9-toggles .c9-toggles-item-heading {
+  position: relative; }

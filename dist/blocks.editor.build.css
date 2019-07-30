@@ -1379,6 +1379,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  *
  * CSS for both Frontend+Backend.
  */
+.c9-toggles .c9-toggles-item-collapse {
+  width: 28px; }
+
 .c9-toggles-add-item {
   padding-bottom: 20px; }
   .c9-toggles-add-item > .components-button.components-icon-button {

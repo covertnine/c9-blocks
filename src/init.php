@@ -129,7 +129,7 @@ function c9_blocks_front_assets()
     // blocks frontend
     wp_enqueue_script(
         'c9_blocks-frontend',
-        plugins_url('dist/blocks.front.build.js', dirname(__FILE__)),
+        plugins_url('dist/blocks.frontend.build.js', dirname(__FILE__)),
         array('youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n')
     );
 
