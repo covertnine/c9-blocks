@@ -21,6 +21,7 @@ class ToggleBlock extends Component {
 		super(...arguments);
 
 		this.toggleBtnRef = React.createRef();
+		this.toggleDisplayRef = React.createRef();
 	}
 
 	render() {
@@ -43,7 +44,14 @@ class ToggleBlock extends Component {
 								title: __("Collapse"),
 								onClick: () => {
 									this.toggleBtnRef.current.click();
-									setAttributes({ active: !active });
+									let element = this.toggleDisplayRef;
+									if (element) {
+										setTimeout(() => {
+											setAttributes({
+												active: element.current.className.includes("show")
+											});
+										}, 350);
+									}
 								},
 								isActive: active
 							}
@@ -51,9 +59,7 @@ class ToggleBlock extends Component {
 					/>
 				</BlockControls>
 				<div className={"c9-toggles-toggle"}>
-					<div
-						className="c9-toggles-item-heading"
-					>
+					<div className="c9-toggles-item-heading">
 						<h2 className="mb-0">
 							<RichText
 								tagName="button"
@@ -70,10 +76,21 @@ class ToggleBlock extends Component {
 							/>
 							<button
 								className="c9-toggles-item-collapse"
-								onClick={() => setAttributes({ active: !active })}
+								onClick={() => {
+									let element = this.toggleDisplayRef;
+									if (element) {
+										setTimeout(() => {
+											setAttributes({
+												active: element.current.className.includes("show")
+											});
+										}, 350);
+									}
+								}}
 								ref={this.toggleBtnRef}
 								data-toggle="collapse"
-								data-target={`#collapse${attributes.toggleNumber}-${attributes.id}`}
+								data-target={`#collapse${attributes.toggleNumber}-${
+									attributes.id
+								}`}
 							>
 								<span className="fas fa-angle-right" />
 							</button>
@@ -91,6 +108,7 @@ class ToggleBlock extends Component {
 					</div>
 					<div
 						className="c9-toggles-item-content collapse"
+						ref={this.toggleDisplayRef}
 						id={`collapse${attributes.toggleNumber}-${attributes.id}`}
 						data-parent={`#accordion-${attributes.id}`}
 					>
