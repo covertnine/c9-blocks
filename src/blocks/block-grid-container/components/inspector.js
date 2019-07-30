@@ -40,6 +40,7 @@ export default class Inspector extends Component {
 		} = this.props;
 
 		this.setAttributes = setAttributes;
+		this.preview = preview;
 
 		this.linkedPaddingRef = React.createRef();
 		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
@@ -51,12 +52,19 @@ export default class Inspector extends Component {
 			containerMargin: containerMargin,
 			setAttributes: setAttributes,
 			ID: containerVideoID || "",
-			preview: preview,
 			customX: bgCustomX.size != "auto",
 			customY: bgCustomY.size != "auto",
 			bgCustomX: bgCustomX,
 			bgCustomY: bgCustomY
 		};
+	}
+
+	componentDidUpdate() {
+		const {
+			attributes: { preview }
+		} = this.props;
+
+		this.preview = preview;
 	}
 
 	updateBgX = (position, value) => {
@@ -75,10 +83,14 @@ export default class Inspector extends Component {
 		this.setAttributes({ bgCustomY: sizeObject });
 	};
 
-	togglePaddingLinkage = spacingObject => {
-		let containerPadding = Object.assign({}, this.state.containerPadding);
+	togglePaddingLinkage = () => {
+		let {
+			attributes: { containerPadding }
+		} = this.props;
+
+		containerPadding = Object.assign({}, containerPadding);
 		containerPadding.linked = !containerPadding.linked;
-		containerPadding.icon = spacingObject.linked
+		containerPadding.icon = containerPadding.linked
 			? "admin-links"
 			: "editor-unlink";
 		this.setState({ containerPadding });
@@ -86,7 +98,11 @@ export default class Inspector extends Component {
 	};
 
 	setPaddingUnit = value => {
-		let spacingObject = Object.assign({}, this.state.containerPadding);
+		const {
+			attributes: { containerPadding }
+		} = this.props;
+
+		let spacingObject = Object.assign({}, containerPadding);
 		spacingObject.unit = value;
 		this.setState({ containerPadding: spacingObject });
 		this.setAttributes({ containerPadding: spacingObject });
@@ -113,10 +129,14 @@ export default class Inspector extends Component {
 		}
 	};
 
-	toggleMarginLinkage = spacingObject => {
-		let containerMargin = Object.assign({}, this.state.containerMargin);
+	toggleMarginLinkage = () => {
+		let {
+			attributes: { containerMargin }
+		} = this.props;
+
+		containerMargin = Object.assign({}, containerMargin);
 		containerMargin.linked = !containerMargin.linked;
-		containerMargin.icon = spacingObject.linked
+		containerMargin.icon = containerMargin.linked
 			? "admin-links"
 			: "editor-unlink";
 		this.setState({ containerMargin });
@@ -124,7 +144,11 @@ export default class Inspector extends Component {
 	};
 
 	setMarginUnit = value => {
-		let spacingObject = Object.assign({}, this.state.containerMargin);
+		const {
+			attributes: { containerMargin }
+		} = this.props;
+
+		let spacingObject = Object.assign({}, containerMargin);
 		spacingObject.unit = value;
 		this.setState({ containerMargin: spacingObject });
 		this.setAttributes({ containerMargin: spacingObject });
@@ -168,26 +192,28 @@ export default class Inspector extends Component {
 			this.setAttributes({ containerVideoID: result[0], cannotEmbed: false });
 			this.setState({ ID: result[0] });
 		} else {
-			if (this.state.preview && this.state.preview.i) {
-				this.state.preview.destroy();
+			if (this.preview && this.preview.i) {
+				this.preview.destroy();
 			}
 			this.setAttributes({ cannotEmbed: true });
 		}
 
 		// check if player exists
-		if (this.state.preview && this.state.preview.i) {
-			this.state.preview.loadVideoById(this.state.ID);
+		if (this.preview && this.preview.i) {
+			this.preview.loadVideoById(this.state.ID);
 		}
 	};
 
 	resetID = () => {
 		this.setState({ ID: "" });
-		this.state.preview.destroy();
-		this.setAttributes({
-			containerVideoID: this.state.ID,
-			cannotEmbed: false,
-			preview: this.state.preview
-		});
+		if (this.preview && this.preview.i) {
+			this.preview.destroy();
+			this.setAttributes({
+				containerVideoID: "",
+				cannotEmbed: false,
+				preview: this.preview
+			});
+		}
 	};
 
 	render() {
@@ -327,7 +353,7 @@ export default class Inspector extends Component {
 						<IconButton
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.containerPadding.icon}
-							onClick={() => this.togglePaddingLinkage(this.state.containerPadding)}
+							onClick={this.togglePaddingLinkage}
 							ref={this.state.linkedPaddingRef}
 						/>
 						<SelectControl
@@ -366,7 +392,7 @@ export default class Inspector extends Component {
 						<IconButton
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.containerMargin.icon}
-							onClick={() => this.toggleMarginLinkage(this.state.containerMargin)}
+							onClick={this.toggleMarginLinkage}
 							ref={this.state.linkedMarginRef}
 						/>
 					</div>
