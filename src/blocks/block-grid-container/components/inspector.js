@@ -57,14 +57,6 @@ export default class Inspector extends Component {
 		};
 	}
 
-	componentDidUpdate() {
-		const {
-			attributes: { preview }
-		} = this.props;
-
-		this.setState({ preview });
-	}
-
 	updateBgX = (position, value) => {
 		let sizeObject = Object.assign({}, this.state.bgCustomX);
 
