@@ -34,6 +34,16 @@ class ToggleBlock extends Component {
 
 		const { heading, active } = attributes;
 
+		if (
+			!isSelectedBlockInRoot &&
+			this.toggleDisplayRef.current != null &&
+			!this.toggleDisplayRef.current.className.includes("show")
+		) {
+			setAttributes({
+				active: false
+			});
+		}
+
 		return (
 			<Fragment>
 				<BlockControls>
@@ -44,11 +54,11 @@ class ToggleBlock extends Component {
 								title: __("Collapse"),
 								onClick: () => {
 									this.toggleBtnRef.current.click();
-									let element = this.toggleDisplayRef;
+									let element = this.toggleDisplayRef.current;
 									if (element) {
 										setTimeout(() => {
 											setAttributes({
-												active: element.current.className.includes("show")
+												active: element.className.includes("show")
 											});
 										}, 350);
 									}
