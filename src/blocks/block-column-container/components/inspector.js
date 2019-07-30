@@ -43,6 +43,8 @@ export default class Inspector extends Component {
 			setAttributes
 		} = this.props;
 
+		this.setAttributes = setAttributes;
+
 		this.linkedPaddingRef = React.createRef();
 		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
 		this.linkedMarginRef = React.createRef();
@@ -60,7 +62,7 @@ export default class Inspector extends Component {
 			bgCustomY: bgCustomY
 		};
 	}
-	
+
 	updateBgX = (position, value) => {
 		let sizeObject = Object.assign({}, this.state.bgCustomX);
 

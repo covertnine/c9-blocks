@@ -39,6 +39,8 @@ export default class Inspector extends Component {
 			setAttributes
 		} = this.props;
 
+		this.setAttributes = setAttributes;
+
 		this.linkedPaddingRef = React.createRef();
 		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
 		this.linkedMarginRef = React.createRef();
