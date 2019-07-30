@@ -38,21 +38,23 @@ export default class Inspector extends Component {
 			},
 			setAttributes
 		} = this.props;
-		this.containerPadding = containerPadding;
-		this.containerMargin = containerMargin;
-		this.setAttributes = setAttributes;
 
 		this.linkedPaddingRef = React.createRef();
 		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
 		this.linkedMarginRef = React.createRef();
 		this.toggleMarginLinkage = this.toggleMarginLinkage.bind(this);
 
-		this.ID = containerVideoID || "";
-		this.preview = preview;
-		this.customX = bgCustomX.size != "auto";
-		this.customY = bgCustomY.size != "auto";
-		this.bgCustomX = bgCustomX;
-		this.bgCustomY = bgCustomY;
+		this.state = {
+			containerPadding: containerPadding,
+			containerMargin: containerMargin,
+			setAttributes: setAttributes,
+			ID: containerVideoID || "",
+			preview: preview,
+			customX: bgCustomX.size != "auto",
+			customY: bgCustomY.size != "auto",
+			bgCustomX: bgCustomX,
+			bgCustomY: bgCustomY
+		};
 	}
 
 	componentDidUpdate() {
@@ -60,111 +62,102 @@ export default class Inspector extends Component {
 			attributes: { preview }
 		} = this.props;
 
-		this.preview = preview;
+		this.setState({ preview });
 	}
 
 	updateBgX = (position, value) => {
-		let sizeObject = Object.assign({}, this.bgCustomX);
+		let sizeObject = Object.assign({}, this.state.bgCustomX);
 
 		sizeObject[position] = value;
-
-		sizeObject[position] = value;
-		this.bgCustomX = sizeObject;
 		this.setState({ bgCustomX: sizeObject });
 		this.setAttributes({ bgCustomX: sizeObject });
 	};
 
 	updateBgY = (position, value) => {
-		let sizeObject = Object.assign({}, this.bgCustomY);
+		let sizeObject = Object.assign({}, this.state.bgCustomY);
 
 		sizeObject[position] = value;
-		this.bgCustomY = sizeObject;
 		this.setState({ bgCustomY: sizeObject });
 		this.setAttributes({ bgCustomY: sizeObject });
 	};
 
 	togglePaddingLinkage = spacingObject => {
-		this.containerPadding.linked = !this.containerPadding.linked;
-		this.containerPadding.icon = spacingObject.linked
+		let containerPadding = Object.assign({}, this.state.containerPadding);
+		containerPadding.linked = !containerPadding.linked;
+		containerPadding.icon = spacingObject.linked
 			? "admin-links"
 			: "editor-unlink";
-		this.setState({ containerPadding: this.containerPadding });
-		this.setAttributes({ containerPadding: this.containerPadding });
+		this.setState({ containerPadding });
+		this.setAttributes({ containerPadding });
 	};
 
 	setPaddingUnit = value => {
-		let spacingObject = Object.assign({}, this.containerPadding);
+		let spacingObject = Object.assign({}, this.state.containerPadding);
 		spacingObject.unit = value;
-		this.containerPadding = spacingObject;
 		this.setState({ containerPadding: spacingObject });
 		this.setAttributes({ containerPadding: spacingObject });
 	};
 
 	updatePadding = (position, value) => {
-		if (this.containerPadding.linked) {
+		if (this.state.containerPadding.linked) {
 			let spacingObject = {
-				linked: this.containerPadding.linked,
-				unit: this.containerPadding.unit,
+				linked: this.state.containerPadding.linked,
+				unit: this.state.containerPadding.unit,
 				top: value,
 				bottom: value,
 				left: value,
 				right: value,
-				icon: this.containerPadding.icon
+				icon: this.state.containerPadding.icon
 			};
-			this.containerPadding = spacingObject;
 			this.setState({ containerPadding: spacingObject });
 			this.setAttributes({ containerPadding: spacingObject });
 		} else {
-			let spacingObject = Object.assign({}, this.containerPadding);
+			let spacingObject = Object.assign({}, this.state.containerPadding);
 			spacingObject[position] = value;
-			this.containerPadding = spacingObject;
 			this.setState({ containerPadding: spacingObject });
 			this.setAttributes({ containerPadding: spacingObject });
 		}
 	};
 
 	toggleMarginLinkage = spacingObject => {
-		this.containerMargin.linked = !this.containerMargin.linked;
-		this.containerMargin.icon = spacingObject.linked
+		let containerMargin = Object.assign({}, this.state.containerMargin);
+		containerMargin.linked = !containerMargin.linked;
+		containerMargin.icon = spacingObject.linked
 			? "admin-links"
 			: "editor-unlink";
-		this.setState({ containerMargin: this.containerMargin });
-		this.setAttributes({ containerMargin: this.containerMargin });
+		this.setState({ containerMargin });
+		this.setAttributes({ containerMargin });
 	};
 
 	setMarginUnit = value => {
-		let spacingObject = Object.assign({}, this.containerMargin);
+		let spacingObject = Object.assign({}, this.state.containerMargin);
 		spacingObject.unit = value;
-		this.containerMargin = spacingObject;
 		this.setState({ containerMargin: spacingObject });
 		this.setAttributes({ containerMargin: spacingObject });
 	};
 
 	updateMargin = (position, value) => {
-		if (this.containerMargin.linked) {
+		if (this.state.containerMargin.linked) {
 			let spacingObject = {
-				linked: this.containerMargin.linked,
-				unit: this.containerMargin.unit,
+				linked: this.state.containerMargin.linked,
+				unit: this.state.containerMargin.unit,
 				top: value,
 				bottom: value,
 				left: value,
 				right: value,
-				icon: this.containerMargin.icon
+				icon: this.state.containerMargin.icon
 			};
-			this.containerMargin = spacingObject;
 			this.setState({ containerMargin: spacingObject });
 			this.setAttributes({ containerMargin: spacingObject });
 		} else {
-			let spacingObject = Object.assign({}, this.containerMargin);
+			let spacingObject = Object.assign({}, this.state.containerMargin);
 			spacingObject[position] = value;
-			this.containerMargin = spacingObject;
 			this.setState({ containerMargin: spacingObject });
 			this.setAttributes({ containerMargin: spacingObject });
 		}
 	};
 
 	updateID = value => {
-		this.ID = value;
 		this.setState({ ID: value });
 	};
 
@@ -174,34 +167,32 @@ export default class Inspector extends Component {
 		let checkAlphaNumeric = /^[a-zA-Z0-9-_]+$/;
 		let result;
 
-		if ((result = this.ID.match(checkURL))) {
+		if ((result = this.state.ID.match(checkURL))) {
 			this.setAttributes({ containerVideoID: result[1], cannotEmbed: false });
-			this.ID = result[1];
 			this.setState({ ID: result[1] });
-		} else if ((result = this.ID.match(checkAlphaNumeric))) {
+		} else if ((result = this.state.ID.match(checkAlphaNumeric))) {
 			this.setAttributes({ containerVideoID: result[0], cannotEmbed: false });
-			this.ID = result[0];
 			this.setState({ ID: result[0] });
 		} else {
-			if (this.preview && this.preview.i) {
-				this.preview.destroy();
+			if (this.state.preview && this.state.preview.i) {
+				this.state.preview.destroy();
 			}
 			this.setAttributes({ cannotEmbed: true });
 		}
 
 		// check if player exists
-		if (this.preview && this.preview.i) {
-			this.preview.loadVideoById(this.ID);
+		if (this.state.preview && this.state.preview.i) {
+			this.state.preview.loadVideoById(this.state.ID);
 		}
 	};
 
 	resetID = () => {
-		this.ID = "";
-		this.preview.destroy();
+		this.setState({ ID: "" });
+		this.state.preview.destroy();
 		this.setAttributes({
-			containerVideoID: this.ID,
+			containerVideoID: this.state.ID,
 			cannotEmbed: false,
-			preview: this.preview
+			preview: this.state.preview
 		});
 	};
 
@@ -341,9 +332,9 @@ export default class Inspector extends Component {
 						/>
 						<IconButton
 							label={__("Linked Padding Toggle", "c9-blocks")}
-							icon={this.containerPadding.icon}
-							onClick={() => this.togglePaddingLinkage(this.containerPadding)}
-							ref={this.linkedPaddingRef}
+							icon={this.state.containerPadding.icon}
+							onClick={() => this.togglePaddingLinkage(this.state.containerPadding)}
+							ref={this.state.linkedPaddingRef}
 						/>
 						<SelectControl
 							options={paddingOptions}
@@ -380,9 +371,9 @@ export default class Inspector extends Component {
 					<div className="margin-sides-wrapper">
 						<IconButton
 							label={__("Linked Padding Toggle", "c9-blocks")}
-							icon={this.containerMargin.icon}
-							onClick={() => this.toggleMarginLinkage(this.containerMargin)}
-							ref={this.linkedMarginRef}
+							icon={this.state.containerMargin.icon}
+							onClick={() => this.toggleMarginLinkage(this.state.containerMargin)}
+							ref={this.state.linkedMarginRef}
 						/>
 					</div>
 					<div className="margin-bottom-wrapper">
@@ -533,9 +524,8 @@ export default class Inspector extends Component {
 													<h5>{__("Horizontal", "c9-blocks")}</h5>
 													<ToggleControl
 														label={__("Auto | Manual", "c9-blocks")}
-														checked={this.customX}
+														checked={this.state.customX}
 														onChange={value => {
-															this.customX = value;
 															this.setState({ customX: value });
 
 															if (value) {
@@ -546,10 +536,10 @@ export default class Inspector extends Component {
 															}
 														}}
 													/>
-													{this.customX && (
+													{this.state.customX && (
 														<div style={{ display: "flex" }}>
 															<RangeControl
-																value={this.bgCustomX.size}
+																value={this.state.bgCustomX.size}
 																onChange={value =>
 																	this.updateBgX("size", value)
 																}
@@ -559,7 +549,7 @@ export default class Inspector extends Component {
 															/>
 															<SelectControl
 																options={cssUnits}
-																value={this.bgCustomX.unit}
+																value={this.state.bgCustomX.unit}
 																onChange={value =>
 																	this.updateBgX("unit", value)
 																}
@@ -570,9 +560,8 @@ export default class Inspector extends Component {
 													<h5>{__("Vertical", "c9-blocks")}</h5>
 													<ToggleControl
 														label={__("Auto | Manual", "c9-blocks")}
-														checked={this.customY}
+														checked={this.state.customY}
 														onChange={value => {
-															this.customY = value;
 															this.setState({ customY: value });
 
 															if (value) {
@@ -583,10 +572,10 @@ export default class Inspector extends Component {
 															}
 														}}
 													/>
-													{this.customY && (
+													{this.state.customY && (
 														<div style={{ display: "flex" }}>
 															<RangeControl
-																value={this.bgCustomY.size}
+																value={this.state.bgCustomY.size}
 																onChange={value =>
 																	this.updateBgY("size", value)
 																}
@@ -596,7 +585,7 @@ export default class Inspector extends Component {
 															/>
 															<SelectControl
 																options={cssUnits}
-																value={this.bgCustomY.unit}
+																value={this.state.bgCustomY.unit}
 																onChange={value =>
 																	this.updateBgY("unit", value)
 																}
@@ -641,7 +630,6 @@ export default class Inspector extends Component {
 								containerVideoURL: "",
 								containerVideoID: ""
 							});
-							this.ID = "";
 							this.setState({ ID: "" });
 
 							const {
@@ -695,7 +683,7 @@ export default class Inspector extends Component {
 						<div>
 							<TextControl
 								label="YouTube URL or Youtube ID"
-								value={this.ID}
+								value={this.state.ID}
 								onChange={value => this.updateID(value)}
 							/>
 

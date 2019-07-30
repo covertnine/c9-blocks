@@ -174,7 +174,7 @@ export default class Inspector extends Component {
 		if ((result = this.state.ID.match(checkURL))) {
 			this.setAttributes({ containerVideoID: result[1], cannotEmbed: false });
 			this.setState({ ID: result[1] });
-		} else if ((result = this.ID.match(checkAlphaNumeric))) {
+		} else if ((result = this.state.ID.match(checkAlphaNumeric))) {
 			this.setAttributes({ containerVideoID: result[0], cannotEmbed: false });
 			this.setState({ ID: result[0] });
 		} else {
@@ -196,7 +196,7 @@ export default class Inspector extends Component {
 		this.setAttributes({
 			containerVideoID: this.state.ID,
 			cannotEmbed: false,
-			preview: this.preview
+			preview: this.state.preview
 		});
 	};
 
@@ -668,7 +668,7 @@ export default class Inspector extends Component {
 															/>
 															<SelectControl
 																options={cssUnits}
-																value={this.bgCustomX.unit}
+																value={this.state.bgCustomX.unit}
 																onChange={value =>
 																	this.updateBgX("unit", value)
 																}
