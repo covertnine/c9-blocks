@@ -28,6 +28,9 @@ const attributes = {
 	tabContentBackgroundColor: {
 		type: "string"
 	},
+	blockBackgroundColor: {
+		type: "string"
+	},
 	verticalAlign: {
 		type: "string"
 	},

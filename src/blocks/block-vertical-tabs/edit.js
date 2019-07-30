@@ -115,6 +115,7 @@ export default class Edit extends Component {
 			tabBackgroundColor,
 			tabTextColor,
 			tabContentBackgroundColor,
+			blockBackgroundColor,
 			verticalAlign,
 			textAlign
 		} = attributes;
@@ -150,6 +151,9 @@ export default class Edit extends Component {
 						applyFilters("c9-blocks.blocks.className", className),
 						"row"
 					)}
+					style={{
+						backgroundColor: blockBackgroundColor
+					}}
 					data-tab-active={tabActive}
 				>
 					<div className="col-xs-12 col-sm-3">

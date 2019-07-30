@@ -22,7 +22,8 @@ export default class Save extends Component {
 			ver,
 			tabBackgroundColor,
 			tabTextColor,
-			tabContentBackgroundColor
+			tabContentBackgroundColor,
+			blockBackgroundColor
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -31,6 +32,9 @@ export default class Save extends Component {
 			<div
 				className={applyFilters("c9-blocks.blocks.className", className)}
 				data-tab-active={tabActive}
+				style={{
+					backgroundColor: blockBackgroundColor
+				}}
 			>
 				<ul
 					className={classnames(

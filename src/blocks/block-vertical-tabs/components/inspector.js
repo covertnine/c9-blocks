@@ -19,7 +19,8 @@ export default class Inspector extends Component {
 			buttonsAlign,
 			tabBackgroundColor,
 			tabTextColor,
-			tabContentBackgroundColor
+			tabContentBackgroundColor,
+			blockBackgroundColor
 		} = attributes;
 
 		return (
@@ -31,6 +32,25 @@ export default class Inspector extends Component {
 						controls={["left", "center", "right"]}
 					/>
 				</BaseControl>
+				<PanelColorSettings
+					title={__("Block Color Settings", "c9-blocks")}
+					initialOpen={true}
+					colorSettings={[
+						{
+							value: blockBackgroundColor,
+							onChange: value =>
+								setAttributes({ blockBackgroundColor: value }),
+							label: __("Background Color", "c9-blocks")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							backgroundColor: blockBackgroundColor,
+							fallbackBackgroundColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
 				<PanelColorSettings
 					title={__("Tab Color Settings", "c9-blocks")}
 					initialOpen={false}
@@ -71,7 +91,6 @@ export default class Inspector extends Component {
 					<ContrastChecker
 						{...{
 							backgroundColor: tabContentBackgroundColor,
-							fallbackTextColor: "black",
 							fallbackBackgroundColor: "white"
 						}}
 					/>

@@ -23,6 +23,7 @@ export default class Save extends Component {
 			tabBackgroundColor,
 			tabTextColor,
 			tabContentBackgroundColor,
+			blockBackgroundColor,
 			verticalAlign
 		} = this.props.attributes;
 
@@ -34,6 +35,9 @@ export default class Save extends Component {
 					applyFilters("c9-blocks.blocks.className", className),
 					"row"
 				)}
+				style={{
+					backgroundColor: blockBackgroundColor
+				}}
 				data-tab-active={tabActive}
 			>
 				<div className="col-xs-12 col-sm-3">

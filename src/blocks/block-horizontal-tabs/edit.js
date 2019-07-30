@@ -114,7 +114,8 @@ export default class Edit extends Component {
 			tabsData = [],
 			tabBackgroundColor,
 			tabTextColor,
-			tabContentBackgroundColor
+			tabContentBackgroundColor,
+			blockBackgroundColor
 		} = attributes;
 
 		const tabs = this.getTabs();
@@ -158,6 +159,9 @@ export default class Edit extends Component {
 				<div
 					className={applyFilters("c9-blocks.blocks.className", className)}
 					data-tab-active={tabActive}
+					style={{
+						backgroundColor: blockBackgroundColor
+					}}
 				>
 					<ul
 						className={classnames(
