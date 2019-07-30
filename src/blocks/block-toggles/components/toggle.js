@@ -24,6 +24,24 @@ class ToggleBlock extends Component {
 		this.toggleDisplayRef = React.createRef();
 	}
 
+	getParentToggle(rootBlock) {
+		const { block } = this.props;
+
+		let result = false;
+
+		if (rootBlock.innerBlocks && rootBlock.innerBlocks.length) {
+			rootBlock.innerBlocks.forEach(item => {
+				if (!result && item.clientId === block.clientId) {
+					result = rootBlock;
+				} else if (!result) {
+					result = this.getParentToggle(item);
+				}
+			});
+		}
+
+		return result;
+	}
+
 	render() {
 		const {
 			attributes,
@@ -109,9 +127,18 @@ class ToggleBlock extends Component {
 							</button>
 							<RemoveButton
 								show={isSelectedBlockInRoot}
-								tooltipText={__("Remove accordion item?")}
+								tooltipText={__("Remove toggle item?")}
 								onRemove={() => {
-									this.props.removeBlock(this.props.clientId);
+									const parentToggle = this.getParentToggle(
+										this.props.rootBlock
+									);
+									if (parentToggle && parentToggle.clientId) {
+										this.props.removeBlock(this.props.clientId);
+
+										if (parentToggle.innerBlocks.length <= 1) {
+											this.props.removeBlock(parentToggle.clientId);
+										}
+									}
 								}}
 								style={{
 									top: "10px"
