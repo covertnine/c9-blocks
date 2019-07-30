@@ -73,10 +73,10 @@ registerBlockType("c9-blocks/column", {
 					/>
 				</BlockControls>
 				<div
-					style={{ textAlign: textAlign }}
 					className={classnames(
 						"c9-block-layout-column",
 						"c9-column",
+						textAlign ? `text-${textAlign}` : null,
 						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
 					)}
 				>
@@ -99,10 +99,10 @@ registerBlockType("c9-blocks/column", {
 
 		return (
 			<div
-				style={{ textAlign: textAlign }}
 				className={classnames(
 					"c9-block-layout-column",
 					"c9-column",
+					textAlign ? `text-${textAlign}` : null,
 					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
 				)}
 			>

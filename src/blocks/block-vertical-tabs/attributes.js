@@ -3,10 +3,6 @@ const attributes = {
 		type: "string",
 		default: "tab-1"
 	},
-	buttonsAlign: {
-		type: "string",
-		default: "start"
-	},
 	tabsData: {
 		type: "array",
 		default: [
@@ -33,6 +29,9 @@ const attributes = {
 		type: "string"
 	},
 	verticalAlign: {
+		type: "string"
+	},
+	textAlign: {
 		type: "string"
 	}
 };

@@ -13,7 +13,7 @@ const { Component, Fragment } = wp.element;
 
 const { IconButton, Tooltip } = wp.components;
 
-const { RichText, InnerBlocks, BlockControls } = wp.editor;
+const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
 
 const { applyFilters } = wp.hooks;
 
@@ -115,7 +115,8 @@ export default class Edit extends Component {
 			tabBackgroundColor,
 			tabTextColor,
 			tabContentBackgroundColor,
-			verticalAlign
+			verticalAlign,
+			textAlign
 		} = attributes;
 
 		const tabs = this.getTabs();
@@ -131,6 +132,10 @@ export default class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls>
+					<AlignmentToolbar
+						value={textAlign}
+						onChange={value => setAttributes({ textAlign: value })}
+					/>
 					<VerticalAlignmentToolbar
 						value={verticalAlign}
 						onChange={value => {
@@ -149,7 +154,10 @@ export default class Edit extends Component {
 				>
 					<div className="col-xs-12 col-sm-3">
 						<div
-							className={classnames("nav flex-column nav-pills")}
+							className={classnames(
+								"nav flex-column nav-pills",
+								textAlign ? `text-${textAlign}` : null
+							)}
 							role="tablist"
 						>
 							{tabsData.map((tabData, i) => {

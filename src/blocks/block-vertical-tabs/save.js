@@ -17,7 +17,7 @@ export default class Save extends Component {
 	render() {
 		const {
 			tabActive,
-			buttonsAlign,
+			textAlign,
 			tabsData = [],
 			ver,
 			tabBackgroundColor,
@@ -40,7 +40,7 @@ export default class Save extends Component {
 					<div
 						className={classnames(
 							"nav flex-column nav-pills",
-							buttonsAlign ? `justify-content-${buttonsAlign}` : "nav-justified"
+							textAlign ? `text-${textAlign}` : null
 						)}
 						role="tablist"
 					>
