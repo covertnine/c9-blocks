@@ -4,6 +4,12 @@
  * CSS for both Frontend+Backend.
  */
 
-.c9-tabs-v2 > .nav.nav-tabs {
-	list-style: none;
+.c9-vertical-tabs {
+	> .nav.nav-tabs {
+		list-style: none;
+	}
+
+	.c9-tabs-content-wrapper {
+		display: grid;
+	}
 }

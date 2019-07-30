@@ -52,7 +52,7 @@ export default class Edit extends Component {
 
 		tabsData.forEach(tabData => {
 			result.push([
-				"c9-blocks/tabs-tab-v2",
+				"c9-blocks/horizontal-tabs-tab",
 				{ ...tabData, tabActive, id: this.id }
 			]);
 		});
@@ -173,7 +173,10 @@ export default class Edit extends Component {
 							return (
 								<li className="nav-item">
 									<RichText
-										style={{ backgroundColor: tabBackgroundColor, color: tabTextColor }}
+										style={{
+											backgroundColor: tabBackgroundColor,
+											color: tabTextColor
+										}}
 										tagName="a"
 										data-toggle="tab"
 										role="tab"
@@ -273,7 +276,7 @@ export default class Edit extends Component {
 						<InnerBlocks
 							template={this.getTabsTemplate()}
 							templateLock="all"
-							allowedBlocks={["c9-blocks/tabs-tab-v2"]}
+							allowedBlocks={["c9-blocks/horizontal-tabs-tab"]}
 						/>
 					</div>
 				</div>
@@ -281,7 +284,7 @@ export default class Edit extends Component {
 					{`
                     [data-block="${
 											this.props.clientId
-										}"] > .c9-tabs-v2 > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
+										}"] > .c9-horizontal-tabs > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
                         display: block;
                     }
                     `}

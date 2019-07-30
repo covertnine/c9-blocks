@@ -1082,15 +1082,15 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-div[data-type="c9-blocks/tabs-v2"] .c9-tabs-v2 .tab-content [data-tab] {
+div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs .tab-content [data-tab] {
   display: none; }
 
-div[data-type="c9-blocks/tabs-v2"] .c9-tabs-v2 .nav-item {
+div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs .nav-item {
   position: relative;
   -webkit-transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
   -o-transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
   transition: 0.15s border-color, 0.15s background-color, 0.15s opacity; }
-  div[data-type="c9-blocks/tabs-v2"] .c9-tabs-v2 .nav-item:not(:hover) > .c9-component-remove-button {
+  div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs .nav-item:not(:hover) > .c9-component-remove-button {
     opacity: 0; }
 
 .c9-component-remove-button {

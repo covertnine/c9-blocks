@@ -3,6 +3,7 @@
  */
 import Inspector from "./components/inspector";
 import RemoveButton from "./components/remove-button";
+import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
 
 /**
  * WordPress dependencies
@@ -113,7 +114,8 @@ export default class Edit extends Component {
 			tabsData = [],
 			tabBackgroundColor,
 			tabTextColor,
-			tabContentBackgroundColor
+			tabContentBackgroundColor,
+			verticalAlign
 		} = attributes;
 
 		const tabs = this.getTabs();
@@ -128,7 +130,14 @@ export default class Edit extends Component {
 
 		return (
 			<Fragment>
-				<BlockControls />
+				<BlockControls>
+					<VerticalAlignmentToolbar
+						value={verticalAlign}
+						onChange={value => {
+							setAttributes({ verticalAlign: value });
+						}}
+					/>
+				</BlockControls>
 
 				<Inspector {...this.props} />
 				<div
@@ -248,9 +257,12 @@ export default class Edit extends Component {
 							)}
 						</div>
 					</div>
-					<div className="col-xs-12 col-sm-9">
+					<div className="col-xs-12 col-sm-9 c9-tabs-content-wrapper">
 						<div
-							className="c9-tabs-content tab-content"
+							className={classnames(
+								"c9-tabs-content tab-content",
+								verticalAlign ? `align-self-${verticalAlign}` : null
+							)}
 							style={{
 								backgroundColor: tabContentBackgroundColor
 							}}

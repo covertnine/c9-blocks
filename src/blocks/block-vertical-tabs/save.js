@@ -22,7 +22,8 @@ export default class Save extends Component {
 			ver,
 			tabBackgroundColor,
 			tabTextColor,
-			tabContentBackgroundColor
+			tabContentBackgroundColor,
+			verticalAlign
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -66,7 +67,10 @@ export default class Save extends Component {
 				</div>
 				<div className="col-xs-12 col-sm-9">
 					<div
-						className="c9-tabs-content tab-content"
+						className={classnames(
+							"c9-tabs-content tab-content",
+							verticalAlign ? `align-self-${verticalAlign}` : null
+						)}
 						style={{
 							backgroundColor: tabContentBackgroundColor
 						}}

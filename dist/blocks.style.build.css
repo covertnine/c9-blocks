@@ -1097,7 +1097,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  *
  * CSS for both Frontend+Backend.
  */
-.c9-tabs-v2 > .nav.nav-tabs {
+.c9-horizontal-tabs > .nav.nav-tabs {
   list-style: none; }
 /**
  * #.# Common SCSS
@@ -1141,8 +1141,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  *
  * CSS for both Frontend+Backend.
  */
-.c9-tabs-v2 > .nav.nav-tabs {
+.c9-vertical-tabs > .nav.nav-tabs {
   list-style: none; }
+
+.c9-vertical-tabs .c9-tabs-content-wrapper {
+  display: grid; }
 /**
  * #.# Common SCSS
  *
