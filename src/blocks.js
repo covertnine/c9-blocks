@@ -9,7 +9,7 @@
  * Webpack is compiling as the input file.
  */
 import "./blocks/i18n.js";
-import "./blocks/block-footnote/block-footnote.js";
+// import "./blocks/block-footnote/block-footnote.js";
 import "./blocks/block-sharing/block-sharing.js";
 import "./blocks/block-cta/block-cta.js";
 import "./blocks/block-heading/block-heading.js";
