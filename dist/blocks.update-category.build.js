@@ -3501,7 +3501,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { Modal, TabPanel, Tooltip } = wp.components;
+const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 const { createBlock } = wp.blocks;
@@ -3526,8 +3526,11 @@ class TemplatesModal extends Component {
 			})])],
 			featured: [createBlock("core/heading", {}), createBlock("core/spacer", { height: "10" }), createBlock("core/media-text", { align: "full" }), createBlock("core/spacer", { height: "40" }), createBlock("core/quote", {}), createBlock("core/spacer", { height: "20" }), createBlock("core/media-text", { mediaPosition: "right" }), createBlock("core/paragraph", {
 				placeholder: __("Layout Switcher", "c9-blocks")
-			})]
+			})],
+			nested: [createBlock("c9-blocks/grid", {}, [createBlock("c9-blocks/column-container", { columns: 3, layout: "c9-3-col-equal" }, [createBlock("c9-blocks/column", {}, [createBlock("core/button", { text: "Make this Recipe" })])])])]
 		};
+
+		const { resetBlocks } = this.props;
 
 		return React.createElement(
 			Modal,
@@ -3605,7 +3608,27 @@ class TemplatesModal extends Component {
 										icon: "wordpress",
 										label: __("Featured", "c9-blocks"),
 										layout: layouts.featured
+									}),
+									React.createElement(__WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__["a" /* default */], {
+										icon: "wordpress",
+										label: __("Nested", "c9-blocks"),
+										layout: layouts.nested
 									})
+								),
+								React.createElement(
+									"button",
+									{
+										onClick: () => {
+											resetBlocks([]);
+										},
+										className: "btn btn-danger"
+									},
+									React.createElement(Icon, { icon: "trash" }),
+									React.createElement(
+										"span",
+										null,
+										__("Clear page", "c9-blocks")
+									)
 								)
 							);
 						case "pages":

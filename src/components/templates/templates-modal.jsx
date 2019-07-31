@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { Modal, TabPanel, Tooltip } = wp.components;
+const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 const { createBlock } = wp.blocks;
@@ -40,8 +40,23 @@ class TemplatesModal extends Component {
 				createBlock("core/paragraph", {
 					placeholder: __("Layout Switcher", "c9-blocks")
 				})
+			],
+			nested: [
+				createBlock("c9-blocks/grid", {}, [
+					createBlock(
+						"c9-blocks/column-container",
+						{ columns: 3, layout: "c9-3-col-equal" },
+						[
+							createBlock("c9-blocks/column", {}, [
+								createBlock("core/button", { text: "Make this Recipe" })
+							])
+						]
+					)
+				])
 			]
 		};
+
+		const { resetBlocks } = this.props;
 
 		return (
 			<Modal
@@ -106,7 +121,21 @@ class TemplatesModal extends Component {
 												label={__("Featured", "c9-blocks")}
 												layout={layouts.featured}
 											/>
+											<LayoutButton
+												icon="wordpress"
+												label={__("Nested", "c9-blocks")}
+												layout={layouts.nested}
+											/>
 										</div>
+										<button
+											onClick={() => {
+												resetBlocks([]);
+											}}
+											className="btn btn-danger"
+										>
+											<Icon icon="trash" />
+											<span>{__("Clear page", "c9-blocks")}</span>
+										</button>
 									</Fragment>
 								);
 							case "pages":
