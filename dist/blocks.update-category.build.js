@@ -990,7 +990,7 @@ addFilter(
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_templates_modal_jsx__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_templates_templates_modal_jsx__ = __webpack_require__(26);
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
@@ -1079,8 +1079,8 @@ class C9 extends Component {
 					)
 				)
 			),
-			"templates" === isModalOpen ? React.createElement(__WEBPACK_IMPORTED_MODULE_2__components_templates_modal_jsx__["a" /* TemplatesModal */], {
-				title: "This is my modal",
+			"templates" === isModalOpen ? React.createElement(__WEBPACK_IMPORTED_MODULE_2__components_templates_templates_modal_jsx__["a" /* TemplatesModal */], {
+				title: "Templates",
 				onRequestClose: () => this.setState({ isModalOpen: false })
 			}) : ""
 		);
@@ -3487,16 +3487,23 @@ exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-b
 
 /***/ }),
 /* 24 */,
-/* 25 */
+/* 25 */,
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TemplatesModalWithSelect; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { Modal } = wp.components;
+const { Modal, Button, TabPanel, Tooltip } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
+
+
 
 class TemplatesModal extends Component {
 	constructor() {
@@ -3506,11 +3513,58 @@ class TemplatesModal extends Component {
 	render() {
 		return React.createElement(
 			Modal,
-			this.props,
+			_extends({
+				className: "c9-templates-modal",
+				position: "top",
+				size: "lg"
+			}, this.props),
 			React.createElement(
-				"p",
-				null,
-				"Fill"
+				TabPanel,
+				{
+					className: "c9-template-tabs c9-component-modal-tab-panel",
+					tabs: [{
+						name: "sections",
+						title: React.createElement(
+							Tooltip,
+							{ text: __("Simple sections to construct your page.") },
+							React.createElement(
+								"span",
+								null,
+								__("Sections")
+							)
+						),
+						className: "c9-template-tabs-tab"
+					}, {
+						name: "pages",
+						title: React.createElement(
+							Tooltip,
+							{ text: __("Pre-designed ready to use pages.") },
+							React.createElement(
+								"span",
+								null,
+								__("Pages")
+							)
+						),
+						className: "c9-template-tabs-tab"
+					}, {
+						name: "local",
+						title: React.createElement(
+							Tooltip,
+							{ text: __("My Templates.") },
+							React.createElement(
+								"span",
+								null,
+								__("Saved Layouts")
+							)
+						),
+						className: "c9-template-tabs-tab"
+					}]
+				},
+				tab => React.createElement(
+					"p",
+					null,
+					tab.title
+				)
 			)
 		);
 	}
@@ -3524,6 +3578,65 @@ const TemplatesModalWithSelect = compose([withDispatch(dispatch => {
 	};
 })])(TemplatesModal);
 
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(28);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(2)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
+		var newContent = require("!!../../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./editor.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// Module
+exports.push([module.i, ".c9-templates-modal .components-modal__header {\n  border-bottom: none; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {\n  margin-top: -24px; }\n\n@media (min-width: 600px) {\n  .c9-templates-modal {\n    min-width: 600px;\n    max-width: 600px;\n    margin-left: -300px;\n    transform: none;\n    top: 112px; } }\n\n@media (min-width: 840px) {\n  .c9-templates-modal {\n    min-width: 800px;\n    max-width: 800px;\n    margin-left: -400px;\n    transform: none; } }\n\n.c9-templates-modal .components-modal__header .components-modal__icon-container svg {\n  display: block;\n  margin-right: 10px; }\n\n.c9-templates-modal .components-modal__header .components-modal__header-heading {\n  font-weight: 600; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {\n  padding: 12px 16px;\n  color: inherit; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab:focus {\n    outline: none; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab.is-active {\n    position: relative;\n    border-bottom: 2px solid #00a0d2;\n    z-index: 1; }\n", ""]);
 
 
 /***/ })

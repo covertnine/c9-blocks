@@ -10,7 +10,7 @@ const { Button, PanelBody } = wp.components;
 
 import "./editor.scss";
 import Logo from "../../assets/c9-feather-logo-gray.svg";
-import { TemplatesModal } from "../components/templates-modal.jsx";
+import { TemplatesModal } from "../components/templates/templates-modal.jsx";
 
 class C9 extends Component {
 	constructor() {
@@ -75,7 +75,7 @@ class C9 extends Component {
 				</PluginSidebar>
 				{"templates" === isModalOpen ? (
 					<TemplatesModal
-						title="This is my modal"
+						title="Templates"
 						onRequestClose={() => this.setState({ isModalOpen: false })}
 					/>
 				) : (
