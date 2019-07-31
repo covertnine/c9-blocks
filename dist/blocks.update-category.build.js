@@ -3492,6 +3492,7 @@ exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-b
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TemplatesModalWithSelect; });
+const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { Modal } = wp.components;
 const { compose } = wp.compose;
