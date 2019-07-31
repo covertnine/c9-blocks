@@ -3494,16 +3494,18 @@ exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-b
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TemplatesModalWithSelect; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__editor_scss__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__editor_scss__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { Modal, Icon, TabPanel, Tooltip } = wp.components;
+const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 const { createBlock } = wp.blocks;
+
 
 
 
@@ -3514,8 +3516,21 @@ class TemplatesModal extends Component {
 
 	render() {
 		const layouts = {
-			default: [createBlock("core/")]
+			default: [createBlock("core/paragraph", {})],
+			hero: [createBlock("core/cover", { align: "full" }), createBlock("core/button", {
+				text: __("Layout Switcher", "c9-blocks"),
+				align: "center"
+			}), createBlock("c9-blocks/grid", {}, [createBlock("c9-blocks/column-container", {
+				columns: 3,
+				layout: "c9-3-col-equal"
+			})])],
+			featured: [createBlock("core/heading", {}), createBlock("core/spacer", { height: "10" }), createBlock("core/media-text", { align: "full" }), createBlock("core/spacer", { height: "40" }), createBlock("core/quote", {}), createBlock("core/spacer", { height: "20" }), createBlock("core/media-text", { mediaPosition: "right" }), createBlock("core/paragraph", {
+				placeholder: __("Layout Switcher", "c9-blocks")
+			})],
+			nested: [createBlock("c9-blocks/grid", {}, [createBlock("c9-blocks/column-container", { columns: 3, layout: "c9-3-col-equal" }, [createBlock("c9-blocks/column", {}, [createBlock("core/button", { text: "Make this Recipe" })])])])]
 		};
+
+		const { resetBlocks } = this.props;
 
 		return React.createElement(
 			Modal,
@@ -3532,7 +3547,9 @@ class TemplatesModal extends Component {
 						name: "sections",
 						title: React.createElement(
 							Tooltip,
-							{ text: __("Simple sections to construct your page.", "c9-blocks") },
+							{
+								text: __("Simple sections to construct your page.", "c9-blocks")
+							},
 							React.createElement(
 								"span",
 								null,
@@ -3544,7 +3561,9 @@ class TemplatesModal extends Component {
 						name: "pages",
 						title: React.createElement(
 							Tooltip,
-							{ text: __("Pre-designed ready to use pages.", "c9-blocks") },
+							{
+								text: __("Pre-designed ready to use pages.", "c9-blocks")
+							},
 							React.createElement(
 								"span",
 								null,
@@ -3580,29 +3599,35 @@ class TemplatesModal extends Component {
 								React.createElement(
 									"div",
 									{ className: "c9-layout-options" },
-									React.createElement(
-										"button",
-										{
-											onClick: () => console.log("Load hero layout")
+									React.createElement(__WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__["a" /* default */], {
+										icon: "wordpress",
+										label: __("Hero", "c9-blocks"),
+										layout: layouts.hero
+									}),
+									React.createElement(__WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__["a" /* default */], {
+										icon: "wordpress",
+										label: __("Featured", "c9-blocks"),
+										layout: layouts.featured
+									}),
+									React.createElement(__WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__["a" /* default */], {
+										icon: "wordpress",
+										label: __("Nested", "c9-blocks"),
+										layout: layouts.nested
+									})
+								),
+								React.createElement(
+									"button",
+									{
+										onClick: () => {
+											resetBlocks([]);
 										},
-										React.createElement(Icon, { icon: "wordpress" }),
-										React.createElement(
-											"span",
-											null,
-											__("Hero", "c9-blocks")
-										)
-									),
+										className: "btn btn-danger"
+									},
+									React.createElement(Icon, { icon: "trash" }),
 									React.createElement(
-										"button",
-										{
-											onClick: () => console.log("Load featured layout")
-										},
-										React.createElement(Icon, { icon: "wordpress" }),
-										React.createElement(
-											"span",
-											null,
-											__("Featured", "c9-blocks")
-										)
+										"span",
+										null,
+										__("Clear page", "c9-blocks")
 									)
 								)
 							);
@@ -3697,6 +3722,42 @@ exports = module.exports = __webpack_require__(1)(false);
 // Module
 exports.push([module.i, ".c9-templates-modal .components-modal__header {\n  border-bottom: none; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {\n  margin-top: -24px; }\n\n@media (min-width: 600px) {\n  .c9-templates-modal {\n    min-width: 600px;\n    max-width: 600px;\n    margin-left: -300px;\n    transform: none;\n    top: 112px; } }\n\n@media (min-width: 840px) {\n  .c9-templates-modal {\n    min-width: 800px;\n    max-width: 800px;\n    margin-left: -400px;\n    transform: none; } }\n\n.c9-templates-modal .components-modal__header .components-modal__icon-container svg {\n  display: block;\n  margin-right: 10px; }\n\n.c9-templates-modal .components-modal__header .components-modal__header-heading {\n  font-weight: 600; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options {\n  display: grid;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  grid-template-columns: repeat(6, 1fr); }\n  .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button {\n    border-width: 1px;\n    border-style: solid;\n    border-color: #d8d8d8 #d1d1d1 #bababa;\n    border-radius: 3px;\n    box-shadow: inset 0 -1px 0 #ccc;\n    padding: 5px; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button:active {\n      border-color: #999;\n      box-shadow: insert 0 1px 0 #999; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button span {\n      display: block;\n      font-size: 0.8rem;\n      padding: 2px 0; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {\n  padding: 12px 16px;\n  color: inherit; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab:focus {\n    outline: none; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab.is-active {\n    position: relative;\n    border-bottom: 2px solid #00a0d2;\n    z-index: 1; }\n", ""]);
 
+
+/***/ }),
+/* 29 */,
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const { Icon } = wp.components;
+const { withDispatch } = wp.data;
+
+const LayoutButton = ({ label, icon, layout, resetBlocks, insertBlocks }) => {
+	return React.createElement(
+		"button",
+		{
+			onClick: () => {
+				resetBlocks([]);
+				insertBlocks(layout);
+			}
+		},
+		React.createElement(Icon, { icon: icon }),
+		React.createElement(
+			"span",
+			null,
+			label
+		)
+	);
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (withDispatch(dispatch => {
+	const { resetBlocks, insertBlocks } = dispatch("core/editor");
+
+	return {
+		resetBlocks,
+		insertBlocks
+	};
+})(LayoutButton));
 
 /***/ })
 /******/ ]);
