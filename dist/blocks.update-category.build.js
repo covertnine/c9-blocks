@@ -1026,14 +1026,14 @@ class C9 extends Component {
 					icon: React.createElement(__WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__["a" /* default */], { style: { width: "20px", margin: "0 10px 0 6px" } }),
 					target: "c9-blocks"
 				},
-				__("C9 Blocks", "c9-blocks")
+				__("COVERT NINE Blocks", "c9-blocks")
 			),
 			React.createElement(
 				PluginSidebar,
 				{
 					name: "c9-blocks",
 					id: "c9-blocks",
-					title: __("C9 Blocks", "c9-blocks")
+					title: __("COVERT NINE Blocks", "c9-blocks")
 				},
 				React.createElement(
 					PanelBody,

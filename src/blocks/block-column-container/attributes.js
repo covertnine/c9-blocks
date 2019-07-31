@@ -29,8 +29,7 @@ const attributes = {
 		default: "container-fluid"
 	},
 	verticalAlign: {
-		type: "string",
-		default: "center"
+		type: "string"
 	},
 	containerImgURL: {
 		type: "string"

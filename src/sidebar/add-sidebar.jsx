@@ -30,12 +30,12 @@ class C9 extends Component {
 					icon={<Logo style={{ width: "20px", margin: "0 10px 0 6px" }} />}
 					target="c9-blocks"
 				>
-					{__("C9 Blocks", "c9-blocks")}
+					{__("COVERT NINE Blocks", "c9-blocks")}
 				</PluginSidebarMoreMenuItem>
 				<PluginSidebar
 					name="c9-blocks"
 					id="c9-blocks"
-					title={__("C9 Blocks", "c9-blocks")}
+					title={__("COVERT NINE Blocks", "c9-blocks")}
 				>
 					<PanelBody className="plugin-c9-panel">
 						<Button

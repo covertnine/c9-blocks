@@ -25,7 +25,6 @@ registerBlockType("c9-blocks/grid", {
 	category: "c9-blocks",
 	supports: {
 		// fill in features
-		align: ["wide", "full"]
 	},
 	keywords: [__("responsive", "c9-blocks")],
 	attributes,
