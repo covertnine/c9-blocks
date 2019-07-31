@@ -990,6 +990,7 @@ addFilter(
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_templates_modal_jsx__ = __webpack_require__(25);
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
@@ -999,6 +1000,7 @@ const { __ } = wp.i18n;
 const { Component } = wp.element;
 
 const { Button, PanelBody } = wp.components;
+
 
 
 
@@ -1028,7 +1030,11 @@ class C9 extends Component {
 			),
 			React.createElement(
 				PluginSidebar,
-				{ name: "c9-blocks", id: "c9-blocks", title: __("C9 Blocks", "c9-blocks") },
+				{
+					name: "c9-blocks",
+					id: "c9-blocks",
+					title: __("C9 Blocks", "c9-blocks")
+				},
 				React.createElement(
 					PanelBody,
 					{ className: "plugin-c9-panel" },
@@ -1072,7 +1078,11 @@ class C9 extends Component {
 						__("Customizer", "c9-blocks")
 					)
 				)
-			)
+			),
+			"templates" === isModalOpen ? React.createElement(__WEBPACK_IMPORTED_MODULE_2__components_templates_modal_jsx__["a" /* TemplatesModal */], {
+				title: "This is my modal",
+				onRequestClose: () => this.setState({ isModalOpen: false })
+			}) : ""
 		);
 	}
 }
@@ -3473,6 +3483,47 @@ if(false) {
 exports = module.exports = __webpack_require__(1)(false);
 // Module
 exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-button {\n  border-color: #ccc;\n  background: #f7f7f7;\n  box-shadow: 0 1px 0 #ccc;\n  padding: 6px 8px;\n  border-radius: 3px;\n  color: #555; }\n", ""]);
+
+
+/***/ }),
+/* 24 */,
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TemplatesModalWithSelect; });
+const { __ } = wp.i18n;
+const { Component } = wp.element;
+const { Modal } = wp.components;
+const { compose } = wp.compose;
+const { withDispatch } = wp.data;
+
+class TemplatesModal extends Component {
+	constructor() {
+		super(...arguments);
+	}
+
+	render() {
+		return React.createElement(
+			Modal,
+			this.props,
+			React.createElement(
+				"p",
+				null,
+				"Fill"
+			)
+		);
+	}
+}
+
+const TemplatesModalWithSelect = compose([withDispatch(dispatch => {
+	const { resetBlocks, insertBlocks } = dispatch("core/editor");
+	return {
+		resetBlocks,
+		insertBlocks
+	};
+})])(TemplatesModal);
+
 
 
 /***/ })
