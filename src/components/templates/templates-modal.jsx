@@ -22,7 +22,12 @@ class TemplatesModal extends Component {
 					text: __("Layout Switcher", "c9-blocks"),
 					align: "center"
 				}),
-				createBlock("c9-blocks/column-container", { columns: 3 })
+				createBlock("c9-blocks/grid", {}, [
+					createBlock("c9-blocks/column-container", {
+						columns: 3,
+						layout: "c9-3-col-equal"
+					})
+				])
 			],
 			featured: [
 				createBlock("core/heading", {}),

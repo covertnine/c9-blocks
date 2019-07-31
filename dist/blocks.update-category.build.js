@@ -3520,7 +3520,10 @@ class TemplatesModal extends Component {
 			hero: [createBlock("core/cover", { align: "full" }), createBlock("core/button", {
 				text: __("Layout Switcher", "c9-blocks"),
 				align: "center"
-			}), createBlock("c9-blocks/column-container", { columns: 3 })],
+			}), createBlock("c9-blocks/grid", {}, [createBlock("c9-blocks/column-container", {
+				columns: 3,
+				layout: "c9-3-col-equal"
+			})])],
 			featured: [createBlock("core/heading", {}), createBlock("core/spacer", { height: "10" }), createBlock("core/media-text", { align: "full" }), createBlock("core/spacer", { height: "40" }), createBlock("core/quote", {}), createBlock("core/spacer", { height: "20" }), createBlock("core/media-text", { mediaPosition: "right" }), createBlock("core/paragraph", {
 				placeholder: __("Layout Switcher", "c9-blocks")
 			})]

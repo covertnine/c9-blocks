@@ -24,6 +24,7 @@ registerBlockType("c9-blocks/column-container", {
 	description: __("A responsive container for columns of content", "c9-blocks"),
 	icon: "columns",
 	category: "c9-blocks",
+	parent: ["c9-blocks/grid-container"],
 	supports: {
 		// fill in features
 		className: false
