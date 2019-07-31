@@ -141,25 +141,14 @@
 }
 
 @media only screen and (min-width: 1200px) {
-	// .page-template-default
-	// 	.entry-content
-	// 	> .container
-	// 	.c9-blocks-column-containers {
-	// 	// width: 100vw;
-	// 	// max-width: 100vw;
-	// 	// margin-left: calc((-100vw + 1110px) / 2);
-	// 	// margin-right: calc((-100vw + 1110px) / 2);
-	// }
 
 	.c9-blocks-column-containers .columns:not(.alignfull),
 	.c9-blocks-column-containers .columns.alignwide {
-		max-width: 1110px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.c9-blocks-column-containers .columns.alignwide {
-		max-width: 1170px;
 		padding: 0px;
 	}
 
@@ -171,7 +160,6 @@
 
 	.editor-styles-wrapper .wp-block[data-type="c9-blocks/column"]:only-child:not(.container-narrow),
 	.editor-styles-wrapper .wp-block[data-type="c9-blocks/column-containers"] .wp-block[data-type="core/columns"][data-align="wide"] {
-		// width: 1170px;
 		max-width: 100%;
 	}
 
