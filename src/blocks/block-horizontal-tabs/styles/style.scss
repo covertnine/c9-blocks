@@ -4,6 +4,11 @@
  * CSS for both Frontend+Backend.
  */
 
-.c9-horizontal-tabs > .nav.nav-tabs {
+.c9-horizontal-tabs>.nav.nav-tabs {
 	list-style: none;
+}
+
+.c9-horizontal-tabs .nav-tabs .nav-link {
+	border: none;
+	border-radius: 0px;
 }

@@ -1717,6 +1717,10 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  */
 .c9-horizontal-tabs > .nav.nav-tabs {
   list-style: none; }
+
+.c9-horizontal-tabs .nav-tabs .nav-link {
+  border: none;
+  border-radius: 0px; }
 /**
  * #.# Common SCSS
  *
