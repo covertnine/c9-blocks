@@ -10,6 +10,7 @@ const { Button, PanelBody } = wp.components;
 
 import "./editor.scss";
 import Logo from "../../assets/c9-feather-logo-gray.svg";
+import { TemplatesModal } from "../components/templates-modal.jsx";
 
 class C9 extends Component {
 	constructor() {
@@ -31,7 +32,11 @@ class C9 extends Component {
 				>
 					{__("C9 Blocks", "c9-blocks")}
 				</PluginSidebarMoreMenuItem>
-				<PluginSidebar name="c9-blocks" id="c9-blocks" title={__("C9 Blocks", "c9-blocks")}>
+				<PluginSidebar
+					name="c9-blocks"
+					id="c9-blocks"
+					title={__("C9 Blocks", "c9-blocks")}
+				>
 					<PanelBody className="plugin-c9-panel">
 						<Button
 							className="plugin-c9-panel-button"
@@ -68,12 +73,15 @@ class C9 extends Component {
 						</Button>
 					</PanelBody>
 				</PluginSidebar>
-				{/* { 'templates' === isModalOpen ? (
-                    <TemplatesModal
-                        onRequestClose={ () => this.setState( { isModalOpen: false } ) }
-                    />
-                ) : '' }
-                { 'custom-code' === isModalOpen ? (
+				{"templates" === isModalOpen ? (
+					<TemplatesModal
+						title="This is my modal"
+						onRequestClose={() => this.setState({ isModalOpen: false })}
+					/>
+				) : (
+					""
+				)}
+				{/* { 'custom-code' === isModalOpen ? (
                     <CustomCodeModal
                         onRequestClose={ () => this.setState( { isModalOpen: false } ) }
                     />
