@@ -496,6 +496,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  */
 [data-type="c9-blocks/heading"] small.block-editor-rich-text__editable.editor-rich-text__editable.text-muted {
   margin-left: 0.5em; }
+
+[data-type="c9-blocks/heading"] {
+  padding: 15px 0px; }
 /**
  * #.# Common SCSS
  *
