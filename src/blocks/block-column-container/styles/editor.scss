@@ -206,7 +206,7 @@
 	grid-template-columns: 1fr;
 	grid-template-areas: "col1";
 
-	> [data-type="c9-blocks/column"] {
+	>[data-type="c9-blocks/column"] {
 		margin: 0;
 	}
 }

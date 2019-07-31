@@ -12,22 +12,6 @@ $gray: #dedede;
 $green: #bada55;
 $red: orangered;
 
-// .row .editor-block-list__layout {
-// 	display: block;
-// }
-
-// .blocks-button__inline-link.ab-button-center {
-// 	display: flex;
-// 	width: 366px;
-// 	align-items: center;
-// 	justify-content: center;
-// }
-
-// .block-editor-rich-text__editable[data-is-placeholder-visible="true"] {
-// 	position: absolute;
-// 	left: 0;
-// }
-
 div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
 div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
@@ -62,40 +46,142 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 	min-height: 160px;
 }
 
-// .c9-height-range-control .dashicons-arrow-left-alt2 path,
-// .c9-height-range-control .dashicons-arrow-right-alt2 path {
-// 	transform: rotate(90deg);
-// 	display: inline-block;
-// }
+/****************************************************************************************/
+/* Main column width settings */
+/****************************************************************************************/
 
-// .c9-height-range-control .dashicons-arrow-left-alt2 {
-// 	margin-right: -15px;
-// }
+.editor-styles-wrapper .editor-default-block-appender,
+.editor-styles-wrapper .editor-post-title,
+.editor-styles-wrapper .editor-post-title__block,
+.wp-block[data-type="core/paragraph"],
+.wp-block[data-type="core/heading"],
+.wp-block[data-type="core/block"],
+.wp-block[data-type="core/button"],
+.wp-block[data-type="core/columns"],
+.wp-block[data-type="core/image"] {
+	max-width: 1140px;
+}
 
-// .c9-height-range-control .dashicons-arrow-right-alt2 {
-// 	margin-left: 23px;
-// }
+@media (min-width: 1px) {
 
-// .wp-block .wp-block .block-editor-rich-text__editable[data-is-placeholder-visible="true"]+.block-editor-rich-text__editable.wp-block-paragraph {
-// 	padding: 0;
-// 	font-size: 0;
-// }
+	//set the alignfull width to be the editable area within gutenberg removing widths of both admin bar and document settings since they are hidden below 600px
+	.wp-block[data-align=full],
+	body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full] {
+		width: 100%;
+		max-width: 100vw; //subtract the width of the document options sidebar
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-// .edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-// 	margin-left: -35px;
-// 	margin-right: -35px;
-// }
+}
 
-// div[data-type="c9-blocks/c9-custom-heading"].wp-block {
-// 	margin-bottom: 5px;
-// }
+@media (min-width: 600px) {
 
-// .block-editor-block-list__block>.block-editor-block-list__insertion-point,
-// .block-editor-block-list__insertion-point-inserter {
-// 	height: 15px;
-// }
+	.editor-post-title,
+	.editor-post-title__block {
+		padding: 0px;
+		width: 100%;
+		max-width: 1140px;
+	}
 
-// .edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
-// 	margin-left: -15px;
-// 	margin-right: -15px;
-// }
+	.editor-block-list__layout {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.editor-styles-wrapper>*:not(.wp-block[data-align=wide]) {
+		width: 100%;
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.editor-styles-wrapper .editor-block-list__block.wp-block[data-align=wide] {
+		width: 1200px;
+		max-width: 1200px;
+		margin: 0px auto;
+	}
+
+	.editor-styles-wrapper .editor-block-list__block[data-align=full] {
+		max-width: 100vw;
+	}
+}
+
+
+@media only screen and (min-width: 992px) {
+
+	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/column-container"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+		max-width: 100%;
+	}
+
+	.wp-block[data-align=full],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
+	body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
+	body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
+	body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
+	body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
+	body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"] {
+		max-width: 94%;
+	}
+
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block:not(.container),
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/button"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/spacer"] {
+		max-width: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 1500px) {
+
+	.editor-styles-wrapper .editor-default-block-appender,
+	.editor-styles-wrapper .editor-post-title,
+	.editor-styles-wrapper .editor-post-title__block,
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/button"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"] {
+		max-width: 1140px;
+	}
+
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+		max-width: 1200px;
+	}
+
+}
+
+/* with sidebar pages to account for sidebar */
+.left-sidebarpage .editor-styles-wrapper .editor-default-block-appender,
+.left-sidebarpage .editor-styles-wrapper .editor-post-title,
+.left-sidebarpage .editor-styles-wrapper .editor-post-title__block,
+.left-sidebarpage .wp-block[data-type="core/columns"],
+.left-sidebarpage .wp-block[data-type="core/paragraph"],
+.left-sidebarpage .wp-block[data-type="core/heading"],
+.left-sidebarpage .wp-block[data-type="core/block"],
+.left-sidebarpage .wp-block[data-type="core/button"],
+.left-sidebarpage .wp-block[data-type="core/image"],
+.right-sidebarpage .editor-styles-wrapper .editor-default-block-appender,
+.right-sidebarpage .editor-styles-wrapper .editor-post-title,
+.right-sidebarpage .editor-styles-wrapper .editor-post-title__block,
+.right-sidebarpage .wp-block[data-type="core/columns"],
+.right-sidebarpage .wp-block[data-type="core/paragraph"],
+.right-sidebarpage .wp-block[data-type="core/heading"],
+.right-sidebarpage .wp-block[data-type="core/block"],
+.right-sidebarpage .wp-block[data-type="core/button"],
+.right-sidebarpage .wp-block[data-type="core/image"] {
+	max-width: 925px;
+}
