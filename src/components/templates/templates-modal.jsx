@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
-const { Component } = wp.element;
-const { Modal, Button, TabPanel, Tooltip } = wp.components;
+const { Component, Fragment } = wp.element;
+const { Modal, Icon, TabPanel, Tooltip } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
 
@@ -25,7 +25,7 @@ class TemplatesModal extends Component {
 						{
 							name: "sections",
 							title: (
-								<Tooltip text={__("Simple sections to construct your page.")}>
+								<Tooltip text={__("Simple sections to construct your page.", "c9-blocks")}>
 									<span>{__("Sections")}</span>
 								</Tooltip>
 							),
@@ -34,7 +34,7 @@ class TemplatesModal extends Component {
 						{
 							name: "pages",
 							title: (
-								<Tooltip text={__("Pre-designed ready to use pages.")}>
+								<Tooltip text={__("Pre-designed ready to use pages.", "c9-blocks")}>
 									<span>{__("Pages")}</span>
 								</Tooltip>
 							),
@@ -43,7 +43,7 @@ class TemplatesModal extends Component {
 						{
 							name: "local",
 							title: (
-								<Tooltip text={__("My Templates.")}>
+								<Tooltip text={__("My Templates.", "c9-blocks")}>
 									<span>{__("Saved Layouts")}</span>
 								</Tooltip>
 							),
@@ -51,7 +51,38 @@ class TemplatesModal extends Component {
 						}
 					]}
 				>
-					{tab => <p>{tab.title}</p>}
+					{tab => {
+						switch (tab.name) {
+							case "sections":
+								return (
+									<Fragment>
+										<p>{tab.title}</p>
+										<div className="c9-layout-options">
+											<button
+												onClick={() => console.log("Load hero layout")}
+											>
+												<Icon icon="wordpress" />
+												<span>{__("Hero", "c9-blocks")}</span>
+											</button>
+											<button
+												onClick={() => console.log("Load featured layout")}
+											>
+												<Icon icon="wordpress" />
+												<span>{__("Featured", "c9-blocks")}</span>
+											</button>
+										</div>
+									</Fragment>
+								);
+							case "pages":
+								return (
+									<Fragment>
+										<p>{tab.title}</p>
+									</Fragment>
+								);
+							default:
+								return <p>Coming Soon...</p>;
+						}
+					}}
 				</TabPanel>
 			</Modal>
 		);

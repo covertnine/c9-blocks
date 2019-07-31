@@ -76,6 +76,7 @@ class C9 extends Component {
 				{"templates" === isModalOpen ? (
 					<TemplatesModal
 						title="Templates"
+						icon="icon"
 						onRequestClose={() => this.setState({ isModalOpen: false })}
 					/>
 				) : (
