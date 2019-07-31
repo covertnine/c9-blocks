@@ -4,8 +4,7 @@ const attributes = {
 		default: "tab-1"
 	},
 	buttonsAlign: {
-		type: "string",
-		default: "start"
+		type: "string"
 	},
 	tabsData: {
 		type: "array",
