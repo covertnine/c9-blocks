@@ -3,6 +3,7 @@ const { Component, Fragment } = wp.element;
 const { Modal, Icon, TabPanel, Tooltip } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
+const { createBlock } = wp.blocks;
 
 import "./editor.scss";
 
@@ -12,6 +13,12 @@ class TemplatesModal extends Component {
 	}
 
 	render() {
+		const layouts = {
+			default: [
+				createBlock("core/")
+			]
+		}
+
 		return (
 			<Modal
 				className="c9-templates-modal"

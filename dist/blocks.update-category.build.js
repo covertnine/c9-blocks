@@ -3503,6 +3503,7 @@ const { Component, Fragment } = wp.element;
 const { Modal, Icon, TabPanel, Tooltip } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch } = wp.data;
+const { createBlock } = wp.blocks;
 
 
 
@@ -3512,6 +3513,10 @@ class TemplatesModal extends Component {
 	}
 
 	render() {
+		const layouts = {
+			default: [createBlock("core/")]
+		};
+
 		return React.createElement(
 			Modal,
 			_extends({

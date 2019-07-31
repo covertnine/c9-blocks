@@ -26,7 +26,7 @@ export default class Edit extends Component {
 
 	c9TextStyleConfig(type, display, tag, override) {
 		if (!override) {
-			return "";
+			return type.split(" ")[0];
 		} else if (display == 0) {
 			return `${type}${tag}`;
 		} else {
