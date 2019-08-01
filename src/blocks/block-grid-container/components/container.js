@@ -59,24 +59,27 @@ export default class Container extends Component {
 		return classes;
 	}
 
+	c9ContainerStyles(height) {
+		const styles = {};
+
+		if (height) {
+			styles.minHeight = `${height}vh`;
+		}
+
+		return styles;
+	}
+
 	c9BackgroundStyles(
 		url,
 		size,
 		bgX,
 		bgY,
 		repeat,
-		hue,
-		opacity,
 		blend,
-		height,
 		focalPoint,
 		selected = true
 	) {
 		const styles = {};
-
-		if (height) {
-			styles.minHeight = `${height}vh`;
-		}
 
 		if (focalPoint) {
 			styles.backgroundPosition = `${focalPoint.x * 100}% ${focalPoint.y *
@@ -101,6 +104,13 @@ export default class Container extends Component {
 				bgY.size != "auto" ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 			styles.backgroundSize = `${horizontal} ${vertical}`;
 		}
+
+		return styles;
+	}
+
+	c9OverlayStyles(hue, opacity) {
+		const styles = {};
+
 		if (hue) {
 			styles.backgroundColor = this.hexToRGBA(hue, opacity);
 		}
@@ -159,22 +169,31 @@ export default class Container extends Component {
 						? "c9-grid-has-video"
 						: null
 				)}
-				style={this.c9BackgroundStyles(
-					containerImgURL,
-					bgImgSize,
-					bgCustomX,
-					bgCustomY,
-					bgImgRepeat,
-					overlayHue,
-					overlayOpacity,
-					blendMode,
-					minScreenHeight,
-					focalPoint,
-					isSelectedBlockInRoot
-				)}
+				style={this.c9ContainerStyles(minScreenHeight)}
 			>
 				{(!!containerVideoURL || !!containerVideoID) && !cannotEmbed && (
 					<VideoBox {...this.props} />
+				)}
+				{!!containerImgURL && (
+					<div
+						className="c9-image-container"
+						style={this.c9BackgroundStyles(
+							containerImgURL,
+							bgImgSize,
+							bgCustomX,
+							bgCustomY,
+							bgImgRepeat,
+							blendMode,
+							focalPoint,
+							isSelectedBlockInRoot
+						)}
+					/>
+				)}
+				{!!overlayHue && (
+					<div
+						className="c9-overlay-container"
+						style={this.c9OverlayStyles(overlayHue, overlayOpacity)}
+					/>
 				)}
 				{this.props.children}
 			</div>

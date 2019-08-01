@@ -122,7 +122,7 @@ function c9_blocks_front_assets()
     // Youtube Player API
     wp_enqueue_script(
         'youtube-api',
-        'https://www.youtube.com/iframe_api',
+        'https://www.youtube.com/player_api',
         false
     );
 

@@ -60,201 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -350,7 +160,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -419,7 +229,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(14);
+var	fixUrls = __webpack_require__(13);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -756,6 +566,196 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -856,18 +856,17 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* 4 */,
 /* 5 */,
 /* 6 */,
-/* 7 */,
-/* 8 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deregister_blocks__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__register_filters__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page_template_selector_add_template_status_jsx__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page_template_selector_add_template_status_jsx__ = __webpack_require__(24);
 /**
  * Internal dependencies
  */
@@ -938,7 +937,7 @@ if (updateCategory) {
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 let loadBlocksEditor = null;
@@ -960,7 +959,7 @@ if (loadBlocksEditor) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports) {
 
 const { addFilter } = wp.hooks;
@@ -983,14 +982,14 @@ addFilter(
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_templates_templates_modal_jsx__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_templates_templates_modal_jsx__ = __webpack_require__(20);
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
@@ -1098,11 +1097,11 @@ registerPlugin("c9-blocks", {
 });
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(13);
+var content = __webpack_require__(12);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1116,7 +1115,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(2)(content, options);
+var update = __webpack_require__(1)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -1148,16 +1147,16 @@ if(false) {
 }
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(0)(false);
 // Module
 exports.push([module.i, "/**\n * Editor Styles\n */\n.edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg,\n.edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg {\n  display: block;\n  height: 16px; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg *,\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg * {\n    stroke: initial !important; }\n  .edit-post-pinned-plugins\n.components-icon-button:not(.is-toggled)\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nsvg [fill=\"#fff\"],\n  .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg [fill=\"#fff\"] {\n    fill: #fff !important; }\n\n.edit-post-pinned-plugins .components-icon-button .c9-plugin-icon span {\n  margin: -2px; }\n\n.edit-post-pinned-plugins\n.components-icon-button.is-toggled\n.c9-plugin-icon\nspan\n[fill=\"#fff\"] {\n  fill: #555d66 !important; }\n\n.plugin-c9-panel .plugin-c9-panel-button {\n  display: block;\n  width: 100%;\n  height: auto;\n  padding: 15px 10px;\n  margin-bottom: 16px;\n  flex-shrink: 0;\n  overflow: hidden;\n  color: inherit;\n  text-align: center;\n  cursor: pointer;\n  background: none;\n  border: 1px solid;\n  border-radius: 4px;\n  transition: 0.2s color, 0.2s background-color, 0.2s border-color, 0.2s box-shadow; }\n  .plugin-c9-panel .plugin-c9-panel-button, .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    border-color: rgba(79, 89, 105, 0.2);\n    box-shadow: none; }\n  .plugin-c9-panel .plugin-c9-panel-button:hover, .plugin-c9-panel .plugin-c9-panel-button:active, .plugin-c9-panel .plugin-c9-panel-button:active:enabled {\n    color: #191e23;\n    background-color: #f8f9f9; }\n  .plugin-c9-panel .plugin-c9-panel-button:focus, .plugin-c9-panel .plugin-c9-panel-button:focus:enabled {\n    color: #191e23;\n    border-color: #007fac;\n    box-shadow: 0 0 0 2px #00a0d2; }\n  .plugin-c9-panel .plugin-c9-panel-button span {\n    display: block;\n    margin: 0 auto;\n    margin-top: 3px;\n    text-align: center;\n    height: 24px; }\n", ""]);
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports) {
 
 
@@ -1252,11 +1251,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1282,22 +1281,22 @@ var SvgC9FeatherLogoGray = function SvgC9FeatherLogoGray(props) {
 /* harmony default export */ __webpack_exports__["a"] = (SvgC9FeatherLogoGray);
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(17);
+  module.exports = __webpack_require__(16);
 } else {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(17);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1329,7 +1328,7 @@ unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_Y
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1351,7 +1350,7 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var _assign = __webpack_require__(3);
-var checkPropTypes = __webpack_require__(19);
+var checkPropTypes = __webpack_require__(18);
 
 // TODO: this is special because it gets imported during build.
 
@@ -3235,10 +3234,10 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3254,7 +3253,7 @@ module.exports = react;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(20);
+  var ReactPropTypesSecret = __webpack_require__(19);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -3345,10 +3344,10 @@ checkPropTypes.resetWarningCache = function() {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3367,135 +3366,13 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 21 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
-const { registerPlugin } = wp.plugins;
-const { PluginPostStatusInfo } = wp.editPost;
-
-const { Component } = wp.element;
-
-const { Button } = wp.components;
-const { select } = wp.data;
-
-
-
-class PageTemplateSelector extends Component {
-	constructor() {
-		super(...arguments);
-
-		this.template = this.getClassName();
-	}
-
-	getClassName() {
-		let url = select("core/editor").getEditedPostAttribute("template");
-
-		if (url.length == 0) {
-			return "";
-		}
-
-		let result = url.substring(url.lastIndexOf("/") + 1).replace(".php", "");
-		return `page-template-${result}`;
-	}
-
-	render() {
-		return React.createElement(
-			PluginPostStatusInfo,
-			null,
-			React.createElement(
-				Button,
-				{
-					className: "c9-preview-page-template-button",
-					onClick: () => {
-						let body = document.getElementsByTagName("body")[0];
-						body.classList.remove(this.template);
-
-						this.template = this.getClassName();
-
-						body.classList.add(this.template);
-						// console.log(body);
-					}
-				},
-				"Preview Page Template CSS"
-			)
-		);
-	}
-}
-
-registerPlugin("post-status-info-test", { render: PageTemplateSelector });
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(23);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(2)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
-		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// Module
-exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-button {\n  border-color: #ccc;\n  background: #f7f7f7;\n  box-shadow: 0 1px 0 #ccc;\n  padding: 6px 8px;\n  border-radius: 3px;\n  color: #555; }\n", ""]);
-
-
-/***/ }),
-/* 24 */,
-/* 25 */,
-/* 26 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TemplatesModalWithSelect; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__editor_scss__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__editor_scss__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__editor_scss__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -3665,67 +3542,7 @@ const TemplatesModalWithSelect = compose([withDispatch(dispatch => {
 
 
 /***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(28);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(2)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
-		var newContent = require("!!../../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./editor.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// Module
-exports.push([module.i, ".c9-templates-modal .components-modal__header {\n  border-bottom: none; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {\n  margin-top: -24px; }\n\n@media (min-width: 600px) {\n  .c9-templates-modal {\n    min-width: 600px;\n    max-width: 600px;\n    margin-left: -300px;\n    transform: none;\n    top: 112px; } }\n\n@media (min-width: 840px) {\n  .c9-templates-modal {\n    min-width: 800px;\n    max-width: 800px;\n    margin-left: -400px;\n    transform: none; } }\n\n.c9-templates-modal .components-modal__header .components-modal__icon-container svg {\n  display: block;\n  margin-right: 10px; }\n\n.c9-templates-modal .components-modal__header .components-modal__header-heading {\n  font-weight: 600; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options {\n  display: grid;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  grid-template-columns: repeat(6, 1fr); }\n  .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button {\n    border-width: 1px;\n    border-style: solid;\n    border-color: #d8d8d8 #d1d1d1 #bababa;\n    border-radius: 3px;\n    box-shadow: inset 0 -1px 0 #ccc;\n    padding: 5px; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button:active {\n      border-color: #999;\n      box-shadow: insert 0 1px 0 #999; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button span {\n      display: block;\n      font-size: 0.8rem;\n      padding: 2px 0; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {\n  padding: 12px 16px;\n  color: inherit; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab:focus {\n    outline: none; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab.is-active {\n    position: relative;\n    border-bottom: 2px solid #00a0d2;\n    z-index: 1; }\n", ""]);
-
-
-/***/ }),
-/* 29 */,
-/* 30 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3758,6 +3575,185 @@ const LayoutButton = ({ label, icon, layout, resetBlocks, insertBlocks }) => {
 		insertBlocks
 	};
 })(LayoutButton));
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(23);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(1)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
+		var newContent = require("!!../../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../../node_modules/sass-loader/lib/loader.js!./editor.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// Module
+exports.push([module.i, ".c9-templates-modal .components-modal__header {\n  border-bottom: none; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {\n  margin-top: -24px; }\n\n@media (min-width: 600px) {\n  .c9-templates-modal {\n    min-width: 600px;\n    max-width: 600px;\n    margin-left: -300px;\n    transform: none;\n    top: 112px; } }\n\n@media (min-width: 840px) {\n  .c9-templates-modal {\n    min-width: 800px;\n    max-width: 800px;\n    margin-left: -400px;\n    transform: none; } }\n\n.c9-templates-modal .components-modal__header .components-modal__icon-container svg {\n  display: block;\n  margin-right: 10px; }\n\n.c9-templates-modal .components-modal__header .components-modal__header-heading {\n  font-weight: 600; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options {\n  display: grid;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  grid-template-columns: repeat(6, 1fr); }\n  .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button {\n    border-width: 1px;\n    border-style: solid;\n    border-color: #d8d8d8 #d1d1d1 #bababa;\n    border-radius: 3px;\n    box-shadow: inset 0 -1px 0 #ccc;\n    padding: 5px; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button:active {\n      border-color: #999;\n      box-shadow: insert 0 1px 0 #999; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button span {\n      display: block;\n      font-size: 0.8rem;\n      padding: 2px 0; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {\n  padding: 12px 16px;\n  color: inherit; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab:focus {\n    outline: none; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab.is-active {\n    position: relative;\n    border-bottom: 2px solid #00a0d2;\n    z-index: 1; }\n", ""]);
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
+const { registerPlugin } = wp.plugins;
+const { PluginPostStatusInfo } = wp.editPost;
+
+const { Component } = wp.element;
+
+const { Button } = wp.components;
+const { select } = wp.data;
+
+
+
+class PageTemplateSelector extends Component {
+	constructor() {
+		super(...arguments);
+
+		this.template = this.getClassName();
+	}
+
+	getClassName() {
+		let url = select("core/editor").getEditedPostAttribute("template");
+
+		if (url.length == 0) {
+			return "";
+		}
+
+		let result = url.substring(url.lastIndexOf("/") + 1).replace(".php", "");
+		return `page-template-${result}`;
+	}
+
+	render() {
+		return React.createElement(
+			PluginPostStatusInfo,
+			null,
+			React.createElement(
+				Button,
+				{
+					className: "c9-preview-page-template-button",
+					onClick: () => {
+						let body = document.getElementsByTagName("body")[0];
+						body.classList.remove(this.template);
+
+						this.template = this.getClassName();
+
+						body.classList.add(this.template);
+						// console.log(body);
+					}
+				},
+				"Preview Page Template CSS"
+			)
+		);
+	}
+}
+
+registerPlugin("post-status-info-test", { render: PageTemplateSelector });
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(26);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(1)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss", function() {
+		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js??ref--2-1!../../node_modules/sass-loader/lib/loader.js!./editor.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// Module
+exports.push([module.i, "/**\n * Editor Styles\n */\n.c9-preview-page-template-button {\n  border-color: #ccc;\n  background: #f7f7f7;\n  box-shadow: 0 1px 0 #ccc;\n  padding: 6px 8px;\n  border-radius: 3px;\n  color: #555; }\n", ""]);
+
 
 /***/ })
 /******/ ]);

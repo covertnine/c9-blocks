@@ -75,10 +75,8 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__blocks_block_tabs_frontend_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blocks_block_toggles_frontend_js__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blocks_block_toggles_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__blocks_block_toggles_frontend_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_toggles_frontend_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_toggles_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__blocks_block_toggles_frontend_js__);
 /**
  * Gutenberg Blocks Frontend JS
  *
@@ -89,7 +87,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
-
 
 
 
@@ -106,7 +103,6 @@ function readyYoutube(video_id) {
 			playerVars: {
 				autoplay: 1,
 				controls: 0,
-				disablekb: 0,
 				autohide: 1,
 				wmode: "opaque",
 				hd: 1,
@@ -115,9 +111,7 @@ function readyYoutube(video_id) {
 				showinfo: 0,
 				iv_load_policy: 3,
 				rel: 0,
-				playlist: video_id,
-				playsinline: 1,
-				modestbranding: 1
+				playlist: video_id
 			},
 			videoId: video_id,
 			events: {
@@ -131,9 +125,9 @@ function readyYoutube(video_id) {
 
 // API will call this function when the video player is ready.
 function onPlayerReady(event) {
-    event.target.mute();
+	event.target.mute();
 
-    event.target.getIframe().style.opacity = 1;
+	event.target.getIframe().style.opacity = 1;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -143,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	let id = document.getElementById("player");
-	
+
 	if (!id) {
 		return;
 	}
@@ -158,71 +152,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-document.addEventListener("DOMContentLoaded", function() {
-	const $ = window.jQuery;
-
-	const pageHash = window.location.hash;
-
-	$(".tabs:not(.tabs-ready)").each(function() {
-		const $this = $(this);
-		const tabsActive = $this.attr("data-tab-active");
-
-		// pageHash
-
-		$this.addClass("tabs-ready");
-
-		// click action
-		$this.on("click", ".tabs-buttons-item", function(e) {
-			e.preventDefault();
-
-			const $thisBtn = $(this);
-			const tabName = $thisBtn.attr("data-tab") || this.hash;
-
-			activateTab($this, tabName);
-		});
-
-		// activate by page hash
-		let tabActivated = false;
-		if (pageHash) {
-			tabActivated = activateTab($this, pageHash);
-		}
-
-		if (!tabActivated && tabsActive) {
-			tabActivated = activateTab($this, `#${tabsActive}`);
-		}
-	});
-});
-
-function activateTab($tabs, tabName) {
-	let $activeBtn = false;
-	const $activeTab = $tabs
-		.children(".tabs-content")
-		.children(`[data-tab="${tabName.replace(/^#/, "")}"]`);
-
-	$activeBtn = $tabs.find(".tabs-buttons").find(`[href="${tabName}"]`);
-
-	if (!$activeBtn || !$activeBtn.length || !$activeTab.length) {
-		return false;
-	}
-
-	$activeBtn
-		.addClass("tabs-buttons-item-active")
-		.siblings()
-		.removeClass("tabs-buttons-item-active");
-
-	$activeTab
-		.addClass("tab-active")
-		.siblings()
-		.removeClass("tab-active");
-
-	return true;
-}
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -10,5 +10,4 @@
  */
 
 import "./blocks/block-grid-container/frontend.js"
-import "./blocks/block-tabs/frontend.js"
 import "./blocks/block-toggles/frontend.js"
