@@ -129,15 +129,13 @@ function readyYoutube(video_id) {
 function onPlayerReady(event) {
 	event.target.mute();
 
-	event.target.getIframe().style.opacity = 1;
+	let vids = document.getElementsByClassName("c9-video-container");
+	for (let i = 0; i < vids.length; i++) {
+		vids[i].style.opacity = 1
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	let vid = document.getElementById("containerVideo");
-	if (vid) {
-		vid.style.opacity = 1;
-	}
-
 	let id = document.getElementById("player");
 
 	if (!id) {
