@@ -19,13 +19,17 @@ export default class C9CustomHeading extends Component {
 	}
 
 	render() {
-		const { className = "" } = this.props;
+		const {
+			attributes: { textAlign },
+			className = ""
+		} = this.props;
 
 		return (
 			<div
 				className={classnames(
 					"section-heading",
-					applyFilters("c9-blocks.blocks.className", className)
+					applyFilters("c9-blocks.blocks.className", className),
+					textAlign ? `text-${textAlign}` : "text-left"
 				)}
 				style={{ backgroundColor: this.props.attributes.backgroundColor }}
 			>

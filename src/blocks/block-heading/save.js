@@ -48,8 +48,7 @@ export default class Save extends Component {
 					tagName={`h${tagLevel}`}
 					className={classnames([
 						this.c9TextStyleConfig(type, displayLevel, tagLevel, overrideStyle),
-						weight ? `font-weight-${weight}` : null,
-						textAlign ? `text-${textAlign}` : "text-left"
+						weight ? `font-weight-${weight}` : null
 					])}
 					style={{
 						color: textColor

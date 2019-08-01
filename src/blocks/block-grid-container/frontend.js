@@ -6,6 +6,7 @@ function readyYoutube(video_id) {
 			playerVars: {
 				autoplay: 1,
 				controls: 0,
+				disablekb: 0,
 				autohide: 1,
 				wmode: "opaque",
 				hd: 1,
@@ -14,6 +15,7 @@ function readyYoutube(video_id) {
 				showinfo: 0,
 				iv_load_policy: 3,
 				rel: 0,
+				modestbranding: 1,
 				playlist: video_id
 			},
 			videoId: video_id,

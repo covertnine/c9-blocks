@@ -14,6 +14,7 @@ export default class VideoBox extends Component {
 	constructor() {
 		super(...arguments);
 		this.videoRef = React.createRef();
+		this.videoContainer = React.createRef();
 
 		const {
 			attributes: { containerVideoURL, preview, containerVideoID },
@@ -51,6 +52,7 @@ export default class VideoBox extends Component {
 					playerVars: {
 						autoplay: 1,
 						controls: 0,
+						disablekb: 0,
 						autohide: 1,
 						wmode: "opaque",
 						hd: 1,
@@ -59,6 +61,7 @@ export default class VideoBox extends Component {
 						showinfo: 0,
 						iv_load_policy: 3,
 						rel: 0,
+						modestbranding: 1,
 						playlist: video_id
 					},
 					videoId: video_id,
@@ -75,15 +78,14 @@ export default class VideoBox extends Component {
 	onPlayerReady(event) {
 		event.target.mute();
 
-		event.target.getIframe().style.opacity = 1;
+		if (this.videoContainerRef.current) {
+			this.videoContainerRef.current.style.opacity = 1;
+		}
 	}
 
 	canPlay() {
-		if (this.videoRef && this.videoRef.current) {
-			// console.log(this.videoRef.current);
-
-			let element = this.videoRef.current;
-			element.style.opacity = 1;
+		if (this.videoContainerRef.current) {
+			this.videoContainerRef.current.style.opacity = 1;
 		}
 	}
 	componentDidMount() {
@@ -99,6 +101,7 @@ export default class VideoBox extends Component {
 				playerVars: {
 					autoplay: 1,
 					controls: 0,
+					disablekb: 0,
 					autohide: 1,
 					wmode: "opaque",
 					hd: 1,
@@ -107,6 +110,7 @@ export default class VideoBox extends Component {
 					showinfo: 0,
 					iv_load_policy: 3,
 					rel: 0,
+					modestbranding: 1,
 					playlist: video_id
 				},
 				videoId: video_id,
@@ -167,6 +171,7 @@ export default class VideoBox extends Component {
 				<div
 					dangerouslySetInnerHTML={this.setYoutube()}
 					className="c9-video-container"
+					ref={this.videoContainer}
 				>
 					<div className="c9-embed-container">
 						<div
