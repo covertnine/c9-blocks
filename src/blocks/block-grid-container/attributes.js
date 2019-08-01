@@ -6,6 +6,14 @@ const attributes = {
 	containerImgURL: {
 		type: "string"
 	},
+	containerHue: {
+		type: "string",
+		default: undefined
+	},
+	containerOpacity: {
+		type: "number",
+		default: "5"
+	},
 	bgImgSize: {
 		type: "string",
 		default: "cover"

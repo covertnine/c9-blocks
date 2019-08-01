@@ -59,11 +59,15 @@ export default class Container extends Component {
 		return classes;
 	}
 
-	c9ContainerStyles(height) {
+	c9ContainerStyles(height, hue, opacity) {
 		const styles = {};
 
 		if (height) {
 			styles.minHeight = `${height}vh`;
+		}
+
+		if (hue) {
+			styles.backgroundColor = this.hexToRGBA(hue, opacity);
 		}
 
 		return styles;
@@ -144,6 +148,8 @@ export default class Container extends Component {
 				bgCustomX,
 				bgCustomY,
 				overlayHue,
+				containerHue,
+				containerOpacity,
 				overlayOpacity,
 				blendMode,
 				containerPadding,
@@ -169,7 +175,11 @@ export default class Container extends Component {
 						? "c9-grid-has-video"
 						: null
 				)}
-				style={this.c9ContainerStyles(minScreenHeight)}
+				style={this.c9ContainerStyles(
+					minScreenHeight,
+					containerHue,
+					containerOpacity
+				)}
 			>
 				{(!!containerVideoURL || !!containerVideoID) && !cannotEmbed && (
 					<VideoBox {...this.props} />
