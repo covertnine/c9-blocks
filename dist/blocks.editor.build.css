@@ -1005,7 +1005,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 /****************************************************************************************/
 /*c9 column container innerblocks set to full width + innerblock full width */
 .wp-block[data-type="c9-blocks/grid"] .editor-inner-blocks {
-  width: 100%; }
+  width: 100%;
+  z-index: 10;
+  position: relative; }
 
 @media only screen and (min-width: 576px) {
   body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
@@ -1456,25 +1458,23 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   margin-left: auto;
   margin-right: auto; }
 
-[data-type="c9-blocks/column-container"].c9-is-vertically-aligned-top {
-  -ms-flex-item-align: start;
-  align-self: flex-start; }
-
-[data-type="c9-blocks/column-container"].c9-is-vertically-aligned-center {
-  -ms-flex-item-align: center;
-  align-self: center; }
-
-[data-type="c9-blocks/column-container"].c9-is-vertically-aligned-bottom {
-  -ms-flex-item-align: end;
-  align-self: flex-end; }
-
-[data-type="c9-blocks/column-container"] .editor-block-list__block-edit.block-editor-block-list__block-edit {
-  margin-top: 0;
-  margin-bottom: 0; }
-
-[data-type="c9-blocks/column-container"] .block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content {
-  margin-top: 0;
-  margin-bottom: 0; }
+[data-type="c9-blocks/column-container"] {
+  z-index: 12; }
+  [data-type="c9-blocks/column-container"].c9-is-vertically-aligned-top {
+    -ms-flex-item-align: start;
+    align-self: flex-start; }
+  [data-type="c9-blocks/column-container"].c9-is-vertically-aligned-center {
+    -ms-flex-item-align: center;
+    align-self: center; }
+  [data-type="c9-blocks/column-container"].c9-is-vertically-aligned-bottom {
+    -ms-flex-item-align: end;
+    align-self: flex-end; }
+  [data-type="c9-blocks/column-container"] .editor-block-list__block-edit.block-editor-block-list__block-edit {
+    margin-top: 0;
+    margin-bottom: 0; }
+  [data-type="c9-blocks/column-container"] .block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content {
+    margin-top: 0;
+    margin-bottom: 0; }
 
 [data-type="c9-blocks/column"].c9-is-vertically-aligned-top {
   -ms-flex-item-align: start;

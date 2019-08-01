@@ -172,6 +172,8 @@
 /*c9 column container innerblocks set to full width + innerblock full width */
 .wp-block[data-type="c9-blocks/grid"] .editor-inner-blocks {
 	width: 100%;
+	z-index: 10;
+	position: relative;
 }
 
 @media only screen and (min-width: 576px) {

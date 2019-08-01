@@ -311,6 +311,8 @@
 }
 
 [data-type="c9-blocks/column-container"] {
+	z-index: 12;
+
 	&.c9-is-vertically-aligned-top {
 		-ms-flex-item-align: start;
 		align-self: flex-start;
