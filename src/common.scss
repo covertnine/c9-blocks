@@ -81,7 +81,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 }
 
-@media (min-width: 600px) {
+@media (min-width: 576px) {
 
 	.editor-post-title,
 	.editor-post-title__block {
@@ -103,7 +103,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 	}
 
 	.editor-styles-wrapper .editor-block-list__block.wp-block[data-align=wide] {
-		width: 1200px;
+		width: 100%;
 		max-width: 1200px;
 		margin: 0px auto;
 	}
