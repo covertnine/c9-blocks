@@ -1,0 +1,26 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24.1 24.1" style="enable-background:new 0 0 24.1 24.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+</style>
+<g>
+	<rect x="2.1" y="1.1" class="st0" width="20" height="20"/>
+	<g>
+		<path d="M2.1,6.4v15.3h20V6.4H2.1z"/>
+	</g>
+	<g>
+		<path d="M2.1,2.7V5h5.5V2.7H2.1z"/>
+	</g>
+	<g>
+		<path d="M9.3,2.7V5h5.5V2.7H9.3z"/>
+	</g>
+	<g>
+		<path d="M16.6,2.7V5h5.5V2.7H16.6z"/>
+	</g>
+	<line class="st1" x1="19.3" y1="18.1" x2="4.8" y2="18.1"/>
+	<line class="st1" x1="19.3" y1="15.3" x2="4.8" y2="15.3"/>
+	<line class="st1" x1="19.3" y1="12.5" x2="4.8" y2="12.5"/>
+	<line class="st1" x1="19.3" y1="9.8" x2="4.8" y2="9.8"/>
+</g>
+</svg>
