@@ -280,9 +280,16 @@
 		opacity: 1;
 	}
 
-	// body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"]>.editor-block-mover .editor-block-mover__control {
-	// 	float: left;
-	// }
+}
+
+@media only screen and (min-width: 600px) {
+
+	.block-editor-block-list__layout .container-fluid.block-editor-block-list__block[data-align=full]>.block-editor-block-list__block-edit,
+	.edit-post-visual-editor .container-fluid.block-editor-block-list__block .block-editor-block-list__block-edit {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 }
 
 @media only screen and (min-width: 992px) {
@@ -345,10 +352,45 @@
 		padding-right: 43px;
 	}
 
+	body .edit-post-layout .c9-grid .container,
+	body:not(.folded) .edit-post-layout .container,
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .container {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1110px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	body .edit-post-layout .c9-grid [data-align="wide"] .container,
+	body .edit-post-layout .c9-grid .container[data-align="wide"],
+	body:not(.folded) .edit-post-layout .container.alignwide,
+	body:not(.folded) .edit-post-layout .container[data-align="wide"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+		padding-left: 0px;
+		padding-right: 0px;
+		max-width: 1140px;
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	body .edit-post-layout .c9-grid [data-align="full"] .container-fluid,
+	body .edit-post-layout .c9-grid .container-fluid[data-align="full"],
+	body:not(.folded) .edit-post-layout .container-fluid.alignfull,
+	body:not(.folded) .edit-post-layout .container-fluid[data-align="full"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .container-fluid[data-align="full"],
+	body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"] .container-fluid,
+	body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"]:only-child .container-fluid,
+	body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"]:only-child .wp-block[data-type="c9-blocks/column"] {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
 }
 
 /****************************************************************************************/

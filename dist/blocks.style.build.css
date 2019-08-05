@@ -85,21 +85,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -325,21 +315,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -496,21 +476,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -679,21 +649,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -980,21 +940,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -1318,21 +1268,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -1692,21 +1632,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -1849,21 +1779,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
@@ -2005,21 +1925,11 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 @media only screen and (min-width: 992px) {
   .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block[data-type="core/columns"][data-align="full"],
-  body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
-  body:not(.folded) .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full],
-  body:not(.folded) .edit-post-layout .editor-styles-wrapper .editor-block-list__layout .wp-block-gallery.alignfull,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-align="wide"] {
-    max-width: 94%; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
   body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
