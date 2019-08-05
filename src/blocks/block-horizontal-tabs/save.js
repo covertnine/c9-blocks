@@ -19,11 +19,11 @@ export default class Save extends Component {
 			tabActive,
 			buttonsAlign,
 			tabsData = [],
-			ver,
 			tabBackgroundColor,
 			tabTextColor,
 			tabContentBackgroundColor,
-			blockBackgroundColor
+			blockBackgroundColor,
+			instanceId
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -56,7 +56,7 @@ export default class Save extends Component {
 									tagName="a"
 									data-toggle="tab"
 									role="tab"
-									href={`#tab-${slug}-${ver}`}
+									href={`#tab-${slug}-${instanceId}`}
 									className={classnames("nav-link", selected ? "active" : "")}
 									id={`tab-button-${slug}`}
 									value={title}

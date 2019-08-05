@@ -3,7 +3,7 @@ const attributes = {
 		type: "number",
 		default: 2
 	},
-	ver: {
+	instanceId: {
 		type: "number"
 	}
 };

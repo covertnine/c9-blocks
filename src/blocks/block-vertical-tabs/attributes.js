@@ -16,7 +16,7 @@ const attributes = {
 			}
 		]
 	},
-	ver: {
+	instanceId: {
 		type: "number"
 	},
 	tabBackgroundColor: {

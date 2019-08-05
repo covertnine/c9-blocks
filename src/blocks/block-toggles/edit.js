@@ -13,6 +13,7 @@ const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.editor;
 const { applyFilters } = wp.hooks;
 const { IconButton } = wp.components;
+const { withInstanceId } = wp.compose;
 
 const ALLOWED_BLOCKS = ["c9-blocks/toggles-toggle"];
 
@@ -26,16 +27,9 @@ const getTogglesTemplate = (toggleCount, id) => {
 	return result;
 };
 
-export default class Edit extends Component {
+class Edit extends Component {
 	constructor() {
 		super(...arguments);
-
-		this.id = this.props.attributes.ver;
-
-		if (this.id == null) {
-			this.id = new Date().getTime();
-			this.props.setAttributes({ ver: this.id });
-		}
 
 		this.checkToggleCountAndUpdate = this.checkToggleCountAndUpdate.bind(this);
 	}
@@ -110,11 +104,27 @@ export default class Edit extends Component {
 
 	render() {
 		const {
-			attributes: { toggleCount },
+			attributes,
 			isSelectedBlockInRoot,
+			setAttributes,
 			addToggle,
-			className = ""
+			block,
+			updateBlockAttributes,
+			className = "",
+			instanceId
 		} = this.props;
+
+		const { toggleCount } = attributes;
+
+		if (instanceId != attributes.instanceId) {
+			setAttributes({ instanceId });
+
+			for (let child of block.innerBlocks) {
+				if (instanceId != child.attributes.id) {
+					updateBlockAttributes(child.clientId, { id: instanceId });
+				}
+			}
+		}
 
 		return (
 			<Fragment>
@@ -125,11 +135,11 @@ export default class Edit extends Component {
 						applyFilters("c9-blocks.blocks.className", className),
 						"accordion"
 					)}
-					id={`accordion-${this.id}`}
+					id={`accordion-${instanceId}`}
 				>
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
-						template={getTogglesTemplate(toggleCount, this.id)}
+						template={getTogglesTemplate(toggleCount, instanceId)}
 					/>
 				</div>
 				{isSelectedBlockInRoot ? (
@@ -137,7 +147,7 @@ export default class Edit extends Component {
 						<IconButton
 							icon="insert"
 							onClick={() => {
-								addToggle(this.id);
+								addToggle(instanceId);
 							}}
 						>
 							{__("Add Toggle", "c9-blocks")}
@@ -150,3 +160,5 @@ export default class Edit extends Component {
 		);
 	}
 }
+
+export default withInstanceId(Edit);

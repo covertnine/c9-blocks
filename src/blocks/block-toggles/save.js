@@ -17,17 +17,14 @@ export default class Save extends Component {
 	}
 
 	render() {
-		const {
-			attributes: { ver },
-			className = ""
-		} = this.props;
+		const { className = "" } = this.props;
 		return (
 			<div
 				className={classnames(
 					applyFilters("c9-blocks.blocks.className", className),
 					"accordion"
 				)}
-				id={`accordion-${ver}`}
+				id={`accordion-${this.props.attributes.instanceId}`}
 			>
 				<InnerBlocks.Content />
 			</div>

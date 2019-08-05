@@ -17,13 +17,15 @@ const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
 
 const { applyFilters } = wp.hooks;
 
+const { withInstanceId } = wp.compose;
+
 const { select, dispatch } = wp.data;
 
 // External Dependencies.
 import classnames from "classnames";
 import slugify from "slugify";
 
-export default class Edit extends Component {
+class Edit extends Component {
 	constructor() {
 		super(...arguments);
 
@@ -31,13 +33,6 @@ export default class Edit extends Component {
 		this.getTabs = this.getTabs.bind(this);
 		this.isUniqueSlug = this.isUniqueSlug.bind(this);
 		this.getUniqueSlug = this.getUniqueSlug.bind(this);
-
-		this.id = this.props.attributes.ver;
-
-		if (this.id == null) {
-			this.id = new Date().getTime();
-			this.props.setAttributes({ ver: this.id });
-		}
 	}
 
 	/**
@@ -48,13 +43,14 @@ export default class Edit extends Component {
 	 * @return {Object[]} Tabs layout configuration.
 	 */
 	getTabsTemplate() {
+		const { instanceId } = this.props;
 		const { tabsData = [], tabActive } = this.props.attributes;
 		const result = [];
 
 		tabsData.forEach(tabData => {
 			result.push([
 				"c9-blocks/vertical-tabs-tab",
-				{ ...tabData, tabActive, id: this.id }
+				{ ...tabData, tabActive, id: instanceId }
 			]);
 		});
 
@@ -106,7 +102,8 @@ export default class Edit extends Component {
 			isSelectedBlockInRoot,
 			block,
 			className = "",
-			clientId
+			clientId,
+			instanceId
 		} = this.props;
 
 		const {
@@ -119,6 +116,16 @@ export default class Edit extends Component {
 			verticalAlign,
 			textAlign
 		} = attributes;
+
+		if (instanceId != attributes.instanceId) {
+			setAttributes({ instanceId });
+
+			for (let child of block.innerBlocks) {
+				if (instanceId != child.attributes.id) {
+					updateBlockAttributes(child.clientId, { id: instanceId });
+				}
+			}
+		}
 
 		const tabs = this.getTabs();
 
@@ -178,7 +185,7 @@ export default class Edit extends Component {
 											tagName="a"
 											data-toggle="pill"
 											role="tab"
-											href={`#tab-${slug}-${this.id}`}
+											href={`#tab-${slug}-${instanceId}`}
 											className={classnames(
 												"nav-link",
 												selected ? "active" : ""
@@ -300,3 +307,5 @@ export default class Edit extends Component {
 		);
 	}
 }
+
+export default withInstanceId(Edit);
