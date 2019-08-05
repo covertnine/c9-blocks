@@ -52,6 +52,14 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 	min-height: 160px;
 }
 
+.c9-grid .components-icon-button:not(:disabled):not([aria-disabled=true]):not(.is-default) {
+	background-color: #fff;
+}
+
+.c9-grid .wp-block[data-type="c9-blocks/column-container"].is-hovered {
+	border: 1px solid #ccc;
+}
+
 /****************************************************************************************/
 /* Main column width settings */
 /****************************************************************************************/
