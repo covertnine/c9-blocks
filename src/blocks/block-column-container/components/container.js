@@ -157,15 +157,29 @@ export default class Container extends Component {
 				columns,
 				layout,
 				columnMaxWidth,
-				centerColumns
+				centerColumns,
+				align,
 			},
-			isSelectedBlockInRoot
+			isSelectedBlockInRoot,
+			save = false
 		} = this.props;
+
+		let containerAlign;
+		if (save && align.length != 0) {
+			if (containerWidth == "container") {
+				containerAlign = "alignwide";
+			} else if (containerWidth == "container-fluid") {
+				containerAlign = "alignfull";
+			} else {
+				containerAlign = null;
+			}
+		}
 
 		return (
 			<div
 				className={classnames(
 					containerWidth,
+					containerAlign,
 					"c9-column-container",
 					this.c9SpacingConfig(containerPadding, containerMargin),
 					bgImgAttach ? "c9-fixed" : "c9-scroll",

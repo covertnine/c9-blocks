@@ -24,8 +24,9 @@ export default class Save extends Component {
 		const {
 			attributes: { columnsGap, responsiveToggle, columnMaxWidth }
 		} = this.props;
+
 		return (
-			<Container {...this.props}>
+			<Container {...this.props} save={true}>
 				<div
 					className={classnames(
 						"c9-layout-column-wrap",
