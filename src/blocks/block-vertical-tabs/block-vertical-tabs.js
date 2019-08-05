@@ -18,11 +18,13 @@ const { withSelect, withDispatch } = wp.data;
 // Register block
 const { registerBlockType } = wp.blocks;
 
+import tabIcons from "../../../assets/tab-icons";
+
 // Register the block
 registerBlockType("c9-blocks/vertical-tabs", {
 	title: __("C9 Vertical Tabs", "c9-blocks"),
 	description: __("Responsive tabs for content", "c9-blocks"),
-	icon: "category",
+	icon: tabIcons.vertical,
 	category: "c9-blocks",
 	supports: {
 		// fill in features
