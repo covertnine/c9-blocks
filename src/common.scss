@@ -117,10 +117,10 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 @media only screen and (min-width: 992px) {
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/column-container"],
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
-		max-width: 100%;
-	}
+	// body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
+	// body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+	// 	max-width: 100%;
+	// }
 
 	.wp-block[data-align=full],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .editor-block-list__block[data-align=full],

@@ -168,6 +168,36 @@
 /****************************************************************************************/
 /***************************** C9 Container block edits for backend only
 /****************************************************************************************/
+.container .row .editor-inner-blocks,
+.container-fluid .row .editor-inner-blocks,
+.container-narrow .row .editor-inner-blocks {
+	width: 100%;
+}
+
+.container .row>.editor-inner-blocks>.editor-block-list__layout,
+.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout,
+.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.container .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
+.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
+.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	-ms-flex-preferred-size: 0px;
+	flex-basis: 0px;
+}
+
+.c9-blocks-column-containers .container-fluid .row {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
 
 /*c9 column container innerblocks set to full width + innerblock full width */
 .wp-block[data-type="c9-blocks/grid"] .editor-inner-blocks {
