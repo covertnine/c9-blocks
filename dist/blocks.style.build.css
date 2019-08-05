@@ -549,37 +549,56 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  * CSS for both Frontend+Backend.
  */
 .display-5 {
-  font-size: 3.25rem;
-  line-height: 1.2; }
+  font-size: 5rem;
+  line-height: 1.1; }
 
 .display-6 {
-  font-size: 3rem;
-  line-height: 1.2; }
+  font-size: 4.3rem;
+  line-height: 1.1; }
 
 .subhead {
-  color: #6c757d !important;
-  line-height: 1.2; }
-
-.subhead-h1 {
-  font-size: 2rem; }
-
-.subhead-h2 {
-  font-size: 1.6rem; }
-
-.subhead-h3 {
-  font-size: 1.4rem; }
-
-.subhead-h4 {
-  font-size: 1.2rem; }
-
-.subhead-h5 {
-  font-size: 1rem; }
-
-.subhead-h6 {
-  font-size: 0.8rem; }
+  color: #6c757d;
+  line-height: 1.1; }
 
 .c9-heading > * {
   display: inline-block; }
+
+.entry-content h1,
+.entry-content .h1,
+.wp-block-heading h1,
+.entry-header h1,
+.subhead-h1 {
+  font-size: 7.9rem; }
+
+.entry-content h2,
+.entry-content .h2,
+.wp-block-heading h2,
+.subhead-h2 {
+  font-size: 5.6rem; }
+
+.entry-content h3,
+.entry-content .h3,
+.wp-block-heading h3,
+.subhead-h3 {
+  font-size: 4rem; }
+
+.entry-content h4,
+.entry-content .h4,
+.wp-block-heading h4,
+.subhead-h4 {
+  font-size: 2.8rem; }
+
+.entry-content h5,
+.entry-content .h5,
+.wp-block-heading h5,
+.subhead-h5 {
+  font-size: 2rem; }
+
+.entry-content h6,
+.entry-content .h6,
+.wp-block-heading h6,
+.subhead-h6 {
+  font-size: 1.4rem; }
 /**
  * #.# Common SCSS
  *
@@ -1160,6 +1179,12 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
     padding-right: 0px; } }
 
 @media only screen and (min-width: 768px) {
+  .c9-grid .container-narrow,
+  .c9-grid .container,
+  .c9-grid .container.alignwide,
+  .c9-grid .container.alignfull,
+  .c9-grid .container-fluid.alignfull {
+    overflow: visible; }
   .page-template-default .entry-content > .c9-grid,
   .page-template-default .entry-content > .container-fluid {
     width: 100vw;
@@ -1195,7 +1220,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   .page-template-default .entry-content > .c9-grid .container-fluid {
     width: 100%;
     padding-left: 0px;
-    padding-right: 0px; } }
+    padding-right: 0px; }
+  .page-template-default .entry-content > .c9-grid .container {
+    max-width: 1140px; } }
 
 @media only screen and (min-width: 1200px) {
   .c9-blocks-column-containers .columns:not(.alignfull),

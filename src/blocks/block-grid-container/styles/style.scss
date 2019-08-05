@@ -181,6 +181,14 @@
 
 @media only screen and (min-width: 768px) {
 
+	.c9-grid .container-narrow,
+	.c9-grid .container,
+	.c9-grid .container.alignwide,
+	.c9-grid .container.alignfull,
+	.c9-grid .container-fluid.alignfull {
+		overflow: visible;
+	}
+
 	.page-template-default .entry-content>.c9-grid,
 	.page-template-default .entry-content>.container-fluid {
 		width: 100vw;
@@ -234,6 +242,10 @@
 		width: 100%;
 		padding-left: 0px;
 		padding-right: 0px;
+	}
+
+	.page-template-default .entry-content>.c9-grid .container {
+		max-width: 1140px;
 	}
 
 }
