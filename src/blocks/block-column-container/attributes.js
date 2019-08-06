@@ -106,22 +106,6 @@ const attributes = {
 			x: 0.5,
 			y: 0.5
 		}
-	},
-	videoType: {
-		type: "string",
-		default: "upload"
-	},
-	containerVideoURL: {
-		type: "string",
-		default: ""
-	},
-	containerVideoID: {
-		type: "string",
-		default: ""
-	},
-	cannotEmbed: {
-		type: "boolean",
-		default: false
 	}
 };
 
