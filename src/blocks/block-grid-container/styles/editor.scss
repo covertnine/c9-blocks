@@ -206,6 +206,11 @@
 	position: relative;
 }
 
+/* removes center alignment from multiple column blocks*/
+.edit-post-visual-editor .container .block-editor-block-list__block {
+	margin: 0px;
+}
+
 @media (min-width: 1px) {
 
 	//set the alignfull width to be the editable area within gutenberg removing widths of both admin bar and document settings since they are hidden below 600px
@@ -288,6 +293,12 @@
 	.edit-post-visual-editor .container-fluid.block-editor-block-list__block .block-editor-block-list__block-edit {
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	/* for unsetting default paddings from gutenberg*/
+	.block-editor-block-list__layout .container-fluid.block-editor-block-list__block[data-align=full] {
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 
 }
@@ -385,7 +396,7 @@
 	body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"]:only-child .wp-block[data-type="c9-blocks/column"] {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 100%;
+		max-width: 100vw;
 		width: 100%;
 		padding-left: 0px;
 		padding-right: 0px;
