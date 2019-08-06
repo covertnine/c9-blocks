@@ -30,4 +30,14 @@
 	.c9-toggles-item-heading {
 		position: relative;
 	}
+
+	&.c9-toggles-reverse {
+		.c9-toggles-toggle-label {
+			margin-left: 16px;
+		}
+
+		.c9-toggles-item-collapse {
+			left: 0;
+		}
+	}
 }

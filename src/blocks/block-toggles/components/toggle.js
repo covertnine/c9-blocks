@@ -91,11 +91,10 @@ class ToggleBlock extends Component {
 						className="c9-toggles-item-heading"
 						id={`c9-toggles-heading${attributes.toggleNumber}-${attributes.id}`}
 					>
-						<h2 className="mb-0">
+						<div className="mb-0">
 							<RichText
-								tagName="button"
-								type="button"
-								className="c9-toggles-toggle-label btn btn-link"
+								tagName="span"
+								className="c9-toggles-toggle-label"
 								placeholder={__("Collapsible Group Item…")}
 								value={heading}
 								onChange={value => {
@@ -144,7 +143,7 @@ class ToggleBlock extends Component {
 									top: "10px"
 								}}
 							/>
-						</h2>
+						</div>
 					</div>
 					<div
 						className="c9-toggles-item-content collapse"
@@ -233,17 +232,16 @@ registerBlockType("c9-blocks/toggles-toggle", {
 					data-toggle="collapse"
 					data-target={`#c9-toggles-collapse${toggleNumber}-${id}`}
 				>
-					<h2 className="mb-0">
+					<div className="mb-0">
 						<RichText.Content
-							tagName="button"
-							type="button"
-							className="c9-toggles-toggle-label btn btn-link"
+							tagName="span"
+							className="c9-toggles-toggle-label"
 							value={heading}
 						/>
 						<span className="c9-toggles-item-collapse">
 							<span className="fas fa-angle-right" />
 						</span>
-					</h2>
+					</div>
 				</div>
 				<div
 					className="c9-toggles-item-content collapse"

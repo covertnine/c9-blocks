@@ -2082,3 +2082,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 .c9-toggles .c9-toggles-item-heading {
   position: relative; }
+
+.c9-toggles.c9-toggles-reverse .c9-toggles-toggle-label {
+  margin-left: 16px; }
+
+.c9-toggles.c9-toggles-reverse .c9-toggles-item-collapse {
+  left: 0; }

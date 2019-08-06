@@ -5,7 +5,11 @@ const attributes = {
 	},
 	instanceId: {
 		type: "number"
-	}
+	},
+	reverseToggle: {
+		type: "boolean",
+		default: false
+	},
 };
 
 export default attributes;
