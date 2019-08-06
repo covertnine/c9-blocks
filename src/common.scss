@@ -56,7 +56,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 	background-color: #fff;
 }
 
-.c9-grid .wp-block[data-type="c9-blocks/column-container"].is-hovered {
+/* makes grid column containers and columns themselves easier to see when hovering*/
+.c9-grid .wp-block[data-type="c9-blocks/column-container"].is-hovered .c9-column-container,
+.c9-grid .wp-block[data-type="c9-blocks/column-container"] .is-hovered[data-type="c9-blocks/column"] .block-editor-block-list__block-edit .c9-block-layout-column {
 	border: 1px solid #ccc;
 }
 

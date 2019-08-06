@@ -178,6 +178,12 @@
 		margin-right: auto;
 	}
 
+	/* sets default width of column container in grid when no width setting has been applied yet*/
+	.c9-grid [data-type="c9-blocks/column-container"] {
+		width: 100%;
+		max-width: 1110px;
+	}
+
 }
 
 @media only screen and (min-width: 576px) {
