@@ -2232,6 +2232,13 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 .c9-toggles .c9-toggles-item-collapse {
   width: 28px; }
 
+.c9-toggles div[data-type="c9-blocks/toggles-toggle"] .c9-toggles-item-heading .block-editor-rich-text .components-autocomplete {
+  display: -ms-flexbox;
+  display: flex; }
+
+.c9-toggles.c9-toggles-reverse .c9-toggles-item-heading .block-editor-rich-text {
+  margin-left: 16px; }
+
 .c9-toggles-add-item {
   padding-bottom: 20px; }
   .c9-toggles-add-item > .components-button.components-icon-button {

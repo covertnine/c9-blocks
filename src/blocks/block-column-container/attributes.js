@@ -1,7 +1,7 @@
 const attributes = {
 	align: {
 		type: "string",
-		default: "full"
+		default: ""
 	},
 	columns: {
 		type: "number"
@@ -25,8 +25,7 @@ const attributes = {
 		type: "string"
 	},
 	containerWidth: {
-		type: "string",
-		default: "container-fluid"
+		type: "string"
 	},
 	verticalAlign: {
 		type: "string"

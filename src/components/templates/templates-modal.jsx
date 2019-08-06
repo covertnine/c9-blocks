@@ -2,8 +2,8 @@ const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
-const { withDispatch } = wp.data;
-const { createBlock } = wp.blocks;
+const { withDispatch, withSelect } = wp.data;
+const { createBlock, rawHandler } = wp.blocks;
 
 import LayoutButton from "./layout-button.jsx";
 import "./editor.scss";
@@ -14,6 +14,8 @@ class TemplatesModal extends Component {
 	}
 
 	render() {
+		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
+
 		const layouts = {
 			default: [createBlock("core/paragraph", {})],
 			hero: [
@@ -53,10 +55,25 @@ class TemplatesModal extends Component {
 						]
 					)
 				])
-			]
+			],
+			markdown: rawHandler({
+				HTML: `<!-- wp:c9-blocks/horizontal-tabs {"tabActive":"tab-apple","buttonsAlign":"center","tabsData":[{"slug":"tab-apple","title":"apple"},{"slug":"tab-banana","title":"banana"}],"instanceId":0} -->
+				<div class="c9-horizontal-tabs" data-tab-active="tab-apple"><ul class="nav nav-tabs d-flex justify-content-center" role="tablist"><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-apple-0" class="nav-link active" id="tab-button-tab-apple">apple</a></li><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-banana-0" class="nav-link" id="tab-button-tab-banana">banana</a></li></ul><div class="c9-tabs-content tab-content"><!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-apple","tabActive":"tab-apple","id":0} -->
+				<div class="c9-horizontal-tabs-tab tab-pane fade show active" role="tabpanel" id="tab-tab-apple-0" aria-labelledby="tab-apple"><!-- wp:c9-blocks/heading {"heading":"test"} -->
+				<div class="section-heading c9-heading text-left"><h1 class="h">test</h1></div>
+				<!-- /wp:c9-blocks/heading --></div>
+				<!-- /wp:c9-blocks/horizontal-tabs-tab -->
+				
+				<!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-banana","tabActive":"tab-apple","id":0} -->
+				<div class="c9-horizontal-tabs-tab tab-pane fade" role="tabpanel" id="tab-tab-banana-0" aria-labelledby="tab-banana"><!-- wp:paragraph -->
+				<p>easdw</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:c9-blocks/horizontal-tabs-tab --></div></div>
+				<!-- /wp:c9-blocks/horizontal-tabs -->`,
+				mode: "BLOCKS",
+				canUserUseUnfilteredHTML
+			})
 		};
-
-		const { resetBlocks } = this.props;
 
 		return (
 			<Modal
@@ -126,6 +143,11 @@ class TemplatesModal extends Component {
 												label={__("Nested", "c9-blocks")}
 												layout={layouts.nested}
 											/>
+											<LayoutButton
+												icon="wordpress"
+												label={__("Markdown", "c9-blocks")}
+												layout={layouts.markdown}
+											/>
 										</div>
 										<button
 											onClick={() => {
@@ -155,6 +177,14 @@ class TemplatesModal extends Component {
 }
 
 const TemplatesModalWithSelect = compose([
+	withSelect((select, { clientId }) => {
+		const { getBlock, canUserUseUnfilteredHTML } = select("core/editor");
+		const block = getBlock(clientId);
+		return {
+			block,
+			canUserUseUnfilteredHTML: canUserUseUnfilteredHTML()
+		};
+	}),
 	withDispatch(dispatch => {
 		const { resetBlocks, insertBlocks } = dispatch("core/editor");
 		return {

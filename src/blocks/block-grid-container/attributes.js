@@ -12,7 +12,7 @@ const attributes = {
 	},
 	containerOpacity: {
 		type: "number",
-		default: "5"
+		default: 10
 	},
 	bgImgSize: {
 		type: "string",
@@ -47,7 +47,7 @@ const attributes = {
 	},
 	overlayOpacity: {
 		type: "number",
-		default: "5"
+		default: 5
 	},
 	blendMode: {
 		type: "string",
