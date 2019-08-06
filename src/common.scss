@@ -76,19 +76,6 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 	max-width: 1140px;
 }
 
-@media (min-width: 1px) {
-
-	//set the alignfull width to be the editable area within gutenberg removing widths of both admin bar and document settings since they are hidden below 600px
-	.wp-block[data-align=full],
-	body .edit-post-layout .editor-block-list__layout .editor-block-list__block[data-align=full] {
-		width: 100%;
-		max-width: 100vw; //subtract the width of the document options sidebar
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-}
-
 @media (min-width: 576px) {
 
 	.editor-post-title,
