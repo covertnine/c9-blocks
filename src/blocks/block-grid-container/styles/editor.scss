@@ -184,6 +184,10 @@
 		max-width: 1110px;
 	}
 
+	.c9-grid [data-type="c9-blocks/column-container"] .wp-block[data-type="c9-blocks/column"] {
+		width: 100%;
+	}
+
 }
 
 @media only screen and (min-width: 576px) {

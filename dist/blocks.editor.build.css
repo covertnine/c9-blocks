@@ -927,7 +927,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   /* sets default width of column container in grid when no width setting has been applied yet*/
   .c9-grid [data-type="c9-blocks/column-container"] {
     width: 100%;
-    max-width: 1110px; } }
+    max-width: 1110px; }
+  .c9-grid [data-type="c9-blocks/column-container"] .wp-block[data-type="c9-blocks/column"] {
+    width: 100%; } }
 
 @media only screen and (min-width: 576px) {
   .c9-grid .editor-block-list__block.wp-block[data-align=wide] {
