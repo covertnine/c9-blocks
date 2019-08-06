@@ -96,10 +96,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports) {
 
 /* eslint-disable no-undef */
-function readyYoutube(video_id) {
+function readyYoutube(player_id, video_id) {
 	if (typeof YT !== "undefined" && YT && YT.Player) {
 		// eslint-disable-next-line no-unused-vars
-		let player = new YT.Player("player", {
+		let player = new YT.Player(player_id, {
 			playerVars: {
 				autoplay: 1,
 				controls: 0,
@@ -131,22 +131,17 @@ function onPlayerReady(event) {
 
 	let vids = document.getElementsByClassName("c9-video-container");
 	for (let i = 0; i < vids.length; i++) {
-		vids[i].style.opacity = 1
+		vids[i].style.opacity = 1;
 	}
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	let id = document.getElementById("player");
-
-	if (!id) {
-		return;
+	let embeds = document.getElementsByClassName("c9-video");
+	for (let i = 0; i < embeds.length; i++) {
+		let player_id = embeds[i].getAttribute("id");
+		let id = embeds[i].getAttribute("video-id");
+		readyYoutube(player_id, id);
 	}
-
-	id = id.getAttribute("video-id");
-
-	// create the player and replace the div
-
-	readyYoutube(id);
 });
 
 

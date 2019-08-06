@@ -14,7 +14,7 @@ export default class VideoBox extends Component {
 	constructor() {
 		super(...arguments);
 		this.videoRef = React.createRef();
-		this.videoContainer = React.createRef();
+		this.videoContainerRef = React.createRef();
 
 		const {
 			attributes: { containerVideoURL, preview, containerVideoID },
@@ -28,10 +28,11 @@ export default class VideoBox extends Component {
 
 		this.canPlay = this.canPlay.bind(this);
 		this.setYoutube = this.setYoutube.bind(this);
+		this.onPlayerReady = this.onPlayerReady.bind(this);
 	}
 
 	setYoutube() {
-		if (!this.containerVideoID || window.YT) {
+		if (!this.containerVideoID) {
 			return;
 		}
 
@@ -48,7 +49,7 @@ export default class VideoBox extends Component {
 				window.onYouTubeIframeAPIReady = () => resolve(window.YT);
 			});
 			loadYT.then(YT => {
-				let player = new YT.Player("player", {
+				let player = new YT.Player(`player-${video_id}`, {
 					playerVars: {
 						autoplay: 1,
 						controls: 0,
@@ -70,34 +71,11 @@ export default class VideoBox extends Component {
 					}
 				});
 				this.setAttributes({ preview: player });
+				this.preview = player;
 			});
 		}
-	}
-
-	// API will call this function when the video player is ready.
-	onPlayerReady(event) {
-		event.target.mute();
-
-		if (this.videoContainerRef.current) {
-			this.videoContainerRef.current.style.opacity = 1;
-		}
-	}
-
-	canPlay() {
-		if (this.videoContainerRef.current) {
-			this.videoContainerRef.current.style.opacity = 1;
-		}
-	}
-	componentDidMount() {
-		const {
-			attributes: { preview }
-		} = this.props;
-
-		let loadYT = window.YT;
-		if (loadYT && (!preview || !preview.i)) {
-			let video_id = this.containerVideoID;
-
-			let player = new loadYT.Player("player", {
+		else {
+			let player = new loadYT.Player(`player-${video_id}`, {
 				playerVars: {
 					autoplay: 1,
 					controls: 0,
@@ -124,6 +102,24 @@ export default class VideoBox extends Component {
 		}
 	}
 
+	// API will call this function when the video player is ready.
+	onPlayerReady(event) {
+		event.target.mute();
+
+		if (this.videoContainerRef.current) {
+			this.videoContainerRef.current.style.opacity = 1;
+		}
+	}
+
+	canPlay() {
+		if (this.videoContainerRef.current) {
+			this.videoContainerRef.current.style.opacity = 1;
+		}
+	}
+	componentDidMount() {
+		this.setYoutube();
+	}
+
 	render() {
 		const {
 			attributes: {
@@ -143,7 +139,7 @@ export default class VideoBox extends Component {
 
 		if (containerVideoURL && videoType == "upload") {
 			return (
-				<div className="c9-video-container">
+				<div className="c9-video-container" ref={this.videoContainerRef}>
 					<div className="c9-embed-container">
 						<video
 							id="containerVideo"
@@ -169,13 +165,13 @@ export default class VideoBox extends Component {
 			// return <WpEmbedPreview html={previewHTML} />;
 			return (
 				<div
-					dangerouslySetInnerHTML={this.setYoutube()}
+					
 					className="c9-video-container"
-					ref={this.videoContainer}
+					ref={this.videoContainerRef}
 				>
 					<div className="c9-embed-container">
 						<div
-							id="player"
+							id={`player-${containerVideoID}`}
 							className="c9-video"
 							video-id={containerVideoID}
 							style={c9VideoStyles(
