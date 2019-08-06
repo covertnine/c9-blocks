@@ -1101,7 +1101,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   body .edit-post-layout .c9-grid .container,
   body:not(.folded) .edit-post-layout .container,
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container {
-    width: 100%;
+    width: 94%;
     margin-left: auto;
     margin-right: auto;
     max-width: 1110px;
@@ -1114,6 +1114,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
     padding-left: 0px;
     padding-right: 0px;
+    width: 96%;
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto; }
