@@ -102,6 +102,14 @@ function c9_blocks_cgb_editor_assets()
     //     array('wp-blocks', 'wp-il8n', 'wp-element'),
     //     true
     // );
+
+    // Youtube Player API
+    wp_enqueue_script(
+        'youtube-api',
+        'https://www.youtube.com/player_api',
+        false
+    );
+
     wp_enqueue_style(
         'c9_blocks-cgb-block-editor-css', // Handle.
         plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)), // Block editor CSS.

@@ -164,7 +164,7 @@ class ToggleBlock extends Component {
 registerBlockType("c9-blocks/toggles-toggle", {
 	title: __("C9 Toggle Item"),
 	parent: ["c9-blocks/toggles"],
-	description: __("A single item within a accordion block."),
+	description: __("A single item within a toggles block."),
 	icon: "minus",
 	category: "c9-blocks",
 	supports: {
@@ -176,7 +176,7 @@ registerBlockType("c9-blocks/toggles-toggle", {
 			type: "array",
 			source: "children",
 			selector: ".c9-toggles-toggle-label",
-			default: "Accordion Item"
+			default: "Toggle Item"
 		},
 		active: {
 			type: "boolean",

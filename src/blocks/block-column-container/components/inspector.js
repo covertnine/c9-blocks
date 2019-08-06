@@ -11,10 +11,8 @@ const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
 const {
-	RadioControl,
 	PanelBody,
 	RangeControl,
-	TextControl,
 	ToggleControl,
 	SelectControl,
 	IconButton,
@@ -35,8 +33,6 @@ export default class Inspector extends Component {
 			attributes: {
 				containerPadding,
 				containerMargin,
-				containerVideoID,
-				preview,
 				bgCustomX,
 				bgCustomY
 			},
@@ -44,7 +40,6 @@ export default class Inspector extends Component {
 		} = this.props;
 
 		this.setAttributes = setAttributes;
-		this.preview = preview;
 
 		this.linkedPaddingRef = React.createRef();
 		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
@@ -55,7 +50,6 @@ export default class Inspector extends Component {
 			containerPadding: containerPadding,
 			containerMargin: containerMargin,
 			setAttributes: setAttributes,
-			ID: containerVideoID || "",
 			customX: bgCustomX.size != "auto",
 			customY: bgCustomY.size != "auto",
 			bgCustomX: bgCustomX,
@@ -236,9 +230,6 @@ export default class Inspector extends Component {
 				columns,
 				minScreenHeight,
 				focalPoint,
-				videoType,
-				containerVideoURL,
-				cannotEmbed,
 				columnsGap,
 				columnMaxWidth,
 				centerColumns,
@@ -304,27 +295,6 @@ export default class Inspector extends Component {
 			setAttributes({
 				containerImgURL: null,
 				bgImgSize: "cover"
-			});
-		};
-
-		const onSelectVideo = video => {
-			let replace = containerVideoURL && !!containerVideoURL.length;
-
-			setAttributes({
-				containerVideoURL: video.url,
-				cannotEmbed: false
-			});
-
-			if (replace) {
-				let vidElement = document.getElementById("containerVideo");
-				vidElement.load();
-				vidElement.play();
-			}
-		};
-
-		const onRemoveVideo = () => {
-			setAttributes({
-				containerVideoURL: null
 			});
 		};
 
@@ -750,102 +720,6 @@ export default class Inspector extends Component {
 							</div>
 						)}
 					/>
-				</PanelBody>
-				<PanelBody title={__("Video", "c9-blocks")} initialOpen={false}>
-					<RadioControl
-						label={__("Media Type", "c9-blocks")}
-						selected={videoType}
-						options={[
-							{ label: "Upload File", value: "upload" },
-							{ label: "Embed URL", value: "embed" }
-						]}
-						onChange={videoType => {
-							setAttributes({
-								videoType,
-								containerVideoURL: "",
-								containerVideoID: ""
-							});
-							this.setState({ ID: "" });
-
-							const {
-								attributes: { preview }
-							} = this.props;
-							if (preview && preview.i) {
-								preview.destroy();
-							}
-						}}
-					/>
-
-					<hr />
-
-					{videoType == "upload" && (
-						<MediaUpload
-							id="bg-video-select"
-							label={__("Background Video", "c9-blocks")}
-							onSelect={onSelectVideo}
-							type="video"
-							value={containerImgID}
-							allowedTypes={["video"]}
-							render={({ open }) => (
-								<div>
-									<IconButton
-										label={__("Edit Video", "c9-blocks")}
-										icon="format-image"
-										onClick={open}
-									>
-										{__("Background Video", "c9-blocks")}
-									</IconButton>
-								</div>
-							)}
-						/>
-					)}
-
-					{videoType == "upload" &&
-						containerVideoURL &&
-						!!containerVideoURL.length && (
-							<div>
-								<IconButton
-									label={__("Remove Video", "c9-blocks")}
-									icon="dismiss"
-									onClick={onRemoveVideo}
-								>
-									{__("Remove", "c9-blocks")}
-								</IconButton>
-							</div>
-						)}
-
-					{videoType == "embed" && (
-						<div>
-							<TextControl
-								label="YouTube URL or Youtube ID"
-								value={this.state.ID}
-								onChange={value => this.updateID(value)}
-							/>
-
-							{cannotEmbed && (
-								<p className="text-danger">
-									{__(
-										"Given YouTube ID/URL is not correctly formatted!",
-										"c9-blocks"
-									)}
-								</p>
-							)}
-
-							<div>
-								<Button
-									isDefault
-									onClick={() => this.submitID()}
-									style={{ marginRight: "10px" }}
-								>
-									Set
-								</Button>
-
-								<Button isDefault onClick={() => this.resetID()}>
-									Reset
-								</Button>
-							</div>
-						</div>
-					)}
 				</PanelBody>
 			</InspectorControls>
 		);

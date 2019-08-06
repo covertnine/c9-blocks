@@ -7,7 +7,6 @@ const { Component } = wp.element;
 
 // Import block dependencies and components
 import classnames from "classnames";
-import VideoBox from "./video-box";
 
 /**
  * Create a Container wrapper Component
@@ -194,9 +193,6 @@ export default class Container extends Component {
 				)}
 				style={this.c9ContainerStyles(minScreenHeight)}
 			>
-				{(!!containerVideoURL || !!containerVideoID) && !cannotEmbed && (
-					<VideoBox {...this.props} />
-				)}
 				{!!containerImgURL && (
 					<div
 						className="c9-image-container"
