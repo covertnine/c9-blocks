@@ -24,6 +24,19 @@ class ToggleBlock extends Component {
 		this.toggleDisplayRef = React.createRef();
 	}
 
+	componentWillUnmount() {
+		const { clientId } = this.props;
+		const $ = window.jQuery;
+
+		const id = $(
+			`div[data-block="${clientId}"] .c9-toggles-toggle .c9-toggles-item-content.collapse`
+		).attr("id");
+
+		// remove each hook from collapse and expand event
+		$(`#${id}`).off("show.bs.collapse", "**");
+		$(`#${id}`).off("hide.bs.collapse", "**");
+	}
+
 	getParentToggle(rootBlock) {
 		const { block } = this.props;
 

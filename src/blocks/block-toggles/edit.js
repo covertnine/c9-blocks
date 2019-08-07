@@ -42,6 +42,19 @@ class Edit extends Component {
 		this.checkToggleCountAndUpdate();
 	}
 
+	componentWillUnmount() {
+		const $ = window.jQuery;
+
+		$(".c9-toggles-toggle").each(function() {
+			// grab collapse id
+			const id = $(".c9-toggles-item-content.collapse", this).attr("id");
+
+			// remove each hook from collapse and expand event
+			$(`#${id}`).off("show.bs.collapse", "**");
+			$(`#${id}`).off("hide.bs.collapse", "**");
+		});
+	}
+
 	checkToggleCountAndUpdate() {
 		const {
 			attributes: { toggleCount },
