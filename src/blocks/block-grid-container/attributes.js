@@ -1,4 +1,7 @@
 const attributes = {
+	instanceId: {
+		type: "number"
+	},
 	align: {
 		type: "string",
 		default: "full"

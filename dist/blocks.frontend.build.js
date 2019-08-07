@@ -142,6 +142,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		let id = embeds[i].getAttribute("video-id");
 		readyYoutube(player_id, id);
 	}
+
+	// if video custom elements are present
+	const $ = window.jQuery;
+
+	$(".c9-video-container").each(function() {
+		const check = $(".c9-video-custom").length;
+		if (check > 0) {
+			$(this).css({ opacity: 1 });
+		}
+	});
 });
 
 

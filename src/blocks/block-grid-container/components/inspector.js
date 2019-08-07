@@ -235,7 +235,8 @@ export default class Inspector extends Component {
 				containerVideoURL,
 				cannotEmbed,
 				containerHue,
-				containerOpacity
+				containerOpacity,
+				instanceId
 			},
 			setAttributes
 		} = this.props;
@@ -303,7 +304,7 @@ export default class Inspector extends Component {
 			});
 
 			if (replace) {
-				let vidElement = document.getElementById("containerVideo");
+				let vidElement = document.getElementById(`containerVideo-${instanceId}`);
 				vidElement.load();
 				vidElement.play();
 			}

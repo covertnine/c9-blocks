@@ -32,6 +32,8 @@ export default class VideoBox extends Component {
 	}
 
 	setYoutube() {
+		const { instanceId } = this.props;
+
 		if (!this.containerVideoID) {
 			return;
 		}
@@ -49,7 +51,7 @@ export default class VideoBox extends Component {
 				window.onYouTubeIframeAPIReady = () => resolve(window.YT);
 			});
 			loadYT.then(YT => {
-				let player = new YT.Player(`player-${video_id}`, {
+				let player = new YT.Player(`player-${video_id}-${instanceId}`, {
 					playerVars: {
 						autoplay: 1,
 						controls: 0,
@@ -73,9 +75,8 @@ export default class VideoBox extends Component {
 				this.setAttributes({ preview: player });
 				this.preview = player;
 			});
-		}
-		else {
-			let player = new loadYT.Player(`player-${video_id}`, {
+		} else {
+			let player = new loadYT.Player(`player-${video_id}-${instanceId}`, {
 				playerVars: {
 					autoplay: 1,
 					controls: 0,
@@ -126,7 +127,8 @@ export default class VideoBox extends Component {
 				minScreenHeight,
 				videoType,
 				containerVideoURL,
-				containerVideoID
+				containerVideoID,
+				instanceId
 			}
 		} = this.props;
 
@@ -142,8 +144,8 @@ export default class VideoBox extends Component {
 				<div className="c9-video-container" ref={this.videoContainerRef}>
 					<div className="c9-embed-container">
 						<video
-							id="containerVideo"
-							className="c9-video"
+							id={`containerVideo-${instanceId}`}
+							className="c9-video-custom"
 							playsinline="playsinline"
 							autoPlay="autoplay"
 							muted="muted"
@@ -156,7 +158,10 @@ export default class VideoBox extends Component {
 								minScreenHeight
 							)}
 						>
-							<source src={`${containerVideoURL}`} type="video/mp4" />
+							<source
+								src={`${containerVideoURL}`}
+								type="video/mp4"
+							/>
 						</video>
 					</div>
 				</div>
@@ -164,14 +169,10 @@ export default class VideoBox extends Component {
 		} else {
 			// return <WpEmbedPreview html={previewHTML} />;
 			return (
-				<div
-					
-					className="c9-video-container"
-					ref={this.videoContainerRef}
-				>
+				<div className="c9-video-container" ref={this.videoContainerRef}>
 					<div className="c9-embed-container">
 						<div
-							id={`player-${containerVideoID}`}
+							id={`player-${containerVideoID}-${instanceId}`}
 							className="c9-video"
 							video-id={containerVideoID}
 							style={c9VideoStyles(

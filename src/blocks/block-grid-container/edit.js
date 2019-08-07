@@ -11,14 +11,22 @@ const { Component, Fragment } = wp.element;
 
 const { InnerBlocks, BlockControls } = wp.editor;
 
+const { withInstanceId } = wp.compose;
+
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
-export default class Edit extends Component {
+class Edit extends Component {
 	constructor() {
 		super(...arguments);
 	}
 
 	render() {
+		const { instanceId, attributes, setAttributes } = this.props;
+
+		if (instanceId != attributes.instanceId) {
+			setAttributes({ instanceId });
+		}
+
 		return (
 			<Fragment>
 				<BlockControls key="controls" />
@@ -35,3 +43,5 @@ export default class Edit extends Component {
 		);
 	}
 }
+
+export default withInstanceId(Edit);

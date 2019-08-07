@@ -177,6 +177,7 @@ export default class Container extends Component {
 		return (
 			<div
 				className={classnames(
+					save ? containerWidth : null,
 					containerAlign,
 					"c9-column-container",
 					this.c9SpacingConfig(containerPadding, containerMargin),
