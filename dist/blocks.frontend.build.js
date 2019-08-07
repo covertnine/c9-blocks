@@ -97,7 +97,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* eslint-disable no-undef */
 function readyYoutube(player_id, video_id) {
-	if (typeof YT !== "undefined" && YT && YT.Player) {
+	if (YT && YT.Player) {
 		// eslint-disable-next-line no-unused-vars
 		let player = new YT.Player(player_id, {
 			playerVars: {
@@ -121,18 +121,19 @@ function readyYoutube(player_id, video_id) {
 			}
 		});
 	} else {
-		setTimeout(readyYoutube, 100);
+		setTimeout(function() {
+			readyYoutube(player_id, video_id);
+		}, 100);
 	}
 }
 
 // API will call this function when the video player is ready.
 function onPlayerReady(event) {
 	event.target.mute();
+	event.target.playVideo();
 
-	let vids = document.getElementsByClassName("c9-video-container");
-	for (let i = 0; i < vids.length; i++) {
-		vids[i].style.opacity = 1;
-	}
+	// this .c9-video element -> .c9-embed-container -> .c9-video-container
+	event.target.a.parentNode.parentNode.style.opacity = 1;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
