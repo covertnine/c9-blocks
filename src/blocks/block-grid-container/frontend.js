@@ -50,9 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	const $ = window.jQuery;
 
 	$(".c9-video-container").each(function() {
-		const check = $(".c9-video-custom").length;
+		const self = this;
+		const check = $(".c9-video-custom", this).length;
 		if (check > 0) {
-			$(this).css({ opacity: 1 });
+			$(".c9-video-custom", this).on("canplay", function() {
+				$(self).css({ opacity: 1 });
+			});
 		}
 	});
 });
