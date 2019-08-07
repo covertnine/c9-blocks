@@ -25,7 +25,8 @@ const attributes = {
 		type: "string"
 	},
 	containerWidth: {
-		type: "string"
+		type: "string",
+		default: "container"
 	},
 	verticalAlign: {
 		type: "string"

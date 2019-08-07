@@ -48,4 +48,4 @@ class PageTemplateSelector extends Component {
 	}
 }
 
-registerPlugin("post-status-info-test", { render: PageTemplateSelector });
+// registerPlugin("post-status-info-test", { render: PageTemplateSelector });
