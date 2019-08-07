@@ -35,6 +35,13 @@ class ToggleBlock extends Component {
 		// remove each hook from collapse and expand event
 		$(`#${id}`).off("show.bs.collapse", "**");
 		$(`#${id}`).off("hide.bs.collapse", "**");
+
+		const parentToggle = this.getParentToggle(this.props.rootBlock);
+		if (parentToggle && parentToggle.clientId) {
+			if (parentToggle.innerBlocks.length <= 1) {
+				this.props.removeBlock(parentToggle.clientId);
+			}
+		}
 	}
 
 	getParentToggle(rootBlock) {
