@@ -5,6 +5,7 @@ import React from "react";
 
 // Internal Dependencies.
 import RemoveButton from "./remove-button";
+import toggleOpenIcon from "../../../../assets/toggle-open";
 
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
@@ -88,7 +89,7 @@ class ToggleBlock extends Component {
 					<Toolbar
 						controls={[
 							{
-								icon: "laptop",
+								icon: toggleOpenIcon,
 								title: __("Collapse"),
 								onClick: () => {
 									this.toggleBtnRef.current.click();
