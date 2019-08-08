@@ -4,6 +4,8 @@ import Save from "./save";
 
 import attributes from "./attributes";
 
+import toggleIcon from "../../../assets/toggle-icon";
+
 // Import CSS
 import "./styles/style.scss";
 import "./styles/editor.scss";
@@ -24,7 +26,7 @@ registerBlockType("c9-blocks/toggles", {
 		"A responsive set of toggles for lists of content",
 		"c9-blocks"
 	),
-	icon: "editor-table",
+	icon: toggleIcon,
 	category: "c9-blocks",
 	supports: {
 		// fill in features
