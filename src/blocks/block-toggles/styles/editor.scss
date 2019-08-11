@@ -5,13 +5,7 @@
  * which makes it higher in priority.
  */
 
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
- */
-
- .c9-toggles {
+.c9-toggles {
 	.c9-toggles-item-collapse {
 		width: 28px;
 	}
@@ -34,9 +28,11 @@
 }
 
 .c9-toggles-add-item {
-	> .components-button.components-icon-button {
+	>.components-button.components-icon-button {
 		margin: 0 auto;
 	}
+
+	margin-top: 25px;
 	padding-bottom: 20px;
 }
 
@@ -69,6 +65,7 @@
 }
 
 .c9-component-remove-button-confirm {
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-nope {
 		padding: 0;

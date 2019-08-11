@@ -2008,7 +2008,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 0.7em;
+  font-size: 3rem;
   cursor: pointer;
   background: none;
   border: none;
@@ -2019,19 +2019,43 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   transition: 0.15s transform;
   transition: 0.15s transform, 0.15s -webkit-transform;
   will-change: transform;
-  height: 100%; }
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
   .c9-toggles .c9-toggles-item-collapse > svg {
     height: 100%; }
-  .c9-toggles .c9-toggles-item-collapse .c9-toggle-item-expand {
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg); }
 
 .c9-toggles .c9-toggles-item-heading {
-  position: relative; }
+  position: relative;
+  -webkit-transition: opacity .4s;
+  -o-transition: opacity .4s;
+  transition: opacity .4s; }
 
 .c9-toggles.c9-toggles-reverse .c9-toggles-toggle-label {
   margin-left: 16px; }
 
 .c9-toggles.c9-toggles-reverse .c9-toggles-item-collapse {
   left: 0; }
+
+.c9-toggles .c9-toggles-toggle.toggle-collapse-ready:hover .c9-toggles-item-heading {
+  opacity: .8; }
+
+.c9-toggles .c9-toggles-toggle.toggle-collapse-ready {
+  cursor: pointer; }
+
+.c9-toggles .c9-toggles-item-collapse .fas {
+  font-family: 'FontAwesome', serif;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  top: 50%; }
+
+.c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
+.c9-toggles .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+      transform: rotate(90deg); }

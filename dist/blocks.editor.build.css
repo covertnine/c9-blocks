@@ -2067,11 +2067,6 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-/**
- * #.# Styles
- *
- * CSS for both Frontend+Backend.
- */
 .c9-toggles .c9-toggles-item-collapse {
   width: 28px; }
 
@@ -2083,6 +2078,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   margin-left: 16px; }
 
 .c9-toggles-add-item {
+  margin-top: 25px;
   padding-bottom: 20px; }
   .c9-toggles-add-item > .components-button.components-icon-button {
     margin: 0 auto; }

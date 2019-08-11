@@ -9,26 +9,36 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		font-size: 0.7em;
+		font-size: 3rem;
 		cursor: pointer;
 		background: none;
 		border: none;
 		outline: none;
+		-webkit-transition: 0.15s -webkit-transform;
+		transition: 0.15s -webkit-transform;
 		transition: 0.15s transform;
+		transition: 0.15s transform, 0.15s -webkit-transform;
 		will-change: transform;
 		height: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 
-		> svg {
+		>svg {
 			height: 100%;
 		}
 
-		.c9-toggle-item-expand {
-			transform: rotate(90deg);
-		}
 	}
 
 	.c9-toggles-item-heading {
 		position: relative;
+		transition: opacity .4s;
 	}
 
 	&.c9-toggles-reverse {
@@ -40,4 +50,26 @@
 			left: 0;
 		}
 	}
+}
+
+.c9-toggles .c9-toggles-toggle.toggle-collapse-ready:hover .c9-toggles-item-heading {
+	opacity: .8;
+}
+
+.c9-toggles .c9-toggles-toggle.toggle-collapse-ready {
+	cursor: pointer;
+}
+
+.c9-toggles .c9-toggles-item-collapse .fas {
+	font-family: 'FontAwesome', serif;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+
+}
+
+.c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
+.c9-toggles .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
