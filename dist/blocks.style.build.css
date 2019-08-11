@@ -2059,3 +2059,6 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
       transform: rotate(90deg); }
+
+.c9-toggles-item-content {
+  padding: 25px 30px; }
