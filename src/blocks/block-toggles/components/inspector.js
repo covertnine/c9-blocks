@@ -1,9 +1,5 @@
-const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { AlignmentToolbar ,InspectorControls } = wp.editor;
-const {
-	BaseControl
-} = wp.components;
+const { InspectorControls } = wp.editor;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -14,22 +10,8 @@ export default class Inspector extends Component {
 	}
 
 	render() {
-		const {
-			attributes,
-			setAttributes
-		} = this.props;
-
-		const { buttonsAlign } = attributes;
-
 		return (
 			<InspectorControls>
-				<BaseControl label={__("Tabs Align", "c9-blocks")}>
-					<AlignmentToolbar
-						value={buttonsAlign}
-						onChange={value => setAttributes({ buttonsAlign: value })}
-						controls={["left", "center", "right"]}
-					/>
-				</BaseControl>
 			</InspectorControls>
 		);
 	}

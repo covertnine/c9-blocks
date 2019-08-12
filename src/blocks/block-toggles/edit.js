@@ -10,7 +10,7 @@ import ReverseToolbar from "./components/reverse-toolbar";
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Component, Fragment } = wp.element;
+const { Component, Fragment, createElement } = wp.element;
 const { InnerBlocks, BlockControls } = wp.editor;
 const { applyFilters } = wp.hooks;
 const { IconButton } = wp.components;
@@ -63,7 +63,7 @@ class Edit extends Component {
 			updateBlockAttributes
 		} = this.props;
 
-		if (toggleCount !== block.innerBlocks.length) {
+		if (block && toggleCount !== block.innerBlocks.length) {
 			setAttributes({
 				toggleCount: block.innerBlocks.length
 			});
@@ -133,9 +133,11 @@ class Edit extends Component {
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 
-			for (let child of block.innerBlocks) {
-				if (instanceId != child.attributes.id) {
-					updateBlockAttributes(child.clientId, { id: instanceId });
+			if (block) {
+				for (let child of block.innerBlocks) {
+					if (instanceId != child.attributes.id) {
+						updateBlockAttributes(child.clientId, { id: instanceId });
+					}
 				}
 			}
 		}
@@ -159,10 +161,17 @@ class Edit extends Component {
 					)}
 					id={`accordion-${instanceId}`}
 				>
-					<InnerBlocks
-						allowedBlocks={ALLOWED_BLOCKS}
-						template={getTogglesTemplate(toggleCount, instanceId)}
-					/>
+					{createElement(
+						"div",
+						{},
+						// Workaround logic for this bug https://github.com/WordPress/gutenberg/issues/9897
+						"undefined" !== typeof this.props.insertBlocksAfter
+							? createElement(InnerBlocks, {
+									allowedBlocks: ALLOWED_BLOCKS,
+									template: getTogglesTemplate(toggleCount, instanceId)
+							  })
+							: createElement("div")
+					)}
 				</div>
 				{isSelectedBlockInRoot ? (
 					<div className="c9-toggles-add-item">
