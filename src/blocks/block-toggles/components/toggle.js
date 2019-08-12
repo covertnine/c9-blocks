@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 // External Dependencies.
 import React from "react";
+import classnames from "classnames";
 
 // Internal Dependencies.
 import RemoveButton from "./remove-button";
@@ -68,7 +69,8 @@ class ToggleBlock extends Component {
 			attributes,
 			setAttributes,
 			isSelected,
-			isSelectedBlockInRoot
+			isSelectedBlockInRoot,
+			className = ""
 		} = this.props;
 
 		const { heading, active } = attributes;
@@ -107,7 +109,7 @@ class ToggleBlock extends Component {
 						]}
 					/>
 				</BlockControls>
-				<div className={"c9-toggles-toggle"}>
+				<div className={classnames("c9-toggles-toggle", className)}>
 					<div
 						className="c9-toggles-item-heading"
 						id={`c9-toggles-heading${attributes.toggleNumber}-${attributes.id}`}

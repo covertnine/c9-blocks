@@ -160,7 +160,8 @@ export default class Container extends Component {
 				align,
 			},
 			isSelectedBlockInRoot,
-			save = false
+			save = false,
+			className = ""
 		} = this.props;
 
 		let containerAlign;
@@ -177,6 +178,7 @@ export default class Container extends Component {
 		return (
 			<div
 				className={classnames(
+					className,
 					save ? containerWidth : null,
 					containerAlign,
 					"c9-column-container",
