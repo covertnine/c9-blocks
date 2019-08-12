@@ -20,7 +20,7 @@ registerBlockType("c9-blocks/column", {
 
 	category: "c9-blocks",
 
-	parent: ["c9-blocks/columns"],
+	parent: ["c9-blocks/column-container"],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -49,7 +49,8 @@ registerBlockType("c9-blocks/column", {
 	edit: props => {
 		const {
 			attributes: { textAlign, verticalAlign },
-			setAttributes
+			setAttributes,
+			className
 		} = props;
 
 		const ALLOWED_BLOCKS = getBlockTypes()
@@ -74,6 +75,7 @@ registerBlockType("c9-blocks/column", {
 				</BlockControls>
 				<div
 					className={classnames(
+						className,
 						"c9-block-layout-column",
 						"c9-column",
 						textAlign ? `text-${textAlign}` : null,

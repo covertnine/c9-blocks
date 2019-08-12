@@ -28,6 +28,7 @@ export default class Tab extends Component {
 		let { className = "" } = this.props;
 
 		className = classnames(
+			className,
 			"c9-horizontal-tabs-tab",
 			"tab-pane fade",
 			tabActive === slug ? "show active" : null
