@@ -1863,3 +1863,272 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 .c9-vertical-tabs .c9-tabs-content-wrapper {
   display: grid; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
+div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
+  border: 1px solid rgba(41, 41, 41, 0.15); }
+
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
+  border: 2px solid rgba(41, 41, 41, 0.15); }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+  overflow: visible;
+  -webkit-transform: rotate(90deg) translateY(80px);
+      -ms-transform: rotate(90deg) translateY(80px);
+          transform: rotate(90deg) translateY(80px);
+  margin-top: 125px; }
+
+.c9-height-range-control .components-base-control__label {
+  text-align: right;
+  z-index: 2; }
+
+.c9-height-range-control .components-range-control__slider {
+  z-index: 4; }
+
+.c9-height-range-control .components-range-control .dashicon {
+  margin-right: 0px;
+  z-index: 5; }
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.c9-container-base-control > .components-base-control__field {
+  min-height: 160px; }
+
+.c9-grid .components-icon-button:not(:disabled):not([aria-disabled=true]):not(.is-default) {
+  background-color: #fff; }
+
+/* makes grid column containers and columns themselves easier to see when hovering*/
+.c9-grid .wp-block[data-type="c9-blocks/column-container"].is-hovered .c9-column-container,
+.c9-grid .wp-block[data-type="c9-blocks/column-container"] .is-hovered[data-type="c9-blocks/column"] .block-editor-block-list__block-edit .c9-block-layout-column {
+  border: 1px solid #ccc; }
+
+/****************************************************************************************/
+/* Main column width settings */
+/****************************************************************************************/
+.editor-styles-wrapper .editor-default-block-appender,
+.editor-styles-wrapper .editor-post-title,
+.editor-styles-wrapper .editor-post-title__block,
+.wp-block[data-type="core/paragraph"],
+.wp-block[data-type="core/heading"],
+.wp-block[data-type="core/block"],
+.wp-block[data-type="core/button"],
+.wp-block[data-type="core/columns"],
+.wp-block[data-type="core/image"] {
+  max-width: 1140px; }
+
+@media (min-width: 576px) {
+  .editor-post-title,
+  .editor-post-title__block {
+    padding: 0px;
+    width: 100%;
+    max-width: 1140px; }
+  .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px; }
+  .editor-styles-wrapper > *:not(.wp-block[data-align=wide]) {
+    width: 100%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto; }
+  .editor-styles-wrapper .editor-block-list__block.wp-block[data-align=wide] {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto; }
+  .editor-styles-wrapper .editor-block-list__block[data-align=full] {
+    max-width: 100vw; } }
+
+@media only screen and (min-width: 992px) {
+  .wp-block[data-align=full],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 94%;
+    overflow: visible; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/button"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/spacer"] {
+    max-width: 100%; } }
+
+@media only screen and (min-width: 1500px) {
+  .editor-styles-wrapper .editor-default-block-appender,
+  .editor-styles-wrapper .editor-post-title,
+  .editor-styles-wrapper .editor-post-title__block,
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/button"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"] {
+    max-width: 1140px; }
+  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
+    max-width: 1200px; } }
+
+/* with sidebar pages to account for sidebar */
+.left-sidebarpage .editor-styles-wrapper .editor-default-block-appender,
+.left-sidebarpage .editor-styles-wrapper .editor-post-title,
+.left-sidebarpage .editor-styles-wrapper .editor-post-title__block,
+.left-sidebarpage .wp-block[data-type="core/columns"],
+.left-sidebarpage .wp-block[data-type="core/paragraph"],
+.left-sidebarpage .wp-block[data-type="core/heading"],
+.left-sidebarpage .wp-block[data-type="core/block"],
+.left-sidebarpage .wp-block[data-type="core/button"],
+.left-sidebarpage .wp-block[data-type="core/image"],
+.right-sidebarpage .editor-styles-wrapper .editor-default-block-appender,
+.right-sidebarpage .editor-styles-wrapper .editor-post-title,
+.right-sidebarpage .editor-styles-wrapper .editor-post-title__block,
+.right-sidebarpage .wp-block[data-type="core/columns"],
+.right-sidebarpage .wp-block[data-type="core/paragraph"],
+.right-sidebarpage .wp-block[data-type="core/heading"],
+.right-sidebarpage .wp-block[data-type="core/block"],
+.right-sidebarpage .wp-block[data-type="core/button"],
+.right-sidebarpage .wp-block[data-type="core/image"] {
+  max-width: 925px; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.c9-toggles .c9-toggles-item-collapse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 3rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.15s -webkit-transform;
+  transition: 0.15s -webkit-transform;
+  -o-transition: 0.15s transform;
+  transition: 0.15s transform;
+  transition: 0.15s transform, 0.15s -webkit-transform;
+  will-change: transform;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .c9-toggles .c9-toggles-item-collapse > svg {
+    height: 100%; }
+
+.c9-toggles .c9-toggles-item-heading {
+  position: relative;
+  -webkit-transition: opacity .4s;
+  -o-transition: opacity .4s;
+  transition: opacity .4s; }
+
+.c9-toggles.c9-toggles-reverse .c9-toggles-toggle-label {
+  margin-left: 16px; }
+
+.c9-toggles.c9-toggles-reverse .c9-toggles-item-collapse {
+  left: 0; }
+
+.c9-toggles .c9-toggles-toggle.toggle-collapse-ready:hover .c9-toggles-item-heading {
+  opacity: .8; }
+
+.c9-toggles .c9-toggles-toggle.toggle-collapse-ready {
+  cursor: pointer; }
+
+.c9-toggles .c9-toggles-item-collapse .fas {
+  font-family: 'FontAwesome', serif;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  top: 50%; }
+
+.c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
+.c9-toggles .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+      transform: rotate(90deg); }
+
+.c9-toggles-item-content {
+  padding: 25px 30px; }
+
+/* small toggles style */
+.c9-toggles .c9-toggles-toggle {
+  padding: 35px 0px 15px 0px;
+  border-top: 1px solid #979797; }
+
+.c9-toggles .c9-toggles-toggle:last-child {
+  border-bottom: 1px solid #979797; }
+
+.c9-toggles .c9-toggles-item-heading .c9-toggles-toggle-label {
+  text-transform: uppercase;
+  font-size: 7.9rem;
+  text-align: left;
+  line-height: .9; }
+
+/* small style toggle */
+.c9-toggles.small-toggle .c9-toggles-toggle {
+  padding: 25px 0px;
+  border: none; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle:last-child {
+  border: none; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .mb-0 {
+  position: relative; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading {
+  padding-left: 50px; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading .c9-toggles-toggle-label {
+  font-size: 2.4rem;
+  letter-spacing: 0.05px;
+  text-align: left;
+  line-height: 1.2;
+  text-transform: none; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-collapse {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  right: auto; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-collapse .fas,
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
+  -webkit-transform: none;
+  -ms-transform: none;
+      transform: none; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-collapse {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 2.8px solid #000000;
+  padding: 5px;
+  border-radius: 50%;
+  height: 27px;
+  width: 27px; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .fa-angle-right:before {
+  content: '\f067';
+  font-size: 16px;
+  display: block;
+  padding-top: 2px; }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading[aria-expanded="true"] .fa-angle-right:before {
+  content: '\f068'; }
