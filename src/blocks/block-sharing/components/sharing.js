@@ -30,7 +30,7 @@ export default class ShareLinks extends Component {
 					this.props.attributes.shareButtonSize,
 					this.props.attributes.shareButtonColor,
 					this.props.attributes.shareAlignment,
-					"ab-block-sharing"
+					"c9-block-sharing"
 				)}
 			>
 				{this.props.children}

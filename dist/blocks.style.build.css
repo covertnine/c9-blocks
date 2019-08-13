@@ -146,20 +146,20 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  * Sharing styles
  * Loads on front end and back end
  */
-.ab-block-sharing {
+.c9-block-sharing {
   margin: 0 0 1.2em 0;
   position: relative; }
-  .ab-block-sharing .blocks-rich-text {
+  .c9-block-sharing .blocks-rich-text {
     display: -ms-inline-flexbox;
     display: inline-flex; }
-  .ab-block-sharing .ab-share-list {
+  .c9-block-sharing .c9-share-list {
     margin: 0;
     padding: 0; }
-    .ab-block-sharing .ab-share-list li {
+    .c9-block-sharing .c9-share-list li {
       list-style: none;
       display: inline-block;
       margin: 0 5px 5px 0; }
-    .ab-block-sharing .ab-share-list a {
+    .c9-block-sharing .c9-share-list a {
       background: #272c30;
       color: #fff;
       padding: 10px 15px;
@@ -170,15 +170,15 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
       -webkit-transition: .3s ease;
       -o-transition: .3s ease;
       transition: .3s ease; }
-      .ab-block-sharing .ab-share-list a:hover {
+      .c9-block-sharing .c9-share-list a:hover {
         -webkit-box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
                 box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15); }
-  .ab-block-sharing.ab-share-icon-text i {
+  .c9-block-sharing.c9-share-icon-text i {
     margin-right: 5px; }
-  .ab-block-sharing.ab-share-icon-only a {
+  .c9-block-sharing.c9-share-icon-only a {
     padding: 10px 11px;
     min-width: 37px; }
-  .ab-block-sharing.ab-share-icon-only .ab-social-text {
+  .c9-block-sharing.c9-share-icon-only .c9-social-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);
@@ -190,221 +190,52 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
     position: absolute !important;
     width: 1px;
     word-wrap: normal !important; }
-  .ab-block-sharing.ab-share-text-only i {
+  .c9-block-sharing.c9-share-text-only i {
     display: none; }
-  .ab-block-sharing.ab-share-shape-square a {
+  .c9-block-sharing.c9-share-shape-square a {
     border-radius: 0; }
-  .ab-block-sharing.ab-share-shape-rounded a {
+  .c9-block-sharing.c9-share-shape-rounded a {
     border-radius: 5px; }
-  .ab-block-sharing.ab-share-shape-circular a {
+  .c9-block-sharing.c9-share-shape-circular a {
     border-radius: 100px; }
-  .ab-block-sharing.ab-share-size-small a {
+  .c9-block-sharing.c9-share-size-small a {
     font-size: 13px; }
-  .ab-block-sharing.ab-share-size-small.ab-share-icon-only a {
+  .c9-block-sharing.c9-share-size-small.c9-share-icon-only a {
     padding: 7px 6px;
     min-width: 28px; }
-  .ab-block-sharing.ab-share-size-medium a {
+  .c9-block-sharing.c9-share-size-medium a {
     font-size: 16px; }
-  .ab-block-sharing.ab-share-size-large a {
+  .c9-block-sharing.c9-share-size-large a {
     font-size: 20px; }
-  .ab-block-sharing.ab-share-size-large.ab-share-icon-only a {
+  .c9-block-sharing.c9-share-size-large.c9-share-icon-only a {
     font-size: 26px;
     min-width: 48px; }
-  .ab-block-sharing.ab-share-size-large.ab-share-icon-text i {
+  .c9-block-sharing.c9-share-size-large.c9-share-icon-text i {
     margin-right: 10px; }
-  .ab-block-sharing.ab-share-color-social a {
+  .c9-block-sharing.c9-share-color-social a {
     color: #fff; }
-  .ab-block-sharing.ab-share-color-social .ab-share-twitter {
+  .c9-block-sharing.c9-share-color-social .c9-share-twitter {
     background: #1ca1f3; }
-  .ab-block-sharing.ab-share-color-social .ab-share-facebook {
+  .c9-block-sharing.c9-share-color-social .c9-share-facebook {
     background: #3b5999; }
-  .ab-block-sharing.ab-share-color-social .ab-share-google {
+  .c9-block-sharing.c9-share-color-social .c9-share-google {
     background: #dc4b45; }
-  .ab-block-sharing.ab-share-color-social .ab-share-pinterest {
+  .c9-block-sharing.c9-share-color-social .c9-share-pinterest {
     background: #bd091c; }
-  .ab-block-sharing.ab-share-color-social .ab-share-linkedin {
+  .c9-block-sharing.c9-share-color-social .c9-share-linkedin {
     background: #0077b5; }
-  .ab-block-sharing.ab-share-color-social .ab-share-reddit {
+  .c9-block-sharing.c9-share-color-social .c9-share-reddit {
     background: #ff4500; }
 
-.ab-button-right {
+.c9-button-right {
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   left: 100%;
   position: relative; }
 
-.ab-button-center {
+.c9-button-center {
   margin: 0 auto; }
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-  border: 1px solid rgba(41, 41, 41, 0.15); }
-
-.block-editor-block-list__layout .block-editor-block-list__block.is-selected > .block-editor-block-list__block-edit:before {
-  border: 2px solid rgba(41, 41, 41, 0.15); }
-
-/* flip container c9 grid element height vertically */
-.c9-height-range-control {
-  overflow: visible;
-  -webkit-transform: rotate(90deg) translateY(80px);
-      -ms-transform: rotate(90deg) translateY(80px);
-          transform: rotate(90deg) translateY(80px);
-  margin-top: 125px; }
-
-.c9-height-range-control .components-base-control__label {
-  text-align: right;
-  z-index: 2; }
-
-.c9-height-range-control .components-range-control__slider {
-  z-index: 4; }
-
-.c9-height-range-control .components-range-control .dashicon {
-  margin-right: 0px;
-  z-index: 5; }
-
-.c9-height-range-control .components-base-control__label,
-.c9-height-range-control .components-range-control__number {
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg); }
-
-.c9-container-base-control > .components-base-control__field {
-  min-height: 160px; }
-
-.c9-grid .components-icon-button:not(:disabled):not([aria-disabled=true]):not(.is-default) {
-  background-color: #fff; }
-
-/* makes grid column containers and columns themselves easier to see when hovering*/
-.c9-grid .wp-block[data-type="c9-blocks/column-container"].is-hovered .c9-column-container,
-.c9-grid .wp-block[data-type="c9-blocks/column-container"] .is-hovered[data-type="c9-blocks/column"] .block-editor-block-list__block-edit .c9-block-layout-column {
-  border: 1px solid #ccc; }
-
-.block-editor-block-list__block-edit {
-  z-index: 10; }
-
-.block-editor-block-list__block > .block-editor-block-list__insertion-point,
-.block-editor-block-list__block > .editor-block-list__insertion-point {
-  z-index: 12;
-  height: 44px; }
-
-/****************************************************************************************/
-/* Main column width settings */
-/****************************************************************************************/
-.editor-styles-wrapper .editor-default-block-appender,
-.editor-styles-wrapper .editor-post-title,
-.editor-styles-wrapper .editor-post-title__block,
-.wp-block[data-type="core/paragraph"],
-.wp-block[data-type="core/heading"],
-.wp-block[data-type="core/block"],
-.wp-block[data-type="core/button"],
-.wp-block[data-type="core/columns"],
-.wp-block[data-type="core/image"] {
-  max-width: 1140px; }
-
-@media (min-width: 576px) {
-  .editor-post-title,
-  .editor-post-title__block {
-    padding: 0px;
-    width: 100%;
-    max-width: 1140px; }
-  .editor-block-list__layout {
-    padding-left: 0px;
-    padding-right: 0px; }
-  .editor-styles-wrapper > *:not(.wp-block[data-align=wide]) {
-    width: 100%;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto; }
-  .editor-styles-wrapper .editor-block-list__block.wp-block[data-align=wide] {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0px auto; }
-  .editor-styles-wrapper .editor-block-list__block[data-align=full] {
-    max-width: 100vw; } }
-
-@media only screen and (min-width: 992px) {
-  .wp-block[data-align=full],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
-    max-width: 94%;
-    overflow: visible; }
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/button"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/spacer"] {
-    max-width: 100%; } }
-
-@media only screen and (min-width: 1500px) {
-  .editor-styles-wrapper .editor-default-block-appender,
-  .editor-styles-wrapper .editor-post-title,
-  .editor-styles-wrapper .editor-post-title__block,
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/heading"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/block"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/button"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"] {
-    max-width: 1140px; }
-  body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
-    max-width: 1200px; } }
-
-/* with sidebar pages to account for sidebar */
-.left-sidebarpage .editor-styles-wrapper .editor-default-block-appender,
-.left-sidebarpage .editor-styles-wrapper .editor-post-title,
-.left-sidebarpage .editor-styles-wrapper .editor-post-title__block,
-.left-sidebarpage .wp-block[data-type="core/columns"],
-.left-sidebarpage .wp-block[data-type="core/paragraph"],
-.left-sidebarpage .wp-block[data-type="core/heading"],
-.left-sidebarpage .wp-block[data-type="core/block"],
-.left-sidebarpage .wp-block[data-type="core/button"],
-.left-sidebarpage .wp-block[data-type="core/image"],
-.right-sidebarpage .editor-styles-wrapper .editor-default-block-appender,
-.right-sidebarpage .editor-styles-wrapper .editor-post-title,
-.right-sidebarpage .editor-styles-wrapper .editor-post-title__block,
-.right-sidebarpage .wp-block[data-type="core/columns"],
-.right-sidebarpage .wp-block[data-type="core/paragraph"],
-.right-sidebarpage .wp-block[data-type="core/heading"],
-.right-sidebarpage .wp-block[data-type="core/block"],
-.right-sidebarpage .wp-block[data-type="core/button"],
-.right-sidebarpage .wp-block[data-type="core/image"] {
-  max-width: 925px; }
-
-/********************************* Call To Action Bar ***********************************/
-.c9-block-cta {
-  padding-top: 20px;
-  padding-bottom: 20px; }
-
-.c9-cta-content {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.c9-cta-button {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.ab-cta-text p {
-  margin-bottom: 0; }
-
-/****************************************************************************************/
 /**
  * #.# Common SCSS
  *

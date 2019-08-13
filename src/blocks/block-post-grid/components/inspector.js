@@ -76,7 +76,7 @@ export default class Inspector extends Component {
 		// Setup the attributes
 		const { attributes, setAttributes, latestPosts } = this.props;
 
-		const { order, orderBy } = attributes;
+		const { order, orderBy, postTypes } = attributes;
 
 		const { categoriesList } = this.state;
 
@@ -87,10 +87,7 @@ export default class Inspector extends Component {
 		];
 
 		// Post type options
-		const postTypeOptions = [
-			{ value: "post", label: __("Post", "c9-blocks") },
-			{ value: "page", label: __("Page", "c9-blocks") }
-		];
+		const postTypeOptions = JSON.parse(postTypes).map(p => {return {value: p, label: __(p.charAt(0).toUpperCase() + p.slice(1) ,"c9-blocks")}});
 
 		// Section title tags
 		const sectionTags = [

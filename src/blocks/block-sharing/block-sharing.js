@@ -1,9 +1,6 @@
-/**
- * BLOCK: Atomic Blocks Sharing
- */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
 // Import block dependencies and components
-import classnames from "classnames";
 import Inspector from "./components/inspector";
 import ShareLinks from "./components/sharing";
 
@@ -19,43 +16,30 @@ const iconEl = makeIcon(faShareSquare);
 // Components
 const { __ } = wp.i18n;
 
-// Extend component
-const { Component } = wp.element;
-
 // Register block
 const { registerBlockType } = wp.blocks;
 
 // Register editor components
 const {
-	RichText,
 	AlignmentToolbar,
 	BlockControls,
-	BlockAlignmentToolbar
 } = wp.editor;
 
-// Register components
-const { Button, withFallbackStyles, IconButton, Dashicon } = wp.components;
-
 // Register the block
-registerBlockType("c9-blocks/cortex-share", {
-	title: __("Cortex Social Share", "c9-blocks"),
+registerBlockType("c9-blocks/social-share", {
+	title: __("C9 Social Share", "c9-blocks"),
 	description: __("Add sharing buttons to your posts and pages.", "c9-blocks"),
 	icon: iconEl,
 	category: "c9-blocks",
 	keywords: [
 		__("share", "c9-blocks"),
-		__("social", "c9-blocks"),
-		__("cortex", "c9-blocks")
+		__("social", "c9-blocks")
 	],
 
 	// Render the block components
 	edit: props => {
 		// Setup the props
 		const {
-			attributes,
-			isSelected,
-			editable,
-			className,
 			setAttributes
 		} = props;
 
@@ -68,9 +52,6 @@ registerBlockType("c9-blocks/cortex-share", {
 			email,
 			reddit,
 			shareAlignment,
-			shareButtonStyle,
-			shareButtonShape,
-			shareButtonColor
 		} = props.attributes;
 
 		return [
@@ -87,12 +68,12 @@ registerBlockType("c9-blocks/cortex-share", {
 			<Inspector {...props} />,
 			// Show the button markup in the editor
 			<ShareLinks {...props}>
-				<ul className="ab-share-list">
+				<ul className="c9-share-list">
 					{twitter && (
 						<li>
-							<a className="ab-share-twitter">
+							<a className="c9-share-twitter">
 								<i className="fab fa-twitter" />
-								<span className={"ab-social-text"}>
+								<span className={"c9-social-text"}>
 									{__("Share on Twitter", "c9-blocks")}
 								</span>
 							</a>
@@ -101,9 +82,9 @@ registerBlockType("c9-blocks/cortex-share", {
 
 					{facebook && (
 						<li>
-							<a className="ab-share-facebook">
+							<a className="c9-share-facebook">
 								<i className="fab fa-facebook-f" />
-								<span className={"ab-social-text"}>
+								<span className={"c9-social-text"}>
 									{__("Share on Facebook", "c9-blocks")}
 								</span>
 							</a>
@@ -112,9 +93,9 @@ registerBlockType("c9-blocks/cortex-share", {
 
 					{google && (
 						<li>
-							<a className="ab-share-google">
+							<a className="c9-share-google">
 								<i className="fab fa-google" />
-								<span className={"ab-social-text"}>
+								<span className={"c9-social-text"}>
 									{__("Share on Google", "c9-blocks")}
 								</span>
 							</a>
@@ -123,9 +104,9 @@ registerBlockType("c9-blocks/cortex-share", {
 
 					{pinterest && (
 						<li>
-							<a className="ab-share-pinterest">
+							<a className="c9-share-pinterest">
 								<i className="fab fa-pinterest-p" />
-								<span className={"ab-social-text"}>
+								<span className={"c9-social-text"}>
 									{__("Share on Pinterest", "c9-blocks")}
 								</span>
 							</a>
@@ -134,9 +115,9 @@ registerBlockType("c9-blocks/cortex-share", {
 
 					{linkedin && (
 						<li>
-							<a className="ab-share-linkedin">
+							<a className="c9-share-linkedin">
 								<i className="fab fa-linkedin" />
-								<span className={"ab-social-text"}>
+								<span className={"c9-social-text"}>
 									{__("Share on LinkedIn", "c9-blocks")}
 								</span>
 							</a>
@@ -145,9 +126,9 @@ registerBlockType("c9-blocks/cortex-share", {
 
 					{reddit && (
 						<li>
-							<a className="ab-share-reddit">
+							<a className="c9-share-reddit">
 								<i className="fab fa-reddit-alien" />
-								<span className={"ab-social-text"}>
+								<span className={"c9-social-text"}>
 									{__("Share on reddit", "c9-blocks")}
 								</span>
 							</a>
@@ -156,9 +137,9 @@ registerBlockType("c9-blocks/cortex-share", {
 
 					{email && (
 						<li>
-							<a className="ab-share-email">
+							<a className="c9-share-email">
 								<i className="fas fa-envelope" />
-								<span className={"ab-social-text"}>
+								<span className={"c9-social-text"}>
 									{__("Share via Email", "c9-blocks")}
 								</span>
 							</a>
