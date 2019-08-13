@@ -3,13 +3,13 @@
  * Server-side rendering for the sharing block
  *
  * @since 	1.1.2
- * @package Atomic Blocks
+ * @package c9 Blocks
  */
 
 /**
 * Register the block on the server
 */
-function cortex_blocks_register_sharing() {
+function c9_blocks_register_sharing() {
 
 	// Check if the register function exists
 	if ( ! function_exists( 'register_block_type' ) ) {
@@ -18,7 +18,7 @@ function cortex_blocks_register_sharing() {
 
 	// Register the sharing block
 	register_block_type(
-		'c9-blocks/ab-sharing', array(
+		'c9-blocks/social-share', array(
 			'style' => 'c9-blocks-style-css',
 			'attributes' => array(
                 'facebook' => array(
@@ -54,46 +54,46 @@ function cortex_blocks_register_sharing() {
 				),
 				'shareButtonStyle' => array(
 					'type' => 'string',
-					'default' => 'ab-share-icon-text',
+					'default' => 'c9-share-icon-text',
 				),
 				'shareButtonShape' => array(
 					'type' => 'string',
-					'default' => 'ab-share-shape-circular',
+					'default' => 'c9-share-shape-circular',
 				),
 				'shareButtonSize' => array(
 					'type' => 'string',
-					'default' => 'ab-share-size-medium',
+					'default' => 'c9-share-size-medium',
 				),
 				'shareButtonColor' => array(
 					'type' => 'string',
-					'default' => 'ab-share-color-standard',
+					'default' => 'c9-share-color-standard',
 				),
 			),
-			'render_callback' => 'cortex_blocks_render_sharing',
+			'render_callback' => 'c9_blocks_render_sharing',
 		)
 	);
 }
-add_action( 'init', 'cortex_blocks_register_sharing' );
+add_action( 'init', 'c9_blocks_register_sharing' );
 
 
 /**
  * Add the pop-up share window to the footer
  */
-function cortex_blocks_social_icon_footer_script() { ?>
+function c9_blocks_social_icon_footer_script() { ?>
     <script type="text/javascript">
-        function atomicBlocksShare( url, title, w, h ){
+        function c9BlocksShare( url, title, w, h ){
             var left = ( window.innerWidth / 2 )-( w / 2 );
             var top  = ( window.innerHeight / 2 )-( h / 2 );
             return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top='+top+', left='+left);
         }
     </script>
 <?php }
-add_action( 'wp_footer', 'cortex_blocks_social_icon_footer_script' );
+add_action( 'wp_footer', 'c9_blocks_social_icon_footer_script' );
 
 /**
  * Render the sharing links
  */
-function cortex_blocks_render_sharing( $attributes ) {
+function c9_blocks_render_sharing( $attributes ) {
 	global $post;
 
 	// Setup the featured image
@@ -133,10 +133,10 @@ function cortex_blocks_render_sharing( $attributes ) {
 			'<li>
 				<a
 					href="javascript:void(0)"
-					onClick="javascript:atomicBlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
-					class="ab-share-twitter"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-twitter"
 					title="%2$s">
-					<i class="fab fa-twitter"></i> <span class="ab-social-text">%2$s</span>
+					<i class="fab fa-twitter"></i> <span class="c9-social-text">%2$s</span>
 				</a>
 			</li>',
 			esc_url( $twitter_url ),
@@ -149,10 +149,10 @@ function cortex_blocks_render_sharing( $attributes ) {
 			'<li>
 				<a
 					href="javascript:void(0)"
-					onClick="javascript:atomicBlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
-					class="ab-share-facebook"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-facebook"
 					title="%2$s">
-					<i class="fab fa-facebook-f"></i> <span class="ab-social-text">%2$s</span>
+					<i class="fab fa-facebook-f"></i> <span class="c9-social-text">%2$s</span>
 				</a>
 			</li>',
 			esc_url( $facebook_url ),
@@ -165,10 +165,10 @@ function cortex_blocks_render_sharing( $attributes ) {
 			'<li>
 				<a
 					href="javascript:void(0)"
-					onClick="javascript:atomicBlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
-					class="ab-share-google"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-google"
 					title="%2$s">
-					<i class="fab fa-google"></i> <span class="ab-social-text">%2$s</span>
+					<i class="fab fa-google"></i> <span class="c9-social-text">%2$s</span>
 				</a>
 			</li>',
 			esc_url( $google_url ),
@@ -181,10 +181,10 @@ function cortex_blocks_render_sharing( $attributes ) {
 			'<li>
 				<a
 					href="javascript:void(0)"
-					onClick="javascript:atomicBlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
-					class="ab-share-pinterest"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-pinterest"
 					title="%2$s">
-					<i class="fab fa-pinterest-p"></i> <span class="ab-social-text">%2$s</span>
+					<i class="fab fa-pinterest-p"></i> <span class="c9-social-text">%2$s</span>
 				</a>
 			</li>',
 			esc_url( $pinterest_url ),
@@ -197,10 +197,10 @@ function cortex_blocks_render_sharing( $attributes ) {
 			'<li>
 				<a
 					href="javascript:void(0)"
-					onClick="javascript:atomicBlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
-					class="ab-share-linkedin"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-linkedin"
 					title="%2$s">
-					<i class="fab fa-linkedin-in"></i> <span class="ab-social-text">%2$s</span>
+					<i class="fab fa-linkedin-in"></i> <span class="c9-social-text">%2$s</span>
 				</a>
 			</li>',
 			esc_url( $linkedin_url ),
@@ -213,10 +213,10 @@ function cortex_blocks_render_sharing( $attributes ) {
 			'<li>
 				<a
 					href="javascript:void(0)"
-					onClick="javascript:atomicBlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
-					class="ab-share-reddit"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-reddit"
 					title="%2$s">
-					<i class="fab fa-reddit-alien"></i> <span class="ab-social-text">%2$s</span>
+					<i class="fab fa-reddit-alien"></i> <span class="c9-social-text">%2$s</span>
 				</a>
 			</li>',
 			esc_url( $reddit_url ),
@@ -229,9 +229,9 @@ function cortex_blocks_render_sharing( $attributes ) {
 			'<li>
 				<a
 					href="%1$s"
-					class="ab-share-email"
+					class="c9-share-email"
 					title="%2$s">
-					<i class="fas fa-envelope"></i> <span class="ab-social-text">%2$s</span>
+					<i class="fas fa-envelope"></i> <span class="c9-social-text">%2$s</span>
 				</a>
 			</li>',
 			esc_url( $email_url ),
@@ -241,8 +241,8 @@ function cortex_blocks_render_sharing( $attributes ) {
 
 	// Render the list of share links
 	$block_content = sprintf(
-		'<div class="c9-blocks-ab-sharing ab-block-sharing %2$s %3$s %4$s %5$s %6$s">
-			<ul class="ab-share-list">%1$s</ul>
+		'<div class="c9-social-sharing c9-block-sharing %2$s %3$s %4$s %5$s %6$s">
+			<ul class="c9-share-list">%1$s</ul>
 		</div>',
 		$share_url,
 		isset( $attributes['shareButtonStyle'] ) ? $attributes['shareButtonStyle'] : null,

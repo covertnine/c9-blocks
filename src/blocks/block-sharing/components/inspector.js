@@ -7,17 +7,11 @@ const { __ } = wp.i18n;
 const { Component } = wp.element;
 
 // Import block components
-const { InspectorControls, BlockDescription, ColorPalette } = wp.editor;
+const { InspectorControls } = wp.editor;
 
 // Import Inspector components
 const {
-	Toolbar,
-	Button,
 	PanelBody,
-	PanelRow,
-	PanelColor,
-	FormToggle,
-	RangeControl,
 	SelectControl,
 	ToggleControl
 } = wp.components;
@@ -26,7 +20,7 @@ const {
  * Create an Inspector Controls wrapper Component
  */
 export default class Inspector extends Component {
-	constructor(props) {
+	constructor() {
 		super(...arguments);
 	}
 
@@ -40,7 +34,6 @@ export default class Inspector extends Component {
 			pinterest,
 			email,
 			reddit,
-			shareAlignment,
 			shareButtonStyle,
 			shareButtonShape,
 			shareButtonSize,
