@@ -28,21 +28,36 @@
 .wp-block-heading h1,
 .entry-header h1,
 .subhead-h1 {
-	font-size: 7.9rem
+	font-size: 4rem
+}
+
+.entry-content .h1.c9-txl,
+.entry-content h1.c9-txl {
+	font-size: 8rem;
 }
 
 .entry-content h2,
 .entry-content .h2,
 .wp-block-heading h2,
 .subhead-h2 {
-	font-size: 5.6rem
+	font-size: 3.6rem
+}
+
+.entry-content .h2.c9-txl,
+.entry-content h2.c9-txl {
+	font-size: 7.3rem;
 }
 
 .entry-content h3,
 .entry-content .h3,
 .wp-block-heading h3,
 .subhead-h3 {
-	font-size: 4rem
+	font-size: 3rem
+}
+
+.entry-content .h3.c9-txl,
+.entry-content h3.c9-txl {
+	font-size: 6.5rem;
 }
 
 .entry-content h4,
@@ -52,6 +67,11 @@
 	font-size: 2.8rem
 }
 
+.entry-content .h4.c9-txl,
+.entry-content h4.c9-txl {
+	font-size: 5.8rem;
+}
+
 .entry-content h5,
 .entry-content .h5,
 .wp-block-heading h5,
@@ -59,9 +79,19 @@
 	font-size: 2rem
 }
 
+.entry-content .h5.c9-txl,
+.entry-content h5.c9-txl {
+	font-size: 5rem;
+}
+
 .entry-content h6,
 .entry-content .h6,
 .wp-block-heading h6,
 .subhead-h6 {
 	font-size: 1.4rem
+}
+
+.entry-content .h6.c9-txl,
+.entry-content h6.c9-txl {
+	font-size: 4.3rem;
 }
