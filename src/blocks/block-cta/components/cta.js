@@ -45,7 +45,7 @@ export default class CallToAction extends Component {
 						"container"
 					],
 					{
-						["ab-font-size-" + ctaTextFontSize]: ctaTextFontSize,
+						["c9-font-size-" + ctaTextFontSize]: ctaTextFontSize,
 						["align" + ctaWidth]: ctaWidth
 					}
 				)}

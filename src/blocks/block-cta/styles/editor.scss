@@ -8,15 +8,15 @@
 	justify-content: space-between;
 }
 
-.ab-block-cta {
+.c9-block-cta {
 	margin-bottom: 0;
 }
 
-.editor-block-list__layout [data-type="atomic-blocks/ab-cta"] {
+.editor-block-list__layout [data-type="c9-blocks/c9-cta"] {
 	margin-bottom: 1.2em;
 }
 
-.ab-cta-button {
+.c9-cta-button {
 	.blocks-button__inline-link .editor-url-input {
 		display: inline-block;
 		width: auto;
@@ -32,6 +32,6 @@
 	}
 }
 
-.ab-block-cta h2.editor-rich-text__tinymce.mce-content-body {
+.c9-block-cta h2.editor-rich-text__tinymce.mce-content-body {
 	line-height: 1.2;
 }

@@ -7,9 +7,6 @@ import classnames from "classnames";
 import Inspector from "./components/inspector";
 import CallToAction from "./components/cta";
 
-// Deprecated components
-import deprecated from "./deprecated/deprecated";
-
 // Import CSS
 import "./styles/style.scss";
 import "./styles/editor.scss";
@@ -40,7 +37,7 @@ const {
 // Register components
 const { IconButton, Dashicon } = wp.components;
 
-import blockAttributes from "./attributes";
+import attributes from "./attributes";
 
 class C9CTABlock extends Component {
 	render() {
@@ -67,13 +64,13 @@ class C9CTABlock extends Component {
 			setAttributes
 		} = this.props;
 
-		const onSelectImage = img => {
-			setAttributes({
-				imgID: img.id,
-				imgURL: img.url,
-				imgAlt: img.alt
-			});
-		};
+		// const onSelectImage = img => {
+		// 	setAttributes({
+		// 		imgID: img.id,
+		// 		imgURL: img.url,
+		// 		imgAlt: img.alt
+		// 	});
+		// };
 
 		return (
 			// Show the alignment toolbar on focus
@@ -111,7 +108,7 @@ class C9CTABlock extends Component {
 
 					<div
 						className={
-							"ab-cta-content col-12 " + layoutClass(ctaLayout, "text")
+							"c9-cta-content col-12 " + layoutClass(ctaLayout, "text")
 						}
 					>
 						<RichText
@@ -122,8 +119,8 @@ class C9CTABlock extends Component {
 							value={ctaText}
 							className={classnames(
 								layoutClass(ctaLayout, "text"),
-								"ab-cta-text",
-								"ab-font-size-" + ctaTextFontSize
+								"c9-cta-text",
+								"c9-font-size-" + ctaTextFontSize
 							)}
 							style={{
 								color: ctaTextColor
@@ -133,7 +130,7 @@ class C9CTABlock extends Component {
 					</div>
 					<div
 						className={
-							"ab-cta-content col-12 " + layoutClass(ctaLayout, "button")
+							"c9-cta-content col-12 " + layoutClass(ctaLayout, "button")
 						}
 					>
 						<RichText
@@ -155,7 +152,7 @@ class C9CTABlock extends Component {
 						{isSelected && (
 							<form
 								key="form-link"
-								className={`blocks-button__inline-link ab-button-${buttonAlignment}`}
+								className={`blocks-button__inline-link c9-button-${buttonAlignment}`}
 								onSubmit={event => event.preventDefault()}
 								style={{
 									textAlign: buttonAlignment
@@ -182,7 +179,7 @@ class C9CTABlock extends Component {
 }
 
 // Register the block
-registerBlockType("c9-blocks/c9-cta", {
+registerBlockType("c9-blocks/cta", {
 	title: __("C9 Call To Action", "c9-blocks"),
 	description: __(
 		"Add a call to action section with text and a button.",
@@ -192,11 +189,10 @@ registerBlockType("c9-blocks/c9-cta", {
 	category: "c9-blocks",
 	keywords: [
 		__("call to action", "c9-blocks"),
-		__("cta", "c9-blocks"),
-		__("atomic", "c9-blocks")
+		__("cta", "c9-blocks")
 	],
 
-	attributes: blockAttributes,
+	attributes: attributes,
 
 	getEditWrapperProps({ ctaWidth }) {
 		if ("left" === ctaWidth || "right" === ctaWidth || "full" === ctaWidth) {
@@ -212,22 +208,15 @@ registerBlockType("c9-blocks/c9-cta", {
 		const {
 			buttonText,
 			buttonUrl,
-			buttonAlignment,
 			buttonBackgroundColor,
 			buttonTextColor,
 			buttonSize,
 			buttonShape,
 			buttonTarget,
-			ctaTitle,
 			ctaText,
 			ctaTitleFontSize,
-			titleFontSize,
-			ctaTextFontSize,
-			ctaWidth,
-			ctaBackgroundColor,
 			ctaTextColor,
 			imgURL,
-			imgID,
 			imgAlt,
 			dimRatio,
 			ctaLayout
@@ -249,14 +238,14 @@ registerBlockType("c9-blocks/c9-cta", {
 				)}
 
 				<div
-					className={"ab-cta-content col-12 " + layoutClass(ctaLayout, "text")}
+					className={"c9-cta-content col-12 " + layoutClass(ctaLayout, "text")}
 				>
 					{ctaText && (
 						<RichText.Content
 							tagName="div"
 							className={classnames(
-								"ab-cta-text",
-								"ab-font-size-" + ctaTitleFontSize
+								"c9-cta-text",
+								"c9-font-size-" + ctaTitleFontSize
 							)}
 							style={{
 								color: ctaTextColor
@@ -268,7 +257,7 @@ registerBlockType("c9-blocks/c9-cta", {
 				{buttonText && (
 					<div
 						className={
-							"ab-cta-button col-12 " + layoutClass(ctaLayout, "button")
+							"c9-cta-button col-12 " + layoutClass(ctaLayout, "button")
 						}
 					>
 						<a
@@ -291,9 +280,7 @@ registerBlockType("c9-blocks/c9-cta", {
 				)}
 			</CallToAction>
 		);
-	},
-
-	deprecated: deprecated
+	}
 });
 
 function dimRatioToClass(ratio) {
@@ -302,9 +289,9 @@ function dimRatioToClass(ratio) {
 		: "has-background-dim-" + 10 * Math.round(ratio / 10);
 }
 
-function backgroundImageStyles(url) {
-	return url ? { backgroundImage: `url(${url})` } : undefined;
-}
+// function backgroundImageStyles(url) {
+// 	return url ? { backgroundImage: `url(${url})` } : undefined;
+// }
 
 function layoutClass(ctaWidth, textOrButton) {
 	if (ctaWidth == "two-thirds") {

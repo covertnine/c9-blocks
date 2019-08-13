@@ -11,9 +11,7 @@ const { compose } = wp.compose;
 // Import block components
 const {
 	InspectorControls,
-	BlockDescription,
 	withColors,
-	ColorPalette,
 	PanelColorSettings,
 	MediaUpload
 } = wp.editor;
@@ -21,11 +19,7 @@ const {
 // Import Inspector components
 const {
 	withFallbackStyles,
-	Toolbar,
-	Button,
 	PanelBody,
-	PanelRow,
-	FormToggle,
 	RangeControl,
 	SelectControl,
 	ToggleControl,
@@ -61,48 +55,36 @@ const applyFallbackStyles = withFallbackStyles((node, ownProps) => {
  * Create an Inspector Controls wrapper Component
  */
 class Inspector extends Component {
-	constructor(props) {
+	constructor() {
 		super(...arguments);
 	}
 
 	render() {
 		// Setup the attributes
 		const {
-			buttonText,
-			buttonUrl,
-			buttonAlignment,
 			buttonSize,
 			buttonShape,
 			buttonTarget,
-			ctaTitle,
-			ctaText,
-			titleFontSize,
-			ctaTextFontSize,
 			ctaBackgroundColor,
 			ctaTextColor,
 			ctaLayout,
 			dimRatio,
 			imgURL,
-			imgID,
-			imgAlt
+			imgID
 		} = this.props.attributes;
 
 		const {
 			setAttributes,
-			fallbackButtonBackgroundColor,
-			fallbackButtonTextColor,
 			buttonTextColor,
-			buttonBackgroundColor,
-			setButtonTextColor,
-			setButtonBackgroundColor
+			buttonBackgroundColor
 		} = this.props;
 
 		// Button size values
 		const buttonSizeOptions = [
-			{ value: "ab-button-size-small", label: __("Small") },
-			{ value: "ab-button-size-medium", label: __("Medium") },
-			{ value: "ab-button-size-large", label: __("Large") },
-			{ value: "ab-button-size-extralarge", label: __("Extra Large") }
+			{ value: "c9-button-size-small", label: __("Small") },
+			{ value: "c9-button-size-medium", label: __("Medium") },
+			{ value: "c9-button-size-large", label: __("Large") },
+			{ value: "c9-button-size-extralarge", label: __("Extra Large") }
 		];
 
 		// Button shape
@@ -200,7 +182,7 @@ class Inspector extends Component {
 						render={({ open }) => (
 							<div>
 								<IconButton
-									className="ab-cta-inspector-media"
+									className="c9-cta-inspector-media"
 									label={__("Edit image", "c9-blocks")}
 									icon="format-image"
 									onClick={open}
@@ -210,7 +192,7 @@ class Inspector extends Component {
 
 								{imgURL && !!imgURL.length && (
 									<IconButton
-										className="ab-cta-inspector-media"
+										className="c9-cta-inspector-media"
 										label={__("Remove Image", "c9-blocks")}
 										icon="dismiss"
 										onClick={onRemoveImage}
