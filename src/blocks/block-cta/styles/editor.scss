@@ -2,17 +2,25 @@
  * Editor styles for the admin
  */
 
-.c9-blocks-c9-cta .row {
+.c9-block-cta .row {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	.c9-cta-content {
+		flex-direction: column;
+
+		&:first-child .editor-rich-text {
+			width: 100%;
+		}
+	}
 }
 
 .c9-block-cta {
 	margin-bottom: 0;
 }
 
-.editor-block-list__layout [data-type="c9-blocks/c9-cta"] {
+.editor-block-list__layout [data-type="c9-blocks/cta"] {
 	margin-bottom: 1.2em;
 }
 

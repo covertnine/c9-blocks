@@ -294,18 +294,23 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 /**
  * Editor styles for the admin
  */
-.c9-blocks-c9-cta .row {
+.c9-block-cta .row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: justify;
       justify-content: space-between; }
+  .c9-block-cta .row .c9-cta-content {
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .c9-block-cta .row .c9-cta-content:first-child .editor-rich-text {
+      width: 100%; }
 
 .c9-block-cta {
   margin-bottom: 0; }
 
-.editor-block-list__layout [data-type="c9-blocks/c9-cta"] {
+.editor-block-list__layout [data-type="c9-blocks/cta"] {
   margin-bottom: 1.2em; }
 
 .c9-cta-button .blocks-button__inline-link .editor-url-input {
