@@ -2,21 +2,29 @@
  * Editor styles for the admin
  */
 
-.c9-blocks-c9-cta .row {
+.c9-block-cta .row {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	.c9-cta-content {
+		flex-direction: column;
+
+		&:first-child .editor-rich-text {
+			width: 100%;
+		}
+	}
 }
 
-.ab-block-cta {
+.c9-block-cta {
 	margin-bottom: 0;
 }
 
-.editor-block-list__layout [data-type="atomic-blocks/ab-cta"] {
+.editor-block-list__layout [data-type="c9-blocks/cta"] {
 	margin-bottom: 1.2em;
 }
 
-.ab-cta-button {
+.c9-cta-button {
 	.blocks-button__inline-link .editor-url-input {
 		display: inline-block;
 		width: auto;
@@ -32,6 +40,6 @@
 	}
 }
 
-.ab-block-cta h2.editor-rich-text__tinymce.mce-content-body {
+.c9-block-cta h2.editor-rich-text__tinymce.mce-content-body {
 	line-height: 1.2;
 }

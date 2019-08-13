@@ -21,11 +21,11 @@ const blockAttributes = {
 	},
 	buttonSize: {
 		type: "string",
-		default: "ab-button-size-medium"
+		default: "c9-button-size-medium"
 	},
 	buttonShape: {
 		type: "string",
-		default: "ab-button-shape-rounded"
+		default: "c9-button-shape-rounded"
 	},
 	buttonTarget: {
 		type: "boolean",
@@ -33,7 +33,7 @@ const blockAttributes = {
 	},
 	ctaTitle: {
 		type: "array",
-		selector: ".ab-cta-title",
+		selector: ".c9-cta-title",
 		source: "children"
 	},
 	titleFontSize: {
@@ -49,7 +49,7 @@ const blockAttributes = {
 	},
 	ctaText: {
 		type: "array",
-		selector: ".ab-cta-text",
+		selector: ".c9-cta-text",
 		source: "children"
 	},
 	ctaWidth: {
