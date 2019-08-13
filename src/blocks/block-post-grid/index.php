@@ -404,6 +404,10 @@ function covertnine_blocks_register_block_core_latest_posts()
 				'id'                  => array(
 					'type' => 'number',
 				),
+				'postTypes' => array(
+					'type' => 'string',
+					'default' => json_encode(array_values(get_post_types()))//'["' . implode('", "', get_post_types()) . '"]'
+				)
 			),
 			'render_callback' => 'covertnine_blocks_render_block_core_latest_posts',
 		)
