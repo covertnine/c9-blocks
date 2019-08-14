@@ -17,30 +17,33 @@ const {
 } = wp.editor;
 
 // Register components
-const { IconButton, Dashicon } = wp.components;
+const { IconButton, Dashicon, Button } = wp.components;
 
 // Components
 const { __ } = wp.i18n;
 
 export default class Edit extends Component {
+	constructor() {
+		super(...arguments);
 
-    constructor() {
-        super(...arguments);
-    }
+		this.state = {
+			hideForm: false
+		};
+	}
 
-    layoutClass(ctaWidth, textOrButton) {
-        if (ctaWidth == "two-thirds") {
-            if (textOrButton == "text") {
-                return "col-md-8";
-            }
-            return "col-md-4";
-        } else if (ctaWidth == "three-quarters") {
-            if (textOrButton == "text") {
-                return "col-md-9";
-            }
-            return "col-md-3";
-        }
-    }    
+	layoutClass(ctaWidth, textOrButton) {
+		if (ctaWidth == "two-thirds") {
+			if (textOrButton == "text") {
+				return "col-md-8";
+			}
+			return "col-md-4";
+		} else if (ctaWidth == "three-quarters") {
+			if (textOrButton == "text") {
+				return "col-md-9";
+			}
+			return "col-md-3";
+		}
+	}
 
 	render() {
 		// Setup the attributes
@@ -59,7 +62,7 @@ export default class Edit extends Component {
 				ctaTextColor,
 				ctaLayout
 			},
-			isSelected,
+			isSelectedBlockInRoot,
 			setAttributes
 		} = this.props;
 
@@ -125,7 +128,17 @@ export default class Edit extends Component {
 							}}
 							onChange={value => setAttributes({ buttonText: value })}
 						/>
-						{isSelected && (
+						{isSelectedBlockInRoot && (
+							<Button
+								className="c9-cta-reveal-anchor"
+								onClick={() =>
+									this.setState({ hideForm: !this.state.hideForm })
+								}
+							>
+								<Dashicon icon={"admin-links"} />
+							</Button>
+						)}
+						{isSelectedBlockInRoot && !this.state.hideForm && (
 							<form
 								key="form-link"
 								className={`blocks-button__inline-link c9-button-${buttonAlignment}`}
@@ -134,7 +147,6 @@ export default class Edit extends Component {
 									textAlign: buttonAlignment
 								}}
 							>
-								<Dashicon icon={"admin-links"} />
 								<URLInput
 									className="button-url"
 									value={buttonUrl}

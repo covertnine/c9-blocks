@@ -2,6 +2,8 @@
  * Inspector Controls
  */
 
+import React from "react";
+
 // Setup the block
 const { __ } = wp.i18n;
 const { Component } = wp.element;
@@ -32,7 +34,117 @@ const {
 export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
+
+		this.linkedPaddingRef = React.createRef();
+		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
+		this.linkedMarginRef = React.createRef();
+		this.toggleMarginLinkage = this.toggleMarginLinkage.bind(this);
+
+		const {
+			attributes: { ctaPadding, ctaMargin },
+			setAttributes
+		} = this.props;
+
+		this.setAttributes = setAttributes;
+
+		this.state = {
+			ctaPadding: ctaPadding,
+			ctaMargin: ctaMargin,
+			setAttributes: setAttributes
+		};
 	}
+
+	togglePaddingLinkage = () => {
+		let {
+			attributes: { ctaPadding }
+		} = this.props;
+
+		ctaPadding = Object.assign({}, ctaPadding);
+		ctaPadding.linked = !ctaPadding.linked;
+		ctaPadding.icon = ctaPadding.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ ctaPadding });
+		this.setAttributes({ ctaPadding });
+	};
+
+	setPaddingUnit = value => {
+		const {
+			attributes: { ctaPadding }
+		} = this.props;
+
+		let spacingObject = Object.assign({}, ctaPadding);
+		spacingObject.unit = value;
+		this.setState({ ctaPadding: spacingObject });
+		this.setAttributes({ ctaPadding: spacingObject });
+	};
+
+	updatePadding = (position, value) => {
+		if (this.state.ctaPadding.linked) {
+			let spacingObject = {
+				linked: this.state.ctaPadding.linked,
+				unit: this.state.ctaPadding.unit,
+				top: value,
+				bottom: value,
+				left: value,
+				right: value,
+				icon: this.state.ctaPadding.icon
+			};
+			this.setState({ ctaPadding: spacingObject });
+			this.setAttributes({ ctaPadding: spacingObject });
+		} else {
+			let spacingObject = Object.assign({}, this.state.ctaPadding);
+			spacingObject[position] = value;
+			this.setState({ ctaPadding: spacingObject });
+			this.setAttributes({ ctaPadding: spacingObject });
+		}
+	};
+
+	toggleMarginLinkage = () => {
+		let {
+			attributes: { ctaMargin }
+		} = this.props;
+
+		ctaMargin = Object.assign({}, ctaMargin);
+		ctaMargin.linked = !ctaMargin.linked;
+		ctaMargin.icon = ctaMargin.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ ctaMargin });
+		this.setAttributes({ ctaMargin });
+	};
+
+	setMarginUnit = value => {
+		const {
+			attributes: { ctaMargin }
+		} = this.props;
+
+		let spacingObject = Object.assign({}, ctaMargin);
+		spacingObject.unit = value;
+		this.setState({ ctaMargin: spacingObject });
+		this.setAttributes({ ctaMargin: spacingObject });
+	};
+
+	updateMargin = (position, value) => {
+		if (this.state.ctaMargin.linked) {
+			let spacingObject = {
+				linked: this.state.ctaMargin.linked,
+				unit: this.state.ctaMargin.unit,
+				top: value,
+				bottom: value,
+				left: value,
+				right: value,
+				icon: this.state.ctaMargin.icon
+			};
+			this.setState({ ctaMargin: spacingObject });
+			this.setAttributes({ ctaMargin: spacingObject });
+		} else {
+			let spacingObject = Object.assign({}, this.state.ctaMargin);
+			spacingObject[position] = value;
+			this.setState({ ctaMargin: spacingObject });
+			this.setAttributes({ ctaMargin: spacingObject });
+		}
+	};
 
 	render() {
 		// Setup the attributes
@@ -44,6 +156,8 @@ export default class Inspector extends Component {
 			ctaBackgroundOpacity,
 			ctaTextColor,
 			ctaLayout,
+			ctaPadding,
+			ctaMargin,
 			imgURL,
 			imgID,
 			imgAttach,
@@ -76,6 +190,28 @@ export default class Inspector extends Component {
 			{ value: "round", label: __("Round") },
 			{ value: "square", label: __("Square") },
 			{ value: "outline", label: __("Outline") }
+		];
+
+		const paddingOptions = [
+			{ value: "-1", label: __("None", "c9-blocks") },
+			{ value: "0", label: __("Padding 0", "c9-blocks") },
+			{ value: "1", label: __("Padding 1", "c9-blocks") },
+			{ value: "2", label: __("Padding 2", "c9-blocks") },
+			{ value: "3", label: __("Padding 3", "c9-blocks") },
+			{ value: "4", label: __("Padding 4", "c9-blocks") },
+			{ value: "5", label: __("Padding 5", "c9-blocks") },
+			{ value: "auto", label: __("Auto", "c9-blocks") }
+		];
+
+		const marginOptions = [
+			{ value: "-1", label: __("None", "c9-blocks") },
+			{ value: "0", label: __("Margin 0", "c9-blocks") },
+			{ value: "1", label: __("Margin 1", "c9-blocks") },
+			{ value: "2", label: __("Margin 2", "c9-blocks") },
+			{ value: "3", label: __("Margin 3", "c9-blocks") },
+			{ value: "4", label: __("Margin 4", "c9-blocks") },
+			{ value: "5", label: __("Margin 5", "c9-blocks") },
+			{ value: "auto", label: __("Auto", "c9-blocks") }
 		];
 
 		// Change the image
@@ -144,6 +280,84 @@ export default class Inspector extends Component {
 							setAttributes({ buttonShape: value });
 						}}
 					/>
+				</PanelBody>
+
+				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
+
+					<p className="components-base-control__label">
+						{__(
+							"Configure between different levels of padding for each side.",
+							"c9-blocks"
+						)}
+					</p>
+
+					<div className="padding-top-wrapper">
+						<SelectControl
+							options={paddingOptions}
+							value={ctaPadding.top}
+							onChange={value => this.updatePadding("top", value)}
+						/>
+					</div>
+					<div className="padding-sides-wrapper">
+						<SelectControl
+							options={paddingOptions}
+							value={ctaPadding.left}
+							onChange={value => this.updatePadding("left", value)}
+						/>
+						<IconButton
+							label={__("Linked Padding Toggle", "c9-blocks")}
+							icon={this.state.ctaPadding.icon}
+							onClick={this.togglePaddingLinkage}
+							ref={this.state.linkedPaddingRef}
+						/>
+						<SelectControl
+							options={paddingOptions}
+							value={ctaPadding.right}
+							onChange={value => this.updatePadding("right", value)}
+						/>
+					</div>
+					<div className="padding-bottom-wrapper">
+						<SelectControl
+							options={paddingOptions}
+							value={ctaPadding.bottom}
+							onChange={value => this.updatePadding("bottom", value)}
+						/>
+					</div>
+
+					<hr />
+
+					<h5 className="margin-label">Margins</h5>
+
+					<p className="components-base-control__label">
+						{__(
+							"Configure between different levels of margin for top and bottom sides.",
+							"c9-blocks"
+						)}
+					</p>
+
+					<div className="margin-top-wrapper">
+						<SelectControl
+							options={marginOptions}
+							value={ctaMargin.top}
+							onChange={value => this.updateMargin("top", value)}
+						/>
+					</div>
+					<div className="margin-sides-wrapper">
+						<IconButton
+							label={__("Linked Padding Toggle", "c9-blocks")}
+							icon={this.state.ctaMargin.icon}
+							onClick={this.toggleMarginLinkage}
+							ref={this.state.linkedMarginRef}
+						/>
+					</div>
+					<div className="margin-bottom-wrapper">
+						<SelectControl
+							options={marginOptions}
+							value={ctaMargin.bottom}
+							onChange={value => this.updateMargin("bottom", value)}
+						/>
+					</div>
 				</PanelBody>
 
 				<PanelColorSettings

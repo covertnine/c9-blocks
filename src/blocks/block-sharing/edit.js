@@ -52,6 +52,9 @@ export default class Edit extends Component {
 			<Inspector {...this.props} />,
 			// Show the button markup in the editor
 			<ShareLinks {...this.props}>
+				{!twitter && !facebook && !google && !linkedin && !pinterest && !email && !reddit && (
+					<span className="text-danger">Choose a sharing link to display... otherwise remove this block.</span>
+				)}
 				<ul className="c9-share-list">
 					{twitter && (
 						<li>

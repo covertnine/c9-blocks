@@ -48,6 +48,27 @@ const blockAttributes = {
 		type: "string",
 		default: "two-thirds"
 	},
+	ctaMargin: {
+		type: "object",
+		default: {
+			linked: true,
+			icon: "admin-links",
+			unit: "px",
+			top: "-1",
+			bottom: "-1"
+		}
+	},
+	ctaPadding: {
+		type: "object",
+		default: {
+			linked: true,
+			icon: "admin-links",
+			top: "5",
+			bottom: "5",
+			left: "5",
+			right: "5"
+		}
+	},
 	ctaTextFontSize: {
 		type: "number"
 	},

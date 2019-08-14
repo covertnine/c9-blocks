@@ -330,6 +330,15 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
         flex-direction: column; }
     .c9-block-cta .row .c9-cta-content:first-child .editor-rich-text {
       width: 100%; }
+    .c9-block-cta .row .c9-cta-content .c9-cta-reveal-anchor {
+      position: absolute;
+      right: 0;
+      top: 0;
+      cursor: pointer; }
+      .c9-block-cta .row .c9-cta-content .c9-cta-reveal-anchor:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
 
 .c9-block-cta {
   margin-bottom: 0; }

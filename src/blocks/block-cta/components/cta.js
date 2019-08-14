@@ -18,6 +18,47 @@ export default class CallToAction extends Component {
 		super(...arguments);
 	}
 
+	c9SpacingConfig(padding, margin) {
+		let classes = [];
+		// abstract side class assignment
+		function assignSideClasses(sideClass, level) {
+			if (level != -1) {
+				classes.push(`${sideClass}-${level}`);
+			}
+		}
+
+		// padding
+		if (
+			padding.top === padding.left &&
+			padding.top === padding.bottom &&
+			padding.top === padding.right &&
+			padding.top != -1
+		) {
+			classes.push(`p-${padding.top}`);
+		} else if (padding.top === padding.bottom && padding.top >= 0) {
+			classes.push(`py-${padding.top}`);
+			assignSideClasses("pl", padding.left);
+			assignSideClasses("pr", padding.right);
+		} else if (padding.left === padding.right && padding.left >= 0) {
+			classes.push(`px-${padding.left}`);
+			assignSideClasses("pt", padding.top);
+			assignSideClasses("pb", padding.bottom);
+		} else {
+			["top", "bottom", "left", "right"].map(s =>
+				assignSideClasses(`p${s[0]}`, padding[s])
+			);
+		}
+
+		// margin
+		if (margin.top === margin.bottom && margin.top != -1) {
+			classes.push(`my-${margin.top}`);
+		} else {
+			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+		}
+
+		return classes;
+	}
+
 	c9BackgroundStyles(url, size, bgColor, opacity, align, blend, focalPoint, selected = true) {
 		const styles = {};
 
@@ -78,7 +119,9 @@ export default class CallToAction extends Component {
 				imgURL,
 				imgSize,
 				blendMode,
-				focalPoint
+				focalPoint,
+				ctaPadding,
+				ctaMargin
 			},
 			className = "",
 			isSelectedBlockInRoot
@@ -101,6 +144,7 @@ export default class CallToAction extends Component {
 						applyFilters("c9-blocks.blocks.className", className),
 						"c9-block-cta",
 						"container",
+						this.c9SpacingConfig(ctaPadding, ctaMargin),
 						// eslint-disable-next-line no-extra-boolean-cast
 						!!imgURL ? "c9-cta-has-background" : null
 					],

@@ -13,6 +13,17 @@
 		&:first-child .editor-rich-text {
 			width: 100%;
 		}
+
+		.c9-cta-reveal-anchor {
+			position: absolute;
+			right: 0;
+			top: 0;
+			cursor: pointer;
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+		}
 	}
 }
 
