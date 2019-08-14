@@ -73,6 +73,7 @@ class Inspector extends Component {
 				<PanelBody title={__("Heading Options", "c9-blocks")}>
 					<p>{__("Element Tag Type", "c9-blocks")}</p>
 					<HeadingToolbar
+						isCollapsed={false}
 						minLevel={1}
 						maxLevel={7}
 						selectedLevel={tagLevel}
