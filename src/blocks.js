@@ -12,7 +12,7 @@ import "./blocks/i18n.js";
 import "./blocks/block-sharing/block-sharing.js";
 import "./blocks/block-cta/block-cta.js";
 import "./blocks/block-heading/block-heading.js";
-import "./blocks/block-post-grid";
+import "./blocks/block-post-grid/block-post-grid.js";
 import "./blocks/block-grid-container/block-grid-container.js";
 import "./blocks/block-column-container/block-column-container.js";
 import "./blocks/block-column-container/components/column.js";

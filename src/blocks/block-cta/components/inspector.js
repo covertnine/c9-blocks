@@ -5,20 +5,13 @@
 // Setup the block
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-
-const { compose } = wp.compose;
+const { ContrastChecker } = wp.blockEditor;
 
 // Import block components
-const {
-	InspectorControls,
-	withColors,
-	PanelColorSettings,
-	MediaUpload
-} = wp.editor;
+const { InspectorControls, PanelColorSettings, MediaUpload } = wp.editor;
 
 // Import Inspector components
 const {
-	withFallbackStyles,
 	PanelBody,
 	RangeControl,
 	SelectControl,
@@ -27,34 +20,10 @@ const {
 	RadioControl
 } = wp.components;
 
-const { getComputedStyle } = window;
-
-// Apply fallback styles
-const applyFallbackStyles = withFallbackStyles((node, ownProps) => {
-	const { buttonBackgroundColor, buttonTextColor } = ownProps;
-	const buttonBackgroundColorValue =
-		buttonBackgroundColor && buttonBackgroundColor.color;
-	const buttonTextColorValue = buttonTextColor && buttonTextColor.color;
-	const buttonTextNode =
-		!buttonTextColorValue && node
-			? node.querySelector('[contenteditable="true"]')
-			: null;
-	return {
-		fallbackButtonBackgroundColor:
-			buttonBackgroundColorValue || !node
-				? undefined
-				: getComputedStyle(node).backgroundColor,
-		fallbackButtonTextColor:
-			buttonTextColorValue || !buttonTextNode
-				? undefined
-				: getComputedStyle(buttonTextNode).color
-	};
-});
-
 /**
  * Create an Inspector Controls wrapper Component
  */
-class Inspector extends Component {
+export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 	}
@@ -112,51 +81,52 @@ class Inspector extends Component {
 			});
 		};
 
-		// Update color values
-		const onChangeBackgroundColor = value =>
-			setAttributes({ ctaBackgroundColor: value });
-		const onChangeTextColor = value => setAttributes({ ctaTextColor: value });
-		const onChangeButtonColor = value =>
-			setAttributes({ buttonBackgroundColor: value });
-		const onChangeButtonTextColor = value =>
-			setAttributes({ buttonTextColor: value });
-
 		return (
 			<InspectorControls key="inspector">
 				<PanelColorSettings
-					title={__("Text Color", "c9-blocks")}
+					title={__("Text Color Settings", "c9-blocks")}
 					initialOpen={true}
 					colorSettings={[
 						{
 							value: ctaTextColor,
-							onChange: onChangeTextColor,
+							onChange: value => setAttributes({ ctaTextColor: value }),
 							label: __("Text Color", "c9-blocks")
 						}
 					]}
-				/>
+				>
+					<ContrastChecker
+						{...{
+							textColor: ctaTextColor,
+							fallbackTextColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
 				<PanelColorSettings
-					title={__("Button Color", "c9-blocks")}
+					title={__("Button Color Settings", "c9-blocks")}
 					initialOpen={true}
 					colorSettings={[
 						{
 							value: buttonBackgroundColor,
-							onChange: onChangeButtonColor,
+							onChange: value =>
+								setAttributes({ buttonBackgroundColor: value }),
 							label: __("Button Color", "c9-blocks")
-						}
-					]}
-				/>
-
-				<PanelColorSettings
-					title={__("Button Text Color", "c9-blocks")}
-					initialOpen={true}
-					colorSettings={[
+						},
 						{
-							value: buttonTextColor.color,
-							onChange: onChangeButtonTextColor,
+							value: buttonTextColor,
+							onChange: value => setAttributes({ buttonTextColor: value }),
 							label: __("Button Text Color", "c9-blocks")
 						}
 					]}
-				/>
+				>
+					<ContrastChecker
+						{...{
+							backgroundColor: buttonBackgroundColor,
+							fallbackBackgroundColor: "black",
+							textColor: buttonTextColor,
+							fallbackTextColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
 				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={false}>
 					<RadioControl
 						label={__("Content Width", "c9-blocks")}
@@ -208,7 +178,7 @@ class Inspector extends Component {
 						<RangeControl
 							label={__("Image Opacity", "c9-blocks")}
 							value={dimRatio}
-							onChange={value => this.props.setAttributes({ dimRatio: value })}
+							onChange={value => setAttributes({ dimRatio: value })}
 							min={0}
 							max={100}
 							step={10}
@@ -221,7 +191,7 @@ class Inspector extends Component {
 						colorSettings={[
 							{
 								value: ctaBackgroundColor,
-								onChange: onChangeBackgroundColor,
+								onChange: value => setAttributes({ ctaBackgroundColor: value }),
 								label: __("Overlay Color", "c9-blocks")
 							}
 						]}
@@ -235,9 +205,7 @@ class Inspector extends Component {
 					<ToggleControl
 						label={__("Open link in new window", "c9-blocks")}
 						checked={buttonTarget}
-						onChange={() =>
-							this.props.setAttributes({ buttonTarget: !buttonTarget })
-						}
+						onChange={() => setAttributes({ buttonTarget: !buttonTarget })}
 					/>
 
 					<SelectControl
@@ -248,7 +216,7 @@ class Inspector extends Component {
 							label: label
 						}))}
 						onChange={value => {
-							this.props.setAttributes({ buttonSize: value });
+							setAttributes({ buttonSize: value });
 						}}
 					/>
 
@@ -260,7 +228,7 @@ class Inspector extends Component {
 							label: label
 						}))}
 						onChange={value => {
-							this.props.setAttributes({ buttonShape: value });
+							setAttributes({ buttonShape: value });
 						}}
 					/>
 				</PanelBody>
@@ -268,8 +236,3 @@ class Inspector extends Component {
 		);
 	}
 }
-
-export default compose([
-	withColors("buttonBackgroundColor", { buttonTextColor: "color" }),
-	applyFallbackStyles
-])(Inspector);

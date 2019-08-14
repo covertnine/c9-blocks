@@ -3,7 +3,7 @@
  * Loads on front end and back end
  */
 
-.ab-block-post-grid {
+.c9-block-post-grid {
 	margin: 0 0 1.2em 0;
 	position: relative;
 
@@ -66,11 +66,11 @@
 		}
 	}
 
-	.ab-post-grid-section-title {
+	.c9-post-grid-section-title {
 		text-align: left;
 	}
 
-	.ab-block-post-grid-image {
+	.c9-block-post-grid-image {
 		margin-bottom: 1.2em;
 
 		img {
@@ -79,7 +79,7 @@
 		}
 	}
 
-	.ab-block-post-grid-text {
+	.c9-block-post-grid-text {
 		text-align: left;
 	}
 
@@ -87,7 +87,7 @@
 		text-decoration: none;
 	}
 
-	header .ab-block-post-grid-title {
+	header .c9-block-post-grid-title {
 		margin-top: 0;
 		margin-bottom: 15px;
 		font-size: 28px;
@@ -104,14 +104,14 @@
 		}
 	}
 
-	.ab-block-post-grid-byline {
+	.c9-block-post-grid-byline {
 		font-size: 14px;
 		color: #EEEEEE;
 		margin-bottom: 15px;
 	}
 
-	.ab-block-post-grid-author,
-	.ab-block-post-grid-date {
+	.c9-block-post-grid-author,
+	.c9-block-post-grid-date {
 		display: inline-block;
 
 		&:not(:last-child):after {
@@ -122,7 +122,7 @@
 		}
 	}
 
-	.ab-block-post-grid-author a {
+	.c9-block-post-grid-author a {
 		color: inherit;
 		text-decoration: none;
 
@@ -132,7 +132,7 @@
 		}
 	}
 
-	.ab-block-post-grid-text p {
+	.c9-block-post-grid-text p {
 		margin: 0 0 15px 0;
 		font-size: inherit;
 
@@ -141,7 +141,7 @@
 		}
 	}
 
-	.ab-block-post-grid-more-link {
+	.c9-block-post-grid-more-link {
 		display: inline-block;
 		box-shadow: none;
 		transition: .3s ease;
@@ -154,7 +154,7 @@
 		}
 	}
 
-	.ab-block-post-grid-excerpt div + p {
+	.c9-block-post-grid-excerpt div + p {
 		margin-top: 15px;
 	}
 
@@ -193,7 +193,7 @@
 			grid-template-columns: 1fr;
 		}
 
-		.ab-block-post-grid-image {
+		.c9-block-post-grid-image {
 			margin-bottom: 0;
 
 			@media all and (-ms-high-contrast:none) {
@@ -209,25 +209,25 @@
 
 
 		@media all and (-ms-high-contrast:none) {
-			.ab-block-post-grid-text {
+			.c9-block-post-grid-text {
 				width: 65%;
 				padding-left: 5%;
 				display: inline-block;
 				vertical-align: top;
 			}
-			.post:not(.has-post-thumbnail) .ab-block-post-grid-text {
+			.post:not(.has-post-thumbnail) .c9-block-post-grid-text {
 				width: 100%;
 				padding-left: 0;
 			}
 		}
 
-		.ab-block-post-grid-title {
+		.c9-block-post-grid-title {
 			@media only screen and (min-width: 600px) {
 				font-size: 34px;
 			}
 		}
 
-		.no-thumb .ab-block-post-grid-text {
+		.no-thumb .c9-block-post-grid-text {
 			grid-column: span 2;
 		}
 	}

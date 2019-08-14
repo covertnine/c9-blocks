@@ -46,7 +46,7 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 			$post_thumb_id = get_post_thumbnail_id($post_id);
 
 			/* Setup the post classes */
-			$post_classes = 'ab-post-grid-item';
+			$post_classes = 'c9-post-grid-item';
 
 			/* Add sticky class */
 			if (is_sticky($post_id)) {
@@ -70,9 +70,9 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 
 				/* Get the orientation class */
 				if ($attributes['imageCrop'] === 'landscape') {
-					$post_thumb_size = 'ab-block-post-grid-landscape';
+					$post_thumb_size = 'c9-block-post-grid-landscape';
 				} else {
-					$post_thumb_size = 'ab-block-post-grid-square';
+					$post_thumb_size = 'c9-block-post-grid-square';
 				}
 
 				if (!empty($attributes['imageSize'])) {
@@ -81,7 +81,7 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 
 				/* Output the featured image */
 				$post_grid_markup .= sprintf(
-					'<div class="ab-block-post-grid-image"><a href="%1$s" rel="bookmark" aria-hidden="true" tabindex="-1">%2$s</a></div>',
+					'<div class="c9-block-post-grid-image"><a href="%1$s" rel="bookmark" aria-hidden="true" tabindex="-1">%2$s</a></div>',
 					esc_url(get_permalink($post_id)),
 					wp_get_attachment_image($post_thumb_id, $post_thumb_size)
 				);
@@ -89,11 +89,11 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 
 			/* Wrap the text content */
 			$post_grid_markup .= sprintf(
-				'<div class="ab-block-post-grid-text">'
+				'<div class="c9-block-post-grid-text">'
 			);
 
 			$post_grid_markup .= sprintf(
-				'<header class="ab-block-post-grid-header">'
+				'<header class="c9-block-post-grid-header">'
 			);
 
 			/* Get the post title */
@@ -112,7 +112,7 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 				}
 
 				$post_grid_markup .= sprintf(
-					'<%3$s class="ab-block-post-grid-title"><a href="%1$s" rel="bookmark">%2$s</a></%3$s>',
+					'<%3$s class="c9-block-post-grid-title"><a href="%1$s" rel="bookmark">%2$s</a></%3$s>',
 					esc_url(get_permalink($post_id)),
 					esc_html($title),
 					esc_attr($post_title_tag)
@@ -122,13 +122,13 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 			if (isset($attributes['postType']) && $attributes['postType'] === 'post') {
 				/* Wrap the byline content */
 				$post_grid_markup .= sprintf(
-					'<div class="ab-block-post-grid-byline">'
+					'<div class="c9-block-post-grid-byline">'
 				);
 
 				/* Get the post author */
 				if (isset($attributes['displayPostAuthor']) && $attributes['displayPostAuthor']) {
 					$post_grid_markup .= sprintf(
-						'<div class="ab-block-post-grid-author" itemprop="author" itemtype="https://schema.org/Person"><a class="ab-text-link" href="%2$s" itemprop="url" rel="author"><span itemprop="name">%1$s</span></a></div>',
+						'<div class="c9-block-post-grid-author" itemprop="author" itemtype="https://schema.org/Person"><a class="c9-text-link" href="%2$s" itemprop="url" rel="author"><span itemprop="name">%1$s</span></a></div>',
 						esc_html(get_the_author_meta('display_name', get_the_author_meta('ID'))),
 						esc_html(get_author_posts_url(get_the_author_meta('ID')))
 					);
@@ -137,7 +137,7 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 				/* Get the post date */
 				if (isset($attributes['displayPostDate']) && $attributes['displayPostDate']) {
 					$post_grid_markup .= sprintf(
-						'<time datetime="%1$s" class="ab-block-post-grid-date" itemprop="datePublished">%2$s</time>',
+						'<time datetime="%1$s" class="c9-block-post-grid-date" itemprop="datePublished">%2$s</time>',
 						esc_attr(get_the_date('c', $post_id)),
 						esc_html(get_the_date('', $post_id))
 					);
@@ -156,7 +156,7 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 
 			/* Wrap the excerpt content */
 			$post_grid_markup .= sprintf(
-				'<div class="ab-block-post-grid-excerpt">'
+				'<div class="c9-block-post-grid-excerpt">'
 			);
 
 			/* Get the excerpt */
@@ -200,7 +200,7 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 			/* Get the read more link */
 			if (isset($attributes['displayPostLink']) && $attributes['displayPostLink']) {
 				$post_grid_markup .= sprintf(
-					'<p><a class="ab-block-post-grid-more-link ab-text-link" href="%1$s" rel="bookmark">%2$s <span class="screen-reader-text">%3$s</span></a></p>',
+					'<p><a class="c9-block-post-grid-more-link c9-text-link" href="%1$s" rel="bookmark">%2$s <span class="screen-reader-text">%3$s</span></a></p>',
 					esc_url(get_permalink($post_id)),
 					esc_html($attributes['readMoreText']),
 					esc_html($title)
@@ -225,14 +225,14 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 		wp_reset_postdata();
 
 		/* Build the block classes */
-		$class = "ab-block-post-grid featured{$attributes['postType']} align{$attributes['align']}";
+		$class = "c9-block-post-grid featured{$attributes['postType']} align{$attributes['align']}";
 
 		if (isset($attributes['className'])) {
 			$class .= ' ' . $attributes['className'];
 		}
 
 		/* Layout orientation class */
-		$grid_class = 'ab-post-grid-items';
+		$grid_class = 'c9-post-grid-items';
 
 		if (isset($attributes['postLayout']) && 'list' === $attributes['postLayout']) {
 			$grid_class .= ' is-list';
@@ -291,7 +291,7 @@ function covertnine_blocks_register_block_core_latest_posts()
 
 	/* Block attributes */
 	register_block_type(
-		'c9-blocks/ab-post-grid',
+		'c9-blocks/post-grid',
 		array(
 			'attributes'      => array(
 				'categories'          => array(
@@ -468,7 +468,7 @@ function covertnine_blocks_get_image_src_landscape($object, $field_name, $reques
 {
 	$feat_img_array = wp_get_attachment_image_src(
 		$object['featured_media'],
-		'ab-block-post-grid-landscape',
+		'c9-block-post-grid-landscape',
 		false
 	);
 	return $feat_img_array[0];
@@ -485,7 +485,7 @@ function covertnine_blocks_get_image_src_square($object, $field_name, $request)
 {
 	$feat_img_array = wp_get_attachment_image_src(
 		$object['featured_media'],
-		'ab-block-post-grid-square',
+		'c9-block-post-grid-square',
 		false
 	);
 	return $feat_img_array[0];
