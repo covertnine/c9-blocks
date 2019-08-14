@@ -42,12 +42,6 @@ export default class Edit extends Component {
         }
     }    
 
-    dimRatioToClass(ratio) {
-        return ratio === 0 || ratio === 50
-            ? null
-            : "has-background-dim-" + 10 * Math.round(ratio / 10);
-    }
-
 	render() {
 		// Setup the attributes
 		const {
@@ -63,22 +57,11 @@ export default class Edit extends Component {
 				ctaTextFontSize,
 				ctaWidth,
 				ctaTextColor,
-				imgURL,
-				imgAlt,
-				dimRatio,
 				ctaLayout
 			},
 			isSelected,
 			setAttributes
 		} = this.props;
-
-		// const onSelectImage = img => {
-		// 	setAttributes({
-		// 		imgID: img.id,
-		// 		imgURL: img.url,
-		// 		imgAlt: img.alt
-		// 	});
-		// };
 
 		return (
 			// Show the alignment toolbar on focus
@@ -98,7 +81,7 @@ export default class Edit extends Component {
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...this.props }} />
 				<CallToAction {...this.props}>
-					{imgURL && !!imgURL.length && (
+					{/* {imgURL && !!imgURL.length && (
 						<div className="c9-cta-image-wrap">
 							<img
 								className={classnames(
@@ -112,7 +95,7 @@ export default class Edit extends Component {
 								alt={imgAlt}
 							/>
 						</div>
-					)}
+					)} */}
 
 					<div
 						className={

@@ -31,6 +31,10 @@ const blockAttributes = {
 		type: "boolean",
 		default: false
 	},
+	blendMode: {
+		type: "string",
+		default: "overlay"
+	},
 	ctaTitle: {
 		type: "array",
 		selector: ".c9-cta-title",
@@ -58,6 +62,10 @@ const blockAttributes = {
 	ctaBackgroundColor: {
 		type: "string"
 	},
+	ctaBackgroundOpacity: {
+		type: "number",
+		default: 10
+	},
 	ctaTextColor: {
 		type: "string"
 	},
@@ -76,11 +84,22 @@ const blockAttributes = {
 		attribute: "alt",
 		selector: "img"
 	},
-	dimRatio: {
-		type: "number",
-		default: 50
+	imgSize: {
+		type: "string",
+		default: "cover"
 	},
-
+	focalPoint: {
+		type: "object",
+		default: {
+			x: 0.5,
+			y: 0.5
+		}
+	},
+	// true evaluates to backgroundAttachment fixed, false to scroll
+	imgAttach: {
+		type: "boolean",
+		default: false
+	},
 	// Deprecated
 	ctaTitleFontSize: {
 		type: "string",

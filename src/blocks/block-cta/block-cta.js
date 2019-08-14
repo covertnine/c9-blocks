@@ -13,6 +13,9 @@ const iconEl = makeIcon(faExclamationCircle);
 // Components
 const { __ } = wp.i18n;
 
+const { compose } = wp.compose;
+const { withSelect } = wp.data;
+
 // Register block
 const { registerBlockType } = wp.blocks;
 
@@ -40,7 +43,18 @@ registerBlockType("c9-blocks/cta", {
 		}
 	},
 
-	edit: Edit,
+	edit: compose([
+		withSelect((select, ownProps) => {
+			const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
+
+			const { clientId } = ownProps;
+
+			return {
+				isSelectedBlockInRoot:
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+			};
+		})
+	])(Edit),
 
 	// Save the attributes and markup
 	save: Save

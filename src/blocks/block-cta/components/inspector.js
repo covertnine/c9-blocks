@@ -8,7 +8,12 @@ const { Component } = wp.element;
 const { ContrastChecker } = wp.blockEditor;
 
 // Import block components
-const { InspectorControls, PanelColorSettings, MediaUpload } = wp.editor;
+const {
+	InspectorControls,
+	PanelColorSettings,
+	MediaUpload,
+	ColorPalette
+} = wp.editor;
 
 // Import Inspector components
 const {
@@ -17,7 +22,8 @@ const {
 	SelectControl,
 	ToggleControl,
 	IconButton,
-	RadioControl
+	RadioControl,
+	FocalPointPicker
 } = wp.components;
 
 /**
@@ -35,11 +41,15 @@ export default class Inspector extends Component {
 			buttonShape,
 			buttonTarget,
 			ctaBackgroundColor,
+			ctaBackgroundOpacity,
 			ctaTextColor,
 			ctaLayout,
-			dimRatio,
 			imgURL,
-			imgID
+			imgID,
+			imgAttach,
+			imgSize,
+			focalPoint,
+			blendMode
 		} = this.props.attributes;
 
 		const {
@@ -47,6 +57,11 @@ export default class Inspector extends Component {
 			buttonTextColor,
 			buttonBackgroundColor
 		} = this.props;
+
+		const sizeTypes = [
+			{ value: "cover", label: __("Cover", "c9-blocks") },
+			{ value: "contain", label: __("Contain", "c9-blocks") }
+		];
 
 		// Button size values
 		const buttonSizeOptions = [
@@ -83,51 +98,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls key="inspector">
-				<PanelColorSettings
-					title={__("Text Color Settings", "c9-blocks")}
-					initialOpen={true}
-					colorSettings={[
-						{
-							value: ctaTextColor,
-							onChange: value => setAttributes({ ctaTextColor: value }),
-							label: __("Text Color", "c9-blocks")
-						}
-					]}
-				>
-					<ContrastChecker
-						{...{
-							textColor: ctaTextColor,
-							fallbackTextColor: "white"
-						}}
-					/>
-				</PanelColorSettings>
-				<PanelColorSettings
-					title={__("Button Color Settings", "c9-blocks")}
-					initialOpen={true}
-					colorSettings={[
-						{
-							value: buttonBackgroundColor,
-							onChange: value =>
-								setAttributes({ buttonBackgroundColor: value }),
-							label: __("Button Color", "c9-blocks")
-						},
-						{
-							value: buttonTextColor,
-							onChange: value => setAttributes({ buttonTextColor: value }),
-							label: __("Button Text Color", "c9-blocks")
-						}
-					]}
-				>
-					<ContrastChecker
-						{...{
-							backgroundColor: buttonBackgroundColor,
-							fallbackBackgroundColor: "black",
-							textColor: buttonTextColor,
-							fallbackTextColor: "white"
-						}}
-					/>
-				</PanelColorSettings>
-				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={false}>
+				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
 					<RadioControl
 						label={__("Content Width", "c9-blocks")}
 						selected={ctaLayout}
@@ -141,65 +112,7 @@ export default class Inspector extends Component {
 				</PanelBody>
 
 				<PanelBody
-					title={__("Background Options", "c9-blocks")}
-					initialOpen={false}
-				>
-					<p>{__("Select a background image:", "c9-blocks")}</p>
-					<MediaUpload
-						onSelect={onSelectImage}
-						type="image"
-						value={imgID}
-						render={({ open }) => (
-							<div>
-								<IconButton
-									className="c9-cta-inspector-media"
-									label={__("Edit image", "c9-blocks")}
-									icon="format-image"
-									onClick={open}
-								>
-									{__("Select Image", "c9-blocks")}
-								</IconButton>
-
-								{imgURL && !!imgURL.length && (
-									<IconButton
-										className="c9-cta-inspector-media"
-										label={__("Remove Image", "c9-blocks")}
-										icon="dismiss"
-										onClick={onRemoveImage}
-									>
-										{__("Remove", "c9-blocks")}
-									</IconButton>
-								)}
-							</div>
-						)}
-					/>
-
-					{imgURL && !!imgURL.length && (
-						<RangeControl
-							label={__("Image Opacity", "c9-blocks")}
-							value={dimRatio}
-							onChange={value => setAttributes({ dimRatio: value })}
-							min={0}
-							max={100}
-							step={10}
-						/>
-					)}
-
-					<PanelColorSettings
-						title={__("Background Color", "c9-blocks")}
-						initialOpen={false}
-						colorSettings={[
-							{
-								value: ctaBackgroundColor,
-								onChange: value => setAttributes({ ctaBackgroundColor: value }),
-								label: __("Overlay Color", "c9-blocks")
-							}
-						]}
-					/>
-				</PanelBody>
-
-				<PanelBody
-					title={__("Button Options", "c9-blocks")}
+					title={__("Button Configurations", "c9-blocks")}
 					initialOpen={false}
 				>
 					<ToggleControl
@@ -230,6 +143,196 @@ export default class Inspector extends Component {
 						onChange={value => {
 							setAttributes({ buttonShape: value });
 						}}
+					/>
+				</PanelBody>
+
+				<PanelColorSettings
+					initialOpen={false}
+					title={__("Text Color", "c9-blocks")}
+					colorSettings={[
+						{
+							value: ctaTextColor,
+							onChange: value => setAttributes({ ctaTextColor: value }),
+							label: __("Text Color", "c9-blocks")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							textColor: ctaTextColor,
+							fallbackTextColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
+				<PanelColorSettings
+					initialOpen={false}
+					title={__("Button Color", "c9-blocks")}
+					colorSettings={[
+						{
+							value: buttonBackgroundColor,
+							onChange: value =>
+								setAttributes({ buttonBackgroundColor: value }),
+							label: __("Button Color", "c9-blocks")
+						},
+						{
+							value: buttonTextColor,
+							onChange: value => setAttributes({ buttonTextColor: value }),
+							label: __("Button Text Color", "c9-blocks")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							backgroundColor: buttonBackgroundColor,
+							fallbackBackgroundColor: "black",
+							textColor: buttonTextColor,
+							fallbackTextColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
+
+				<PanelBody title={__("Background", "c9-blocks")} initialOpen={false}>
+					<MediaUpload
+						id="bg-image-select"
+						label={__("Background Image", "c9-blocks")}
+						onSelect={onSelectImage}
+						type="image"
+						value={imgID}
+						render={({ open }) => (
+							<div>
+								<IconButton
+									label={__("Edit image", "c9-blocks")}
+									icon="format-image"
+									onClick={open}
+								>
+									{__("Background Image", "c9-blocks")}
+								</IconButton>
+
+								{imgURL && !!imgURL.length && (
+									<div>
+										<IconButton
+											label={__("Remove Image", "c9-blocks")}
+											icon="dismiss"
+											onClick={onRemoveImage}
+										>
+											{__("Remove", "c9-blocks")}
+										</IconButton>
+
+										<h5>Position</h5>
+										<FocalPointPicker
+											label={__("Focal Point Picker", "c9-blocks")}
+											url={imgURL}
+											value={focalPoint}
+											onChange={value => setAttributes({ focalPoint: value })}
+										/>
+									</div>
+								)}
+
+								<span>{__("Background Color", "c9-blocks")}</span>
+								<ColorPalette
+									label={__("Background Color", "c9-blocks")}
+									value={ctaBackgroundColor}
+									onChange={value =>
+										setAttributes({ ctaBackgroundColor: value })
+									}
+								/>
+
+								{ctaBackgroundColor && !!ctaBackgroundColor.length && (
+									<RangeControl
+										beforeIcon="arrow-left-alt2"
+										afterIcon="arrow-right-alt2"
+										label={__("Opacity", "c9-blocks")}
+										value={ctaBackgroundOpacity}
+										onChange={ctaBackgroundOpacity =>
+											setAttributes({ ctaBackgroundOpacity })
+										}
+										min={1}
+										max={10}
+									/>
+								)}
+
+								{ctaBackgroundColor && imgURL && !!imgURL.length && (
+									<SelectControl
+										label={__("Blend Mode", "c9-blocks")}
+										value={blendMode}
+										options={[
+											{ value: "overlay", label: __("Overlay", "c9-blocks") },
+											{ value: "normal", label: __("Normal", "c9-blocks") },
+											{
+												value: "multiply",
+												label: __("Multiply", "c9-blocks")
+											},
+											{ value: "screen", label: __("Screen", "c9-blocks") },
+											{ value: "darken", label: __("Darken", "c9-blocks") },
+											{ value: "lighten", label: __("Lighten", "c9-blocks") },
+											{
+												value: "color-dodge",
+												label: __("Color Dodge", "c9-blocks")
+											},
+											{
+												value: "color-burn",
+												label: __("Color Burn", "c9-blocks")
+											},
+											{
+												value: "hard-light",
+												label: __("Hard Light", "c9-blocks")
+											},
+											{
+												value: "soft-light",
+												label: __("Soft Light", "c9-blocks")
+											},
+											{
+												value: "difference",
+												label: __("Difference", "c9-blocks")
+											},
+											{
+												value: "exclusion",
+												label: __("Exclusion", "c9-blocks")
+											},
+											{ value: "hue", label: __("Hue", "c9-blocks") },
+											{
+												value: "saturation",
+												label: __("Saturation", "c9-blocks")
+											},
+											{ value: "color", label: __("Color", "c9-blocks") },
+											{
+												value: "luminosity",
+												label: __("Luminosity", "c9-blocks")
+											}
+										]}
+										onChange={blendMode => setAttributes({ blendMode })}
+									/>
+								)}
+
+								<hr />
+
+								{imgURL && !!imgURL.length && (
+									<div>
+										<h5>{__("Attachment", "c9-blocks")}</h5>
+										<ToggleControl
+											label={__("Scroll | Fixed", "c9-blocks")}
+											checked={imgAttach}
+											onChange={imgAttach => setAttributes({ imgAttach })}
+										/>
+
+										<hr />
+
+										<div>
+											<h5>{__("Size", "c9-blocks")}</h5>
+											<SelectControl
+												help={__(
+													"Choose between cover or contain.",
+													"c9-blocks"
+												)}
+												options={sizeTypes}
+												value={imgSize}
+												onChange={value => setAttributes({ imgSize: value })}
+											/>
+										</div>
+									</div>
+								)}
+							</div>
+						)}
 					/>
 				</PanelBody>
 			</InspectorControls>
