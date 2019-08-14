@@ -42,29 +42,29 @@ export default class Inspector extends Component {
 
 		// Button style values
 		const buttonStyleOptions = [
-			{ value: "ab-share-icon-text", label: __("Icon and Text") },
-			{ value: "ab-share-icon-only", label: __("Icon Only") },
-			{ value: "ab-share-text-only", label: __("Text Only") }
+			{ value: "c9-share-icon-text", label: __("Icon and Text") },
+			{ value: "c9-share-icon-only", label: __("Icon Only") },
+			{ value: "c9-share-text-only", label: __("Text Only") }
 		];
 
 		// Button shape values
 		const buttonShapeOptions = [
-			{ value: "ab-share-shape-square", label: __("Square") },
-			{ value: "ab-share-shape-rounded", label: __("Rounded Square") },
-			{ value: "ab-share-shape-circular", label: __("Circular") }
+			{ value: "c9-share-shape-square", label: __("Square") },
+			{ value: "c9-share-shape-rounded", label: __("Rounded Square") },
+			{ value: "c9-share-shape-circular", label: __("Circular") }
 		];
 
 		// Button size values
 		const shareButtonSizeOptions = [
-			{ value: "ab-share-size-small", label: __("Small") },
-			{ value: "ab-share-size-medium", label: __("Medium") },
-			{ value: "ab-share-size-large", label: __("Large") }
+			{ value: "c9-share-size-small", label: __("Small") },
+			{ value: "c9-share-size-medium", label: __("Medium") },
+			{ value: "c9-share-size-large", label: __("Large") }
 		];
 
 		// Button color values
 		const shareButtonColorOptions = [
-			{ value: "ab-share-color-standard", label: __("Standard") },
-			{ value: "ab-share-color-social", label: __("Social Colors") }
+			{ value: "c9-share-color-standard", label: __("Standard") },
+			{ value: "c9-share-color-social", label: __("Social Colors") }
 		];
 
 		return (

@@ -19,17 +19,26 @@ export default class ShareLinks extends Component {
 	}
 
 	render() {
-		const { className = "" } = this.props;
+		const {
+			attributes: {
+				shareButtonStyle,
+				shareButtonShape,
+				shareButtonSize,
+				shareButtonColor,
+				shareAlignment
+			},
+			className = ""
+		} = this.props;
 
 		return (
 			<div
 				className={classnames(
 					applyFilters("c9-blocks.blocks.className", className),
-					this.props.attributes.shareButtonStyle,
-					this.props.attributes.shareButtonShape,
-					this.props.attributes.shareButtonSize,
-					this.props.attributes.shareButtonColor,
-					this.props.attributes.shareAlignment,
+					shareButtonStyle,
+					shareButtonShape,
+					shareButtonSize,
+					shareButtonColor,
+					shareAlignment,
 					"c9-block-sharing"
 				)}
 			>

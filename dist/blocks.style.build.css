@@ -202,7 +202,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
     position: absolute !important;
     width: 1px;
     word-wrap: normal !important; }
-  .c9-block-sharing.c9-share-text-only i {
+  .c9-block-sharing.c9-share-text-only svg {
     display: none; }
   .c9-block-sharing.c9-share-shape-square a {
     border-radius: 0; }

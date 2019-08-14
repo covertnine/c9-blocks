@@ -84,11 +84,6 @@ export default class CallToAction extends Component {
 			isSelectedBlockInRoot
 		} = this.props;
 
-		const styles = {
-			backgroundColor: ctaBackgroundColor ? ctaBackgroundColor : undefined,
-			textAlign: buttonAlignment ? buttonAlignment : undefined
-		};
-
 		return (
 			<div
 				style={this.c9BackgroundStyles(
@@ -106,6 +101,7 @@ export default class CallToAction extends Component {
 						applyFilters("c9-blocks.blocks.className", className),
 						"c9-block-cta",
 						"container",
+						// eslint-disable-next-line no-extra-boolean-cast
 						!!imgURL ? "c9-cta-has-background" : null
 					],
 					{

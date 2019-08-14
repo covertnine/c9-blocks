@@ -81,22 +81,6 @@ export default class Edit extends Component {
 				</BlockControls>
 				<Inspector {...{ setAttributes, ...this.props }} />
 				<CallToAction {...this.props}>
-					{/* {imgURL && !!imgURL.length && (
-						<div className="c9-cta-image-wrap">
-							<img
-								className={classnames(
-									"c9-cta-image",
-									this.dimRatioToClass(dimRatio),
-									{
-										"has-background-dim": dimRatio !== 0
-									}
-								)}
-								src={imgURL}
-								alt={imgAlt}
-							/>
-						</div>
-					)} */}
-
 					<div
 						className={
 							"c9-cta-content col-12 " + this.layoutClass(ctaLayout, "text")
