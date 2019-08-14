@@ -229,7 +229,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(13);
+var	fixUrls = __webpack_require__(14);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -865,8 +865,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deregister_blocks___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__deregister_blocks__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__register_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__register_filters__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_add_sidebar_jsx__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page_template_selector_add_template_status_jsx__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_styles__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_styles___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__register_styles__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sidebar_add_sidebar_jsx__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__page_template_selector_add_template_status_jsx__ = __webpack_require__(27);
 /**
  * Internal dependencies
  */
@@ -936,9 +938,12 @@ if (updateCategory) {
 
 
 
+
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
+
+const { unregisterBlockType } = wp.blocks;
 
 let loadBlocksEditor = null;
 
@@ -952,8 +957,8 @@ if (typeof window._wpLoadBlockEditor !== "undefined") {
 
 if (loadBlocksEditor) {
 	loadBlocksEditor.then(() => {
-		wp.blocks.unregisterBlockType("core/verse");
-        wp.blocks.unregisterBlockType("core/columns");
+		unregisterBlockType("core/verse");
+		unregisterBlockType("core/columns");
 	});
 }
 
@@ -983,13 +988,39 @@ addFilter(
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+const { registerBlockStyle } = wp.blocks;
+
+let loadBlocksEditor = null;
+
+if (typeof window._wpLoadBlockEditor !== "undefined") {
+	// Using Gutenberg plugin
+	loadBlocksEditor = window._wpLoadBlockEditor;
+} else if (typeof window._wpLoadGutenbergEditor !== "undefined") {
+	// Using WP core Gutenberg
+	loadBlocksEditor = window._wpLoadGutenbergEditor;
+}
+
+if (loadBlocksEditor) {
+	loadBlocksEditor.then(() => {
+		// registerBlockStyle("core/button", {
+		// 	name: "custom-button-style",
+		// 	label: "My Button Style"
+		// });
+	});
+}
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_templates_templates_modal_jsx__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_c9_feather_logo_gray_svg__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_templates_templates_modal_jsx__ = __webpack_require__(21);
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 
@@ -1097,11 +1128,11 @@ registerPlugin("c9-blocks", {
 });
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(12);
+var content = __webpack_require__(13);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1147,7 +1178,7 @@ if(false) {
 }
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -1156,7 +1187,7 @@ exports.push([module.i, "/**\n * Editor Styles\n */\n.edit-post-pinned-plugins\n
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 
@@ -1251,11 +1282,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1281,22 +1312,22 @@ var SvgC9FeatherLogoGray = function SvgC9FeatherLogoGray(props) {
 /* harmony default export */ __webpack_exports__["a"] = (SvgC9FeatherLogoGray);
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(16);
-} else {
   module.exports = __webpack_require__(17);
+} else {
+  module.exports = __webpack_require__(18);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1328,7 +1359,7 @@ unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_Y
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1350,7 +1381,7 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var _assign = __webpack_require__(3);
-var checkPropTypes = __webpack_require__(18);
+var checkPropTypes = __webpack_require__(19);
 
 // TODO: this is special because it gets imported during build.
 
@@ -3237,7 +3268,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3253,7 +3284,7 @@ module.exports = react;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(19);
+  var ReactPropTypesSecret = __webpack_require__(20);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -3347,7 +3378,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3366,14 +3397,16 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TemplatesModalWithSelect; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__editor_scss__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__editor_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__section_button_jsx__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__editor_scss__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__editor_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__templates_markup__ = __webpack_require__(26);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 const { __ } = wp.i18n;
@@ -3386,15 +3419,41 @@ const { createBlock, rawHandler } = wp.blocks;
 
 
 
+
+// templates
+
+
 class TemplatesModal extends Component {
 	constructor() {
 		super(...arguments);
 	}
 
+	markupToBlock(templateObj, canUserUseUnfilteredHTML) {
+		let blockObj = Object.assign({}, templateObj);
+		for (let key of Object.keys(blockObj)) {
+			blockObj[key] = rawHandler({
+				HTML: blockObj[key],
+				mode: "BLOCKS",
+				canUserUseUnfilteredHTML
+			});
+		}
+
+		return blockObj;
+	}
+
 	render() {
 		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
 
-		const layouts = {
+		// define section and layout templates
+
+		const sections = _extends({
+			test: [createBlock("core/cover", { align: "full" }), createBlock("core/button", {
+				text: __("Layout Switcher", "c9-blocks"),
+				align: "center"
+			})]
+		}, this.markupToBlock(__WEBPACK_IMPORTED_MODULE_3__templates_markup__["a" /* default */]["sections"], canUserUseUnfilteredHTML));
+
+		const layouts = _extends({
 			default: [createBlock("core/paragraph", {})],
 			hero: [createBlock("core/cover", { align: "full" }), createBlock("core/button", {
 				text: __("Layout Switcher", "c9-blocks"),
@@ -3406,25 +3465,8 @@ class TemplatesModal extends Component {
 			featured: [createBlock("core/heading", {}), createBlock("core/spacer", { height: "10" }), createBlock("core/media-text", { align: "full" }), createBlock("core/spacer", { height: "40" }), createBlock("core/quote", {}), createBlock("core/spacer", { height: "20" }), createBlock("core/media-text", { mediaPosition: "right" }), createBlock("core/paragraph", {
 				placeholder: __("Layout Switcher", "c9-blocks")
 			})],
-			nested: [createBlock("c9-blocks/grid", {}, [createBlock("c9-blocks/column-container", { columns: 3, layout: "c9-3-col-equal" }, [createBlock("c9-blocks/column", {}, [createBlock("core/button", { text: "Make this Recipe" })])])])],
-			markdown: rawHandler({
-				HTML: `<!-- wp:c9-blocks/horizontal-tabs {"tabActive":"tab-apple","buttonsAlign":"center","tabsData":[{"slug":"tab-apple","title":"apple"},{"slug":"tab-banana","title":"banana"}],"instanceId":0} -->
-				<div class="c9-horizontal-tabs" data-tab-active="tab-apple"><ul class="nav nav-tabs d-flex justify-content-center" role="tablist"><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-apple-0" class="nav-link active" id="tab-button-tab-apple">apple</a></li><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-banana-0" class="nav-link" id="tab-button-tab-banana">banana</a></li></ul><div class="c9-tabs-content tab-content"><!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-apple","tabActive":"tab-apple","id":0} -->
-				<div class="c9-horizontal-tabs-tab tab-pane fade show active" role="tabpanel" id="tab-tab-apple-0" aria-labelledby="tab-apple"><!-- wp:c9-blocks/heading {"heading":"test"} -->
-				<div class="section-heading c9-heading text-left"><h1 class="h">test</h1></div>
-				<!-- /wp:c9-blocks/heading --></div>
-				<!-- /wp:c9-blocks/horizontal-tabs-tab -->
-				
-				<!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-banana","tabActive":"tab-apple","id":0} -->
-				<div class="c9-horizontal-tabs-tab tab-pane fade" role="tabpanel" id="tab-tab-banana-0" aria-labelledby="tab-banana"><!-- wp:paragraph -->
-				<p>easdw</p>
-				<!-- /wp:paragraph --></div>
-				<!-- /wp:c9-blocks/horizontal-tabs-tab --></div></div>
-				<!-- /wp:c9-blocks/horizontal-tabs -->`,
-				mode: "BLOCKS",
-				canUserUseUnfilteredHTML
-			})
-		};
+			nested: [createBlock("c9-blocks/grid", {}, [createBlock("c9-blocks/column-container", { columns: 3, layout: "c9-3-col-equal" }, [createBlock("c9-blocks/column", {}, [createBlock("core/button", { text: "Make this Recipe" })])])])]
+		}, this.markupToBlock(__WEBPACK_IMPORTED_MODULE_3__templates_markup__["a" /* default */]["layouts"], canUserUseUnfilteredHTML));
 
 		return React.createElement(
 			Modal,
@@ -3492,6 +3534,40 @@ class TemplatesModal extends Component {
 								),
 								React.createElement(
 									"div",
+									{ className: "c9-section-options" },
+									React.createElement(__WEBPACK_IMPORTED_MODULE_1__section_button_jsx__["a" /* default */], {
+										icon: "wordpress",
+										label: __("Test", "c9-blocks"),
+										section: sections.test
+									}),
+									React.createElement(
+										"button",
+										{
+											onClick: () => {
+												resetBlocks([]);
+											},
+											className: "btn btn-danger"
+										},
+										React.createElement(Icon, { icon: "trash" }),
+										React.createElement(
+											"span",
+											null,
+											__("Clear page", "c9-blocks")
+										)
+									)
+								)
+							);
+						case "pages":
+							return React.createElement(
+								Fragment,
+								null,
+								React.createElement(
+									"p",
+									null,
+									tab.title
+								),
+								React.createElement(
+									"div",
 									{ className: "c9-layout-options" },
 									React.createElement(__WEBPACK_IMPORTED_MODULE_0__layout_button_jsx__["a" /* default */], {
 										icon: "wordpress",
@@ -3512,32 +3588,22 @@ class TemplatesModal extends Component {
 										icon: "wordpress",
 										label: __("Markdown", "c9-blocks"),
 										layout: layouts.markdown
-									})
-								),
-								React.createElement(
-									"button",
-									{
-										onClick: () => {
-											resetBlocks([]);
-										},
-										className: "btn btn-danger"
-									},
-									React.createElement(Icon, { icon: "trash" }),
+									}),
 									React.createElement(
-										"span",
-										null,
-										__("Clear page", "c9-blocks")
+										"button",
+										{
+											onClick: () => {
+												resetBlocks([]);
+											},
+											className: "btn btn-danger"
+										},
+										React.createElement(Icon, { icon: "trash" }),
+										React.createElement(
+											"span",
+											null,
+											__("Clear page", "c9-blocks")
+										)
 									)
-								)
-							);
-						case "pages":
-							return React.createElement(
-								Fragment,
-								null,
-								React.createElement(
-									"p",
-									null,
-									tab.title
 								)
 							);
 						default:
@@ -3571,7 +3637,7 @@ const TemplatesModalWithSelect = compose([withSelect((select, { clientId }) => {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3606,11 +3672,44 @@ const LayoutButton = ({ label, icon, layout, resetBlocks, insertBlocks }) => {
 })(LayoutButton));
 
 /***/ }),
-/* 22 */
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const { Icon } = wp.components;
+const { withDispatch } = wp.data;
+
+const SectionButton = ({ label, icon, section, insertBlocks }) => {
+	return React.createElement(
+		"button",
+		{
+			onClick: () => {
+				insertBlocks(section);
+			}
+		},
+		React.createElement(Icon, { icon: icon }),
+		React.createElement(
+			"span",
+			null,
+			label
+		)
+	);
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (withDispatch(dispatch => {
+	const { insertBlocks } = dispatch("core/editor");
+
+	return {
+		insertBlocks
+	};
+})(SectionButton));
+
+/***/ }),
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(23);
+var content = __webpack_require__(25);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -3656,20 +3755,48 @@ if(false) {
 }
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
 // Module
-exports.push([module.i, ".c9-templates-modal .components-modal__header {\n  border-bottom: none; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {\n  margin-top: -24px; }\n\n@media (min-width: 600px) {\n  .c9-templates-modal {\n    min-width: 600px;\n    max-width: 600px;\n    margin-left: -300px;\n    transform: none;\n    top: 112px; } }\n\n@media (min-width: 840px) {\n  .c9-templates-modal {\n    min-width: 800px;\n    max-width: 800px;\n    margin-left: -400px;\n    transform: none; } }\n\n.c9-templates-modal .components-modal__header .components-modal__icon-container svg {\n  display: block;\n  margin-right: 10px; }\n\n.c9-templates-modal .components-modal__header .components-modal__header-heading {\n  font-weight: 600; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options {\n  display: grid;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  grid-template-columns: repeat(6, 1fr); }\n  .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button {\n    border-width: 1px;\n    border-style: solid;\n    border-color: #d8d8d8 #d1d1d1 #bababa;\n    border-radius: 3px;\n    box-shadow: inset 0 -1px 0 #ccc;\n    padding: 5px; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button:active {\n      border-color: #999;\n      box-shadow: insert 0 1px 0 #999; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button span {\n      display: block;\n      font-size: 0.8rem;\n      padding: 2px 0; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {\n  padding: 12px 16px;\n  color: inherit; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab:focus {\n    outline: none; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab.is-active {\n    position: relative;\n    border-bottom: 2px solid #00a0d2;\n    z-index: 1; }\n", ""]);
+exports.push([module.i, ".c9-templates-modal .components-modal__header {\n  border-bottom: none; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {\n  margin-top: -24px; }\n\n@media (min-width: 600px) {\n  .c9-templates-modal {\n    min-width: 600px;\n    max-width: 600px;\n    margin-left: -300px;\n    transform: none;\n    top: 112px; } }\n\n@media (min-width: 840px) {\n  .c9-templates-modal {\n    min-width: 800px;\n    max-width: 800px;\n    margin-left: -400px;\n    transform: none; } }\n\n.c9-templates-modal .components-modal__header .components-modal__icon-container svg {\n  display: block;\n  margin-right: 10px; }\n\n.c9-templates-modal .components-modal__header .components-modal__header-heading {\n  font-weight: 600; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options, .c9-templates-modal .c9-component-modal-tab-panel .c9-section-options {\n  display: grid;\n  grid-column-gap: 1rem;\n  grid-row-gap: 1rem;\n  grid-template-columns: repeat(6, 1fr); }\n  .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button, .c9-templates-modal .c9-component-modal-tab-panel .c9-section-options button {\n    border-width: 1px;\n    border-style: solid;\n    border-color: #d8d8d8 #d1d1d1 #bababa;\n    border-radius: 3px;\n    box-shadow: inset 0 -1px 0 #ccc;\n    padding: 5px; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button:active, .c9-templates-modal .c9-component-modal-tab-panel .c9-section-options button:active {\n      border-color: #999;\n      box-shadow: insert 0 1px 0 #999; }\n    .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button span, .c9-templates-modal .c9-component-modal-tab-panel .c9-section-options button span {\n      display: block;\n      font-size: 0.8rem;\n      padding: 2px 0; }\n\n.c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {\n  padding: 12px 16px;\n  color: inherit; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab:focus {\n    outline: none; }\n  .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab.is-active {\n    position: relative;\n    border-bottom: 2px solid #00a0d2;\n    z-index: 1; }\n", ""]);
 
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(25);
+const templateMarkups = {
+    layouts: {
+        markdown: `<!-- wp:c9-blocks/horizontal-tabs {"tabActive":"tab-apple","buttonsAlign":"center","tabsData":[{"slug":"tab-apple","title":"apple"},{"slug":"tab-banana","title":"banana"}],"instanceId":0} -->
+        <div class="c9-horizontal-tabs" data-tab-active="tab-apple"><ul class="nav nav-tabs d-flex justify-content-center" role="tablist"><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-apple-0" class="nav-link active" id="tab-button-tab-apple">apple</a></li><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-banana-0" class="nav-link" id="tab-button-tab-banana">banana</a></li></ul><div class="c9-tabs-content tab-content"><!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-apple","tabActive":"tab-apple","id":0} -->
+        <div class="c9-horizontal-tabs-tab tab-pane fade show active" role="tabpanel" id="tab-tab-apple-0" aria-labelledby="tab-apple"><!-- wp:c9-blocks/heading {"heading":"test"} -->
+        <div class="section-heading c9-heading text-left"><h1 class="h">test</h1></div>
+        <!-- /wp:c9-blocks/heading --></div>
+        <!-- /wp:c9-blocks/horizontal-tabs-tab -->
+        
+        <!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-banana","tabActive":"tab-apple","id":0} -->
+        <div class="c9-horizontal-tabs-tab tab-pane fade" role="tabpanel" id="tab-tab-banana-0" aria-labelledby="tab-banana"><!-- wp:paragraph -->
+        <p>easdw</p>
+        <!-- /wp:paragraph --></div>
+        <!-- /wp:c9-blocks/horizontal-tabs-tab --></div></div>
+        <!-- /wp:c9-blocks/horizontal-tabs -->`
+    },
+    sections: {
+
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (templateMarkups);
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__editor_scss__);
 const { registerPlugin } = wp.plugins;
 const { PluginPostStatusInfo } = wp.editPost;
@@ -3726,11 +3853,11 @@ class PageTemplateSelector extends Component {
 // registerPlugin("post-status-info-test", { render: PageTemplateSelector });
 
 /***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(26);
+var content = __webpack_require__(29);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -3776,7 +3903,7 @@ if(false) {
 }
 
 /***/ }),
-/* 26 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);

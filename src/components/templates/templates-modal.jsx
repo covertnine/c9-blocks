@@ -6,15 +6,46 @@ const { withDispatch, withSelect } = wp.data;
 const { createBlock, rawHandler } = wp.blocks;
 
 import LayoutButton from "./layout-button.jsx";
+import SectionButton from "./section-button.jsx";
 import "./editor.scss";
+
+// templates
+import templateMarkups from "./templates-markup";
 
 class TemplatesModal extends Component {
 	constructor() {
 		super(...arguments);
 	}
 
+	markupToBlock(templateObj, canUserUseUnfilteredHTML) {
+		let blockObj = Object.assign({}, templateObj);
+		for (let key of Object.keys(blockObj)) {
+			blockObj[key] = rawHandler({
+				HTML: blockObj[key],
+				mode: "BLOCKS",
+				canUserUseUnfilteredHTML
+			});
+		}
+
+		return blockObj;
+	}
+
 	render() {
 		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
+
+		// define section and layout templates
+
+		const sections = {
+			test: [
+				createBlock("core/cover", { align: "full" }),
+				createBlock("core/button", {
+					text: __("Layout Switcher", "c9-blocks"),
+					align: "center"
+				})
+			],
+			// convert markup to actual blocks
+			...this.markupToBlock(templateMarkups["sections"], canUserUseUnfilteredHTML)
+		};
 
 		const layouts = {
 			default: [createBlock("core/paragraph", {})],
@@ -56,23 +87,8 @@ class TemplatesModal extends Component {
 					)
 				])
 			],
-			markdown: rawHandler({
-				HTML: `<!-- wp:c9-blocks/horizontal-tabs {"tabActive":"tab-apple","buttonsAlign":"center","tabsData":[{"slug":"tab-apple","title":"apple"},{"slug":"tab-banana","title":"banana"}],"instanceId":0} -->
-				<div class="c9-horizontal-tabs" data-tab-active="tab-apple"><ul class="nav nav-tabs d-flex justify-content-center" role="tablist"><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-apple-0" class="nav-link active" id="tab-button-tab-apple">apple</a></li><li class="nav-item"><a data-toggle="tab" role="tab" href="#tab-tab-banana-0" class="nav-link" id="tab-button-tab-banana">banana</a></li></ul><div class="c9-tabs-content tab-content"><!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-apple","tabActive":"tab-apple","id":0} -->
-				<div class="c9-horizontal-tabs-tab tab-pane fade show active" role="tabpanel" id="tab-tab-apple-0" aria-labelledby="tab-apple"><!-- wp:c9-blocks/heading {"heading":"test"} -->
-				<div class="section-heading c9-heading text-left"><h1 class="h">test</h1></div>
-				<!-- /wp:c9-blocks/heading --></div>
-				<!-- /wp:c9-blocks/horizontal-tabs-tab -->
-				
-				<!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-banana","tabActive":"tab-apple","id":0} -->
-				<div class="c9-horizontal-tabs-tab tab-pane fade" role="tabpanel" id="tab-tab-banana-0" aria-labelledby="tab-banana"><!-- wp:paragraph -->
-				<p>easdw</p>
-				<!-- /wp:paragraph --></div>
-				<!-- /wp:c9-blocks/horizontal-tabs-tab --></div></div>
-				<!-- /wp:c9-blocks/horizontal-tabs -->`,
-				mode: "BLOCKS",
-				canUserUseUnfilteredHTML
-			})
+			// convert markup to actual blocks
+			...this.markupToBlock(templateMarkups["layouts"], canUserUseUnfilteredHTML)
 		};
 
 		return (
@@ -127,6 +143,28 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										<p>{tab.title}</p>
+										<div className="c9-section-options">
+											<SectionButton
+												icon="wordpress"
+												label={__("Test", "c9-blocks")}
+												section={sections.test}
+											/>
+											<button
+												onClick={() => {
+													resetBlocks([]);
+												}}
+												className="btn btn-danger"
+											>
+												<Icon icon="trash" />
+												<span>{__("Clear page", "c9-blocks")}</span>
+											</button>
+										</div>
+									</Fragment>
+								);
+							case "pages":
+								return (
+									<Fragment>
+										<p>{tab.title}</p>
 										<div className="c9-layout-options">
 											<LayoutButton
 												icon="wordpress"
@@ -148,22 +186,16 @@ class TemplatesModal extends Component {
 												label={__("Markdown", "c9-blocks")}
 												layout={layouts.markdown}
 											/>
+											<button
+												onClick={() => {
+													resetBlocks([]);
+												}}
+												className="btn btn-danger"
+											>
+												<Icon icon="trash" />
+												<span>{__("Clear page", "c9-blocks")}</span>
+											</button>
 										</div>
-										<button
-											onClick={() => {
-												resetBlocks([]);
-											}}
-											className="btn btn-danger"
-										>
-											<Icon icon="trash" />
-											<span>{__("Clear page", "c9-blocks")}</span>
-										</button>
-									</Fragment>
-								);
-							case "pages":
-								return (
-									<Fragment>
-										<p>{tab.title}</p>
 									</Fragment>
 								);
 							default:

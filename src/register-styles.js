@@ -1,4 +1,4 @@
-const { unregisterBlockType } = wp.blocks;
+const { registerBlockStyle } = wp.blocks;
 
 let loadBlocksEditor = null;
 
@@ -12,7 +12,9 @@ if (typeof window._wpLoadBlockEditor !== "undefined") {
 
 if (loadBlocksEditor) {
 	loadBlocksEditor.then(() => {
-		unregisterBlockType("core/verse");
-		unregisterBlockType("core/columns");
+		// registerBlockStyle("core/button", {
+		// 	name: "custom-button-style",
+		// 	label: "My Button Style"
+		// });
 	});
 }
