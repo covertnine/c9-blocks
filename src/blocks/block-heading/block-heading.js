@@ -20,6 +20,10 @@ const { __ } = wp.i18n;
 // Register block
 const { registerBlockType } = wp.blocks;
 
+const { compose } = wp.compose;
+const { withSelect } = wp.data;
+const { withViewportMatch } = wp.viewport;
+
 import attributes from "./attributes";
 
 // Register the block
@@ -28,8 +32,7 @@ registerBlockType("c9-blocks/heading", {
 	description: __("Add a custom Section Heading.", "c9-blocks"),
 	icon: iconEl,
 	category: "c9-blocks",
-	supports: {
-	},
+	supports: {},
 	keywords: [
 		__("heading", "c9-blocks"),
 		__("c9", "c9-blocks"),
@@ -39,12 +42,20 @@ registerBlockType("c9-blocks/heading", {
 	attributes: attributes,
 
 	// Render the block components
-	edit: props => {
-		return <Edit {...props} />;
-	},
+	edit: compose(
+		withViewportMatch({ isLargeViewport: "medium" }),
+		withSelect((select, { clientId, isLargeViewport, isCollapsed }) => {
+			const { getBlockRootClientId, getSettings } = select("core/block-editor");
+			const settings = getSettings();
+			return {
+				isCollapsed:
+					isCollapsed ||
+					!isLargeViewport ||
+					(!settings.hasFixedToolbar && !!getBlockRootClientId(clientId))
+			};
+		})
+	)(Edit),
 
 	// Save the attributes and markup
-	save: props => {
-		return <Save {...props} />;
-	}
+	save: Save
 });

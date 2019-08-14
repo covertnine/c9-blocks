@@ -38,6 +38,7 @@ export default class Edit extends Component {
 		// Setup the attributes
 		const {
 			setAttributes,
+			isCollapsed,
 			attributes: {
 				heading,
 				displayLevel,
@@ -49,7 +50,7 @@ export default class Edit extends Component {
 				weight,
 				overrideStyle,
 				subheading,
-				addSubheading
+				addSubheading,
 			}
 		} = this.props;
 
@@ -66,6 +67,7 @@ export default class Edit extends Component {
 						maxLevel={7}
 						selectedLevel={tagLevel}
 						onChange={newLevel => setAttributes({ tagLevel: newLevel })}
+						isCollapsed={isCollapsed}
 					/>
 					<SubheadingToolbar
 						value={addSubheading}

@@ -1,4 +1,8 @@
 const attributes = {
+	isCollapsed: {
+		type: "boolean",
+		default: false
+	},
 	heading: {
 		type: "string",
 		default: ""
