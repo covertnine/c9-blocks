@@ -108,7 +108,7 @@ export default class PostGridImage extends Component {
 									<div className="components-placeholder__label">
 										{__(
 											"There is no image generated for the selected image size, so a fallback image size is being used.",
-											"atomic-blocks"
+											"c9-blocks"
 										)}
 									</div>
 									<div className="c9-post-grid-image-help">
@@ -117,11 +117,11 @@ export default class PostGridImage extends Component {
 											rel="noreferrer noopener"
 											aria-label={__(
 												"Learn more about image sizes (opens in a new tab)",
-												"atomic-blocks"
+												"c9-blocks"
 											)}
-											href="https://github.com/studiopress/atomic-blocks/wiki/Post-Grid-Block#featured-image-sizes"
+											href="https://github.com"
 										>
-											{__("Learn more ", "atomic-blocks")}
+											{__("Learn more ", "c9-blocks")}
 											<span>&rarr;</span>
 										</a>
 									</div>

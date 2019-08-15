@@ -6,7 +6,7 @@ const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 
-const { Button, PanelBody } = wp.components;
+const { Button, PanelBody, Dashicon } = wp.components;
 
 import "./editor.scss";
 import Logo from "../../assets/c9-feather-logo-gray.svg";
@@ -76,7 +76,7 @@ class C9 extends Component {
 				{"templates" === isModalOpen ? (
 					<TemplatesModal
 						title="Templates"
-						icon="icon"
+						icon={<Dashicon icon={"schedule"}/>}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
 					/>
 				) : (
