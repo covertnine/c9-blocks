@@ -23,3 +23,4 @@ import "./blocks/block-toggles/block-toggles.js";
 import "./blocks/block-toggles/components/toggle.js";
 import "./blocks/block-post-container/block-post-container.js";
 import "./blocks/block-post-grid/block-post-grid.js";
+import "./blocks/block-carousel/block-carousel.js";
