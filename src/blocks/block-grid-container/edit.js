@@ -45,7 +45,7 @@ class Edit extends Component {
 				<Container {...this.props}>
 					<InnerBlocks
 						template={this.getRowsTemplate(rows)}
-						templateLock="insert"
+						templateLock="all"
 						allowedBlocks={ALLOWED_BLOCKS}
 					/>
 				</Container>
