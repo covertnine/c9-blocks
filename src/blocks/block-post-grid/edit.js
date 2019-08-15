@@ -7,6 +7,9 @@ import classnames from "classnames";
 import Inspector from "./components/inspector";
 import PostGridImage from "./components/image";
 
+import WidthToolbar from "./components/width-toolbar";
+import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
+
 const { Component, Fragment } = wp.element;
 
 const { __ } = wp.i18n;
@@ -44,6 +47,17 @@ export default class Edit extends Component {
 
 		// Check the post type
 		const isPost = attributes.postType === "post";
+
+		let currWidth;
+		if (attributes.align.length != 0) {
+			if (attributes.containerWidth == "container") {
+				currWidth = "wide";
+			} else if (attributes.containerWidth == "container-fluid") {
+				currWidth = "full";
+			} else {
+				currWidth = "narrow";
+			}
+		}
 
 		if (!hasPosts) {
 			return (
@@ -102,6 +116,32 @@ export default class Edit extends Component {
 			<Fragment>
 				<Inspector {...{ setAttributes, ...this.props }} />
 				<BlockControls>
+				<WidthToolbar
+						value={currWidth}
+						onChange={value => {
+							if (value == "wide") {
+								setAttributes({ containerWidth: "container", align: "wide" });
+							} else if (value == "full") {
+								setAttributes({
+									containerWidth: "container-fluid",
+									align: "full"
+								});
+							} else if (value == "narrow") {
+								setAttributes({
+									containerWidth: "container-narrow",
+									align: "narrow"
+								});
+							} else {
+								setAttributes({ containerWidth: "container", align: "" });
+							}
+						}}
+					/>
+					<VerticalAlignmentToolbar
+						value={attributes.verticalAlign}
+						onChange={value => {
+							setAttributes({ verticalAlign: value });
+						}}
+					/>
 					<Toolbar controls={layoutControls} />
 				</BlockControls>
 				<SectionTag

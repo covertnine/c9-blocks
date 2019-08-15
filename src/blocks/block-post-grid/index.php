@@ -225,7 +225,19 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 		wp_reset_postdata();
 
 		/* Build the block classes */
-		$class = "c9-block-post-grid featured{$attributes['postType']} align{$attributes['align']}";
+		$class = "c9-block-post-grid featured{$attributes['postType']}";
+
+		if (isset($attributes['containerWidth'])) {
+			$class .= ' ' . $attributes['containerWidth'];
+		}
+
+		if (isset($attributes['align'])) {
+			$class .= ' ' . "align{$attributes['align']}";
+		}
+
+		if (isset($attributes['verticalAlign'])) {
+			$class .= ' ' . "c9-is-vertically-aligned-{$attributes['verticalAlign']}";
+		}
 
 		if (isset($attributes['className'])) {
 			$class .= ' ' . $attributes['className'];
@@ -346,7 +358,7 @@ function covertnine_blocks_register_block_core_latest_posts()
 				),
 				'align'               => array(
 					'type'    => 'string',
-					'default' => 'center',
+					'default' => ''
 				),
 				'width'               => array(
 					'type'    => 'string',
@@ -406,7 +418,14 @@ function covertnine_blocks_register_block_core_latest_posts()
 				),
 				'postTypes' => array(
 					'type' => 'string',
-					'default' => json_encode(array_values(get_post_types()))//'["' . implode('", "', get_post_types()) . '"]'
+					'default' => json_encode(array_values(get_post_types())) //'["' . implode('", "', get_post_types()) . '"]'
+				),
+				'verticalAlign' => array(
+					'type' => 'string'
+				),
+				'containerWidth' => array(
+					'type' => 'string',
+					'default' => 'container'
 				)
 			),
 			'render_callback' => 'covertnine_blocks_render_block_core_latest_posts',

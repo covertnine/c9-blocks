@@ -2,6 +2,8 @@
  * BLOCK: Post and Page Grid
  */
 
+ import classnames from "classnames";
+
 // Import block dependencies and components
 import Edit from "./edit";
 
@@ -37,6 +39,18 @@ registerBlockType("c9-blocks/post-grid", {
 		__("grid", "c9-blocks")
 	],
 
+	/* Add alignment to block wrapper. */
+	getEditWrapperProps({ align }) {
+		if (
+			"full" === align ||
+			"wide" === align ||
+			"narrow" === align ||
+			"" === align
+		) {
+			return { "data-align": align };
+		}
+	},
+
 	edit: compose([
 		withSelect((select, props) => {
 			const { order, categories } = props.attributes;
@@ -69,3 +83,35 @@ registerBlockType("c9-blocks/post-grid", {
 		return null;
 	}
 });
+
+/* Add the vertical column alignment class to the column container block. */
+const withClientIdClassName = wp.compose.createHigherOrderComponent(
+	BlockListBlock => {
+		return props => {
+			const blockName = props.block.name;
+
+			if (blockName === "c9-blocks/post-grid") {
+				return (
+					<BlockListBlock
+						{...props}
+						className={classnames(
+							props.attributes.verticalAlign
+								? "c9-is-vertically-aligned-" + props.attributes.verticalAlign
+								: "c9-is-vertically-aligned-top",
+							props.attributes.containerWidth
+						)}
+					/>
+				);
+			} else {
+				return <BlockListBlock {...props} />;
+			}
+		};
+	},
+	"withClientIdClassName"
+);
+
+wp.hooks.addFilter(
+	"editor.BlockListBlock",
+	"c9-blocks/add-vertical-align-class",
+	withClientIdClassName
+);

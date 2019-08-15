@@ -71,7 +71,7 @@
 	align-items: flex-start;
 }
 
-.c9-grid>.editor-inner-blocks {
+.c9-post-container>.editor-inner-blocks {
 	height: 100%;
 
 	>.editor-block-list__layout {
@@ -119,26 +119,18 @@
 }
 
 /* backend video background specifics to account for aspect ratio issues with editor */
-.editor-styles-wrapper .c9-grid-has-video>.c9-video-container>.c9-embed-container {
+.editor-styles-wrapper .c9-post-container-has-video>.c9-video-container>.c9-embed-container {
 	width: 300%;
 	left: -100%;
 }
 
-.editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .c9-grid.c9-grid-has-video {
+.editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container.c9-post-container-has-video {
 	overflow: hidden;
 }
 
 /****************************************************************************************/
 /***************************** C9 Container block edits for backend only
 /****************************************************************************************/
-
-//prevents inner columns from aligning center with no min width when added with empty content
-.c9-grid .container .block-editor-block-list__block[data-type="c9-blocks/column"],
-.c9-grid .container-fluid .block-editor-block-list__block[data-type="c9-blocks/column"],
-.c9-grid .container-narrow .block-editor-block-list__block[data-type="c9-blocks/column"] {
-	margin-left: 0px;
-	margin-right: 0px;
-}
 
 .container .row .editor-inner-blocks,
 .container-fluid .row .editor-inner-blocks,
@@ -165,14 +157,7 @@
 	flex-basis: 0px;
 }
 
-.c9-block-layout-column .editor-block-list__block[data-align="full"],
-.c9-block-layout-column .editor-block-list__block[data-align="wide"] {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/*c9 column container innerblocks set to full width + innerblock full width */
-.wp-block[data-type="c9-blocks/grid"] .editor-inner-blocks {
+.wp-block[data-type="c9-blocks/post-container"] .editor-inner-blocks {
 	width: 100%;
 	z-index: 10;
 	position: relative;
@@ -181,7 +166,7 @@
 @media (min-width: 1px) {
 
 	//set the alignfull width to be 100vw width since sidebars are hidden
-	.c9-grid .editor-block-list__block.wp-block[data-align=full] {
+	.c9-post-container .editor-block-list__block.wp-block[data-align=full] {
 		width: 100%;
 		max-width: 100vw;
 		margin-left: auto;
@@ -189,20 +174,15 @@
 	}
 
 	/* sets default width of column container in grid when no width setting has been applied yet*/
-	.c9-grid [data-type="c9-blocks/column-container"] {
+	.c9-post-container [data-type="c9-blocks/post-grid"] {
 		width: 100%;
 		max-width: 1110px;
 	}
-
-	.c9-grid [data-type="c9-blocks/column-container"] .wp-block[data-type="c9-blocks/column"] {
-		width: 100%;
-	}
-
 }
 
 @media only screen and (min-width: 576px) {
 
-	.c9-grid .editor-block-list__block.wp-block[data-align=wide] {
+	.c9-post-container .editor-block-list__block.wp-block[data-align=wide] {
 		width: 100%;
 		max-width: 1200px;
 		margin: 0px auto;
@@ -211,7 +191,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing widths of both admin bar and document settings since they are hidden below 600px
-	.c9-grid .editor-block-list__block.wp-block[data-align=full] {
+	.c9-post-container .editor-block-list__block.wp-block[data-align=full] {
 		width: 100%;
 		max-width: 100vw; //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -221,7 +201,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
 		width: 100%;
 		max-width: calc(100vw - 440px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -229,7 +209,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin folded side bar
-	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
 		width: 100%;
 		max-width: calc(100vw - 316px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -237,7 +217,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin side bar
-	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
+	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
 		width: 100%;
 		max-width: calc(100vw - 160px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -245,7 +225,7 @@
 	}
 
 	//set the alignfull width to be the editable area within gutenberg removing width of the admin folded side bar
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
 		width: 100%;
 		max-width: calc(100vw - 36px); //subtract the width of the document options sidebar
 		margin-left: auto;
@@ -253,7 +233,7 @@
 	}
 
 	// move the custom mover to the top so its not hidden
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"]>.editor-block-mover {
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"]>.editor-block-mover {
 		top: -44px;
 		left: auto;
 		right: 0px;
@@ -284,11 +264,11 @@
 
 @media only screen and (min-width: 992px) {
 
-	//setting the container width for the main blocks window (one level up from .c9-grid)
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"],
-	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"],
-	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"],
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
+	//setting the container width for the main blocks window (one level up from .c9-post-container)
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"],
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"],
+	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"],
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
 		width: 94%;
 		max-width: 1140px;
 		margin-left: auto;
@@ -297,36 +277,30 @@
 		padding-right: 15px;
 	}
 
-	//setting the outer .c9-grid container width for the main blocks window when all admin sidebars are hidden or collapsed
-	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
+	//setting the outer .c9-post-container container width for the main blocks window when all admin sidebars are hidden or collapsed
+	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
 		width: 90%;
 		max-width: calc((100vw - 36px) - 6%);
 	}
 
-	//setting the outer .c9-grid container width for the main blocks window with admin sidebar collapsed and inspector open
-	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
+	//setting the outer .c9-post-container container width for the main blocks window with admin sidebar collapsed and inspector open
+	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
 		width: 90%;
 		max-width: calc((100vw - 316px) - 6%);
 	}
 
-	body .edit-post-layout .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .c9-grid .container-narrow {
+	body .edit-post-layout .editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container .container-narrow {
 		width: 960px;
 		max-width: 960px;
-	}
-
-	/* for making hover of inner container easier to get to */
-	.container-fluid[data-align="full"] .container-fluid .c9-layout-column-wrap-admin>.editor-inner-blocks {
-		padding: 0px 30px;
-		margin: 0px -30px;
 	}
 
 }
 
 @media only screen and (min-width: 1200px) {
 
-	.editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-narrow,
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .c9-grid>.editor-inner-blocks>.block-editor-block-list__layout>.container-narrow,
-	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block.container-narrow[data-type="c9-blocks/column-container"] .container-narrow,
+	.editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .container-narrow,
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .c9-post-container>.editor-inner-blocks>.block-editor-block-list__layout>.container-narrow,
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block.container-narrow[data-type="c9-blocks/post-grid"] .container-narrow,
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .container-narrow {
 		width: 100%;
 		margin-left: auto;
@@ -336,10 +310,10 @@
 		padding-right: 43px;
 	}
 
-	body .edit-post-layout .c9-grid .container,
+	body .edit-post-layout .c9-post-container .container,
 	body:not(.folded) .edit-post-layout .container,
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .container,
-	.edit-styles-wrapper [data-type="c9-blocks/grid"] .c9-grid .container {
+	.edit-styles-wrapper [data-type="c9-blocks/post-container"] .c9-post-container .container {
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
@@ -348,7 +322,7 @@
 		padding-right: 30px;
 	}
 
-	body .edit-post-layout .c9-grid .container[data-align="wide"],
+	body .edit-post-layout .c9-post-container .container[data-align="wide"],
 	body:not(.folded) .edit-post-layout .container.alignwide,
 	body:not(.folded) .edit-post-layout .container[data-align="wide"],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
@@ -362,8 +336,8 @@
 
 	body:not(.folded) .edit-post-layout .container-fluid.alignfull,
 	body:not(.folded) .edit-post-layout .container-fluid[data-align="full"],
-	body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"],
-	body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"]:only-child .container-fluid {
+	body .edit-post-layout .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"],
+	body .edit-post-layout .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"]:only-child .container-fluid {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 100vw;
@@ -373,8 +347,8 @@
 	}
 
 	//if inspector is open, alignwide/alignfull only go to a max width of available space
-	body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .c9-grid .container[data-align="wide"],
-	body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .c9-grid .container-fluid.wp-block[data-align="full"] {
+	body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container .container[data-align="wide"],
+	body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container .container-fluid.wp-block[data-align="full"] {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: calc((100vw - 316px) - 6%);
@@ -386,7 +360,7 @@
 }
 
 @media only screen and (min-width: 1500px) {
-	.editor-styles-wrapper .wp-block[data-type="c9-blocks/column-containers"] .wp-block[data-type="core/columns"][data-align="wide"] {
+	.editor-styles-wrapper .wp-block[data-type="c9-blocks/post-grids"] .wp-block[data-type="core/columns"][data-align="wide"] {
 		max-width: 1200px;
 		width: 1200px;
 	}

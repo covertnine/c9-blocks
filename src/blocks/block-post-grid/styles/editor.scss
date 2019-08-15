@@ -2,6 +2,35 @@
  * Editor styles for the admin
  */
 
+ [data-type="c9-blocks/post-grid"] {
+	z-index: 12;
+
+	&.c9-is-vertically-aligned-top {
+		-ms-flex-item-align: start;
+		align-self: flex-start;
+	}
+
+	&.c9-is-vertically-aligned-center {
+		-ms-flex-item-align: center;
+		align-self: center;
+	}
+
+	&.c9-is-vertically-aligned-bottom {
+		-ms-flex-item-align: end;
+		align-self: flex-end;
+	}
+
+	.editor-block-list__block-edit.block-editor-block-list__block-edit {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.block-editor-block-list__layout .block-editor-default-block-appender>.block-editor-default-block-appender__content {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
  .c9-block-post-grid {
 	.c9-block-post-grid-title a {
 		 text-decoration: none;

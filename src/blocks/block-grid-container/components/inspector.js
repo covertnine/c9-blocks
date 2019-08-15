@@ -305,7 +305,9 @@ export default class Inspector extends Component {
 			});
 
 			if (replace) {
-				let vidElement = document.getElementById(`containerVideo-${instanceId}`);
+				let vidElement = document.getElementById(
+					`containerVideo-${instanceId}`
+				);
 				vidElement.load();
 				vidElement.play();
 			}
@@ -338,6 +340,10 @@ export default class Inspector extends Component {
 						onChange={value => setAttributes({ rows: value })}
 						min={1}
 						max={20}
+						help={__(
+							"Note: Changing the row count can cause loss of content.",
+							"c9-blocks"
+						)}
 					/>
 				</PanelBody>
 				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>

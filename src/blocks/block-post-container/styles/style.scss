@@ -4,7 +4,7 @@
  * CSS for both Frontend+Backend.
  */
 
-.c9-fixed {
+ .c9-fixed {
 	background-attachment: fixed;
 }
 
@@ -12,21 +12,21 @@
 	background-attachment: scroll;
 }
 
-.c9-grid {
+.c9-post-container {
 	display: grid;
 	position: relative;
 }
 
-.c9-grid .c9-layout-column-wrap {
+.c9-post-container .c9-layout-column-wrap {
 	z-index: 14;
 }
 
 /*video background*/
-.c9-grid-has-video {
+.c9-post-container-has-video {
 	position: relative;
 }
 
-.c9-grid-has-video .c9-video-container {
+.c9-post-container-has-video .c9-video-container {
 	opacity: 0;
 	-webkit-transition: 5000ms;
 	transition: 5000ms;
@@ -38,10 +38,10 @@
 	z-index: 6;
 }
 
-.c9-grid-has-video>.c9-video-container>.c9-embed-container,
-.c9-grid-has-video>.c9-video-container>.c9-embed-container iframe,
-.c9-grid-has-video>.c9-video-container>.c9-embed-container,
-.c9-grid-has-video>.c9-video-container>.c9-embed-container .c9-video-custom {
+.c9-post-container-has-video>.c9-video-container>.c9-embed-container,
+.c9-post-container-has-video>.c9-video-container>.c9-embed-container iframe,
+.c9-post-container-has-video>.c9-video-container>.c9-embed-container,
+.c9-post-container-has-video>.c9-video-container>.c9-embed-container .c9-video-custom {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -52,14 +52,14 @@
 }
 
 @media (min-aspect-ratio: 16/9) {
-	.c9-grid-has-video>.c9-video-container>.c9-embed-container {
+	.c9-post-container-has-video>.c9-video-container>.c9-embed-container {
 		height: 300%;
 		top: -100%;
 	}
 }
 
 @media (max-aspect-ratio: 16/9) {
-	.c9-grid-has-video>.c9-video-container>.c9-embed-container {
+	.c9-post-container-has-video>.c9-video-container>.c9-embed-container {
 		width: 300%;
 		left: -100%;
 	}
@@ -83,7 +83,7 @@
 }
 
 /* color overlay */
-.c9-grid .c9-overlay-container {
+.c9-post-container .c9-overlay-container {
 	z-index: 8;
 	position: absolute;
 	top: 0;
@@ -95,7 +95,7 @@
 }
 
 /* image background */
-.c9-grid .c9-image-container {
+.c9-post-container .c9-image-container {
 	z-index: 4;
 	position: absolute;
 	top: 0;
@@ -120,27 +120,27 @@
 }
 
 @media only screen and (min-width: 1px) {
-	.page-template-default .entry-content>.c9-grid {
+	.page-template-default .entry-content>.c9-post-container {
 		width: 100vw;
 		max-width: 100vw;
 		margin: 0px;
 	}
 
-	.c9-grid .container-narrow,
-	.c9-grid .container,
-	.c9-grid .container.alignwide,
-	.c9-grid .container.alignfull,
-	.c9-grid .container-fluid,
-	.c9-grid .container-fluid.alignfull {
+	.c9-post-container .container-narrow,
+	.c9-post-container .container,
+	.c9-post-container .container.alignwide,
+	.c9-post-container .container.alignfull,
+	.c9-post-container .container-fluid,
+	.c9-post-container .container-fluid.alignfull {
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 
-	.c9-blocks-column-container p:only-of-type {
+	.c9-blocks-post-grid p:only-of-type {
 		margin-bottom: 0px;
 	}
 
-	.single .c9-blocks-column-container {
+	.single .c9-blocks-post-grid {
 		margin-left: -15px;
 		margin-right: -15px;
 	}
@@ -148,32 +148,32 @@
 
 @media only screen and (min-width: 576px) {
 
-	.c9-grid .container-narrow,
-	.c9-grid .container,
-	.c9-grid .container.alignwide,
-	.c9-grid .container.alignfull,
-	.c9-grid .container-fluid.alignfull {
+	.c9-post-container .container-narrow,
+	.c9-post-container .container,
+	.c9-post-container .container.alignwide,
+	.c9-post-container .container.alignfull,
+	.c9-post-container .container-fluid.alignfull {
 		max-width: 100%;
 		overflow: hidden;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container-narrow {
+	.page-template-default .entry-content>.c9-post-container .container-narrow {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container {
+	.page-template-default .entry-content>.c9-post-container .container {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container.alignwide {
+	.page-template-default .entry-content>.c9-post-container .container.alignwide {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container-fluid.alignfull,
-	.page-template-default .entry-content>.c9-grid .container-fluid {
+	.page-template-default .entry-content>.c9-post-container .container-fluid.alignfull,
+	.page-template-default .entry-content>.c9-post-container .container-fluid {
 		padding-left: 0px;
 		padding-right: 0px;
 	}
@@ -182,15 +182,15 @@
 
 @media only screen and (min-width: 768px) {
 
-	.c9-grid .container-narrow,
-	.c9-grid .container,
-	.c9-grid .container.alignwide,
-	.c9-grid .container.alignfull,
-	.c9-grid .container-fluid.alignfull {
+	.c9-post-container .container-narrow,
+	.c9-post-container .container,
+	.c9-post-container .container.alignwide,
+	.c9-post-container .container.alignfull,
+	.c9-post-container .container-fluid.alignfull {
 		overflow: visible;
 	}
 
-	.page-template-default .entry-content>.c9-grid,
+	.page-template-default .entry-content>.c9-post-container,
 	.page-template-default .entry-content>.container-fluid {
 		width: 100vw;
 		max-width: 100vw;
@@ -198,24 +198,24 @@
 		margin-right: calc((-100vw + 100%) / 2);
 	}
 
-	.c9-grid .container-narrow,
+	.c9-post-container .container-narrow,
 	.container-narrow {
 		max-width: 960px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
 
-	.c9-grid .container {
+	.c9-post-container .container {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
 
-	.c9-grid .container.alignwide {
+	.c9-post-container .container.alignwide {
 		margin: 0px auto;
 		padding: 0px;
 	}
 
-	.c9-grid .container-fluid,
+	.c9-post-container .container-fluid,
 	.container-fluid.alignfull {
 		padding-left: 0px;
 		padding-right: 0px;
@@ -224,49 +224,29 @@
 }
 
 @media only screen and (min-width: 992px) {
-	.page-template-default .entry-content>.c9-grid {
+	.page-template-default .entry-content>.c9-post-container {
 		width: 100vw;
 		max-width: 100vw;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container.alignwide {
+	.page-template-default .entry-content>.c9-post-container .container.alignwide {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container.alignwide {
+	.page-template-default .entry-content>.c9-post-container .container.alignwide {
 		width: 100%;
 		max-width: 1260px;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container-fluid {
+	.page-template-default .entry-content>.c9-post-container .container-fluid {
 		width: 100%;
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container {
+	.page-template-default .entry-content>.c9-post-container .container {
 		max-width: 1140px;
-	}
-
-}
-
-@media only screen and (min-width: 1200px) {
-
-	.c9-blocks-column-containers .columns:not(.alignfull),
-	.c9-blocks-column-containers .columns.alignwide {
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.c9-blocks-column-containers .columns.alignwide {
-		padding: 0px;
-	}
-
-	.c9-blocks-column-containers .columns.alignfull {
-		max-width: 100%;
-		margin-left: 0px;
-		margin-right: 0px;
 	}
 
 }
