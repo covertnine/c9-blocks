@@ -27,19 +27,12 @@ class Edit extends Component {
 		super(...arguments);
 	}
 
-	createIndicators(slides, id) {
-		let indicators = [];
-		for (let i = 1; i <= slides; i++) {
-			indicators.push(
-				<li data-target={`#c9-carousel-indicator-${id}`} data-slide-to={i} />
-			);
-		}
-
-		return indicators;
-	}
-
 	getSlidesTemplate = memoize(slides => {
-		return times(slides, () => ["c9-blocks/carousel-slide"]);
+		let templates = times(slides, () => ["c9-blocks/carousel-slide"]);
+
+		templates[0].push({slideActive: true});
+
+		return templates;
 	});
 
 	render() {
@@ -52,7 +45,7 @@ class Edit extends Component {
 			instanceId
 		} = this.props;
 
-		const { autoSlide, slides, showControls, showIndicators } = attributes;
+		const { autoSlide, slides } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -78,11 +71,6 @@ class Edit extends Component {
 					data-ride="carousel"
 					data-interval={autoSlide ? 5000 : false}
 				>
-					{showIndicators && (
-						<ol className="carousel-indicators">
-							{this.createIndicators(slides, instanceId)}
-						</ol>
-					)}
 					<div className="carousel-inner">
 						<InnerBlocks
 							className="test"
@@ -91,34 +79,6 @@ class Edit extends Component {
 							allowedBlocks={ALLOWED_BLOCKS}
 						/>
 					</div>
-					{showControls && (
-						<Fragment>
-							<a
-								className="carousel-control-prev"
-								href={`#c9-carousel-indicator-${instanceId}`}
-								role="button"
-								data-slide="prev"
-							>
-								<span
-									className="carousel-control-prev-icon"
-									aria-hidden="true"
-								/>
-								<span className="sr-only">Previous</span>
-							</a>
-							<a
-								className="carousel-control-next"
-								href={`#c9-carousel-indicator-${instanceId}`}
-								role="button"
-								data-slide="next"
-							>
-								<span
-									className="carousel-control-next-icon"
-									aria-hidden="true"
-								/>
-								<span className="sr-only">Next</span>
-							</a>
-						</Fragment>
-					)}
 				</div>
 			</Fragment>
 		);

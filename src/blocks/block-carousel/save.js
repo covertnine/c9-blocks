@@ -14,13 +14,25 @@ export default class Save extends Component {
 		super(...arguments);
 	}
 
+	createIndicators(slides, id) {
+		let indicators = [];
+		for (let i = 1; i <= slides; i++) {
+			indicators.push(
+				<li data-target={`#c9-carousel-indicator-${id}`} data-slide-to={i} className={i == 1 ? "active" : null} />
+			);
+		}
+
+		return indicators;
+	}
+
 	render() {
 		const {
 			showIndicators,
 			autoSlide,
 			slides,
 			showControls,
-			instanceId
+			instanceId,
+			wrapAround
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -34,6 +46,7 @@ export default class Save extends Component {
 				)}
 				data-ride="carousel"
 				data-interval={autoSlide ? 5000 : false}
+				data-wrap={wrapAround}
 			>
 				{showIndicators && (
 					<ol className="carousel-indicators">

@@ -15,7 +15,7 @@ export default class Inspector extends Component {
 	render() {
 		const { attributes, setAttributes } = this.props;
 
-		const { slides, autoSlide, showControls, showIndicators } = attributes;
+		const { slides, autoSlide, showControls, showIndicators, wrapAround } = attributes;
 
 		return (
 			<InspectorControls>
@@ -35,6 +35,11 @@ export default class Inspector extends Component {
 
 					<hr />
 
+					<ToggleControl
+						label={__("Wrap Around", "c9-blocks")}
+						checked={wrapAround}
+						onChange={wrapAround => setAttributes({ wrapAround })}
+					/>
 					<ToggleControl
 						label={__("Enable Auto Slide", "c9-blocks")}
 						checked={autoSlide}

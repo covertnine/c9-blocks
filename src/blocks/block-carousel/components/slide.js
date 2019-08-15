@@ -23,20 +23,13 @@ export default class Tab extends Component {
 	}
 
 	render() {
-		const { slideActive } = this.props.attributes;
 		// eslint-disable-next-line no-unused-vars
 		let { className = "" } = this.props;
 
-		className = classnames(
-			className,
-			"c9-carousel-slide",
-			slideActive ? "active" : null
-		);
+		className = classnames(className, "c9-carousel-slide");
 
 		return (
-			<div
-				className={className}
-			>
+			<div className={className}>
 				<InnerBlocks
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
@@ -70,7 +63,7 @@ registerBlockType("c9-blocks/carousel-slide", {
 	attributes: {
 		slideActive: {
 			type: "string"
-		},
+		}
 	},
 
 	edit: Tab,
@@ -87,9 +80,7 @@ registerBlockType("c9-blocks/carousel-slide", {
 		);
 
 		return (
-			<div
-				className={className}
-			>
+			<div className={className}>
 				<InnerBlocks.Content />
 			</div>
 		);
