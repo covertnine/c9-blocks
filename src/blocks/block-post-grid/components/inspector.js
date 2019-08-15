@@ -116,29 +116,29 @@ export default class Inspector extends Component {
 		const isPost = attributes.postType === "post";
 
 		// Add instruction text to the select
-		const abImageSizeSelect = {
+		const c9ImageSizeSelect = {
 			value: "selectimage",
 			label: __("Select image size")
 		};
 
 		// Add the landscape image size to the select
-		const abImageSizeLandscape = {
-			value: "ab-post-grid-image-landscape",
-			label: __("AB Grid Landscape")
+		const c9ImageSizeLandscape = {
+			value: "c9-post-grid-image-landscape",
+			label: __("C9 Grid Landscape")
 		};
 
 		// Add the square image size to the select
-		const abImageSizeSquare = {
-			value: "ab-post-grid-image-square",
-			label: __("AB Grid Square")
+		const c9ImageSizeSquare = {
+			value: "c9-post-grid-image-square",
+			label: __("C9 Grid Square")
 		};
 
 		// Get the image size options
 		const imageSizeOptions = this.imageSizeSelect();
 
 		// Combine the objects
-		imageSizeOptions.push(abImageSizeSquare, abImageSizeLandscape);
-		imageSizeOptions.unshift(abImageSizeSelect);
+		imageSizeOptions.push(c9ImageSizeSquare, c9ImageSizeLandscape);
+		imageSizeOptions.unshift(c9ImageSizeSelect);
 
 		const imageSizeValue = () => {
 			for (var i = 0; i < imageSizeOptions.length; i++) {
@@ -320,7 +320,7 @@ export default class Inspector extends Component {
 				<PanelBody
 					title={__("Post and Page Grid Markup", "c9-blocks")}
 					initialOpen={false}
-					className="ab-block-post-grid-markup-settings"
+					className="c9-block-post-grid-markup-settings"
 				>
 					<SelectControl
 						label={__("Post Grid Section Tag", "c9-blocks")}

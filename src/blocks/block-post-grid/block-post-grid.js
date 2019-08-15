@@ -15,9 +15,6 @@ const { __ } = wp.i18n;
 // Register block controls
 const { registerBlockType } = wp.blocks;
 
-// Register alignments
-const validAlignments = ["center", "wide", "full"];
-
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 
@@ -26,25 +23,19 @@ import pickBy from "lodash/pickBy";
 
 // Register the block
 registerBlockType("c9-blocks/post-grid", {
+	parent: ["c9-blocks/post-container"],
 	title: __("C9 Post and Page Grid", "c9-blocks"),
 	description: __(
 		"Add a grid or list of customizable posts or pages.",
 		"c9-blocks"
 	),
-	icon: "grid-view",
+	icon: "columns",
 	category: "c9-blocks",
 	keywords: [
 		__("post", "c9-blocks"),
 		__("page", "c9-blocks"),
 		__("grid", "c9-blocks")
 	],
-
-	getEditWrapperProps(attributes) {
-		const { align } = attributes;
-		if (-1 !== validAlignments.indexOf(align)) {
-			return { "data-align": align };
-		}
-	},
 
 	edit: compose([
 		withSelect((select, props) => {

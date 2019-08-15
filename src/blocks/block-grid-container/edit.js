@@ -7,6 +7,10 @@ import Container from "./components/container";
 /**
  * WordPress dependencies
  */
+
+import memoize from "memize";
+import times from "lodash/times";
+
 const { Component, Fragment } = wp.element;
 
 const { InnerBlocks, BlockControls } = wp.editor;
@@ -20,8 +24,14 @@ class Edit extends Component {
 		super(...arguments);
 	}
 
+	getRowsTemplate = memoize(rows => {
+		return times(rows, () => ["c9-blocks/column-container"]);
+	});
+
 	render() {
 		const { instanceId, attributes, setAttributes } = this.props;
+
+		const { rows } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -34,7 +44,7 @@ class Edit extends Component {
 
 				<Container {...this.props}>
 					<InnerBlocks
-						template={[["c9-blocks/column-container"]]}
+						template={this.getRowsTemplate(rows)}
 						templateLock="all"
 						allowedBlocks={ALLOWED_BLOCKS}
 					/>

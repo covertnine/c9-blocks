@@ -236,7 +236,8 @@ export default class Inspector extends Component {
 				cannotEmbed,
 				containerHue,
 				containerOpacity,
-				instanceId
+				instanceId,
+				rows
 			},
 			setAttributes
 		} = this.props;
@@ -330,6 +331,15 @@ export default class Inspector extends Component {
 						max={100}
 					/>
 				</BaseControl>
+				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
+					<RangeControl
+						label={__("Number of rows to produce", "c9-blocks")}
+						value={rows}
+						onChange={value => setAttributes({ rows: value })}
+						min={1}
+						max={20}
+					/>
+				</PanelBody>
 				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
 					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
 

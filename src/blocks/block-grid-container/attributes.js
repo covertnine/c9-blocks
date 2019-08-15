@@ -2,6 +2,10 @@ const attributes = {
 	instanceId: {
 		type: "number"
 	},
+	rows: {
+		type: "number",
+		default: 1
+	},
 	align: {
 		type: "string",
 		default: "full"

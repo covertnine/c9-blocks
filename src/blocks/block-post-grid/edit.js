@@ -15,7 +15,7 @@ const { decodeEntities } = wp.htmlEntities;
 
 const { Placeholder, Spinner, Toolbar } = wp.components;
 
-const { BlockAlignmentToolbar, BlockControls } = wp.editor;
+const { BlockControls } = wp.editor;
 
 const { applyFilters } = wp.hooks;
 
@@ -102,13 +102,6 @@ export default class Edit extends Component {
 			<Fragment>
 				<Inspector {...{ setAttributes, ...this.props }} />
 				<BlockControls>
-					<BlockAlignmentToolbar
-						value={attributes.align}
-						onChange={value => {
-							setAttributes({ align: value });
-						}}
-						controls={["center", "wide", "full"]}
-					/>
 					<Toolbar controls={layoutControls} />
 				</BlockControls>
 				<SectionTag
