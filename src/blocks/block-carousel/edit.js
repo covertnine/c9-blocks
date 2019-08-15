@@ -2,23 +2,22 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import RemoveButton from "./components/remove-button";
+
+import memoize from "memize";
+import times from "lodash/times";
 
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 
-const { IconButton, Tooltip } = wp.components;
-
-const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.editor;
 
 const { applyFilters } = wp.hooks;
 
-const { select, dispatch } = wp.data;
-
 const { withInstanceId } = wp.compose;
+
+const ALLOWED_BLOCKS = ["c9-blocks/carousel-slide"];
 
 // External Dependencies.
 import classnames from "classnames";
@@ -28,19 +27,32 @@ class Edit extends Component {
 		super(...arguments);
 	}
 
+	createIndicators(slides, id) {
+		let indicators = [];
+		for (let i = 1; i <= slides; i++) {
+			indicators.push(
+				<li data-target={`#c9-carousel-indicator-${id}`} data-slide-to={i} />
+			);
+		}
+
+		return indicators;
+	}
+
+	getSlidesTemplate = memoize(slides => {
+		return times(slides, () => ["c9-blocks/carousel-slide"]);
+	});
+
 	render() {
 		const {
 			attributes,
 			setAttributes,
 			updateBlockAttributes,
-			isSelectedBlockInRoot,
 			block,
 			className = "",
-			clientId,
 			instanceId
 		} = this.props;
 
-		const {} = attributes;
+		const { autoSlide, slides, showControls, showIndicators } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -57,78 +69,56 @@ class Edit extends Component {
 				<BlockControls />
 
 				<Inspector {...this.props} />
-				<div className={applyFilters("c9-blocks.blocks.className", className)}>
-					<div
-						id="carouselExampleIndicators"
-						className="carousel slide"
-						data-ride="carousel"
-					>
+				<div
+					id={`c9-carousel-indicator-${instanceId}`}
+					className={classnames(
+						applyFilters("c9-blocks.blocks.className", className),
+						"carousel slide"
+					)}
+					data-ride="carousel"
+					data-interval={autoSlide ? 5000 : false}
+				>
+					{showIndicators && (
 						<ol className="carousel-indicators">
-							<li
-								data-target="#carouselExampleIndicators"
-								data-slide-to="0"
-								className="active"
-							/>
-							<li data-target="#carouselExampleIndicators" data-slide-to="1" />
-							<li data-target="#carouselExampleIndicators" data-slide-to="2" />
+							{this.createIndicators(slides, instanceId)}
 						</ol>
-						<div className="carousel-inner">
-							<div className="carousel-item active">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-									irure dolor in reprehenderit in voluptate velit esse cillum
-									dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-									cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
-								</p>
-							</div>
-							<div className="carousel-item">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-									irure dolor in reprehenderit in voluptate velit esse cillum
-									dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-									cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
-								</p>
-							</div>
-							<div className="carousel-item">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-									irure dolor in reprehenderit in voluptate velit esse cillum
-									dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-									cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
-								</p>
-							</div>
-						</div>
-						<a
-							className="carousel-control-prev"
-							href="#carouselExampleIndicators"
-							role="button"
-							data-slide="prev"
-						>
-							<span className="carousel-control-prev-icon" aria-hidden="true" />
-							<span className="sr-only">Previous</span>
-						</a>
-						<a
-							className="carousel-control-next"
-							href="#carouselExampleIndicators"
-							role="button"
-							data-slide="next"
-						>
-							<span className="carousel-control-next-icon" aria-hidden="true" />
-							<span className="sr-only">Next</span>
-						</a>
+					)}
+					<div className="carousel-inner">
+						<InnerBlocks
+							className="test"
+							template={this.getSlidesTemplate(slides)}
+							templateLock="all"
+							allowedBlocks={ALLOWED_BLOCKS}
+						/>
 					</div>
+					{showControls && (
+						<Fragment>
+							<a
+								className="carousel-control-prev"
+								href={`#c9-carousel-indicator-${instanceId}`}
+								role="button"
+								data-slide="prev"
+							>
+								<span
+									className="carousel-control-prev-icon"
+									aria-hidden="true"
+								/>
+								<span className="sr-only">Previous</span>
+							</a>
+							<a
+								className="carousel-control-next"
+								href={`#c9-carousel-indicator-${instanceId}`}
+								role="button"
+								data-slide="next"
+							>
+								<span
+									className="carousel-control-next-icon"
+									aria-hidden="true"
+								/>
+								<span className="sr-only">Next</span>
+							</a>
+						</Fragment>
+					)}
 				</div>
 			</Fragment>
 		);

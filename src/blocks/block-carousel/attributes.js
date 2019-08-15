@@ -1,38 +1,22 @@
 const attributes = {
-	tabActive: {
-		type: "string",
-		default: "tab-1"
-	},
-	buttonsAlign: {
-		type: "string"
-	},
-	tabsData: {
-		type: "array",
-		default: [
-			{
-				slug: "tab-1",
-				title: "Tab 1"
-			},
-			{
-				slug: "tab-2",
-				title: "Tab 2"
-			}
-		]
-	},
 	instanceId: {
 		type: "number"
 	},
-	tabBackgroundColor: {
-		type: "string"
+	slides: {
+		type: "number",
+		default: 3
 	},
-	tabTextColor: {
-		type: "string"
+	showControls: {
+		type: "boolean",
+		default: true
 	},
-	tabContentBackgroundColor: {
-		type: "string"
+	showIndicators: {
+		type: "boolean",
+		default: true
 	},
-	blockBackgroundColor: {
-		type: "string"
+	autoSlide: {
+		type: "boolean",
+		default: true
 	}
 };
 

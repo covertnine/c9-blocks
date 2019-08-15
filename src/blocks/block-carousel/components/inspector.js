@@ -1,7 +1,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { AlignmentToolbar, InspectorControls, PanelColorSettings } = wp.editor;
-const { BaseControl } = wp.components;
+const { BaseControl, PanelBody, RangeControl, ToggleControl } = wp.components;
 const { ContrastChecker } = wp.blockEditor;
 
 /**
@@ -15,13 +15,42 @@ export default class Inspector extends Component {
 	render() {
 		const { attributes, setAttributes } = this.props;
 
-		const {
-		} = attributes;
+		const { slides, autoSlide, showControls, showIndicators } = attributes;
 
 		return (
 			<InspectorControls>
-				<BaseControl label={__("Tabs Align", "c9-blocks")}>
-				</BaseControl>
+				<BaseControl />
+				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
+					<RangeControl
+						label={__("Number of slides to produce", "c9-blocks")}
+						value={slides}
+						onChange={value => setAttributes({ slides: value })}
+						min={1}
+						max={20}
+						help={__(
+							"Note: Changing the slide count can cause loss of content.",
+							"c9-blocks"
+						)}
+					/>
+
+					<hr />
+
+					<ToggleControl
+						label={__("Enable Auto Slide", "c9-blocks")}
+						checked={autoSlide}
+						onChange={autoSlide => setAttributes({ autoSlide })}
+					/>
+					<ToggleControl
+						label={__("Show Controls", "c9-blocks")}
+						checked={showControls}
+						onChange={showControls => setAttributes({ showControls })}
+					/>
+					<ToggleControl
+						label={__("Show indicators", "c9-blocks")}
+						checked={showIndicators}
+						onChange={showIndicators => setAttributes({ showIndicators })}
+					/>
+				</PanelBody>
 				{/* <PanelColorSettings
 					title={__("Block Color Settings", "c9-blocks")}
 					initialOpen={true}
