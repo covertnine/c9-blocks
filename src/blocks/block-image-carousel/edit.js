@@ -3,33 +3,36 @@
  */
 import Inspector from "./components/inspector";
 
-import memoize from "memize";
-import times from "lodash/times";
+import React from "react";
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { InnerBlocks, BlockControls, MediaPlaceholder } = wp.editor;
+const { BlockControls, MediaPlaceholder } = wp.editor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
-const { speak } = wp.a11y;
 
 const ALLOWED_MEDIA_TYPES = ["image"];
 const DEFAULT_SIZE_SLUG = "large";
 
 // External Dependencies.
 import classnames from "classnames";
-import { find, get, isEmpty, map, last, omit, pick } from "lodash";
+import { get, pick } from "lodash";
+
 
 class Edit extends Component {
-	constructor() {
+	constructor({ autoSlide, wrapAround }) {
 		super(...arguments);
 
+		this.carouselRef = React.createRef();
+
 		this.state = {
-			captionFocused: false
+			captionFocused: false,
+			auto: autoSlide,
+			wrap: wrapAround
 		};
 
 		this.onSelectImage = this.onSelectImage.bind(this);
@@ -37,13 +40,32 @@ class Edit extends Component {
 		this.createSlides = this.createSlides.bind(this);
 	}
 
-	getSlidesTemplate = memoize(slides => {
-		let templates = times(slides, () => ["c9-blocks/carousel-slide"]);
+	componentDidMount() {
+		const $ = window.jQuery;
 
-		templates[0].push({ slideActive: true });
+		$(this.carouselRef.current).on("slide.bs.carousel", function({to}) {
+			console.log(to)
+		});
+	}
 
-		return templates;
-	});
+	componentDidUpdate() {
+		const { auto, wrap } = this.state;
+		const { autoSlide, wrapAround } = this.props.attributes;
+		const $ = window.jQuery;
+
+		let options = $(this.carouselRef.current).data()["bs.carousel"]["_config"];
+
+		if (auto != autoSlide) {
+			let interval = autoSlide ? 5000 : false;
+			options.interval = interval;
+			this.setState({ auto: autoSlide });
+		}
+
+		if (wrap != wrapAround) {
+			options.wrap = wrapAround;
+			this.setState({ wrap: wrapAround });
+		}
+	}
 
 	pickRelevantMediaFiles = image => {
 		const imageProps = pick(image, ["alt", "id", "link", "caption"]);
@@ -58,49 +80,47 @@ class Edit extends Component {
 
 	isExternalImage = (id, url) => url && !id && !isBlobURL(url);
 
-	onUploadError(message) {
-		const { noticeOperations } = this.props;
+	onUploadError(message, i) {
+		let { noticeOperations, url, id } = this.props;
 		noticeOperations.removeAllNotices();
 		noticeOperations.createErrorNotice(message);
 
+		// clone to new array
+		url = [...url];
+		id = [...id];
+
+		url[i] = null;
+		id[i] = null;
+
 		this.props.setAttributes({
-			url: undefined,
-			alt: undefined,
-			id: undefined,
-			caption: undefined
+			url,
+			id
 		});
 	}
 
 	onSelectImage(media, i) {
 		if (!media || !media.url) {
 			let { url, id } = this.props.attributes;
+			// clone to new array
+			url = [...url];
+			id = [...id];
 
 			url[i] = undefined;
 			id[i] = undefined;
 
 			this.props.setAttributes({
 				url,
-				alt,
-				id: undefined,
-				caption: undefined
+				id
 			});
 			return;
 		}
 
-		let { id, url, alt, caption } = this.props.attributes;
+		let { id, url } = this.props.attributes;
+		// clone to new array
+		url = [...url];
+		id = [...id];
 
 		let mediaAttributes = this.pickRelevantMediaFiles(media);
-
-		// If the current image is temporary but an alt or caption text was meanwhile written by the user,
-		// make sure the text is not overwritten.
-		if (this.isTemporaryImage(id[i], url[i])) {
-			if (alt) {
-				mediaAttributes = omit(mediaAttributes, ["alt"]);
-			}
-			if (caption) {
-				mediaAttributes = omit(mediaAttributes, ["caption"]);
-			}
-		}
 
 		let additionalAttributes;
 		// Reset the dimension attributes if changing to a different image.
@@ -130,6 +150,9 @@ class Edit extends Component {
 
 	onSelectURL(newURL, i) {
 		let { url, id } = this.props.attributes;
+		// clone to new array
+		url = [...url];
+		id = [...id];
 
 		if (newURL !== url[i]) {
 			url[i] = newURL;
@@ -139,8 +162,6 @@ class Edit extends Component {
 				id,
 				sizeSlug: DEFAULT_SIZE_SLUG
 			});
-
-			console.log(this.props.attributes);
 		}
 	}
 
@@ -186,23 +207,23 @@ class Edit extends Component {
 
 			template.push(
 				<div className={classnames("carousel-item", i == 0 ? "active" : null)}>
-					{!url[i] ?
-					<MediaPlaceholder
-						icon="format-gallery"
-						labels={labels}
-						onSelect={media => this.onSelectImage(media, i)}
-						onSelectURL={newURL => this.onSelectURL(newURL, i)}
-						onError={this.onUploadError}
-						accept="image/*"
-						allowedTypes={ALLOWED_MEDIA_TYPES}
-						value={{ id: id[i], src }}
-						mediaPreview={mediaPreview}
-						dropZoneUIOnly={url[i]}
-					/>
-					:
-					// eslint-disable-next-line jsx-a11y/alt-text
-					<img src={ url[i] }/>
-					}
+					{!url[i] ? (
+						<MediaPlaceholder
+							icon="format-gallery"
+							labels={labels}
+							onSelect={media => this.onSelectImage(media, i)}
+							onSelectURL={newURL => this.onSelectURL(newURL, i)}
+							onError={message => this.onUploadError(message, i)}
+							accept="image/*"
+							allowedTypes={ALLOWED_MEDIA_TYPES}
+							value={{ id: id[i], src }}
+							mediaPreview={mediaPreview}
+							dropZoneUIOnly={url[i]}
+						/>
+					) : (
+						// eslint-disable-next-line jsx-a11y/alt-text
+						<img src={url[i]} />
+					)}
 				</div>
 			);
 		}
@@ -225,9 +246,7 @@ class Edit extends Component {
 			slides,
 			wrapAround,
 			showIndicators,
-			showControls,
-			id,
-			url
+			showControls
 		} = attributes;
 
 		if (instanceId != attributes.instanceId) {
@@ -239,8 +258,6 @@ class Edit extends Component {
 				}
 			}
 		}
-
-		console.log(id, url);
 
 		return (
 			<Fragment>
@@ -256,6 +273,7 @@ class Edit extends Component {
 					data-ride="carousel"
 					data-interval={autoSlide ? 5000 : false}
 					data-wrap={wrapAround}
+					ref={this.carouselRef}
 				>
 					{showIndicators && (
 						<ol className="carousel-indicators">

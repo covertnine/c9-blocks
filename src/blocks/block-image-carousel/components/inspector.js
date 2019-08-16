@@ -15,7 +15,13 @@ export default class Inspector extends Component {
 	render() {
 		const { attributes, setAttributes } = this.props;
 
-		const { slides, autoSlide, showControls, showIndicators, wrapAround } = attributes;
+		const {
+			slides,
+			autoSlide,
+			showControls,
+			showIndicators,
+			wrapAround
+		} = attributes;
 
 		return (
 			<InspectorControls>
@@ -24,7 +30,18 @@ export default class Inspector extends Component {
 					<RangeControl
 						label={__("Number of slides to produce", "c9-blocks")}
 						value={slides}
-						onChange={value => setAttributes({ slides: value })}
+						onChange={value => {
+							let { url, id } = this.props.attributes;
+
+							if (value > url.length) {
+								url.push(null);
+								id.push(null);
+
+								setAttributes({ id, url });
+							}
+
+							setAttributes({ slides: value });
+						}}
 						min={1}
 						max={20}
 						help={__(
