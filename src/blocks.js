@@ -25,3 +25,4 @@ import "./blocks/block-post-container/block-post-container.js";
 import "./blocks/block-post-grid/block-post-grid.js";
 import "./blocks/block-carousel/block-carousel.js";
 import "./blocks/block-carousel/components/slide.js";
+import "./blocks/block-image-carousel/block-image-carousel.js";
