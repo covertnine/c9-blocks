@@ -3247,6 +3247,9 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
+.c9-image-carousel .hide-indicator {
+  display: none; }
+
 .c9-image-carousel .carousel-inner .c9-remove-image {
   margin-top: 25px;
   padding-bottom: 20px; }

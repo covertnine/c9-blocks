@@ -238,24 +238,26 @@ class Edit extends Component {
 					) : (
 						<Fragment>
 							<img src={url[i]} />
-							<div className="c9-remove-image">
-								<IconButton
-									label={__("Remove Image", "c9-blocks")}
-									icon="dismiss"
-									onClick={() => {
-										// clone to new array
-										let newUrl = [...url];
-										let newId = [...id];
+							{isSelectedBlockInRoot && (
+								<div className="c9-remove-image">
+									<IconButton
+										label={__("Remove Image", "c9-blocks")}
+										icon="dismiss"
+										onClick={() => {
+											// clone to new array
+											let newUrl = [...url];
+											let newId = [...id];
 
-										newUrl[i] = null;
-										newId[i] = null;
+											newUrl[i] = null;
+											newId[i] = null;
 
-										setAttributes({ url: newUrl, id: newId });
-									}}
-								>
-									{__("Remove", "c9-blocks")}
-								</IconButton>
-							</div>
+											setAttributes({ url: newUrl, id: newId });
+										}}
+									>
+										{__("Remove", "c9-blocks")}
+									</IconButton>
+								</div>
+							)}
 						</Fragment>
 					)}
 				</div>
@@ -301,11 +303,14 @@ class Edit extends Component {
 					data-wrap={wrapAround}
 					ref={this.carouselRef}
 				>
-					{showIndicators && (
-						<ol className="carousel-indicators">
-							{this.createIndicators(slides, instanceId)}
-						</ol>
-					)}
+					<ol
+						className={classnames(
+							"carousel-indicators",
+							!showIndicators ? "hide-indicator" : null
+						)}
+					>
+						{this.createIndicators(slides, instanceId)}
+					</ol>
 					<div className="carousel-inner">{this.createSlides(slides)}</div>
 					{showControls && (
 						<Fragment>

@@ -5,13 +5,19 @@
  * which makes it higher in priority.
  */
 
-.c9-image-carousel .carousel-inner {
-    .c9-remove-image {
-        >.components-button.components-icon-button {
-            margin: 0 auto;
-        }
-    
-        margin-top: 25px;
-        padding-bottom: 20px;
+.c9-image-carousel {
+	.hide-indicator {
+		display: none;
     }
+    
+	.carousel-inner {
+		.c9-remove-image {
+			> .components-button.components-icon-button {
+				margin: 0 auto;
+			}
+
+			margin-top: 25px;
+			padding-bottom: 20px;
+		}
+	}
 }
