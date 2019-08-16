@@ -47,7 +47,7 @@ class Edit extends Component {
 		let self = this;
 
 		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
-			self.setState({slideTarget: to})
+			self.setState({ slideTarget: to });
 		});
 	}
 

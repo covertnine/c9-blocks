@@ -17,11 +17,7 @@ import classnames from "classnames";
 
 registerBlockType("c9-blocks/column", {
 	title: __("Column", "c9-blocks"),
-
-	category: "c9-blocks",
-
-	parent: ["c9-blocks/column-container"],
-
+	
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 			<Path fill="none" d="M0 0h24v24H0V0z" />
