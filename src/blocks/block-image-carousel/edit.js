@@ -22,7 +22,6 @@ const DEFAULT_SIZE_SLUG = "large";
 import classnames from "classnames";
 import { get, pick } from "lodash";
 
-
 class Edit extends Component {
 	constructor({ autoSlide, wrapAround }) {
 		super(...arguments);
@@ -32,25 +31,29 @@ class Edit extends Component {
 		this.state = {
 			captionFocused: false,
 			auto: autoSlide,
-			wrap: wrapAround
+			wrap: wrapAround,
+			slideActive: 0,
+			slideTarget: 0
 		};
 
 		this.onSelectImage = this.onSelectImage.bind(this);
 		this.onSelectURL = this.onSelectURL.bind(this);
+		this.createIndicators = this.createIndicators.bind(this);
 		this.createSlides = this.createSlides.bind(this);
 	}
 
 	componentDidMount() {
 		const $ = window.jQuery;
+		let self = this;
 
-		$(this.carouselRef.current).on("slide.bs.carousel", function({to}) {
-			console.log(to)
+		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
+			self.setState({slideTarget: to})
 		});
 	}
 
 	componentDidUpdate() {
-		const { auto, wrap } = this.state;
-		const { autoSlide, wrapAround } = this.props.attributes;
+		const { auto, wrap, slideTarget } = this.state;
+		const { autoSlide, wrapAround, slides } = this.props.attributes;
 		const $ = window.jQuery;
 
 		let options = $(this.carouselRef.current).data()["bs.carousel"]["_config"];
@@ -64,6 +67,10 @@ class Edit extends Component {
 		if (wrap != wrapAround) {
 			options.wrap = wrapAround;
 			this.setState({ wrap: wrapAround });
+		}
+
+		if (slideTarget == slides) {
+			this.setState({ slideActive: slides - 1, slideTarget: slides - 1 });
 		}
 	}
 
@@ -172,7 +179,7 @@ class Edit extends Component {
 				<li
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
-					className={i == 1 ? "active" : null}
+					className={i == this.state.slideActive ? "active" : null}
 				/>
 			);
 		}
@@ -206,7 +213,12 @@ class Edit extends Component {
 			const src = isExternal ? url[i] : undefined;
 
 			template.push(
-				<div className={classnames("carousel-item", i == 0 ? "active" : null)}>
+				<div
+					className={classnames(
+						"carousel-item",
+						i == this.state.slideActive ? "active" : null
+					)}
+				>
 					{!url[i] ? (
 						<MediaPlaceholder
 							icon="format-gallery"
@@ -251,12 +263,6 @@ class Edit extends Component {
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
-
-			for (let child of block.innerBlocks) {
-				if (instanceId != child.attributes.id) {
-					updateBlockAttributes(child.clientId, { id: instanceId });
-				}
-			}
 		}
 
 		return (
