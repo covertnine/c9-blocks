@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
 /**
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-
+import RemoveButton from "./components/remove-button";
 import React from "react";
 
 /**
@@ -14,6 +15,7 @@ const { BlockControls, MediaPlaceholder } = wp.editor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
+const { IconButton } = wp.components;
 
 const ALLOWED_MEDIA_TYPES = ["image"];
 const DEFAULT_SIZE_SLUG = "large";
@@ -188,6 +190,7 @@ class Edit extends Component {
 	}
 
 	createSlides(slides) {
+		const { isSelectedBlockInRoot, setAttributes } = this.props;
 		const { id, url } = this.props.attributes;
 
 		let template = [];
@@ -233,8 +236,27 @@ class Edit extends Component {
 							dropZoneUIOnly={url[i]}
 						/>
 					) : (
-						// eslint-disable-next-line jsx-a11y/alt-text
-						<img src={url[i]} />
+						<Fragment>
+							<img src={url[i]} />
+							<div className="c9-remove-image">
+								<IconButton
+									label={__("Remove Image", "c9-blocks")}
+									icon="dismiss"
+									onClick={() => {
+										// clone to new array
+										let newUrl = [...url];
+										let newId = [...id];
+
+										newUrl[i] = null;
+										newId[i] = null;
+
+										setAttributes({ url: newUrl, id: newId });
+									}}
+								>
+									{__("Remove", "c9-blocks")}
+								</IconButton>
+							</div>
+						</Fragment>
 					)}
 				</div>
 			);
@@ -247,8 +269,6 @@ class Edit extends Component {
 		const {
 			attributes,
 			setAttributes,
-			updateBlockAttributes,
-			block,
 			className = "",
 			instanceId
 		} = this.props;
