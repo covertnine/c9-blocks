@@ -1,0 +1,35 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.c9-carousel .carousel-inner {
+	overflow-x: scroll;
+
+	.editor-inner-blocks > .editor-block-list__layout {
+        display: flex;
+        
+        margin: 20px 0;
+
+		> .editor-block-list__block {
+			flex: calc(50% - 10px);
+			min-width: calc(50% - 10px);
+            margin-right: 20px;
+            margin-left: 0;
+
+            > div {
+                margin-right: 0;
+            }
+            
+            > .editor-block-list__block-edit::before {
+                background-color: rgba(126, 126, 126, 0.05);
+            }
+		}
+    }
+
+    .c9-carousel-slide .editor-inner-blocks > .editor-block-list__layout { 
+        display: block;
+    }
+}

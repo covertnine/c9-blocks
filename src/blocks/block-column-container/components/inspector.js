@@ -30,12 +30,7 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: {
-				containerPadding,
-				containerMargin,
-				bgCustomX,
-				bgCustomY
-			},
+			attributes: { containerPadding, containerMargin, bgCustomX, bgCustomY },
 			setAttributes
 		} = this.props;
 

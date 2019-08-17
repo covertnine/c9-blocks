@@ -13,6 +13,6 @@ if (typeof window._wpLoadBlockEditor !== "undefined") {
 if (loadBlocksEditor) {
 	loadBlocksEditor.then(() => {
 		unregisterBlockType("core/verse");
-		unregisterBlockType("core/columns");
+		// unregisterBlockType("core/columns");
 	});
 }
