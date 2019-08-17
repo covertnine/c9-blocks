@@ -63,6 +63,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -314,6 +319,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -496,6 +506,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -733,6 +748,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -1088,6 +1108,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -1473,6 +1498,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -1641,6 +1671,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -1808,6 +1843,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -2098,6 +2138,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -2441,6 +2486,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -2762,6 +2812,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
@@ -2924,6 +2979,11 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar,
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
+  /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 35px; }
   .block-editor-block-list__block .block-editor-block-list__block-edit {
     z-index: 20; }
   .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
