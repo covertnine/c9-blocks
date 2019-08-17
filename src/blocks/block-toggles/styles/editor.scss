@@ -130,3 +130,9 @@
 	padding: 0px;
 	margin-top: -12px;
 }
+
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-collapse .fas,
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
+.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
+	line-height: .7;
+}

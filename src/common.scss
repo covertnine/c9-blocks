@@ -12,16 +12,6 @@ $gray: #dedede;
 $green: #bada55;
 $red: orangered;
 
-div[data-type="c9-blocks/column-containers"].wp-block .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="core/paragraph"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before,
-div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-list__block-edit.block-editor-block-list__block-edit:before {
-	border: 1px solid $black;
-}
-
-.block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit:before {
-	border: 2px solid $black;
-}
-
 /* flip container c9 grid element height vertically */
 .c9-height-range-control {
 	overflow: visible;
@@ -61,11 +51,6 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 	border: 1px dotted #ccc;
 }
 
-.wp-block[data-type="c9-blocks/grid"] .block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit {
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
 .block-editor-block-list__block-edit {
 	z-index: 10;
 }
@@ -73,7 +58,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 .block-editor-block-list__block>.block-editor-block-list__insertion-point {
 	z-index: 12;
 	height: 22px;
-	top: -14px;
+	top: 0px;
 }
 
 .block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-list__layout .block-editor-block-list__empty-block-inserter,
@@ -90,7 +75,7 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 	}
 
 	.block-editor-block-contextual-toolbar .block-editor-block-toolbar {
-		top: 2px;
+		// top: 2px;
 	}
 
 	.block-editor-block-list__block .block-editor-block-list__block-edit {
@@ -132,19 +117,8 @@ div[data-type="c9-blocks/c9-custom-heading"].wp-block.is-selected .editor-block-
 
 	.editor-post-title,
 	.editor-post-title__block {
-		padding: 0px;
 		width: 100%;
 		max-width: 1140px;
-	}
-
-	.block-editor-inner-blocks .editor-block-list__layout {
-		margin-top: 0px;
-	}
-
-	.editor-styles-wrapper .editor-writing-flow>div>div>div>.editor-block-list__layout {
-		padding-left: 0px;
-		padding-right: 0px;
-		margin-top: 35px;
 	}
 
 	.editor-styles-wrapper>*:not(.wp-block[data-align=wide]) {
