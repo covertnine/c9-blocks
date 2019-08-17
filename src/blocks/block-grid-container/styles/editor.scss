@@ -274,6 +274,11 @@
 		margin-right: auto;
 	}
 
+	.container-fluid.block-editor-block-list__block .block-editor-block-list__block-edit {
+		margin-left: -28px;
+		margin-right: -28px
+	}
+
 	/* for unsetting default paddings from gutenberg*/
 	.container-fluid.block-editor-block-list__block[data-align=full] {
 		padding-left: 15px;
