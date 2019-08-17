@@ -42,6 +42,13 @@
 .block-editor-block-list__block-edit {
   z-index: 10; }
 
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
   height: 22px;
@@ -196,6 +203,13 @@
 
 .block-editor-block-list__block-edit {
   z-index: 10; }
+
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
@@ -391,6 +405,13 @@
 .block-editor-block-list__block-edit {
   z-index: 10; }
 
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
   height: 22px;
@@ -556,6 +577,13 @@
 
 .block-editor-block-list__block-edit {
   z-index: 10; }
+
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
@@ -994,6 +1022,13 @@
 .block-editor-block-list__block-edit {
   z-index: 10; }
 
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
   height: 22px;
@@ -1405,6 +1440,13 @@
 .block-editor-block-list__block-edit {
   z-index: 10; }
 
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
   height: 22px;
@@ -1649,6 +1691,13 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs .nav-item {
 .block-editor-block-list__block-edit {
   z-index: 10; }
 
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
   height: 22px;
@@ -1890,6 +1939,13 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper
 
 .block-editor-block-list__block-edit {
   z-index: 10; }
+
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
@@ -2144,6 +2200,13 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper
 
 .block-editor-block-list__block-edit {
   z-index: 10; }
+
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
@@ -2564,6 +2627,13 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper
 .block-editor-block-list__block-edit {
   z-index: 10; }
 
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
   height: 22px;
@@ -2790,6 +2860,13 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper
 .block-editor-block-list__block-edit {
   z-index: 10; }
 
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
   height: 22px;
@@ -2963,6 +3040,13 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper
 
 .block-editor-block-list__block-edit {
   z-index: 10; }
+
+/* removing top/bottom margins that mess with spacing of gutenberg default setting--might need to find a better way around this*/
+.block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
+.block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout > .block-editor-block-list__layout > .block-editor-block-list__block > .block-editor-block-list__block-edit {
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 .block-editor-block-list__block > .block-editor-block-list__insertion-point {
   z-index: 12;
