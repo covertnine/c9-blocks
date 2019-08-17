@@ -11,14 +11,17 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 	}
 
 	.nav-item {
-		// show remove button on hover.
-		&:not(:hover) > .c9-component-remove-button {
-			opacity: 0;
-        }
-        
-        position: relative;
 
-		transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
+		// show remove button on hover.
+		&:not(:hover)>.c9-component-remove-button {
+			opacity: 0;
+		}
+
+		position: relative;
+
+		transition: 0.15s border-color,
+		0.15s background-color,
+		0.15s opacity;
 	}
 }
 
@@ -51,6 +54,7 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 }
 
 .c9-component-remove-button-confirm {
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-nope {
 		padding: 0;
@@ -67,10 +71,12 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 			box-shadow: none;
 		}
 	}
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-yep:focus {
 		color: #c9586c;
 	}
+
 	.c9-component-remove-button-confirm-nope,
 	.c9-component-remove-button-confirm-nope:focus {
 		color: #999;
@@ -107,4 +113,9 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 		color: #7e8993;
 		text-align: center;
 	}
+}
+
+.editor-styles-wrapper [data-type="c9-blocks/horizontal-tabs"] {
+	margin-top: 32px;
+	margin-bottom: 32px;
 }
