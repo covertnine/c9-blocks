@@ -5,23 +5,22 @@
  * which makes it higher in priority.
  */
 
+@import "../../../block-colors";
+
 div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 	.tab-content [data-tab] {
 		display: none;
 	}
 
 	.nav-item {
-
 		// show remove button on hover.
-		&:not(:hover)>.c9-component-remove-button {
+		&:not(:hover) > .c9-component-remove-button {
 			opacity: 0;
 		}
 
 		position: relative;
 
-		transition: 0.15s border-color,
-		0.15s background-color,
-		0.15s opacity;
+		transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
 	}
 }
 
@@ -54,7 +53,6 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 }
 
 .c9-component-remove-button-confirm {
-
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-nope {
 		padding: 0;

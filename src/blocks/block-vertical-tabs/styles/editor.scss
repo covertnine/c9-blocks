@@ -5,6 +5,8 @@
  * which makes it higher in priority.
  */
 
+@import "../../../block-colors";
+
 div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs {
 	.tab-content [data-tab] {
 		display: none;

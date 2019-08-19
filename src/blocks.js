@@ -8,6 +8,12 @@
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+
+/**
+ * Import global styles.
+ */
+import "./block-globals.style.scss";
+
 import "./blocks/i18n.js";
 import "./blocks/block-sharing/block-sharing.js";
 import "./blocks/block-cta/block-cta.js";
