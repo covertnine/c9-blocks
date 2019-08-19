@@ -83,7 +83,7 @@ $red: orangered;
 	}
 
 	/*adjustments to first editor block list layout to give space to title and more accurate widths*/
-	.editor-styles-wrapper .editor-writing-flow>div>div>div>.editor-block-list__layout {
+	.editor-styles-wrapper .editor-writing-flow>div>div>div>.editor-block-list__layout [data-type="c9-blocks/grid"] {
 		padding-left: 0px;
 		padding-right: 0px;
 		margin-top: 35px;

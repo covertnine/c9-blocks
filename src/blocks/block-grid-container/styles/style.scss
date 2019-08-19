@@ -4,7 +4,8 @@
  * CSS for both Frontend+Backend.
  */
 
-.c9-fixed {
+.c9-fixed .c9-image-container,
+.c9-fixed .c9-video-container {
 	background-attachment: fixed;
 }
 

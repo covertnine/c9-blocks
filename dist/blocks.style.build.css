@@ -64,7 +64,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -320,7 +320,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -507,7 +507,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -749,7 +749,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -850,7 +850,8 @@
  *
  * CSS for both Frontend+Backend.
  */
-.c9-fixed {
+.c9-fixed .c9-image-container,
+.c9-fixed .c9-video-container {
   background-attachment: fixed; }
 
 .c9-scroll {
@@ -1109,7 +1110,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -1433,6 +1434,12 @@
       background: #fff; }
   .c9-column-selector button.components-button.is-button:last-child {
     border-radius: 5px; }
+
+@media only screen and (max-width: 667px) {
+  .c9-is-responsive-column .c9-column {
+    padding-bottom: 30px; }
+  .c9-is-responsive-column .c9-column:last-child {
+    padding-bottom: 0px; } }
 /**
  * #.# Common SCSS
  *
@@ -1499,7 +1506,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -1672,7 +1679,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -1844,7 +1851,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -2139,7 +2146,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -2487,7 +2494,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -2813,7 +2820,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }
@@ -2980,7 +2987,7 @@
   .edit-post-visual-editor .block-editor-block-list__block[data-align=wide] > .block-editor-block-list__block-edit > .block-editor-block-contextual-toolbar .block-editor-block-toolbar {
     z-index: 15; }
   /*adjustments to first editor block list layout to give space to title and more accurate widths*/
-  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout {
+  .editor-styles-wrapper .editor-writing-flow > div > div > div > .editor-block-list__layout [data-type="c9-blocks/grid"] {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 35px; }

@@ -339,3 +339,13 @@
 		border-radius: 5px;
 	}
 }
+
+@media only screen and (max-width: 667px) {
+	.c9-is-responsive-column .c9-column {
+		padding-bottom: 30px;
+	}
+
+	.c9-is-responsive-column .c9-column:last-child {
+		padding-bottom: 0px;
+	}
+}
