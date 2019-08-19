@@ -95,13 +95,7 @@ function c9_blocks_cgb_editor_assets()
         array('wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element')
     );
 
-    // // Styles.
-    // wp_enqueue_style(
-    //     'bootstrap-css',
-    //     'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
-    //     array('wp-blocks', 'wp-il8n', 'wp-element'),
-    //     true
-    // );
+    c9_check_bootstrap();
 
     // Youtube Player API
     wp_enqueue_script(
@@ -141,7 +135,7 @@ function c9_blocks_front_assets()
         array('youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n')
     );
 
-    // wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(''), '4.3.1');
+    c9_check_bootstrap();
 }
 
 // Hook: c9 Blocks Frontend
@@ -158,3 +152,33 @@ function c9_blocks_image_sizes()
     add_image_size('ab-block-post-grid-square', 600, 600, true);
 }
 add_action('after_setup_theme', 'c9_blocks_image_sizes');
+
+/**
+ * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
+ */
+function c9_check_bootstrap()
+{
+    $bootstrap_handles = array('bootstrap', 'bootstrap-css', 'bootstrapcss', 'bootstrap4', 'bootstrap4css', 'bootstrap4-css');
+
+    function check_bootstrap_exist($handle)
+    {
+        return wp_style_is($handle, 'queue') || wp_style_is($handle, 'done');
+    }
+
+    $checks = array_filter(array_map('check_bootstrap_exist', $bootstrap_handles), function ($c) {
+        return $c;
+    });
+
+    // echo "<script>console.log(" . json_encode($checks) . ")</script>";
+
+    // if any of them matches, then array length of $check > 0
+    if (sizeof($checks) === 0) {
+        // Styles.
+        wp_enqueue_style(
+            'bootstrap-css',
+            'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+            array(),
+            '4.3.1'
+        );
+    }
+}

@@ -5,6 +5,8 @@
  * which makes it higher in priority.
  */
 
+@import "../../../block-colors";
+
 .c9-toggles {
 	.c9-toggles-item-collapse {
 		width: 28px;
@@ -28,7 +30,7 @@
 }
 
 .c9-toggles-add-item {
-	>.components-button.components-icon-button {
+	> .components-button.components-icon-button {
 		margin: 0 auto;
 	}
 
@@ -65,7 +67,6 @@
 }
 
 .c9-component-remove-button-confirm {
-
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-nope {
 		padding: 0;
@@ -132,7 +133,15 @@
 }
 
 .c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-collapse .fas,
-.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
-.c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
-	line-height: .7;
+.c9-toggles.small-toggle
+	.c9-toggles-toggle
+	.c9-toggles-item-heading:not([data-toggle="collapse"])
+	.c9-toggles-item-collapse
+	.fa-angle-right,
+.c9-toggles.small-toggle
+	.c9-toggles-toggle
+	.c9-toggles-item-heading[aria-expanded="true"]
+	.c9-toggles-item-collapse
+	.fa-angle-right {
+	line-height: 0.7;
 }
