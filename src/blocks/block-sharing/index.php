@@ -54,7 +54,7 @@ function c9_blocks_register_sharing() {
 				),
 				'shareButtonStyle' => array(
 					'type' => 'string',
-					'default' => 'c9-share-icon-text',
+					'default' => 'c9-share-icon-only',
 				),
 				'shareButtonShape' => array(
 					'type' => 'string',

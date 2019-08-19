@@ -3,7 +3,7 @@
  * Loads on front end and back end
  */
 
- .c9-block-sharing {
+.c9-block-sharing {
 	margin: 0 0 1.2em 0;
 	position: relative;
 
@@ -29,7 +29,7 @@
 			display: block;
 			line-height: 1;
 			font-size: 16px;
-			transition: .3s ease;
+			transition: 0.3s ease;
 
 			&:hover {
 				box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
@@ -60,6 +60,16 @@
 			position: absolute !important;
 			width: 1px;
 			word-wrap: normal !important;
+
+			/* sr-only styles from bootstrap  */
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
 		}
 	}
 
@@ -96,7 +106,7 @@
 	&.c9-share-size-small.c9-share-icon-only {
 		a {
 			padding: 7px 6px;
-    		min-width: 28px;
+			min-width: 28px;
 		}
 	}
 
@@ -131,27 +141,27 @@
 		}
 
 		.c9-share-twitter {
-			background: #1ca1f3;	
+			background: #1ca1f3;
 		}
 
 		.c9-share-facebook {
-			background: #3b5999;	
+			background: #3b5999;
 		}
 
 		.c9-share-google {
-			background: #dc4b45;	
+			background: #dc4b45;
 		}
 
 		.c9-share-pinterest {
-			background: #bd091c;	
+			background: #bd091c;
 		}
 
 		.c9-share-linkedin {
-			background: #0077b5;	
+			background: #0077b5;
 		}
 
 		.c9-share-reddit {
-			background: #ff4500;	
+			background: #ff4500;
 		}
 	}
 }
