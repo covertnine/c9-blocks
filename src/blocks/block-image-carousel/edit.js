@@ -3,7 +3,6 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import RemoveButton from "./components/remove-button";
 import React from "react";
 
 /**
@@ -11,7 +10,7 @@ import React from "react";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { BlockControls, MediaPlaceholder } = wp.editor;
+const { RichText, BlockControls, MediaPlaceholder } = wp.editor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
@@ -54,25 +53,25 @@ class Edit extends Component {
 	}
 
 	componentDidUpdate() {
-		const { auto, wrap, slideTarget } = this.state;
-		const { autoSlide, wrapAround, slides } = this.props.attributes;
+		const { auto, wrap } = this.state;
+		const { autoSlide, wrapAround } = this.props.attributes;
 		const $ = window.jQuery;
 
-		let options = $(this.carouselRef.current).data()["bs.carousel"]["_config"];
+		if ($(this.carouselRef.current).data()["bs.carousel"]) {
+			let options = $(this.carouselRef.current).data()["bs.carousel"][
+				"_config"
+			];
 
-		if (auto != autoSlide) {
-			let interval = autoSlide ? 5000 : false;
-			options.interval = interval;
-			this.setState({ auto: autoSlide });
-		}
+			if (auto != autoSlide) {
+				let interval = autoSlide ? 5000 : false;
+				options.interval = interval;
+				this.setState({ auto: autoSlide });
+			}
 
-		if (wrap != wrapAround) {
-			options.wrap = wrapAround;
-			this.setState({ wrap: wrapAround });
-		}
-
-		if (slideTarget == slides) {
-			this.setState({ slideActive: slides - 1, slideTarget: slides - 1 });
+			if (wrap != wrapAround) {
+				options.wrap = wrapAround;
+				this.setState({ wrap: wrapAround });
+			}
 		}
 	}
 
@@ -175,13 +174,22 @@ class Edit extends Component {
 	}
 
 	createIndicators(slides, id) {
+		const { slideActive, slideTarget } = this.state;
+		const { isSelectedBlockInRoot } = this.props;
+		const { url } = this.props.attributes;
+
 		let indicators = [];
-		for (let i = 1; i <= slides; i++) {
+		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
-					className={i == this.state.slideActive ? "active" : null}
+					className={classnames(
+						i == slideActive ? "active" : null,
+						url[slideTarget] && isSelectedBlockInRoot
+							? "editor-selected-controls-lift"
+							: null
+					)}
 				/>
 			);
 		}
@@ -191,7 +199,7 @@ class Edit extends Component {
 
 	createSlides(slides) {
 		const { isSelectedBlockInRoot, setAttributes } = this.props;
-		const { id, url } = this.props.attributes;
+		const { id, url, captionTitle, captionContent } = this.props.attributes;
 
 		let template = [];
 		for (let i = 0; i < slides; i++) {
@@ -237,7 +245,47 @@ class Edit extends Component {
 						/>
 					) : (
 						<Fragment>
-							<img src={url[i]} />
+							<img src={url[i]} className="d-block w-100" />
+							<div
+								className={classnames(
+									"carousel-caption d-none d-md-block",
+									isSelectedBlockInRoot ? "editor-selected-lift" : null
+								)}
+							>
+								<RichText
+									tagName="h5"
+									placeholder={__("Slide label", "c9-blocks")}
+									value={captionTitle[i]}
+									onChange={value => {
+										let newCaptionTitle = [...captionTitle];
+										newCaptionTitle[i] = value;
+
+										setAttributes({
+											captionTitle: newCaptionTitle
+										});
+									}}
+									formattingControls={["bold", "italic", "strikethrough"]}
+									keepPlaceholderOnFocus
+								/>
+								<RichText
+									tagName="p"
+									placeholder={__(
+										"Nulla vitae elit libero, a pharetra augue mollis interdum.",
+										"c9-blocks"
+									)}
+									value={captionContent[i]}
+									onChange={value => {
+										let newCaptionContent = [...captionContent];
+										newCaptionContent[i] = value;
+
+										setAttributes({
+											captionContent: newCaptionContent
+										});
+									}}
+									formattingControls={["bold", "italic", "strikethrough"]}
+									keepPlaceholderOnFocus
+								/>
+							</div>
 							{isSelectedBlockInRoot && (
 								<div className="c9-remove-image">
 									<IconButton
@@ -247,11 +295,20 @@ class Edit extends Component {
 											// clone to new array
 											let newUrl = [...url];
 											let newId = [...id];
+											let newCaptionTitle = [...captionTitle];
+											let newCaptionContent = [...captionContent];
 
 											newUrl[i] = null;
 											newId[i] = null;
+											newCaptionTitle[i] = null;
+											newCaptionContent[i] = null;
 
-											setAttributes({ url: newUrl, id: newId });
+											setAttributes({
+												url: newUrl,
+												id: newId,
+												captionTitle: newCaptionTitle,
+												captionContent: newCaptionContent
+											});
 										}}
 									>
 										{__("Remove", "c9-blocks")}
@@ -268,11 +325,14 @@ class Edit extends Component {
 	}
 
 	render() {
+		const { slideTarget } = this.state;
+
 		const {
 			attributes,
 			setAttributes,
 			className = "",
-			instanceId
+			instanceId,
+			isSelectedBlockInRoot
 		} = this.props;
 
 		const {
@@ -280,7 +340,8 @@ class Edit extends Component {
 			slides,
 			wrapAround,
 			showIndicators,
-			showControls
+			showControls,
+			url
 		} = attributes;
 
 		if (instanceId != attributes.instanceId) {
@@ -291,7 +352,7 @@ class Edit extends Component {
 			<Fragment>
 				<BlockControls />
 
-				<Inspector {...this.props} />
+				<Inspector {...this.props} carouselRef={this.carouselRef} slideTarget={slideTarget} />
 				<div
 					id={`c9-carousel-indicator-${instanceId}`}
 					className={classnames(
@@ -315,7 +376,12 @@ class Edit extends Component {
 					{showControls && (
 						<Fragment>
 							<a
-								className="carousel-control-prev"
+								className={classnames(
+									"carousel-control-prev",
+									url[slideTarget] && isSelectedBlockInRoot
+										? "editor-selected-controls-lift"
+										: null
+								)}
 								href={`#c9-carousel-indicator-${instanceId}`}
 								role="button"
 								data-slide="prev"
@@ -327,7 +393,12 @@ class Edit extends Component {
 								<span className="sr-only">Previous</span>
 							</a>
 							<a
-								className="carousel-control-next"
+								className={classnames(
+									"carousel-control-next",
+									url[slideTarget] && isSelectedBlockInRoot
+										? "editor-selected-controls-lift"
+										: null
+								)}
 								href={`#c9-carousel-indicator-${instanceId}`}
 								role="button"
 								data-slide="next"

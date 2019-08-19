@@ -1298,3 +1298,9 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs .c9-tab-admin-wrapper
   padding-bottom: 20px; }
   .c9-image-carousel .carousel-inner .c9-remove-image > .components-button.components-icon-button {
     margin: 0 auto; }
+
+.c9-image-carousel .editor-selected-lift {
+  bottom: 100px; }
+
+.c9-image-carousel .editor-selected-controls-lift {
+  bottom: 80px; }

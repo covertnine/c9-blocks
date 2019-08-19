@@ -31,13 +31,34 @@ export default class Inspector extends Component {
 						label={__("Number of slides to produce", "c9-blocks")}
 						value={slides}
 						onChange={value => {
-							let { url, id } = this.props.attributes;
+							const { carouselRef, slideTarget } = this.props;
+							let {
+								url,
+								id,
+								captionTitle,
+								captionContent
+							} = this.props.attributes;
+
+							const $ = window.jQuery;
 
 							if (value > url.length) {
 								url.push(null);
 								id.push(null);
+								captionTitle.push(null);
+								captionContent.push(null);
 
-								setAttributes({ id, url });
+								setAttributes({ id, url, captionTitle, captionContent });
+							} else {
+								url.pop();
+								id.pop();
+								captionTitle.pop();
+								captionContent.pop();
+
+								setAttributes({ id, url, captionTitle, captionContent });
+
+								if (carouselRef.current && slideTarget > 0) {
+									$(carouselRef.current).carousel("prev");
+								}
 							}
 
 							setAttributes({ slides: value });

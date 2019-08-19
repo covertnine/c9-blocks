@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 // External Dependencies.
 import classnames from "classnames";
 
@@ -7,18 +8,49 @@ const { applyFilters } = wp.hooks;
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
-const { InnerBlocks } = wp.editor;
+const { RichText } = wp.editor;
 
 export default class Save extends Component {
 	constructor() {
 		super(...arguments);
 	}
 
+	createSlides(slides) {
+		const { url, captionTitle, captionContent } = this.props.attributes;
+
+		let template = [];
+		for (let i = 0; i < slides; i++) {
+			template.push(
+				<div className={classnames("carousel-item", i == 0 ? "active" : null)}>
+					<Fragment>
+						{url[i] && <img src={url[i]} className="d-block w-100" />}
+						{(captionTitle[i] || captionContent[i]) && (
+							<div className={classnames("carousel-caption d-none d-md-block")}>
+								{captionTitle[i] && (
+									<RichText.Content tagName="h5" value={captionTitle[i]} />
+								)}
+								{captionContent[i] && (
+									<RichText.Content tagName="p" value={captionContent[i]} />
+								)}
+							</div>
+						)}
+					</Fragment>
+				</div>
+			);
+		}
+
+		return template;
+	}
+
 	createIndicators(slides, id) {
 		let indicators = [];
 		for (let i = 1; i <= slides; i++) {
 			indicators.push(
-				<li data-target={`#c9-carousel-indicator-${id}`} data-slide-to={i} className={i == 1 ? "active" : null} />
+				<li
+					data-target={`#c9-carousel-indicator-${id}`}
+					data-slide-to={i}
+					className={i == 1 ? "active" : null}
+				/>
 			);
 		}
 
@@ -53,9 +85,7 @@ export default class Save extends Component {
 						{this.createIndicators(slides, instanceId)}
 					</ol>
 				)}
-				<div className="carousel-inner">
-					<InnerBlocks.Content />
-				</div>
+				<div className="carousel-inner">{this.createSlides(slides)}</div>
 				{showControls && (
 					<Fragment>
 						<a

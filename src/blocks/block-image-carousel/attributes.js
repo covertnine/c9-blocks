@@ -29,6 +29,14 @@ const attributes = {
 	id: {
 		type: "array",
 		default: [null, null, null]
+	},
+	captionTitle: {
+		type: "array",
+		default: [null, null, null]
+	},
+	captionContent: {
+		type: "array",
+		default: [null, null, null]
 	}
 };
 
