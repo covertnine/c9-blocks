@@ -104,7 +104,7 @@ export default class Save extends Component {
 							rel="noopener noreferrer"
 							className={classnames(
 								"wp-block-button__link",
-								buttonShape,
+								`c9-button-shape-${buttonShape}`,
 								buttonSize
 							)}
 							style={{

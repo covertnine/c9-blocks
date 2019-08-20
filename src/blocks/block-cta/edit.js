@@ -119,7 +119,7 @@ export default class Edit extends Component {
 							formattingControls={[]}
 							className={classnames(
 								"wp-block-button__link",
-								buttonShape,
+								`c9-button-shape-${buttonShape}`,
 								buttonSize
 							)}
 							style={{

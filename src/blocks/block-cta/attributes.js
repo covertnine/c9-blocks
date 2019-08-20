@@ -25,7 +25,7 @@ const blockAttributes = {
 	},
 	buttonShape: {
 		type: "string",
-		default: "c9-button-shape-rounded"
+		default: "square"
 	},
 	buttonTarget: {
 		type: "boolean",

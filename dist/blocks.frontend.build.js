@@ -60,22 +60,52 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */
+/******/ ({
+
+/***/ 10:
+/***/ (function(module, exports) {
+
+document.addEventListener("DOMContentLoaded", function() {
+	const $ = window.jQuery;
+
+	$(".c9-toggles-toggle:not(.toggle-collapse-ready)").each(function() {
+		const $this = $(this);
+		$this.addClass("toggle-collapse-ready");
+
+		// grab collapse id
+		const id = $(".c9-toggles-item-content.collapse", this).attr("id");
+
+		// grab rotate arrow id
+		const iconId = $(".c9-toggles-item-heading", this).attr("id");
+
+		// insert hook into collapse and expand event
+		$(`#${id}`).on("show.bs.collapse", () => {
+			$(`#${iconId} span.c9-toggles-item-collapse > svg`).toggleClass(
+				"c9-toggle-item-expand"
+			);
+		});
+		$(`#${id}`).on("hide.bs.collapse", () => {
+			$(`#${iconId} span.c9-toggles-item-collapse > svg`).toggleClass(
+				"c9-toggle-item-expand"
+			);
+		});
+	});
+});
+
+
+/***/ }),
+
+/***/ 8:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__blocks_block_grid_container_frontend_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_toggles_frontend_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_toggles_frontend_js__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_toggles_frontend_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__blocks_block_toggles_frontend_js__);
 /**
  * Gutenberg Blocks Frontend JS
@@ -92,7 +122,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
-/* 5 */
+
+/***/ 9:
 /***/ (function(module, exports) {
 
 /* eslint-disable no-undef */
@@ -159,37 +190,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-document.addEventListener("DOMContentLoaded", function() {
-	const $ = window.jQuery;
-
-	$(".c9-toggles-toggle:not(.toggle-collapse-ready)").each(function() {
-		const $this = $(this);
-		$this.addClass("toggle-collapse-ready");
-
-		// grab collapse id
-		const id = $(".c9-toggles-item-content.collapse", this).attr("id");
-
-		// grab rotate arrow id
-		const iconId = $(".c9-toggles-item-heading", this).attr("id");
-
-		// insert hook into collapse and expand event
-		$(`#${id}`).on("show.bs.collapse", () => {
-			$(`#${iconId} span.c9-toggles-item-collapse > svg`).toggleClass(
-				"c9-toggle-item-expand"
-			);
-		});
-		$(`#${id}`).on("hide.bs.collapse", () => {
-			$(`#${iconId} span.c9-toggles-item-collapse > svg`).toggleClass(
-				"c9-toggle-item-expand"
-			);
-		});
-	});
-});
-
-
 /***/ })
-/******/ ]);
+
+/******/ });

@@ -187,8 +187,8 @@ export default class Inspector extends Component {
 
 		// Button shape
 		const buttonShapeOptions = [
-			{ value: "round", label: __("Round") },
 			{ value: "square", label: __("Square") },
+			{ value: "round", label: __("Round") },
 			{ value: "outline", label: __("Outline") }
 		];
 
