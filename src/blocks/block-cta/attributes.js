@@ -78,7 +78,8 @@ const blockAttributes = {
 		source: "children"
 	},
 	ctaWidth: {
-		type: "string"
+		type: "string",
+		default: "container"
 	},
 	ctaBackgroundColor: {
 		type: "string"
@@ -125,6 +126,10 @@ const blockAttributes = {
 	ctaTitleFontSize: {
 		type: "string",
 		default: "32"
+	},
+	align: {
+		type: "string",
+		default: ""
 	}
 };
 

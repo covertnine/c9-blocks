@@ -30,16 +30,19 @@ registerBlockType("c9-blocks/cta", {
 	),
 	icon: iconEl,
 	category: "c9-blocks",
-	keywords: [
-		__("call to action", "c9-blocks"),
-		__("cta", "c9-blocks")
-	],
+	keywords: [__("call to action", "c9-blocks"), __("cta", "c9-blocks")],
 
 	attributes: attributes,
 
-	getEditWrapperProps({ ctaWidth }) {
-		if ("left" === ctaWidth || "right" === ctaWidth || "full" === ctaWidth) {
-			return { "data-align": ctaWidth };
+	/* Add alignment to block wrapper. */
+	getEditWrapperProps({ align }) {
+		if (
+			"full" === align ||
+			"wide" === align ||
+			"narrow" === align ||
+			"" === align
+		) {
+			return { "data-align": align };
 		}
 	},
 
@@ -59,3 +62,30 @@ registerBlockType("c9-blocks/cta", {
 	// Save the attributes and markup
 	save: Save
 });
+
+/* Add the container class to the cta block. */
+const withClientIdClassName = wp.compose.createHigherOrderComponent(
+	BlockListBlock => {
+		return props => {
+			const blockName = props.block.name;
+
+			if (blockName === "c9-blocks/cta") {
+				return (
+					<BlockListBlock
+						{...props}
+						className={props.attributes.ctaWidth}
+					/>
+				);
+			} else {
+				return <BlockListBlock {...props} />;
+			}
+		};
+	},
+	"withClientIdClassName"
+);
+
+wp.hooks.addFilter(
+	"editor.BlockListBlock",
+	"c9-blocks/add-container-class",
+	withClientIdClassName
+);

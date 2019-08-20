@@ -56,7 +56,7 @@ export default class Save extends Component {
 		} = this.props;
 
 		return (
-			<CallToAction {...this.props}>
+			<CallToAction {...this.props} save={true}>
 				{imgURL && !!imgURL.length && (
 					<div className="c9-cta-image-wrap">
 						<img

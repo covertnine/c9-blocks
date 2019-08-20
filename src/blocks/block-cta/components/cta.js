@@ -59,7 +59,16 @@ export default class CallToAction extends Component {
 		return classes;
 	}
 
-	c9BackgroundStyles(url, size, bgColor, opacity, align, blend, focalPoint, selected = true) {
+	c9BackgroundStyles(
+		url,
+		size,
+		bgColor,
+		opacity,
+		align,
+		blend,
+		focalPoint,
+		selected = true
+	) {
 		const styles = {};
 
 		if (bgColor) {
@@ -121,11 +130,24 @@ export default class CallToAction extends Component {
 				blendMode,
 				focalPoint,
 				ctaPadding,
-				ctaMargin
+				ctaMargin,
+				align
 			},
 			className = "",
-			isSelectedBlockInRoot
+			isSelectedBlockInRoot,
+			save = false
 		} = this.props;
+
+		let ctaAlign;
+		if (save && align.length != 0) {
+			if (ctaWidth == "container") {
+				ctaAlign = "alignwide";
+			} else if (ctaWidth == "container-fluid") {
+				ctaAlign = "alignfull";
+			} else {
+				ctaAlign = null;
+			}
+		}
 
 		return (
 			<div
@@ -140,18 +162,13 @@ export default class CallToAction extends Component {
 					isSelectedBlockInRoot
 				)}
 				className={classnames(
-					[
-						applyFilters("c9-blocks.blocks.className", className),
-						"c9-block-cta",
-						"container",
-						this.c9SpacingConfig(ctaPadding, ctaMargin),
-						// eslint-disable-next-line no-extra-boolean-cast
-						!!imgURL ? "c9-cta-has-background" : null
-					],
-					{
-						["c9-font-size-" + ctaTextFontSize]: ctaTextFontSize,
-						["align" + ctaWidth]: ctaWidth
-					}
+					applyFilters("c9-blocks.blocks.className", className),
+					"c9-block-cta",
+					save ? ctaWidth : null,
+					ctaAlign,
+					this.c9SpacingConfig(ctaPadding, ctaMargin),
+					// eslint-disable-next-line no-extra-boolean-cast
+					!!imgURL ? "c9-cta-has-background" : null
 				)}
 			>
 				<div className="row">{this.props.children}</div>

@@ -3,6 +3,7 @@ import classnames from "classnames";
 
 import Inspector from "./components/inspector";
 import CallToAction from "./components/cta";
+import WidthToolbar from "./components/width-toolbar";
 
 // Extend component
 const { Component, Fragment } = wp.element;
@@ -12,7 +13,6 @@ const {
 	AlignmentToolbar,
 	URLInput,
 	BlockControls,
-	BlockAlignmentToolbar,
 	RichText
 } = wp.editor;
 
@@ -60,20 +60,47 @@ export default class Edit extends Component {
 				ctaTextFontSize,
 				ctaWidth,
 				ctaTextColor,
-				ctaLayout
+				ctaLayout,
+				align
 			},
 			isSelectedBlockInRoot,
 			setAttributes
 		} = this.props;
 
+		let currWidth;
+		if (align.length != 0) {
+			if (ctaWidth == "container") {
+				currWidth = "wide";
+			} else if (ctaWidth == "container-fluid") {
+				currWidth = "full";
+			} else {
+				currWidth = "narrow";
+			}
+		}
+
 		return (
 			// Show the alignment toolbar on focus
 			<Fragment>
 				<BlockControls>
-					<BlockAlignmentToolbar
-						value={ctaWidth}
-						onChange={ctaWidth => setAttributes({ ctaWidth })}
-						controls={["center", "wide", "full"]}
+					<WidthToolbar
+						value={currWidth}
+						onChange={value => {
+							if (value == "wide") {
+								setAttributes({ ctaWidth: "container", align: "wide" });
+							} else if (value == "full") {
+								setAttributes({
+									ctaWidth: "container-fluid",
+									align: "full"
+								});
+							} else if (value == "narrow") {
+								setAttributes({
+									ctaWidth: "container-narrow",
+									align: "narrow"
+								});
+							} else {
+								setAttributes({ ctaWidth: "container", align: "" });
+							}
+						}}
 					/>
 					<AlignmentToolbar
 						value={buttonAlignment}

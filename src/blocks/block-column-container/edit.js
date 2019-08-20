@@ -168,7 +168,6 @@ export default class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls key="controls">
-					{/* <Toolbar controls={widthControls} /> */}
 					<WidthToolbar
 						value={currWidth}
 						onChange={value => {
