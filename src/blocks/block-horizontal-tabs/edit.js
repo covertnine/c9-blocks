@@ -118,6 +118,7 @@ class Edit extends Component {
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 
+			// eslint-disable-next-line no-unused-vars
 			for (let child of block.innerBlocks) {
 				if (instanceId != child.attributes.id) {
 					updateBlockAttributes(child.clientId, { id: instanceId });
@@ -128,9 +129,9 @@ class Edit extends Component {
 		const tabs = this.getTabs();
 
 		let align;
-		if (buttonsAlign == "start") {
+		if ("start" == buttonsAlign) {
 			align = "left";
-		} else if (buttonsAlign == "end") {
+		} else if ("end" == buttonsAlign) {
 			align = "right";
 		} else {
 			align = buttonsAlign;
@@ -150,9 +151,9 @@ class Edit extends Component {
 					<AlignmentToolbar
 						value={align}
 						onChange={value => {
-							if (value == "left") {
+							if ("left" == value) {
 								setAttributes({ buttonsAlign: "start" });
-							} else if (value == "right") {
+							} else if ("right" == value) {
 								setAttributes({ buttonsAlign: "end" });
 							} else {
 								setAttributes({ buttonsAlign: value });
@@ -232,7 +233,7 @@ class Edit extends Component {
 										show={isSelectedBlockInRoot}
 										tooltipText={__("Remove tab?", "c9-blocks")}
 										onRemove={() => {
-											if (block.innerBlocks.length <= 1) {
+											if (1 >= block.innerBlocks.length) {
 												this.props.removeBlock(block.clientId);
 											} else if (block.innerBlocks[i]) {
 												this.props.removeBlock(block.innerBlocks[i].clientId);

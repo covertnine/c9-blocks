@@ -50,6 +50,7 @@ class Edit extends Component {
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 
+			// eslint-disable-next-line no-unused-vars
 			for (let child of block.innerBlocks) {
 				if (instanceId != child.attributes.id) {
 					updateBlockAttributes(child.clientId, { id: instanceId });

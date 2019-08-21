@@ -22,7 +22,7 @@ export default class Container extends Component {
 		let classes = [];
 		// abstract side class assignment
 		function assignSideClasses(sideClass, level) {
-			if (level != -1) {
+			if (-1 != level) {
 				classes.push(`${sideClass}-${level}`);
 			}
 		}
@@ -32,14 +32,14 @@ export default class Container extends Component {
 			padding.top === padding.left &&
 			padding.top === padding.bottom &&
 			padding.top === padding.right &&
-			padding.top != -1
+			-1 != padding.top
 		) {
 			classes.push(`p-${padding.top}`);
-		} else if (padding.top === padding.bottom && padding.top >= 0) {
+		} else if (padding.top === padding.bottom && 0 <= padding.top) {
 			classes.push(`py-${padding.top}`);
 			assignSideClasses("pl", padding.left);
 			assignSideClasses("pr", padding.right);
-		} else if (padding.left === padding.right && padding.left >= 0) {
+		} else if (padding.left === padding.right && 0 <= padding.left) {
 			classes.push(`px-${padding.left}`);
 			assignSideClasses("pt", padding.top);
 			assignSideClasses("pb", padding.bottom);
@@ -50,7 +50,7 @@ export default class Container extends Component {
 		}
 
 		// margin
-		if (margin.top === margin.bottom && margin.top != -1) {
+		if (margin.top === margin.bottom && -1 != margin.top) {
 			classes.push(`my-${margin.top}`);
 		} else {
 			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
@@ -99,13 +99,13 @@ export default class Container extends Component {
 			styles.backgroundRepeat = repeat;
 			styles.backgroundBlendMode = `${blend}`;
 		}
-		if (size.length > 0) {
+		if (0 < size.length) {
 			styles.backgroundSize = size;
 		} else {
 			let horizontal =
-				bgX.size != "auto" ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
 			let vertical =
-				bgY.size != "auto" ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 			styles.backgroundSize = `${horizontal} ${vertical}`;
 		}
 
@@ -129,7 +129,7 @@ export default class Container extends Component {
 
 		var opacity;
 
-		if (alpha === 10) {
+		if (10 === alpha) {
 			opacity = 1;
 		} else {
 			opacity = "." + alpha;

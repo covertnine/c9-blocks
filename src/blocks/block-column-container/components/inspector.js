@@ -45,8 +45,8 @@ export default class Inspector extends Component {
 			containerPadding: containerPadding,
 			containerMargin: containerMargin,
 			setAttributes: setAttributes,
-			customX: bgCustomX.size != "auto",
-			customY: bgCustomY.size != "auto",
+			customX: "auto" != bgCustomX.size,
+			customY: "auto" != bgCustomY.size,
 			bgCustomX: bgCustomX,
 			bgCustomY: bgCustomY
 		};

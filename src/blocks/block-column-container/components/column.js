@@ -56,7 +56,7 @@ registerBlockType("c9-blocks/column", {
 		const ALLOWED_BLOCKS = getBlockTypes()
 			.map(block => block.name)
 			.filter(
-				name => name != "c9-blocks/grid" && name != "c9-blocks/column-container"
+				name => "c9-blocks/grid" != name && "c9-blocks/column-container" != name
 			);
 
 		return (
@@ -122,7 +122,7 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 		return props => {
 			const blockName = props.block.name;
 
-			if (blockName === "c9-blocks/column") {
+			if ("c9-blocks/column" === blockName) {
 				return (
 					<BlockListBlock
 						{...props}

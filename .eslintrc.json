@@ -6,7 +6,6 @@
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:jsx-a11y/recommended",
-		"plugin:jest/recommended",
 		"prettier",
 		"prettier/react"
 	],
@@ -14,8 +13,7 @@
 		"browser": false,
 		"es6": true,
 		"node": true,
-		"mocha": true,
-		"jest/globals": true
+		"mocha": true
 	},
 	"parserOptions": {
 		"sourceType": "module",
@@ -29,7 +27,7 @@
 		"window": true,
 		"document": true
 	},
-	"plugins": ["react", "jsx-a11y", "jest", "lodash"],
+	"plugins": ["react", "jsx-a11y", "lodash"],
 	"settings": {
 		"react": {
 			"pragma": "wp",

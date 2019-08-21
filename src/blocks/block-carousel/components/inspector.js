@@ -1,8 +1,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { AlignmentToolbar, InspectorControls, PanelColorSettings } = wp.editor;
+const { InspectorControls } = wp.editor;
 const { BaseControl, PanelBody, RangeControl, ToggleControl } = wp.components;
-const { ContrastChecker } = wp.blockEditor;
 
 /**
  * Create an Inspector Controls wrapper Component

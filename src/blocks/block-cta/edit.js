@@ -32,13 +32,13 @@ export default class Edit extends Component {
 	}
 
 	layoutClass(ctaWidth, textOrButton) {
-		if (ctaWidth == "two-thirds") {
-			if (textOrButton == "text") {
+		if ("two-thirds" == ctaWidth) {
+			if ("text" == textOrButton) {
 				return "col-md-8";
 			}
 			return "col-md-4";
-		} else if (ctaWidth == "three-quarters") {
-			if (textOrButton == "text") {
+		} else if ("three-quarters" == ctaWidth) {
+			if ("text" == textOrButton) {
 				return "col-md-9";
 			}
 			return "col-md-3";
@@ -68,10 +68,10 @@ export default class Edit extends Component {
 		} = this.props;
 
 		let currWidth;
-		if (align.length != 0) {
-			if (ctaWidth == "container") {
+		if (0 != align.length) {
+			if ("container" == ctaWidth) {
 				currWidth = "wide";
-			} else if (ctaWidth == "container-fluid") {
+			} else if ("container-fluid" == ctaWidth) {
 				currWidth = "full";
 			} else {
 				currWidth = "narrow";
@@ -85,14 +85,14 @@ export default class Edit extends Component {
 					<WidthToolbar
 						value={currWidth}
 						onChange={value => {
-							if (value == "wide") {
+							if ("wide" == value) {
 								setAttributes({ ctaWidth: "container", align: "wide" });
-							} else if (value == "full") {
+							} else if ("full" == value) {
 								setAttributes({
 									ctaWidth: "container-fluid",
 									align: "full"
 								});
-							} else if (value == "narrow") {
+							} else if ("narrow" == value) {
 								setAttributes({
 									ctaWidth: "container-narrow",
 									align: "narrow"

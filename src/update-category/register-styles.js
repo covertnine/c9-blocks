@@ -1,11 +1,11 @@
-const { registerBlockStyle } = wp.blocks;
+// const { registerBlockStyle } = wp.blocks;
 
 let loadBlocksEditor = null;
 
-if (typeof window._wpLoadBlockEditor !== "undefined") {
+if ("undefined" !== typeof window._wpLoadBlockEditor) {
 	// Using Gutenberg plugin
 	loadBlocksEditor = window._wpLoadBlockEditor;
-} else if (typeof window._wpLoadGutenbergEditor !== "undefined") {
+} else if ("undefined" !== typeof window._wpLoadGutenbergEditor) {
 	// Using WP core Gutenberg
 	loadBlocksEditor = window._wpLoadGutenbergEditor;
 }

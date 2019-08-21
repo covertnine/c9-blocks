@@ -97,7 +97,7 @@ export default class PostGridImage extends Component {
 					{/* If we don't have the selected image size, show a warning */
 					!this.getImageUrl() &&
 						this.state.imageLoaded &&
-						this.props.imgSize !== "selectimage" && (
+						"selectimage" !== this.props.imgSize && (
 							<Fragment>
 								<div className={"c9-post-grid-no-image-icon"}>
 									<Dashicon icon={"warning"} />

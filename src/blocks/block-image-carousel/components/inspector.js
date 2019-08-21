@@ -1,8 +1,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { AlignmentToolbar, InspectorControls, PanelColorSettings } = wp.editor;
+const { InspectorControls } = wp.editor;
 const { BaseControl, PanelBody, RangeControl, ToggleControl } = wp.components;
-const { ContrastChecker } = wp.blockEditor;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -56,7 +55,7 @@ export default class Inspector extends Component {
 
 								setAttributes({ id, url, captionTitle, captionContent });
 
-								if (carouselRef.current && slideTarget > 0) {
+								if (carouselRef.current && 0 < slideTarget) {
 									$(carouselRef.current).carousel("prev");
 								}
 							}
