@@ -122,23 +122,23 @@ export default class Inspector extends Component {
 			label: __("Select image size")
 		};
 
-		// Add the landscape image size to the select
-		const c9ImageSizeLandscape = {
-			value: "c9-post-grid-image-landscape",
-			label: __("C9 Grid Landscape")
-		};
+		// // Add the landscape image size to the select
+		// const c9ImageSizeLandscape = {
+		// 	value: "c9-post-grid-image-landscape",
+		// 	label: __("C9 Grid Landscape")
+		// };
 
-		// Add the square image size to the select
-		const c9ImageSizeSquare = {
-			value: "c9-post-grid-image-square",
-			label: __("C9 Grid Square")
-		};
+		// // Add the square image size to the select
+		// const c9ImageSizeSquare = {
+		// 	value: "c9-post-grid-image-square",
+		// 	label: __("C9 Grid Square")
+		// };
 
 		// Get the image size options
 		const imageSizeOptions = this.imageSizeSelect();
 
 		// Combine the objects
-		imageSizeOptions.push(c9ImageSizeSquare, c9ImageSizeLandscape);
+		// imageSizeOptions.push(c9ImageSizeSquare, c9ImageSizeLandscape);
 		imageSizeOptions.unshift(c9ImageSizeSelect);
 
 		const imageSizeValue = () => {
