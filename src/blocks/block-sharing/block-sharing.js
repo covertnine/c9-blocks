@@ -6,7 +6,7 @@ import "./styles/editor.scss";
 
 // Import Fontawesome Icon
 import { faShareSquare } from "@fortawesome/free-regular-svg-icons";
-import { makeIcon } from "../../helpers/awesomeGenerator";
+import { makeIcon } from "../../components/awesomeGenerator";
 const iconEl = makeIcon(faShareSquare);
 
 // Components

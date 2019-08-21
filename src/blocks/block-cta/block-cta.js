@@ -7,7 +7,7 @@ import "./styles/editor.scss";
 
 // Import Icon
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-import { makeIcon } from "../../helpers/awesomeGenerator";
+import { makeIcon } from "../../components/awesomeGenerator";
 const iconEl = makeIcon(faExclamationCircle);
 
 // Components
