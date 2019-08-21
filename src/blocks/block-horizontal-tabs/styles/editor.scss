@@ -4,10 +4,8 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-
-@import "../../../block-colors";
-
-div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
+ 
+ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 	.tab-content [data-tab] {
 		display: none;
 	}
