@@ -70,6 +70,7 @@ class Edit extends Component {
 
 			let k = 1;
 
+			// eslint-disable-next-line no-unused-vars
 			for (let child of block.innerBlocks) {
 				if (child.attributes.toggleNumber != k) {
 					updateBlockAttributes(child.clientId, { toggleNumber: k });
@@ -134,6 +135,7 @@ class Edit extends Component {
 			setAttributes({ instanceId });
 
 			if (block) {
+				// eslint-disable-next-line no-unused-vars
 				for (let child of block.innerBlocks) {
 					if (instanceId != child.attributes.id) {
 						updateBlockAttributes(child.clientId, { id: instanceId });

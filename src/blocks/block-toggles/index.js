@@ -4,7 +4,7 @@ import Save from "./save";
 
 import attributes from "./attributes";
 
-import toggleIcon from "../../../assets/toggle-icon";
+import toggleIcon from "../../../assets/toggle-icon.svg";
 
 // Import CSS
 import "./styles/style.scss";

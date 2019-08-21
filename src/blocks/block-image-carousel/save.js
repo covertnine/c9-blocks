@@ -21,7 +21,7 @@ export default class Save extends Component {
 		let template = [];
 		for (let i = 0; i < slides; i++) {
 			template.push(
-				<div className={classnames("carousel-item", i == 0 ? "active" : null)}>
+				<div className={classnames("carousel-item", 0 == i ? "active" : null)}>
 					<Fragment>
 						{url[i] && <img src={url[i]} className="d-block w-100" />}
 						{(captionTitle[i] || captionContent[i]) && (
@@ -49,7 +49,7 @@ export default class Save extends Component {
 				<li
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
-					className={i == 1 ? "active" : null}
+					className={1 == i ? "active" : null}
 				/>
 			);
 		}

@@ -27,10 +27,10 @@ export default class Edit extends Component {
 		super(...arguments);
 	}
 
-	truncate(str, no_words) {
+	truncate(str, noWords) {
 		return str
 			.split(" ")
-			.splice(0, no_words)
+			.splice(0, noWords)
 			.join(" ");
 	}
 
@@ -46,13 +46,13 @@ export default class Edit extends Component {
 		const hasPosts = Array.isArray(latestPosts) && latestPosts.length;
 
 		// Check the post type
-		const isPost = attributes.postType === "post";
+		const isPost = "post" === attributes.postType;
 
 		let currWidth;
-		if (attributes.align.length != 0) {
-			if (attributes.containerWidth == "container") {
+		if (0 != attributes.align.length) {
+			if ("container" == attributes.containerWidth) {
 				currWidth = "wide";
-			} else if (attributes.containerWidth == "container-fluid") {
+			} else if ("container-fluid" == attributes.containerWidth) {
 				currWidth = "full";
 			} else {
 				currWidth = "narrow";
@@ -89,13 +89,13 @@ export default class Edit extends Component {
 				icon: "grid-view",
 				title: __("Grid View", "c9-blocks"),
 				onClick: () => setAttributes({ postLayout: "grid" }),
-				isActive: attributes.postLayout === "grid"
+				isActive: "grid" === attributes.postLayout
 			},
 			{
 				icon: "list-view",
 				title: __("List View", "c9-blocks"),
 				onClick: () => setAttributes({ postLayout: "list" }),
-				isActive: attributes.postLayout === "list"
+				isActive: "list" === attributes.postLayout
 			}
 		];
 
@@ -119,14 +119,14 @@ export default class Edit extends Component {
 				<WidthToolbar
 						value={currWidth}
 						onChange={value => {
-							if (value == "wide") {
+							if ("wide" == value) {
 								setAttributes({ containerWidth: "container", align: "wide" });
-							} else if (value == "full") {
+							} else if ("full" == value) {
 								setAttributes({
 									containerWidth: "container-fluid",
 									align: "full"
 								});
-							} else if (value == "narrow") {
+							} else if ("narrow" == value) {
 								setAttributes({
 									containerWidth: "container-narrow",
 									align: "narrow"
@@ -158,10 +158,10 @@ export default class Edit extends Component {
 
 					<div
 						className={classnames({
-							"is-grid": attributes.postLayout === "grid",
-							"is-list": attributes.postLayout === "list",
+							"is-grid": "grid" === attributes.postLayout,
+							"is-list": "list" === attributes.postLayout,
 							[`columns-${attributes.columns}`]:
-								attributes.postLayout === "grid",
+								"grid" === attributes.postLayout,
 							"c9-post-grid-items": "c9-post-grid-items"
 						})}
 					>

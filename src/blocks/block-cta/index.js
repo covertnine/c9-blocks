@@ -69,7 +69,7 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 		return props => {
 			const blockName = props.block.name;
 
-			if (blockName === "c9-blocks/cta") {
+			if ("c9-blocks/cta" === blockName) {
 				return (
 					<BlockListBlock
 						{...props}

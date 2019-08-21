@@ -19,6 +19,7 @@ class TemplatesModal extends Component {
 
 	markupToBlock(templateObj, canUserUseUnfilteredHTML) {
 		let blockObj = Object.assign({}, templateObj);
+		// eslint-disable-next-line no-unused-vars
 		for (let key of Object.keys(blockObj)) {
 			blockObj[key] = rawHandler({
 				HTML: blockObj[key],
@@ -44,7 +45,7 @@ class TemplatesModal extends Component {
 				})
 			],
 			// convert markup to actual blocks
-			...this.markupToBlock(templateMarkups["sections"], canUserUseUnfilteredHTML)
+			...this.markupToBlock(templateMarkups.sections, canUserUseUnfilteredHTML)
 		};
 
 		const layouts = {
@@ -88,7 +89,7 @@ class TemplatesModal extends Component {
 				])
 			],
 			// convert markup to actual blocks
-			...this.markupToBlock(templateMarkups["layouts"], canUserUseUnfilteredHTML)
+			...this.markupToBlock(templateMarkups.layouts, canUserUseUnfilteredHTML)
 		};
 
 		return (

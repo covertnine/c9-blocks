@@ -38,7 +38,7 @@ export default class VideoBox extends Component {
 			return;
 		}
 
-		let video_id = this.containerVideoID;
+		let videoID = this.containerVideoID;
 
 		let loadYT = window.YT;
 
@@ -51,7 +51,7 @@ export default class VideoBox extends Component {
 				window.onYouTubeIframeAPIReady = () => resolve(window.YT);
 			});
 			loadYT.then(YT => {
-				let player = new YT.Player(`player-${video_id}-${instanceId}`, {
+				let player = new YT.Player(`player-${videoID}-${instanceId}`, {
 					playerVars: {
 						autoplay: 1,
 						controls: 0,
@@ -62,12 +62,13 @@ export default class VideoBox extends Component {
 						enablejsapi: 1,
 						loop: 1,
 						showinfo: 0,
+						// eslint-disable-next-line camelcase
 						iv_load_policy: 3,
 						rel: 0,
 						modestbranding: 1,
-						playlist: video_id
+						playlist: videoID
 					},
-					videoId: video_id,
+					videoId: videoID,
 					events: {
 						onReady: this.onPlayerReady
 					}
@@ -76,7 +77,7 @@ export default class VideoBox extends Component {
 				this.preview = player;
 			});
 		} else {
-			let player = new loadYT.Player(`player-${video_id}-${instanceId}`, {
+			let player = new loadYT.Player(`player-${videoID}-${instanceId}`, {
 				playerVars: {
 					autoplay: 1,
 					controls: 0,
@@ -87,12 +88,13 @@ export default class VideoBox extends Component {
 					enablejsapi: 1,
 					loop: 1,
 					showinfo: 0,
+					// eslint-disable-next-line camelcase
 					iv_load_policy: 3,
 					rel: 0,
 					modestbranding: 1,
-					playlist: video_id
+					playlist: videoID
 				},
-				videoId: video_id,
+				videoId: videoID,
 				events: {
 					onReady: this.onPlayerReady
 				}
@@ -139,7 +141,7 @@ export default class VideoBox extends Component {
 			return styles;
 		};
 
-		if (containerVideoURL && videoType == "upload") {
+		if (containerVideoURL && "upload" == videoType) {
 			return (
 				<div className="c9-video-container" ref={this.videoContainerRef}>
 					<div className="c9-embed-container">

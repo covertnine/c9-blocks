@@ -24,9 +24,9 @@ export default class Inspector extends Component {
 		} = attributes;
 
 		let align;
-		if (buttonsAlign == "start") {
+		if ("start" == buttonsAlign) {
 			align = "left";
-		} else if (buttonsAlign == "end") {
+		} else if ("end" == buttonsAlign) {
 			align = "right";
 		} else {
 			align = buttonsAlign;
@@ -38,9 +38,9 @@ export default class Inspector extends Component {
 					<AlignmentToolbar
 						value={align}
 						onChange={value => {
-							if (value == "left") {
+							if ("left" == value) {
 								setAttributes({ buttonsAlign: "start" });
-							} else if (value == "right") {
+							} else if ("right" == value) {
 								setAttributes({ buttonsAlign: "end" });
 							} else {
 								setAttributes({ buttonsAlign: value });

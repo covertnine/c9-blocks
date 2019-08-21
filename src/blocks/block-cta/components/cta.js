@@ -22,7 +22,7 @@ export default class CallToAction extends Component {
 		let classes = [];
 		// abstract side class assignment
 		function assignSideClasses(sideClass, level) {
-			if (level != -1) {
+			if (-1 != level) {
 				classes.push(`${sideClass}-${level}`);
 			}
 		}
@@ -32,14 +32,14 @@ export default class CallToAction extends Component {
 			padding.top === padding.left &&
 			padding.top === padding.bottom &&
 			padding.top === padding.right &&
-			padding.top != -1
+			-1 != padding.top
 		) {
 			classes.push(`p-${padding.top}`);
-		} else if (padding.top === padding.bottom && padding.top >= 0) {
+		} else if (padding.top === padding.bottom && 0 <= padding.top) {
 			classes.push(`py-${padding.top}`);
 			assignSideClasses("pl", padding.left);
 			assignSideClasses("pr", padding.right);
-		} else if (padding.left === padding.right && padding.left >= 0) {
+		} else if (padding.left === padding.right && 0 <= padding.left) {
 			classes.push(`px-${padding.left}`);
 			assignSideClasses("pt", padding.top);
 			assignSideClasses("pb", padding.bottom);
@@ -50,7 +50,7 @@ export default class CallToAction extends Component {
 		}
 
 		// margin
-		if (margin.top === margin.bottom && margin.top != -1) {
+		if (margin.top === margin.bottom && -1 != margin.top) {
 			classes.push(`my-${margin.top}`);
 		} else {
 			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
@@ -92,7 +92,7 @@ export default class CallToAction extends Component {
 					100}%`;
 			}
 
-			if (size.length > 0) {
+			if (0 < size.length) {
 				styles.backgroundSize = size;
 			}
 		}
@@ -107,7 +107,7 @@ export default class CallToAction extends Component {
 
 		var opacity;
 
-		if (alpha === 10) {
+		if (10 === alpha) {
 			opacity = 1;
 		} else {
 			opacity = "." + alpha;
@@ -121,7 +121,6 @@ export default class CallToAction extends Component {
 		const {
 			attributes: {
 				buttonAlignment,
-				ctaTextFontSize,
 				ctaWidth,
 				ctaBackgroundColor,
 				ctaBackgroundOpacity,
@@ -139,10 +138,10 @@ export default class CallToAction extends Component {
 		} = this.props;
 
 		let ctaAlign;
-		if (save && align.length != 0) {
-			if (ctaWidth == "container") {
+		if (save && 0 != align.length) {
+			if ("container" == ctaWidth) {
 				ctaAlign = "alignwide";
-			} else if (ctaWidth == "container-fluid") {
+			} else if ("container-fluid" == ctaWidth) {
 				ctaAlign = "alignfull";
 			} else {
 				ctaAlign = null;

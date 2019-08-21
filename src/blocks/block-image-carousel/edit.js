@@ -58,9 +58,7 @@ class Edit extends Component {
 		const $ = window.jQuery;
 
 		if ($(this.carouselRef.current).data()["bs.carousel"]) {
-			let options = $(this.carouselRef.current).data()["bs.carousel"][
-				"_config"
-			];
+			let options = $(this.carouselRef.current).data()["bs.carousel"]._config;
 
 			if (auto != autoSlide) {
 				let interval = autoSlide ? 5000 : false;

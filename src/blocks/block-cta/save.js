@@ -15,13 +15,13 @@ export default class Save extends Component {
 	}
 
 	layoutClass(ctaWidth, textOrButton) {
-		if (ctaWidth == "two-thirds") {
-			if (textOrButton == "text") {
+		if ("two-thirds" == ctaWidth) {
+			if ("text" == textOrButton) {
 				return "col-md-8";
 			}
 			return "col-md-4";
-		} else if (ctaWidth == "three-quarters") {
-			if (textOrButton == "text") {
+		} else if ("three-quarters" == ctaWidth) {
+			if ("text" == textOrButton) {
 				return "col-md-9";
 			}
 			return "col-md-3";
@@ -29,7 +29,7 @@ export default class Save extends Component {
 	}
 
 	dimRatioToClass(ratio) {
-		return ratio === 0 || ratio === 50
+		return 0 === ratio || 50 === ratio
 			? null
 			: "has-background-dim-" + 10 * Math.round(ratio / 10);
 	}
@@ -64,7 +64,7 @@ export default class Save extends Component {
 								"c9-cta-image",
 								this.dimRatioToClass(dimRatio),
 								{
-									"has-background-dim": dimRatio !== 0
+									"has-background-dim": 0 !== dimRatio
 								}
 							)}
 							src={imgURL}

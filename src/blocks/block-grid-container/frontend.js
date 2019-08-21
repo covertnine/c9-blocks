@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-function readyYoutube(player_id, video_id) {
+function readyYoutube(playerID, videoID) {
 	if (YT && YT.Player) {
 		// eslint-disable-next-line no-unused-vars
-		let player = new YT.Player(player_id, {
+		let player = new YT.Player(playerID, {
 			playerVars: {
 				autoplay: 1,
 				controls: 0,
@@ -13,19 +13,20 @@ function readyYoutube(player_id, video_id) {
 				enablejsapi: 1,
 				loop: 1,
 				showinfo: 0,
+				// eslint-disable-next-line camelcase
 				iv_load_policy: 3,
 				rel: 0,
 				modestbranding: 1,
-				playlist: video_id
+				playlist: videoID
 			},
-			videoId: video_id,
+			videoId: videoID,
 			events: {
 				onReady: onPlayerReady
 			}
 		});
 	} else {
 		setTimeout(function() {
-			readyYoutube(player_id, video_id);
+			readyYoutube(playerID, videoID);
 		}, 100);
 	}
 }
@@ -42,9 +43,9 @@ function onPlayerReady(event) {
 document.addEventListener("DOMContentLoaded", function() {
 	let embeds = document.getElementsByClassName("c9-video");
 	for (let i = 0; i < embeds.length; i++) {
-		let player_id = embeds[i].getAttribute("id");
+		let playerID = embeds[i].getAttribute("id");
 		let id = embeds[i].getAttribute("video-id");
-		readyYoutube(player_id, id);
+		readyYoutube(playerID, id);
 	}
 
 	// if video custom elements are present
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	$(".c9-video-container").each(function() {
 		const self = this;
 		const check = $(".c9-video-custom", this).length;
-		if (check > 0) {
+		if (0 < check) {
 			$(".c9-video-custom", this).on("canplay", function() {
 				$(self).css({ opacity: 1 });
 			});

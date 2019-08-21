@@ -35,7 +35,7 @@ export default class RemoveButton extends Component {
 			<Button
 				className="c9-component-remove-button"
 				onClick={() => {
-					if (confirmed === -1) {
+					if (-1 === confirmed) {
 						this.setState({
 							confirmed: 0
 						});
@@ -43,7 +43,7 @@ export default class RemoveButton extends Component {
 				}}
 				style={style}
 			>
-				{confirmed === 0 ? (
+				{0 === confirmed ? (
 					<Popover
 						className="c9-component-remove-button-confirm"
 						onClose={() => {

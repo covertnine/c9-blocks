@@ -17,7 +17,7 @@ export default class Save extends Component {
 	c9TextStyleConfig(type, display, tag, override) {
 		if (!override) {
 			return type.split(" ")[0];
-		} else if (display == 0) {
+		} else if (0 == display) {
 			return `${type}${tag}`;
 		} else {
 			return `${type}${display}`;
@@ -35,7 +35,6 @@ export default class Save extends Component {
 				type,
 				displayLevel,
 				weight,
-				textAlign,
 				overrideStyle,
 				addSubheading
 			}
@@ -59,7 +58,7 @@ export default class Save extends Component {
 				{addSubheading && (
 					<div
 						className={((type, display, tag) => {
-							if (display == 0) {
+							if (0 == display) {
 								return `${type}${tag}`;
 							} else {
 								return `${type}${display}`;

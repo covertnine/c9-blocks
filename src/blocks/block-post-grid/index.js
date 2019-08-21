@@ -62,6 +62,7 @@ registerBlockType("c9-blocks/post-grid", {
 					categories,
 					order,
 					orderby: props.attributes.orderBy,
+					// eslint-disable-next-line camelcase
 					per_page: props.attributes.postsToShow,
 					offset: props.attributes.offset
 				},
@@ -90,7 +91,7 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 		return props => {
 			const blockName = props.block.name;
 
-			if (blockName === "c9-blocks/post-grid") {
+			if ("c9-blocks/post-grid" === blockName) {
 				return (
 					<BlockListBlock
 						{...props}

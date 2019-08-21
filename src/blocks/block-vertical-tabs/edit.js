@@ -120,6 +120,7 @@ class Edit extends Component {
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 
+			// eslint-disable-next-line no-unused-vars
 			for (let child of block.innerBlocks) {
 				if (instanceId != child.attributes.id) {
 					updateBlockAttributes(child.clientId, { id: instanceId });
@@ -229,7 +230,7 @@ class Edit extends Component {
 											show={isSelectedBlockInRoot}
 											tooltipText={__("Remove tab?", "c9-blocks")}
 											onRemove={() => {
-												if (block.innerBlocks.length <= 1) {
+												if (1 >= block.innerBlocks.length) {
 													this.props.removeBlock(block.clientId);
 												} else if (block.innerBlocks[i]) {
 													this.props.removeBlock(block.innerBlocks[i].clientId);

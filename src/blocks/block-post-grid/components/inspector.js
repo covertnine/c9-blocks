@@ -40,6 +40,7 @@ export default class Inspector extends Component {
 	componentDidMount() {
 		this.stillMounted = true;
 		this.fetchRequest = apiFetch({
+			// eslint-disable-next-line camelcase
 			path: addQueryArgs("/wp/v2/categories", { per_page: -1 })
 		})
 			.then(categoriesList => {
@@ -113,7 +114,7 @@ export default class Inspector extends Component {
 		const hasPosts = Array.isArray(latestPosts) && latestPosts.length;
 
 		// Check the post type
-		const isPost = attributes.postType === "post";
+		const isPost = "post" === attributes.postType;
 
 		// Add instruction text to the select
 		const c9ImageSizeSelect = {
@@ -141,7 +142,7 @@ export default class Inspector extends Component {
 		imageSizeOptions.unshift(c9ImageSizeSelect);
 
 		const imageSizeValue = () => {
-			for (var i = 0; i < imageSizeOptions.length; i++) {
+			for (let i = 0; i < imageSizeOptions.length; i++) {
 				if (imageSizeOptions[i].value === attributes.imageSize) {
 					return attributes.imageSize;
 				}
@@ -182,7 +183,7 @@ export default class Inspector extends Component {
 						min={0}
 						max={20}
 					/>
-					{attributes.postLayout === "grid" && (
+					{"grid" === attributes.postLayout && (
 						<RangeControl
 							label={__("Columns", "c9-blocks")}
 							value={attributes.columns}

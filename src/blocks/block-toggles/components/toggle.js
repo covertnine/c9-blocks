@@ -8,6 +8,8 @@ import classnames from "classnames";
 import RemoveButton from "./remove-button";
 import toggleOpenIcon from "../../../../assets/toggle-open";
 
+console.log(toggleOpenIcon);
+
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Toolbar } = wp.components;
@@ -40,7 +42,7 @@ class ToggleBlock extends Component {
 
 		const parentToggle = this.getParentToggle(this.props.rootBlock);
 		if (parentToggle && parentToggle.clientId) {
-			if (parentToggle.innerBlocks.length <= 1) {
+			if (1 >= parentToggle.innerBlocks.length) {
 				this.props.removeBlock(parentToggle.clientId);
 			}
 		}
@@ -77,7 +79,7 @@ class ToggleBlock extends Component {
 
 		if (
 			!isSelectedBlockInRoot &&
-			this.toggleDisplayRef.current != null &&
+			null != this.toggleDisplayRef.current &&
 			!this.toggleDisplayRef.current.className.includes("show")
 		) {
 			setAttributes({
@@ -157,7 +159,7 @@ class ToggleBlock extends Component {
 									if (parentToggle && parentToggle.clientId) {
 										this.props.removeBlock(this.props.clientId);
 
-										if (parentToggle.innerBlocks.length <= 1) {
+										if (1 >= parentToggle.innerBlocks.length) {
 											this.props.removeBlock(parentToggle.clientId);
 										}
 									}

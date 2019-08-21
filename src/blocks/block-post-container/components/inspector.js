@@ -52,8 +52,8 @@ export default class Inspector extends Component {
 			containerMargin: containerMargin,
 			setAttributes: setAttributes,
 			ID: containerVideoID || "",
-			customX: bgCustomX.size != "auto",
-			customY: bgCustomY.size != "auto",
+			customX: "auto" != bgCustomX.size,
+			customY: "auto" != bgCustomY.size,
 			bgCustomX: bgCustomX,
 			bgCustomY: bgCustomY
 		};
@@ -686,7 +686,7 @@ export default class Inspector extends Component {
 
 					<hr />
 
-					{videoType == "upload" && (
+					{"upload" == videoType && (
 						<MediaUpload
 							id="bg-video-select"
 							label={__("Background Video", "c9-blocks")}
@@ -708,7 +708,7 @@ export default class Inspector extends Component {
 						/>
 					)}
 
-					{videoType == "upload" &&
+					{"upload" == videoType &&
 						containerVideoURL &&
 						!!containerVideoURL.length && (
 							<div>
@@ -722,7 +722,7 @@ export default class Inspector extends Component {
 							</div>
 						)}
 
-					{videoType == "embed" && (
+					{"embed" == videoType && (
 						<div>
 							<TextControl
 								label="YouTube URL or Youtube ID"

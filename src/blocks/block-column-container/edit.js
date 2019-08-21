@@ -63,10 +63,10 @@ export default class Edit extends Component {
 		}
 
 		let currWidth;
-		if (align.length != 0) {
-			if (containerWidth == "container") {
+		if (0 != align.length) {
+			if ("container" == containerWidth) {
 				currWidth = "wide";
-			} else if (containerWidth == "container-fluid") {
+			} else if ("container-fluid" == containerWidth) {
 				currWidth = "full";
 			} else {
 				currWidth = "narrow";
@@ -171,14 +171,14 @@ export default class Edit extends Component {
 					<WidthToolbar
 						value={currWidth}
 						onChange={value => {
-							if (value == "wide") {
+							if ("wide" == value) {
 								setAttributes({ containerWidth: "container", align: "wide" });
-							} else if (value == "full") {
+							} else if ("full" == value) {
 								setAttributes({
 									containerWidth: "container-fluid",
 									align: "full"
 								});
-							} else if (value == "narrow") {
+							} else if ("narrow" == value) {
 								setAttributes({
 									containerWidth: "container-narrow",
 									align: "narrow"
