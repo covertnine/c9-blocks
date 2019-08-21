@@ -28,6 +28,8 @@ module.exports = {
 	dotenv: resolvePlugin( '.env' ),
 	pluginSrc: resolvePlugin( 'src' ),
 	pluginBlocksJs: resolvePlugin( 'src/blocks.js' ),
+	pluginBlocksFrontendJs: resolvePlugin( 'src/frontend.js' ),
+	pluginBlocksUpdateCategoryJs: resolvePlugin( 'src/update-category.js'),
 	pluginDist: resolvePlugin( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
 	yarnLockFile: resolvePlugin( 'yarn.lock' ),
 	appPath: resolvePlugin( '.' ),

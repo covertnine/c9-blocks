@@ -20,133 +20,169 @@
  * @since 1.0.0
  */
 
-const paths = require( './paths' );
-const webpack = require( 'webpack' );
-const externals = require( './externals' );
-const autoprefixer = require( 'autoprefixer' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const paths = require("./paths");
+const webpack = require("webpack");
+const externals = require("./externals");
+const autoprefixer = require("autoprefixer");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const babelPreset = require("./babel-preset");
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === 'true';
+const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === "true";
 
 // Extract style.css for both editor and frontend styles.
-const blocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.style.build.css',
-} );
+const blocksCSSPlugin = new ExtractTextPlugin({
+	filename: "./dist/blocks.style.build.css"
+});
 
 // Extract editor.css for editor styles.
-const editBlocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.editor.build.css',
-} );
+const editBlocksCSSPlugin = new ExtractTextPlugin({
+	filename: "./dist/blocks.editor.build.css"
+});
 
 // Configuration for the ExtractTextPlugin — DRY rule.
 const extractConfig = {
 	use: [
 		// "postcss" loader applies autoprefixer to our CSS.
-		{ loader: 'raw-loader' },
+		{ loader: "raw-loader" },
 		{
-			loader: 'postcss-loader',
+			loader: "postcss-loader",
 			options: {
-				ident: 'postcss',
+				ident: "postcss",
 				plugins: [
-					autoprefixer( {
+					autoprefixer({
 						browsers: [
-							'>1%',
-							'last 4 versions',
-							'Firefox ESR',
-							'not ie < 9', // React doesn't support IE8 anyway
+							">1%",
+							"last 4 versions",
+							"Firefox ESR",
+							"not ie < 9" // React doesn't support IE8 anyway
 						],
-						flexbox: 'no-2009',
-					} ),
-				],
-			},
+						flexbox: "no-2009"
+					})
+				]
+			}
 		},
 		// "sass" loader converts SCSS to CSS.
 		{
-			loader: 'sass-loader',
+			loader: "sass-loader",
 			options: {
 				// Add common CSS file for variables and mixins.
-				data: '@import "./src/common.scss";\n',
-				outputStyle: 'compressed',
-			},
-		},
-	],
+				data: '@import "./src/block-colors.scss";\n',
+				outputStyle: "nested"
+			}
+		}
+	]
 };
 
 // Export configuration.
 module.exports = {
 	entry: {
-		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
+		"./dist/blocks.build": paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
+		"./dist/blocks.frontend.build": paths.pluginBlocksFrontendJs,
+		"./dist/blocks.update-category.build": paths.pluginBlocksUpdateCategoryJs
 	},
 	output: {
 		// Add /* filename */ comments to generated require()s in the output.
 		pathinfo: true,
 		// The dist folder.
 		path: paths.pluginDist,
-		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.
+		filename: "[name].js" // [name] = './dist/blocks.build' as defined above.
 	},
 	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
-	devtool: shouldUseSourceMap ? 'source-map' : false,
+	devtool: shouldUseSourceMap ? "source-map" : false,
 	module: {
 		rules: [
 			{
 				test: /\.(js|jsx|mjs)$/,
 				exclude: /(node_modules|bower_components)/,
 				use: {
-					loader: 'babel-loader',
+					loader: "babel-loader",
 					options: {
 						// @remove-on-eject-begin
 						babelrc: false,
-						presets: [ require.resolve( 'babel-preset-cgb' ) ],
+						presets: [babelPreset],
 						// @remove-on-eject-end
 						// This is a feature of `babel-loader` for webpack (not Babel itself).
 						// It enables caching results in ./node_modules/.cache/babel-loader/
 						// directory for faster rebuilds.
-						cacheDirectory: true,
-					},
-				},
+						cacheDirectory: true
+					}
+				}
 			},
 			{
 				test: /style\.s?css$/,
-				exclude: /(node_modules|bower_components)/,
-				use: blocksCSSPlugin.extract( extractConfig ),
+				exclude: /(node_modules|bower_components|src\/components)/,
+				use: blocksCSSPlugin.extract(extractConfig)
 			},
 			{
 				test: /editor\.s?css$/,
-				exclude: /(node_modules|bower_components)/,
-				use: editBlocksCSSPlugin.extract( extractConfig ),
+				exclude: /(node_modules|bower_components|src\/components)/,
+				use: editBlocksCSSPlugin.extract(extractConfig)
 			},
-		],
+			{
+				test: /src\/components\/.+\/editor\.s?css$/,
+				use: [
+					{
+						loader: "style-loader" // creates style nodes from JS strings
+					},
+					{
+						loader: "css-loader", // translates CSS into CommonJS
+						options: {
+							url: false
+						}
+					},
+					{
+						loader: "sass-loader" // compiles Sass to CSS
+					}
+				]
+			},
+			{
+				test: /\.svg$/,
+				exclude: /(node_modules|bower_components|src\/blocks)/,
+				use: {
+					loader: "@svgr/webpack",
+					options: {
+						svgoConfig: {
+							plugins: [
+								{
+									removeViewBox: false
+								}
+							]
+						}
+					}
+				}
+			}
+		]
 	},
 	// Add plugins.
 	plugins: [
 		blocksCSSPlugin,
 		editBlocksCSSPlugin,
 		// Minify the code.
-		new webpack.optimize.UglifyJsPlugin( {
+		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false,
 				// Disabled because of an issue with Uglify breaking seemingly valid code:
 				// https://github.com/facebookincubator/create-react-app/issues/2376
 				// Pending further investigation:
 				// https://github.com/mishoo/UglifyJS2/issues/2011
-				comparisons: false,
+				comparisons: false
 			},
 			mangle: {
 				safari10: true,
-				except: ['__', '_n', '_x', '_nx' ],
+				except: ["__", "_n", "_x", "_nx"]
 			},
 			output: {
 				comments: false,
 				// Turned on because emoji and regex is not minified properly using default
 				// https://github.com/facebookincubator/create-react-app/issues/2488
-				ascii_only: true,
+				ascii_only: true
 			},
-			sourceMap: shouldUseSourceMap,
-		} ),
+			sourceMap: shouldUseSourceMap
+		})
 	],
-	stats: 'minimal',
+	stats: "minimal",
 	// stats: 'errors-only',
 	// Add externals.
-	externals: externals,
+	externals: externals
 };

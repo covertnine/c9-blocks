@@ -1,17 +1,14 @@
 /**
- * Start
+ * Build
  *
- * The create-guten-block CLI starts here.
- *
- * TODO:
- *  - checkRequiredFiles
- *  - printBuildError
+ * The create-guten-block CLI builds here.
  */
+
 'use strict';
 
 // Do this as the first thing so that any code reading it knows the right env.
-process.env.BABEL_ENV = 'development';
-process.env.NODE_ENV = 'development';
+process.env.BABEL_ENV = 'production';
+process.env.NODE_ENV = 'production';
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -20,46 +17,57 @@ process.on( 'unhandledRejection', err => {
 	throw err;
 } );
 
+// Modules.
+const fs = require( 'fs' );
 const ora = require( 'ora' );
+const path = require( 'path' );
 const chalk = require( 'chalk' );
 const webpack = require( 'webpack' );
-const config = require( '../config/webpack.config.dev' );
+const fileSize = require( 'filesize' );
+const gzipSize = require( 'gzip-size' );
 const resolvePkg = require( 'resolve-pkg' );
+const config = require( '../config/webpack.config.prod' );
 const cgbDevUtilsPath = resolvePkg( 'cgb-dev-utils', { cwd: __dirname } );
 const clearConsole = require( cgbDevUtilsPath + '/clearConsole' );
-const formatWebpackMessages = require( cgbDevUtilsPath + '/formatWebpackMessages' );
+const formatWebpackMessages = require( cgbDevUtilsPath +
+	'/formatWebpackMessages' );
 
-// Don't run below node 8.
-const currentNodeVersion = process.versions.node;
-const semver = currentNodeVersion.split( '.' );
-const major = semver[ 0 ];
+// Build file paths.
+const theCWD = process.cwd();
+const fileBuildJS = path.resolve( theCWD, './dist/blocks.build.js' );
+const fileEditorCSS = path.resolve( theCWD, './dist/blocks.editor.build.css' );
+const fileStyleCSS = path.resolve( theCWD, './dist/blocks.style.build.css' );
 
-// If below Node 8.
-if ( major < 8 ) {
-	console.error(
-		chalk.red(
-			'You are running Node ' +
-				currentNodeVersion +
-				'.\n' +
-				'Create Guten Block requires Node 8 or higher. \n' +
-				'Kindly, update your version of Node.'
-		)
-	);
-	process.exit( 1 );
-}
+/**
+ * Get File Size
+ *
+ * Get filesizes of all the files.
+ *
+ * @param {string} filePath path.
+ * @returns {string} then size result.
+ */
+const getFileSize = filePath => {
+	return fileSize( gzipSize.sync( fs.readFileSync( filePath ) ) );
+};
 
 clearConsole();
 
 // Init the spinner.
 const spinner = new ora( { text: '' } );
 
-// Create the production build and print the deployment instructions.
+/**
+ * Build function
+ *
+ * Create the production build and print the deployment instructions.
+ *
+ * @param {json} webpackConfig config
+ */
 async function build( webpackConfig ) {
 	// Compiler Instance.
 	const compiler = await webpack( webpackConfig );
 
 	// Run the compiler.
-	compiler.watch( {}, ( err, stats ) => {
+	compiler.run( ( err, stats ) => {
 		clearConsole();
 
 		if ( err ) {
@@ -76,22 +84,20 @@ async function build( webpackConfig ) {
 			if ( messages.errors.length > 1 ) {
 				messages.errors.length = 1;
 			}
-
-			// Clear success messages.
-			clearConsole();
-
 			// Formatted errors.
-			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile. \n' ) );
-			const logErrors = console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
-			console.log( '\n' );
-			spinner.start( chalk.dim( 'Watching for changes... let\'s fix this... (Press CTRL + C to stop).' ) );
-			return logErrors;
+			clearConsole();
+			console.log( '\n❌ ', chalk.black.bgRed( ' Failed to compile build. \n' ) );
+			console.log( '\n👉 ', messages.errors.join( '\n\n' ) );
+
+			// Don't go beyond this point at this time.
+			return;
 		}
 
 		// CI.
 		if (
 			process.env.CI &&
-			( typeof process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false' ) &&
+			( typeof process.env.CI !== 'string' ||
+				process.env.CI.toLowerCase() !== 'false' ) &&
 			messages.warnings.length
 		) {
 			console.log(
@@ -100,20 +106,34 @@ async function build( webpackConfig ) {
 						'Most CI servers set it automatically.\n'
 				)
 			);
-			return console.log( messages.warnings.join( '\n\n' ) );
+			console.log( messages.warnings.join( '\n\n' ) );
 		}
 
 		// Start the build.
-		console.log( `\n${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
-		console.log( '\n✅ ', chalk.black.bgGreen( ' Compiled successfully! \n' ) );
+		console.log( `\n ${ chalk.dim( 'Let\'s build and compile the files...' ) }` );
+		console.log( '\n✅ ', chalk.black.bgGreen( ' Built successfully! \n' ) );
+
 		console.log(
-			chalk.dim( '   Note that the development build is not optimized. \n' ),
-			chalk.dim( '  To create a production build, use' ),
-			chalk.green( 'npm' ),
-			chalk.white( 'run build\n\n' ),
-			chalk.dim( '👌  Support Awais via VSCode Power User at https://VSCode.pro →\n\n' )
+			'\n\n',
+			'File sizes after gzip:',
+			'\n\n',
+			getFileSize( fileBuildJS ),
+			`${ chalk.dim( '— ./dist/' ) }`,
+			`${ chalk.green( 'blocks.build.js' ) }`,
+			'\n',
+			getFileSize( fileEditorCSS ),
+			`${ chalk.dim( '— ./dist/' ) }`,
+			`${ chalk.green( 'blocks.editor.build.css' ) }`,
+
+			'\n',
+			getFileSize( fileStyleCSS ),
+			`${ chalk.dim( '— ./dist/' ) }`,
+			`${ chalk.green( 'blocks.style.build.css' ) }`,
+
+			'\n\n'
 		);
-		return spinner.start( `${ chalk.dim( 'Watching for changes... (Press CTRL + C to stop).' ) }` );
+
+		return true;
 	} );
 }
 
