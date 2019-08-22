@@ -31,5 +31,60 @@
 	}
 }
 
+/* buttons */
+.btn,
+.btn:visited,
+.entry-content button,
+.entry-content input[type="button"],
+.entry-content input[type="reset"],
+.entry-content input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button,
+.wp-block-file .wp-block-file__button {
+	display: inline-block;
+	padding: 8px 35px;
+	width: auto;
+	height: auto;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	font-size: 1.4rem;
+	letter-spacing: .2rem;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-transition: opacity .4s ease-in-out;
+	transition: opacity .4s ease-in-out;
+	white-space: normal;
+	color: #fff;
+	line-height: 1;
+}
+
+.wp-block-button__link.c9-button-shape-square {
+	border-radius: 0;
+}
+
+.wp-block-button__link.c9-button-shape-round {
+	border-radius: 28px;
+}
+
+.wp-block-button__link.c9-button-shape-outline {
+	background-color: transparent;
+}
+
+.wp-block-button__link.c9-button-size-small {
+	padding: 4px 20px;
+}
+
+.wp-block-button__link.c9-button-size-medium {
+	padding: 8px 35px;
+}
+
+.wp-block-button__link.c9-button-size-large {
+	padding: 12px 45px;
+}
+
+.wp-block-button__link.c9-button-size-extralarge {
+	padding: 16px 55px;
+}
 
 /****************************************************************************************/

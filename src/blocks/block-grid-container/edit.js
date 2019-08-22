@@ -60,7 +60,7 @@ class Edit extends Component {
 							}
 						}}
 					>
-						{__("Remove a Row", "c9-blocks")}
+						{__("Remove Row", "c9-blocks")}
 					</IconButton>
 					<IconButton
 						label={__("Remove Image", "c9-blocks")}
@@ -71,7 +71,7 @@ class Edit extends Component {
 							}
 						}}
 					>
-						{__("Add a Row", "c9-blocks")}
+						{__("Add Row", "c9-blocks")}
 					</IconButton>
 				</div>
 				)}
