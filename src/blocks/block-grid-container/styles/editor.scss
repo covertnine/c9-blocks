@@ -195,6 +195,14 @@
 	max-width: 95vw;
 }
 
+// set a z-index for multiple row grids to account for negative margins of editor containers and higher z-index of alignfull/wide
+body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"]:not(:first-child),
+body .edit-post-layout .editor-styles-wrapper .c9-grid .container.wp-block[data-lign="wide"]:not(:first-child),
+body .edit-post-layout .editor-styles-wrapper .c9-grid .container:not(:first-child),
+body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:first-child) {
+	z-index: 22;
+}
+
 @media (min-width: 1px) {
 
 	//set the alignfull width to be 100vw width since sidebars are hidden
