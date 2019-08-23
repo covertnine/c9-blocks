@@ -63,6 +63,7 @@ export default class Edit extends Component {
 								<span className={"c9-social-text"}>
 									{__("Share on Twitter", "c9-blocks")}
 								</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							</a>
 						</li>
 					)}
@@ -74,6 +75,7 @@ export default class Edit extends Component {
 								<span className={"c9-social-text"}>
 									{__("Share on Facebook", "c9-blocks")}
 								</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							</a>
 						</li>
 					)}
@@ -85,6 +87,7 @@ export default class Edit extends Component {
 								<span className={"c9-social-text"}>
 									{__("Share on Google", "c9-blocks")}
 								</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							</a>
 						</li>
 					)}
@@ -96,6 +99,7 @@ export default class Edit extends Component {
 								<span className={"c9-social-text"}>
 									{__("Share on Pinterest", "c9-blocks")}
 								</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							</a>
 						</li>
 					)}
@@ -107,6 +111,7 @@ export default class Edit extends Component {
 								<span className={"c9-social-text"}>
 									{__("Share on LinkedIn", "c9-blocks")}
 								</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							</a>
 						</li>
 					)}
@@ -118,6 +123,7 @@ export default class Edit extends Component {
 								<span className={"c9-social-text"}>
 									{__("Share on reddit", "c9-blocks")}
 								</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							</a>
 						</li>
 					)}
@@ -129,6 +135,7 @@ export default class Edit extends Component {
 								<span className={"c9-social-text"}>
 									{__("Share via Email", "c9-blocks")}
 								</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							</a>
 						</li>
 					)}

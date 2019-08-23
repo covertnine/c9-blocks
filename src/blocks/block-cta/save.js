@@ -114,7 +114,7 @@ export default class Save extends Component {
 						>
 							<RichText.Content value={buttonText} />
 							{buttonTarget && (
-								<span className="sr-only">, opens in a new window</span>
+								<span className="sr-only">(Link opens in new window)</span>
 							)}
 						</a>
 					</div>

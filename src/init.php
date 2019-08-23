@@ -169,8 +169,6 @@ function c9_check_bootstrap()
         return $c;
     });
 
-    // echo "<script>console.log(" . json_encode($checks) . ")</script>";
-
     // if any of them matches, then array length of $check > 0
     if (sizeof($checks) === 0) {
         // Styles.

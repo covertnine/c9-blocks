@@ -8,8 +8,6 @@ import classnames from "classnames";
 import RemoveButton from "./remove-button";
 import toggleOpenIcon from "../../../../assets/toggle-open";
 
-console.log(toggleOpenIcon);
-
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Toolbar } = wp.components;
