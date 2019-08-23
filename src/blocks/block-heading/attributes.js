@@ -37,7 +37,7 @@ const attributes = {
 	},
 	type: {
 		type: "string",
-		default: "h"
+		default: "c9-h h"
 	},
 	backgroundColor: {
 		type: "string"

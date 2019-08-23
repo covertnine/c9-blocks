@@ -29,10 +29,6 @@ function c9_blocks_register_sharing() {
 					'type'    => 'boolean',
 					'default' => true,
                 ),
-                'google' => array(
-					'type'    => 'boolean',
-					'default' => true,
-                ),
                 'linkedin' => array(
 					'type'    => 'boolean',
 					'default' => false,
@@ -110,9 +106,6 @@ function c9_blocks_render_sharing( $attributes ) {
 	// Facebook share URL
 	$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '&title=' . get_the_title() . '';
 
-    // Google share URL
-    $google_url = 'https://plus.google.com/share?url=' . get_the_permalink() . '';
-
 	// LinkedIn share URL
 	$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . get_the_permalink() . '&title=' . get_the_title() . '';
 
@@ -159,23 +152,6 @@ function c9_blocks_render_sharing( $attributes ) {
 			</li>',
 			esc_url( $facebook_url ),
 			esc_html__( 'Share on Facebook', 'c9-blocks' )
-		);
-	}
-
-	if ( isset( $attributes['google'] ) && $attributes['google'] ) {
-		$share_url .= sprintf(
-			'<li>
-				<a
-					href="javascript:void(0)"
-					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
-					class="c9-share-google"
-					title="%2$s">
-					<i class="fab fa-google"></i> <span class="c9-social-text">%2$s</span>
-					<span className="sr-only">(Link opens in new window)</span>
-				</a>
-			</li>',
-			esc_url( $google_url ),
-			esc_html__( 'Share on Google', 'c9-blocks' )
 		);
 	}
 

@@ -27,7 +27,7 @@
 		"window": true,
 		"document": true
 	},
-	"plugins": ["react", "jsx-a11y", "lodash"],
+	"plugins": ["react", "jsx-a11y"],
 	"settings": {
 		"react": {
 			"pragma": "wp",

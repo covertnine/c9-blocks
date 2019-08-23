@@ -61,9 +61,7 @@ export default class Inspector extends Component {
 
 		ctaPadding = Object.assign({}, ctaPadding);
 		ctaPadding.linked = !ctaPadding.linked;
-		ctaPadding.icon = ctaPadding.linked
-			? "admin-links"
-			: "editor-unlink";
+		ctaPadding.icon = ctaPadding.linked ? "admin-links" : "editor-unlink";
 		this.setState({ ctaPadding });
 		this.setAttributes({ ctaPadding });
 	};
@@ -107,9 +105,7 @@ export default class Inspector extends Component {
 
 		ctaMargin = Object.assign({}, ctaMargin);
 		ctaMargin.linked = !ctaMargin.linked;
-		ctaMargin.icon = ctaMargin.linked
-			? "admin-links"
-			: "editor-unlink";
+		ctaMargin.icon = ctaMargin.linked ? "admin-links" : "editor-unlink";
 		this.setState({ ctaMargin });
 		this.setAttributes({ ctaMargin });
 	};
@@ -163,7 +159,8 @@ export default class Inspector extends Component {
 			imgAttach,
 			imgSize,
 			focalPoint,
-			blendMode
+			blendMode,
+			type
 		} = this.props.attributes;
 
 		const {
@@ -212,6 +209,16 @@ export default class Inspector extends Component {
 			{ value: "4", label: __("Margin 4", "c9-blocks") },
 			{ value: "5", label: __("Margin 5", "c9-blocks") },
 			{ value: "auto", label: __("Auto", "c9-blocks") }
+		];
+
+		const fontTypes = [
+			{ value: "c9-p", label: __("Paragraph", "c9-blocks") },
+			{ value: "c9-h", label: __("Heading", "c9-blocks") },
+			{
+				value: "c9-sh",
+				label: __("Subheading", "c9-blocks")
+			},
+			{ value: "c9-txl", label: __("Text-XL", "c9-blocks") }
 		];
 
 		// Change the image
@@ -279,6 +286,22 @@ export default class Inspector extends Component {
 						onChange={value => {
 							setAttributes({ buttonShape: value });
 						}}
+					/>
+				</PanelBody>
+
+				<PanelBody
+					title={__("CTA Text Options", "c9-blocks")}
+					initialOpen={false}
+				>
+					<SelectControl
+						label={__("Font Type", "c9-blocks")}
+						help={__(
+							"Choose between heading, subheading, or text-xl.",
+							"c9-blocks"
+						)}
+						options={fontTypes}
+						value={type}
+						onChange={value => setAttributes({ type: value })}
 					/>
 				</PanelBody>
 

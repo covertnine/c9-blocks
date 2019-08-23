@@ -80,18 +80,6 @@ export default class Edit extends Component {
 						</li>
 					)}
 
-					{google && (
-						<li>
-							<a className="c9-share-google">
-								<i className="fab fa-google" />
-								<span className={"c9-social-text"}>
-									{__("Share on Google", "c9-blocks")}
-								</span>
-								<span className="sr-only">(Link opens in new window)</span>
-							</a>
-						</li>
-					)}
-
 					{pinterest && (
 						<li>
 							<a className="c9-share-pinterest">

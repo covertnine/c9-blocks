@@ -1,4 +1,8 @@
 const blockAttributes = {
+	type: {
+		type: "string",
+		value: "c9-p"
+	},
 	buttonText: {
 		type: "string"
 	},
@@ -39,10 +43,6 @@ const blockAttributes = {
 		type: "array",
 		selector: ".c9-cta-title",
 		source: "children"
-	},
-	titleFontSize: {
-		type: "number",
-		default: "32"
 	},
 	ctaLayout: {
 		type: "string",

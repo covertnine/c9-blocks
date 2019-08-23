@@ -46,12 +46,12 @@ export default class Save extends Component {
 				buttonShape,
 				buttonTarget,
 				ctaText,
-				ctaTitleFontSize,
 				ctaTextColor,
 				imgURL,
 				imgAlt,
 				dimRatio,
-				ctaLayout
+				ctaLayout,
+				type
 			}
 		} = this.props;
 
@@ -83,7 +83,7 @@ export default class Save extends Component {
 							tagName="div"
 							className={classnames(
 								"c9-cta-text",
-								"c9-font-size-" + ctaTitleFontSize
+								type
 							)}
 							style={{
 								color: ctaTextColor

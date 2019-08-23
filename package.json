@@ -54,7 +54,7 @@
 		"node-sass": "^4.12.0",
 		"ora": "^1.4.0",
 		"postcss-loader": "^2.0.10",
-		"prettier": "^1.17.0",
+		"prettier": "^1.18.2",
 		"raw-loader": "^0.5.1",
 		"resolve-pkg": "^1.0.0",
 		"sass-loader": "^7.3.1",

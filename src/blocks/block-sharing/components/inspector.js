@@ -29,7 +29,6 @@ export default class Inspector extends Component {
 		const {
 			twitter,
 			facebook,
-			google,
 			linkedin,
 			pinterest,
 			email,
@@ -81,11 +80,6 @@ export default class Inspector extends Component {
 						label={__("Facebook")}
 						checked={!!facebook}
 						onChange={() => this.props.setAttributes({ facebook: !facebook })}
-					/>
-					<ToggleControl
-						label={__("Google")}
-						checked={!!google}
-						onChange={() => this.props.setAttributes({ google: !google })}
 					/>
 					<ToggleControl
 						label={__("Pinterest")}

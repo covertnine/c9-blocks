@@ -57,11 +57,11 @@ export default class Edit extends Component {
 				buttonSize,
 				buttonShape,
 				ctaText,
-				ctaTextFontSize,
 				ctaWidth,
 				ctaTextColor,
 				ctaLayout,
-				align
+				align,
+				type
 			},
 			isSelectedBlockInRoot,
 			setAttributes
@@ -125,7 +125,7 @@ export default class Edit extends Component {
 							className={classnames(
 								this.layoutClass(ctaLayout, "text"),
 								"c9-cta-text",
-								"c9-font-size-" + ctaTextFontSize
+								type
 							)}
 							style={{
 								color: ctaTextColor
