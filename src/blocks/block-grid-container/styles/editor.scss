@@ -195,6 +195,11 @@
 	max-width: 95vw;
 }
 
+//move grid down a bit so insertion point above grid can be hovered
+body .edit-post-layout .editor-styles-wrapper .c9-grid {
+	margin-top: 30px;
+}
+
 // set a z-index for multiple row grids to account for negative margins of editor containers and higher z-index of alignfull/wide
 body .edit-post-layout .editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"]:not(:first-child),
 body .edit-post-layout .editor-styles-wrapper .c9-grid .container.wp-block[data-lign="wide"]:not(:first-child),
