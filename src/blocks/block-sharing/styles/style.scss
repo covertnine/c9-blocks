@@ -175,3 +175,43 @@
 .c9-button-center {
 	margin: 0 auto;
 }
+
+.c9-social-sharing .c9-share-list li:before,
+.c9-social-share.c9-share-text-only i,
+.c9-social-sharing.c9-share-text-only i {
+	display: none;
+}
+
+.entry-content .c9-social-sharing .c9-share-list,
+.c9-social-sharing .c9-share-list {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+
+.c9-block-sharing {
+	display: block;
+	text-align: left;
+}
+
+.c9-block-sharing.left {
+	text-align: left;
+}
+
+.c9-block-sharing.right {
+	text-align: right;
+}
+
+.c9-block-sharing.center {
+	text-align: center;
+}
+
+.c9-social-sharing i,
+.c9-social-share i {
+	font-style: normal;
+	font-family: 'FontAwesome';
+}
+
+.c9-social-sharing .fa-linkedin-in:before {
+	content: '\f0e1';
+}
