@@ -19,6 +19,7 @@
 			right: 0;
 			top: 0;
 			cursor: pointer;
+
 			&:focus {
 				outline: none;
 				box-shadow: none;
@@ -53,4 +54,11 @@
 
 .c9-block-cta h2.editor-rich-text__tinymce.mce-content-body {
 	line-height: 1.2;
+}
+
+@media only screen and (min-width: 992px) {
+	.editor-styles-wrapper .editor-block-list__block[data-type="c9-blocks/cta"][data-align="full"] {
+		max-width: 100%;
+		margin: 0px auto;
+	}
 }
