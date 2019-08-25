@@ -4,3 +4,32 @@
  * CSS for both Frontend+Backend.
  */
 
+.c9-carousel .carousel-indicators li:after,
+.c9-carousel .carousel-indicators li:before {
+	display: none;
+}
+
+.c9-carousel .carousel-indicators {
+	margin-bottom: 0px;
+	margin-left: 0px;
+	bottom: -20px;
+	padding: 0px 10px;
+	z-index: 24;
+}
+
+.c9-carousel .carousel-indicators li {
+	z-index: 26;
+	background-color: #cccccc;
+}
+
+.c9-carousel .carousel-indicators .active {
+	background-color: #000000;
+}
+
+.c9-carousel .carousel-control-prev .carousel-control-prev-icon {
+	background-image: url(../../../../assets/icon-prev-gray.svg);
+}
+
+.c9-carousel .carousel-control-next .carousel-control-next-icon {
+	background-image: url(../../../../assets/icon-next-gray.svg);
+}
