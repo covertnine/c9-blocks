@@ -16,13 +16,18 @@
 	z-index: 24;
 }
 
-.carousel-indicators li {
+.c9-image-carousel .carousel-indicators li {
 	background-color: #333333;
 	z-index: 26;
 }
 
-.carousel-indicators .active {
+.c9-image-carousel .carousel-indicators .active {
 	background-color: #fff;
+}
+
+.c9-image-carousel .carousel-control-next,
+.c9-image-carousel .carousel-control-prev {
+	width: 25px;
 }
 
 .carousel-item .carousel-caption {
