@@ -23,8 +23,9 @@
 }
 
 /*video background*/
-.c9-grid-has-video {
+.c9-grid.c9-grid-has-video {
 	position: relative;
+	overflow: hidden;
 }
 
 .c9-grid-has-video .c9-video-container {
