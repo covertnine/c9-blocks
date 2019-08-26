@@ -84,7 +84,10 @@ class Inspector extends Component {
 
 					<SelectControl
 						label={__("Font Type", "c9-blocks")}
-						help={__("Choose between heading, subheading, or text-xl.", "c9-blocks")}
+						help={__(
+							"Choose between heading, subheading, or text-xl.",
+							"c9-blocks"
+						)}
 						options={fontTypes}
 						value={type}
 						onChange={value => setAttributes({ type: value })}
@@ -143,14 +146,14 @@ class Inspector extends Component {
 					initialOpen={false}
 					colorSettings={[
 						{
-							value: backgroundColor,
-							onChange: value => setAttributes({ backgroundColor: value }),
-							label: __("Background Color", "c9-blocks")
-						},
-						{
 							value: textColor,
 							onChange: value => setAttributes({ textColor: value }),
 							label: __("Text Color", "c9-blocks")
+						},
+						{
+							value: backgroundColor,
+							onChange: value => setAttributes({ backgroundColor: value }),
+							label: __("Background Color", "c9-blocks")
 						}
 					]}
 				>

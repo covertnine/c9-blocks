@@ -189,7 +189,7 @@ registerBlockType("c9-blocks/toggles-toggle", {
 	parent: ["c9-blocks/toggles"],
 	description: __("A single item within a toggles block."),
 	icon: "minus",
-	category: "c9-blocks",
+	category: "common",
 	supports: {
 		inserter: false,
 		className: false

@@ -426,6 +426,13 @@ function covertnine_blocks_register_block_core_latest_posts()
 				'containerWidth' => array(
 					'type' => 'string',
 					'default' => 'container'
+				),
+				'bgColor' => array(
+					'type' => 'string'
+				),
+				'bgOpacity' => array(
+					'type' => 'number',
+					'default' => 10
 				)
 			),
 			'render_callback' => 'covertnine_blocks_render_block_core_latest_posts',

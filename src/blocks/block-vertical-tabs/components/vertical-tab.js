@@ -52,7 +52,7 @@ export default class VerticalTab extends Component {
 registerBlockType("c9-blocks/vertical-tabs-tab", {
 	title: __("Vertical Tab", "c9-blocks"),
 
-	category: "c9-blocks",
+	category: "common",
 
 	parent: ["c9-blocks/vertical-tabs"],
 

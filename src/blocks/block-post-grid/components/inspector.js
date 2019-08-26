@@ -10,7 +10,7 @@ import compact from "lodash/compact";
 import map from "lodash/map";
 
 // Import block components
-const { InspectorControls } = wp.editor;
+const { InspectorControls, ColorPalette } = wp.editor;
 
 // Import Inspector components
 const {
@@ -77,7 +77,7 @@ export default class Inspector extends Component {
 		// Setup the attributes
 		const { attributes, setAttributes, latestPosts } = this.props;
 
-		const { order, orderBy, postTypes } = attributes;
+		const { order, orderBy, postTypes, bgColor, bgOpacity } = attributes;
 
 		const { categoriesList } = this.state;
 
@@ -88,7 +88,12 @@ export default class Inspector extends Component {
 		];
 
 		// Post type options
-		const postTypeOptions = JSON.parse(postTypes).map(p => {return {value: p, label: __(p.charAt(0).toUpperCase() + p.slice(1) ,"c9-blocks")}});
+		const postTypeOptions = JSON.parse(postTypes).map(p => {
+			return {
+				value: p,
+				label: __(p.charAt(0).toUpperCase() + p.slice(1), "c9-blocks")
+			};
+		});
 
 		// Section title tags
 		const sectionTags = [
@@ -359,6 +364,29 @@ export default class Inspector extends Component {
 								"Change the post/page title tag to match your content hierarchy.",
 								"c9-blocks"
 							)}
+						/>
+					)}
+				</PanelBody>
+				<PanelBody
+					title={__("Color Settings", "c9-blocks")}
+					initialOpen={false}
+				>
+					<span>{__("Background Color", "c9-blocks")}</span>
+					<ColorPalette
+						label={__("Overlay Color", "c9-blocks")}
+						value={bgColor}
+						onChange={bgColor => setAttributes({ bgColor })}
+					/>
+
+					{bgColor && !!bgColor.length && (
+						<RangeControl
+							beforeIcon="arrow-left-alt2"
+							afterIcon="arrow-right-alt2"
+							label={__("Opacity", "c9-blocks")}
+							value={bgOpacity}
+							onChange={bgOpacity => setAttributes({ bgOpacity })}
+							min={1}
+							max={10}
 						/>
 					)}
 				</PanelBody>

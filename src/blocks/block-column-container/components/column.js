@@ -18,7 +18,7 @@ import classnames from "classnames";
 registerBlockType("c9-blocks/column", {
 	title: __("Column", "c9-blocks"),
 
-	category: "c9-blocks",
+	category: "common",
 
 	parent: ["c9-blocks/column-container"],
 
