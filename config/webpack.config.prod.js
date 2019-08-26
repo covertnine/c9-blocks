@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /**
  * Webpack Configuration
  *
@@ -28,7 +29,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const babelPreset = require("./babel-preset");
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === "true";
+const shouldUseSourceMap = "true" === process.env.GENERATE_SOURCEMAP;
 
 // Extract style.css for both editor and frontend styles.
 const blocksCSSPlugin = new ExtractTextPlugin({
@@ -132,8 +133,12 @@ module.exports = {
 			},
 			{
 				test: /\.svg$/,
-				exclude: /(node_modules|bower_components|src\/blocks)/,
-				use: {
+				exclude: /(node_modules|bower_components)/,
+				issuer: {
+					test: /\.(js|jsx|mjs)$/
+				},
+				use: 
+					{
 					loader: "@svgr/webpack",
 					options: {
 						svgoConfig: {
@@ -142,9 +147,22 @@ module.exports = {
 									removeViewBox: false
 								}
 							]
-						}
+						},
+						sourceMap: true
 					}
 				}
+			},
+			{
+				test: /\.svg$/,
+				exclude: /(node_modules|bower_components)/,
+				issuer: {
+					test: /\.(scss|css|less)$/
+				},
+				use: 
+					{
+						loader: "svg-url-loader",
+						options: {sourceMap: true}
+					}
 			}
 		]
 	},

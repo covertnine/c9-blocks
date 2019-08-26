@@ -136,8 +136,12 @@ module.exports = {
 			},
 			{
 				test: /\.svg$/,
-				exclude: /(node_modules|bower_components|src\/blocks)/,
-				use: {
+				exclude: /(node_modules|bower_components)/,
+				issuer: {
+					test: /\.(js|jsx|mjs)$/
+				},
+				use: 
+					{
 					loader: "@svgr/webpack",
 					options: {
 						svgoConfig: {
@@ -146,9 +150,22 @@ module.exports = {
 									removeViewBox: false
 								}
 							]
-						}
+						},
+						sourceMap: true
 					}
 				}
+			},
+			{
+				test: /\.svg$/,
+				exclude: /(node_modules|bower_components)/,
+				issuer: {
+					test: /\.(scss|css|less)$/
+				},
+				use: 
+					{
+						loader: "svg-url-loader",
+						options: {sourceMap: true}
+					}
 			}
 		]
 	},
