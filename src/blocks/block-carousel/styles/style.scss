@@ -26,6 +26,11 @@
 	background-color: #000000;
 }
 
+.c9-carousel .carousel-control-next,
+.c9-carousel .carousel-control-prev {
+	width: 25px;
+}
+
 .c9-carousel .carousel-control-prev .carousel-control-prev-icon {
 	background-image: url("../../../../assets/icon-prev-gray.svg");
 }
