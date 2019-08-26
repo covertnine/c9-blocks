@@ -220,6 +220,8 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 		/* Build the block classes */
 		$class = "c9-block-post-grid featured{$attributes['postType']}";
 
+		$class .= c9SpacingConfig($attributes['bgPadding'], $attributes['bgMargin']);
+
 		if (isset($attributes['containerWidth'])) {
 			$class .= ' ' . $attributes['containerWidth'];
 		}
@@ -309,6 +311,53 @@ function hexToRGBA($hex, $alpha)
 	}
 
 	return "rgba(" . $r . "," . $g . "," . $b . "," . $opacity . ")";
+}
+
+function c9SpacingConfig($padding, $margin)
+{
+	$classes = "";
+	// abstract side class assignment
+	function assignSideClasses($sideClass, $level, &$classes)
+	{
+		if (-1 != $level) {
+			$classes .= " " . "{$sideClass}-{$level}";
+		}
+	}
+
+	// padding
+	if (
+		$padding['top'] === $padding['left'] &&
+		$padding['top'] === $padding['bottom'] &&
+		$padding['top'] === $padding['right'] &&
+		-1 != $padding['top']
+	) {
+		$classes .= " " . "p-{$padding['top']}";
+	} else if ($padding['top'] === $padding['bottom'] && 0 <= $padding['top']) {
+		$classes .= " " . "py-${$padding['top']}";
+		assignSideClasses('pl', $padding['left'], $classes);
+		assignSideClasses('pr', $padding['right'], $classes);
+	} else if ($padding['left'] === $padding['right'] && 0 <= $padding['left']) {
+		$classes .= " " . "px-{$padding['left']}";
+		assignSideClasses('pt', $padding['top'], $classes);
+		assignSideClasses('pb', $padding['bottom'], $classes);
+	} else {
+		array_map(function ($s) use ($padding, &$classes) {
+			assignSideClasses("p{$s[0]}", $padding[$s], $classes);
+
+		}, array('top', 'bottom', 'left', 'right'));
+	}
+
+	// margin
+	if ($margin['top'] === $margin['bottom'] && -1 != $margin['top']) {
+		$classes .= " " . "my-{$margin['top']}";
+	} else {
+		array_map(function ($s) use ($margin, &$classes) {
+			assignSideClasses("m{$s[0]}", $margin[$s], $classes);
+			
+		}, array('top', 'bottom'));
+	}
+
+	return $classes;
 }
 
 /**
@@ -485,28 +534,6 @@ add_action('init', 'covertnine_blocks_register_block_core_latest_posts');
  */
 function covertnine_blocks_register_rest_fields()
 {
-	/* Add landscape featured image source */
-	register_rest_field(
-		array('post', 'page'),
-		'featured_image_src',
-		array(
-			'get_callback'    => 'covertnine_blocks_get_image_src_landscape',
-			'update_callback' => null,
-			'schema'          => null,
-		)
-	);
-
-	/* Add square featured image source */
-	register_rest_field(
-		array('post', 'page'),
-		'featured_image_src_square',
-		array(
-			'get_callback'    => 'covertnine_blocks_get_image_src_square',
-			'update_callback' => null,
-			'schema'          => null,
-		)
-	);
-
 	/* Add author info */
 	register_rest_field(
 		'post',
