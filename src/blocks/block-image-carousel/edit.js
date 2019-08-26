@@ -48,8 +48,16 @@ class Edit extends Component {
 		let self = this;
 
 		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
-			self.setState({ slideTarget: to });
+			self.setState({ slideTarget: to, slideActive: to });
 		});
+	}
+
+	shouldComponentUpdate(nextProps, nextState) {
+		if (nextState.slideActive != this.state.slideActive && nextProps.isSelectedBlockInRoot) {
+			return false;
+		}
+
+		return true;
 	}
 
 	componentDidUpdate() {
@@ -180,7 +188,7 @@ class Edit extends Component {
 		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
-					data-target={`#c9-carousel-indicator-${id}`}
+					data-target={`#c9-image-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={classnames(
 						i == slideActive ? "active" : null,
@@ -352,7 +360,7 @@ class Edit extends Component {
 
 				<Inspector {...this.props} carouselRef={this.carouselRef} slideTarget={slideTarget} />
 				<div
-					id={`c9-carousel-indicator-${instanceId}`}
+					id={`c9-image-carousel-indicator-${instanceId}`}
 					className={classnames(
 						applyFilters("c9-blocks.blocks.className", className),
 						"carousel slide"
@@ -380,7 +388,7 @@ class Edit extends Component {
 										? "editor-selected-controls-lift"
 										: null
 								)}
-								href={`#c9-carousel-indicator-${instanceId}`}
+								href={`#c9-image-carousel-indicator-${instanceId}`}
 								role="button"
 								data-slide="prev"
 							>
@@ -397,7 +405,7 @@ class Edit extends Component {
 										? "editor-selected-controls-lift"
 										: null
 								)}
-								href={`#c9-carousel-indicator-${instanceId}`}
+								href={`#c9-image-carousel-indicator-${instanceId}`}
 								role="button"
 								data-slide="next"
 							>

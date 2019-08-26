@@ -140,8 +140,7 @@ module.exports = {
 				issuer: {
 					test: /\.(js|jsx|mjs)$/
 				},
-				use: 
-					{
+				use: {
 					loader: "@svgr/webpack",
 					options: {
 						svgoConfig: {
@@ -161,11 +160,10 @@ module.exports = {
 				issuer: {
 					test: /\.(scss|css|less)$/
 				},
-				use: 
-					{
-						loader: "svg-url-loader",
-						options: {sourceMap: true}
-					}
+				use: {
+					loader: "svg-url-loader",
+					options: { sourceMap: true }
+				}
 			}
 		]
 	},

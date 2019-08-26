@@ -47,7 +47,7 @@ export default class Save extends Component {
 		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
-					data-target={`#c9-carousel-indicator-${id}`}
+					data-target={`#c9-image-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={0 == i ? "active" : null}
 				/>
@@ -71,7 +71,7 @@ export default class Save extends Component {
 
 		return (
 			<div
-				id={`c9-carousel-indicator-${instanceId}`}
+				id={`c9-image-carousel-indicator-${instanceId}`}
 				className={classnames(
 					applyFilters("c9-blocks.blocks.className", className),
 					"carousel slide"
@@ -90,7 +90,7 @@ export default class Save extends Component {
 					<Fragment>
 						<a
 							className="carousel-control-prev"
-							href={`#c9-carousel-indicator-${instanceId}`}
+							href={`#c9-image-carousel-indicator-${instanceId}`}
 							role="button"
 							data-slide="prev"
 						>
@@ -99,7 +99,7 @@ export default class Save extends Component {
 						</a>
 						<a
 							className="carousel-control-next"
-							href={`#c9-carousel-indicator-${instanceId}`}
+							href={`#c9-image-carousel-indicator-${instanceId}`}
 							role="button"
 							data-slide="next"
 						>
