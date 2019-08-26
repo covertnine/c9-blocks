@@ -102,8 +102,8 @@
 	header .c9-block-post-grid-title {
 		margin-top: 0;
 		margin-bottom: 15px;
-		font-size: 28px;
-		line-height: 1.2;
+		font-size: 2rem;
+		line-height: 1.1;
 
 		a {
 			color: black;
@@ -166,7 +166,7 @@
 		}
 	}
 
-	.c9-block-post-grid-excerpt div + p {
+	.c9-block-post-grid-excerpt div+p {
 		margin-top: 15px;
 	}
 
@@ -226,6 +226,7 @@
 				display: inline-block;
 				vertical-align: top;
 			}
+
 			.post:not(.has-post-thumbnail) .c9-block-post-grid-text {
 				width: 100%;
 				padding-left: 0;

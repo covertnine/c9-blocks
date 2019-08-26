@@ -2,7 +2,7 @@
  * Editor styles for the admin
  */
 
- [data-type="c9-blocks/post-grid"] {
+[data-type="c9-blocks/post-grid"] {
 	z-index: 12;
 
 	&.c9-is-vertically-aligned-top {
@@ -31,38 +31,38 @@
 	}
 }
 
- .c9-block-post-grid {
+.c9-block-post-grid {
 	.c9-block-post-grid-title a {
-		 text-decoration: none;
+		text-decoration: none;
 	}
- }
+}
 
- .c9-blocks-hide-query .components-base-control:nth-of-type(3) {
-	 display: none;
- }
+.c9-blocks-hide-query .components-base-control:nth-of-type(3) {
+	display: none;
+}
 
- .c9-block-post-grid-markup-settings {
-	 .components-base-control__help {
-		 margin-top: 8px;
-	 }
- }
+.c9-block-post-grid-markup-settings {
+	.components-base-control__help {
+		margin-top: 8px;
+	}
+}
 
- .block-editor__container .editor-block-list__block .c9-block-post-grid a {
-	 color: inherit;
- }
+.block-editor__container .editor-block-list__block .c9-block-post-grid a {
+	color: inherit;
+}
 
- .c9-block-post-grid-image {
-	 position: relative;
+.c9-block-post-grid-image {
+	position: relative;
 
-	 &:hover {
+	&:hover {
 		.c9-post-grid-no-image-placeholder {
 			opacity: 1;
 			z-index: 1;
 		}
-	 }
- }
+	}
+}
 
- .c9-post-grid-no-image-placeholder {
+.c9-post-grid-no-image-placeholder {
 	padding: 40px;
 	position: absolute;
 	top: 0;
@@ -76,7 +76,7 @@
 	svg {
 		margin-bottom: 10px;
 	}
- }
+}
 
 .c9-post-grid-no-image-icon {
 	position: absolute;
