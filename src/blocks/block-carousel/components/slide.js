@@ -13,6 +13,7 @@ const { registerBlockType } = wp.blocks;
 
 // Import block dependencies and components
 import classnames from "classnames";
+const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
 /**
  * Create a Tab wrapper Component
@@ -31,8 +32,9 @@ export default class Tab extends Component {
 		return (
 			<div className={className}>
 				<InnerBlocks
-					templateLock={false}
-					templateInsertUpdatesSelection={false}
+					template={[["c9-blocks/column-container"]]}
+					templateLock={"all"}
+					allowedBlocks={ALLOWED_BLOCKS}
 				/>
 			</div>
 		);
