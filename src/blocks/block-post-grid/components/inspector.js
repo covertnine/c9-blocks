@@ -3,6 +3,7 @@
  */
 
 // Setup the block
+import React from "react";
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 
@@ -19,7 +20,8 @@ const {
 	RangeControl,
 	SelectControl,
 	TextControl,
-	ToggleControl
+	ToggleControl,
+	IconButton
 } = wp.components;
 
 const { addQueryArgs } = wp.url;
@@ -34,7 +36,24 @@ const MAX_POSTS_COLUMNS = 4;
 export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
-		this.state = { categoriesList: [] };
+		const {
+			attributes: { bgPadding, bgMargin },
+			setAttributes
+		} = this.props;
+
+		this.setAttributes = setAttributes;
+
+		this.linkedPaddingRef = React.createRef();
+		this.togglePaddingLinkage = this.togglePaddingLinkage.bind(this);
+		this.linkedMarginRef = React.createRef();
+		this.toggleMarginLinkage = this.toggleMarginLinkage.bind(this);
+
+		this.state = {
+			bgPadding: bgPadding,
+			bgMargin: bgMargin,
+			setAttributes: setAttributes,
+			categoriesList: []
+		};
 	}
 
 	componentDidMount() {
@@ -59,6 +78,98 @@ export default class Inspector extends Component {
 		this.stillMounted = false;
 	}
 
+	togglePaddingLinkage = () => {
+		let {
+			attributes: { bgPadding }
+		} = this.props;
+
+		bgPadding = Object.assign({}, bgPadding);
+		bgPadding.linked = !bgPadding.linked;
+		bgPadding.icon = bgPadding.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ bgPadding });
+		this.setAttributes({ bgPadding });
+	};
+
+	setPaddingUnit = value => {
+		const {
+			attributes: { bgPadding }
+		} = this.props;
+
+		let spacingObject = Object.assign({}, bgPadding);
+		spacingObject.unit = value;
+		this.setState({ bgPadding: spacingObject });
+		this.setAttributes({ bgPadding: spacingObject });
+	};
+
+	updatePadding = (position, value) => {
+		if (this.state.bgPadding.linked) {
+			let spacingObject = {
+				linked: this.state.bgPadding.linked,
+				unit: this.state.bgPadding.unit,
+				top: value,
+				bottom: value,
+				left: value,
+				right: value,
+				icon: this.state.bgPadding.icon
+			};
+			this.setState({ bgPadding: spacingObject });
+			this.setAttributes({ bgPadding: spacingObject });
+		} else {
+			let spacingObject = Object.assign({}, this.state.bgPadding);
+			spacingObject[position] = value;
+			this.setState({ bgPadding: spacingObject });
+			this.setAttributes({ bgPadding: spacingObject });
+		}
+	};
+
+	toggleMarginLinkage = () => {
+		let {
+			attributes: { bgMargin }
+		} = this.props;
+
+		bgMargin = Object.assign({}, bgMargin);
+		bgMargin.linked = !bgMargin.linked;
+		bgMargin.icon = bgMargin.linked
+			? "admin-links"
+			: "editor-unlink";
+		this.setState({ bgMargin });
+		this.setAttributes({ bgMargin });
+	};
+
+	setMarginUnit = value => {
+		const {
+			attributes: { bgMargin }
+		} = this.props;
+
+		let spacingObject = Object.assign({}, bgMargin);
+		spacingObject.unit = value;
+		this.setState({ bgMargin: spacingObject });
+		this.setAttributes({ bgMargin: spacingObject });
+	};
+
+	updateMargin = (position, value) => {
+		if (this.state.bgMargin.linked) {
+			let spacingObject = {
+				linked: this.state.bgMargin.linked,
+				unit: this.state.bgMargin.unit,
+				top: value,
+				bottom: value,
+				left: value,
+				right: value,
+				icon: this.state.bgMargin.icon
+			};
+			this.setState({ bgMargin: spacingObject });
+			this.setAttributes({ bgMargin: spacingObject });
+		} else {
+			let spacingObject = Object.assign({}, this.state.bgMargin);
+			spacingObject[position] = value;
+			this.setState({ bgMargin: spacingObject });
+			this.setAttributes({ bgMargin: spacingObject });
+		}
+	};
+
 	/* Get the available image sizes */
 	imageSizeSelect() {
 		const getSettings = wp.data.select("core/editor").getEditorSettings();
@@ -77,7 +188,15 @@ export default class Inspector extends Component {
 		// Setup the attributes
 		const { attributes, setAttributes, latestPosts } = this.props;
 
-		const { order, orderBy, postTypes, bgColor, bgOpacity } = attributes;
+		const {
+			order,
+			orderBy,
+			postTypes,
+			bgColor,
+			bgOpacity,
+			bgMargin,
+			bgPadding
+		} = attributes;
 
 		const { categoriesList } = this.state;
 
@@ -107,6 +226,28 @@ export default class Inspector extends Component {
 			{ value: "h4", label: __("H4", "c9-blocks") },
 			{ value: "h5", label: __("H5", "c9-blocks") },
 			{ value: "h6", label: __("H6", "c9-blocks") }
+		];
+
+		const paddingOptions = [
+			{ value: "-1", label: __("None", "c9-blocks") },
+			{ value: "0", label: __("Padding 0", "c9-blocks") },
+			{ value: "1", label: __("Padding 1", "c9-blocks") },
+			{ value: "2", label: __("Padding 2", "c9-blocks") },
+			{ value: "3", label: __("Padding 3", "c9-blocks") },
+			{ value: "4", label: __("Padding 4", "c9-blocks") },
+			{ value: "5", label: __("Padding 5", "c9-blocks") },
+			{ value: "auto", label: __("Auto", "c9-blocks") }
+		];
+
+		const marginOptions = [
+			{ value: "-1", label: __("None", "c9-blocks") },
+			{ value: "0", label: __("Margin 0", "c9-blocks") },
+			{ value: "1", label: __("Margin 1", "c9-blocks") },
+			{ value: "2", label: __("Margin 2", "c9-blocks") },
+			{ value: "3", label: __("Margin 3", "c9-blocks") },
+			{ value: "4", label: __("Margin 4", "c9-blocks") },
+			{ value: "5", label: __("Margin 5", "c9-blocks") },
+			{ value: "auto", label: __("Auto", "c9-blocks") }
 		];
 
 		// Check for posts
@@ -336,6 +477,83 @@ export default class Inspector extends Component {
 							)}
 						/>
 					)}
+				</PanelBody>
+				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
+
+					<p className="components-base-control__label">
+						{__(
+							"Configure between different levels of padding for each side.",
+							"c9-blocks"
+						)}
+					</p>
+
+					<div className="padding-top-wrapper">
+						<SelectControl
+							options={paddingOptions}
+							value={bgPadding.top}
+							onChange={value => this.updatePadding("top", value)}
+						/>
+					</div>
+					<div className="padding-sides-wrapper">
+						<SelectControl
+							options={paddingOptions}
+							value={bgPadding.left}
+							onChange={value => this.updatePadding("left", value)}
+						/>
+						<IconButton
+							label={__("Linked Padding Toggle", "c9-blocks")}
+							icon={this.state.bgPadding.icon}
+							onClick={this.togglePaddingLinkage}
+							ref={this.state.linkedPaddingRef}
+						/>
+						<SelectControl
+							options={paddingOptions}
+							value={bgPadding.right}
+							onChange={value => this.updatePadding("right", value)}
+						/>
+					</div>
+					<div className="padding-bottom-wrapper">
+						<SelectControl
+							options={paddingOptions}
+							value={bgPadding.bottom}
+							onChange={value => this.updatePadding("bottom", value)}
+						/>
+					</div>
+
+					<hr />
+
+					<h5 className="margin-label">Margins</h5>
+
+					<p className="components-base-control__label">
+						{__(
+							"Configure between different levels of margin for top and bottom sides.",
+							"c9-blocks"
+						)}
+					</p>
+
+					<div className="margin-top-wrapper">
+						<SelectControl
+							options={marginOptions}
+							value={bgMargin.top}
+							onChange={value => this.updateMargin("top", value)}
+						/>
+					</div>
+					<div className="margin-sides-wrapper">
+						<IconButton
+							label={__("Linked Padding Toggle", "c9-blocks")}
+							icon={this.state.bgMargin.icon}
+							onClick={this.toggleMarginLinkage}
+							ref={this.state.linkedMarginRef}
+						/>
+					</div>
+					<div className="margin-bottom-wrapper">
+						<SelectControl
+							options={marginOptions}
+							value={bgMargin.bottom}
+							onChange={value => this.updateMargin("bottom", value)}
+						/>
+					</div>
 				</PanelBody>
 				<PanelBody
 					title={__("Color Settings", "c9-blocks")}

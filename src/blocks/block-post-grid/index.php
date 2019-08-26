@@ -68,13 +68,6 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 			/* Get the featured image */
 			if (isset($attributes['displayPostImage']) && $attributes['displayPostImage'] && $post_thumb_id) {
 
-				/* Get the orientation class */
-				if ($attributes['imageCrop'] === 'landscape') {
-					$post_thumb_size = 'c9-block-post-grid-landscape';
-				} else {
-					$post_thumb_size = 'c9-block-post-grid-square';
-				}
-
 				if (!empty($attributes['imageSize'])) {
 					$post_thumb_size = $attributes['imageSize'];
 				}
@@ -279,15 +272,43 @@ function covertnine_blocks_render_block_core_latest_posts($attributes)
 
 		/* Output the post markup */
 		$block_content = sprintf(
-			'<%1$s class="%2$s">%3$s<div class="%4$s">%5$s</div></%1$s>',
+			'<%1$s class="%2$s" style="%6$s">%3$s<div class="%4$s">%5$s</div></%1$s>',
 			$section_tag,
 			esc_attr($class),
 			$section_title,
 			esc_attr($grid_class),
-			$post_grid_markup
+			$post_grid_markup,
+			c9BgStyles($attributes['bgColor'], $attributes['bgOpacity'])
 		);
 		return $block_content;
 	}
+}
+
+function c9BgStyles($hue, $opacity)
+{
+	$styles = "";
+
+	if ($hue) {
+		$styles .= "background: " . hexToRGBA($hue, $opacity);
+	}
+
+	return $styles;
+}
+
+function hexToRGBA($hex, $alpha)
+{
+	$r = hexdec(substr($hex, 1, 2));
+	$g = hexdec(substr($hex, 3, 2));
+	$b = hexdec(substr($hex, 5, 2));
+
+
+	if (10 === $alpha) {
+		$opacity = 1;
+	} else {
+		$opacity = "." . $alpha;
+	}
+
+	return "rgba(" . $r . "," . $g . "," . $b . "," . $opacity . ")";
 }
 
 /**
@@ -372,10 +393,6 @@ function covertnine_blocks_register_block_core_latest_posts()
 					'type'    => 'string',
 					'default' => 'date',
 				),
-				'imageCrop'           => array(
-					'type'    => 'string',
-					'default' => 'landscape',
-				),
 				'readMoreText'        => array(
 					'type'    => 'string',
 					'default' => 'Continue Reading',
@@ -433,6 +450,27 @@ function covertnine_blocks_register_block_core_latest_posts()
 				'bgOpacity' => array(
 					'type' => 'number',
 					'default' => 10
+				),
+				'bgMargin' => array(
+					'type' => 'object',
+					'default' => array(
+						'linked' => true,
+						'icon' => 'admin-links',
+						'unit' => 'px',
+						'top' => '-1',
+						'bottom' => '-1'
+					)
+				),
+				'bgPadding' => array(
+					'type' => 'object',
+					'default' => array(
+						'linked' => true,
+						'icon' => 'admin-links',
+						'top' => '5',
+						'bottom' => '5',
+						'left' => '5',
+						'right' => '5'
+					)
 				)
 			),
 			'render_callback' => 'covertnine_blocks_render_block_core_latest_posts',

@@ -53,6 +53,47 @@ export default class Edit extends Component {
 		return `rgba(${r},${g},${b},${opacity})`;
 	}
 
+	c9SpacingConfig(padding, margin) {
+		let classes = [];
+		// abstract side class assignment
+		function assignSideClasses(sideClass, level) {
+			if (-1 != level) {
+				classes.push(`${sideClass}-${level}`);
+			}
+		}
+
+		// padding
+		if (
+			padding.top === padding.left &&
+			padding.top === padding.bottom &&
+			padding.top === padding.right &&
+			-1 != padding.top
+		) {
+			classes.push(`p-${padding.top}`);
+		} else if (padding.top === padding.bottom && 0 <= padding.top) {
+			classes.push(`py-${padding.top}`);
+			assignSideClasses("pl", padding.left);
+			assignSideClasses("pr", padding.right);
+		} else if (padding.left === padding.right && 0 <= padding.left) {
+			classes.push(`px-${padding.left}`);
+			assignSideClasses("pt", padding.top);
+			assignSideClasses("pb", padding.bottom);
+		} else {
+			["top", "bottom", "left", "right"].map(s =>
+				assignSideClasses(`p${s[0]}`, padding[s])
+			);
+		}
+
+		// margin
+		if (margin.top === margin.bottom && -1 != margin.top) {
+			classes.push(`my-${margin.top}`);
+		} else {
+			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+		}
+
+		return classes;
+	}
+
 	truncate(str, noWords) {
 		return str
 			.split(" ")
@@ -68,7 +109,7 @@ export default class Edit extends Component {
 			className = ""
 		} = this.props;
 
-		const { bgColor, bgOpacity } = attributes;
+		const { bgColor, bgOpacity, bgMargin, bgPadding } = attributes;
 
 		// Check if there are posts
 		const hasPosts = Array.isArray(latestPosts) && latestPosts.length;
@@ -176,7 +217,8 @@ export default class Edit extends Component {
 					style={this.c9BgStyles(bgColor, bgOpacity)}
 					className={classnames(
 						applyFilters("c9-blocks.blocks.className", className),
-						"c9-block-post-grid"
+						"c9-block-post-grid",
+						this.c9SpacingConfig(bgPadding, bgMargin),
 					)}
 				>
 					{attributes.displaySectionTitle && attributes.sectionTitle && (
