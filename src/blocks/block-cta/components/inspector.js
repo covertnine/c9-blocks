@@ -385,7 +385,7 @@ export default class Inspector extends Component {
 
 				<PanelColorSettings
 					initialOpen={false}
-					title={__("Text Color", "c9-blocks")}
+					title={__("Message Text Color", "c9-blocks")}
 					colorSettings={[
 						{
 							value: ctaTextColor,
@@ -403,7 +403,7 @@ export default class Inspector extends Component {
 				</PanelColorSettings>
 				<PanelColorSettings
 					initialOpen={false}
-					title={__("Button Color", "c9-blocks")}
+					title={__("Button Colors", "c9-blocks")}
 					colorSettings={[
 						{
 							value: buttonBackgroundColor,

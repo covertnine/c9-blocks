@@ -8,8 +8,8 @@
 .c9-image-carousel {
 	.hide-indicator {
 		display: none;
-    }
-    
+	}
+
 	.carousel-inner {
 		.c9-remove-image {
 			> .components-button.components-icon-button {
@@ -22,7 +22,7 @@
 	}
 
 	.editor-selected-lift {
-		bottom: 100px;
+		bottom: 80px !important;
 	}
 
 	.editor-selected-controls-lift {
