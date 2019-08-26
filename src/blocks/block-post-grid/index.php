@@ -314,19 +314,19 @@ function covertnine_blocks_register_block_core_latest_posts()
 				),
 				'postsToShow'         => array(
 					'type'    => 'number',
-					'default' => 6,
+					'default' => 12,
 				),
 				'displayPostDate'     => array(
 					'type'    => 'boolean',
-					'default' => true,
+					'default' => false,
 				),
 				'displayPostExcerpt'  => array(
 					'type'    => 'boolean',
-					'default' => true,
+					'default' => false,
 				),
 				'displayPostAuthor'   => array(
 					'type'    => 'boolean',
-					'default' => true,
+					'default' => false,
 				),
 				'displayPostImage'    => array(
 					'type'    => 'boolean',
@@ -334,7 +334,7 @@ function covertnine_blocks_register_block_core_latest_posts()
 				),
 				'displayPostLink'     => array(
 					'type'    => 'boolean',
-					'default' => true,
+					'default' => false,
 				),
 				'displayPostTitle'    => array(
 					'type'    => 'boolean',
@@ -405,7 +405,7 @@ function covertnine_blocks_register_block_core_latest_posts()
 				),
 				'imageSize'           => array(
 					'type'    => 'string',
-					'default' => 'full',
+					'default' => 'large',
 				),
 				'url'                 => array(
 					'type'      => 'string',

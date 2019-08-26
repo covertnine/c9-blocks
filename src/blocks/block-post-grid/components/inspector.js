@@ -4,7 +4,7 @@
 
 // Setup the block
 const { __ } = wp.i18n;
-const { Component, Fragment } = wp.element;
+const { Component } = wp.element;
 
 import compact from "lodash/compact";
 import map from "lodash/map";
@@ -81,12 +81,6 @@ export default class Inspector extends Component {
 
 		const { categoriesList } = this.state;
 
-		// Thumbnail options
-		const imageCropOptions = [
-			{ value: "landscape", label: __("Landscape", "c9-blocks") },
-			{ value: "square", label: __("Square", "c9-blocks") }
-		];
-
 		// Post type options
 		const postTypeOptions = JSON.parse(postTypes).map(p => {
 			return {
@@ -127,18 +121,6 @@ export default class Inspector extends Component {
 			label: __("Select image size")
 		};
 
-		// // Add the landscape image size to the select
-		// const c9ImageSizeLandscape = {
-		// 	value: "c9-post-grid-image-landscape",
-		// 	label: __("C9 Grid Landscape")
-		// };
-
-		// // Add the square image size to the select
-		// const c9ImageSizeSquare = {
-		// 	value: "c9-post-grid-image-square",
-		// 	label: __("C9 Grid Square")
-		// };
-
 		// Get the image size options
 		const imageSizeOptions = this.imageSizeSelect();
 
@@ -152,7 +134,7 @@ export default class Inspector extends Component {
 					return attributes.imageSize;
 				}
 			}
-			return "full";
+			return "large";
 		};
 
 		return (
@@ -241,18 +223,6 @@ export default class Inspector extends Component {
 							options={imageSizeOptions}
 							onChange={value => this.props.setAttributes({ imageSize: value })}
 						/>
-					)}
-					{attributes.displayPostImage && (
-						<Fragment>
-							<SelectControl
-								label={__("Featured Image Style", "c9-blocks")}
-								options={imageCropOptions}
-								value={attributes.imageCrop}
-								onChange={value =>
-									this.props.setAttributes({ imageCrop: value })
-								}
-							/>
-						</Fragment>
 					)}
 					<ToggleControl
 						label={__("Display Title", "c9-blocks")}
