@@ -101,9 +101,9 @@
 
 	header .c9-block-post-grid-title {
 		margin-top: 0;
-		margin-bottom: 15px;
+		margin-bottom: 1rem;
 		font-size: 2rem;
-		line-height: 1.1;
+		line-height: 1.2;
 
 		a {
 			color: black;
@@ -118,8 +118,8 @@
 
 	.c9-block-post-grid-byline {
 		font-size: 14px;
-		color: #eeeeee;
-		margin-bottom: 15px;
+		color: #999;
+		margin-bottom: 1rem;
 	}
 
 	.c9-block-post-grid-author,
@@ -166,8 +166,13 @@
 		}
 	}
 
+	.c9-block-post-grid-excerpt {
+		font-size: 1.4rem;
+		line-height: 1.1;
+	}
+
 	.c9-block-post-grid-excerpt div+p {
-		margin-top: 15px;
+		margin-top: 1rem;
 	}
 
 	.is-list {
