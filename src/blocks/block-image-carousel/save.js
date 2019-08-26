@@ -44,12 +44,12 @@ export default class Save extends Component {
 
 	createIndicators(slides, id) {
 		let indicators = [];
-		for (let i = 1; i <= slides; i++) {
+		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
-					className={1 == i ? "active" : null}
+					className={0 == i ? "active" : null}
 				/>
 			);
 		}
