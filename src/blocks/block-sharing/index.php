@@ -130,7 +130,7 @@ function c9_blocks_render_sharing( $attributes ) {
 					class="c9-share-twitter"
 					title="%2$s">
 					<i class="fab fa-twitter"></i> <span class="c9-social-text">%2$s</span>
-					<span className="sr-only">(Link opens in new window)</span>
+					<span class="sr-only">(Link opens in new window)</span>
 				</a>
 			</li>',
 			esc_url( $twitter_url ),
@@ -147,7 +147,7 @@ function c9_blocks_render_sharing( $attributes ) {
 					class="c9-share-facebook"
 					title="%2$s">
 					<i class="fab fa-facebook-f"></i> <span class="c9-social-text">%2$s</span>
-					<span className="sr-only">(Link opens in new window)</span>
+					<span class="sr-only">(Link opens in new window)</span>
 				</a>
 			</li>',
 			esc_url( $facebook_url ),
@@ -164,7 +164,7 @@ function c9_blocks_render_sharing( $attributes ) {
 					class="c9-share-pinterest"
 					title="%2$s">
 					<i class="fab fa-pinterest-p"></i> <span class="c9-social-text">%2$s</span>
-					<span className="sr-only">(Link opens in new window)</span>
+					<span class="sr-only">(Link opens in new window)</span>
 				</a>
 			</li>',
 			esc_url( $pinterest_url ),
@@ -181,7 +181,7 @@ function c9_blocks_render_sharing( $attributes ) {
 					class="c9-share-linkedin"
 					title="%2$s">
 					<i class="fab fa-linkedin-in"></i> <span class="c9-social-text">%2$s</span>
-					<span className="sr-only">(Link opens in new window)</span>
+					<span class="sr-only">(Link opens in new window)</span>
 				</a>
 			</li>',
 			esc_url( $linkedin_url ),
@@ -198,7 +198,7 @@ function c9_blocks_render_sharing( $attributes ) {
 					class="c9-share-reddit"
 					title="%2$s">
 					<i class="fab fa-reddit-alien"></i> <span class="c9-social-text">%2$s</span>
-					<span className="sr-only">(Link opens in new window)</span>
+					<span class="sr-only">(Link opens in new window)</span>
 				</a>
 			</li>',
 			esc_url( $reddit_url ),
@@ -214,7 +214,7 @@ function c9_blocks_render_sharing( $attributes ) {
 					class="c9-share-email"
 					title="%2$s">
 					<i class="fas fa-envelope"></i> <span class="c9-social-text">%2$s</span>
-					<span className="sr-only">(Link opens in new window)</span>
+					<span class="sr-only">(Link opens in new window)</span>
 				</a>
 			</li>',
 			esc_url( $email_url ),

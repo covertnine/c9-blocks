@@ -26,13 +26,13 @@ import pickBy from "lodash/pickBy";
 // Register the block
 registerBlockType("c9-blocks/post-grid", {
 	parent: ["c9-blocks/post-container"],
+	category: "common",
 	title: __("C9 Post and Page Grid", "c9-blocks"),
 	description: __(
 		"Add a grid or list of customizable posts or pages.",
 		"c9-blocks"
 	),
 	icon: "columns",
-	category: "c9-blocks",
 	keywords: [
 		__("post", "c9-blocks"),
 		__("page", "c9-blocks"),

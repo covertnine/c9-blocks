@@ -53,7 +53,7 @@ export default class Tab extends Component {
 registerBlockType("c9-blocks/horizontal-tabs-tab", {
 	title: __("C9 Horizontal Tab", "c9-blocks"),
 
-	category: "c9-blocks",
+	category: "common",
 
 	parent: ["c9-blocks/horizontal-tabs"],
 

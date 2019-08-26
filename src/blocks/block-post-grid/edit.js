@@ -27,6 +27,73 @@ export default class Edit extends Component {
 		super(...arguments);
 	}
 
+	c9BgStyles(hue, opacity) {
+		const styles = {};
+
+		if (hue) {
+			styles.backgroundColor = this.hexToRGBA(hue, opacity);
+		}
+
+		return styles;
+	}
+
+	hexToRGBA(hex, alpha) {
+		let r = parseInt(hex.slice(1, 3), 16),
+			g = parseInt(hex.slice(3, 5), 16),
+			b = parseInt(hex.slice(5, 7), 16);
+
+		var opacity;
+
+		if (10 === alpha) {
+			opacity = 1;
+		} else {
+			opacity = "." + alpha;
+		}
+
+		return `rgba(${r},${g},${b},${opacity})`;
+	}
+
+	c9SpacingConfig(padding, margin) {
+		let classes = [];
+		// abstract side class assignment
+		function assignSideClasses(sideClass, level) {
+			if (-1 != level) {
+				classes.push(`${sideClass}-${level}`);
+			}
+		}
+
+		// padding
+		if (
+			padding.top === padding.left &&
+			padding.top === padding.bottom &&
+			padding.top === padding.right &&
+			-1 != padding.top
+		) {
+			classes.push(`p-${padding.top}`);
+		} else if (padding.top === padding.bottom && 0 <= padding.top) {
+			classes.push(`py-${padding.top}`);
+			assignSideClasses("pl", padding.left);
+			assignSideClasses("pr", padding.right);
+		} else if (padding.left === padding.right && 0 <= padding.left) {
+			classes.push(`px-${padding.left}`);
+			assignSideClasses("pt", padding.top);
+			assignSideClasses("pb", padding.bottom);
+		} else {
+			["top", "bottom", "left", "right"].map(s =>
+				assignSideClasses(`p${s[0]}`, padding[s])
+			);
+		}
+
+		// margin
+		if (margin.top === margin.bottom && -1 != margin.top) {
+			classes.push(`my-${margin.top}`);
+		} else {
+			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+		}
+
+		return classes;
+	}
+
 	truncate(str, noWords) {
 		return str
 			.split(" ")
@@ -41,6 +108,8 @@ export default class Edit extends Component {
 			latestPosts,
 			className = ""
 		} = this.props;
+
+		const { bgColor, bgOpacity, bgMargin, bgPadding } = attributes;
 
 		// Check if there are posts
 		const hasPosts = Array.isArray(latestPosts) && latestPosts.length;
@@ -116,7 +185,7 @@ export default class Edit extends Component {
 			<Fragment>
 				<Inspector {...{ setAttributes, ...this.props }} />
 				<BlockControls>
-				<WidthToolbar
+					<WidthToolbar
 						value={currWidth}
 						onChange={value => {
 							if ("wide" == value) {
@@ -145,9 +214,11 @@ export default class Edit extends Component {
 					<Toolbar controls={layoutControls} />
 				</BlockControls>
 				<SectionTag
+					style={this.c9BgStyles(bgColor, bgOpacity)}
 					className={classnames(
 						applyFilters("c9-blocks.blocks.className", className),
-						"c9-block-post-grid"
+						"c9-block-post-grid",
+						this.c9SpacingConfig(bgPadding, bgMargin),
 					)}
 				>
 					{attributes.displaySectionTitle && attributes.sectionTitle && (

@@ -44,7 +44,7 @@ export default class Tab extends Component {
 registerBlockType("c9-blocks/carousel-slide", {
 	title: __("C9 Carousel Slide", "c9-blocks"),
 
-	category: "c9-blocks",
+	category: "common",
 
 	parent: ["c9-blocks/carousel"],
 
