@@ -1,5 +1,5 @@
 /**
- * Tab Wrapper
+ * Slide Wrapper
  */
 
 // Setup the block
@@ -13,28 +13,51 @@ const { registerBlockType } = wp.blocks;
 
 // Import block dependencies and components
 import classnames from "classnames";
-const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
 /**
- * Create a Tab wrapper Component
+ * Create a Slide wrapper Component
  */
-export default class Tab extends Component {
+class Slide extends Component {
 	constructor() {
 		super(...arguments);
+		const { slideActive } = this.props.attributes;
+
+		this.state = {
+			slideActive
+		};
+	}
+
+	shouldComponentUpdate(nextProps, nextState) {
+		if (
+			nextState.slideActive !== this.state.slideActive &&
+			this.props.attributes.slides === nextProps.attributes.slides
+		) {
+			return false;
+		}
+
+		return true;
+	}
+
+	componentDidUpdate() {
+		console.log(this.props);
+		if (this.state.slideActive != this.props.attributes.slideActive) {
+			this.setState({ slideActive: this.props.attributes.slideActive });
+		}
 	}
 
 	render() {
 		// eslint-disable-next-line no-unused-vars
 		let { className = "" } = this.props;
 
+		console.log(this.props.attributes, this.props.clientId);
+
 		className = classnames(className, "c9-carousel-slide");
 
 		return (
-			<div className={className}>
+			<div className={classnames(className, this.props.attributes.id)}>
 				<InnerBlocks
-					template={[["c9-blocks/column-container"]]}
-					templateLock={"all"}
-					allowedBlocks={ALLOWED_BLOCKS}
+					templateLock={false}
+					templateInsertUpdatesSelection={false}
 				/>
 			</div>
 		);
@@ -63,12 +86,18 @@ registerBlockType("c9-blocks/carousel-slide", {
 	},
 
 	attributes: {
+		id: {
+			type: "number"
+		},
 		slideActive: {
-			type: "string"
+			type: "number"
+		},
+		slides: {
+			type: "number"
 		}
 	},
 
-	edit: Tab,
+	edit: Slide,
 
 	save: function(props) {
 		const { slideActive } = props.attributes;
@@ -88,3 +117,35 @@ registerBlockType("c9-blocks/carousel-slide", {
 		);
 	}
 });
+
+/* Add the vertical column alignment class to the column container block. */
+const withClientIdClassName = wp.compose.createHigherOrderComponent(
+	BlockListBlock => {
+		return props => {
+			const blockName = props.block.name;
+
+			if ("c9-blocks/carousel-slide" === blockName) {
+				return (
+					<BlockListBlock
+						{...props}
+						className={classnames(
+							"carousel-item",
+							props.attributes.slideActive === props.attributes.id
+								? "active"
+								: null
+						)}
+					/>
+				);
+			} else {
+				return <BlockListBlock {...props} />;
+			}
+		};
+	},
+	"withClientIdClassName"
+);
+
+wp.hooks.addFilter(
+	"editor.BlockListBlock",
+	"c9-blocks/add-vertical-align-class",
+	withClientIdClassName
+);

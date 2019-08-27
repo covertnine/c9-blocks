@@ -14,7 +14,13 @@ export default class Inspector extends Component {
 	render() {
 		const { attributes, setAttributes } = this.props;
 
-		const { slides, autoSlide, showControls, showIndicators, wrapAround } = attributes;
+		const {
+			slides,
+			autoSlide,
+			showControls,
+			showIndicators,
+			wrapAround
+		} = attributes;
 
 		return (
 			<InspectorControls>
@@ -23,7 +29,16 @@ export default class Inspector extends Component {
 					<RangeControl
 						label={__("Number of slides to produce", "c9-blocks")}
 						value={slides}
-						onChange={value => setAttributes({ slides: value })}
+						onChange={value => {
+							const { carouselRef, slideTarget } = this.props;
+							const $ = window.jQuery;
+
+							if (carouselRef.current && 0 < slideTarget) {
+								$(carouselRef.current).carousel("prev");
+							}
+
+							setAttributes({ slides: value });
+						}}
 						min={1}
 						max={20}
 						help={__(
