@@ -30,7 +30,6 @@ class Edit extends Component {
 		this.carouselRef = React.createRef();
 
 		this.state = {
-			captionFocused: false,
 			auto: autoSlide,
 			wrap: wrapAround,
 			slideActive: 0,
@@ -53,7 +52,10 @@ class Edit extends Component {
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
-		if (nextState.slideActive != this.state.slideActive && nextProps.isSelectedBlockInRoot) {
+		if (
+			nextState.slideActive !== this.state.slideActive &&
+			this.props.attributes.slides === nextProps.attributes.slides
+		) {
 			return false;
 		}
 
@@ -358,7 +360,11 @@ class Edit extends Component {
 			<Fragment>
 				<BlockControls />
 
-				<Inspector {...this.props} carouselRef={this.carouselRef} slideTarget={slideTarget} />
+				<Inspector
+					{...this.props}
+					carouselRef={this.carouselRef}
+					slideTarget={slideTarget}
+				/>
 				<div
 					id={`c9-image-carousel-indicator-${instanceId}`}
 					className={classnames(

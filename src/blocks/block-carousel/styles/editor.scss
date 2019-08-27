@@ -5,16 +5,22 @@
  * which makes it higher in priority.
  */
 
-.c9-carousel .carousel-inner {
-	overflow-x: scroll;
-
-	.editor-inner-blocks>.editor-block-list__layout {
-		display: flex;
-		margin: 10px 0px 0px 0px;
+.c9-carousel {
+	.hide-indicator {
+		display: none;
 	}
 
-	.c9-carousel-slide .editor-inner-blocks>.editor-block-list__layout {
-		display: block;
+	.carousel-inner {
+		background: #efefef;
+
+		.editor-inner-blocks > .editor-block-list__layout {
+			display: flex;
+			margin: 10px 0px 0px 0px;
+		}
+
+		.c9-carousel-slide .editor-inner-blocks > .editor-block-list__layout {
+			display: block;
+		}
 	}
 }
 
@@ -25,11 +31,17 @@
 }
 
 @media only screen and (min-width: 600px) {
-
-	.edit-post-visual-editor .c9-layout-column-wrap-admin .c9-block-layout-column>.c9-column-innner .wp-block[data-type="c9-blocks/carousel"],
-	.edit-post-visual-editor .c9-layout-column-wrap-admin .c9-block-layout-column>.c9-column-innner .wp-block[data-type="c9-blocks/carousel-slide"] {
+	.edit-post-visual-editor
+		.c9-layout-column-wrap-admin
+		.c9-block-layout-column
+		> .c9-column-innner
+		.wp-block[data-type="c9-blocks/carousel"],
+	.edit-post-visual-editor
+		.c9-layout-column-wrap-admin
+		.c9-block-layout-column
+		> .c9-column-innner
+		.wp-block[data-type="c9-blocks/carousel-slide"] {
 		margin-left: 0px;
 		margin-right: 0px;
 	}
-
 }
