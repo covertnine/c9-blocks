@@ -189,6 +189,45 @@
 	position: relative;
 }
 
+// set z-indexes of columns to prevent toolbars from overlapping under columns
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-6 [data-type="c9-blocks/column"]:nth-child(1),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-5 [data-type="c9-blocks/column"]:nth-child(1),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-4 [data-type="c9-blocks/column"]:nth-child(1),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-3 [data-type="c9-blocks/column"]:nth-child(1),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-2 [data-type="c9-blocks/column"]:nth-child(1) {
+	z-index: 25;
+}
+
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-6 [data-type="c9-blocks/column"]:nth-child(2),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-5 [data-type="c9-blocks/column"]:nth-child(2),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-4 [data-type="c9-blocks/column"]:nth-child(2),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-3 [data-type="c9-blocks/column"]:nth-child(2),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-2 [data-type="c9-blocks/column"]:nth-child(2) {
+	z-index: 24;
+}
+
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-6 [data-type="c9-blocks/column"]:nth-child(3),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-5 [data-type="c9-blocks/column"]:nth-child(3),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-4 [data-type="c9-blocks/column"]:nth-child(3),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-3 [data-type="c9-blocks/column"]:nth-child(3) {
+	z-index: 23;
+}
+
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-6 [data-type="c9-blocks/column"]:nth-child(4),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-5 [data-type="c9-blocks/column"]:nth-child(4),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-4 [data-type="c9-blocks/column"]:nth-child(4) {
+	z-index: 22;
+}
+
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-6 [data-type="c9-blocks/column"]:nth-child(5),
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-5 [data-type="c9-blocks/column"]:nth-child(5) {
+	z-index: 21;
+}
+
+.wp-block[data-type="c9-blocks/column-container"] .c9-layout-columns-6 [data-type="c9-blocks/column"]:nth-child(6) {
+	z-index: 20;
+}
+
 // set width of editor screen and a max width
 .edit-post-layout__content .editor-styles-wrapper {
 	width: 96%;
