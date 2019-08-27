@@ -48,6 +48,12 @@ class Edit extends Component {
 		});
 	}
 
+	shouldComponentUpdate(nextProps, nextState) {
+		return (
+			0 <= nextState.active && nextState.active < nextProps.attributes.slides
+		);
+	}
+
 	componentDidUpdate() {
 		const { block, updateBlockAttributes } = this.props;
 

@@ -56,7 +56,7 @@ class Edit extends Component {
 			nextState.slideActive !== this.state.slideActive &&
 			this.props.attributes.slides === nextProps.attributes.slides
 		) {
-			return false;
+			return 0 >= nextState.slideActive;
 		}
 
 		return true;
@@ -66,6 +66,10 @@ class Edit extends Component {
 		const { auto, wrap } = this.state;
 		const { autoSlide, wrapAround } = this.props.attributes;
 		const $ = window.jQuery;
+
+		if (0 > this.state.slideActive) {
+			this.setState({ slideTarget: 0, slideActive: 0 });
+		}
 
 		if ($(this.carouselRef.current).data()["bs.carousel"]) {
 			let options = $(this.carouselRef.current).data()["bs.carousel"]._config;
