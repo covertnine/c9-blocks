@@ -18,7 +18,7 @@ export default class Save extends Component {
 		let indicators = [];
 		for (let i = 0; i < slides; i++) {
 			indicators.push(
-				<li data-target={`#c9-carousel-indicator-${id}`} data-slide-to={i} className={0 == i ? "active" : null} />
+				<li data-target={`#c9-carousel-indicator-${id}`} data-slide-to={i} className={0 === i ? "active" : null} />
 			);
 		}
 

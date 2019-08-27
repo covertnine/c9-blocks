@@ -86,14 +86,14 @@ registerBlockType("c9-blocks/carousel-slide", {
 	edit: Slide,
 
 	save: function(props) {
-		const { slideActive } = props.attributes;
+		const { id } = props.attributes;
 		let { className = "" } = props;
 
 		className = classnames(
 			className,
 			"c9-carousel-slide",
 			"carousel-item",
-			slideActive ? "active" : null
+			0 === id ? "active" : null
 		);
 
 		return (

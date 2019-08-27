@@ -373,7 +373,18 @@ function covertnine_blocks_register_block_core_latest_posts()
 	register_block_type(
 		'c9-blocks/post-grid',
 		array(
-			'category' => "c9-blocks",
+			'title' => __('C9 Post and Page Grid', 'c9-blocks'),
+			'description' => __(
+				'Add a grid or list of customizable posts or pages.',
+				'c9-blocks'
+			),
+			'icon' => 'columns',
+			'keywords' => array(
+				__('post', 'c9-blocks'),
+				__('page', 'c9-blocks'),
+				__('grid', 'c9-blocks')
+			),
+			'category' => 'c9-blocks',
 			'parent' => 'c9-blocks/post-container',
 			'attributes'      => array(
 				'categories'          => array(
