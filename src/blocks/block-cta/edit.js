@@ -9,12 +9,7 @@ import WidthToolbar from "./components/width-toolbar";
 const { Component, Fragment } = wp.element;
 
 // Register editor components
-const {
-	AlignmentToolbar,
-	URLInput,
-	BlockControls,
-	RichText
-} = wp.editor;
+const { AlignmentToolbar, URLInput, BlockControls, RichText } = wp.editor;
 
 // Register components
 const { IconButton, Dashicon, Button } = wp.components;
@@ -61,7 +56,8 @@ export default class Edit extends Component {
 				ctaTextColor,
 				ctaLayout,
 				align,
-				type
+				type,
+				disableToolbar
 			},
 			isSelectedBlockInRoot,
 			setAttributes
@@ -82,26 +78,28 @@ export default class Edit extends Component {
 			// Show the alignment toolbar on focus
 			<Fragment>
 				<BlockControls>
-					<WidthToolbar
-						value={currWidth}
-						onChange={value => {
-							if ("wide" == value) {
-								setAttributes({ ctaWidth: "container", align: "wide" });
-							} else if ("full" == value) {
-								setAttributes({
-									ctaWidth: "container-fluid",
-									align: "full"
-								});
-							} else if ("narrow" == value) {
-								setAttributes({
-									ctaWidth: "container-narrow",
-									align: "narrow"
-								});
-							} else {
-								setAttributes({ ctaWidth: "container", align: "" });
-							}
-						}}
-					/>
+					{!disableToolbar && (
+						<WidthToolbar
+							value={currWidth}
+							onChange={value => {
+								if ("wide" == value) {
+									setAttributes({ ctaWidth: "container", align: "wide" });
+								} else if ("full" == value) {
+									setAttributes({
+										ctaWidth: "container-fluid",
+										align: "full"
+									});
+								} else if ("narrow" == value) {
+									setAttributes({
+										ctaWidth: "container-narrow",
+										align: "narrow"
+									});
+								} else {
+									setAttributes({ ctaWidth: "container", align: "" });
+								}
+							}}
+						/>
+					)}
 					<AlignmentToolbar
 						value={buttonAlignment}
 						onChange={value => {

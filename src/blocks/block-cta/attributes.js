@@ -130,6 +130,10 @@ const blockAttributes = {
 	align: {
 		type: "string",
 		default: ""
+	},
+	disableToolbar: {
+		type: "boolean",
+		default: false
 	}
 };
 

@@ -109,7 +109,13 @@ export default class Edit extends Component {
 			className = ""
 		} = this.props;
 
-		const { bgColor, bgOpacity, bgMargin, bgPadding } = attributes;
+		const {
+			bgColor,
+			bgOpacity,
+			bgMargin,
+			bgPadding,
+			disableToolbar
+		} = attributes;
 
 		// Check if there are posts
 		const hasPosts = Array.isArray(latestPosts) && latestPosts.length;
@@ -185,26 +191,28 @@ export default class Edit extends Component {
 			<Fragment>
 				<Inspector {...{ setAttributes, ...this.props }} />
 				<BlockControls>
-					<WidthToolbar
-						value={currWidth}
-						onChange={value => {
-							if ("wide" == value) {
-								setAttributes({ containerWidth: "container", align: "wide" });
-							} else if ("full" == value) {
-								setAttributes({
-									containerWidth: "container-fluid",
-									align: "full"
-								});
-							} else if ("narrow" == value) {
-								setAttributes({
-									containerWidth: "container-narrow",
-									align: "narrow"
-								});
-							} else {
-								setAttributes({ containerWidth: "container", align: "" });
-							}
-						}}
-					/>
+					{!disableToolbar && (
+						<WidthToolbar
+							value={currWidth}
+							onChange={value => {
+								if ("wide" == value) {
+									setAttributes({ containerWidth: "container", align: "wide" });
+								} else if ("full" == value) {
+									setAttributes({
+										containerWidth: "container-fluid",
+										align: "full"
+									});
+								} else if ("narrow" == value) {
+									setAttributes({
+										containerWidth: "container-narrow",
+										align: "narrow"
+									});
+								} else {
+									setAttributes({ containerWidth: "container", align: "" });
+								}
+							}}
+						/>
+					)}
 					<VerticalAlignmentToolbar
 						value={attributes.verticalAlign}
 						onChange={value => {
@@ -218,7 +226,7 @@ export default class Edit extends Component {
 					className={classnames(
 						applyFilters("c9-blocks.blocks.className", className),
 						"c9-block-post-grid",
-						this.c9SpacingConfig(bgPadding, bgMargin),
+						this.c9SpacingConfig(bgPadding, bgMargin)
 					)}
 				>
 					{attributes.displaySectionTitle && attributes.sectionTitle && (

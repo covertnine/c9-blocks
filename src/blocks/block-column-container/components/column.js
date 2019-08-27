@@ -11,9 +11,81 @@ const { AlignmentToolbar, BlockControls } = wp.editor;
 
 // Extend component
 const { Fragment } = wp.element;
+const { compose } = wp.compose;
+const { withSelect, withDispatch } = wp.data;
 
 import VerticalAlignmentToolbar from "./vertical-align-toolbar";
 import classnames from "classnames";
+
+const Edit = props => {
+	const {
+		attributes: { textAlign, verticalAlign },
+		setAttributes,
+		className,
+		block,
+		updateBlockAttributes
+	} = props;
+
+	const ALLOWED_BLOCKS = getBlockTypes()
+		.map(block => block.name)
+		.filter(
+			name => "c9-blocks/grid" != name && "c9-blocks/column-container" != name
+		);
+
+	const disableToolbarTraversal = root => {
+		if (root) {
+			if (
+				("c9-blocks/cta" === root.name ||
+					"c9-blocks/post-grid" === root.name) &&
+				!root.attributes.disableToolbar
+			) {
+				updateBlockAttributes(root.clientId, { disableToolbar: true });
+			}
+			// eslint-disable-next-line no-unused-vars
+			for (let child of root.innerBlocks) {
+				disableToolbarTraversal(child);
+			}
+		}
+	};
+
+	// perform traversal only on children
+	// eslint-disable-next-line no-unused-vars
+	disableToolbarTraversal(block);
+
+	return (
+		<Fragment>
+			<BlockControls>
+				<AlignmentToolbar
+					value={textAlign}
+					onChange={value => setAttributes({ textAlign: value })}
+				/>
+				<VerticalAlignmentToolbar
+					value={verticalAlign}
+					onChange={value => {
+						setAttributes({ verticalAlign: value });
+					}}
+				/>
+			</BlockControls>
+			<div
+				className={classnames(
+					className,
+					"c9-block-layout-column",
+					"c9-column",
+					textAlign ? `text-${textAlign}` : null,
+					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+				)}
+			>
+				<div className="c9-column-innner">
+					<InnerBlocks
+						allowedBlocks={ALLOWED_BLOCKS}
+						templateLock={false}
+						templateInsertUpdatesSelection={false}
+					/>
+				</div>
+			</div>
+		</Fragment>
+	);
+};
 
 registerBlockType("c9-blocks/column", {
 	title: __("Column", "c9-blocks"),
@@ -46,53 +118,29 @@ registerBlockType("c9-blocks/column", {
 		}
 	},
 
-	edit: props => {
-		const {
-			attributes: { textAlign, verticalAlign },
-			setAttributes,
-			className
-		} = props;
-
-		const ALLOWED_BLOCKS = getBlockTypes()
-			.map(block => block.name)
-			.filter(
-				name => "c9-blocks/grid" != name && "c9-blocks/column-container" != name
+	edit: compose([
+		withSelect((select, ownProps) => {
+			const { getBlock, isBlockSelected, hasSelectedInnerBlock } = select(
+				"core/editor"
 			);
 
-		return (
-			<Fragment>
-				<BlockControls>
-					<AlignmentToolbar
-						value={textAlign}
-						onChange={value => setAttributes({ textAlign: value })}
-					/>
-					<VerticalAlignmentToolbar
-						value={verticalAlign}
-						onChange={value => {
-							setAttributes({ verticalAlign: value });
-						}}
-					/>
-				</BlockControls>
-				<div
-					className={classnames(
-						className,
-						"c9-block-layout-column",
-						"c9-column",
-						textAlign ? `text-${textAlign}` : null,
-						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
-					)}
-				>
-					<div className="c9-column-innner">
-						<InnerBlocks
-							allowedBlocks={ALLOWED_BLOCKS}
-							templateLock={false}
-							templateInsertUpdatesSelection={false}
-						/>
-					</div>
-				</div>
-			</Fragment>
-		);
-	},
+			const { clientId } = ownProps;
+
+			return {
+				block: getBlock(clientId),
+				isSelectedBlockInRoot:
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+			};
+		}),
+		withDispatch(dispatch => {
+			const { updateBlockAttributes, removeBlock } = dispatch("core/editor");
+
+			return {
+				updateBlockAttributes,
+				removeBlock
+			};
+		})
+	])(Edit),
 
 	save: props => {
 		const {

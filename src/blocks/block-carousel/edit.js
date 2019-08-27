@@ -74,7 +74,6 @@ class Edit extends Component {
 				>
 					<div className="carousel-inner">
 						<InnerBlocks
-							className="test"
 							template={this.getSlidesTemplate(slides)}
 							templateLock="all"
 							allowedBlocks={ALLOWED_BLOCKS}

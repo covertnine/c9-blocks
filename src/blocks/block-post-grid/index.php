@@ -343,7 +343,6 @@ function c9SpacingConfig($padding, $margin)
 	} else {
 		array_map(function ($s) use ($padding, &$classes) {
 			assignSideClasses("p{$s[0]}", $padding[$s], $classes);
-
 		}, array('top', 'bottom', 'left', 'right'));
 	}
 
@@ -353,7 +352,6 @@ function c9SpacingConfig($padding, $margin)
 	} else {
 		array_map(function ($s) use ($margin, &$classes) {
 			assignSideClasses("m{$s[0]}", $margin[$s], $classes);
-			
 		}, array('top', 'bottom'));
 	}
 
@@ -375,6 +373,8 @@ function covertnine_blocks_register_block_core_latest_posts()
 	register_block_type(
 		'c9-blocks/post-grid',
 		array(
+			'category' => "c9-blocks",
+			'parent' => 'c9-blocks/post-container',
 			'attributes'      => array(
 				'categories'          => array(
 					'type' => 'string',
@@ -520,6 +520,10 @@ function covertnine_blocks_register_block_core_latest_posts()
 						'left' => '5',
 						'right' => '5'
 					)
+				),
+				'disableToolbar' => array(
+					'type' => 'boolean',
+					'default' => false
 				)
 			),
 			'render_callback' => 'covertnine_blocks_render_block_core_latest_posts',
