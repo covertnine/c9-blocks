@@ -16,8 +16,9 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs {
 
 	.c9-tab-admin-wrapper {
 		position: relative;
+
 		// show remove button on hover.
-		&:not(:hover) > .c9-component-remove-button {
+		&:not(:hover)>.c9-component-remove-button {
 			opacity: 0;
 		}
 	}
@@ -52,6 +53,7 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs {
 }
 
 .c9-component-remove-button-confirm {
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-nope {
 		padding: 0;
@@ -68,10 +70,12 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs {
 			box-shadow: none;
 		}
 	}
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-yep:focus {
 		color: #c9586c;
 	}
+
 	.c9-component-remove-button-confirm-nope,
 	.c9-component-remove-button-confirm-nope:focus {
 		color: #999;
@@ -108,4 +112,9 @@ div[data-type="c9-blocks/vertical-tabs"] .c9-vertical-tabs {
 		color: #7e8993;
 		text-align: center;
 	}
+}
+
+.editor-styles-wrapper [data-type="c9-blocks/vertical-tabs"] {
+	margin-top: 32px;
+	margin-bottom: 32px;
 }
