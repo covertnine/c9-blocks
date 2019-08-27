@@ -20,16 +20,11 @@ import classnames from "classnames";
 class Slide extends Component {
 	constructor() {
 		super(...arguments);
-		const { slideActive } = this.props.attributes;
-
-		this.state = {
-			slideActive
-		};
 	}
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate(nextProps) {
 		if (
-			nextState.slideActive !== this.state.slideActive &&
+			this.props.attributes.slideActive !== nextProps.attributes.slideActive &&
 			this.props.attributes.slides === nextProps.attributes.slides
 		) {
 			return false;
@@ -38,18 +33,9 @@ class Slide extends Component {
 		return true;
 	}
 
-	componentDidUpdate() {
-		console.log(this.props);
-		if (this.state.slideActive != this.props.attributes.slideActive) {
-			this.setState({ slideActive: this.props.attributes.slideActive });
-		}
-	}
-
 	render() {
 		// eslint-disable-next-line no-unused-vars
 		let { className = "" } = this.props;
-
-		console.log(this.props.attributes, this.props.clientId);
 
 		className = classnames(className, "c9-carousel-slide");
 

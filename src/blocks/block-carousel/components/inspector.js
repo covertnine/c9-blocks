@@ -33,7 +33,7 @@ export default class Inspector extends Component {
 							const { carouselRef, slideTarget } = this.props;
 							const $ = window.jQuery;
 
-							if (carouselRef.current && 0 < slideTarget) {
+							if (carouselRef.current && value < slides && 0 < slideTarget) {
 								$(carouselRef.current).carousel("prev");
 							}
 
