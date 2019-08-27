@@ -117,7 +117,8 @@ class Edit extends Component {
 			attributes,
 			className = "",
 			instanceId,
-			isSelectedBlockInRoot
+			isSelectedBlockInRoot,
+			setAttributes
 		} = this.props;
 
 		const {
@@ -127,6 +128,10 @@ class Edit extends Component {
 			showControls,
 			showIndicators
 		} = attributes;
+
+		if (instanceId != attributes.instanceId) {
+			setAttributes({ instanceId });
+		}
 
 		return (
 			<Fragment>
