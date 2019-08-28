@@ -38,3 +38,7 @@
 .c9-carousel .carousel-control-next .carousel-control-next-icon {
 	background-image: url(../../../../assets/icon-next-gray.svg);
 }
+
+.c9-carousel .carousel-inner .c9-carousel-slide *:only-of-type {
+	margin-bottom: 0px;
+}
