@@ -248,6 +248,9 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 }
 
 @media (min-width: 1px) {
+	[data-type="c9-blocks/grid"] {
+		margin-bottom: 30px;
+	}
 
 	//set the alignfull width to be 100vw width since sidebars are hidden
 	.c9-grid .editor-block-list__block.wp-block[data-align="full"] {

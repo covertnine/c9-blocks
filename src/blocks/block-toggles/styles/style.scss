@@ -62,10 +62,6 @@
 
 .c9-toggles .c9-toggles-item-collapse .fas {
 	font-family: 'FontAwesome', serif;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-	top: 50%;
-
 }
 
 .c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
@@ -78,9 +74,8 @@
 	padding: 25px 30px;
 }
 
-/* small toggles style */
 .c9-toggles .c9-toggles-toggle {
-	padding: 35px 0px 15px 0px;
+	padding: 15px 0px;
 	border-top: 1px solid #979797;
 }
 
@@ -89,8 +84,7 @@
 }
 
 .c9-toggles .c9-toggles-item-heading .c9-toggles-toggle-label {
-	text-transform: uppercase;
-	font-size: 7.9rem;
+	font-size: 3rem;
 	text-align: left;
 	line-height: .9;
 }
