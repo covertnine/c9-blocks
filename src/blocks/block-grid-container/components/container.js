@@ -79,7 +79,6 @@ export default class Container extends Component {
 		bgX,
 		bgY,
 		repeat,
-		blend,
 		focalPoint,
 		selected = true
 	) {
@@ -97,7 +96,6 @@ export default class Container extends Component {
 				styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
 			}
 			styles.backgroundRepeat = repeat;
-			styles.backgroundBlendMode = `${blend}`;
 		}
 		if (0 < size.length) {
 			styles.backgroundSize = size;
@@ -112,11 +110,12 @@ export default class Container extends Component {
 		return styles;
 	}
 
-	c9OverlayStyles(hue, opacity) {
+	c9OverlayStyles(hue, opacity, blend) {
 		const styles = {};
 
 		if (hue) {
 			styles.backgroundColor = this.hexToRGBA(hue, opacity);
+			styles.mixBlendMode = `${blend}`;
 		}
 
 		return styles;
@@ -193,7 +192,6 @@ export default class Container extends Component {
 							bgCustomX,
 							bgCustomY,
 							bgImgRepeat,
-							blendMode,
 							focalPoint,
 							isSelectedBlockInRoot
 						)}
@@ -202,7 +200,7 @@ export default class Container extends Component {
 				{!!overlayHue && (
 					<div
 						className="c9-overlay-container"
-						style={this.c9OverlayStyles(overlayHue, overlayOpacity)}
+						style={this.c9OverlayStyles(overlayHue, overlayOpacity, blendMode)}
 					/>
 				)}
 				{this.props.children}

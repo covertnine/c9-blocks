@@ -32,8 +32,8 @@ registerBlockType("c9-blocks/toggles", {
 		// fill in features
 	},
 	styles: [
-		{ name: "default", label: __("Default", "c9-blocks"), isDefault: true },
-		{ name: "toggles-small", label: __("Small", "c9-blocks") }
+		{ name: "default", label: __("Default", "c9-blocks") },
+		{ name: "toggles-small", label: __("Small", "c9-blocks"), isDefault: true }
 	],
 	keywords: [__("responsive", "c9-blocks")],
 	attributes,
