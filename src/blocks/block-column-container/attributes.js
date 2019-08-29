@@ -79,7 +79,7 @@ const attributes = {
 	},
 	minScreenHeight: {
 		type: "number",
-		default: 20
+		default: 0
 	},
 	containerMargin: {
 		type: "object",
