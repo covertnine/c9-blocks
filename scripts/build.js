@@ -1,9 +1,3 @@
-/**
- * Build
- *
- * The create-guten-block CLI builds here.
- */
-
 "use strict";
 
 // Do this as the first thing so that any code reading it knows the right env.
@@ -34,6 +28,14 @@ const formatWebpackMessages = require(cgbDevUtilsPath +
 // Build file paths.
 const theCWD = process.cwd();
 const fileBuildJS = path.resolve(theCWD, "./dist/blocks.build.js");
+const fileBuildFrontendJs = path.resolve(
+	theCWD,
+	"./dist/blocks.frontend.build.js"
+);
+const fileBuildUpdateCategoryJs = path.resolve(
+	theCWD,
+	"./dist/blocks.update-category.build.js"
+);
 const fileEditorCSS = path.resolve(theCWD, "./dist/blocks.editor.build.css");
 const fileStyleCSS = path.resolve(theCWD, "./dist/blocks.style.build.css");
 
@@ -117,15 +119,21 @@ async function build(webpackConfig) {
 			`${chalk.dim("— ./dist/")}`,
 			`${chalk.green("blocks.build.js")}`,
 			"\n",
+			getFileSize(fileBuildFrontendJs),
+			`${chalk.dim("— ./dist/")}`,
+			`${chalk.green("blocks.frontend.build.js")}`,
+			"\n",
+			getFileSize(fileBuildUpdateCategoryJs),
+			`${chalk.dim("— ./dist/")}`,
+			`${chalk.green("blocks.update-category.build.js")}`,
+			"\n",
 			getFileSize(fileEditorCSS),
 			`${chalk.dim("— ./dist/")}`,
 			`${chalk.green("blocks.editor.build.css")}`,
-
 			"\n",
 			getFileSize(fileStyleCSS),
 			`${chalk.dim("— ./dist/")}`,
 			`${chalk.green("blocks.style.build.css")}`,
-
 			"\n\n"
 		);
 
