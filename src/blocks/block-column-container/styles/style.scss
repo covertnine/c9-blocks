@@ -5,6 +5,8 @@
  */
 
 .c9-column-container {
+	z-index: 8;
+
 	&.c9-is-vertically-aligned-top {
 		align-self: flex-start;
 	}

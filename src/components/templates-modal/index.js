@@ -187,6 +187,11 @@ class TemplatesModal extends Component {
 												label={__("Markdown", "c9-blocks")}
 												layout={layouts.markdown}
 											/>
+											<LayoutButton
+												icon="wordpress"
+												label={__("bgTest", "c9-blocks")}
+												layout={layouts.testBg}
+											/>
 											<button
 												onClick={() => {
 													resetBlocks([]);

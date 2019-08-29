@@ -57,15 +57,11 @@ export default class Container extends Component {
 		return classes;
 	}
 
-	c9ContainerStyles(height, hue, opacity) {
+	c9ContainerStyles(height) {
 		const styles = {};
 
 		if (height) {
 			styles.minHeight = `${height}vh`;
-		}
-
-		if (hue) {
-			styles.backgroundColor = this.hexToRGBA(hue, opacity);
 		}
 
 		return styles;
@@ -141,8 +137,6 @@ export default class Container extends Component {
 				verticalAlign,
 				containerImgURL,
 				containerWidth,
-				containerHue,
-				containerOpacity,
 				bgImgSize,
 				bgImgAttach,
 				bgImgRepeat,
@@ -198,7 +192,7 @@ export default class Container extends Component {
 						? "c9-columns-has-video"
 						: null
 				)}
-				style={this.c9ContainerStyles(minScreenHeight, containerHue, containerOpacity)}
+				style={this.c9ContainerStyles(minScreenHeight)}
 			>
 				{!!containerImgURL && (
 					<div

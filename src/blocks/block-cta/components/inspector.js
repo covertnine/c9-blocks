@@ -217,8 +217,7 @@ export default class Inspector extends Component {
 			{
 				value: "c9-sh",
 				label: __("Subheading", "c9-blocks")
-			},
-			{ value: "c9-txl", label: __("Text-XL", "c9-blocks") }
+			}
 		];
 
 		// Change the image
@@ -296,7 +295,7 @@ export default class Inspector extends Component {
 					<SelectControl
 						label={__("Font Type", "c9-blocks")}
 						help={__(
-							"Choose between heading, subheading, or text-xl.",
+							"Choose between paragraph, heading, or subheading.",
 							"c9-blocks"
 						)}
 						options={fontTypes}
@@ -406,15 +405,15 @@ export default class Inspector extends Component {
 					title={__("Button Colors", "c9-blocks")}
 					colorSettings={[
 						{
+							value: buttonTextColor,
+							onChange: value => setAttributes({ buttonTextColor: value }),
+							label: __("Button Text Color", "c9-blocks")
+						},
+						{
 							value: buttonBackgroundColor,
 							onChange: value =>
 								setAttributes({ buttonBackgroundColor: value }),
 							label: __("Button Color", "c9-blocks")
-						},
-						{
-							value: buttonTextColor,
-							onChange: value => setAttributes({ buttonTextColor: value }),
-							label: __("Button Text Color", "c9-blocks")
 						}
 					]}
 				>
