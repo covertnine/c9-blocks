@@ -485,7 +485,7 @@ export default class Inspector extends Component {
 										max={10}
 									/>
 								)}
-								{overlayHue && containerImgURL && !!containerImgURL.length && (
+								{overlayHue && (
 									<SelectControl
 										label={__("Blend Mode", "c9-blocks")}
 										value={blendMode}

@@ -16,11 +16,15 @@ const attributes = {
 	},
 	autoSlide: {
 		type: "boolean",
-		default: true
+		default: false
 	},
 	wrapAround: {
 		type: "boolean",
 		default: true
+	},
+	slideTime: {
+		type: "number",
+		default: 5000
 	}
 };
 
