@@ -5,6 +5,7 @@ const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { createBlock, rawHandler } = wp.blocks;
 const apiFetch = wp.apiFetch;
+import startCase from "lodash/startCase";
 import LayoutButton from "./layout-button";
 import SectionButton from "./section-button";
 import "./editor.scss";
@@ -175,11 +176,13 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-section-options">
-											<SectionButton
-												icon="wordpress"
-												label={__("Test", "c9-blocks")}
-												section={sections.test}
-											/>
+											{Object.keys(sections).map(k => (
+												<SectionButton
+													icon="wordpress"
+													label={__(startCase(k), "c9-blocks")}
+													section={sections[k]}
+												/>
+											))}
 											<button
 												onClick={() => {
 													resetBlocks([]);
@@ -197,31 +200,13 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-layout-options">
-											<LayoutButton
-												icon="wordpress"
-												label={__("Hero", "c9-blocks")}
-												layout={layouts.hero}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("Featured", "c9-blocks")}
-												layout={layouts.featured}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("Nested", "c9-blocks")}
-												layout={layouts.nested}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("Markdown", "c9-blocks")}
-												layout={layouts.markdown}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("bgTest", "c9-blocks")}
-												layout={layouts.testBg}
-											/>
+											{Object.keys(layouts).map(k => (
+												<LayoutButton
+													icon="wordpress"
+													label={__(startCase(k), "c9-blocks")}
+													layout={layouts[k]}
+												/>
+											))}
 											<button
 												onClick={() => {
 													resetBlocks([]);
