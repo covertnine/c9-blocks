@@ -3,14 +3,39 @@
  *
  * CSS for both Frontend+Backend.
  */
-
-.display-5 {
-	font-size: 5rem;
+.display-1,
+.editor-styles-wrapper .display-1 {
+	font-size: 8rem !important;
 	line-height: 1.1;
 }
 
-.display-6 {
-	font-size: 4.3rem;
+.display-2,
+.editor-styles-wrapper .display-2 {
+	font-size: 7.3rem !important;
+	line-height: 1.1;
+}
+
+.display-3,
+.editor-styles-wrapper .display-3 {
+	font-size: 6.5rem !important;
+	line-height: 1.1;
+}
+
+.display-4,
+.editor-styles-wrapper .display-4 {
+	font-size: 5.8rem !important;
+	line-height: 1.1;
+}
+
+.display-5,
+.editor-styles-wrapper .display-5 {
+	font-size: 5rem !important;
+	line-height: 1.1;
+}
+
+.display-6,
+.editor-styles-wrapper .display-6 {
+	font-size: 4.3rem !important;
 	line-height: 1.1;
 }
 
@@ -27,7 +52,8 @@
 .entry-content .h1,
 .wp-block-heading h1,
 .entry-header h1,
-.subhead-h1 {
+.subhead-h1,
+.editor-styles-wrapper .c9-sh.subhead-h1 {
 	font-size: 4rem
 }
 
@@ -39,7 +65,8 @@
 .entry-content h2,
 .entry-content .h2,
 .wp-block-heading h2,
-.subhead-h2 {
+.subhead-h2,
+.editor-styles-wrapper .c9-sh.subhead-h2 {
 	font-size: 3.6rem
 }
 
@@ -51,7 +78,8 @@
 .entry-content h3,
 .entry-content .h3,
 .wp-block-heading h3,
-.subhead-h3 {
+.subhead-h3,
+.editor-styles-wrapper .c9-sh.subhead-h3 {
 	font-size: 3rem
 }
 
@@ -63,7 +91,8 @@
 .entry-content h4,
 .entry-content .h4,
 .wp-block-heading h4,
-.subhead-h4 {
+.subhead-h4,
+.editor-styles-wrapper .c9-sh.subhead-h4 {
 	font-size: 2.8rem
 }
 
@@ -75,7 +104,8 @@
 .entry-content h5,
 .entry-content .h5,
 .wp-block-heading h5,
-.subhead-h5 {
+.subhead-h5,
+.editor-styles-wrapper .c9-sh.subhead-h5 {
 	font-size: 2rem
 }
 
@@ -87,7 +117,8 @@
 .entry-content h6,
 .entry-content .h6,
 .wp-block-heading h6,
-.subhead-h6 {
+.subhead-h6,
+.editor-styles-wrapper .c9-sh.subhead-h6 {
 	font-size: 1.4rem
 }
 
