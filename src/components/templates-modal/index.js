@@ -4,7 +4,8 @@ const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { createBlock, rawHandler } = wp.blocks;
-
+const apiFetch = wp.apiFetch;
+import startCase from "lodash/startCase";
 import LayoutButton from "./layout-button";
 import SectionButton from "./section-button";
 import "./editor.scss";
@@ -15,6 +16,36 @@ import templateMarkups from "./templates-markup";
 class TemplatesModal extends Component {
 	constructor() {
 		super(...arguments);
+
+		this.getReusableBlocks = this.getReusableBlocks.bind(this);
+
+		this.state = {
+			reusables: []
+		};
+
+		this.getReusableBlocks();
+	}
+
+	async getReusableBlocks() {
+		const { canUserUseUnfilteredHTML } = this.props;
+
+		const postType = await apiFetch({ path: `/wp/v2/types/wp_block` });
+		const reusables = await apiFetch({ path: `/wp/v2/${postType.rest_base}` });
+
+		const blocks = reusables.map(item => {
+			return {
+				name: item.title.raw,
+				content: rawHandler({
+					HTML: item.content.raw,
+					mode: "BLOCKS",
+					canUserUseUnfilteredHTML
+				})
+			};
+		});
+
+		this.setState({
+			reusables: blocks
+		});
 	}
 
 	markupToBlock(templateObj, canUserUseUnfilteredHTML) {
@@ -145,11 +176,13 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-section-options">
-											<SectionButton
-												icon="wordpress"
-												label={__("Test", "c9-blocks")}
-												section={sections.test}
-											/>
+											{Object.keys(sections).map(k => (
+												<SectionButton
+													icon="wordpress"
+													label={__(startCase(k), "c9-blocks")}
+													section={sections[k]}
+												/>
+											))}
 											<button
 												onClick={() => {
 													resetBlocks([]);
@@ -167,31 +200,13 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-layout-options">
-											<LayoutButton
-												icon="wordpress"
-												label={__("Hero", "c9-blocks")}
-												layout={layouts.hero}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("Featured", "c9-blocks")}
-												layout={layouts.featured}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("Nested", "c9-blocks")}
-												layout={layouts.nested}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("Markdown", "c9-blocks")}
-												layout={layouts.markdown}
-											/>
-											<LayoutButton
-												icon="wordpress"
-												label={__("bgTest", "c9-blocks")}
-												layout={layouts.testBg}
-											/>
+											{Object.keys(layouts).map(k => (
+												<LayoutButton
+													icon="wordpress"
+													label={__(startCase(k), "c9-blocks")}
+													layout={layouts[k]}
+												/>
+											))}
 											<button
 												onClick={() => {
 													resetBlocks([]);
@@ -205,7 +220,29 @@ class TemplatesModal extends Component {
 									</Fragment>
 								);
 							default:
-								return <p>Coming Soon...</p>;
+								return (
+									<Fragment>
+										<p>{tab.title}</p>
+										<div className="c9-section-options">
+											{this.state.reusables.map(obj => (
+												<SectionButton
+													icon="wordpress"
+													label={__(obj.name, "c9-blocks")}
+													section={obj.content}
+												/>
+											))}
+											<button
+												onClick={() => {
+													resetBlocks([]);
+												}}
+												className="btn btn-danger"
+											>
+												<Icon icon="trash" />
+												<span>{__("Clear page", "c9-blocks")}</span>
+											</button>
+										</div>
+									</Fragment>
+								);
 						}
 					}}
 				</TabPanel>
