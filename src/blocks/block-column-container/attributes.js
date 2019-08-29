@@ -101,6 +101,14 @@ const attributes = {
 			right: "-1"
 		}
 	},
+	containerHue: {
+		type: "string",
+		default: undefined
+	},
+	containerOpacity: {
+		type: "number",
+		default: 10
+	},
 	focalPoint: {
 		type: "object",
 		default: {

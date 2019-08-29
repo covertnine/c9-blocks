@@ -222,6 +222,8 @@ export default class Inspector extends Component {
 				blendMode,
 				containerPadding,
 				containerMargin,
+				containerHue,
+				containerOpacity,
 				columns,
 				minScreenHeight,
 				focalPoint,
@@ -519,6 +521,27 @@ export default class Inspector extends Component {
 											onChange={value => setAttributes({ focalPoint: value })}
 										/>
 									</div>
+								)}
+
+								<span>{__("Background Color", "c9-blocks")}</span>
+								<ColorPalette
+									label={__("Overlay Color", "c9-blocks")}
+									value={containerHue}
+									onChange={containerHue => setAttributes({ containerHue })}
+								/>
+
+								{containerHue && !!containerHue.length && (
+									<RangeControl
+										beforeIcon="arrow-left-alt2"
+										afterIcon="arrow-right-alt2"
+										label={__("Opacity", "c9-blocks")}
+										value={containerOpacity}
+										onChange={containerOpacity =>
+											setAttributes({ containerOpacity })
+										}
+										min={1}
+										max={10}
+									/>
 								)}
 
 								<h5>Color Overlay</h5>
