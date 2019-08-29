@@ -16,7 +16,7 @@ const attributes = {
 	},
 	autoSlide: {
 		type: "boolean",
-		default: false
+		default: true
 	},
 	wrapAround: {
 		type: "boolean",
@@ -37,6 +37,10 @@ const attributes = {
 	captionContent: {
 		type: "array",
 		default: [null, null, null]
+	},
+	slideTime: {
+		type: "number",
+		default: 5000
 	}
 };
 

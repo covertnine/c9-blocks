@@ -24,7 +24,7 @@ import classnames from "classnames";
 import { get, pick } from "lodash";
 
 class Edit extends Component {
-	constructor({ autoSlide, wrapAround }) {
+	constructor({ autoSlide, wrapAround, slideTime }) {
 		super(...arguments);
 
 		this.carouselRef = React.createRef();
@@ -32,6 +32,7 @@ class Edit extends Component {
 		this.state = {
 			auto: autoSlide,
 			wrap: wrapAround,
+			time: slideTime,
 			slideActive: 0,
 			slideTarget: 0
 		};
@@ -63,8 +64,8 @@ class Edit extends Component {
 	}
 
 	componentDidUpdate() {
-		const { auto, wrap } = this.state;
-		const { autoSlide, wrapAround } = this.props.attributes;
+		const { auto, wrap, time } = this.state;
+		const { autoSlide, wrapAround, slideTime } = this.props.attributes;
 		const $ = window.jQuery;
 
 		if (0 > this.state.slideActive) {
@@ -75,9 +76,16 @@ class Edit extends Component {
 			let options = $(this.carouselRef.current).data()["bs.carousel"]._config;
 
 			if (auto != autoSlide) {
-				let interval = autoSlide ? 5000 : false;
+				let interval = autoSlide ? slideTime : false;
 				options.interval = interval;
 				this.setState({ auto: autoSlide });
+
+				if (autoSlide && time != slideTime) {
+					this.setState({ time: slideTime });
+				}
+			} else if (autoSlide && time != slideTime) {
+				options.interval = slideTime;
+				this.setState({ time: slideTime });
 			}
 
 			if (wrap != wrapAround) {
@@ -353,7 +361,8 @@ class Edit extends Component {
 			wrapAround,
 			showIndicators,
 			showControls,
-			url
+			url,
+			slideTime
 		} = attributes;
 
 		if (instanceId != attributes.instanceId) {
@@ -376,7 +385,7 @@ class Edit extends Component {
 						"carousel slide"
 					)}
 					data-ride="carousel"
-					data-interval={autoSlide ? 5000 : false}
+					data-interval={autoSlide ? slideTime : false}
 					data-wrap={wrapAround}
 					ref={this.carouselRef}
 				>

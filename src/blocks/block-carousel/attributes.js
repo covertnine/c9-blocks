@@ -16,7 +16,7 @@ const attributes = {
 	},
 	autoSlide: {
 		type: "boolean",
-		default: false
+		default: true
 	},
 	wrapAround: {
 		type: "boolean",

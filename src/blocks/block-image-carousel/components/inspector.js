@@ -19,7 +19,8 @@ export default class Inspector extends Component {
 			autoSlide,
 			showControls,
 			showIndicators,
-			wrapAround
+			wrapAround,
+			slideTime
 		} = attributes;
 
 		return (
@@ -82,6 +83,15 @@ export default class Inspector extends Component {
 						checked={autoSlide}
 						onChange={autoSlide => setAttributes({ autoSlide })}
 					/>
+					{autoSlide && (
+						<RangeControl
+							label={__("Time in between slides (ms)", "c9-blocks")}
+							value={slideTime}
+							onChange={slideTime => setAttributes({ slideTime })}
+							min={0}
+							max={1000000}
+						/>
+					)}
 					<ToggleControl
 						label={__("Show Controls", "c9-blocks")}
 						checked={showControls}
