@@ -4,7 +4,7 @@ const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { createBlock, rawHandler } = wp.blocks;
-
+const apiFetch = wp.apiFetch;
 import LayoutButton from "./layout-button";
 import SectionButton from "./section-button";
 import "./editor.scss";
@@ -15,6 +15,36 @@ import templateMarkups from "./templates-markup";
 class TemplatesModal extends Component {
 	constructor() {
 		super(...arguments);
+
+		this.getReusableBlocks = this.getReusableBlocks.bind(this);
+
+		this.state = {
+			reusables: []
+		};
+
+		this.getReusableBlocks();
+	}
+
+	async getReusableBlocks() {
+		const { canUserUseUnfilteredHTML } = this.props;
+
+		const postType = await apiFetch({ path: `/wp/v2/types/wp_block` });
+		const reusables = await apiFetch({ path: `/wp/v2/${postType.rest_base}` });
+
+		const blocks = reusables.map(item => {
+			return {
+				name: item.title.raw,
+				content: rawHandler({
+					HTML: item.content.raw,
+					mode: "BLOCKS",
+					canUserUseUnfilteredHTML
+				})
+			};
+		});
+
+		this.setState({
+			reusables: blocks
+		});
 	}
 
 	markupToBlock(templateObj, canUserUseUnfilteredHTML) {
@@ -205,7 +235,29 @@ class TemplatesModal extends Component {
 									</Fragment>
 								);
 							default:
-								return <p>Coming Soon...</p>;
+								return (
+									<Fragment>
+										<p>{tab.title}</p>
+										<div className="c9-section-options">
+											{this.state.reusables.map(obj => (
+												<SectionButton
+													icon="wordpress"
+													label={__(obj.name, "c9-blocks")}
+													section={obj.content}
+												/>
+											))}
+											<button
+												onClick={() => {
+													resetBlocks([]);
+												}}
+												className="btn btn-danger"
+											>
+												<Icon icon="trash" />
+												<span>{__("Clear page", "c9-blocks")}</span>
+											</button>
+										</div>
+									</Fragment>
+								);
 						}
 					}}
 				</TabPanel>
