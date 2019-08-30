@@ -4,7 +4,7 @@ import Save from "./save";
 
 import attributes from "./attributes";
 
-import toggleIcon from "../../../assets/toggle-icon.svg";
+import Icon from "../../../assets/icon-c9-toggles.svg";
 
 // Import CSS
 import "./styles/style.scss";
@@ -26,7 +26,7 @@ registerBlockType("c9-blocks/toggles", {
 		"A responsive set of toggles for lists of content",
 		"c9-blocks"
 	),
-	icon: toggleIcon,
+	icon: Icon,
 	category: "c9-blocks",
 	supports: {
 		// fill in features

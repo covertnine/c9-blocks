@@ -14,6 +14,8 @@ import "./styles/editor.scss";
 // Register block controls
 const { registerBlockType } = wp.blocks;
 
+import Icon from "../../../assets/icon-c9-post-grid.svg";
+
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 
@@ -22,6 +24,7 @@ import pickBy from "lodash/pickBy";
 
 // Register the block
 registerBlockType("c9-blocks/post-grid", {
+	icon: Icon,
 	parent: "c9-blocks/post-container",
 	/* Add alignment to block wrapper. */
 	getEditWrapperProps({ align }) {

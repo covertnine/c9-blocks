@@ -6,9 +6,7 @@ import "./styles/style.scss";
 import "./styles/editor.scss";
 
 // Import Icon
-import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-import { makeIcon } from "../../components/awesomeGenerator";
-const iconEl = makeIcon(faExclamationCircle);
+import Icon from "../../../assets/icon-c9-cta-bar.svg";
 
 // Components
 const { __ } = wp.i18n;
@@ -28,7 +26,7 @@ registerBlockType("c9-blocks/cta", {
 		"Add a call to action section with text and a button.",
 		"c9-blocks"
 	),
-	icon: iconEl,
+	icon: Icon,
 	category: "c9-blocks",
 	keywords: [__("call to action", "c9-blocks"), __("cta", "c9-blocks")],
 

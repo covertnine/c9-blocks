@@ -8,6 +8,8 @@ import attributes from "./attributes";
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
+import Icon from "../../../assets/icon-c9-image-carousel.svg";
+
 // Components
 const { __ } = wp.i18n;
 
@@ -21,7 +23,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType("c9-blocks/image-carousel", {
 	title: __("C9 Image Carousel", "c9-blocks"),
 	description: __("Responsive carousel for tabs of content", "c9-blocks"),
-	icon: "wordpress",
+	icon: Icon,
 	category: "c9-blocks",
 	supports: {
 		// fill in features

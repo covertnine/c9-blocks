@@ -5,9 +5,7 @@ import "./styles/style.scss";
 import "./styles/editor.scss";
 
 // Import Fontawesome Icon
-import { faShareSquare } from "@fortawesome/free-regular-svg-icons";
-import { makeIcon } from "../../components/awesomeGenerator";
-const iconEl = makeIcon(faShareSquare);
+import Icon from "../../../assets/icon-c9-social-share.svg";
 
 // Components
 const { __ } = wp.i18n;
@@ -19,7 +17,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType("c9-blocks/social-share", {
 	title: __("C9 Social Share", "c9-blocks"),
 	description: __("Add sharing buttons to your posts and pages.", "c9-blocks"),
-	icon: iconEl,
+	icon: Icon,
 	category: "c9-blocks",
 	keywords: [
 		__("share", "c9-blocks"),

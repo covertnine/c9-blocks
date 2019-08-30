@@ -4,6 +4,8 @@ import Save from "./save";
 
 import attributes from "./attributes";
 
+import Icon from "../../../assets/icon-c9-grid.svg";
+
 // Import CSS
 import "./styles/style.scss";
 import "./styles/editor.scss";
@@ -21,7 +23,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType("c9-blocks/grid", {
 	title: __("C9 Grid", "c9-blocks"),
 	description: __("A responsive grid for columns of content", "c9-blocks"),
-	icon: "editor-table",
+	icon: Icon,
 	category: "c9-blocks",
 	supports: {
 		// fill in features

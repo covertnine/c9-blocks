@@ -10,9 +10,7 @@ import "./styles/style.scss";
 import "./styles/editor.scss";
 
 // Import Icon
-import { faHeading } from "@fortawesome/free-solid-svg-icons";
-import { makeIcon } from "../../components/awesomeGenerator";
-const iconEl = makeIcon(faHeading);
+import Icon from "../../../assets/icon-c9-heading.svg";
 
 // Components
 const { __ } = wp.i18n;
@@ -30,7 +28,7 @@ import attributes from "./attributes";
 registerBlockType("c9-blocks/heading", {
 	title: __("C9 Heading", "c9-blocks"),
 	description: __("Add a custom Section Heading.", "c9-blocks"),
-	icon: iconEl,
+	icon: Icon,
 	category: "c9-blocks",
 	supports: {},
 	keywords: [
