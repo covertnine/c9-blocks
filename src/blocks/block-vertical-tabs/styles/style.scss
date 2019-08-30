@@ -26,6 +26,16 @@
 	text-decoration: none;
 }
 
+@media only screen and (max-width: 1024px) {
+
+	.c9-layout-columns-6 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
+	.c9-layout-columns-5 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
+	.c9-layout-columns-4 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
+	.c9-layout-columns-3 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link {
+		font-size: 1rem;
+	}
+}
+
 .c9-vertical-tabs .nav-pills .nav-link.active,
 .c9-vertical-tabs .nav-pills .show>.nav-link,
 .c9-vertical-tabs .nav-pills .nav-link.active {
