@@ -19,7 +19,7 @@
 		"@fortawesome/react-fontawesome": "^0.1.4",
 		"@wordpress/i18n": "^1.1.0",
 		"classnames": "^2.2.5",
-		"lodash": "^4.17.14",
+		"lodash": "^4.17.15",
 		"memize": "^1.0.5",
 		"moment": "^2.24.0",
 		"qs": "^6.8.0",
