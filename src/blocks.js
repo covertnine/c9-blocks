@@ -25,7 +25,7 @@ import "./blocks/block-grid-container";
 import "./blocks/block-horizontal-tabs";
 import "./blocks/block-vertical-tabs";
 import "./blocks/block-toggles";
-import "./blocks/block-post-container";
+import "./blocks/block-posts-grid";
 import "./blocks/block-carousel";
 import "./blocks/block-image-carousel";
 

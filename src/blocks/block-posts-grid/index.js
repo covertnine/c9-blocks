@@ -21,8 +21,8 @@ const { withSelect } = wp.data;
 const { registerBlockType } = wp.blocks;
 
 // Register the block
-registerBlockType("c9-blocks/post-container", {
-	title: __("C9 Post Container", "c9-blocks"),
+registerBlockType("c9-blocks/posts-grid", {
+	title: __("C9 Posts Grid", "c9-blocks"),
 	description: __("A responsive container for columns of posts", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
