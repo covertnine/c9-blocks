@@ -5,8 +5,17 @@
  * that are used across the project.
 */
 
-.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon {width: 48px; height: 48px;}
-.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon svg {min-width: 48px; min-height: 48px; max-width: 48px; max-height: 48px;}
+.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon {
+	width: 48px;
+	height: 48px;
+}
+
+.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon svg {
+	min-width: 48px;
+	min-height: 48px;
+	max-width: 48px;
+	max-height: 48px;
+}
 
 /* flip container c9 grid element height vertically */
 .c9-height-range-control {
