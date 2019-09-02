@@ -4,7 +4,7 @@
  * Server-side rendering for the post grid block
  *
  * @since   1.1.7
- * @package Cortex Blocks
+ * @package C9 Blocks
  */
 
 /**

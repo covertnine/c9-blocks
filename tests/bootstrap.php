@@ -2,7 +2,7 @@
 /**
  * PHPUnit bootstrap file
  *
- * @package Sample_Plugin
+ * @package C9 Blocks
  */
 
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
