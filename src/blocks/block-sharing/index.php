@@ -3,7 +3,7 @@
  * Server-side rendering for the sharing block
  *
  * @since 	1.1.2
- * @package c9 Blocks
+ * @package C9 Blocks
  */
 
 /**
