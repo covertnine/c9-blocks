@@ -1,0 +1,41 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.c9-carousel {
+	.hide-indicator {
+		display: none;
+	}
+
+	.carousel-inner {
+		padding-top: 8px;
+		padding-bottom: 8px;
+
+		.editor-inner-blocks>.editor-block-list__layout {
+			display: flex;
+			margin: 10px 0px 0px 0px;
+		}
+
+		.c9-carousel-slide .editor-inner-blocks>.editor-block-list__layout {
+			display: block;
+		}
+	}
+}
+
+/*this should be overwritten by a carousel slide setting for how many slides are shown at once or how many columns in the slide are visible at once*/
+.c9-carousel [data-type="c9-blocks/carousel-slide"],
+.c9-carousel .c9-carousel-slide {
+	min-width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+
+	.edit-post-visual-editor .c9-layout-column-wrap-admin .c9-block-layout-column>.c9-column-innner .wp-block[data-type="c9-blocks/carousel"],
+	.edit-post-visual-editor .c9-layout-column-wrap-admin .c9-block-layout-column>.c9-column-innner .wp-block[data-type="c9-blocks/carousel-slide"] {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}

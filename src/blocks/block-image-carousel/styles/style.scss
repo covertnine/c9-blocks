@@ -1,0 +1,47 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.c9-image-carousel .carousel-indicators li:after,
+.c9-image-carousel .carousel-indicators li:before {
+	display: none;
+}
+
+.c9-image-carousel .carousel-indicators {
+	margin-bottom: 0px;
+	margin-left: 0px;
+	bottom: 3px;
+	padding: 0px 10px;
+	z-index: 24;
+}
+
+.c9-image-carousel .carousel-indicators li {
+	background-color: #333333;
+	z-index: 26;
+}
+
+.c9-image-carousel .carousel-indicators .active {
+	background-color: #fff;
+}
+
+.c9-image-carousel .carousel-control-next,
+.c9-image-carousel .carousel-control-prev {
+	width: 25px;
+}
+
+.carousel-item .carousel-caption {
+	text-align: left;
+	left: 3%;
+	right: 3%;
+	bottom: 0px;
+}
+
+.carousel-item .carousel-caption h5 {
+	font-size: 1.6rem;
+	margin-bottom: 0px;
+}
+
+.carousel-item .carousel-caption p {
+	font-size: 1.4rem;
+}

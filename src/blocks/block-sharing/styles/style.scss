@@ -3,7 +3,7 @@
  * Loads on front end and back end
  */
 
- .ab-block-sharing {
+.c9-block-sharing {
 	margin: 0 0 1.2em 0;
 	position: relative;
 
@@ -11,7 +11,7 @@
 		display: inline-flex;
 	}
 
-	.ab-share-list {
+	.c9-share-list {
 		margin: 0;
 		padding: 0;
 
@@ -29,7 +29,7 @@
 			display: block;
 			line-height: 1;
 			font-size: 16px;
-			transition: .3s ease;
+			transition: 0.3s ease;
 
 			&:hover {
 				box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
@@ -37,19 +37,19 @@
 		}
 	}
 
-	&.ab-share-icon-text {
+	&.c9-share-icon-text {
 		i {
 			margin-right: 5px;
 		}
 	}
 
-	&.ab-share-icon-only {
+	&.c9-share-icon-only {
 		a {
 			padding: 10px 11px;
 			min-width: 37px;
 		}
 
-		.ab-social-text {
+		.c9-social-text {
 			border: 0;
 			clip: rect(1px, 1px, 1px, 1px);
 			clip-path: inset(50%);
@@ -60,108 +60,158 @@
 			position: absolute !important;
 			width: 1px;
 			word-wrap: normal !important;
+
+			/* sr-only styles from bootstrap  */
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
 		}
 	}
 
-	&.ab-share-text-only {
-		i {
+	&.c9-share-text-only {
+		svg {
 			display: none;
 		}
 	}
 
-	&.ab-share-shape-square {
+	&.c9-share-shape-square {
 		a {
 			border-radius: 0;
 		}
 	}
 
-	&.ab-share-shape-rounded {
+	&.c9-share-shape-rounded {
 		a {
 			border-radius: 5px;
 		}
 	}
 
-	&.ab-share-shape-circular {
+	&.c9-share-shape-circular {
 		a {
 			border-radius: 100px;
 		}
 	}
 
-	&.ab-share-size-small {
+	&.c9-share-size-small {
 		a {
 			font-size: 13px;
 		}
 	}
 
-	&.ab-share-size-small.ab-share-icon-only {
+	&.c9-share-size-small.c9-share-icon-only {
 		a {
 			padding: 7px 6px;
-    		min-width: 28px;
+			min-width: 28px;
 		}
 	}
 
-	&.ab-share-size-medium {
+	&.c9-share-size-medium {
 		a {
 			font-size: 16px;
 		}
 	}
 
-	&.ab-share-size-large {
+	&.c9-share-size-large {
 		a {
 			font-size: 20px;
 		}
 	}
 
-	&.ab-share-size-large.ab-share-icon-only {
+	&.c9-share-size-large.c9-share-icon-only {
 		a {
 			font-size: 26px;
 			min-width: 48px;
 		}
 	}
 
-	&.ab-share-size-large.ab-share-icon-text {
+	&.c9-share-size-large.c9-share-icon-text {
 		i {
 			margin-right: 10px;
 		}
 	}
 
-	&.ab-share-color-social {
+	&.c9-share-color-social {
 		a {
 			color: #fff;
 		}
 
-		.ab-share-twitter {
-			background: #1ca1f3;	
+		.c9-share-twitter {
+			background: #1ca1f3;
 		}
 
-		.ab-share-facebook {
-			background: #3b5999;	
+		.c9-share-facebook {
+			background: #3b5999;
 		}
 
-		.ab-share-google {
-			background: #dc4b45;	
+		.c9-share-google {
+			background: #dc4b45;
 		}
 
-		.ab-share-pinterest {
-			background: #bd091c;	
+		.c9-share-pinterest {
+			background: #bd091c;
 		}
 
-		.ab-share-linkedin {
-			background: #0077b5;	
+		.c9-share-linkedin {
+			background: #0077b5;
 		}
 
-		.ab-share-reddit {
-			background: #ff4500;	
+		.c9-share-reddit {
+			background: #ff4500;
 		}
 	}
 }
 
-.ab-button-right {
+.c9-button-right {
 	transform: translateX(-100%);
 	left: 100%;
 	position: relative;
 }
 
-.ab-button-center {
+.c9-button-center {
 	margin: 0 auto;
+}
+
+.c9-social-sharing .c9-share-list li:before,
+.c9-social-share.c9-share-text-only i,
+.c9-social-sharing.c9-share-text-only i {
+	display: none;
+}
+
+.entry-content .c9-social-sharing .c9-share-list,
+.c9-social-sharing .c9-share-list {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+
+.c9-block-sharing {
+	display: block;
+	text-align: left;
+}
+
+.c9-block-sharing.left {
+	text-align: left;
+}
+
+.c9-block-sharing.right {
+	text-align: right;
+}
+
+.c9-block-sharing.center {
+	text-align: center;
+}
+
+.c9-social-sharing i,
+.c9-social-share i {
+	font-style: normal;
+	font-family: 'FontAwesome';
+}
+
+.c9-social-sharing .fa-linkedin-in:before {
+	content: '\f0e1';
 }

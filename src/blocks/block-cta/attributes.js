@@ -1,89 +1,140 @@
-const attributes = {
+const blockAttributes = {
+	type: {
+		type: "string",
+		value: "c9-p"
+	},
 	buttonText: {
-		type: 'string',
+		type: "string"
 	},
 	buttonUrl: {
-		type: 'string',
-		source: 'attribute',
-		selector: 'a',
-		attribute: 'href',
+		type: "string",
+		source: "attribute",
+		selector: "a",
+		attribute: "href"
 	},
 	buttonAlignment: {
-		type: 'string',
-		default: 'center'
+		type: "string",
+		default: "center"
 	},
 	buttonBackgroundColor: {
-		type: 'string',
-		default: '#3373dc'
+		type: "string"
 	},
 	buttonTextColor: {
-		type: 'string',
-		default: '#ffffff'
+		type: "string",
+		default: "#ffffff"
 	},
 	buttonSize: {
-		type: 'string',
-		default: 'ab-button-size-medium'
+		type: "string",
+		default: "c9-button-size-medium"
 	},
 	buttonShape: {
-		type: 'string',
-		default: 'ab-button-shape-rounded'
+		type: "string",
+		default: "square"
 	},
 	buttonTarget: {
-		type: 'boolean',
+		type: "boolean",
 		default: false
 	},
-	ctaTitle: {
-		type: 'array',
-		selector: '.ab-cta-title',
-		source: 'children',
+	blendMode: {
+		type: "string",
+		default: "overlay"
 	},
-	titleFontSize: {
-		type: 'number',
-		default: '32',
+	ctaTitle: {
+		type: "array",
+		selector: ".c9-cta-title",
+		source: "children"
+	},
+	ctaLayout: {
+		type: "string",
+		default: "two-thirds"
+	},
+	ctaMargin: {
+		type: "object",
+		default: {
+			linked: true,
+			icon: "admin-links",
+			unit: "px",
+			top: "-1",
+			bottom: "-1"
+		}
+	},
+	ctaPadding: {
+		type: "object",
+		default: {
+			linked: true,
+			icon: "admin-links",
+			top: "5",
+			bottom: "5",
+			left: "5",
+			right: "5"
+		}
 	},
 	ctaTextFontSize: {
-		type: 'number',
+		type: "number"
 	},
 	ctaText: {
-		type: 'array',
-		selector: '.ab-cta-text',
-		source: 'children',
+		type: "array",
+		selector: ".c9-cta-text",
+		source: "children"
 	},
 	ctaWidth: {
-		type: 'string',
+		type: "string",
+		default: "container"
 	},
 	ctaBackgroundColor: {
-		type: 'string',
+		type: "string"
+	},
+	ctaBackgroundOpacity: {
+		type: "number",
+		default: 10
 	},
 	ctaTextColor: {
-		type: 'string',
-		default: '#32373c'
+		type: "string"
 	},
 	imgURL: {
-		type: 'string',
-		source: 'attribute',
-		attribute: 'src',
-		selector: 'img',
+		type: "string",
+		source: "attribute",
+		attribute: "src",
+		selector: "img"
 	},
 	imgID: {
-		type: 'number',
+		type: "number"
 	},
 	imgAlt: {
-		type: 'string',
-		source: 'attribute',
-		attribute: 'alt',
-		selector: 'img',
+		type: "string",
+		source: "attribute",
+		attribute: "alt",
+		selector: "img"
 	},
-	dimRatio: {
-		type: 'number',
-		default: 50,
+	imgSize: {
+		type: "string",
+		default: "cover"
 	},
-
+	focalPoint: {
+		type: "object",
+		default: {
+			x: 0.5,
+			y: 0.5
+		}
+	},
+	// true evaluates to backgroundAttachment fixed, false to scroll
+	imgAttach: {
+		type: "boolean",
+		default: false
+	},
 	// Deprecated
 	ctaTitleFontSize: {
-		type: 'string',
-		default: '32'
+		type: "string",
+		default: "32"
 	},
+	align: {
+		type: "string",
+		default: ""
+	},
+	disableToolbar: {
+		type: "boolean",
+		default: false
+	}
 };
 
-export default attributes
+export default blockAttributes;

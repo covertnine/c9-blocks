@@ -5,7 +5,7 @@ This project was bootstrapped with [Create Guten Block](https://github.com/ahmad
 #### Naming
 * Name the index file for the block `block-<blockname>.js`
 * If you have an inspector file, name it `block-<blockname>-inspector.js`
-* The namespace for blocknames is `covertnine-blocks`. When you register a block it should be `covertnine-blocks/<block-name>`
+* The namespace for blocknames is `c9-blocks`. When you register a block it should be `c9-blocks/<block-name>`
 * If you need a two-letter prefix, go with `c9`. You might name a class `C9CtaBlock`
 
 #### Custom Icons

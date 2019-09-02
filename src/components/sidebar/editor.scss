@@ -1,0 +1,93 @@
+/**
+ * Editor Styles
+ */
+
+ 
+ 
+.edit-post-pinned-plugins
+	.components-icon-button:not(.is-toggled)
+	.c9-plugin-icon
+	svg,
+.edit-post-pinned-plugins
+	.components-icon-button.is-toggled
+	.c9-plugin-icon
+	svg,
+.edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg {
+	display: block;
+
+	* {
+		stroke: initial !important; // stylelint-disable-line
+	}
+
+	[fill="#fff"] {
+		fill: #fff !important; // stylelint-disable-line
+	}
+
+	height: 16px;
+}
+
+// default Gutenberg icons is 20x20, but we use 24x24
+// so, we need to compensate the padding
+.edit-post-pinned-plugins .components-icon-button .c9-plugin-icon span {
+	margin: -2px;
+}
+
+.edit-post-pinned-plugins
+	.components-icon-button.is-toggled
+	.c9-plugin-icon
+	span
+	[fill="#fff"] {
+	fill: #555d66 !important; // stylelint-disable-line
+}
+
+.plugin-c9-panel {
+	.plugin-c9-panel-button {
+		display: block;
+		width: 100%;
+		height: auto;
+		padding: 15px 10px;
+		margin-bottom: 16px;
+		flex-shrink: 0;
+		overflow: hidden;
+		color: inherit;
+		text-align: center;
+		cursor: pointer;
+		background: none;
+		border: 1px solid;
+		border-radius: 4px;
+		transition: 0.2s color, 0.2s background-color, 0.2s border-color,
+			0.2s box-shadow;
+
+		&,
+		&:hover,
+		&:focus,
+		&:focus:enabled,
+		&:active,
+		&:active:enabled {
+			border-color: rgba(79, 89, 105, 0.2);
+			box-shadow: none;
+		}
+
+		&:hover,
+		&:active,
+		&:active:enabled {
+			color: #191e23;
+			background-color: #f8f9f9;
+		}
+
+		&:focus,
+		&:focus:enabled {
+			color: #191e23;
+			border-color: #007fac;
+			box-shadow: 0 0 0 2px #00a0d2;
+		}
+
+		span {
+			display: block;
+			margin: 0 auto;
+			margin-top: 3px;
+			text-align: center;
+			height: 24px;
+		}
+	}
+}

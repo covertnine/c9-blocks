@@ -1,0 +1,31 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.c9-image-carousel {
+	.hide-indicator {
+		display: none;
+	}
+
+	.carousel-inner {
+		.c9-remove-image {
+			> .components-button.components-icon-button {
+				margin: 0 auto;
+			}
+
+			margin-top: 25px;
+			padding-bottom: 20px;
+		}
+	}
+
+	.editor-selected-lift {
+		bottom: 80px !important;
+	}
+
+	.editor-selected-controls-lift {
+		bottom: 80px;
+	}
+}

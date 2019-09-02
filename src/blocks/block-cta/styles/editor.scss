@@ -2,30 +2,63 @@
  * Editor styles for the admin
  */
 
-.ab-block-cta {
-    margin-bottom: 0;
+.c9-block-cta .row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.c9-cta-content {
+		flex-direction: column;
+
+		&:first-child .editor-rich-text {
+			width: 100%;
+		}
+
+		.c9-cta-reveal-anchor {
+			position: absolute;
+			right: 0;
+			top: 0;
+			cursor: pointer;
+
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+		}
+	}
 }
 
-.editor-block-list__layout [data-type="atomic-blocks/ab-cta"] {
-    margin-bottom: 1.2em;
+.c9-block-cta {
+	margin-bottom: 0;
 }
 
- .ab-cta-button {
-    .blocks-button__inline-link .editor-url-input {
-        display: inline-block;
-        width: auto;
-    }
-
-    .blocks-button__inline-link .components-button {
-        display: inline-block;
-    }
-
-    .blocks-button__inline-link svg {
-        vertical-align: middle;
-        margin-right: 8px;
-    }
+.editor-block-list__layout [data-type="c9-blocks/cta"] {
+	margin-bottom: 1.2em;
 }
 
-.ab-block-cta h2.editor-rich-text__tinymce.mce-content-body {
-    line-height: 1.2;
+.c9-cta-button {
+	.blocks-button__inline-link .editor-url-input {
+		display: inline-block;
+		width: auto;
+	}
+
+	.blocks-button__inline-link .components-button {
+		display: inline-block;
+	}
+
+	.blocks-button__inline-link svg {
+		vertical-align: middle;
+		margin-right: 8px;
+	}
+}
+
+.c9-block-cta h2.editor-rich-text__tinymce.mce-content-body {
+	line-height: 1.2;
+}
+
+@media only screen and (min-width: 992px) {
+	.editor-styles-wrapper .editor-block-list__block[data-type="c9-blocks/cta"][data-align="full"] {
+		max-width: 96%;
+		margin: 0px auto;
+	}
 }

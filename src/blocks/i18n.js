@@ -1,1 +1,1 @@
-wp.i18n.setLocaleData( { '': {} }, 'covertnine-blocks' );
+wp.i18n.setLocaleData({ "": {} }, "c9-blocks");

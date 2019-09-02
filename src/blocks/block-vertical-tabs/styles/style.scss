@@ -1,0 +1,45 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.c9-vertical-tabs {
+	>.nav.nav-tabs {
+		list-style: none;
+	}
+
+	.c9-tabs-content-wrapper {
+		display: grid;
+	}
+}
+
+.c9-vertical-tabs .nav-pills .nav-link {
+	border: none;
+	border-radius: 0px;
+	color: #979797;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	padding: 13px 20px;
+	font-weight: 700;
+	letter-spacing: .09rem;
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 1024px) {
+
+	.c9-layout-columns-6 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
+	.c9-layout-columns-5 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
+	.c9-layout-columns-4 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
+	.c9-layout-columns-3 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link {
+		font-size: 1rem;
+	}
+}
+
+.c9-vertical-tabs .nav-pills .nav-link.active,
+.c9-vertical-tabs .nav-pills .show>.nav-link,
+.c9-vertical-tabs .nav-pills .nav-link.active {
+	color: #2b2b2b;
+	background-color: #ccc;
+	text-decoration: none;
+}

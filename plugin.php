@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Cortex Blocks
+ * Plugin Name: C9 Blocks
  * Plugin URI: https://www.covertnine.com
- * Description: Cortex blocks for cortextoo WordPress theme
+ * Description: COVERT NINE blocks for C9 WordPress theme using a combination of Bootstrap + CSS Grid
  * Author: COVERT NINE
  * Author URI: https://www.covertnine.com
  * Version: 1.0.1
