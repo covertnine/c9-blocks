@@ -2,66 +2,67 @@
 /**
  * Server-side rendering for the sharing block
  *
- * @since 	1.1.2
- * @package c9 Blocks
+ * @since   1.1.2
+ * @package C9 Blocks
  */
 
 /**
-* Register the block on the server
-*/
+ * Register the block on the server
+ */
 function c9_blocks_register_sharing() {
 
-	// Check if the register function exists
+	// Check if the register function exists.
 	if ( ! function_exists( 'register_block_type' ) ) {
 		return;
 	}
 
-	// Register the sharing block
+	// Register the sharing block.
 	register_block_type(
-		'c9-blocks/social-share', array(
-			'style' => 'c9-blocks-style-css',
-			'attributes' => array(
-                'facebook' => array(
+		'c9-blocks/social-share',
+		array(
+			'style'           => 'c9-blocks-style-css',
+			'attributes'      => array(
+				'facebook'         => array(
 					'type'    => 'boolean',
 					'default' => true,
-                ),
-                'twitter' => array(
+				),
+				'twitter'          => array(
 					'type'    => 'boolean',
 					'default' => true,
-                ),
-                'linkedin' => array(
+				),
+				'linkedin'         => array(
 					'type'    => 'boolean',
 					'default' => false,
-                ),
-                'pinterest' => array(
+				),
+				'pinterest'        => array(
 					'type'    => 'boolean',
 					'default' => false,
-                ),
-                'email' => array(
+				),
+				'email'            => array(
 					'type'    => 'boolean',
 					'default' => false,
-                ),
-                'reddit' => array(
+				),
+				'reddit'           => array(
 					'type'    => 'boolean',
 					'default' => false,
-                ),
-                'shareAlignment' => array(
+				),
+				'shareAlignment'   => array(
 					'type' => 'string',
 				),
 				'shareButtonStyle' => array(
-					'type' => 'string',
+					'type'    => 'string',
 					'default' => 'c9-share-icon-only',
 				),
 				'shareButtonShape' => array(
-					'type' => 'string',
+					'type'    => 'string',
 					'default' => 'c9-share-shape-circular',
 				),
-				'shareButtonSize' => array(
-					'type' => 'string',
+				'shareButtonSize'  => array(
+					'type'    => 'string',
 					'default' => 'c9-share-size-medium',
 				),
 				'shareButtonColor' => array(
-					'type' => 'string',
+					'type'    => 'string',
 					'default' => 'c9-share-color-standard',
 				),
 			),
@@ -76,49 +77,52 @@ add_action( 'init', 'c9_blocks_register_sharing' );
  * Add the pop-up share window to the footer
  */
 function c9_blocks_social_icon_footer_script() { ?>
-    <script type="text/javascript">
-        function c9BlocksShare( url, title, w, h ){
-            var left = ( window.innerWidth / 2 )-( w / 2 );
-            var top  = ( window.innerHeight / 2 )-( h / 2 );
-            return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top='+top+', left='+left);
-        }
-    </script>
-<?php }
+	<script type="text/javascript">
+		function c9BlocksShare( url, title, w, h ){
+			var left = ( window.innerWidth / 2 )-( w / 2 );
+			var top  = ( window.innerHeight / 2 )-( h / 2 );
+			return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top='+top+', left='+left);
+		}
+	</script>
+	<?php
+}
 add_action( 'wp_footer', 'c9_blocks_social_icon_footer_script' );
 
 /**
  * Render the sharing links
+ *
+ * @param object $attributes Status of block.
  */
 function c9_blocks_render_sharing( $attributes ) {
 	global $post;
 
-	// Setup the featured image
+	// Setup the featured image.
 	if ( has_post_thumbnail() ) {
 		$thumbnail_id = get_post_thumbnail_id( $post->ID );
-		$thumbnail = $thumbnail_id ? current( wp_get_attachment_image_src( $thumbnail_id, 'large', true ) ) : '';
+		$thumbnail    = $thumbnail_id ? current( wp_get_attachment_image_src( $thumbnail_id, 'large', true ) ) : '';
 	} else {
 		$thumbnail = null;
 	}
 
-    // Twitter share URL
+	// Twitter share URL.
 	$twitter_url = 'http://twitter.com/share?text=' . get_the_title() . '&url=' . get_the_permalink() . '';
 
-	// Facebook share URL
+	// Facebook share URL.
 	$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '&title=' . get_the_title() . '';
 
-	// LinkedIn share URL
+	// LinkedIn share URL.
 	$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . get_the_permalink() . '&title=' . get_the_title() . '';
 
-	// Pinterest share URL
-    $pinterest_url = 'https://pinterest.com/pin/create/button/?&url=' . get_the_permalink() . '&description=' . get_the_title() . '&media=' . esc_url( $thumbnail ) . '';
+	// Pinterest share URL.
+	$pinterest_url = 'https://pinterest.com/pin/create/button/?&url=' . get_the_permalink() . '&description=' . get_the_title() . '&media=' . esc_url( $thumbnail ) . '';
 
-    // Email URL
-    $email_url = 'mailto:?subject=' . get_the_title() . '&body=' . get_the_title() . '&mdash;' . get_the_permalink() . '';
+	// Email URL.
+	$email_url = 'mailto:?subject=' . get_the_title() . '&body=' . get_the_title() . '&mdash;' . get_the_permalink() . '';
 
-    // Reddit URL
+	// Reddit URL.
 	$reddit_url = 'https://www.reddit.com/submit?url=' . get_the_permalink() . '';
 
-	// Build the share URLs
+	// Build the share URLs.
 	$share_url = '';
 
 	if ( isset( $attributes['twitter'] ) && $attributes['twitter'] ) {
@@ -222,7 +226,7 @@ function c9_blocks_render_sharing( $attributes ) {
 		);
 	}
 
-	// Render the list of share links
+	// Render the list of share links.
 	$block_content = sprintf(
 		'<div class="c9-social-sharing c9-block-sharing %2$s %3$s %4$s %5$s %6$s">
 			<ul class="c9-share-list">%1$s</ul>
