@@ -45,7 +45,9 @@ const editBlocksCSSPlugin = new ExtractTextPlugin({
 const extractConfig = {
 	use: [
 		// "postcss" loader applies autoprefixer to our CSS.
-		{ loader: "raw-loader" },
+		{
+			loader: "css-loader"
+		},
 		{
 			loader: "postcss-loader",
 			options: {
