@@ -8,16 +8,12 @@
 
 class Dist_File_Exist_Test extends WP_UnitTestCase
 {
-	function dist_filename_cases()
-	{
-		return array('blocks.build.js', 'blocks.editor.build.css', 'blocks.frontend.build.js', 'blocks.style.build.css', 'blocks.update-category.build.js');
-	}
 	/**
 	 * tests if dist contains all files
 	 */
 	function test_vendor_script_filename()
 	{
-		$cases = dist_filename_cases();
+		$cases = array('blocks.build.js', 'blocks.editor.build.css', 'blocks.frontend.build.js', 'blocks.style.build.css', 'blocks.update-category.build.js');
 
 		$path = dirname(__DIR__) . '/dist';
 		$files = scandir($path);
