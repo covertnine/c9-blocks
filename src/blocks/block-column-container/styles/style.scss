@@ -382,3 +382,9 @@
 		padding-bottom: 0px;
 	}
 }
+
+@media only screen and (min-width: 992px) {
+	.c9-grid .wp-block-embed:last-child {
+		margin-bottom: 0px;
+	}
+}

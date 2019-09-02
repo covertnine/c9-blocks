@@ -5,6 +5,9 @@
  * @package C9 Blocks
  */
 
+/**
+ * Confirms if saved block layout endpoint exists
+ */
 class Layout_Endpoints extends \WP_UnitTestCase {
 	/**
 	 * The REST API server instance.
@@ -13,7 +16,7 @@ class Layout_Endpoints extends \WP_UnitTestCase {
 	 */
 	private $server;
 	/**
-	 * Atomic Blocks REST API namespace.
+	 * Gutenberg Saved Blocks REST API namespace.
 	 *
 	 * @var string
 	 */
@@ -36,7 +39,7 @@ class Layout_Endpoints extends \WP_UnitTestCase {
 		 */
 		global $wp_rest_server;
 		$wp_rest_server = new \WP_REST_Server();
-		$this->server = $wp_rest_server;
+		$this->server   = $wp_rest_server;
 		do_action( 'rest_api_init' );
 		$this->routes = $this->server->get_routes();
 	}
