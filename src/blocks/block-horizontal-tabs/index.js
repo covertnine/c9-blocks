@@ -22,7 +22,7 @@ const { registerBlockType } = wp.blocks;
 // Register the block
 registerBlockType("c9-blocks/horizontal-tabs", {
 	title: __("C9 Horizontal Tabs", "c9-blocks"),
-	description: __("Responsive tabs for content", "c9-blocks"),
+	description: __("Responsive horizontal tabs of content", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {

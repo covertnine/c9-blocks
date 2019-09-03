@@ -5,6 +5,7 @@ import classnames from "classnames";
  */
 import Inspector from "./components/inspector";
 import ReverseToolbar from "./components/reverse-toolbar";
+import BlockSelector from "../../components/block-selector";
 
 /**
  * WordPress dependencies
@@ -155,6 +156,7 @@ class Edit extends Component {
 					/>
 				</BlockControls>
 				<Inspector {...this.props} />
+				<BlockSelector text="Toggles" />
 				<div
 					className={classnames(
 						applyFilters("c9-blocks.blocks.className", className),

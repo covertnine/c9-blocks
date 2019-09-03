@@ -63,7 +63,7 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 		</SVG>
 	),
 
-	description: __("A single tab within the tabs block.", "c9-blocks"),
+	description: __("A single tab within the vertical tabs block.", "c9-blocks"),
 
 	supports: {
 		inserter: false,
