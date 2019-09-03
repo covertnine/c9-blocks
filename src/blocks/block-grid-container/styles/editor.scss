@@ -269,6 +269,11 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 	.c9-grid [data-type="c9-blocks/column-container"] .wp-block[data-type="c9-blocks/column"] {
 		width: 100%;
 	}
+
+	.c9-column-inner {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 }
 
 @media only screen and (min-width: 576px) {
