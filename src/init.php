@@ -127,6 +127,13 @@ function c9_blocks_front_assets() {
 		false
 	);
 
+	// jQuery for frontend.
+	wp_enqueue_script(
+		'jquery',
+		'https://code.jquery.com/jquery-3.3.1.slim.min.js',
+		false
+	);
+
 	// blocks frontend.
 	wp_enqueue_script(
 		'c9_blocks-frontend',
@@ -179,6 +186,13 @@ function c9_check_bootstrap() {
 		wp_enqueue_style(
 			'bootstrap-css',
 			'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+			array(),
+			'4.3.1'
+		);
+
+		wp_enqueue_script(
+			'bootstrap-js',
+			'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
 			array(),
 			'4.3.1'
 		);

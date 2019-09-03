@@ -15,6 +15,7 @@ import icons from "../../../assets/c9-col-layout-icons";
 import memoize from "memize";
 import map from "lodash/map";
 import _times from "lodash/times";
+import BlockSelector from "../../components/block-selector";
 
 /**
  * WordPress dependencies
@@ -197,6 +198,7 @@ export default class Edit extends Component {
 				</BlockControls>
 				<Inspector {...this.props} />
 
+				<BlockSelector text="Column Container" />
 				<Container {...this.props}>
 					<div
 						className={classnames(
