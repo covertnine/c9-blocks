@@ -57,4 +57,12 @@ class Layout_Endpoints extends \WP_UnitTestCase {
 		$response = $this->server->dispatch( $request );
 		$this->assertNotNull( $response->get_data() );
 	}
+	/**
+	 * Tests the retrieval of posts.
+	 */
+	public function test_saved_post_categories_exists() {
+		$request  = new \WP_REST_Request( 'GET', '/wp/v2/categories' );
+		$response = $this->server->dispatch( $request );
+		$this->assertNotNull( $response->get_data() );
+	}
 }

@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
+[![Build Status](https://travis-ci.org/covertnine/c9-blocks.svg?branch=master)](https://travis-ci.org/covertnine/c9-blocks)
 
 ## How-tos and Conventions
 
