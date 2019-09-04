@@ -159,15 +159,16 @@ class TemplatesModal extends Component {
 							className: "c9-template-tabs-tab"
 						},
 						{
-							name: "local",
+							name: "blocks",
 							title: (
 								<Tooltip text={__("My Templates.", "c9-blocks")}>
-									<span>{__("Saved Layouts")}</span>
+									<span>{__("Saved Blocks")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
 						}
 					]}
+					initialTabName={this.props.initial}
 				>
 					{tab => {
 						switch (tab.name) {
