@@ -198,7 +198,7 @@ export default class Edit extends Component {
 				</BlockControls>
 				<Inspector {...this.props} />
 
-				<BlockSelector text="Column Container" />
+				<BlockSelector text="Select Column Container" />
 				<Container {...this.props}>
 					<div
 						className={classnames(
