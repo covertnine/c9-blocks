@@ -307,7 +307,7 @@ export default class Inspector extends Component {
 						max={100}
 					/>
 				</BaseControl>
-				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={false}>
+				<PanelBody>
 					<RangeControl
 						label={__("Columns", "c9-blocks")}
 						value={columns}

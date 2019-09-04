@@ -85,9 +85,7 @@ export default class Inspector extends Component {
 
 		bgPadding = Object.assign({}, bgPadding);
 		bgPadding.linked = !bgPadding.linked;
-		bgPadding.icon = bgPadding.linked
-			? "admin-links"
-			: "editor-unlink";
+		bgPadding.icon = bgPadding.linked ? "admin-links" : "editor-unlink";
 		this.setState({ bgPadding });
 		this.setAttributes({ bgPadding });
 	};
@@ -131,9 +129,7 @@ export default class Inspector extends Component {
 
 		bgMargin = Object.assign({}, bgMargin);
 		bgMargin.linked = !bgMargin.linked;
-		bgMargin.icon = bgMargin.linked
-			? "admin-links"
-			: "editor-unlink";
+		bgMargin.icon = bgMargin.linked ? "admin-links" : "editor-unlink";
 		this.setState({ bgMargin });
 		this.setAttributes({ bgMargin });
 	};
@@ -280,10 +276,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls>
-				<PanelBody
-					title={__("Post and Page Grid Settings", "c9-blocks")}
-					className={isPost ? null : "c9-blocks-hide-query"}
-				>
+				<PanelBody className={isPost ? null : "c9-blocks-hide-query"}>
 					<SelectControl
 						label={__("Content Type", "c9-blocks")}
 						options={postTypeOptions}

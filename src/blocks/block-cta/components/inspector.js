@@ -240,7 +240,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls key="inspector">
-				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
+				<PanelBody>
 					<RadioControl
 						label={__("Content Width", "c9-blocks")}
 						selected={ctaLayout}
@@ -255,7 +255,7 @@ export default class Inspector extends Component {
 
 				<PanelBody
 					title={__("Button Configurations", "c9-blocks")}
-					initialOpen={false}
+					initialOpen={true}
 				>
 					<ToggleControl
 						label={__("Open link in new window", "c9-blocks")}
@@ -290,7 +290,7 @@ export default class Inspector extends Component {
 
 				<PanelBody
 					title={__("CTA Text Options", "c9-blocks")}
-					initialOpen={false}
+					initialOpen={true}
 				>
 					<SelectControl
 						label={__("Font Type", "c9-blocks")}

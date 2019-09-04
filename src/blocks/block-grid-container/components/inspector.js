@@ -333,7 +333,7 @@ export default class Inspector extends Component {
 						max={100}
 					/>
 				</BaseControl>
-				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
+				<PanelBody>
 					<RangeControl
 						label={__("Number of rows to produce", "c9-blocks")}
 						value={rows}
