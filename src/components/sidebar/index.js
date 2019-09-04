@@ -43,55 +43,66 @@ class C9 extends Component {
 							isDefault
 							isLarge
 							onClick={() => {
-								this.setState({ isModalOpen: "templates" });
+								this.setState({ isModalOpen: "section-templates" });
 							}}
 						>
 							<span className="dashicons dashicons-schedule" />
-							{__("Templates", "c9-blocks")}
+							{__("Section Templates", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
 							isDefault
 							isLarge
 							onClick={() => {
-								this.setState({ isModalOpen: "custom-code" });
+								this.setState({ isModalOpen: "page-templates" });
 							}}
 						>
 							<span className="dashicons dashicons-editor-code" />
-							{__("CSS & JavaScript", "c9-blocks")}
+							{__("Page Templates", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
 							isDefault
 							isLarge
 							onClick={() => {
-								this.setState({ isModalOpen: "customizer" });
+								this.setState({ isModalOpen: "saved-blocks" });
 							}}
 						>
 							<span className="dashicons dashicons-admin-settings" />
-							{__("Customizer", "c9-blocks")}
+							{__("Saved Blocks", "c9-blocks")}
 						</Button>
 					</PanelBody>
 				</PluginSidebar>
-				{"templates" === isModalOpen ? (
+				{"section-templates" === isModalOpen ? (
 					<TemplatesModal
 						title="Templates"
 						icon={<Dashicon icon={"schedule"}/>}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
+						initial="sections"
 					/>
 				) : (
 					""
 				)}
-				{/* { 'custom-code' === isModalOpen ? (
-                    <CustomCodeModal
-                        onRequestClose={ () => this.setState( { isModalOpen: false } ) }
-                    />
-                ) : '' }
-                { 'customizer' === isModalOpen ? (
-                    <CustomizerModal
-                        onRequestClose={ () => this.setState( { isModalOpen: false } ) }
-                    />
-                ) : '' } */}
+				{"page-templates" === isModalOpen ? (
+					<TemplatesModal
+						title="Templates"
+						icon={<Dashicon icon={"schedule"}/>}
+						onRequestClose={() => this.setState({ isModalOpen: false })}
+						initial="pages"
+					/>
+				) : (
+					""
+				)}
+				{"saved-blocks" === isModalOpen ? (
+					<TemplatesModal
+						title="Templates"
+						icon={<Dashicon icon={"schedule"}/>}
+						onRequestClose={() => this.setState({ isModalOpen: false })}
+						initial="blocks"
+					/>
+				) : (
+					""
+				)}
 			</Fragment>
 		);
 	}
