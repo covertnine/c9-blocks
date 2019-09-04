@@ -24,5 +24,11 @@ div[data-type="c9-blocks/heading"] small.block-editor-rich-text__editable.editor
 }
 
 div[data-type="c9-blocks/heading"] {
-	padding: 10px 0px;
+	padding: 5px 0px;
+}
+
+div[data-type="c9-blocks/heading"] .editor-block-list__block-edit.block-editor-block-list__block-edit,
+div[data-type="c9-blocks/column-container"] .editor-block-list__block-edit.block-editor-block-list__block-edit .c9-column-innner .wp-block[data-type="c9-blocks/heading"]>.editor-block-list__block-edit.block-editor-block-list__block-edit {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
