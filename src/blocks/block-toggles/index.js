@@ -22,10 +22,6 @@ const { registerBlockType, createBlock } = wp.blocks;
 // Register the block
 registerBlockType("c9-blocks/toggles", {
 	title: __("C9 Toggles", "c9-blocks"),
-	description: __(
-		"A responsive set of toggles for lists of content",
-		"c9-blocks"
-	),
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {

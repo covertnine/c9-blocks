@@ -187,7 +187,6 @@ class ToggleBlock extends Component {
 registerBlockType("c9-blocks/toggles-toggle", {
 	title: __("C9 Toggle Item"),
 	parent: ["c9-blocks/toggles"],
-	description: __("A single item within a toggles block."),
 	icon: "minus",
 	category: "common",
 	supports: {

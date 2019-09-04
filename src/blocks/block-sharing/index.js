@@ -16,7 +16,6 @@ const { registerBlockType } = wp.blocks;
 // Register the block
 registerBlockType("c9-blocks/social-share", {
 	title: __("C9 Social Share", "c9-blocks"),
-	description: __("Add sharing buttons to your posts and pages.", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
 	keywords: [

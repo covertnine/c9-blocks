@@ -22,7 +22,6 @@ const { registerBlockType } = wp.blocks;
 // Register the block
 registerBlockType("c9-blocks/image-carousel", {
 	title: __("C9 Image Carousel", "c9-blocks"),
-	description: __("Responsive carousel for slides of images", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {

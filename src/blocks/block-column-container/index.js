@@ -21,7 +21,6 @@ const { registerBlockType } = wp.blocks;
 // Register the block
 registerBlockType("c9-blocks/column-container", {
 	title: __("C9 Column Container", "c9-blocks"),
-	description: __("A responsive container for columns of content", "c9-blocks"),
 	icon: "columns",
 	category: "common",
 	parent: ["c9-blocks/grid-container", "c9-blocks/carousel-slide"],

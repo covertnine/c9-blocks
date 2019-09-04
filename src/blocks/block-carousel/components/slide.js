@@ -64,8 +64,6 @@ registerBlockType("c9-blocks/carousel-slide", {
 		</SVG>
 	),
 
-	description: __("A single slide within the carousel block."),
-
 	supports: {
 		inserter: false,
 		className: false

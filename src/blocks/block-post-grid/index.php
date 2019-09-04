@@ -395,10 +395,6 @@ function covertnine_blocks_register_block_core_latest_posts() {
 		'c9-blocks/post-grid',
 		array(
 			'title'           => __( 'C9 Post and Page Grid', 'c9-blocks' ),
-			'description'     => __(
-				'Add a grid or list of customizable posts or pages.',
-				'c9-blocks'
-			),
 			'keywords'        => array(
 				__( 'post', 'c9-blocks' ),
 				__( 'page', 'c9-blocks' ),

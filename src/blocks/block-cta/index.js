@@ -22,10 +22,6 @@ import attributes from "./attributes";
 // Register the block
 registerBlockType("c9-blocks/cta", {
 	title: __("C9 Call To Action", "c9-blocks"),
-	description: __(
-		"Add a call to action section with text and a button.",
-		"c9-blocks"
-	),
 	icon: Icon,
 	category: "c9-blocks",
 	keywords: [__("call to action", "c9-blocks"), __("cta", "c9-blocks")],

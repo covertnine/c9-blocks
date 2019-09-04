@@ -22,7 +22,6 @@ const { registerBlockType } = wp.blocks;
 // Register the block
 registerBlockType("c9-blocks/grid", {
 	title: __("C9 Grid", "c9-blocks"),
-	description: __("A responsive grid for columns of content", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {
