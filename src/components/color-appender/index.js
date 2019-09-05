@@ -45,7 +45,6 @@ class ColorAppender extends Component {
 		if (false === this.state.isSaving) {
 			this.setState({ isSaving: true });
 			const config = this.state.c9Colors;
-			console.log(config);
 			const settingModel = new wp.api.models.Settings({
 				c9_blocks_colors: JSON.stringify(config)
 			});
@@ -73,8 +72,6 @@ class ColorAppender extends Component {
 	render() {
 		const { c9Colors, colors, origColors } = this.state;
 
-		console.log(c9Colors, colors);
-
 		const nonEditables = [];
 		const editables = [];
 
@@ -85,8 +82,6 @@ class ColorAppender extends Component {
 				nonEditables.push(curr);
 			}
 		});
-
-		console.log(nonEditables, editables);
 
 		return (
 			<div className="c9-block-default-palette">
