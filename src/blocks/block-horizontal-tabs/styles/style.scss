@@ -6,6 +6,8 @@
 
 .c9-horizontal-tabs>.nav.nav-tabs {
 	list-style: none;
+	padding: 0px;
+	flex-wrap: nowrap;
 }
 
 .c9-horizontal-tabs .nav-tabs .nav-link {
@@ -14,11 +16,10 @@
 	color: #979797;
 	text-transform: uppercase;
 	font-size: 1.5rem;
-	padding: 13px 55px;
+	padding: 13px 35px;
 	font-weight: 700;
 	letter-spacing: .09rem;
 	text-decoration: none;
-
 }
 
 .c9-horizontal-tabs .nav-tabs .nav-link.active {
