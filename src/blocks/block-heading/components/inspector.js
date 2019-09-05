@@ -70,7 +70,7 @@ class Inspector extends Component {
 		// Update color values
 		return (
 			<InspectorControls key="inspector">
-				<PanelBody title={__("Heading Options", "c9-blocks")}>
+				<PanelBody>
 					<p>{__("Element Tag Type", "c9-blocks")}</p>
 					<HeadingToolbar
 						isCollapsed={false}
