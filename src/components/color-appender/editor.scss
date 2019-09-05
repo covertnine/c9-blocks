@@ -1,0 +1,41 @@
+.c9-block-default-palette {
+	.components-color-palette__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.components-color-palette__item-wrapper {
+		transform: scale(1.1);
+	}
+
+	.components-color-palette__item-wrapper:hover {
+		transform: scale(1.1);
+	}
+
+	.components-color-palette__item svg {
+		color: rgba(100, 100, 100, 1);
+	}
+}
+
+.c9-colors-remove-last {
+	display: inline-block;
+	height: 28px;
+	width: 28px;
+	margin-right: 14px;
+	margin-bottom: 14px;
+
+	.components-button {
+		border-radius: 50%;
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.c9-colors-add-new {
+	margin-bottom: 16px;
+}
