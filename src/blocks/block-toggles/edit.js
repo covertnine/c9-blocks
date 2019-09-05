@@ -4,7 +4,6 @@ import classnames from "classnames";
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import ReverseToolbar from "./components/reverse-toolbar";
 import BlockSelector from "../../components/block-selector";
 
 /**
@@ -130,7 +129,7 @@ class Edit extends Component {
 			instanceId
 		} = this.props;
 
-		const { toggleCount, reverseToggle } = attributes;
+		const { toggleCount } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -148,20 +147,13 @@ class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls key="controls">
-					<ReverseToolbar
-						value={reverseToggle}
-						onChange={value => {
-							setAttributes({ reverseToggle: value });
-						}}
-					/>
 				</BlockControls>
 				<Inspector {...this.props} />
 				<BlockSelector text="Toggles" />
 				<div
 					className={classnames(
 						applyFilters("c9-blocks.blocks.className", className),
-						"accordion",
-						reverseToggle ? "c9-toggles-reverse" : null
+						"accordion"
 					)}
 					id={`accordion-${instanceId}`}
 				>

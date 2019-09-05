@@ -33,6 +33,133 @@ add_filter(
 );
 
 /**
+ * Set C9 blocks settings.
+ */
+function load_settings() {
+	// Register setting.
+	register_setting(
+		'c9_blocks_colors',
+		'c9_blocks_colors',
+		array(
+			'type'              => 'string',
+			'description'       => __( 'Config C9 Blocks Color Palette', 'c9-blocks' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'show_in_rest'      => true,
+			'default'           => '',
+		)
+	);
+
+	// Register setting.
+	register_setting(
+		'c9_orig_colors',
+		'c9_orig_colors',
+		array(
+			'type'              => 'array',
+			'description'       => __( 'Config Theme Color Palette', 'c9-blocks' ),
+			'sanitize_callback' => function( $colors ) {
+				return array_map( 'esc_attr', $colors );
+			},
+			'show_in_rest'      => true,
+			'default'           => array(),
+		)
+	);
+}
+
+add_action( 'admin-init', 'load_settings' );
+add_action( 'rest_api_init', 'load_settings' );
+
+/**
+ * Load Gutenberg Palette
+ */
+function load_color_palette() {
+	$theme_palette = get_theme_support( 'editor-color-palette' );
+	update_option( 'c9_orig_colors', $theme_palette );
+
+	$palette = json_decode( get_option( 'c9_blocks_colors' ) );
+	if ( $palette && is_object( $palette ) && isset( $palette->palette ) && is_array( $palette->palette ) ) {
+		$san_palette = array();
+		foreach ( $palette->palette as $item ) {
+			$san_palette[] = array(
+				'color' => $item->color,
+				'name'  => $item->name,
+				'slug'  => $item->slug,
+			);
+		}
+		if ( isset( $san_palette[0] ) ) {
+			if ( ( isset( $palette->override ) && true !== $palette->override ) || ! isset( $palette->override ) ) {
+				if ( is_array( $theme_palette ) ) {
+					$newpalette = array_merge( reset( $theme_palette ), $san_palette );
+				} else {
+					$default_palette = array(
+						array(
+							'name'  => __( 'Pale pink', 'c9-blocks' ),
+							'slug'  => 'pale-pink',
+							'color' => '#f78da7',
+						),
+						array(
+							'name'  => __( 'Vivid red', 'c9-blocks' ),
+							'slug'  => 'vivid-red',
+							'color' => '#cf2e2e',
+						),
+						array(
+							'name'  => __( 'Luminous vivid orange', 'c9-blocks' ),
+							'slug'  => 'luminous-vivid-orange',
+							'color' => '#ff6900',
+						),
+						array(
+							'name'  => __( 'Luminous vivid amber', 'c9-blocks' ),
+							'slug'  => 'luminous-vivid-amber',
+							'color' => '#fcb900',
+						),
+						array(
+							'name'  => __( 'Light green cyan', 'c9-blocks' ),
+							'slug'  => 'light-green-cyan',
+							'color' => '#7bdcb5',
+						),
+						array(
+							'name'  => __( 'Vivid green cyan', 'c9-blocks' ),
+							'slug'  => 'vivid-green-cyan',
+							'color' => '#00d084',
+						),
+						array(
+							'name'  => __( 'Pale cyan blue', 'c9-blocks' ),
+							'slug'  => 'pale-cyan-blue',
+							'color' => '#8ed1fc',
+						),
+						array(
+							'name'  => __( 'Vivid cyan blue', 'c9-blocks' ),
+							'slug'  => 'vivid-cyan-blue',
+							'color' => '#0693e3',
+						),
+						array(
+							'name'  => __( 'Very light gray', 'c9-blocks' ),
+							'slug'  => 'very-light-gray',
+							'color' => '#eeeeee',
+						),
+						array(
+							'name'  => __( 'Cyan bluish gray', 'c9-blocks' ),
+							'slug'  => 'cyan-bluish-gray',
+							'color' => '#abb8c3',
+						),
+						array(
+							'name'  => __( 'Very dark gray', 'c9-blocks' ),
+							'slug'  => 'very-dark-gray',
+							'color' => '#313131',
+						),
+					);
+					$newpalette      = array_merge( $default_palette, $san_palette );
+				}
+			} else {
+				$newpalette = $san_palette;
+			}
+			add_theme_support( 'editor-color-palette', $newpalette );
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'load_color_palette', 999 );
+
+/**
  * Initialize the blocks
  */
 function c9_blocks_loader() {
@@ -64,6 +191,7 @@ function c9_blocks_cgb_block_assets() {
 		array(), // Dependency to include the CSS after it.
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: filemtime — Gets file modification time.
 	);
+
 } // End function c9_blocks_cgb_block_assets().
 
 // Hook: Frontend assets.
@@ -93,6 +221,26 @@ function c9_blocks_cgb_editor_assets() {
 		'c9_blocks-update-category',
 		plugins_url( 'dist/blocks.update-category.build.js', dirname( __FILE__ ) ),
 		array( 'wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element' )
+	);
+
+	// Add local variables to reference.
+	wp_localize_script(
+		'c9_blocks-cgb-block-js',
+		'c9_blocks_params',
+		array(
+			'colors'      => get_option( 'c9_blocks_colors' ),
+			'orig_colors' => get_option( 'c9_orig_colors' ),
+		)
+	);
+
+	// Add local variables to reference.
+	wp_localize_script(
+		'c9_blocks-update-category',
+		'c9_blocks_params',
+		array(
+			'colors'      => get_option( 'c9_blocks_colors' ),
+			'orig_colors' => get_option( 'c9_orig_colors' ),
+		)
 	);
 
 	c9_check_bootstrap();

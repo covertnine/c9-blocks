@@ -9,6 +9,8 @@ const { Component } = wp.element;
 const { Button, PanelBody, Dashicon } = wp.components;
 
 import "./editor.scss";
+
+import ColorAppender from "../color-appender";
 import Logo from "../../../assets/c9-feather-logo-gray.svg";
 import { TemplatesModal } from "../templates-modal";
 
@@ -72,11 +74,19 @@ class C9 extends Component {
 							{__("Saved Blocks", "c9-blocks")}
 						</Button>
 					</PanelBody>
+					<PanelBody>
+						<h5 className="components-base-control__label">
+							<b>
+								Color Palette
+							</b>
+						</h5>
+						<ColorAppender />
+					</PanelBody>
 				</PluginSidebar>
 				{"section-templates" === isModalOpen ? (
 					<TemplatesModal
 						title="Templates"
-						icon={<Dashicon icon={"schedule"}/>}
+						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
 						initial="sections"
 					/>
@@ -86,7 +96,7 @@ class C9 extends Component {
 				{"page-templates" === isModalOpen ? (
 					<TemplatesModal
 						title="Templates"
-						icon={<Dashicon icon={"schedule"}/>}
+						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
 						initial="pages"
 					/>
@@ -96,7 +106,7 @@ class C9 extends Component {
 				{"saved-blocks" === isModalOpen ? (
 					<TemplatesModal
 						title="Templates"
-						icon={<Dashicon icon={"schedule"}/>}
+						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
 						initial="blocks"
 					/>

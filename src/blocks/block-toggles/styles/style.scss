@@ -40,16 +40,6 @@
 		position: relative;
 		transition: opacity .4s;
 	}
-
-	&.c9-toggles-reverse {
-		.c9-toggles-toggle-label {
-			margin-left: 16px;
-		}
-
-		.c9-toggles-item-collapse {
-			left: 0;
-		}
-	}
 }
 
 .c9-toggles .c9-toggles-toggle.toggle-collapse-ready:hover .c9-toggles-item-heading {
