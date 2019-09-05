@@ -3,7 +3,7 @@ const { Component, Fragment } = wp.element;
 const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
-const { createBlock, rawHandler } = wp.blocks;
+const { rawHandler } = wp.blocks;
 const apiFetch = wp.apiFetch;
 import startCase from "lodash/startCase";
 import LayoutButton from "./layout-button";
@@ -53,7 +53,7 @@ class TemplatesModal extends Component {
 		// eslint-disable-next-line no-unused-vars
 		for (let key of Object.keys(blockObj)) {
 			blockObj[key] = rawHandler({
-				HTML: blockObj[key],
+				HTML: blockObj[key].markup,
 				mode: "BLOCKS",
 				canUserUseUnfilteredHTML
 			});
@@ -68,57 +68,11 @@ class TemplatesModal extends Component {
 		// define section and layout templates
 
 		const sections = {
-			test: [
-				createBlock("core/cover", { align: "full" }),
-				createBlock("core/button", {
-					text: __("Layout Switcher", "c9-blocks"),
-					align: "center"
-				})
-			],
 			// convert markup to actual blocks
 			...this.markupToBlock(templateMarkups.sections, canUserUseUnfilteredHTML)
 		};
 
 		const layouts = {
-			default: [createBlock("core/paragraph", {})],
-			hero: [
-				createBlock("core/cover", { align: "full" }),
-				createBlock("core/button", {
-					text: __("Layout Switcher", "c9-blocks"),
-					align: "center"
-				}),
-				createBlock("c9-blocks/grid", {}, [
-					createBlock("c9-blocks/column-container", {
-						columns: 3,
-						layout: "c9-3-col-equal"
-					})
-				])
-			],
-			featured: [
-				createBlock("core/heading", {}),
-				createBlock("core/spacer", { height: "10" }),
-				createBlock("core/media-text", { align: "full" }),
-				createBlock("core/spacer", { height: "40" }),
-				createBlock("core/quote", {}),
-				createBlock("core/spacer", { height: "20" }),
-				createBlock("core/media-text", { mediaPosition: "right" }),
-				createBlock("core/paragraph", {
-					placeholder: __("Layout Switcher", "c9-blocks")
-				})
-			],
-			nested: [
-				createBlock("c9-blocks/grid", {}, [
-					createBlock(
-						"c9-blocks/column-container",
-						{ columns: 3, layout: "c9-3-col-equal" },
-						[
-							createBlock("c9-blocks/column", {}, [
-								createBlock("core/button", { text: "Make this Recipe" })
-							])
-						]
-					)
-				])
-			],
 			// convert markup to actual blocks
 			...this.markupToBlock(templateMarkups.layouts, canUserUseUnfilteredHTML)
 		};
@@ -179,7 +133,7 @@ class TemplatesModal extends Component {
 										<div className="c9-section-options">
 											{Object.keys(sections).map(k => (
 												<SectionButton
-													icon="wordpress"
+													icon={templateMarkups.sections[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													section={sections[k]}
 												/>
@@ -203,7 +157,7 @@ class TemplatesModal extends Component {
 										<div className="c9-layout-options">
 											{Object.keys(layouts).map(k => (
 												<LayoutButton
-													icon="wordpress"
+													icon={templateMarkups.layouts[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													layout={layouts[k]}
 												/>
