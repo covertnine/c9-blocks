@@ -10,11 +10,7 @@ const { Component } = wp.element;
 const { InspectorControls } = wp.editor;
 
 // Import Inspector components
-const {
-	PanelBody,
-	SelectControl,
-	ToggleControl
-} = wp.components;
+const { PanelBody, SelectControl, ToggleControl } = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -103,7 +99,10 @@ export default class Inspector extends Component {
 					/>
 				</PanelBody>
 
-				<PanelBody title={__("Sharing Button Options")} initialOpen={false}>
+				<PanelBody>
+					<p className="components-base-control__label">
+						{__("Sharing Button Options", "c9-blocks")}
+					</p>
 					<SelectControl
 						label={__("Button Style")}
 						value={shareButtonStyle}

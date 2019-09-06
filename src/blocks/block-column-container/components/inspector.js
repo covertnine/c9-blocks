@@ -412,7 +412,10 @@ export default class Inspector extends Component {
 						}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+				<PanelBody
+					title={__("Spacing Options", "c9-blocks")}
+					initialOpen={false}
+				>
 					<h5 className="padding-label">Padding</h5>
 
 					<p className="components-base-control__label">
@@ -484,7 +487,10 @@ export default class Inspector extends Component {
 						/>
 					</div>
 				</PanelBody>
-				<PanelBody title={__("Background", "c9-blocks")} initialOpen={false}>
+				<PanelBody
+					title={__("Background Settings", "c9-blocks")}
+					initialOpen={false}
+				>
 					<MediaUpload
 						id="bg-image-select"
 						label={__("Background Image", "c9-blocks")}
