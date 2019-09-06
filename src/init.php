@@ -55,7 +55,9 @@ function load_settings() {
 		'c9_orig_colors',
 		array(
 			'type'              => 'array',
-			'items'             => 'string',
+			'items'             => array(
+				'type' => 'string',
+			),
 			'description'       => __( 'Config Theme Color Palette', 'c9-blocks' ),
 			'sanitize_callback' => function( $colors ) {
 				return array_map( 'esc_attr', $colors );
