@@ -146,6 +146,12 @@
 	content: '\f068';
 }
 
+@media only screen and (max-width: 667px) {
+	.c9-toggles.is-style-toggles-small .c9-toggles-toggle .fa-angle-right:before {
+		padding-top: 2px;
+	}
+}
+
 @media only screen and (max-width: 568px) {
 	.c9-toggles .c9-toggles-item-heading .c9-toggles-toggle-label {
 		font-size: 2.4rem;
@@ -154,4 +160,6 @@
 	.c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-heading .c9-toggles-toggle-label {
 		font-size: 1.8rem;
 	}
+
+
 }
