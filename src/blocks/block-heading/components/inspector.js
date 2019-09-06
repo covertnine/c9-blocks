@@ -71,6 +71,16 @@ class Inspector extends Component {
 		return (
 			<InspectorControls key="inspector">
 				<PanelBody>
+					<p className="components-base-control__label">
+						{__("Subheading Options", "c9-blocks")}
+					</p>
+					<ToggleControl
+						label={__("Enable Additional Subheading", "c9-blocks")}
+						checked={addSubheading}
+						onChange={value => setAttributes({ addSubheading: value })}
+					/>
+				</PanelBody>
+				<PanelBody>
 					<p>{__("Element Tag Type", "c9-blocks")}</p>
 					<HeadingToolbar
 						isCollapsed={false}
@@ -93,8 +103,6 @@ class Inspector extends Component {
 						onChange={value => setAttributes({ type: value })}
 					/>
 
-					<hr />
-
 					<ToggleControl
 						label={__("Override Base Tag Style", "c9-blocks")}
 						checked={overrideStyle}
@@ -112,32 +120,25 @@ class Inspector extends Component {
 					)}
 				</PanelBody>
 
-				<PanelBody title={__("Text Settings", "c9-blocks")} initialOpen={false}>
-					<SelectControl
-						label={__("Font Weight", "c9-blocks")}
-						help={__("Choose between light, normal, or bold.", "c9-blocks")}
-						options={weightTypes}
-						value={weight}
-						onChange={value => setAttributes({ weight: value })}
-					/>
-
-					<hr />
+				<PanelBody>
+					<p className="components-base-control__label">
+						{__("Text Settings", "c9-blocks")}
+					</p>
 
 					<p>{__("Text Alignment", "c9-blocks")}</p>
 					<AlignmentToolbar
 						value={textAlign}
 						onChange={value => setAttributes({ textAlign: value })}
 					/>
-				</PanelBody>
 
-				<PanelBody
-					title={__("Subheading Options", "c9-blocks")}
-					initialOpen={false}
-				>
-					<ToggleControl
-						label={__("Enable Additional Subheading", "c9-blocks")}
-						checked={addSubheading}
-						onChange={value => setAttributes({ addSubheading: value })}
+					<hr />
+
+					<SelectControl
+						label={__("Font Weight", "c9-blocks")}
+						help={__("Choose between light, normal, or bold.", "c9-blocks")}
+						options={weightTypes}
+						value={weight}
+						onChange={value => setAttributes({ weight: value })}
 					/>
 				</PanelBody>
 

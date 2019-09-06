@@ -9,6 +9,7 @@ const { Component } = wp.element;
 
 import compact from "lodash/compact";
 import map from "lodash/map";
+import SettingsSpacer from "../../../components/settings-spacer";
 
 // Import block components
 const { InspectorControls, ColorPalette } = wp.editor;
@@ -471,7 +472,11 @@ export default class Inspector extends Component {
 						/>
 					)}
 				</PanelBody>
-				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+				<SettingsSpacer />
+				<PanelBody
+					title={__("Spacing Options", "c9-blocks")}
+					initialOpen={false}
+				>
 					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
 
 					<p className="components-base-control__label">
