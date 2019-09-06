@@ -38,6 +38,9 @@ class Edit extends Component {
 		this.createIndicators = this.createIndicators.bind(this);
 	}
 
+	/**
+	 * Adds event handler to keep track of active slide.
+	 */
 	componentDidMount() {
 		const $ = window.jQuery;
 		let self = this;
@@ -47,12 +50,29 @@ class Edit extends Component {
 		});
 	}
 
+	/**
+	 * Removes event hooks assigned on creation.
+	 */
+	componentWillUnmount() {
+		const $ = window.jQuery;
+
+		$(this.carouselRef.current).off("slide.bs.carousel", "**");
+	}
+
+	/**
+	 * Checks if re-rendering is needed for component.
+	 * Denies updates if slide active is not valid, i.e less than 0 or greater than num slides.
+	 */
 	shouldComponentUpdate(nextProps, nextState) {
 		return (
 			0 <= nextState.active && nextState.active < nextProps.attributes.slides
 		);
 	}
 
+	/**
+	 * Checks if settings for carousel changed by comparing them to current state.
+	 * If so, update state and carousel directly using the react ref.
+	 */
 	componentDidUpdate() {
 		const { block, updateBlockAttributes } = this.props;
 
@@ -88,6 +108,14 @@ class Edit extends Component {
 		}
 	}
 
+	/**
+	 * Returns the indicators layout configuration for a given amount of tabs.
+	 *
+	 * @param {number} slides Amount of indicators to create.
+	 * @param {number} id Instance Id of this carousel block.
+	 *
+	 * @return {Object[]} Indicators layout configuration.
+	 */
 	createIndicators(slides, id) {
 		const { active } = this.state;
 		const { isSelectedBlockInRoot } = this.props;
@@ -109,6 +137,9 @@ class Edit extends Component {
 		return indicators;
 	}
 
+	/**
+	 * Generates the child slide blocks.
+	 */
 	getSlidesTemplate = memoize(slides => {
 		let templates = times(slides, id => [
 			"c9-blocks/carousel-slide",

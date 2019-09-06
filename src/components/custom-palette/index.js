@@ -1,3 +1,11 @@
+/**
+ * Styles
+ */
+import "./editor.scss";
+
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const {
@@ -8,8 +16,6 @@ const {
 	TextControl,
 	Tooltip
 } = wp.components;
-
-import "./editor.scss";
 
 class CustomPalette extends Component {
 	constructor() {

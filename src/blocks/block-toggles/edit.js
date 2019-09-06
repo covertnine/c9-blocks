@@ -21,16 +21,6 @@ import classnames from "classnames";
 
 const ALLOWED_BLOCKS = ["c9-blocks/toggles-toggle"];
 
-const getTogglesTemplate = (toggleCount, id) => {
-	const result = [];
-
-	for (let k = 1; k <= toggleCount; k++) {
-		result.push(["c9-blocks/toggles-toggle", { toggleNumber: k, id }]);
-	}
-
-	return result;
-};
-
 class Edit extends Component {
 	constructor() {
 		super(...arguments);
@@ -45,6 +35,10 @@ class Edit extends Component {
 		this.checkToggleCountAndUpdate();
 	}
 
+
+	/**
+	 * Removes event hooks assigned on creation.
+	 */
 	componentWillUnmount() {
 		const $ = window.jQuery;
 
@@ -58,6 +52,24 @@ class Edit extends Component {
 		});
 	}
 
+
+	/**
+	 * Generates the child toggle blocks.
+	 */
+	getTogglesTemplate = (toggleCount, id) => {
+		const result = [];
+
+		for (let k = 1; k <= toggleCount; k++) {
+			result.push(["c9-blocks/toggles-toggle", { toggleNumber: k, id }]);
+		}
+
+		return result;
+	};
+
+
+	/**
+	 * Checks if there has been change in toggle count, if so update attributes and adjust classes.
+	 */
 	checkToggleCountAndUpdate() {
 		const {
 			attributes: { toggleCount },
@@ -166,7 +178,7 @@ class Edit extends Component {
 						"undefined" !== typeof this.props.insertBlocksAfter
 							? createElement(InnerBlocks, {
 									allowedBlocks: ALLOWED_BLOCKS,
-									template: getTogglesTemplate(toggleCount, instanceId)
+									template: this.getTogglesTemplate(toggleCount, instanceId)
 							  })
 							: createElement("div")
 					)}

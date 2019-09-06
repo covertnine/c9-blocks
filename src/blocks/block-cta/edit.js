@@ -27,6 +27,14 @@ export default class Edit extends Component {
 		};
 	}
 
+	/**
+	 * Returns appropriate css class for given width and text/button option.
+	 *
+	 * @param {string} ctaWidth Wideness of given field.
+	 * @param {string} textOrButton Choice of text or button.
+	 *
+	 * @return {string} Appropriate css class based on configuration.
+	 */
 	layoutClass(ctaWidth, textOrButton) {
 		if ("two-thirds" == ctaWidth) {
 			if ("text" == textOrButton) {

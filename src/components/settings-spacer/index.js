@@ -1,3 +1,6 @@
+/**
+ * Styles
+ */
 import "./editor.scss";
 
 const SettingsSpacer = () => <div className="settings-spacer"></div>;

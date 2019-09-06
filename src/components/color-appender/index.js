@@ -1,18 +1,30 @@
 /* eslint-disable no-undef */
 /* eslint-disable camelcase */
 
+/**
+ * Internal dependencies
+ */
+import CustomPalette from "../custom-palette";
+
+/**
+ * Styles
+ */
 import "./editor.scss";
 
-import get from "lodash/get";
-import CustomPalette from "../custom-palette";
+/**
+ * WordPress dependencies
+ */
+const { __, sprintf } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { ToggleControl, Dashicon, Button, Tooltip } = wp.components;
 const { withSelect, withDispatch } = wp.data;
 const { compose } = wp.compose;
+
 /**
- * Internal block libraries
+ * External Dependencies.
  */
-const { __, sprintf } = wp.i18n;
+import get from "lodash/get";
+
 class ColorAppender extends Component {
 	constructor() {
 		super(...arguments);
