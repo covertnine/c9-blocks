@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { AlignmentToolbar, InspectorControls, PanelColorSettings } = wp.editor;
@@ -55,8 +58,7 @@ export default class Inspector extends Component {
 					colorSettings={[
 						{
 							value: blockBackgroundColor,
-							onChange: value =>
-								setAttributes({ blockBackgroundColor: value }),
+							onChange: value => setAttributes({ blockBackgroundColor: value }),
 							label: __("Background Color", "c9-blocks")
 						}
 					]}

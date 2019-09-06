@@ -1,11 +1,18 @@
+
+/**
+ * Internal dependencies
+ */
+import icons from "../../../assets/c9-vertical-alignment-icons";
+
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Toolbar } = wp.components;
 
-import icons from "../../../../assets/c9-vertical-alignment-icons";
-
+/**
+ * Control Settings
+ */
 const DEFAULT_ALIGN_CONTROLS = [
 	{
         icon: icons.top,
@@ -24,6 +31,9 @@ const DEFAULT_ALIGN_CONTROLS = [
     }
 ];
 
+/**
+ * Create a Vertical Alignment Toolbar Component
+ */
 export function VerticalAlignmentToolbar({
 	value,
 	onChange,

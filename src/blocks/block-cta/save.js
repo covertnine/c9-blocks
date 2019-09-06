@@ -1,13 +1,18 @@
-// Import block dependencies and components
-import classnames from "classnames";
-
+/**
+ * Internal dependencies
+ */
 import CallToAction from "./components/cta";
 
-// Extend component
+/**
+ * WordPress dependencies
+ */
 const { Component } = wp.element;
-
-// Register editor components
 const { RichText } = wp.editor;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Save extends Component {
 	constructor() {

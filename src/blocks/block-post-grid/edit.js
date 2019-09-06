@@ -1,26 +1,28 @@
 /* eslint-disable react/jsx-no-target-blank */
+
+/**
+ * Internal dependencies
+ */
+import Inspector from "./components/inspector";
+import PostGridImage from "./components/image";
+import WidthToolbar from "../../components/width-toolbar";
+import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
+
+/**
+ * WordPress dependencies
+ */
+const { Component, Fragment } = wp.element;
+const { __ } = wp.i18n;
+const { decodeEntities } = wp.htmlEntities;
+const { Placeholder, Spinner, Toolbar } = wp.components;
+const { BlockControls } = wp.editor;
+const { applyFilters } = wp.hooks;
+
 /**
  * External dependencies
  */
 import moment from "moment";
 import classnames from "classnames";
-import Inspector from "./components/inspector";
-import PostGridImage from "./components/image";
-
-import WidthToolbar from "./components/width-toolbar";
-import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
-
-const { Component, Fragment } = wp.element;
-
-const { __ } = wp.i18n;
-
-const { decodeEntities } = wp.htmlEntities;
-
-const { Placeholder, Spinner, Toolbar } = wp.components;
-
-const { BlockControls } = wp.editor;
-
-const { applyFilters } = wp.hooks;
 
 export default class Edit extends Component {
 	constructor() {

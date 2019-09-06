@@ -1,15 +1,9 @@
 /**
- * Inspector Controls
+ * WordPress dependencies
  */
-
-// Setup the block
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-
-// Import block components
 const { InspectorControls } = wp.editor;
-
-// Import Inspector components
 const { PanelBody, SelectControl, ToggleControl } = wp.components;
 
 /**

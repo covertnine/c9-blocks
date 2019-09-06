@@ -1,14 +1,16 @@
 /* eslint-disable jsx-a11y/alt-text */
-// External Dependencies.
-import classnames from "classnames";
-
-const { applyFilters } = wp.hooks;
 
 /**
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
 const { RichText } = wp.editor;
+const { applyFilters } = wp.hooks;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Save extends Component {
 	constructor() {

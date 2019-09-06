@@ -1,25 +1,26 @@
-// Import block dependencies and components
+/**
+ * Internal dependencies
+ */
 import Edit from "./edit";
 import Save from "./save";
-
 import attributes from "./attributes";
 
-import Icon from "../../../assets/icon-c9-toggles.svg";
-
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
-// Components
-const { __ } = wp.i18n;
+import Icon from "../../../assets/icon-c9-toggles.svg";
 
+/**
+ * WordPress dependencies
+ */
+const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
-
-// Register block
 const { registerBlockType, createBlock } = wp.blocks;
 
-// Register the block
 registerBlockType("c9-blocks/toggles", {
 	title: __("C9 Toggles", "c9-blocks"),
 	icon: Icon,

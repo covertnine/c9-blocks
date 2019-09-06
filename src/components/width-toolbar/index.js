@@ -4,6 +4,9 @@
 const { __ } = wp.i18n;
 const { Toolbar } = wp.components;
 
+/**
+ * Control Settings
+ */
 const DEFAULT_WIDTH_CONTROLS = [
 	{
 		icon: "align-center",
@@ -22,6 +25,10 @@ const DEFAULT_WIDTH_CONTROLS = [
 	}
 ];
 
+
+/**
+ * Create a Width Toolbar Component
+ */
 export function WidthToolbar({
 	value,
 	onChange,

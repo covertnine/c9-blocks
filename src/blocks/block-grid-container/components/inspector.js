@@ -1,10 +1,8 @@
 /* eslint-disable no-cond-assign */
-/**
- * Internal block libraries
- */
-// import CustomRadio from './custom-radio';
 
-import React from "react";
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
@@ -20,6 +18,11 @@ const {
 	FocalPointPicker,
 	BaseControl
 } = wp.components;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
 
 /**
  * Create an Inspector Controls wrapper Component

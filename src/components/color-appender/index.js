@@ -76,7 +76,7 @@ class ColorAppender extends Component {
 		const editables = [];
 
 		Array.from(this.state.colors).map(curr => {
-			if (undefined !== curr.slug && "c9-palette" === curr.slug.substr(0, 10)) {
+			if (undefined !== curr.slug && "covertnine-palette" === curr.slug.substr(0, 18)) {
 				editables.push(curr);
 			} else {
 				nonEditables.push(curr);
@@ -183,12 +183,12 @@ class ColorAppender extends Component {
 							c9Colors.palette.push({
 								color: "#888888",
 								name: __("Color") + " " + id,
-								slug: "c9-palette-" + id
+								slug: "covertnine-palette-" + id
 							});
 							colors.push({
 								color: "#888888",
 								name: __("Color") + " " + id,
-								slug: "c9-palette-" + id
+								slug: "covertnine-palette-" + id
 							});
 							this.kbColorUniqueID += 1;
 							this.setState({ c9Colors: c9Colors });

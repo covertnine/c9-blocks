@@ -1,21 +1,22 @@
-// Import block dependencies and components
-import classnames from "classnames";
-
+/**
+ * Internal dependencies
+ */
 import Inspector from "./components/inspector";
 import CallToAction from "./components/cta";
-import WidthToolbar from "./components/width-toolbar";
+import WidthToolbar from "../../components/width-toolbar";
 
-// Extend component
+/**
+ * WordPress dependencies
+ */
 const { Component, Fragment } = wp.element;
-
-// Register editor components
 const { AlignmentToolbar, URLInput, BlockControls, RichText } = wp.editor;
-
-// Register components
 const { IconButton, Dashicon, Button } = wp.components;
-
-// Components
 const { __ } = wp.i18n;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Edit extends Component {
 	constructor() {

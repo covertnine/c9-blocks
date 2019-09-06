@@ -4,16 +4,22 @@
 const { __ } = wp.i18n;
 const { Toolbar } = wp.components;
 
-import Icon from "../../../../assets/text-muted-icon";
+import Icon from "../../../../assets/icon-c9-subheading-enable-toolbar-icon";
 
+/**
+ * Control Settings
+ */
 const DEFAULT_ENABLE_CONTROLS = [
 	{
-        icon: Icon,
-        title: __("Enable Subheading", "c9-blocks"),
-        enabled: true
-    }
+		icon: Icon,
+		title: __("Enable Subheading", "c9-blocks"),
+		enabled: true
+	}
 ];
 
+/**
+ * Create an Subheading Toolbar wrapper Component
+ */
 export function SubheadingToolbar({
 	value,
 	onChange,

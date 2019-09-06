@@ -1,17 +1,15 @@
 /**
- * Slide Wrapper
+ * WordPress dependencies
  */
-
-// Setup the block
 const { Component } = wp.element;
-
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
-
 const { InnerBlocks } = wp.editor;
 const { registerBlockType } = wp.blocks;
 
-// Import block dependencies and components
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 
 /**

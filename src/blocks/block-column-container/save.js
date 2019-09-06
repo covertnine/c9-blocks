@@ -1,7 +1,3 @@
-/**
- * External dependencies
- */
-import classnames from "classnames";
 
 /**
  * Internal dependencies
@@ -14,6 +10,10 @@ import Container from "./components/container";
 const { Component } = wp.element;
 const { InnerBlocks } = wp.editor;
 
+/**
+ * External dependencies
+ */
+import classnames from "classnames";
 
 export default class Save extends Component {
 	constructor() {

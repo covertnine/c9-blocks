@@ -1,19 +1,16 @@
 /**
- * Inspector Controls
+ * Internal dependencies
  */
+import HeadingToolbar from "./heading-toolbar";
 
-// Setup the block
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { AlignmentToolbar } = wp.editor;
 const { ContrastChecker } = wp.blockEditor;
-
-import HeadingToolbar from "./heading-toolbar";
-
-// Import block components
 const { InspectorControls, PanelColorSettings } = wp.editor;
-
-// Import Inspector components
 const { PanelBody, SelectControl, ToggleControl } = wp.components;
 
 /**

@@ -2,29 +2,26 @@
  * External dependencies
  */
 import classnames from "classnames";
+import memoize from "memize";
+import map from "lodash/map";
+import _times from "lodash/times";
 
 /**
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
 import Container from "./components/container";
-import WidthToolbar from "./components/width-toolbar";
-import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
-
-import icons from "../../../assets/c9-col-layout-icons";
-import memoize from "memize";
-import map from "lodash/map";
-import _times from "lodash/times";
+import WidthToolbar from "../../components/width-toolbar";
+import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import BlockSelector from "../../components/block-selector";
+import icons from "../../../assets/c9-col-layout-icons";
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-
 const { Tooltip, Placeholder, ButtonGroup, Button } = wp.components;
-
 const { InnerBlocks, BlockControls } = wp.editor;
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];

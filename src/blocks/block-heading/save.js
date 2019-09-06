@@ -1,6 +1,6 @@
-// External Dependencies.
-import classnames from "classnames";
-
+/**
+ * Internal dependencies
+ */
 import CustomHeading from "./components/custom-heading";
 
 /**
@@ -8,6 +8,11 @@ import CustomHeading from "./components/custom-heading";
  */
 const { Component } = wp.element;
 const { RichText } = wp.editor;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Save extends Component {
 	constructor() {

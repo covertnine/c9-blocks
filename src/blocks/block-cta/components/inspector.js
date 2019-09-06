@@ -1,24 +1,20 @@
 /**
- * Inspector Controls
+ * Internal dependencies
  */
-
-import React from "react";
 import SettingsSpacer from "../../../components/settings-spacer";
 
-// Setup the block
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { ContrastChecker } = wp.blockEditor;
-
-// Import block components
 const {
 	InspectorControls,
 	PanelColorSettings,
 	MediaUpload,
 	ColorPalette
 } = wp.editor;
-
-// Import Inspector components
 const {
 	PanelBody,
 	RangeControl,
@@ -28,6 +24,11 @@ const {
 	RadioControl,
 	FocalPointPicker
 } = wp.components;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
 
 /**
  * Create an Inspector Controls wrapper Component

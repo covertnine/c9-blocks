@@ -1,23 +1,23 @@
-// External Dependencies.
-import classnames from "classnames";
-
-// Register editor components
-const { AlignmentToolbar, BlockControls, RichText } = wp.editor;
-
-// Extend component
-const { Fragment } = wp.element;
-
-// Components
+/**
+ * Internal dependencies
+ */
 import CustomHeading from "./components/custom-heading";
 import Inspector from "./components/inspector";
 import HeadingToolbar from "./components/heading-toolbar";
 import SubheadingToolbar from "./components/subheading-toolbar";
-const { __ } = wp.i18n;
 
 /**
  * WordPress dependencies
  */
+const { AlignmentToolbar, BlockControls, RichText } = wp.editor;
+const { Fragment } = wp.element;
+const { __ } = wp.i18n;
 const { Component } = wp.element;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Edit extends Component {
 	constructor() {
@@ -50,7 +50,7 @@ export default class Edit extends Component {
 				weight,
 				overrideStyle,
 				subheading,
-				addSubheading,
+				addSubheading
 			}
 		} = this.props;
 

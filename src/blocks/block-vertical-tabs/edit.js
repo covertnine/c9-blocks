@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import RemoveButton from "./components/remove-button";
+import RemoveButton from "../../components/remove-button";
 import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
 
 /**
@@ -10,18 +10,15 @@ import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-
 const { IconButton, Tooltip } = wp.components;
-
 const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
-
 const { applyFilters } = wp.hooks;
-
 const { withInstanceId } = wp.compose;
-
 const { select, dispatch } = wp.data;
 
-// External Dependencies.
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 import slugify from "slugify";
 
@@ -297,9 +294,7 @@ class Edit extends Component {
 				</div>
 				<style>
 					{`
-                    [data-block="${
-											this.props.clientId
-										}"] > .c9-vertical-tabs > div > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
+                    [data-block="${this.props.clientId}"] > .c9-vertical-tabs > div > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
                         display: block;
                     }
                     `}
