@@ -140,9 +140,18 @@
 	content: '\f067';
 	font-size: 16px;
 	display: block;
-	padding-top: 2px;
 }
 
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-heading[aria-expanded="true"] .fa-angle-right:before {
 	content: '\f068';
+}
+
+@media only screen and (max-width: 568px) {
+	.c9-toggles .c9-toggles-item-heading .c9-toggles-toggle-label {
+		font-size: 2.4rem;
+	}
+
+	.c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-heading .c9-toggles-toggle-label {
+		font-size: 1.8rem;
+	}
 }

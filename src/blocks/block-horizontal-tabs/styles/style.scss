@@ -26,5 +26,15 @@
 	color: #2b2b2b;
 	background-color: #ccc;
 	text-decoration: none;
+}
 
+@media only screen and (max-width: 768px) {
+	.c9-horizontal-tabs>.nav.nav-tabs {
+		flex-wrap: wrap;
+	}
+
+	.c9-horizontal-tabs>.nav.nav-tabs .nav-link {
+		font-size: 1.2rem;
+
+	}
 }
