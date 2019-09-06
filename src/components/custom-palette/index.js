@@ -27,14 +27,23 @@ class CustomPalette extends Component {
 		};
 	}
 
+	/**
+	 * Inits the color and name of color passed in.
+	 */
 	componentDidMount() {
 		this.setState({ color: this.props.colorValue, name: this.props.nameValue });
 	}
 
+	/**
+	 * Enable visibility.
+	 */
 	toggleVisible = () => {
 		this.setState({ isVisible: true });
 	};
 
+	/**
+	 * Disable visibility.
+	 */
 	toggleClose = () => {
 		if (true === this.state.isVisible) {
 			this.setState({ isVisible: false });
@@ -42,6 +51,9 @@ class CustomPalette extends Component {
 		}
 	};
 
+	/**
+	 * Update current color.
+	 */
 	changeColor = value => {
 		this.setState({ color: value });
 	};

@@ -26,6 +26,9 @@ class TemplatesModal extends Component {
 		this.getReusableBlocks();
 	}
 
+	/**
+	 * Retrieves reusable blocks and update state.
+	 */
 	async getReusableBlocks() {
 		const { canUserUseUnfilteredHTML } = this.props;
 
@@ -48,6 +51,14 @@ class TemplatesModal extends Component {
 		});
 	}
 
+	/**
+	 * Returns updated template object based on given new template.
+	 *
+	 * @param {Object} templateObj Original template object with markup.
+	 * @param {boolean} canUserUseUnfilteredHTML Self implied.
+	 *
+	 * @return {Object} Updated template object with markup converted to blocks.
+	 */
 	markupToBlock(templateObj, canUserUseUnfilteredHTML) {
 		let blockObj = Object.assign({}, templateObj);
 		// eslint-disable-next-line no-unused-vars

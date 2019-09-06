@@ -19,6 +19,16 @@ export default class Save extends Component {
 		super(...arguments);
 	}
 
+	/**
+	 * Returns appropriate css class for given type, displayLevel, tagLevel, override values.
+	 *
+	 * @param {string} type Type of text - Heading, Subheading, Text-XL
+	 * @param {number} displayLevel Custom tag level.
+	 * @param {string} tagLevel Base tag level by default.
+	 * @param {boolean} override Toggle between using just the base class or overriding the style.
+	 *
+	 * @return {string} Appropriate css class based on configuration.
+	 */
 	c9TextStyleConfig(type, display, tag, override) {
 		if (!override) {
 			return type.split(" ")[0];

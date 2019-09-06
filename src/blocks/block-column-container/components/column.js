@@ -34,6 +34,7 @@ const Column = props => {
 			name => "c9-blocks/grid" != name && "c9-blocks/column-container" != name
 		);
 
+	// Disable width toolbars for children when inside this block.
 	const disableToolbarTraversal = root => {
 		if (root) {
 			if (

@@ -17,6 +17,32 @@ export default class Save extends Component {
 		super(...arguments);
 	}
 
+	/**
+	 * Returns the indicators layout configuration for a given amount of tabs.
+	 *
+	 * @param {number} slides Amount of indicators to create.
+	 * @param {number} id Instance Id of this carousel block.
+	 *
+	 * @return {Object[]} Indicators layout configuration.
+	 */
+	createIndicators(slides, id) {
+		let indicators = [];
+		for (let i = 0; i < slides; i++) {
+			indicators.push(
+				<li
+					data-target={`#c9-image-carousel-indicator-${id}`}
+					data-slide-to={i}
+					className={0 == i ? "active" : null}
+				/>
+			);
+		}
+
+		return indicators;
+	}
+
+	/**
+	 * Generates the slides using the given images.
+	 */
 	createSlides(slides) {
 		const { url, captionTitle, captionContent } = this.props.attributes;
 
@@ -42,21 +68,6 @@ export default class Save extends Component {
 		}
 
 		return template;
-	}
-
-	createIndicators(slides, id) {
-		let indicators = [];
-		for (let i = 0; i < slides; i++) {
-			indicators.push(
-				<li
-					data-target={`#c9-image-carousel-indicator-${id}`}
-					data-slide-to={i}
-					className={0 == i ? "active" : null}
-				/>
-			);
-		}
-
-		return indicators;
 	}
 
 	render() {

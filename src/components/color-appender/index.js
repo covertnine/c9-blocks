@@ -31,7 +31,7 @@ class ColorAppender extends Component {
 		this.saveConfig = this.saveConfig.bind(this);
 		this.saveC9Colors = this.saveC9Colors.bind(this);
 		this.saveColors = this.saveColors.bind(this);
-		this.kbColorUniqueID = -1;
+		this.c9ColorUniqueID = -1;
 		this.state = {
 			isSaving: false,
 			c9Colors: c9_blocks_params.colors
@@ -43,16 +43,23 @@ class ColorAppender extends Component {
 			colors: ""
 		};
 	}
+
+	/**
+	 * Retrieves base theme colors and initiates the unique id assigner for custom colors.
+	 */
 	componentDidMount() {
 		if (!this.state.colors) {
 			this.setState({ colors: this.props.baseColors });
 		}
 
-		this.kbColorUniqueID = this.state.c9Colors
+		this.c9ColorUniqueID = this.state.c9Colors
 			? this.state.c9Colors.palette.length
 			: 0;
 	}
 
+	/**
+	 * Stores current color configuration to plugin settings.
+	 */
 	saveConfig() {
 		if (false === this.state.isSaving) {
 			this.setState({ isSaving: true });
@@ -68,6 +75,13 @@ class ColorAppender extends Component {
 			});
 		}
 	}
+
+	/**
+	 * Updates the C9 Colors palette.
+	 *
+	 * @param {Object} value Color configuration.
+	 * @param {number} index Location to update.
+	 */
 	saveC9Colors(value, index) {
 		const { c9Colors } = this.state;
 		c9Colors.palette[index] = { ...c9Colors[index], ...value };
@@ -75,12 +89,20 @@ class ColorAppender extends Component {
 			c9Colors
 		});
 	}
+
+	/**
+	 * Updates the overall colors palette.
+	 *
+	 * @param {Object} value Color configuration.
+	 * @param {number} index Location to update.
+	 */
 	saveColors(value, index) {
 		const { colors } = this.state;
 		colors[index] = value;
 
 		this.setState({ colors });
 	}
+
 	render() {
 		const { c9Colors, colors, origColors } = this.state;
 
@@ -88,7 +110,10 @@ class ColorAppender extends Component {
 		const editables = [];
 
 		Array.from(this.state.colors).map(curr => {
-			if (undefined !== curr.slug && "covertnine-palette" === curr.slug.substr(0, 18)) {
+			if (
+				undefined !== curr.slug &&
+				"covertnine-palette" === curr.slug.substr(0, 18)
+			) {
 				editables.push(curr);
 			} else {
 				nonEditables.push(curr);
@@ -160,7 +185,7 @@ class ColorAppender extends Component {
 										onClick={() => {
 											c9Colors.palette.pop();
 											colors.pop();
-											this.kbColorUniqueID -= 1;
+											this.c9ColorUniqueID -= 1;
 											this.setState({ c9Colors: c9Colors });
 											this.setState({ colors: colors });
 											this.saveConfig();
@@ -177,11 +202,6 @@ class ColorAppender extends Component {
 				<div className="c9-colors-add-new">
 					<Button
 						type="button"
-						className={
-							this.state.isSaving
-								? "kb-add-btn-is-saving"
-								: "kb-add-btn-is-active"
-						}
 						isPrimary
 						disabled={this.state.isSaving}
 						onClick={() => {
@@ -191,7 +211,7 @@ class ColorAppender extends Component {
 							if (undefined === c9Colors.palette) {
 								c9Colors.palette = [];
 							}
-							let id = this.kbColorUniqueID;
+							let id = this.c9ColorUniqueID;
 							c9Colors.palette.push({
 								color: "#888888",
 								name: __("Color") + " " + id,
@@ -202,7 +222,7 @@ class ColorAppender extends Component {
 								name: __("Color") + " " + id,
 								slug: "covertnine-palette-" + id
 							});
-							this.kbColorUniqueID += 1;
+							this.c9ColorUniqueID += 1;
 							this.setState({ c9Colors: c9Colors });
 							this.setState({ colors: colors });
 							this.saveConfig();
