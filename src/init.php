@@ -42,6 +42,7 @@ function load_settings() {
 		'c9_blocks_colors',
 		array(
 			'type'              => 'string',
+			'items'             => array(),
 			'description'       => __( 'Config C9 Blocks Color Palette', 'c9-blocks' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'show_in_rest'      => true,
