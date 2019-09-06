@@ -1,14 +1,14 @@
 /**
- * Container Wrapper
+ * Internal dependencies
  */
-
-// Setup the block
-const { Component } = wp.element;
-const { applyFilters } = wp.hooks;
-
-// Import block dependencies and components
 import classnames from "classnames";
 import VideoBox from "./video-box";
+
+/**
+ * WordPress dependencies
+ */
+const { Component } = wp.element;
+const { applyFilters } = wp.hooks;
 
 /**
  * Create a Container wrapper Component
@@ -73,15 +73,7 @@ export default class Container extends Component {
 		return styles;
 	}
 
-	c9BackgroundStyles(
-		url,
-		size,
-		bgX,
-		bgY,
-		repeat,
-		focalPoint,
-		selected = true
-	) {
+	c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint, selected = true) {
 		const styles = {};
 
 		if (focalPoint) {

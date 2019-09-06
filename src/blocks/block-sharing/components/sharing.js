@@ -1,14 +1,13 @@
 /**
- * Sharing Wrapper
+ * WordPress dependencies
  */
-
-// Setup the block
 const { Component } = wp.element;
-
-// Import block dependencies and components
-import classnames from "classnames";
-
 const { applyFilters } = wp.hooks;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 /**
  * Create a ShareLinks wrapper Component

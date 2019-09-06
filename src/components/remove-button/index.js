@@ -1,11 +1,14 @@
-// Import CSS
+/**
+ * WordPress dependencies
+ */
 const { Component } = wp.element;
 const { Path, SVG } = wp.components;
-
 const { __ } = wp.i18n;
-
 const { Button, Popover } = wp.components;
 
+/**
+ * Create an RemoveButton wrapper Component
+ */
 export default class RemoveButton extends Component {
 	constructor() {
 		super(...arguments);

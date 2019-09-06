@@ -2,25 +2,22 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import RemoveButton from "./components/remove-button";
+import RemoveButton from "../../components/remove-button";
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-
 const { IconButton, Tooltip } = wp.components;
-
 const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
-
 const { applyFilters } = wp.hooks;
-
 const { select, dispatch } = wp.data;
-
 const { withInstanceId } = wp.compose;
 
-// External Dependencies.
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 import slugify from "slugify";
 
@@ -294,9 +291,7 @@ class Edit extends Component {
 				</div>
 				<style>
 					{`
-                    [data-block="${
-											this.props.clientId
-										}"] > .c9-horizontal-tabs > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
+                    [data-block="${this.props.clientId}"] > .c9-horizontal-tabs > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
                         display: block;
                     }
                     `}

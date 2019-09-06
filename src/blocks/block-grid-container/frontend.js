@@ -1,4 +1,9 @@
 /* eslint-disable no-undef */
+
+/**
+ * Block Frontend
+ */
+
 function readyYoutube(playerID, videoID) {
 	if (YT && YT.Player) {
 		// eslint-disable-next-line no-unused-vars

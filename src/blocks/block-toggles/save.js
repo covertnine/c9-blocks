@@ -1,15 +1,14 @@
-import classnames from "classnames";
-/**
- * Internal dependencies
- */
-
 /**
  * WordPress dependencies
  */
 const { Component } = wp.element;
 const { applyFilters } = wp.hooks;
-
 const { InnerBlocks } = wp.editor;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Save extends Component {
 	constructor() {

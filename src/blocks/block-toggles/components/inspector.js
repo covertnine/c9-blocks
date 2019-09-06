@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 const { Component } = wp.element;
 const { InspectorControls } = wp.editor;
 

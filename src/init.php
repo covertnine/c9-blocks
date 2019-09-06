@@ -156,10 +156,43 @@ function load_color_palette() {
 				$newpalette = $san_palette;
 			}
 			add_theme_support( 'editor-color-palette', $newpalette );
+			add_action( 'wp_head', 'print_gutenberg_style', 8 );
+			add_action( 'admin_print_styles', 'print_gutenberg_style', 21 );
 		}
 	}
 }
 
+/**
+ * Print Gutenberg Palette Styles
+ */
+function print_gutenberg_style() {
+	if ( is_admin() ) {
+		$screen = get_current_screen();
+		if ( ! $screen || ! $screen->is_block_editor() ) {
+			return;
+		}
+	}
+	$palette = json_decode( get_option( 'c9_blocks_colors' ) );
+	if ( $palette && is_object( $palette ) && isset( $palette->palette ) && is_array( $palette->palette ) ) {
+		$san_palette = array();
+		foreach ( $palette->palette as $item ) {
+			$san_palette[] = array(
+				'color' => $item->color,
+				'name'  => $item->name,
+				'slug'  => $item->slug,
+			);
+		}
+		if ( isset( $san_palette[0] ) ) {
+			echo '<style id="c9_blocks_palette_css" type="text/css">';
+			foreach ( $san_palette as $set ) {
+				$slug  = $set['slug'];
+				$color = $set['color'];
+				echo '.has-' . esc_attr( $slug ) . '-color{color:' . esc_attr( $color ) . '}.has-' . esc_attr( $slug ) . '-background-color{background-color:' . esc_attr( $color ) . '}';
+			}
+			echo '</style>';
+		}
+	}
+}
 add_action( 'after_setup_theme', 'load_color_palette', 999 );
 
 /**

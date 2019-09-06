@@ -1,3 +1,6 @@
+/**
+ * Block Attributes
+ */
 const attributes = {
 	instanceId: {
 		type: "number"

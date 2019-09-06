@@ -1,12 +1,13 @@
 /* eslint-disable no-cond-assign */
-/**
- * Internal block libraries
- */
-// import CustomRadio from './custom-radio';
 
-import React from "react";
-import map from "lodash/map";
+/**
+ * Internal dependencies
+ */
 import icons from "../../../../assets/c9-col-layout-icons";
+
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
@@ -22,6 +23,12 @@ const {
 	ButtonGroup,
 	Tooltip
 } = wp.components;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
+import map from "lodash/map";
 
 /**
  * Create an Inspector Controls wrapper Component

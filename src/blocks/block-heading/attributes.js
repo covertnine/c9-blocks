@@ -1,3 +1,6 @@
+/**
+ * Block Attributes
+ */
 const attributes = {
 	isCollapsed: {
 		type: "boolean",

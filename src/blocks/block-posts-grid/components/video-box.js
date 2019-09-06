@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-/**
- * Internal block libraries
- */
-// import CustomRadio from './custom-radio';
 
-import React from "react";
+/**
+ * WordPress dependencies
+ */
 const { Component } = wp.element;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
 
 /**
  * Create an VideoBox Controls wrapper Component
@@ -160,10 +163,7 @@ export default class VideoBox extends Component {
 								minScreenHeight
 							)}
 						>
-							<source
-								src={`${containerVideoURL}`}
-								type="video/mp4"
-							/>
+							<source src={`${containerVideoURL}`} type="video/mp4" />
 						</video>
 					</div>
 				</div>

@@ -3,25 +3,23 @@
  */
 import Inspector from "./components/inspector";
 
-import React from "react";
-import memoize from "memize";
-import times from "lodash/times";
-
 /**
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
-
 const { InnerBlocks, BlockControls } = wp.editor;
-
 const { applyFilters } = wp.hooks;
-
 const { withInstanceId } = wp.compose;
 
-const ALLOWED_BLOCKS = ["c9-blocks/carousel-slide"];
-
-// External Dependencies.
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
+import React from "react";
+import memoize from "memize";
+import times from "lodash/times";
+
+const ALLOWED_BLOCKS = ["c9-blocks/carousel-slide"];
 
 class Edit extends Component {
 	constructor() {

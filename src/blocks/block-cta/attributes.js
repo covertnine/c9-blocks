@@ -1,4 +1,8 @@
-const blockAttributes = {
+/**
+ * Block Attributes
+ */
+
+const attributes = {
 	type: {
 		type: "string",
 		value: "c9-p"
@@ -137,4 +141,4 @@ const blockAttributes = {
 	}
 };
 
-export default blockAttributes;
+export default attributes;

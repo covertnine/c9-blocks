@@ -47,7 +47,7 @@ It can also be installed manually.
 
 (fill in)
 
-[Get the C9 Blocks theme]()
+[Get the Cortextoo theme]()
 
 **Do I need the new block editor to use C9 Blocks?**
 

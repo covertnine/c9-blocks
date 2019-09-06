@@ -1,24 +1,27 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-// External Dependencies.
-import React from "react";
-import classnames from "classnames";
-
-// Internal Dependencies.
-import RemoveButton from "./remove-button";
+/**
+ * Internal dependencies
+ */
+import RemoveButton from "../../../components/remove-button";
 import toggleOpenIcon from "../../../../assets/toggle-open";
 
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Toolbar } = wp.components;
 const { registerBlockType } = wp.blocks;
-
 const { BlockControls, InnerBlocks, RichText } = wp.editor;
-
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-class ToggleBlock extends Component {
+/**
+ * External Dependencies.
+ */
+import React from "react";
+import classnames from "classnames";
+
+class Toggle extends Component {
 	constructor() {
 		super(...arguments);
 
@@ -141,9 +144,7 @@ class ToggleBlock extends Component {
 								}}
 								ref={this.toggleBtnRef}
 								data-toggle="collapse"
-								data-target={`#c9-toggles-collapse${attributes.toggleNumber}-${
-									attributes.id
-								}`}
+								data-target={`#c9-toggles-collapse${attributes.toggleNumber}-${attributes.id}`}
 							>
 								<span className="fas fa-angle-right" />
 							</button>
@@ -171,9 +172,7 @@ class ToggleBlock extends Component {
 					<div
 						className="c9-toggles-item-content collapse"
 						ref={this.toggleDisplayRef}
-						id={`c9-toggles-collapse${attributes.toggleNumber}-${
-							attributes.id
-						}`}
+						id={`c9-toggles-collapse${attributes.toggleNumber}-${attributes.id}`}
 						data-parent={`#accordion-${attributes.id}`}
 					>
 						<InnerBlocks templateLock={false} />
@@ -239,7 +238,7 @@ registerBlockType("c9-blocks/toggles-toggle", {
 				removeBlock
 			};
 		})
-	])(ToggleBlock),
+	])(Toggle),
 
 	save: function(props) {
 		const {

@@ -1,19 +1,22 @@
+/**
+ * Internal dependencies
+ */
 import Edit from "./edit";
 
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
-// Import Fontawesome Icon
 import Icon from "../../../assets/icon-c9-social-share.svg";
 
-// Components
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
-
-// Register block
 const { registerBlockType } = wp.blocks;
 
-// Register the block
 registerBlockType("c9-blocks/social-share", {
 	title: __("C9 Social Share", "c9-blocks"),
 	icon: Icon,

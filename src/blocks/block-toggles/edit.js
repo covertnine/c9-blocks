@@ -1,5 +1,3 @@
-import classnames from "classnames";
-
 /**
  * Internal dependencies
  */
@@ -15,6 +13,11 @@ const { InnerBlocks, BlockControls } = wp.editor;
 const { applyFilters } = wp.hooks;
 const { IconButton } = wp.components;
 const { withInstanceId } = wp.compose;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 const ALLOWED_BLOCKS = ["c9-blocks/toggles-toggle"];
 
@@ -146,8 +149,7 @@ class Edit extends Component {
 
 		return (
 			<Fragment>
-				<BlockControls key="controls">
-				</BlockControls>
+				<BlockControls key="controls"></BlockControls>
 				<Inspector {...this.props} />
 				<BlockSelector text="Toggles" />
 				<div

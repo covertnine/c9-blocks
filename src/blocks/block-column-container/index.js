@@ -1,24 +1,29 @@
-// Import block dependencies and components
+/**
+ * Internal dependencies
+ */
 import Edit from "./edit";
 import Save from "./save";
-
 import attributes from "./attributes";
-import classnames from "classnames";
 
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
-// Components
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
-
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
-
-// Register block
 const { registerBlockType } = wp.blocks;
 
-// Register the block
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
+
 registerBlockType("c9-blocks/column-container", {
 	title: __("C9 Column Container", "c9-blocks"),
 	icon: "columns",

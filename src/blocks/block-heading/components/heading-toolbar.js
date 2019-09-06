@@ -1,15 +1,18 @@
 /**
- * External dependencies
- */
-import { range } from "lodash";
-
-/**
  * WordPress dependencies
  */
 const { __, sprintf } = wp.i18n;
 const { Component } = wp.element;
 const { Toolbar } = wp.components;
 
+/**
+ * External dependencies
+ */
+import { range } from "lodash";
+
+/**
+ * Create a HeadingToolbar wrapper Component
+ */
 class HeadingToolbar extends Component {
 	createLevelControl(targetLevel, selectedLevel, onChange) {
 		return {

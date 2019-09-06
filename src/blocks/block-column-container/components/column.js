@@ -1,23 +1,25 @@
 /**
+ * Internal dependencies
+ */
+import VerticalAlignmentToolbar from "../../../components/vertical-alignment-toolbar";
+import classnames from "classnames";
+
+/**
  * WordPress dependencies
  */
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
 const { registerBlockType, getBlockTypes } = wp.blocks;
-
-// Register editor components
 const { AlignmentToolbar, BlockControls } = wp.editor;
-
-// Extend component
 const { Fragment } = wp.element;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-import VerticalAlignmentToolbar from "./vertical-align-toolbar";
-import classnames from "classnames";
-
-const Edit = props => {
+/**
+ * Create a Column wrapper Component
+ */
+const Column = props => {
 	const {
 		attributes: { textAlign, verticalAlign },
 		setAttributes,
@@ -138,7 +140,7 @@ registerBlockType("c9-blocks/column", {
 				removeBlock
 			};
 		})
-	])(Edit),
+	])(Column),
 
 	save: props => {
 		const {

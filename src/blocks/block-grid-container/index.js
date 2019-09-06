@@ -1,25 +1,26 @@
-// Import block dependencies and components
+/**
+ * Internal dependencies
+ */
 import Edit from "./edit";
 import Save from "./save";
-
 import attributes from "./attributes";
 
-import Icon from "../../../assets/icon-c9-grid.svg";
-
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
-// Components
-const { __ } = wp.i18n;
+import Icon from "../../../assets/icon-c9-grid.svg";
 
+/**
+ * WordPress dependencies
+ */
+const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
-
-// Register block
 const { registerBlockType } = wp.blocks;
 
-// Register the block
 registerBlockType("c9-blocks/grid", {
 	title: __("C9 Grid", "c9-blocks"),
 	icon: Icon,

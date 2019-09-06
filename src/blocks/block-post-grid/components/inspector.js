@@ -1,20 +1,14 @@
 /**
- * Inspector Controls
+ * Internal dependencies
  */
-
-// Setup the block
-import React from "react";
-const { __ } = wp.i18n;
-const { Component } = wp.element;
-
-import compact from "lodash/compact";
-import map from "lodash/map";
 import SettingsSpacer from "../../../components/settings-spacer";
 
-// Import block components
+/**
+ * WordPress dependencies
+ */
+const { __ } = wp.i18n;
+const { Component } = wp.element;
 const { InspectorControls, ColorPalette } = wp.editor;
-
-// Import Inspector components
 const {
 	PanelBody,
 	QueryControls,
@@ -24,10 +18,15 @@ const {
 	ToggleControl,
 	IconButton
 } = wp.components;
-
 const { addQueryArgs } = wp.url;
-
 const { apiFetch } = wp;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
+import compact from "lodash/compact";
+import map from "lodash/map";
 
 const MAX_POSTS_COLUMNS = 4;
 

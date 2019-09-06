@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
+
 /**
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import React from "react";
 
 /**
  * WordPress dependencies
@@ -16,12 +16,15 @@ const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
 const { IconButton } = wp.components;
 
-const ALLOWED_MEDIA_TYPES = ["image"];
-const DEFAULT_SIZE_SLUG = "large";
-
-// External Dependencies.
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 import { get, pick } from "lodash";
+import React from "react";
+
+const ALLOWED_MEDIA_TYPES = ["image"];
+const DEFAULT_SIZE_SLUG = "large";
 
 class Edit extends Component {
 	constructor({ autoSlide, wrapAround, slideTime }) {

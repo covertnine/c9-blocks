@@ -1,11 +1,11 @@
 /**
- * Container Wrapper
+ * WordPress dependencies
  */
-
-// Setup the block
 const { Component } = wp.element;
 
-// Import block dependencies and components
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 
 /**

@@ -1,3 +1,7 @@
+/**
+ * Block Frontend
+ */
+
 document.addEventListener("DOMContentLoaded", function() {
 	const $ = window.jQuery;
 

@@ -1,28 +1,30 @@
 /**
- * BLOCK: Post and Page Grid
+ * Internal dependencies
  */
-
-import classnames from "classnames";
-
-// Import block dependencies and components
 import Edit from "./edit";
 
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
-// Register block controls
-const { registerBlockType } = wp.blocks;
-
 import Icon from "../../../assets/icon-c9-post-grid.svg";
 
+/**
+ * WordPress dependencies
+ */
+const { registerBlockType } = wp.blocks;
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 import isUndefined from "lodash/isUndefined";
 import pickBy from "lodash/pickBy";
 
-// Register the block
 registerBlockType("c9-blocks/post-grid", {
 	icon: Icon,
 	parent: "c9-blocks/post-container",
