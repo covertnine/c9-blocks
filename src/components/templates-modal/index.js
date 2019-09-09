@@ -1,3 +1,19 @@
+/**
+ * Internal dependencies
+ */
+import startCase from "lodash/startCase";
+import LayoutButton from "./layout-button";
+import SectionButton from "./section-button";
+import TemplateMarkups from "./templates-markup";
+
+/**
+ * Styles
+ */
+import "./editor.scss";
+
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Modal, TabPanel, Tooltip, Icon } = wp.components;
@@ -5,13 +21,6 @@ const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { rawHandler } = wp.blocks;
 const apiFetch = wp.apiFetch;
-import startCase from "lodash/startCase";
-import LayoutButton from "./layout-button";
-import SectionButton from "./section-button";
-import "./editor.scss";
-
-// templates
-import templateMarkups from "./templates-markup";
 
 class TemplatesModal extends Component {
 	constructor() {
@@ -80,12 +89,12 @@ class TemplatesModal extends Component {
 
 		const sections = {
 			// convert markup to actual blocks
-			...this.markupToBlock(templateMarkups.sections, canUserUseUnfilteredHTML)
+			...this.markupToBlock(TemplateMarkups.sections, canUserUseUnfilteredHTML)
 		};
 
 		const layouts = {
 			// convert markup to actual blocks
-			...this.markupToBlock(templateMarkups.layouts, canUserUseUnfilteredHTML)
+			...this.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
 		};
 
 		return (
@@ -144,7 +153,7 @@ class TemplatesModal extends Component {
 										<div className="c9-section-options">
 											{Object.keys(sections).map(k => (
 												<SectionButton
-													icon={templateMarkups.sections[k].icon}
+													icon={TemplateMarkups.sections[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													section={sections[k]}
 												/>
@@ -168,7 +177,7 @@ class TemplatesModal extends Component {
 										<div className="c9-layout-options">
 											{Object.keys(layouts).map(k => (
 												<LayoutButton
-													icon={templateMarkups.layouts[k].icon}
+													icon={TemplateMarkups.layouts[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													layout={layouts[k]}
 												/>

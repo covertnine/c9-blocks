@@ -1,4 +1,3 @@
-
 /**
  * Internal dependencies
  */
@@ -15,20 +14,20 @@ const { Toolbar } = wp.components;
  */
 const DEFAULT_ALIGN_CONTROLS = [
 	{
-        icon: icons.top,
-        title: __("Vertical Align Top", "c9-blocks"),
-        align: "top"
-    },
-    {
-        icon: icons.center,
-        title: __("Vertical Align Middle", "c9-blocks"),
-        align: "center"
-    },
-    {
-        icon: icons.bottom,
-        title: __("Vertical Align Bottom", "c9-blocks"),
-        align: "bottom"
-    }
+		icon: icons.top,
+		title: __("Vertical Align Top", "c9-blocks"),
+		align: "top"
+	},
+	{
+		icon: icons.center,
+		title: __("Vertical Align Middle", "c9-blocks"),
+		align: "center"
+	},
+	{
+		icon: icons.bottom,
+		title: __("Vertical Align Bottom", "c9-blocks"),
+		align: "bottom"
+	}
 ];
 
 /**

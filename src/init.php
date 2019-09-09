@@ -93,63 +93,7 @@ function load_color_palette() {
 				if ( is_array( $theme_palette ) ) {
 					$newpalette = array_merge( reset( $theme_palette ), $san_palette );
 				} else {
-					$default_palette = array(
-						array(
-							'name'  => __( 'Pale pink', 'c9-blocks' ),
-							'slug'  => 'pale-pink',
-							'color' => '#f78da7',
-						),
-						array(
-							'name'  => __( 'Vivid red', 'c9-blocks' ),
-							'slug'  => 'vivid-red',
-							'color' => '#cf2e2e',
-						),
-						array(
-							'name'  => __( 'Luminous vivid orange', 'c9-blocks' ),
-							'slug'  => 'luminous-vivid-orange',
-							'color' => '#ff6900',
-						),
-						array(
-							'name'  => __( 'Luminous vivid amber', 'c9-blocks' ),
-							'slug'  => 'luminous-vivid-amber',
-							'color' => '#fcb900',
-						),
-						array(
-							'name'  => __( 'Light green cyan', 'c9-blocks' ),
-							'slug'  => 'light-green-cyan',
-							'color' => '#7bdcb5',
-						),
-						array(
-							'name'  => __( 'Vivid green cyan', 'c9-blocks' ),
-							'slug'  => 'vivid-green-cyan',
-							'color' => '#00d084',
-						),
-						array(
-							'name'  => __( 'Pale cyan blue', 'c9-blocks' ),
-							'slug'  => 'pale-cyan-blue',
-							'color' => '#8ed1fc',
-						),
-						array(
-							'name'  => __( 'Vivid cyan blue', 'c9-blocks' ),
-							'slug'  => 'vivid-cyan-blue',
-							'color' => '#0693e3',
-						),
-						array(
-							'name'  => __( 'Very light gray', 'c9-blocks' ),
-							'slug'  => 'very-light-gray',
-							'color' => '#eeeeee',
-						),
-						array(
-							'name'  => __( 'Cyan bluish gray', 'c9-blocks' ),
-							'slug'  => 'cyan-bluish-gray',
-							'color' => '#abb8c3',
-						),
-						array(
-							'name'  => __( 'Very dark gray', 'c9-blocks' ),
-							'slug'  => 'very-dark-gray',
-							'color' => '#313131',
-						),
-					);
+					$default_palette = array();
 					$newpalette      = array_merge( $default_palette, $san_palette );
 				}
 			} else {
@@ -247,7 +191,7 @@ function c9_blocks_cgb_editor_assets() {
 	wp_enqueue_script(
 		'c9_blocks-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element' ), // Dependencies, defined above.
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-api' ), // Dependencies, defined above.
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
@@ -256,7 +200,7 @@ function c9_blocks_cgb_editor_assets() {
 	wp_enqueue_script(
 		'c9_blocks-update-category',
 		plugins_url( 'dist/blocks.update-category.build.js', dirname( __FILE__ ) ),
-		array( 'wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element' )
+		array( 'wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-api' )
 	);
 
 	// Add local variables to reference.
