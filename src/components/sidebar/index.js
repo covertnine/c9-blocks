@@ -1,20 +1,26 @@
-const { registerPlugin } = wp.plugins;
-const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-
-const { Fragment } = wp.element;
-
-const { __ } = wp.i18n;
-const { Component } = wp.element;
-
-const { Button, PanelBody, Dashicon } = wp.components;
-
-import "./editor.scss";
-
+/**
+ * Internal dependencies
+ */
 import ColorAppender from "../color-appender";
 import Logo from "../../../assets/c9-feather-logo-gray.svg";
 import { TemplatesModal } from "../templates-modal";
 
-class C9 extends Component {
+/**
+ * Styles
+ */
+import "./editor.scss";
+
+/**
+ * WordPress dependencies
+ */
+const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
+const { Fragment } = wp.element;
+const { __ } = wp.i18n;
+const { Component } = wp.element;
+const { Button, PanelBody, Dashicon } = wp.components;
+
+class Sidebar extends Component {
 	constructor() {
 		super(...arguments);
 
@@ -76,9 +82,7 @@ class C9 extends Component {
 					</PanelBody>
 					<PanelBody>
 						<h5 className="components-base-control__label">
-							<b>
-								Color Palette
-							</b>
+							<b>Color Palette</b>
 						</h5>
 						<ColorAppender />
 					</PanelBody>
@@ -124,5 +128,5 @@ registerPlugin("c9-blocks", {
 			<Logo />
 		</div>
 	),
-	render: C9
+	render: Sidebar
 });

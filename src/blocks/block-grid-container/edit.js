@@ -26,6 +26,10 @@ class Edit extends Component {
 		super(...arguments);
 	}
 
+
+	/**
+	 * Generates the child (row) column container blocks.
+	 */
 	getRowsTemplate = memoize(rows => {
 		return times(rows, () => ["c9-blocks/column-container"]);
 	});

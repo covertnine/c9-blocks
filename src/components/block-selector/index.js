@@ -1,3 +1,6 @@
+/**
+ * Styles
+ */
 import "./editor.scss";
 
 const BlockSelector = ({ text }) => (

@@ -26,10 +26,6 @@ const { InnerBlocks, BlockControls } = wp.editor;
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
-const getLayoutTemplate = memoize(columns => {
-	return _times(columns, () => ["c9-blocks/column"]);
-});
-
 export default class Edit extends Component {
 	constructor() {
 		super(...arguments);
@@ -38,6 +34,13 @@ export default class Edit extends Component {
 			pickLayout: true
 		};
 	}
+
+	/**
+	 * Generates the child column blocks.
+	 */
+	getLayoutTemplate = memoize(columns => {
+		return _times(columns, () => ["c9-blocks/column"]);
+	});
 
 	render() {
 		const {
@@ -208,7 +211,7 @@ export default class Edit extends Component {
 						}}
 					>
 						<InnerBlocks
-							template={getLayoutTemplate(columns)}
+							template={this.getLayoutTemplate(columns)}
 							templateLock="all"
 							allowedBlocks={ALLOWED_BLOCKS}
 						/>

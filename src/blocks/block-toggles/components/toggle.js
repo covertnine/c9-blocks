@@ -29,6 +29,10 @@ class Toggle extends Component {
 		this.toggleDisplayRef = React.createRef();
 	}
 
+
+	/**
+	 * If this is last remaining toggle, remove the parent block as well.
+	 */
 	componentWillUnmount() {
 		const { clientId } = this.props;
 		const $ = window.jQuery;
@@ -49,6 +53,10 @@ class Toggle extends Component {
 		}
 	}
 
+
+	/**
+	 * Retrieves the parent block.
+	 */
 	getParentToggle(rootBlock) {
 		const { block } = this.props;
 

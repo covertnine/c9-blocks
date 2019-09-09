@@ -20,6 +20,10 @@ class Slide extends Component {
 		super(...arguments);
 	}
 
+
+	/**
+	 * Checks if component needs to re-render, only re-renders when slide count has changed.
+	 */
 	shouldComponentUpdate(nextProps) {
 		if (
 			this.props.attributes.slideActive !== nextProps.attributes.slideActive &&

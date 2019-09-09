@@ -1,12 +1,11 @@
 /**
- * Internal dependencies
+ * WordPress dependencies
  */
 const { updateCategory } = wp.blocks;
 
 /**
  * Icon
  */
-
 import Icon from "../assets/c9-feather-logo-icon";
 
 if (updateCategory) {

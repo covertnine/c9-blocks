@@ -15,6 +15,14 @@ export default class Save extends Component {
 		super(...arguments);
 	}
 
+	/**
+	 * Returns the indicators layout configuration for a given amount of tabs.
+	 *
+	 * @param {number} slides Amount of indicators to create.
+	 * @param {number} id Instance Id of this carousel block.
+	 *
+	 * @return {Object[]} Indicators layout configuration.
+	 */
 	createIndicators(slides, id) {
 		let indicators = [];
 		for (let i = 0; i < slides; i++) {
