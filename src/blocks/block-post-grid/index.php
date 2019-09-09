@@ -278,7 +278,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 			$section_title,
 			esc_attr( $grid_class ),
 			$post_grid_markup,
-			c9_bg_styles( $attributes['bgColor'], $attributes['bgOpacity'] )
+			isset( $attributes['bgColor'] ) ? c9_bg_styles( $attributes['bgColor'], $attributes['bgOpacity'] ) : ''
 		);
 		return $block_content;
 	}

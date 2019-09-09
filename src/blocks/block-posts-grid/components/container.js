@@ -161,9 +161,9 @@ export default class Container extends Component {
 					applyFilters("c9-blocks.blocks.className", className),
 					this.c9SpacingConfig(containerPadding, containerMargin),
 					bgImgAttach ? "c9-fixed" : "c9-scroll",
-					containerImgURL ? "c9-grid-has-background" : null,
+					containerImgURL ? "c9-posts-grid-has-background" : null,
 					(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
-						? "c9-grid-has-video"
+						? "c9-posts-grid-has-video"
 						: null
 				)}
 				style={this.c9ContainerStyles(

@@ -71,17 +71,21 @@
 	align-items: flex-start;
 }
 
-.c9-post-container>.editor-inner-blocks {
+.c9-posts-grid > .editor-inner-blocks {
 	height: 100%;
 
-	>.editor-block-list__layout {
+	> .editor-block-list__layout {
 		display: grid;
 		height: 100%;
 	}
 }
 
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control:last-child,
-.edit-post-settings-sidebar__panel-block .components-panel__body .components-base-control {
+.edit-post-settings-sidebar__panel-block
+	.components-panel__body
+	.components-base-control:last-child,
+.edit-post-settings-sidebar__panel-block
+	.components-panel__body
+	.components-base-control {
 	margin: 0;
 }
 
@@ -119,18 +123,23 @@
 }
 
 /* backend video background specifics to account for aspect ratio issues with editor */
-.editor-styles-wrapper .c9-post-container-has-video>.c9-video-container>.c9-embed-container {
+.editor-styles-wrapper
+	.c9-posts-grid-has-video
+	> .c9-video-container
+	> .c9-embed-container {
 	width: 300%;
 	left: -100%;
 }
 
-.editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container.c9-post-container-has-video {
+.editor-styles-wrapper
+	.wp-block[data-type="c9-blocks/posts-grid"]
+	.c9-posts-grid.c9-posts-grid-has-video {
 	overflow: hidden;
 }
 
 /****************************************************************************************/
 /***************************** C9 Container block edits for backend only
-/****************************************************************************************/
+ /****************************************************************************************/
 
 .container .row .editor-inner-blocks,
 .container-fluid .row .editor-inner-blocks,
@@ -138,18 +147,30 @@
 	width: 100%;
 }
 
-.container .row>.editor-inner-blocks>.editor-block-list__layout,
-.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout,
-.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout {
+.container .row > .editor-inner-blocks > .editor-block-list__layout,
+.container-narrow .row > .editor-inner-blocks > .editor-block-list__layout,
+.container-fluid .row > .editor-inner-blocks > .editor-block-list__layout {
 	width: 100%;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
-.container .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
-.container-narrow .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
-.container-fluid .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block {
+.container
+	.row
+	> .editor-inner-blocks
+	> .editor-block-list__layout
+	.editor-block-list__block,
+.container-narrow
+	.row
+	> .editor-inner-blocks
+	> .editor-block-list__layout
+	.editor-block-list__block,
+.container-fluid
+	.row
+	> .editor-inner-blocks
+	> .editor-block-list__layout
+	.editor-block-list__block {
 	-webkit-box-flex: 1;
 	-ms-flex-positive: 1;
 	flex-grow: 1;
@@ -157,209 +178,318 @@
 	flex-basis: 0px;
 }
 
-.wp-block[data-type="c9-blocks/post-container"] .editor-inner-blocks {
+/*c9 post container innerblocks set to full width + innerblock full width */
+.wp-block[data-type="c9-blocks/posts-grid"] .editor-inner-blocks {
 	width: 100%;
 	z-index: 10;
 	position: relative;
 }
 
-// @media (min-width: 1px) {
+// set width of editor screen and a max width
+.edit-post-layout__content .editor-styles-wrapper {
+	width: 94%;
+}
 
-// 	//set the alignfull width to be 100vw width since sidebars are hidden
-// 	.c9-post-container .editor-block-list__block.wp-block[data-align=full] {
-// 		width: 100%;
-// 		max-width: 100vw;
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
+// set a z-index for multiple row grids to account for negative margins of editor containers and higher z-index of alignfull/wide
+body
+	.edit-post-layout
+	.editor-styles-wrapper
+	.c9-posts-grid
+	.container-fluid.wp-block[data-align="full"]:not(:first-child),
+body
+	.edit-post-layout
+	.editor-styles-wrapper
+	.c9-posts-grid
+	.container.wp-block[data-lign="wide"]:not(:first-child),
+body
+	.edit-post-layout
+	.editor-styles-wrapper
+	.c9-posts-grid
+	.container:not(:first-child),
+body
+	.edit-post-layout
+	.editor-styles-wrapper
+	.c9-posts-grid
+	.container-narrow:not(:first-child) {
+	z-index: 22;
+}
 
-// 	/* sets default width of column container in grid when no width setting has been applied yet*/
-// 	.c9-post-container [data-type="c9-blocks/post-grid"] {
-// 		width: 100%;
-// 		max-width: 1110px;
-// 	}
-// }
+@media only screen and (min-width: 576px) {
+	// move the custom mover to the top so its not hidden
+	body
+		.edit-post-layout
+		.editor-block-list__layout
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		> .editor-block-mover {
+		top: -44px;
+		left: auto;
+		right: 0px;
+		width: 86px;
+		height: 24px;
+		opacity: 1;
+	}
+}
 
-// @media only screen and (min-width: 576px) {
+@media only screen and (min-width: 600px) {
+	//setting the outer .c9-posts-grid container width for the main blocks window when all admin sidebars are hidden or collapsed
+	body
+		.edit-post-layout
+		.editor-block-list__layout
+		.wp-block[data-type="c9-blocks/posts-grid"] {
+		width: 100%;
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
 
-// 	.c9-post-container .editor-block-list__block.wp-block[data-align=wide] {
-// 		width: 100%;
-// 		max-width: 1200px;
-// 		margin: 0px auto;
-// 		padding-left: 0px;
-// 		padding-right: 0px;
-// 	}
+	body
+		.edit-post-layout
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.c9-posts-grid
+		.container-narrow {
+		width: 960px;
+		max-width: 960px;
+	}
+}
 
-// 	//set the alignfull width to be the editable area within gutenberg removing widths of both admin bar and document settings since they are hidden below 600px
-// 	.c9-post-container .editor-block-list__block.wp-block[data-align=full] {
-// 		width: 100%;
-// 		max-width: 100vw; //subtract the width of the document options sidebar
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 		padding-left: 0px;
-// 		padding-right: 0px;
-// 	}
+@media only screen and (min-width: 1200px) {
+	//max width of inner containers is 100% of the available space of the .c9-posts-grid
+	body
+		.edit-post-layout.is-sidebar-opened
+		.editory-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.c9-posts-grid
+		> .block-editor-inner-blocks,
+	body
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editory-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.c9-posts-grid
+		> .block-editor-inner-blocks {
+		max-width: 100%;
+	}
 
-// 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin side bar
-// 	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
-// 		width: 100%;
-// 		max-width: calc(100vw - 440px); //subtract the width of the document options sidebar
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
+	// Admin open. Inspector closed.
+	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"],
+	 // Admin open. Inspector open.
+	 body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"],
+	 // Admin closed. Inspector open.
+	 body.folded .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"],
+	 // Admin closed. Inspector closed.
+	 body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] {
+		max-width: 100%;
+		width: 100%;
+	}
 
-// 	//set the alignfull width to be the editable area within gutenberg removing width of the document settings sidebar + admin folded side bar
-// 	body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
-// 		width: 100%;
-// 		max-width: calc(100vw - 316px); //subtract the width of the document options sidebar
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
+	// Narrow container width with all 4 editing screen variations
+	body:not(.folded)
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow,
+	body:not(.folded)
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow,
+	body.folded
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow,
+	body.folded
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow {
+		width: 100%;
+		max-width: 960px;
+	}
 
-// 	//set the alignfull width to be the editable area within gutenberg removing width of the admin side bar
-// 	body:not(.folded) .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
-// 		width: 100%;
-// 		max-width: calc(100vw - 160px); //subtract the width of the document options sidebar
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
+	body:not(.folded)
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container,
+	body.folded
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container {
+		max-width: 100%;
+		width: 1140px;
+	}
 
-// 	//set the alignfull width to be the editable area within gutenberg removing width of the admin folded side bar
-// 	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
-// 		width: 100%;
-// 		max-width: calc(100vw - 36px); //subtract the width of the document options sidebar
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
+	body:not(.folded)
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container,
+	body.folded
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container {
+		width: 100%;
+	}
 
-// 	// move the custom mover to the top so its not hidden
-// 	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"]>.editor-block-mover {
-// 		top: -44px;
-// 		left: auto;
-// 		right: 0px;
-// 		width: 86px;
-// 		height: 24px;
-// 		opacity: 1;
-// 	}
+	body:not(.folded)
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container[data-align="wide"],
+	body.folded
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container[data-align="wide"] {
+		width: 1200px;
+		max-width: 100%;
+	}
 
-// }
+	body:not(.folded)
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container[data-align="wide"],
+	body.folded
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container[data-align="wide"] {
+		width: 100%;
+	}
 
-// @media only screen and (min-width: 600px) {
+	// Admin open. Inspector open.
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"],
+	 // Admin open. Inspector closed.
+	 body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"],
+	 // Admin closed. Inspector closed.
+	 body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"],
+	 // Admin closed. Inspector open.
+	 body.folded .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"] {
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-// 	.container-narrow.block-editor-block-list__block>.block-editor-block-list__block-edit,
-// 	.container.block-editor-block-list__block>.block-editor-block-list__block-edit,
-// 	.container.block-editor-block-list__block[data-align="wide"]>.block-editor-block-list__block-edit,
-// 	.container-fluid.block-editor-block-list__block>.block-editor-block-list__block-edit {
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
+	// Admin open. Inspector open.
+	body:not(.folded)
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-fluid[data-align="full"] {
+		width: 100%;
+	}
 
-// 	.container-fluid.block-editor-block-list__block>.block-editor-block-list__block-edit .block-editor-block-list__block .block-editor-block-list__block-edit {
-// 		margin-left: -28px;
-// 		margin-right: -28px
-// 	}
+	// Admin closed. Inspector open.
+	body.folded
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-fluid[data-align="full"] {
+		max-width: none;
+		width: 100%;
+	}
 
-// }
+	// Admin open. Inspector closed.
+	body:not(.folded)
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-fluid[data-align="full"] {
+		max-width: none;
+		width: 100%;
+	}
 
-// @media only screen and (min-width: 1200px) {
+	// Admin closed. Inspector closed.
+	body.folded
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-fluid[data-align="full"] {
+		max-width: none;
+		width: 100%;
+	}
 
-// 	// .editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .container-narrow,
-// 	// body:not(.folded) .edit-post-layout.is-sidebar-opened .c9-post-container>.editor-inner-blocks>.block-editor-block-list__layout>.container-narrow,
-// 	// body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block.container-narrow[data-type="c9-blocks/post-grid"] .container-narrow,
-// 	// body:not(.folded) .edit-post-layout.is-sidebar-opened .container-narrow {
-// 	// 	width: 100%;
-// 	// 	margin-left: auto;
-// 	// 	margin-right: auto;
-// 	// 	max-width: 960px;
-// 	// 	padding-left: 43px;
-// 	// 	padding-right: 43px;
-// 	// }
+	body
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.c9-posts-grid
+		.container-fluid.wp-block[data-align="full"]
+		> .block-editor-block-list__block-edit,
+	body
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.c9-posts-grid
+		.container-fluid.wp-block[data-align="full"]:only-child
+		> .block-editor-block-list__block-edit {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+}
 
-// 	// body .edit-post-layout .c9-post-container .container,
-// 	// body:not(.folded) .edit-post-layout .container,
-// 	// body:not(.folded) .edit-post-layout.is-sidebar-opened .container,
-// 	// .edit-styles-wrapper [data-type="c9-blocks/post-container"] .c9-post-container .container {
-// 	// 	width: 100%;
-// 	// 	margin-left: auto;
-// 	// 	margin-right: auto;
-// 	// 	max-width: 1110px;
-// 	// 	padding-left: 43px;
-// 	// 	padding-right: 43px;
-// 	// }
+@media only screen and (min-width: 1500px) {
+	.c9-posts-grid > .editor-inner-blocks > .editor-block-list__layout {
+		justify-content: center;
+	}
 
-// 	// body .edit-post-layout .c9-post-container .container[data-align="wide"],
-// 	// body:not(.folded) .edit-post-layout .container.alignwide,
-// 	// body:not(.folded) .edit-post-layout .container[data-align="wide"],
-// 	// body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
-// 	// 	margin-left: auto;
-// 	// 	margin-right: auto;
-// 	// 	padding-left: 43px;
-// 	// 	padding-right: 43px;
-// 	// 	width: 94%;
-// 	// 	max-width: 1200px;
-// 	// }
+	// Narrow container width with all 4 editing screen variations
+	body:not(.folded)
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow,
+	body:not(.folded)
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow,
+	body.folded
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow,
+	body.folded
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container-narrow {
+		width: 100%;
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-// 	// body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container .container[data-align="wide"] {
-// 	// 	max-width: 1200px;
-// 	// 	width: 100%;
-// 	// }
+	body:not(.folded)
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container,
+	body.folded
+		.edit-post-layout:not(.is-sidebar-opened)
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container {
+		max-width: 100%;
+		width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-// 	// //max width of outer grid is 100% on larger screens
-// 	// body .edit-post-layout.is-sidebar-opened .editor-block-list__layout .wp-block[data-type="c9-blocks/post-container"] {
-// 	// 	max-width: 100%;
-// 	// 	width: 100%;
-// 	// }
+	body:not(.folded)
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container,
+	body.folded
+		.edit-post-layout.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type="c9-blocks/posts-grid"]
+		.container {
+		width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 
-// 	// //max width of inner containers is 100% of the available space of the .c9-grid
-// 	// .edit-post-layout.is-sidebar-opened .editory-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container>.block-editor-inner-blocks {
-// 	// 	max-width: 100%;
-// 	// }
-
-
-// 	// body:not(.folded) .edit-post-layout .container-fluid.alignfull,
-// 	// body:not(.folded) .edit-post-layout .container-fluid[data-align="full"],
-// 	// body .edit-post-layout .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"],
-// 	// body .edit-post-layout .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"]:only-child .container-fluid {
-// 	// 	margin-left: auto;
-// 	// 	margin-right: auto;
-// 	// 	max-width: calc((100vw - 208px) - 6%);
-// 	// 	width: 100%;
-// 	// 	padding-left: 86px;
-// 	// 	padding-right: 86px;
-// 	// }
-
-// 	// body .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"],
-// 	// body .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"]:only-child {
-// 	// 	width: 100%;
-// 	// 	margin-left: 0px;
-// 	// 	margin-right: 0px;
-// 	// 	max-width: calc((100vw - 36px) - 6%);
-// 	// }
-
-// 	// body .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"]>.block-editor-block-list__block-edit,
-// 	// body .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .c9-post-container .container-fluid.wp-block[data-align="full"]:only-child>.block-editor-block-list__block-edit {
-// 	// 	margin-left: 30px;
-// 	// 	margin-right: 30px;
-// 	// }
-
-// 	// //if inspector is open, alignwide/alignfull only go to a max width of available space
-// 	// body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container .container[data-align="wide"],
-// 	// body .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/post-container"] .c9-post-container .container-fluid.wp-block[data-align="full"] {
-// 	// 	margin-left: 0px;
-// 	// 	margin-right: 0px;
-// 	// 	padding-left: 86px;
-// 	// 	padding-right: 86px;
-// 	// 	max-width: calc((100vw - 316px) - 6%);
-// 	// 	width: 100%;
-// 	// }
-
-// }
-
-// @media only screen and (min-width: 1500px) {
-// 	.editor-styles-wrapper .wp-block[data-type="c9-blocks/post-grids"] .wp-block[data-type="core/columns"][data-align="wide"] {
-// 		max-width: 1200px;
-// 		width: 1200px;
-// 	}
-// }
-
-// /****************************************************************************************/
+/****************************************************************************************/
