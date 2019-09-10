@@ -6,6 +6,7 @@
 .c9-block-post-grid {
 	margin: 0 0 1.2em 0;
 	position: relative;
+	z-index: 7;
 
 	&.c9-is-vertically-aligned-top {
 		align-self: flex-start;

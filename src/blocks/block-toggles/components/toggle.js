@@ -29,7 +29,6 @@ class Toggle extends Component {
 		this.toggleDisplayRef = React.createRef();
 	}
 
-
 	/**
 	 * If this is last remaining toggle, remove the parent block as well.
 	 */
@@ -52,7 +51,6 @@ class Toggle extends Component {
 			}
 		}
 	}
-
 
 	/**
 	 * Retrieves the parent block.
@@ -183,7 +181,9 @@ class Toggle extends Component {
 						id={`c9-toggles-collapse${attributes.toggleNumber}-${attributes.id}`}
 						data-parent={`#accordion-${attributes.id}`}
 					>
-						<InnerBlocks templateLock={false} />
+						<div>
+							<InnerBlocks templateLock={false} />
+						</div>
 					</div>
 				</div>
 			</Fragment>
@@ -277,7 +277,9 @@ registerBlockType("c9-blocks/toggles-toggle", {
 					id={`c9-toggles-collapse${toggleNumber}-${id}`}
 					data-parent={`#accordion-${id}`}
 				>
-					<InnerBlocks.Content />
+					<div>
+						<InnerBlocks.Content />
+					</div>
 				</div>
 			</div>
 		);
