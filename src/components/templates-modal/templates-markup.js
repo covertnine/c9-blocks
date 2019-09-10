@@ -30,15 +30,23 @@ import testimonialCentered from "./section-templates/testimonial-centered";
 import videoBackgroundPageTitle from "./section-templates/video-background-page-title";
 
 // pages
-import restaurantMenuLandingPage from "./page-templates/restaurant-menu-landing-page";
-import serviceLandingPage from "./page-templates/service-landing-page";
-import testBlocks from "./page-templates/test-blocks";
+import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
+import landingPageAbout from "./page-templates/landing-page-about-corporate";
+import landingPageEvent from "./page-templates/landing-page-event";
+import landingPageLaunchRelease from "./page-templates/landing-page-launch-release";
+import landingPageMedia from "./page-templates/landing-page-media";
+import landingPagePriceMenu from "./page-templates/landing-page-price-menu";
+import landingPageService from "./page-templates/landing-page-service";
 
 const templateMarkups = {
 	layouts: {
-		restaurantMenuLandingPage,
-		serviceLandingPage,
-		testBlocks
+		landingPageAboutCorporate,
+		landingPageAbout,
+		landingPageEvent,
+		landingPageLaunchRelease,
+		landingPageMedia,
+		landingPagePriceMenu,
+		landingPageService
 	},
 	sections: {
 		threeColStreamingAudioAlbums,
