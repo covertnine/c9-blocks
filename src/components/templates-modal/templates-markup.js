@@ -40,11 +40,11 @@ import landingPageService from "./page-templates/landing-page-service";
 
 const templateMarkups = {
 	layouts: {
-		landingPageAboutCorporate,
-		landingPageAbout,
+		// landingPageAboutCorporate,
+		// landingPageAbout,
 		landingPageEvent,
 		landingPageLaunchRelease,
-		landingPageMedia,
+		// landingPageMedia,
 		landingPagePriceMenu,
 		landingPageService
 	},

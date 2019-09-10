@@ -29,6 +29,10 @@ class Sidebar extends Component {
 		};
 	}
 
+	closeMenu = () => {
+		this.setState({ isModalOpen: false });
+	};
+
 	render() {
 		const { isModalOpen } = this.state;
 
@@ -89,6 +93,7 @@ class Sidebar extends Component {
 				</PluginSidebar>
 				{"section-templates" === isModalOpen ? (
 					<TemplatesModal
+						close={this.closeMenu}
 						title="Templates"
 						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
@@ -99,6 +104,7 @@ class Sidebar extends Component {
 				)}
 				{"page-templates" === isModalOpen ? (
 					<TemplatesModal
+						close={this.closeMenu}
 						title="Templates"
 						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
@@ -109,6 +115,7 @@ class Sidebar extends Component {
 				)}
 				{"saved-blocks" === isModalOpen ? (
 					<TemplatesModal
+						close={this.closeMenu}
 						title="Templates"
 						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}

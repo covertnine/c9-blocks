@@ -153,6 +153,7 @@ class TemplatesModal extends Component {
 										<div className="c9-section-options">
 											{Object.keys(sections).map(k => (
 												<SectionButton
+													close={this.props.close}
 													icon={TemplateMarkups.sections[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													section={sections[k]}
@@ -177,6 +178,7 @@ class TemplatesModal extends Component {
 										<div className="c9-layout-options">
 											{Object.keys(layouts).map(k => (
 												<LayoutButton
+													close={this.props.close}
 													icon={TemplateMarkups.layouts[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													layout={layouts[k]}
