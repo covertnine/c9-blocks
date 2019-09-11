@@ -1,12 +1,13 @@
 const { Icon } = wp.components;
 const { withDispatch } = wp.data;
 
-const LayoutButton = ({ label, icon, layout, resetBlocks, insertBlocks }) => {
+const LayoutButton = ({ label, icon, layout, resetBlocks, insertBlocks, close }) => {
 	return (
 		<button
 			onClick={() => {
                 resetBlocks([]);
-                insertBlocks(layout);
+				insertBlocks(layout);
+				close();
 			}}
 		>
 			<Icon icon={icon} />
