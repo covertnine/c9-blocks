@@ -1,18 +1,26 @@
-const { registerPlugin } = wp.plugins;
-const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-
-const { Fragment } = wp.element;
-
-const { __ } = wp.i18n;
-const { Component } = wp.element;
-
-const { Button, PanelBody, Dashicon } = wp.components;
-
-import "./editor.scss";
+/**
+ * Internal dependencies
+ */
+import ColorAppender from "../color-appender";
 import Logo from "../../../assets/c9-feather-logo-gray.svg";
 import { TemplatesModal } from "../templates-modal";
 
-class C9 extends Component {
+/**
+ * Styles
+ */
+import "./editor.scss";
+
+/**
+ * WordPress dependencies
+ */
+const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
+const { Fragment } = wp.element;
+const { __ } = wp.i18n;
+const { Component } = wp.element;
+const { Button, PanelBody, Dashicon } = wp.components;
+
+class Sidebar extends Component {
 	constructor() {
 		super(...arguments);
 
@@ -20,6 +28,10 @@ class C9 extends Component {
 			isModalOpen: false
 		};
 	}
+
+	closeMenu = () => {
+		this.setState({ isModalOpen: false });
+	};
 
 	render() {
 		const { isModalOpen } = this.state;
@@ -43,55 +55,75 @@ class C9 extends Component {
 							isDefault
 							isLarge
 							onClick={() => {
-								this.setState({ isModalOpen: "templates" });
+								this.setState({ isModalOpen: "section-templates" });
 							}}
 						>
 							<span className="dashicons dashicons-schedule" />
-							{__("Templates", "c9-blocks")}
+							{__("Section Templates", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
 							isDefault
 							isLarge
 							onClick={() => {
-								this.setState({ isModalOpen: "custom-code" });
+								this.setState({ isModalOpen: "page-templates" });
 							}}
 						>
 							<span className="dashicons dashicons-editor-code" />
-							{__("CSS & JavaScript", "c9-blocks")}
+							{__("Page Templates", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
 							isDefault
 							isLarge
 							onClick={() => {
-								this.setState({ isModalOpen: "customizer" });
+								this.setState({ isModalOpen: "saved-blocks" });
 							}}
 						>
 							<span className="dashicons dashicons-admin-settings" />
-							{__("Customizer", "c9-blocks")}
+							{__("Saved Blocks", "c9-blocks")}
 						</Button>
 					</PanelBody>
+					<PanelBody>
+						<h5 className="components-base-control__label">
+							<b>Color Palette</b>
+						</h5>
+						<ColorAppender />
+					</PanelBody>
 				</PluginSidebar>
-				{"templates" === isModalOpen ? (
+				{"section-templates" === isModalOpen ? (
 					<TemplatesModal
+						close={this.closeMenu}
 						title="Templates"
-						icon={<Dashicon icon={"schedule"}/>}
+						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
+						initial="sections"
 					/>
 				) : (
 					""
 				)}
-				{/* { 'custom-code' === isModalOpen ? (
-                    <CustomCodeModal
-                        onRequestClose={ () => this.setState( { isModalOpen: false } ) }
-                    />
-                ) : '' }
-                { 'customizer' === isModalOpen ? (
-                    <CustomizerModal
-                        onRequestClose={ () => this.setState( { isModalOpen: false } ) }
-                    />
-                ) : '' } */}
+				{"page-templates" === isModalOpen ? (
+					<TemplatesModal
+						close={this.closeMenu}
+						title="Templates"
+						icon={<Dashicon icon={"schedule"} />}
+						onRequestClose={() => this.setState({ isModalOpen: false })}
+						initial="pages"
+					/>
+				) : (
+					""
+				)}
+				{"saved-blocks" === isModalOpen ? (
+					<TemplatesModal
+						close={this.closeMenu}
+						title="Templates"
+						icon={<Dashicon icon={"schedule"} />}
+						onRequestClose={() => this.setState({ isModalOpen: false })}
+						initial="blocks"
+					/>
+				) : (
+					""
+				)}
 			</Fragment>
 		);
 	}
@@ -103,5 +135,5 @@ registerPlugin("c9-blocks", {
 			<Logo />
 		</div>
 	),
-	render: C9
+	render: Sidebar
 });

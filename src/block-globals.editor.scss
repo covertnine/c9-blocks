@@ -76,7 +76,7 @@
 }
 
 .block-editor-block-list__block>.block-editor-block-list__insertion-point {
-	z-index: 12;
+	z-index: 18;
 	height: 22px;
 	top: 0px;
 }
@@ -105,6 +105,10 @@
 		z-index: 20;
 	}
 
+	.block-editor-block-list__block.is-selected .block-editor-block-list__block-edit {
+		z-index: 26;
+	}
+
 	.editor-block-list__side-inserter.block-editor-block-list__side-inserter {
 		z-index: 21;
 		position: relative;
@@ -114,11 +118,9 @@
 		z-index: 22;
 	}
 
-	.block-editor-block-list__block .block-editor-block-contextual-toolbar {
-		z-index: 18;
-	}
-
 	/* moving add block inserter inwards a bit because it hides behind menu otherwise */
+	.block-editor-block-list__empty-block-inserter,
+	.block-editor-default-block-appender .block-editor-inserter,
 	.post-type-page .block-editor-block-list__empty-block-inserter {
 		left: -17px;
 	}
@@ -127,6 +129,11 @@
 /****************************************************************************************/
 /* Main column width settings */
 /****************************************************************************************/
+// set width of editor screen and a max width
+.edit-post-layout__content .editor-styles-wrapper {
+	width: 94%;
+	margin: 0px auto;
+}
 
 .editor-styles-wrapper .editor-default-block-appender,
 .editor-styles-wrapper .editor-post-title,
@@ -137,6 +144,7 @@
 .wp-block[data-type="core/button"],
 .wp-block[data-type="core/columns"],
 .wp-block[data-type="core/image"] {
+	width: 100%;
 	max-width: 1140px;
 }
 
@@ -161,9 +169,6 @@
 		margin: 0px auto;
 	}
 
-	.editor-styles-wrapper .editor-block-list__block[data-align="full"] {
-		max-width: 100vw;
-	}
 }
 
 @media only screen and (min-width: 992px) {
@@ -172,7 +177,7 @@
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="c9-blocks/grid"],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="full"],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align="wide"] {
-		max-width: 94%;
+		max-width: 100%;
 		overflow: visible;
 	}
 

@@ -1,19 +1,32 @@
-// Import block dependencies and components
-import classnames from "classnames";
-
+/**
+ * Internal dependencies
+ */
 import CallToAction from "./components/cta";
 
-// Extend component
+/**
+ * WordPress dependencies
+ */
 const { Component } = wp.element;
-
-// Register editor components
 const { RichText } = wp.editor;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Save extends Component {
 	constructor() {
 		super(...arguments);
 	}
 
+	/**
+	 * Returns appropriate css class for given width and text/button option.
+	 *
+	 * @param {string} ctaWidth Wideness of given field.
+	 * @param {string} textOrButton Choice of text or button.
+	 *
+	 * @return {string} Appropriate css class based on configuration.
+	 */
 	layoutClass(ctaWidth, textOrButton) {
 		if ("two-thirds" == ctaWidth) {
 			if ("text" == textOrButton) {
@@ -26,12 +39,6 @@ export default class Save extends Component {
 			}
 			return "col-md-3";
 		}
-	}
-
-	dimRatioToClass(ratio) {
-		return 0 === ratio || 50 === ratio
-			? null
-			: "has-background-dim-" + 10 * Math.round(ratio / 10);
 	}
 
 	render() {
@@ -49,7 +56,6 @@ export default class Save extends Component {
 				ctaTextColor,
 				imgURL,
 				imgAlt,
-				dimRatio,
 				ctaLayout,
 				type
 			}
@@ -60,13 +66,7 @@ export default class Save extends Component {
 				{imgURL && !!imgURL.length && (
 					<div className="c9-cta-image-wrap">
 						<img
-							className={classnames(
-								"c9-cta-image",
-								this.dimRatioToClass(dimRatio),
-								{
-									"has-background-dim": 0 !== dimRatio
-								}
-							)}
+							className={classnames("c9-cta-image")}
 							src={imgURL}
 							alt={imgAlt}
 						/>
@@ -81,10 +81,7 @@ export default class Save extends Component {
 					{ctaText && (
 						<RichText.Content
 							tagName="div"
-							className={classnames(
-								"c9-cta-text",
-								type
-							)}
+							className={classnames("c9-cta-text", type)}
 							style={{
 								color: ctaTextColor
 							}}

@@ -1,10 +1,8 @@
-import classnames from "classnames";
-
 /**
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import ReverseToolbar from "./components/reverse-toolbar";
+import BlockSelector from "../../components/block-selector";
 
 /**
  * WordPress dependencies
@@ -16,17 +14,12 @@ const { applyFilters } = wp.hooks;
 const { IconButton } = wp.components;
 const { withInstanceId } = wp.compose;
 
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
+
 const ALLOWED_BLOCKS = ["c9-blocks/toggles-toggle"];
-
-const getTogglesTemplate = (toggleCount, id) => {
-	const result = [];
-
-	for (let k = 1; k <= toggleCount; k++) {
-		result.push(["c9-blocks/toggles-toggle", { toggleNumber: k, id }]);
-	}
-
-	return result;
-};
 
 class Edit extends Component {
 	constructor() {
@@ -42,6 +35,10 @@ class Edit extends Component {
 		this.checkToggleCountAndUpdate();
 	}
 
+
+	/**
+	 * Removes event hooks assigned on creation.
+	 */
 	componentWillUnmount() {
 		const $ = window.jQuery;
 
@@ -55,6 +52,24 @@ class Edit extends Component {
 		});
 	}
 
+
+	/**
+	 * Generates the child toggle blocks.
+	 */
+	getTogglesTemplate = (toggleCount, id) => {
+		const result = [];
+
+		for (let k = 1; k <= toggleCount; k++) {
+			result.push(["c9-blocks/toggles-toggle", { toggleNumber: k, id }]);
+		}
+
+		return result;
+	};
+
+
+	/**
+	 * Checks if there has been change in toggle count, if so update attributes and adjust classes.
+	 */
 	checkToggleCountAndUpdate() {
 		const {
 			attributes: { toggleCount },
@@ -129,7 +144,7 @@ class Edit extends Component {
 			instanceId
 		} = this.props;
 
-		const { toggleCount, reverseToggle } = attributes;
+		const { toggleCount } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -146,20 +161,13 @@ class Edit extends Component {
 
 		return (
 			<Fragment>
-				<BlockControls key="controls">
-					<ReverseToolbar
-						value={reverseToggle}
-						onChange={value => {
-							setAttributes({ reverseToggle: value });
-						}}
-					/>
-				</BlockControls>
+				<BlockControls key="controls"></BlockControls>
 				<Inspector {...this.props} />
+				<BlockSelector text="Toggles" />
 				<div
 					className={classnames(
 						applyFilters("c9-blocks.blocks.className", className),
-						"accordion",
-						reverseToggle ? "c9-toggles-reverse" : null
+						"accordion"
 					)}
 					id={`accordion-${instanceId}`}
 				>
@@ -170,7 +178,7 @@ class Edit extends Component {
 						"undefined" !== typeof this.props.insertBlocksAfter
 							? createElement(InnerBlocks, {
 									allowedBlocks: ALLOWED_BLOCKS,
-									template: getTogglesTemplate(toggleCount, instanceId)
+									template: this.getTogglesTemplate(toggleCount, instanceId)
 							  })
 							: createElement("div")
 					)}

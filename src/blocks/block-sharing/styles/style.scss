@@ -28,8 +28,9 @@
 			text-align: center;
 			display: block;
 			line-height: 1;
-			font-size: 16px;
+			font-size: 1.6rem;
 			transition: 0.3s ease;
+			text-decoration: none;
 
 			&:hover {
 				box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
@@ -99,7 +100,7 @@
 
 	&.c9-share-size-small {
 		a {
-			font-size: 13px;
+			font-size: 1.2rem;
 		}
 	}
 
@@ -112,19 +113,19 @@
 
 	&.c9-share-size-medium {
 		a {
-			font-size: 16px;
+			font-size: 1.6rem;
 		}
 	}
 
 	&.c9-share-size-large {
 		a {
-			font-size: 20px;
+			font-size: 2rem;
 		}
 	}
 
 	&.c9-share-size-large.c9-share-icon-only {
 		a {
-			font-size: 26px;
+			font-size: 2.6rem;
 			min-width: 48px;
 		}
 	}
@@ -214,4 +215,15 @@
 
 .c9-social-sharing .fa-linkedin-in:before {
 	content: '\f0e1';
+}
+
+@media only screen and (max-width: 667px) {
+	.c9-block-sharing .c9-share-list .c9-social-text {
+		font-size: 1.6rem;
+	}
+
+	.c9-block-sharing.c9-share-icon-only a {
+		min-width: 31px;
+		width: 33px;
+	}
 }

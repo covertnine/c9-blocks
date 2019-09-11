@@ -1,10 +1,8 @@
 /* eslint-disable no-cond-assign */
-/**
- * Internal block libraries
- */
-// import CustomRadio from './custom-radio';
 
-import React from "react";
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
@@ -20,6 +18,11 @@ const {
 	FocalPointPicker,
 	BaseControl
 } = wp.components;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -333,7 +336,7 @@ export default class Inspector extends Component {
 						max={100}
 					/>
 				</BaseControl>
-				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
+				<PanelBody>
 					<RangeControl
 						label={__("Number of rows to produce", "c9-blocks")}
 						value={rows}
@@ -346,7 +349,10 @@ export default class Inspector extends Component {
 						)}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+				<PanelBody
+					title={__("Spacing Options", "c9-blocks")}
+					initialOpen={false}
+				>
 					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
 
 					<p className="components-base-control__label">
@@ -423,7 +429,10 @@ export default class Inspector extends Component {
 						/>
 					</div>
 				</PanelBody>
-				<PanelBody title={__("Background", "c9-blocks")} initialOpen={false}>
+				<PanelBody
+					title={__("Background Settings", "c9-blocks")}
+					initialOpen={false}
+				>
 					<MediaUpload
 						id="bg-image-select"
 						label={__("Background Image", "c9-blocks")}
@@ -675,7 +684,7 @@ export default class Inspector extends Component {
 						)}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Video", "c9-blocks")} initialOpen={false}>
+				<PanelBody title={__("Video Options", "c9-blocks")} initialOpen={false}>
 					<RadioControl
 						label={__("Media Type", "c9-blocks")}
 						selected={videoType}

@@ -1,21 +1,22 @@
-// Import block dependencies and components
-import classnames from "classnames";
-
+/**
+ * Internal dependencies
+ */
 import Inspector from "./components/inspector";
 import CallToAction from "./components/cta";
-import WidthToolbar from "./components/width-toolbar";
+import WidthToolbar from "../../components/width-toolbar";
 
-// Extend component
+/**
+ * WordPress dependencies
+ */
 const { Component, Fragment } = wp.element;
-
-// Register editor components
 const { AlignmentToolbar, URLInput, BlockControls, RichText } = wp.editor;
-
-// Register components
 const { IconButton, Dashicon, Button } = wp.components;
-
-// Components
 const { __ } = wp.i18n;
+
+/**
+ * External Dependencies.
+ */
+import classnames from "classnames";
 
 export default class Edit extends Component {
 	constructor() {
@@ -26,6 +27,14 @@ export default class Edit extends Component {
 		};
 	}
 
+	/**
+	 * Returns appropriate css class for given width and text/button option.
+	 *
+	 * @param {string} ctaWidth Wideness of given field.
+	 * @param {string} textOrButton Choice of text or button.
+	 *
+	 * @return {string} Appropriate css class based on configuration.
+	 */
 	layoutClass(ctaWidth, textOrButton) {
 		if ("two-thirds" == ctaWidth) {
 			if ("text" == textOrButton) {

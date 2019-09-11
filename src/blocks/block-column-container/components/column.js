@@ -1,23 +1,25 @@
 /**
+ * Internal dependencies
+ */
+import VerticalAlignmentToolbar from "../../../components/vertical-alignment-toolbar";
+import classnames from "classnames";
+
+/**
  * WordPress dependencies
  */
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.editor;
 const { registerBlockType, getBlockTypes } = wp.blocks;
-
-// Register editor components
 const { AlignmentToolbar, BlockControls } = wp.editor;
-
-// Extend component
 const { Fragment } = wp.element;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-import VerticalAlignmentToolbar from "./vertical-align-toolbar";
-import classnames from "classnames";
-
-const Edit = props => {
+/**
+ * Create a Column wrapper Component
+ */
+const Column = props => {
 	const {
 		attributes: { textAlign, verticalAlign },
 		setAttributes,
@@ -32,6 +34,7 @@ const Edit = props => {
 			name => "c9-blocks/grid" != name && "c9-blocks/column-container" != name
 		);
 
+	// Disable width toolbars for children when inside this block.
 	const disableToolbarTraversal = root => {
 		if (root) {
 			if (
@@ -78,8 +81,8 @@ const Edit = props => {
 				<div className="c9-column-innner">
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
+						template={[["core/paragraph"]]}
 						templateLock={false}
-						templateInsertUpdatesSelection={false}
 					/>
 				</div>
 			</div>
@@ -100,8 +103,6 @@ registerBlockType("c9-blocks/column", {
 			<Path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z" />
 		</SVG>
 	),
-
-	description: __("A single column within the columns block.", "c9-blocks"),
 
 	supports: {
 		inserter: false,
@@ -140,7 +141,7 @@ registerBlockType("c9-blocks/column", {
 				removeBlock
 			};
 		})
-	])(Edit),
+	])(Column),
 
 	save: props => {
 		const {

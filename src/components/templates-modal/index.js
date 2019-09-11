@@ -1,17 +1,26 @@
+/**
+ * Internal dependencies
+ */
+import startCase from "lodash/startCase";
+import LayoutButton from "./layout-button";
+import SectionButton from "./section-button";
+import TemplateMarkups from "./templates-markup";
+
+/**
+ * Styles
+ */
+import "./editor.scss";
+
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Modal, TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
-const { createBlock, rawHandler } = wp.blocks;
+const { rawHandler } = wp.blocks;
 const apiFetch = wp.apiFetch;
-import startCase from "lodash/startCase";
-import LayoutButton from "./layout-button";
-import SectionButton from "./section-button";
-import "./editor.scss";
-
-// templates
-import templateMarkups from "./templates-markup";
 
 class TemplatesModal extends Component {
 	constructor() {
@@ -26,6 +35,9 @@ class TemplatesModal extends Component {
 		this.getReusableBlocks();
 	}
 
+	/**
+	 * Retrieves reusable blocks and update state.
+	 */
 	async getReusableBlocks() {
 		const { canUserUseUnfilteredHTML } = this.props;
 
@@ -48,12 +60,20 @@ class TemplatesModal extends Component {
 		});
 	}
 
+	/**
+	 * Returns updated template object based on given new template.
+	 *
+	 * @param {Object} templateObj Original template object with markup.
+	 * @param {boolean} canUserUseUnfilteredHTML Self implied.
+	 *
+	 * @return {Object} Updated template object with markup converted to blocks.
+	 */
 	markupToBlock(templateObj, canUserUseUnfilteredHTML) {
 		let blockObj = Object.assign({}, templateObj);
 		// eslint-disable-next-line no-unused-vars
 		for (let key of Object.keys(blockObj)) {
 			blockObj[key] = rawHandler({
-				HTML: blockObj[key],
+				HTML: blockObj[key].markup,
 				mode: "BLOCKS",
 				canUserUseUnfilteredHTML
 			});
@@ -68,59 +88,13 @@ class TemplatesModal extends Component {
 		// define section and layout templates
 
 		const sections = {
-			test: [
-				createBlock("core/cover", { align: "full" }),
-				createBlock("core/button", {
-					text: __("Layout Switcher", "c9-blocks"),
-					align: "center"
-				})
-			],
 			// convert markup to actual blocks
-			...this.markupToBlock(templateMarkups.sections, canUserUseUnfilteredHTML)
+			...this.markupToBlock(TemplateMarkups.sections, canUserUseUnfilteredHTML)
 		};
 
 		const layouts = {
-			default: [createBlock("core/paragraph", {})],
-			hero: [
-				createBlock("core/cover", { align: "full" }),
-				createBlock("core/button", {
-					text: __("Layout Switcher", "c9-blocks"),
-					align: "center"
-				}),
-				createBlock("c9-blocks/grid", {}, [
-					createBlock("c9-blocks/column-container", {
-						columns: 3,
-						layout: "c9-3-col-equal"
-					})
-				])
-			],
-			featured: [
-				createBlock("core/heading", {}),
-				createBlock("core/spacer", { height: "10" }),
-				createBlock("core/media-text", { align: "full" }),
-				createBlock("core/spacer", { height: "40" }),
-				createBlock("core/quote", {}),
-				createBlock("core/spacer", { height: "20" }),
-				createBlock("core/media-text", { mediaPosition: "right" }),
-				createBlock("core/paragraph", {
-					placeholder: __("Layout Switcher", "c9-blocks")
-				})
-			],
-			nested: [
-				createBlock("c9-blocks/grid", {}, [
-					createBlock(
-						"c9-blocks/column-container",
-						{ columns: 3, layout: "c9-3-col-equal" },
-						[
-							createBlock("c9-blocks/column", {}, [
-								createBlock("core/button", { text: "Make this Recipe" })
-							])
-						]
-					)
-				])
-			],
 			// convert markup to actual blocks
-			...this.markupToBlock(templateMarkups.layouts, canUserUseUnfilteredHTML)
+			...this.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
 		};
 
 		return (
@@ -159,15 +133,16 @@ class TemplatesModal extends Component {
 							className: "c9-template-tabs-tab"
 						},
 						{
-							name: "local",
+							name: "blocks",
 							title: (
 								<Tooltip text={__("My Templates.", "c9-blocks")}>
-									<span>{__("Saved Layouts")}</span>
+									<span>{__("Saved Blocks")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
 						}
 					]}
+					initialTabName={this.props.initial}
 				>
 					{tab => {
 						switch (tab.name) {
@@ -178,7 +153,8 @@ class TemplatesModal extends Component {
 										<div className="c9-section-options">
 											{Object.keys(sections).map(k => (
 												<SectionButton
-													icon="wordpress"
+													close={this.props.close}
+													icon={TemplateMarkups.sections[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													section={sections[k]}
 												/>
@@ -202,7 +178,8 @@ class TemplatesModal extends Component {
 										<div className="c9-layout-options">
 											{Object.keys(layouts).map(k => (
 												<LayoutButton
-													icon="wordpress"
+													close={this.props.close}
+													icon={TemplateMarkups.layouts[k].icon}
 													label={__(startCase(k), "c9-blocks")}
 													layout={layouts[k]}
 												/>

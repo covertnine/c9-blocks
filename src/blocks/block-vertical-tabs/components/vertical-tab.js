@@ -1,17 +1,15 @@
 /**
- * Tab Wrapper
+ * WordPress dependencies
  */
-
-// Setup the block
 const { Component } = wp.element;
-
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
-
 const { InnerBlocks } = wp.editor;
 const { registerBlockType } = wp.blocks;
 
-// Import block dependencies and components
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 
 /**
@@ -62,8 +60,6 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 			<Path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z" />
 		</SVG>
 	),
-
-	description: __("A single tab within the tabs block.", "c9-blocks"),
 
 	supports: {
 		inserter: false,

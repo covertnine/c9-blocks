@@ -1,19 +1,14 @@
 /**
- * Inspector Controls
+ * Internal dependencies
  */
+import SettingsSpacer from "../../../components/settings-spacer";
 
-// Setup the block
-import React from "react";
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-
-import compact from "lodash/compact";
-import map from "lodash/map";
-
-// Import block components
 const { InspectorControls, ColorPalette } = wp.editor;
-
-// Import Inspector components
 const {
 	PanelBody,
 	QueryControls,
@@ -23,10 +18,15 @@ const {
 	ToggleControl,
 	IconButton
 } = wp.components;
-
 const { addQueryArgs } = wp.url;
-
 const { apiFetch } = wp;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
+import compact from "lodash/compact";
+import map from "lodash/map";
 
 const MAX_POSTS_COLUMNS = 4;
 
@@ -85,9 +85,7 @@ export default class Inspector extends Component {
 
 		bgPadding = Object.assign({}, bgPadding);
 		bgPadding.linked = !bgPadding.linked;
-		bgPadding.icon = bgPadding.linked
-			? "admin-links"
-			: "editor-unlink";
+		bgPadding.icon = bgPadding.linked ? "admin-links" : "editor-unlink";
 		this.setState({ bgPadding });
 		this.setAttributes({ bgPadding });
 	};
@@ -131,9 +129,7 @@ export default class Inspector extends Component {
 
 		bgMargin = Object.assign({}, bgMargin);
 		bgMargin.linked = !bgMargin.linked;
-		bgMargin.icon = bgMargin.linked
-			? "admin-links"
-			: "editor-unlink";
+		bgMargin.icon = bgMargin.linked ? "admin-links" : "editor-unlink";
 		this.setState({ bgMargin });
 		this.setAttributes({ bgMargin });
 	};
@@ -280,10 +276,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls>
-				<PanelBody
-					title={__("Post and Page Grid Settings", "c9-blocks")}
-					className={isPost ? null : "c9-blocks-hide-query"}
-				>
+				<PanelBody className={isPost ? null : "c9-blocks-hide-query"}>
 					<SelectControl
 						label={__("Content Type", "c9-blocks")}
 						options={postTypeOptions}
@@ -478,7 +471,11 @@ export default class Inspector extends Component {
 						/>
 					)}
 				</PanelBody>
-				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+				<SettingsSpacer />
+				<PanelBody
+					title={__("Spacing Options", "c9-blocks")}
+					initialOpen={false}
+				>
 					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
 
 					<p className="components-base-control__label">

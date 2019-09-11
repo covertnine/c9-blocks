@@ -1,15 +1,21 @@
 /* eslint-disable react/jsx-no-target-blank */
+
 /**
- * Post grid featured image.
+ * WordPress dependencies
  */
-
-import get from "lodash/get";
-import classnames from "classnames";
-
 const { __ } = wp.i18n;
 const { Fragment, Component } = wp.element;
 const { Placeholder, Dashicon } = wp.components;
 
+/**
+ * External Dependencies.
+ */
+import get from "lodash/get";
+import classnames from "classnames";
+
+/**
+ * Create a PostGridImage wrapper Component
+ */
 export default class PostGridImage extends Component {
 	constructor() {
 		super(...arguments);

@@ -1,28 +1,28 @@
-// Import block dependencies and components
+/**
+ * Internal dependencies
+ */
 import Edit from "./edit";
 import Save from "./save";
-
 import attributes from "./attributes";
 
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
 import Icon from "../../../assets/icon-c9-tabs-horizontal.svg";
 
-// Components
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
-
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
-
-// Register block
 const { registerBlockType } = wp.blocks;
 
-// Register the block
 registerBlockType("c9-blocks/horizontal-tabs", {
 	title: __("C9 Horizontal Tabs", "c9-blocks"),
-	description: __("Responsive tabs for content", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {

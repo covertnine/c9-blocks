@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
+
 /**
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import React from "react";
 
 /**
  * WordPress dependencies
@@ -16,12 +16,15 @@ const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
 const { IconButton } = wp.components;
 
-const ALLOWED_MEDIA_TYPES = ["image"];
-const DEFAULT_SIZE_SLUG = "large";
-
-// External Dependencies.
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 import { get, pick } from "lodash";
+import React from "react";
+
+const ALLOWED_MEDIA_TYPES = ["image"];
+const DEFAULT_SIZE_SLUG = "large";
 
 class Edit extends Component {
 	constructor({ autoSlide, wrapAround, slideTime }) {
@@ -43,6 +46,9 @@ class Edit extends Component {
 		this.createSlides = this.createSlides.bind(this);
 	}
 
+	/**
+	 * Adds event handler to keep track of active slide.
+	 */
 	componentDidMount() {
 		const $ = window.jQuery;
 		let self = this;
@@ -52,6 +58,19 @@ class Edit extends Component {
 		});
 	}
 
+	/**
+	 * Removes event hooks assigned on creation.
+	 */
+	componentWillUnmount() {
+		const $ = window.jQuery;
+
+		$(this.carouselRef.current).off("slide.bs.carousel", "**");
+	}
+
+	/**
+	 * Checks if re-rendering is needed for component.
+	 * Denies updates if slide active is not valid, i.e less than 0 or greater than num slides.
+	 */
 	shouldComponentUpdate(nextProps, nextState) {
 		if (
 			nextState.slideActive !== this.state.slideActive &&
@@ -63,6 +82,10 @@ class Edit extends Component {
 		return true;
 	}
 
+	/**
+	 * Checks if settings for carousel changed by comparing them to current state.
+	 * If so, update state and carousel directly using the react ref.
+	 */
 	componentDidUpdate() {
 		const { auto, wrap, time } = this.state;
 		const { autoSlide, wrapAround, slideTime } = this.props.attributes;
@@ -95,6 +118,13 @@ class Edit extends Component {
 		}
 	}
 
+	/**
+	 * Extracts relevant attributes from image.
+	 *
+	 * @param {Object} image Retrieved image.
+	 *
+	 * @return {Object} Processed image.
+	 */
 	pickRelevantMediaFiles = image => {
 		const imageProps = pick(image, ["alt", "id", "link", "caption"]);
 		imageProps.url =
@@ -104,10 +134,22 @@ class Edit extends Component {
 		return imageProps;
 	};
 
+	/**
+	 * Checks if temporary image.
+	 */
 	isTemporaryImage = (id, url) => !id && isBlobURL(url);
 
+	/**
+	 * Checks if image is loaded externally.
+	 */
 	isExternalImage = (id, url) => url && !id && !isBlobURL(url);
 
+	/**
+	 * What to do on image upload error
+	 *
+	 * @param {string} message Error msg to display.
+	 * @param {number} i Location of slide image was to be added.
+	 */
 	onUploadError(message, i) {
 		let { noticeOperations, url, id } = this.props;
 		noticeOperations.removeAllNotices();
@@ -126,6 +168,12 @@ class Edit extends Component {
 		});
 	}
 
+	/**
+	 * When uploading an image.
+	 *
+	 * @param {Object} media Image data.
+	 * @param {number} i Location of image in the slides.
+	 */
 	onSelectImage(media, i) {
 		if (!media || !media.url) {
 			let { url, id } = this.props.attributes;
@@ -176,6 +224,12 @@ class Edit extends Component {
 		});
 	}
 
+	/**
+	 * Assigns the new image url to the block's attributes.
+	 *
+	 * @param {string} newURL URL of new image.
+	 * @param {number} i Location to assign new URL to.
+	 */
 	onSelectURL(newURL, i) {
 		let { url, id } = this.props.attributes;
 		// clone to new array
@@ -193,6 +247,14 @@ class Edit extends Component {
 		}
 	}
 
+	/**
+	 * Returns the indicators layout configuration for a given amount of tabs.
+	 *
+	 * @param {number} slides Amount of indicators to create.
+	 * @param {number} id Instance Id of this carousel block.
+	 *
+	 * @return {Object[]} Indicators layout configuration.
+	 */
 	createIndicators(slides, id) {
 		const { slideActive, slideTarget } = this.state;
 		const { isSelectedBlockInRoot } = this.props;
@@ -217,6 +279,9 @@ class Edit extends Component {
 		return indicators;
 	}
 
+	/**
+	 * Generates the slides using the given images.
+	 */
 	createSlides(slides) {
 		const { isSelectedBlockInRoot, setAttributes } = this.props;
 		const { id, url, captionTitle, captionContent } = this.props.attributes;

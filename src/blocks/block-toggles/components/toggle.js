@@ -1,24 +1,27 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-// External Dependencies.
-import React from "react";
-import classnames from "classnames";
-
-// Internal Dependencies.
-import RemoveButton from "./remove-button";
+/**
+ * Internal dependencies
+ */
+import RemoveButton from "../../../components/remove-button";
 import toggleOpenIcon from "../../../../assets/toggle-open";
 
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Toolbar } = wp.components;
 const { registerBlockType } = wp.blocks;
-
 const { BlockControls, InnerBlocks, RichText } = wp.editor;
-
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
-class ToggleBlock extends Component {
+/**
+ * External Dependencies.
+ */
+import React from "react";
+import classnames from "classnames";
+
+class Toggle extends Component {
 	constructor() {
 		super(...arguments);
 
@@ -26,6 +29,9 @@ class ToggleBlock extends Component {
 		this.toggleDisplayRef = React.createRef();
 	}
 
+	/**
+	 * If this is last remaining toggle, remove the parent block as well.
+	 */
 	componentWillUnmount() {
 		const { clientId } = this.props;
 		const $ = window.jQuery;
@@ -46,6 +52,9 @@ class ToggleBlock extends Component {
 		}
 	}
 
+	/**
+	 * Retrieves the parent block.
+	 */
 	getParentToggle(rootBlock) {
 		const { block } = this.props;
 
@@ -141,9 +150,7 @@ class ToggleBlock extends Component {
 								}}
 								ref={this.toggleBtnRef}
 								data-toggle="collapse"
-								data-target={`#c9-toggles-collapse${attributes.toggleNumber}-${
-									attributes.id
-								}`}
+								data-target={`#c9-toggles-collapse${attributes.toggleNumber}-${attributes.id}`}
 							>
 								<span className="fas fa-angle-right" />
 							</button>
@@ -171,12 +178,12 @@ class ToggleBlock extends Component {
 					<div
 						className="c9-toggles-item-content collapse"
 						ref={this.toggleDisplayRef}
-						id={`c9-toggles-collapse${attributes.toggleNumber}-${
-							attributes.id
-						}`}
+						id={`c9-toggles-collapse${attributes.toggleNumber}-${attributes.id}`}
 						data-parent={`#accordion-${attributes.id}`}
 					>
-						<InnerBlocks templateLock={false} />
+						<div>
+							<InnerBlocks templateLock={false} />
+						</div>
 					</div>
 				</div>
 			</Fragment>
@@ -187,7 +194,6 @@ class ToggleBlock extends Component {
 registerBlockType("c9-blocks/toggles-toggle", {
 	title: __("C9 Toggle Item"),
 	parent: ["c9-blocks/toggles"],
-	description: __("A single item within a toggles block."),
 	icon: "minus",
 	category: "common",
 	supports: {
@@ -240,7 +246,7 @@ registerBlockType("c9-blocks/toggles-toggle", {
 				removeBlock
 			};
 		})
-	])(ToggleBlock),
+	])(Toggle),
 
 	save: function(props) {
 		const {
@@ -271,7 +277,9 @@ registerBlockType("c9-blocks/toggles-toggle", {
 					id={`c9-toggles-collapse${toggleNumber}-${id}`}
 					data-parent={`#accordion-${id}`}
 				>
-					<InnerBlocks.Content />
+					<div>
+						<InnerBlocks.Content />
+					</div>
 				</div>
 			</div>
 		);

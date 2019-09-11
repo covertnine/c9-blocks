@@ -1,11 +1,12 @@
 const { Icon } = wp.components;
 const { withDispatch } = wp.data;
 
-const SectionButton = ({ label, icon, section, insertBlocks }) => {
+const SectionButton = ({ label, icon, section, insertBlocks, close }) => {
 	return (
 		<button
 			onClick={() => {
-                insertBlocks(section);
+				insertBlocks(section);
+				close();
 			}}
 		>
 			<Icon icon={icon} />

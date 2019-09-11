@@ -1,29 +1,38 @@
 /**
+ * Internal dependencies
+ */
+import icons from "../../../assets/c9-vertical-alignment-icons";
+
+/**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Toolbar } = wp.components;
 
-import icons from "../../../../assets/c9-vertical-alignment-icons";
-
+/**
+ * Control Settings
+ */
 const DEFAULT_ALIGN_CONTROLS = [
 	{
-        icon: icons.top,
-        title: __("Vertical Align Top", "c9-blocks"),
-        align: "top"
-    },
-    {
-        icon: icons.center,
-        title: __("Vertical Align Middle", "c9-blocks"),
-        align: "center"
-    },
-    {
-        icon: icons.bottom,
-        title: __("Vertical Align Bottom", "c9-blocks"),
-        align: "bottom"
-    }
+		icon: icons.top,
+		title: __("Vertical Align Top", "c9-blocks"),
+		align: "top"
+	},
+	{
+		icon: icons.center,
+		title: __("Vertical Align Middle", "c9-blocks"),
+		align: "center"
+	},
+	{
+		icon: icons.bottom,
+		title: __("Vertical Align Bottom", "c9-blocks"),
+		align: "bottom"
+	}
 ];
 
+/**
+ * Create a Vertical Alignment Toolbar Component
+ */
 export function VerticalAlignmentToolbar({
 	value,
 	onChange,

@@ -1,31 +1,28 @@
+/**
+ * Internal dependencies
+ */
 import Edit from "./edit";
 import Save from "./save";
+import attributes from "./attributes";
 
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
-// Import Icon
 import Icon from "../../../assets/icon-c9-cta-bar.svg";
 
-// Components
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
-
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
-
-// Register block
 const { registerBlockType } = wp.blocks;
 
-import attributes from "./attributes";
-
-// Register the block
 registerBlockType("c9-blocks/cta", {
 	title: __("C9 Call To Action", "c9-blocks"),
-	description: __(
-		"Add a call to action section with text and a button.",
-		"c9-blocks"
-	),
 	icon: Icon,
 	category: "c9-blocks",
 	keywords: [__("call to action", "c9-blocks"), __("cta", "c9-blocks")],
@@ -69,10 +66,7 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 
 			if ("c9-blocks/cta" === blockName) {
 				return (
-					<BlockListBlock
-						{...props}
-						className={props.attributes.ctaWidth}
-					/>
+					<BlockListBlock {...props} className={props.attributes.ctaWidth} />
 				);
 			} else {
 				return <BlockListBlock {...props} />;

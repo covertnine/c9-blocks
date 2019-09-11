@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.editor;
@@ -26,7 +29,7 @@ export default class Inspector extends Component {
 		return (
 			<InspectorControls>
 				<BaseControl />
-				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
+				<PanelBody>
 					<RangeControl
 						label={__("Number of slides to produce", "c9-blocks")}
 						value={slides}
@@ -80,69 +83,6 @@ export default class Inspector extends Component {
 						onChange={showIndicators => setAttributes({ showIndicators })}
 					/>
 				</PanelBody>
-				{/* <PanelColorSettings
-					title={__("Block Color Settings", "c9-blocks")}
-					initialOpen={true}
-					colorSettings={[
-						{
-							value: blockBackgroundColor,
-							onChange: value =>
-								setAttributes({ blockBackgroundColor: value }),
-							label: __("Background Color", "c9-blocks")
-						}
-					]}
-				>
-					<ContrastChecker
-						{...{
-							backgroundColor: tabContentBackgroundColor,
-							fallbackBackgroundColor: "white"
-						}}
-					/>
-				</PanelColorSettings>
-				<PanelColorSettings
-					title={__("Tab Color Settings", "c9-blocks")}
-					initialOpen={false}
-					colorSettings={[
-						{
-							value: tabBackgroundColor,
-							onChange: value => setAttributes({ tabBackgroundColor: value }),
-							label: __("Background Color", "c9-blocks")
-						},
-						{
-							value: tabTextColor,
-							onChange: value => setAttributes({ tabTextColor: value }),
-							label: __("Text Color", "c9-blocks")
-						}
-					]}
-				>
-					<ContrastChecker
-						{...{
-							textColor: tabTextColor,
-							backgroundColor: tabBackgroundColor,
-							fallbackTextColor: "black",
-							fallbackBackgroundColor: "white"
-						}}
-					/>
-				</PanelColorSettings>
-				<PanelColorSettings
-					title={__("Tab Content Color Settings", "c9-blocks")}
-					initialOpen={false}
-					colorSettings={[
-						{
-							value: tabContentBackgroundColor,
-							onChange: value =>
-								setAttributes({ tabContentBackgroundColor: value }),
-							label: __("Background Color", "c9-blocks")
-						}
-					]}
-				>
-					<ContrastChecker
-						{...{
-							backgroundColor: tabContentBackgroundColor,
-							fallbackBackgroundColor: "white"
-						}}
-					/>
-				</PanelColorSettings> */}
 			</InspectorControls>
 		);
 	}

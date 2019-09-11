@@ -1,13 +1,12 @@
 /**
- * CTA Wrapper
+ * WordPress dependencies
  */
-
-// Setup the block
 const { Component } = wp.element;
-
 const { applyFilters } = wp.hooks;
 
-// Import block dependencies and components
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 
 /**

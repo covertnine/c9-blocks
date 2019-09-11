@@ -1,37 +1,34 @@
-// Import block dependencies and components
+/**
+ * Internal dependencies
+ */
 import Edit from "./edit";
 import Save from "./save";
-
 import attributes from "./attributes";
 
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
 import Icon from "../../../assets/icon-c9-image-carousel.svg";
 
-// Components
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
-
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
-
-// Register block
 const { registerBlockType } = wp.blocks;
 
-// Register the block
 registerBlockType("c9-blocks/image-carousel", {
 	title: __("C9 Image Carousel", "c9-blocks"),
-	description: __("Responsive carousel for tabs of content", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {
 		// fill in features
 	},
-	keywords: [
-		__("carousel", "c9-blocks"),
-		__("responsive", "c9-blocks")
-	],
+	keywords: [__("carousel", "c9-blocks"), __("responsive", "c9-blocks")],
 	attributes,
 	// Render the block components
 	edit: compose([

@@ -1,19 +1,28 @@
-// External Dependencies.
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
-
-const { applyFilters } = wp.hooks;
 
 /**
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
 const { InnerBlocks } = wp.editor;
+const { applyFilters } = wp.hooks;
 
 export default class Save extends Component {
 	constructor() {
 		super(...arguments);
 	}
 
+	/**
+	 * Returns the indicators layout configuration for a given amount of tabs.
+	 *
+	 * @param {number} slides Amount of indicators to create.
+	 * @param {number} id Instance Id of this carousel block.
+	 *
+	 * @return {Object[]} Indicators layout configuration.
+	 */
 	createIndicators(slides, id) {
 		let indicators = [];
 		for (let i = 0; i < slides; i++) {

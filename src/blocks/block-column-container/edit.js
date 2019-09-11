@@ -2,35 +2,29 @@
  * External dependencies
  */
 import classnames from "classnames";
+import memoize from "memize";
+import map from "lodash/map";
+import _times from "lodash/times";
 
 /**
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
 import Container from "./components/container";
-import WidthToolbar from "./components/width-toolbar";
-import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
-
+import WidthToolbar from "../../components/width-toolbar";
+import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
+import BlockSelector from "../../components/block-selector";
 import icons from "../../../assets/c9-col-layout-icons";
-import memoize from "memize";
-import map from "lodash/map";
-import _times from "lodash/times";
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-
 const { Tooltip, Placeholder, ButtonGroup, Button } = wp.components;
-
 const { InnerBlocks, BlockControls } = wp.editor;
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
-
-const getLayoutTemplate = memoize(columns => {
-	return _times(columns, () => ["c9-blocks/column"]);
-});
 
 export default class Edit extends Component {
 	constructor() {
@@ -40,6 +34,13 @@ export default class Edit extends Component {
 			pickLayout: true
 		};
 	}
+
+	/**
+	 * Generates the child column blocks.
+	 */
+	getLayoutTemplate = memoize(columns => {
+		return _times(columns, () => ["c9-blocks/column"]);
+	});
 
 	render() {
 		const {
@@ -197,6 +198,7 @@ export default class Edit extends Component {
 				</BlockControls>
 				<Inspector {...this.props} />
 
+				<BlockSelector text="Select Column Container" />
 				<Container {...this.props}>
 					<div
 						className={classnames(
@@ -209,7 +211,7 @@ export default class Edit extends Component {
 						}}
 					>
 						<InnerBlocks
-							template={getLayoutTemplate(columns)}
+							template={this.getLayoutTemplate(columns)}
 							templateLock="all"
 							allowedBlocks={ALLOWED_BLOCKS}
 						/>

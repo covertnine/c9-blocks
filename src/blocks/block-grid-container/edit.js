@@ -7,15 +7,17 @@ import Container from "./components/container";
 /**
  * WordPress dependencies
  */
-
-import memoize from "memize";
-import times from "lodash/times";
-
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.editor;
 const { withInstanceId } = wp.compose;
 const { IconButton } = wp.components;
+
+/**
+ * External Dependencies.
+ */
+import memoize from "memize";
+import times from "lodash/times";
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
@@ -24,12 +26,21 @@ class Edit extends Component {
 		super(...arguments);
 	}
 
+
+	/**
+	 * Generates the child (row) column container blocks.
+	 */
 	getRowsTemplate = memoize(rows => {
 		return times(rows, () => ["c9-blocks/column-container"]);
 	});
 
 	render() {
-		const { instanceId, attributes, setAttributes, isSelectedBlockInRoot } = this.props;
+		const {
+			instanceId,
+			attributes,
+			setAttributes,
+			isSelectedBlockInRoot
+		} = this.props;
 
 		const { rows } = attributes;
 
@@ -51,29 +62,29 @@ class Edit extends Component {
 				</Container>
 				{isSelectedBlockInRoot && (
 					<div className="c9-add-remove-rows">
-					<IconButton
-						label={__("Remove Image", "c9-blocks")}
-						icon="dismiss"
-						onClick={() => {
-							if (1 < rows) {
-								setAttributes({rows: rows - 1})
-							}
-						}}
-					>
-						{__("Remove Row", "c9-blocks")}
-					</IconButton>
-					<IconButton
-						label={__("Remove Image", "c9-blocks")}
-						icon="plus-alt"
-						onClick={() => {
-							if (20 > rows) {
-								setAttributes({rows: rows + 1})
-							}
-						}}
-					>
-						{__("Add Row", "c9-blocks")}
-					</IconButton>
-				</div>
+						<IconButton
+							label={__("Remove Image", "c9-blocks")}
+							icon="dismiss"
+							onClick={() => {
+								if (1 < rows) {
+									setAttributes({ rows: rows - 1 });
+								}
+							}}
+						>
+							{__("Remove Row", "c9-blocks")}
+						</IconButton>
+						<IconButton
+							label={__("Remove Image", "c9-blocks")}
+							icon="plus-alt"
+							onClick={() => {
+								if (20 > rows) {
+									setAttributes({ rows: rows + 1 });
+								}
+							}}
+						>
+							{__("Add Row", "c9-blocks")}
+						</IconButton>
+					</div>
 				)}
 			</Fragment>
 		);

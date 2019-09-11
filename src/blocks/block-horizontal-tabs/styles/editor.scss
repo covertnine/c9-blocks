@@ -4,21 +4,24 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
- 
- div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
+
+div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 	.tab-content [data-tab] {
 		display: none;
 	}
 
 	.nav-item {
+
 		// show remove button on hover.
-		&:not(:hover) > .c9-component-remove-button {
+		&:not(:hover)>.c9-component-remove-button {
 			opacity: 0;
 		}
 
 		position: relative;
 
-		transition: 0.15s border-color, 0.15s background-color, 0.15s opacity;
+		transition: 0.15s border-color,
+		0.15s background-color,
+		0.15s opacity;
 	}
 }
 
@@ -51,6 +54,7 @@
 }
 
 .c9-component-remove-button-confirm {
+
 	.c9-component-remove-button-confirm-yep,
 	.c9-component-remove-button-confirm-nope {
 		padding: 0;
@@ -114,4 +118,17 @@
 .editor-styles-wrapper [data-type="c9-blocks/horizontal-tabs"] {
 	margin-top: 32px;
 	margin-bottom: 32px;
+}
+
+.c9-horizontal-tabs .nav-tabs {
+	border-bottom: none;
+}
+
+.c9-horizontal-tabs .nav-tabs .nav-item {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.c9-horizontal-tabs .nav-tabs .nav-link {
+	line-height: 1;
 }

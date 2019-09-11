@@ -1,33 +1,29 @@
 /**
- * BLOCK: Covertnine Blocks Custom Heading
+ * Internal dependencies
  */
-
 import Edit from "./edit";
 import Save from "./save";
+import attributes from "./attributes";
 
-// Import CSS
+/**
+ * Styles
+ */
 import "./styles/style.scss";
 import "./styles/editor.scss";
 
-// Import Icon
 import Icon from "../../../assets/icon-c9-heading.svg";
 
-// Components
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
-
-// Register block
 const { registerBlockType } = wp.blocks;
-
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 const { withViewportMatch } = wp.viewport;
 
-import attributes from "./attributes";
-
-// Register the block
 registerBlockType("c9-blocks/heading", {
 	title: __("C9 Heading", "c9-blocks"),
-	description: __("Add a custom Section Heading.", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {},

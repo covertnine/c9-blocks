@@ -1,23 +1,20 @@
 /**
- * Inspector Controls
+ * Internal dependencies
  */
+import SettingsSpacer from "../../../components/settings-spacer";
 
-import React from "react";
-
-// Setup the block
+/**
+ * WordPress dependencies
+ */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { ContrastChecker } = wp.blockEditor;
-
-// Import block components
 const {
 	InspectorControls,
 	PanelColorSettings,
 	MediaUpload,
 	ColorPalette
 } = wp.editor;
-
-// Import Inspector components
 const {
 	PanelBody,
 	RangeControl,
@@ -27,6 +24,11 @@ const {
 	RadioControl,
 	FocalPointPicker
 } = wp.components;
+
+/**
+ * External Dependencies.
+ */
+import React from "react";
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -240,7 +242,7 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls key="inspector">
-				<PanelBody title={__("Layout", "c9-blocks")} initialOpen={true}>
+				<PanelBody>
 					<RadioControl
 						label={__("Content Width", "c9-blocks")}
 						selected={ctaLayout}
@@ -253,10 +255,10 @@ export default class Inspector extends Component {
 					/>
 				</PanelBody>
 
-				<PanelBody
-					title={__("Button Configurations", "c9-blocks")}
-					initialOpen={false}
-				>
+				<PanelBody>
+					<p className="components-base-control__label">
+						{__("Button Configurations", "c9-blocks")}
+					</p>
 					<ToggleControl
 						label={__("Open link in new window", "c9-blocks")}
 						checked={buttonTarget}
@@ -288,10 +290,10 @@ export default class Inspector extends Component {
 					/>
 				</PanelBody>
 
-				<PanelBody
-					title={__("CTA Text Options", "c9-blocks")}
-					initialOpen={false}
-				>
+				<PanelBody>
+					<p className="components-base-control__label">
+						{__("CTA Text Options")}
+					</p>
 					<SelectControl
 						label={__("Font Type", "c9-blocks")}
 						help={__(
@@ -304,7 +306,57 @@ export default class Inspector extends Component {
 					/>
 				</PanelBody>
 
-				<PanelBody title={__("Spacing", "c9-blocks")} initialOpen={false}>
+				<PanelColorSettings
+					initialOpen={false}
+					title={__("Message Text Color", "c9-blocks")}
+					colorSettings={[
+						{
+							value: ctaTextColor,
+							onChange: value => setAttributes({ ctaTextColor: value }),
+							label: __("Text Color", "c9-blocks")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							textColor: ctaTextColor,
+							fallbackTextColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
+				<PanelColorSettings
+					initialOpen={false}
+					title={__("Button Colors", "c9-blocks")}
+					colorSettings={[
+						{
+							value: buttonTextColor,
+							onChange: value => setAttributes({ buttonTextColor: value }),
+							label: __("Button Text Color", "c9-blocks")
+						},
+						{
+							value: buttonBackgroundColor,
+							onChange: value =>
+								setAttributes({ buttonBackgroundColor: value }),
+							label: __("Button Color", "c9-blocks")
+						}
+					]}
+				>
+					<ContrastChecker
+						{...{
+							backgroundColor: buttonBackgroundColor,
+							fallbackBackgroundColor: "black",
+							textColor: buttonTextColor,
+							fallbackTextColor: "white"
+						}}
+					/>
+				</PanelColorSettings>
+
+				<SettingsSpacer />
+
+				<PanelBody
+					title={__("Spacing Options", "c9-blocks")}
+					initialOpen={false}
+				>
 					<h5 className="padding-label">{__("Padding", "c9-blocks")}</h5>
 
 					<p className="components-base-control__label">
@@ -382,52 +434,10 @@ export default class Inspector extends Component {
 					</div>
 				</PanelBody>
 
-				<PanelColorSettings
+				<PanelBody
+					title={__("Background Settings", "c9-blocks")}
 					initialOpen={false}
-					title={__("Message Text Color", "c9-blocks")}
-					colorSettings={[
-						{
-							value: ctaTextColor,
-							onChange: value => setAttributes({ ctaTextColor: value }),
-							label: __("Text Color", "c9-blocks")
-						}
-					]}
 				>
-					<ContrastChecker
-						{...{
-							textColor: ctaTextColor,
-							fallbackTextColor: "white"
-						}}
-					/>
-				</PanelColorSettings>
-				<PanelColorSettings
-					initialOpen={false}
-					title={__("Button Colors", "c9-blocks")}
-					colorSettings={[
-						{
-							value: buttonTextColor,
-							onChange: value => setAttributes({ buttonTextColor: value }),
-							label: __("Button Text Color", "c9-blocks")
-						},
-						{
-							value: buttonBackgroundColor,
-							onChange: value =>
-								setAttributes({ buttonBackgroundColor: value }),
-							label: __("Button Color", "c9-blocks")
-						}
-					]}
-				>
-					<ContrastChecker
-						{...{
-							backgroundColor: buttonBackgroundColor,
-							fallbackBackgroundColor: "black",
-							textColor: buttonTextColor,
-							fallbackTextColor: "white"
-						}}
-					/>
-				</PanelColorSettings>
-
-				<PanelBody title={__("Background", "c9-blocks")} initialOpen={false}>
 					<MediaUpload
 						id="bg-image-select"
 						label={__("Background Image", "c9-blocks")}

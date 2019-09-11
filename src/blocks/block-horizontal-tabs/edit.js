@@ -2,25 +2,22 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import RemoveButton from "./components/remove-button";
+import RemoveButton from "../../components/remove-button";
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-
 const { IconButton, Tooltip } = wp.components;
-
 const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
-
 const { applyFilters } = wp.hooks;
-
 const { select, dispatch } = wp.data;
-
 const { withInstanceId } = wp.compose;
 
-// External Dependencies.
+/**
+ * External Dependencies.
+ */
 import classnames from "classnames";
 import slugify from "slugify";
 
@@ -56,10 +53,21 @@ class Edit extends Component {
 		return result;
 	}
 
+	/**
+	 * Grabs inner blocks (tabs) of this horizontal tabs container.
+	 */
 	getTabs() {
 		return this.props.block.innerBlocks;
 	}
 
+	/**
+	 * Returns a boolean whether or not given slug is unique.
+	 *
+	 * @param {string} slug Lowercase alphanumeric with dashes for naming of a tab.
+	 * @param {string} ignoreClientId Origin client Id where the slug is to be assigned.
+	 *
+	 * @return {boolean} If given slug is unique.
+	 */
 	isUniqueSlug(slug, ignoreClientId) {
 		const tabs = this.getTabs();
 		let isUnique = true;
@@ -76,6 +84,15 @@ class Edit extends Component {
 		return isUnique;
 	}
 
+
+	/**
+	 * Returns a unique slug for the horizontal tab to reference the tab by.
+	 *
+	 * @param {string} newTitle Title of tab.
+	 * @param {object} tabData Innerblock tab to be named.
+	 * 
+	 * @return {string} Unique slug.
+	 */
 	getUniqueSlug(newTitle, tabData) {
 		let newSlug = "";
 		let i = 0;
@@ -294,9 +311,7 @@ class Edit extends Component {
 				</div>
 				<style>
 					{`
-                    [data-block="${
-											this.props.clientId
-										}"] > .c9-horizontal-tabs > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
+                    [data-block="${this.props.clientId}"] > .c9-horizontal-tabs > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
                         display: block;
                     }
                     `}

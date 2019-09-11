@@ -1,31 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-// Import block dependencies and components
+
+/**
+ * Internal dependencies
+ */
 import Inspector from "./components/inspector";
 import ShareLinks from "./components/sharing";
 
-// Register editor components
-const {
-	AlignmentToolbar,
-	BlockControls,
-} = wp.editor;
-
-// Extend component
+/**
+ * WordPress dependencies
+ */
+const { AlignmentToolbar, BlockControls } = wp.editor;
 const { Component } = wp.element;
-
-// Components
 const { __ } = wp.i18n;
 
 export default class Edit extends Component {
-
-    constructor() {
-        super(...arguments);
-    }
+	constructor() {
+		super(...arguments);
+	}
 
 	render() {
-        // Setup the props
-		const {
-			setAttributes
-		} = this.props;
+		// Setup the props
+		const { setAttributes } = this.props;
 
 		const {
 			twitter,
@@ -35,7 +30,7 @@ export default class Edit extends Component {
 			pinterest,
 			email,
 			reddit,
-			shareAlignment,
+			shareAlignment
 		} = this.props.attributes;
 
 		return [
@@ -52,9 +47,17 @@ export default class Edit extends Component {
 			<Inspector {...this.props} />,
 			// Show the button markup in the editor
 			<ShareLinks {...this.props}>
-				{!twitter && !facebook && !google && !linkedin && !pinterest && !email && !reddit && (
-					<span className="text-danger">Choose a sharing link to display... otherwise remove this block.</span>
-				)}
+				{!twitter &&
+					!facebook &&
+					!google &&
+					!linkedin &&
+					!pinterest &&
+					!email &&
+					!reddit && (
+						<span className="text-danger">
+							Choose a sharing link to display... otherwise remove this block.
+						</span>
+					)}
 				<ul className="c9-share-list">
 					{twitter && (
 						<li>

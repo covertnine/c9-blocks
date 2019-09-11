@@ -12,7 +12,7 @@
 
 	.carousel-inner {
 		.c9-remove-image {
-			> .components-button.components-icon-button {
+			>.components-button.components-icon-button {
 				margin: 0 auto;
 			}
 
@@ -28,4 +28,18 @@
 	.editor-selected-controls-lift {
 		bottom: 80px;
 	}
+}
+
+.carousel-caption,
+.editor-styles-wrapper .carousel-caption,
+.editor-styles-wrapper .carousel-caption h5 {
+	color: #fff;
+}
+
+.carousel-control-next {
+	right: -48px;
+}
+
+.carousel-control-prev {
+	left: -48px;
 }
