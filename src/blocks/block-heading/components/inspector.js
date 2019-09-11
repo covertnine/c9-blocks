@@ -55,7 +55,7 @@ class Inspector extends Component {
 		];
 
 		const sizeTypes = [
-			{ value: "0", label: __("Same as Tag", "c9-blocks") },
+			{ value: "", label: __("Same as Tag", "c9-blocks") },
 			{ value: "1", label: __("H1", "c9-blocks") },
 			{ value: "2", label: __("H2", "c9-blocks") },
 			{ value: "3", label: __("H3", "c9-blocks") },

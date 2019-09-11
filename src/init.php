@@ -290,7 +290,7 @@ add_action( 'after_setup_theme', 'c9_blocks_image_sizes' );
  * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
  */
 function c9_check_bootstrap() {
-	$bootstrap_handles = array( 'bootstrap', 'bootstrap-css', 'bootstrapcss', 'bootstrap4', 'bootstrap4css', 'bootstrap4-css' );
+	$bootstrap_handles = array( 'bootstrap', 'bootstrap-js', 'bootstrap-css', 'bootstrapcss', 'bootstrap4', 'bootstrap4css', 'bootstrap4-css' );
 
 	/**
 	 * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
@@ -308,8 +308,10 @@ function c9_check_bootstrap() {
 		}
 	);
 
+	$theme_name = get_current_theme();
+
 	// if any of them matches, then array length of $check > 0.
-	if ( sizeof( $checks ) === 0 ) {
+	if ( sizeof( $checks ) === 0 && 'C9' !== $theme_name ) {
 		// Styles.
 		wp_enqueue_style(
 			'bootstrap-css',
