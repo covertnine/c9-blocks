@@ -1,0 +1,42 @@
+.c9-templates-modal {
+	.components-modal__header {
+		border-bottom: none;
+	}
+
+	.c9-component-modal-tab-panel .components-tab-panel__tabs {
+		margin-top: -24px;
+	}
+
+	@media (min-width: 600px) {
+		min-width: 600px;
+		max-width: 600px;
+
+		// fix for Ace editor tooltips
+		margin-left: -300px;
+		transform: none;
+
+		// position
+		top: 112px;
+	}
+
+	// size
+	@media (min-width: 840px) {
+		min-width: 800px;
+		max-width: 800px;
+
+		// fix for Ace editor tooltips
+		margin-left: -400px;
+		transform: none;
+	}
+
+	// header
+	.components-modal__header {
+		.components-modal__icon-container svg {
+			display: block;
+			margin-right: 10px;
+		}
+		.components-modal__header-heading {
+			font-weight: 600;
+		}
+    }
+}

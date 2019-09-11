@@ -5,6 +5,7 @@ import startCase from "lodash/startCase";
 import LayoutButton from "./layout-button";
 import SectionButton from "./section-button";
 import TemplateMarkups from "./templates-markup";
+import LargeModal from "../large-modal";
 
 /**
  * Styles
@@ -16,7 +17,7 @@ import "./editor.scss";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { Modal, TabPanel, Tooltip, Icon } = wp.components;
+const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { rawHandler } = wp.blocks;
@@ -29,10 +30,39 @@ class TemplatesModal extends Component {
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
 
 		this.state = {
-			reusables: []
+			activeTab: this.props.initial,
+			reusables: [],
+			sections: [],
+			layouts: [],
+			loading: true
 		};
 
 		this.getReusableBlocks();
+	}
+
+	componentDidMount() {
+		const self = this;
+		setTimeout(() => {
+			const { canUserUseUnfilteredHTML } = self.state;
+
+			// define section and layout templates
+			const sections = {
+				// convert markup to actual blocks
+				...self.markupToBlock(
+					TemplateMarkups.sections,
+					canUserUseUnfilteredHTML
+				)
+			};
+
+			self.setState({ sections });
+
+			const layouts = {
+				// convert markup to actual blocks
+				...self.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
+			};
+
+			self.setState({ layouts, loading: false });
+		}, 0);
 	}
 
 	/**
@@ -84,31 +114,52 @@ class TemplatesModal extends Component {
 
 	render() {
 		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
+		const { sections, layouts, loading } = this.state;
 
-		// define section and layout templates
+		// convert above to React DOM elements
+		const sectionItems = Object.keys(sections).map(k => (
+			<SectionButton
+				close={() => {
+					const { sections } = this.state;
+					sections[k] = rawHandler({
+						HTML: TemplateMarkups.sections[k].markup,
+						mode: "BLOCKS",
+						canUserUseUnfilteredHTML
+					});
 
-		const sections = {
-			// convert markup to actual blocks
-			...this.markupToBlock(TemplateMarkups.sections, canUserUseUnfilteredHTML)
-		};
+					this.setState({ sections });
+				}}
+				icon={TemplateMarkups.sections[k].icon}
+				label={__(startCase(k), "c9-blocks")}
+				section={sections[k]}
+			/>
+		));
 
-		const layouts = {
-			// convert markup to actual blocks
-			...this.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
-		};
+		const layoutItems = Object.keys(layouts).map(k => (
+			<LayoutButton
+				close={() => {
+					const { layouts } = this.state;
+					layouts[k] = rawHandler({
+						HTML: TemplateMarkups.layouts[k].markup,
+						mode: "BLOCKS",
+						canUserUseUnfilteredHTML
+					});
+
+					this.setState({ layouts });
+				}}
+				icon={TemplateMarkups.layouts[k].icon}
+				label={__(startCase(k), "c9-blocks")}
+				layout={layouts[k]}
+			/>
+		));
 
 		return (
-			<Modal
-				className="c9-templates-modal"
-				position="top"
-				size="lg"
-				{...this.props}
-			>
+			<LargeModal {...this.props}>
 				<TabPanel
 					className="c9-template-tabs c9-component-modal-tab-panel"
 					tabs={[
 						{
-							name: "sections",
+							name: "section-templates",
 							title: (
 								<Tooltip
 									text={__(
@@ -122,7 +173,7 @@ class TemplatesModal extends Component {
 							className: "c9-template-tabs-tab"
 						},
 						{
-							name: "pages",
+							name: "page-templates",
 							title: (
 								<Tooltip
 									text={__("Pre-designed ready to use pages.", "c9-blocks")}
@@ -133,7 +184,7 @@ class TemplatesModal extends Component {
 							className: "c9-template-tabs-tab"
 						},
 						{
-							name: "blocks",
+							name: "saved-blocks",
 							title: (
 								<Tooltip text={__("My Templates.", "c9-blocks")}>
 									<span>{__("Saved Blocks")}</span>
@@ -143,22 +194,24 @@ class TemplatesModal extends Component {
 						}
 					]}
 					initialTabName={this.props.initial}
+					onSelect={tabName => this.setState({ activeTab: tabName })}
 				>
 					{tab => {
+						if (loading) {
+							return (
+								<div className="c9-loading-wrapper">
+									<Spinner />
+								</div>
+							);
+						}
+
 						switch (tab.name) {
-							case "sections":
+							case "section-templates":
 								return (
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-section-options">
-											{Object.keys(sections).map(k => (
-												<SectionButton
-													close={this.props.close}
-													icon={TemplateMarkups.sections[k].icon}
-													label={__(startCase(k), "c9-blocks")}
-													section={sections[k]}
-												/>
-											))}
+											{sectionItems}
 											<button
 												onClick={() => {
 													resetBlocks([]);
@@ -171,19 +224,12 @@ class TemplatesModal extends Component {
 										</div>
 									</Fragment>
 								);
-							case "pages":
+							case "page-templates":
 								return (
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-layout-options">
-											{Object.keys(layouts).map(k => (
-												<LayoutButton
-													close={this.props.close}
-													icon={TemplateMarkups.layouts[k].icon}
-													label={__(startCase(k), "c9-blocks")}
-													layout={layouts[k]}
-												/>
-											))}
+											{layoutItems}
 											<button
 												onClick={() => {
 													resetBlocks([]);
@@ -223,7 +269,7 @@ class TemplatesModal extends Component {
 						}
 					}}
 				</TabPanel>
-			</Modal>
+			</LargeModal>
 		);
 	}
 }
@@ -238,10 +284,9 @@ const TemplatesModalWithSelect = compose([
 		};
 	}),
 	withDispatch(dispatch => {
-		const { resetBlocks, insertBlocks } = dispatch("core/editor");
+		const { resetBlocks } = dispatch("core/editor");
 		return {
-			resetBlocks,
-			insertBlocks
+			resetBlocks
 		};
 	})
 ])(TemplatesModal);
