@@ -113,13 +113,22 @@ class TemplatesModal extends Component {
 	}
 
 	render() {
-		const { resetBlocks } = this.props;
+		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
 		const { sections, layouts, loading } = this.state;
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => (
 			<SectionButton
-				close={this.props.close}
+				close={() => {
+					const { sections } = this.state;
+					sections[k] = rawHandler({
+						HTML: TemplateMarkups.sections[k].markup,
+						mode: "BLOCKS",
+						canUserUseUnfilteredHTML
+					});
+
+					this.setState({ sections });
+				}}
 				icon={TemplateMarkups.sections[k].icon}
 				label={__(startCase(k), "c9-blocks")}
 				section={sections[k]}
@@ -128,7 +137,16 @@ class TemplatesModal extends Component {
 
 		const layoutItems = Object.keys(layouts).map(k => (
 			<LayoutButton
-				close={this.props.close}
+				close={() => {
+					const { layouts } = this.state;
+					layouts[k] = rawHandler({
+						HTML: TemplateMarkups.layouts[k].markup,
+						mode: "BLOCKS",
+						canUserUseUnfilteredHTML
+					});
+
+					this.setState({ layouts });
+				}}
 				icon={TemplateMarkups.layouts[k].icon}
 				label={__(startCase(k), "c9-blocks")}
 				layout={layouts[k]}

@@ -9,7 +9,7 @@ import heroSpotifyEmbedWithImageCarousel from "./section-templates/hero-spotify-
 import largeGalleryCarousel from "./section-templates/large-gallery-carousel";
 import logoGallerySliderCarousel from "./section-templates/logo-gallery-slider-carousel";
 import section2ColAboutWithImageCarousel from "./section-templates/section-2-col-about-with-image-carousel";
-import section2ColCallToActionbVideoBackgroundBigHeading from "./section-templates/section-2-col-call-to-action-video-background-big-heading";
+import section2ColCallToActionVideoBackgroundBigHeading from "./section-templates/section-2-col-call-to-action-video-background-big-heading";
 import section2ColHistoryAbout from "./section-templates/section-2-col-history-about";
 import section2ColServiceListWith2Testimonials from "./section-templates/section-2-col-service-list-with-2-testimonials";
 import sectionEmbedGoogleMapLocationAddress from "./section-templates/section-embed-google-map-location-address";
@@ -22,8 +22,8 @@ import sectionHeaderWithVideoHeroButton from "./section-templates/section-header
 import sectionLineupHeaderWithTicketsButton from "./section-templates/section-lineup-header-with-tickets-button";
 import sectionLineupHeaderWithWhiteBackgroundTicketsBtn from "./section-templates/section-lineup-header-with-white-background-tickets-btn";
 import sectionMissionStatement2ColWithImg from "./section-templates/section-mission-statement-2-col-with-img";
-import sectionPriceMenu3Colv1 from "./section-templates/section-price-menu-3-col-v1";
-import sectionPriceMenu3Colv2 from "./section-templates/section-price-menu-3-col-v2";
+import sectionPriceMenu3ColV1 from "./section-templates/section-price-menu-3-col-v1";
+import sectionPriceMenu3ColV2 from "./section-templates/section-price-menu-3-col-v2";
 import sectionTestimonialWithLargeImgBackground from "./section-templates/section-testimonial-with-large-img-background";
 import singleProfileOrBio from "./section-templates/single-profile-or-bio";
 import testimonialCentered from "./section-templates/testimonial-centered";
@@ -59,7 +59,7 @@ const templateMarkups = {
 		largeGalleryCarousel,
 		logoGallerySliderCarousel,
 		section2ColAboutWithImageCarousel,
-		section2ColCallToActionbVideoBackgroundBigHeading,
+		section2ColCallToActionVideoBackgroundBigHeading,
 		section2ColHistoryAbout,
 		section2ColServiceListWith2Testimonials,
 		sectionEmbedGoogleMapLocationAddress,
@@ -72,8 +72,8 @@ const templateMarkups = {
 		sectionLineupHeaderWithTicketsButton,
 		sectionLineupHeaderWithWhiteBackgroundTicketsBtn,
 		sectionMissionStatement2ColWithImg,
-		sectionPriceMenu3Colv1,
-		sectionPriceMenu3Colv2,
+		sectionPriceMenu3ColV1,
+		sectionPriceMenu3ColV2,
 		sectionTestimonialWithLargeImgBackground,
 		singleProfileOrBio,
 		testimonialCentered,
