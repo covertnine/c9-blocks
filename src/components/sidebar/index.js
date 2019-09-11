@@ -25,7 +25,8 @@ class Sidebar extends Component {
 		super(...arguments);
 
 		this.state = {
-			isModalOpen: false
+			isModalOpen: false,
+			loading: false
 		};
 	}
 
@@ -55,7 +56,9 @@ class Sidebar extends Component {
 							isDefault
 							isLarge
 							onClick={() => {
+								this.setState({ loading: true });
 								this.setState({ isModalOpen: "section-templates" });
+								this.setState({ loading: false });
 							}}
 						>
 							<span className="dashicons dashicons-schedule" />
@@ -91,35 +94,13 @@ class Sidebar extends Component {
 						<ColorAppender />
 					</PanelBody>
 				</PluginSidebar>
-				{"section-templates" === isModalOpen ? (
+				{isModalOpen ? (
 					<TemplatesModal
 						close={this.closeMenu}
 						title="Templates"
 						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
-						initial="sections"
-					/>
-				) : (
-					""
-				)}
-				{"page-templates" === isModalOpen ? (
-					<TemplatesModal
-						close={this.closeMenu}
-						title="Templates"
-						icon={<Dashicon icon={"schedule"} />}
-						onRequestClose={() => this.setState({ isModalOpen: false })}
-						initial="pages"
-					/>
-				) : (
-					""
-				)}
-				{"saved-blocks" === isModalOpen ? (
-					<TemplatesModal
-						close={this.closeMenu}
-						title="Templates"
-						icon={<Dashicon icon={"schedule"} />}
-						onRequestClose={() => this.setState({ isModalOpen: false })}
-						initial="blocks"
+						initial={isModalOpen}
 					/>
 				) : (
 					""

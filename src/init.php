@@ -187,6 +187,13 @@ add_action( 'enqueue_block_assets', 'c9_blocks_cgb_block_assets' );
  * @since 1.0.0
  */
 function c9_blocks_cgb_editor_assets() {
+	// update category, e.g. add icon and dequeue core blocks we don't want users using.
+	wp_enqueue_script(
+		'c9_blocks-update-category',
+		plugins_url( 'dist/blocks.update-category.build.js', dirname( __FILE__ ) ),
+		array( 'wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-api' )
+	);
+
 	// Scripts.
 	wp_enqueue_script(
 		'c9_blocks-cgb-block-js', // Handle.
@@ -196,16 +203,9 @@ function c9_blocks_cgb_editor_assets() {
 		true // Enqueue the script in the footer.
 	);
 
-	// update category, e.g. add icon and dequeue core blocks we don't want users using.
-	wp_enqueue_script(
-		'c9_blocks-update-category',
-		plugins_url( 'dist/blocks.update-category.build.js', dirname( __FILE__ ) ),
-		array( 'wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-api' )
-	);
-
 	// Add local variables to reference.
 	wp_localize_script(
-		'c9_blocks-cgb-block-js',
+		'c9_blocks-update-category',
 		'c9_blocks_params',
 		array(
 			'colors'      => get_option( 'c9_blocks_colors' ),
@@ -215,7 +215,7 @@ function c9_blocks_cgb_editor_assets() {
 
 	// Add local variables to reference.
 	wp_localize_script(
-		'c9_blocks-update-category',
+		'c9_blocks-cgb-block-js',
 		'c9_blocks_params',
 		array(
 			'colors'      => get_option( 'c9_blocks_colors' ),

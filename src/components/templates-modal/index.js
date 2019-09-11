@@ -5,6 +5,7 @@ import startCase from "lodash/startCase";
 import LayoutButton from "./layout-button";
 import SectionButton from "./section-button";
 import TemplateMarkups from "./templates-markup";
+import LargeModal from "../large-modal";
 
 /**
  * Styles
@@ -16,7 +17,7 @@ import "./editor.scss";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { Modal, TabPanel, Tooltip, Icon } = wp.components;
+const { TabPanel, Tooltip, Icon } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { rawHandler } = wp.blocks;
@@ -97,18 +98,32 @@ class TemplatesModal extends Component {
 			...this.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
 		};
 
+		// convert above to React DOM elements
+		const sectionItems = Object.keys(sections).map(k => (
+			<SectionButton
+				close={this.props.close}
+				icon={TemplateMarkups.sections[k].icon}
+				label={__(startCase(k), "c9-blocks")}
+				section={sections[k]}
+			/>
+		));
+
+		const layoutItems = Object.keys(layouts).map(k => (
+			<LayoutButton
+				close={this.props.close}
+				icon={TemplateMarkups.layouts[k].icon}
+				label={__(startCase(k), "c9-blocks")}
+				layout={layouts[k]}
+			/>
+		));
+
 		return (
-			<Modal
-				className="c9-templates-modal"
-				position="top"
-				size="lg"
-				{...this.props}
-			>
+			<LargeModal {...this.props}>
 				<TabPanel
 					className="c9-template-tabs c9-component-modal-tab-panel"
 					tabs={[
 						{
-							name: "sections",
+							name: "section-templates",
 							title: (
 								<Tooltip
 									text={__(
@@ -122,7 +137,7 @@ class TemplatesModal extends Component {
 							className: "c9-template-tabs-tab"
 						},
 						{
-							name: "pages",
+							name: "page-templates",
 							title: (
 								<Tooltip
 									text={__("Pre-designed ready to use pages.", "c9-blocks")}
@@ -133,7 +148,7 @@ class TemplatesModal extends Component {
 							className: "c9-template-tabs-tab"
 						},
 						{
-							name: "blocks",
+							name: "saved-blocks",
 							title: (
 								<Tooltip text={__("My Templates.", "c9-blocks")}>
 									<span>{__("Saved Blocks")}</span>
@@ -146,19 +161,12 @@ class TemplatesModal extends Component {
 				>
 					{tab => {
 						switch (tab.name) {
-							case "sections":
+							case "section-templates":
 								return (
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-section-options">
-											{Object.keys(sections).map(k => (
-												<SectionButton
-													close={this.props.close}
-													icon={TemplateMarkups.sections[k].icon}
-													label={__(startCase(k), "c9-blocks")}
-													section={sections[k]}
-												/>
-											))}
+											{sectionItems}
 											<button
 												onClick={() => {
 													resetBlocks([]);
@@ -171,19 +179,12 @@ class TemplatesModal extends Component {
 										</div>
 									</Fragment>
 								);
-							case "pages":
+							case "page-templates":
 								return (
 									<Fragment>
 										<p>{tab.title}</p>
 										<div className="c9-layout-options">
-											{Object.keys(layouts).map(k => (
-												<LayoutButton
-													close={this.props.close}
-													icon={TemplateMarkups.layouts[k].icon}
-													label={__(startCase(k), "c9-blocks")}
-													layout={layouts[k]}
-												/>
-											))}
+											{layoutItems}
 											<button
 												onClick={() => {
 													resetBlocks([]);
@@ -223,7 +224,7 @@ class TemplatesModal extends Component {
 						}
 					}}
 				</TabPanel>
-			</Modal>
+			</LargeModal>
 		);
 	}
 }
@@ -238,10 +239,9 @@ const TemplatesModalWithSelect = compose([
 		};
 	}),
 	withDispatch(dispatch => {
-		const { resetBlocks, insertBlocks } = dispatch("core/editor");
+		const { resetBlocks } = dispatch("core/editor");
 		return {
-			resetBlocks,
-			insertBlocks
+			resetBlocks
 		};
 	})
 ])(TemplatesModal);
