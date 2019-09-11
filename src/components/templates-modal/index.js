@@ -137,16 +137,6 @@ class TemplatesModal extends Component {
 
 		const layoutItems = Object.keys(layouts).map(k => (
 			<LayoutButton
-				close={() => {
-					const { layouts } = this.state;
-					layouts[k] = rawHandler({
-						HTML: TemplateMarkups.layouts[k].markup,
-						mode: "BLOCKS",
-						canUserUseUnfilteredHTML
-					});
-
-					this.setState({ layouts });
-				}}
 				icon={TemplateMarkups.layouts[k].icon}
 				label={__(startCase(k), "c9-blocks")}
 				layout={layouts[k]}

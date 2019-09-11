@@ -18,8 +18,8 @@ export default {
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"id":7750,"align":"center","width":92,"height":69} -->
-	<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/feather-logo-white.png" alt="" class="wp-image-7750" width="92" height="69"/></figure></div>
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","width":92,"height":69} -->
+	<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/feather-logo-white.png" alt="" width="92" height="69"/></figure></div>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>
@@ -54,8 +54,8 @@ export default {
 	<div style="height:28px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:image {"id":7737,"align":"center","width":29,"height":49} -->
-	<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" class="wp-image-7737" width="29" height="49"/></figure></div>
+	<!-- wp:image {"align":"center","width":29,"height":49} -->
+	<div class="wp-block-image aligncenter is-resized"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" width="29" height="49"/></figure></div>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	

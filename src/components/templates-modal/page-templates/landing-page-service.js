@@ -170,20 +170,20 @@ export default {
 	
 	<!-- wp:c9-blocks/carousel {"instanceId":0,"autoSlide":false} -->
 	<div id="c9-carousel-indicator-0" class="c9-carousel carousel slide" data-ride="carousel" data-interval="false" data-wrap="true"><ol class="carousel-indicators"><li data-target="#c9-carousel-indicator-0" data-slide-to="0" class="active"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="1"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="2"></li></ol><div class="carousel-inner"><!-- wp:c9-blocks/carousel-slide {"id":0,"slideActive":2,"slides":3} -->
-	<div class="c9-carousel-slide carousel-item active"><!-- wp:gallery {"ids":[7437,7438,7439,7440],"columns":4,"imageCrop":false} -->
-	<ul class="wp-block-gallery columns-4"><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-8.jpg" alt="" data-id="7437" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-8/" class="wp-image-7437"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-7.jpg" alt="" data-id="7438" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-7/" class="wp-image-7438"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-6.jpg" alt="" data-id="7439" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-6/" class="wp-image-7439"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-5.jpg" alt="" data-id="7440" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-5/" class="wp-image-7440"/></figure></li></ul>
+	<div class="c9-carousel-slide carousel-item active"><!-- wp:gallery {"columns":4,"imageCrop":false} -->
+	<ul class="wp-block-gallery columns-4"><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-8.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-7.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-6.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-5.jpg" alt=""/></figure></li></ul>
 	<!-- /wp:gallery --></div>
 	<!-- /wp:c9-blocks/carousel-slide -->
 	
 	<!-- wp:c9-blocks/carousel-slide {"id":1,"slideActive":2,"slides":3} -->
-	<div class="c9-carousel-slide carousel-item"><!-- wp:gallery {"ids":[7440,7439,7438,7437],"columns":4,"imageCrop":false} -->
-	<ul class="wp-block-gallery columns-4"><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-5.jpg" alt="" data-id="7440" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-5/" class="wp-image-7440"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-6.jpg" alt="" data-id="7439" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-6/" class="wp-image-7439"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-7.jpg" alt="" data-id="7438" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-7/" class="wp-image-7438"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-8.jpg" alt="" data-id="7437" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-8/" class="wp-image-7437"/></figure></li></ul>
+	<div class="c9-carousel-slide carousel-item"><!-- wp:gallery {"columns":4,"imageCrop":false} -->
+	<ul class="wp-block-gallery columns-4"><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-5.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-6.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-7.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-8.jpg" alt=""/></figure></li></ul>
 	<!-- /wp:gallery --></div>
 	<!-- /wp:c9-blocks/carousel-slide -->
 	
 	<!-- wp:c9-blocks/carousel-slide {"id":2,"slideActive":2,"slides":3} -->
-	<div class="c9-carousel-slide carousel-item"><!-- wp:gallery {"ids":[7440,7439,7438,7437],"columns":4,"imageCrop":false} -->
-	<ul class="wp-block-gallery columns-4"><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-5.jpg" alt="" data-id="7440" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-5/" class="wp-image-7440"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-6.jpg" alt="" data-id="7439" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-6/" class="wp-image-7439"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-7.jpg" alt="" data-id="7438" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-7/" class="wp-image-7438"/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-8.jpg" alt="" data-id="7437" data-link="http://gutenberg-stock-test.local/service-landing-page/logo-8/" class="wp-image-7437"/></figure></li></ul>
+	<div class="c9-carousel-slide carousel-item"><!-- wp:gallery {"columns":4,"imageCrop":false} -->
+	<ul class="wp-block-gallery columns-4"><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-5.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-6.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-7.jpg" alt=""/></figure></li><li class="blocks-gallery-item"><figure><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/logo-8.jpg" alt=""/></figure></li></ul>
 	<!-- /wp:gallery --></div>
 	<!-- /wp:c9-blocks/carousel-slide --></div><a class="carousel-control-prev" href="#c9-carousel-indicator-0" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-carousel-indicator-0" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
 	<!-- /wp:c9-blocks/carousel --></div></div>
@@ -348,8 +348,8 @@ export default {
 	<!-- wp:c9-blocks/grid {"instanceId":10,"rows":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":3,"columnsGap":1,"layout":"c9-3-col-equal","containerWidth":"container-narrow"} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-3 c9-3-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-1 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":7520} -->
-	<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/three-girls-drinking-beers-1024x682.jpg" alt="" class="wp-image-7520"/></figure>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image -->
+	<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/three-girls-drinking-beers-1024x682.jpg" alt=""/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"More Drinking with Friends","tagLevel":5} -->
@@ -366,8 +366,8 @@ export default {
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":7521} -->
-	<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/stock-image-3-1024x682.jpg" alt="" class="wp-image-7521"/></figure>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image -->
+	<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/stock-image-3-1024x682.jpg" alt=""/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"More Adventures","tagLevel":5} -->
@@ -384,8 +384,8 @@ export default {
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":7522} -->
-	<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/audience-blur-wide-1024x682.jpg" alt="" class="wp-image-7522"/></figure>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image -->
+	<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/audience-blur-wide-1024x682.jpg" alt=""/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"More Drinking with Friends","tagLevel":5} -->
@@ -426,8 +426,8 @@ export default {
 	<!-- wp:c9-blocks/grid {"instanceId":11} -->
 	<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":7491,"align":"left","width":395,"height":330} -->
-	<div class="wp-block-image"><figure class="alignleft is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/gutenberg-responsive-theme-e1567053405233-1024x856.jpeg" alt="" class="wp-image-7491" width="395" height="330"/><figcaption><strong>First Name Last Name<br></strong>Title or Subheading</figcaption></figure></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"align":"left","width":395,"height":330} -->
+	<div class="wp-block-image"><figure class="alignleft is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/gutenberg-responsive-theme-e1567053405233-1024x856.jpeg" alt="" width="395" height="330"/><figcaption><strong>First Name Last Name<br></strong>Title or Subheading</figcaption></figure></div>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
@@ -484,8 +484,8 @@ export default {
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":7496,"align":"center"} -->
-	<div class="wp-block-image"><figure class="aligncenter"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/gutenberg-testimonial-1024x1024.jpeg" alt="girl in tesitmonial from WordPress Gutenberg Block" class="wp-image-7496"/></figure></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"align":"center"} -->
+	<div class="wp-block-image"><figure class="aligncenter"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/gutenberg-testimonial-1024x1024.jpeg" alt="girl in tesitmonial from WordPress Gutenberg Block"/></figure></div>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>

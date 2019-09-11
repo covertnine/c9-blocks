@@ -22,8 +22,8 @@ export default {
 <!-- /wp:c9-blocks/column -->
 
 <!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"id":7721,"align":"center","width":188,"height":159} -->
-<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-RECORDS-placeholder.png" alt="" class="wp-image-7721" width="188" height="159"/></figure></div>
+<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","width":188,"height":159} -->
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-RECORDS-placeholder.png" alt="" width="188" height="159"/></figure></div>
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
@@ -46,8 +46,8 @@ export default {
 <!-- /wp:c9-blocks/column -->
 
 <!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":7655,"width":212,"height":282} -->
-<figure class="wp-block-image is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/event-page-template-gutenberg-poster-768x1024.jpg" alt="" class="wp-image-7655" width="212" height="282"/></figure>
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"width":212,"height":282} -->
+<figure class="wp-block-image is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/event-page-template-gutenberg-poster-768x1024.jpg" alt="" width="212" height="282"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":31} -->
@@ -220,8 +220,8 @@ https://open.spotify.com/playlist/37i9dQZF1DXd0ZFXhY0CRF?
 <!-- /wp:c9-blocks/column -->
 
 <!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":7671,"align":"center","width":267,"height":401} -->
-<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/gutenberg-event-block-spotify-img-680x1024.jpg" alt="" class="wp-image-7671" width="267" height="401"/><figcaption>Your Host... she looks like a Jennifer</figcaption></figure></div>
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"align":"center","width":267,"height":401} -->
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/gutenberg-event-block-spotify-img-680x1024.jpg" alt="" width="267" height="401"/><figcaption>Your Host... she looks like a Jennifer</figcaption></figure></div>
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
@@ -249,13 +249,13 @@ https://open.spotify.com/playlist/37i9dQZF1DXd0ZFXhY0CRF?
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:block {"ref":8326} /-->
+<!-- wp:block -->
 
 <!-- wp:c9-blocks/grid {"instanceId":7,"containerHue":"#f4f4f4","minScreenHeight":64} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":10} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"id":7682,"align":"center","width":275,"height":412} -->
-<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/EVENT-VERT2-683x1024.jpg" alt="" class="wp-image-7682" width="275" height="412"/><figcaption>Merch store open 10am-6pm daily</figcaption></figure></div>
+<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","width":275,"height":412} -->
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/EVENT-VERT2-683x1024.jpg" alt="" width="275" height="412"/><figcaption>Merch store open 10am-6pm daily</figcaption></figure></div>
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column -->
 
