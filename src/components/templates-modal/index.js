@@ -17,7 +17,7 @@ import "./editor.scss";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { TabPanel, Tooltip, Icon } = wp.components;
+const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { rawHandler } = wp.blocks;
@@ -30,10 +30,39 @@ class TemplatesModal extends Component {
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
 
 		this.state = {
-			reusables: []
+			activeTab: this.props.initial,
+			reusables: [],
+			sections: [],
+			layouts: [],
+			loading: true
 		};
 
 		this.getReusableBlocks();
+	}
+
+	componentDidMount() {
+		const self = this;
+		setTimeout(() => {
+			const { canUserUseUnfilteredHTML } = self.state;
+
+			// define section and layout templates
+			const sections = {
+				// convert markup to actual blocks
+				...self.markupToBlock(
+					TemplateMarkups.sections,
+					canUserUseUnfilteredHTML
+				)
+			};
+
+			self.setState({ sections });
+
+			const layouts = {
+				// convert markup to actual blocks
+				...self.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
+			};
+
+			self.setState({ layouts, loading: false });
+		}, 0);
 	}
 
 	/**
@@ -84,19 +113,8 @@ class TemplatesModal extends Component {
 	}
 
 	render() {
-		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
-
-		// define section and layout templates
-
-		const sections = {
-			// convert markup to actual blocks
-			...this.markupToBlock(TemplateMarkups.sections, canUserUseUnfilteredHTML)
-		};
-
-		const layouts = {
-			// convert markup to actual blocks
-			...this.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
-		};
+		const { resetBlocks } = this.props;
+		const { sections, layouts, loading } = this.state;
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => (
@@ -158,8 +176,17 @@ class TemplatesModal extends Component {
 						}
 					]}
 					initialTabName={this.props.initial}
+					onSelect={tabName => this.setState({ activeTab: tabName })}
 				>
 					{tab => {
+						if (loading) {
+							return (
+								<div className="c9-loading-wrapper">
+									<Spinner />
+								</div>
+							);
+						}
+
 						switch (tab.name) {
 							case "section-templates":
 								return (

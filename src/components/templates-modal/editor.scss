@@ -1,4 +1,10 @@
 .c9-templates-modal {
+	.c9-loading-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 	// tab panel
 	.c9-component-modal-tab-panel {
 		.c9-layout-options, .c9-section-options {
