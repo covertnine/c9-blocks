@@ -223,8 +223,6 @@ function c9_blocks_cgb_editor_assets() {
 		)
 	);
 
-	c9_check_bootstrap();
-
 	// Youtube Player API.
 	wp_enqueue_script(
 		'youtube-api',
@@ -268,8 +266,6 @@ function c9_blocks_front_assets() {
 		plugins_url( 'dist/blocks.frontend.build.js', dirname( __FILE__ ) ),
 		array( 'youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n' )
 	);
-
-	c9_check_bootstrap();
 }
 
 // Hook: c9 Blocks Frontend.
@@ -290,28 +286,26 @@ add_action( 'after_setup_theme', 'c9_blocks_image_sizes' );
  * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
  */
 function c9_check_bootstrap() {
-	$bootstrap_handles = array( 'bootstrap', 'bootstrap-js', 'bootstrap-css', 'bootstrapcss', 'bootstrap4', 'bootstrap4css', 'bootstrap4-css' );
+	$bootstrap_handles = array( 'bootstrap', 'bootstrap-js', 'bootstrap-css', 'bootstrapcss', 'bootstrap4', 'bootstrap4css', 'bootstrap4-css', 'c9-styles' );
 
 	/**
 	 * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
 	 *
 	 * @param string $handle The handle to check.
 	 */
-	function check_bootstrap_exist( $handle ) {
+	function check_handle_exist( $handle ) {
 		return wp_style_is( $handle, 'queue' ) || wp_style_is( $handle, 'done' );
 	}
 
 	$checks = array_filter(
-		array_map( 'check_bootstrap_exist', $bootstrap_handles ),
+		array_map( 'check_handle_exist', $bootstrap_handles ),
 		function ( $c ) {
 			return $c;
 		}
 	);
 
-	$theme_name = get_current_theme();
-
 	// if any of them matches, then array length of $check > 0.
-	if ( sizeof( $checks ) === 0 && 'C9' !== $theme_name ) {
+	if ( sizeof( $checks ) === 0 ) {
 		// Styles.
 		wp_enqueue_style(
 			'bootstrap-css',
@@ -328,3 +322,7 @@ function c9_check_bootstrap() {
 		);
 	}
 }
+
+// Check bootstrap - frontend.
+add_action( 'enqueue_block_editor_assets', 'c9_check_bootstrap', 9999 );
+add_action( 'wp_enqueue_scripts', 'c9_check_bootstrap', 9999 );
