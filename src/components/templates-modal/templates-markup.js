@@ -31,7 +31,7 @@ import videoBackgroundPageTitle from "./section-templates/video-background-page-
 
 // pages
 import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
-import landingPageAbout from "./page-templates/landing-page-about-corporate";
+import landingPageAbout from "./page-templates/landing-page-about";
 import landingPageEvent from "./page-templates/landing-page-event";
 import landingPageLaunchRelease from "./page-templates/landing-page-launch-release";
 import landingPageMedia from "./page-templates/landing-page-media";
@@ -40,11 +40,11 @@ import landingPageService from "./page-templates/landing-page-service";
 
 const templateMarkups = {
 	layouts: {
-		// landingPageAboutCorporate,
-		// landingPageAbout,
+		landingPageAboutCorporate,
+		landingPageAbout,
 		landingPageEvent,
 		landingPageLaunchRelease,
-		// landingPageMedia,
+		landingPageMedia,
 		landingPagePriceMenu,
 		landingPageService
 	},

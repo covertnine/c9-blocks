@@ -31,7 +31,7 @@ const attributes = {
 		}
 	},
 	tagLevel: {
-		type: "int",
+		type: "number",
 		default: 1
 	},
 	displayLevel: {

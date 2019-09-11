@@ -1,9 +1,4 @@
 /**
- * Utility methods for use when generating build configuration objects.
- */
-const { join } = require( 'path' );
-
-/**
  * Given a string, returns a new string with dash separators converted to
  * camel-case equivalent. This is not as aggressive as `_.camelCase`, which
  * which would also upper-case letters following numbers.

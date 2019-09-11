@@ -259,8 +259,8 @@ export default {
 	<hr class="wp-block-separator"/>
 	<!-- /wp:separator -->
 	
-	<!-- wp:c9-blocks/heading {"heading":"Nine More Seasons ","textAlign":"center"} -->
-	<div class="section-heading c9-heading text-center"><h1 class="c9-h">Nine More Seasons </h1></div>
+	<!-- wp:c9-blocks/heading {"heading":"Nine More Seasons","textAlign":"center"} -->
+	<div class="section-heading c9-heading text-center"><h1 class="c9-h">Nine More Seasons</h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":7,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
