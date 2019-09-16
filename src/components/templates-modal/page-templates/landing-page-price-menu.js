@@ -256,8 +256,8 @@ export default {
 <!-- /wp:c9-blocks/column -->
 
 <!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"id":7645} -->
-<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/mission-bio-web-683x1024.jpg" alt="" class="wp-image-7645"/></figure>
+<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image -->
+<figure class="wp-block-image"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/mission-bio-web-683x1024.jpg" alt=""/></figure>
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
