@@ -103,7 +103,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 				}
 
 				$post_grid_markup .= sprintf(
-					'<%3$s class="c9-block-post-grid-title"><a href="%1$s" rel="bookmark">%2$s</a></%3$s>',
+					'<%3$s class="c9-block-post-grid-title"><a href="%1$s" class="c9-smooth" rel="bookmark">%2$s</a></%3$s>',
 					esc_url( get_permalink( $post_id ) ),
 					esc_html( $title ),
 					esc_attr( $post_title_tag )
