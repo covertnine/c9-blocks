@@ -104,3 +104,12 @@ div[data-type="c9-blocks/post-grid"] {
 		}
 	}
 }
+
+.c9-block-post-grid .is-list article:not(.has-post-thumbnail) {
+	grid-template-columns: 1fr;
+
+}
+
+.c9-block-post-grid .is-list article {
+	grid-template-columns: 30% 1fr !important;
+}
