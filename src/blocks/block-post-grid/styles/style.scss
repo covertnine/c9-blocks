@@ -52,6 +52,26 @@
 
 	.is-grid.columns-1 {
 		grid-template-columns: 1fr;
+
+		h2.c9-block-post-grid-title {
+			font-size: 3.6rem;
+		}
+
+		h3.c9-block-post-grid-title {
+			font-size: 3rem;
+		}
+
+		h4.c9-block-post-grid-title {
+			font-size: 2.6rem;
+		}
+
+		h5.c9-block-post-grid-title {
+			font-size: 2.2rem;
+		}
+
+		h6.c9-block-post-grid-title {
+			font-size: 1.8rem;
+		}
 	}
 
 	.is-grid.columns-2 {
