@@ -7,6 +7,7 @@
  * Author URI: https://www.covertnine.com
  * Version: 1.0.1
  * License: GPL2+
+ * Text Domain: c9-blocks
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @package C9 Blocks
