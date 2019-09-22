@@ -26,7 +26,9 @@ registerBlockType("c9-blocks/heading", {
 	title: __("C9 Heading", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
-	supports: {},
+	supports: {
+		anchor: true,
+	},
 	keywords: [
 		__("heading", "c9-blocks"),
 		__("c9", "c9-blocks"),

@@ -26,7 +26,7 @@ registerBlockType("c9-blocks/grid", {
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {
-		// fill in features
+		anchor: true
 	},
 	keywords: [__("responsive", "c9-blocks")],
 	attributes,

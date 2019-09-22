@@ -149,7 +149,8 @@ export default class Container extends Component {
 				focalPoint,
 				containerVideoURL,
 				containerVideoID,
-				cannotEmbed
+				cannotEmbed,
+				anchor
 			},
 			className = "",
 			isSelectedBlockInRoot
@@ -171,6 +172,7 @@ export default class Container extends Component {
 					containerHue,
 					containerOpacity
 				)}
+				id={anchor ? anchor : null}
 			>
 				{(!!containerVideoURL || !!containerVideoID) && !cannotEmbed && (
 					<VideoBox {...this.props} />
