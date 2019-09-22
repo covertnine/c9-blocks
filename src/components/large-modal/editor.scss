@@ -29,6 +29,16 @@
 		transform: none;
 	}
 
+	// size
+	@media (min-width: 1240px) {
+		min-width: 1200px;
+		max-width: 1200px;
+
+		// fix for Ace editor tooltips
+		margin-left: -600px;
+		transform: none;
+	}
+
 	// header
 	.components-modal__header {
 		.components-modal__icon-container svg {
