@@ -163,6 +163,13 @@ module.exports = {
 					loader: "svg-url-loader",
 					options: { sourceMap: true }
 				}
+			},
+			{
+				test: /\.(png|jpg|gif)$/i,
+				use: {
+					loader: "url-loader",
+					options: { sourceMap: true }
+				}
 			}
 		]
 	},

@@ -32,8 +32,8 @@ class TemplatesModal extends Component {
 		this.state = {
 			activeTab: this.props.initial,
 			reusables: [],
-			sections: [],
-			layouts: [],
+			sections: this.props.sections,
+			layouts: this.props.layouts,
 			loading: true
 		};
 
@@ -43,25 +43,35 @@ class TemplatesModal extends Component {
 	componentDidMount() {
 		const self = this;
 		setTimeout(() => {
-			const { canUserUseUnfilteredHTML } = self.state;
+			const { sections, layouts } = self.state;
+			if (0 < Object.keys(sections).length && 0 < Object.keys(layouts).length) {
+				self.setState({ loading: false });
+			} else {
+				const { canUserUseUnfilteredHTML } = self.state;
 
-			// define section and layout templates
-			const sections = {
-				// convert markup to actual blocks
-				...self.markupToBlock(
-					TemplateMarkups.sections,
-					canUserUseUnfilteredHTML
-				)
-			};
+				// define section and layout templates
+				const sections = {
+					// convert markup to actual blocks
+					...self.markupToBlock(
+						TemplateMarkups.sections,
+						canUserUseUnfilteredHTML
+					)
+				};
 
-			self.setState({ sections });
+				self.setState({ sections });
+				self.props.setSections(sections);
 
-			const layouts = {
-				// convert markup to actual blocks
-				...self.markupToBlock(TemplateMarkups.layouts, canUserUseUnfilteredHTML)
-			};
+				const layouts = {
+					// convert markup to actual blocks
+					...self.markupToBlock(
+						TemplateMarkups.layouts,
+						canUserUseUnfilteredHTML
+					)
+				};
 
-			self.setState({ layouts, loading: false });
+				self.setState({ layouts, loading: false });
+				self.props.setLayouts(layouts);
+			}
 		}, 0);
 	}
 
@@ -130,6 +140,7 @@ class TemplatesModal extends Component {
 					this.setState({ sections });
 				}}
 				icon={TemplateMarkups.sections[k].icon}
+				preview={TemplateMarkups.sections[k].preview}
 				label={__(startCase(k), "c9-blocks")}
 				section={sections[k]}
 			/>
@@ -138,6 +149,7 @@ class TemplatesModal extends Component {
 		const layoutItems = Object.keys(layouts).map(k => (
 			<LayoutButton
 				icon={TemplateMarkups.layouts[k].icon}
+				preview={TemplateMarkups.layouts[k].preview}
 				label={__(startCase(k), "c9-blocks")}
 				layout={layouts[k]}
 			/>

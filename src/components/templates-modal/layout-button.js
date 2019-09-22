@@ -1,15 +1,26 @@
 const { Icon } = wp.components;
 const { withDispatch } = wp.data;
 
-const LayoutButton = ({ label, icon, layout, resetBlocks, insertBlocks }) => {
+const LayoutButton = ({
+	label,
+	icon,
+	preview,
+	layout,
+	resetBlocks,
+	insertBlocks
+}) => {
 	return (
 		<button
 			onClick={() => {
-                resetBlocks([]);
+				resetBlocks([]);
 				insertBlocks(layout);
 			}}
 		>
-			<Icon icon={icon} />
+			{preview ? (
+				<img src={preview} alt="layout preview"></img>
+			) : (
+				<Icon icon={icon} />
+			)}
 			<span>{label}</span>
 		</button>
 	);

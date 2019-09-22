@@ -26,16 +26,26 @@ class Sidebar extends Component {
 
 		this.state = {
 			isModalOpen: false,
-			loading: false
+			loading: false,
+			sections: {},
+			layouts: {}
 		};
 	}
+
+	setSections = sections => {
+		this.setState({ sections });
+	};
+
+	setLayouts = layouts => {
+		this.setState({ layouts });
+	};
 
 	closeMenu = () => {
 		this.setState({ isModalOpen: false });
 	};
 
 	render() {
-		const { isModalOpen } = this.state;
+		const { isModalOpen, sections, layouts } = this.state;
 
 		return (
 			<Fragment>
@@ -97,6 +107,10 @@ class Sidebar extends Component {
 				{isModalOpen ? (
 					<TemplatesModal
 						close={this.closeMenu}
+						sections={sections}
+						layouts={layouts}
+						setSections={this.setSections}
+						setLayouts={this.setLayouts}
 						title="Templates"
 						icon={<Dashicon icon={"schedule"} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}

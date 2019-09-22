@@ -1,7 +1,14 @@
 const { Icon } = wp.components;
 const { withDispatch } = wp.data;
 
-const SectionButton = ({ label, icon, section, insertBlocks, close }) => {
+const SectionButton = ({
+	label,
+	icon,
+	preview,
+	section,
+	insertBlocks,
+	close
+}) => {
 	return (
 		<button
 			onClick={() => {
@@ -9,7 +16,11 @@ const SectionButton = ({ label, icon, section, insertBlocks, close }) => {
 				close();
 			}}
 		>
-			<Icon icon={icon} />
+			{preview ? (
+				<img src={preview} alt="section preview"></img>
+			) : (
+				<Icon icon={icon} />
+			)}
 			<span>{label}</span>
 		</button>
 	);
