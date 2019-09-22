@@ -1,4 +1,4 @@
-import Preview from "../template-assets/jpg/Large Lineup + \"Get Tickets\" Button.jpg";
+import Preview from "../template-assets/jpg/Large Lineup + Get Tickets Button.jpg";
 
 export default {
 	preview: Preview,
