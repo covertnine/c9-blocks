@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /**
  * Internal dependencies
  */
@@ -84,13 +85,12 @@ class Edit extends Component {
 		return isUnique;
 	}
 
-
 	/**
 	 * Returns a unique slug for the horizontal tab to reference the tab by.
 	 *
 	 * @param {string} newTitle Title of tab.
 	 * @param {object} tabData Innerblock tab to be named.
-	 * 
+	 *
 	 * @return {string} Unique slug.
 	 */
 	getUniqueSlug(newTitle, tabData) {
@@ -103,7 +103,8 @@ class Edit extends Component {
 			}
 			newSlug = slugify(`tab-${newTitle}${i ? `-${i}` : ""}`, {
 				replacement: "-",
-				lower: true
+				lower: true,
+				remove: /[\/#$%^&*+=~.,<>{}\\|`[\]()'"?!:;@]/g
 			});
 		}
 
