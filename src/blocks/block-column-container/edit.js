@@ -117,7 +117,7 @@ export default class Edit extends Component {
 												}
 											}}
 										>
-											{icon}
+											<img src={icon} />
 										</Button>
 									</div>
 								</Tooltip>
@@ -143,7 +143,7 @@ export default class Edit extends Component {
 													this.setState({ pickLayout: false });
 												}}
 											>
-												{icon}
+												<img src={icon} />
 											</Button>
 										</div>
 									</Tooltip>
