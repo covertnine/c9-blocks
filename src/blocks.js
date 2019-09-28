@@ -10,6 +10,11 @@
  */
 
 /**
+ * Block extensions.
+ */
+import "./extend";
+
+/**
  * Import global styles.
  */
 import "./block-globals.editor.scss";
@@ -29,7 +34,6 @@ import "./blocks/block-posts-grid";
 import "./blocks/block-carousel";
 import "./blocks/block-image-carousel";
 
-
 // child blocks
 import "./blocks/block-column-container";
 import "./blocks/block-column-container/components/column.js";
@@ -38,4 +42,3 @@ import "./blocks/block-vertical-tabs/components/vertical-tab.js";
 import "./blocks/block-toggles/components/toggle.js";
 import "./blocks/block-carousel/components/slide.js";
 import "./blocks/block-post-grid";
-

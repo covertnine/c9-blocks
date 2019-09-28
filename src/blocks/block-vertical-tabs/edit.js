@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /**
  * Internal dependencies
  */
@@ -103,7 +104,8 @@ class Edit extends Component {
 			}
 			newSlug = slugify(`tab-${newTitle}${i ? `-${i}` : ""}`, {
 				replacement: "-",
-				lower: true
+				lower: true,
+				remove: /[\/#$%^&*+=~.,<>{}\\|`[\]()'"?!:;@]/g
 			});
 		}
 
