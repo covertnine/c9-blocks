@@ -39,6 +39,7 @@
 	.c9-toggles-item-heading {
 		position: relative;
 		transition: opacity .4s;
+		cursor: pointer;
 	}
 }
 
@@ -46,12 +47,13 @@
 	opacity: .8;
 }
 
-.c9-toggles .c9-toggles-toggle.toggle-collapse-ready {
-	cursor: pointer;
-}
-
 .c9-toggles .c9-toggles-item-collapse .fas {
 	font-family: 'FontAwesome', serif;
+}
+
+.c9-toggles-item-heading:hover {
+	cursor: pointer;
+
 }
 
 .c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
@@ -61,7 +63,7 @@
 }
 
 .c9-toggles-item-content {
-	> div {
+	>div {
 		padding: 25px 30px;
 	}
 }
