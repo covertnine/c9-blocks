@@ -329,38 +329,38 @@ const icons = {
 			height="64"
 		>
 			<defs>
-				<style>{`.cls-1{fill:#fff;}.cls-2{fill:#81a0b4;}.cls-3{fill:none;stroke:#81a0b4;stroke-miterlimit:10;stroke-width:1.5px;}`}</style>
+				<style>{`.cls-5a{fill:#fff;}.cls-6a{fill:#81a0b4;}.cls-7a{fill:none;stroke:#81a0b4;stroke-miterlimit:10;stroke-width:1.5px;}`}</style>
 			</defs>
 			<title>c9 blocks</title>
-			<rect className="cls-1" x="1" y="1" width="80" height="55" />
-			<path className="cls-2" d="M80,2V55H2V2H80m2-2H0V57H82V0Z" />
-			<rect className="cls-3" x="15" y="15.44" width="10" height="26.25" />
-			<line className="cls-3" x1="17" y1="37.81" x2="23" y2="37.81" />
-			<line className="cls-3" x1="17" y1="33.31" x2="23" y2="33.31" />
-			<line className="cls-3" x1="17" y1="28.81" x2="23" y2="28.81" />
-			<line className="cls-3" x1="25" y1="15.81" x2="15" y2="24.81" />
-			<line className="cls-3" x1="25" y1="24.81" x2="15" y2="15.81" />
-			<line className="cls-3" x1="15" y1="24.81" x2="25" y2="24.81" />
-			<rect className="cls-3" x="43" y="15.44" width="10" height="26.25" />
-			<rect className="cls-3" x="43" y="15.31" width="10" height="26.25" />
-			<line className="cls-3" x1="45" y1="19.19" x2="51" y2="19.19" />
-			<line className="cls-3" x1="45" y1="23.69" x2="51" y2="23.69" />
-			<line className="cls-3" x1="45" y1="28.19" x2="51" y2="28.19" />
-			<line className="cls-3" x1="53" y1="41.19" x2="43" y2="32.19" />
-			<line className="cls-3" x1="53" y1="32.19" x2="43" y2="41.19" />
-			<line className="cls-3" x1="43" y1="32.19" x2="53" y2="32.19" />
-			<rect className="cls-3" x="29" y="15.44" width="10" height="26.25" />
-			<line className="cls-3" x1="31" y1="28.37" x2="37" y2="28.37" />
-			<line className="cls-3" x1="31" y1="32.97" x2="37" y2="32.97" />
-			<line className="cls-3" x1="31" y1="37.56" x2="37" y2="37.56" />
-			<line className="cls-3" x1="31" y1="23.78" x2="37" y2="23.78" />
-			<line className="cls-3" x1="31" y1="19.19" x2="37" y2="19.19" />
-			<rect className="cls-3" x="57" y="15.44" width="10" height="26.25" />
-			<line className="cls-3" x1="59" y1="28.56" x2="65" y2="28.56" />
-			<line className="cls-3" x1="59" y1="33.16" x2="65" y2="33.16" />
-			<line className="cls-3" x1="59" y1="37.75" x2="65" y2="37.75" />
-			<line className="cls-3" x1="59" y1="23.97" x2="65" y2="23.97" />
-			<line className="cls-3" x1="59" y1="19.38" x2="65" y2="19.38" />
+			<rect className="cls-5a" x="1" y="1" width="80" height="55" />
+			<path className="cls-6a" d="M80,2V55H2V2H80m2-2H0V57H82V0Z" />
+			<rect className="cls-7a" x="15" y="15.44" width="10" height="26.25" />
+			<line className="cls-7a" x1="17" y1="37.81" x2="23" y2="37.81" />
+			<line className="cls-7a" x1="17" y1="33.31" x2="23" y2="33.31" />
+			<line className="cls-7a" x1="17" y1="28.81" x2="23" y2="28.81" />
+			<line className="cls-7a" x1="25" y1="15.81" x2="15" y2="24.81" />
+			<line className="cls-7a" x1="25" y1="24.81" x2="15" y2="15.81" />
+			<line className="cls-7a" x1="15" y1="24.81" x2="25" y2="24.81" />
+			<rect className="cls-7a" x="43" y="15.44" width="10" height="26.25" />
+			<rect className="cls-7a" x="43" y="15.31" width="10" height="26.25" />
+			<line className="cls-7a" x1="45" y1="19.19" x2="51" y2="19.19" />
+			<line className="cls-7a" x1="45" y1="23.69" x2="51" y2="23.69" />
+			<line className="cls-7a" x1="45" y1="28.19" x2="51" y2="28.19" />
+			<line className="cls-7a" x1="53" y1="41.19" x2="43" y2="32.19" />
+			<line className="cls-7a" x1="53" y1="32.19" x2="43" y2="41.19" />
+			<line className="cls-7a" x1="43" y1="32.19" x2="53" y2="32.19" />
+			<rect className="cls-7a" x="29" y="15.44" width="10" height="26.25" />
+			<line className="cls-7a" x1="31" y1="28.37" x2="37" y2="28.37" />
+			<line className="cls-7a" x1="31" y1="32.97" x2="37" y2="32.97" />
+			<line className="cls-7a" x1="31" y1="37.56" x2="37" y2="37.56" />
+			<line className="cls-7a" x1="31" y1="23.78" x2="37" y2="23.78" />
+			<line className="cls-7a" x1="31" y1="19.19" x2="37" y2="19.19" />
+			<rect className="cls-7a" x="57" y="15.44" width="10" height="26.25" />
+			<line className="cls-7a" x1="59" y1="28.56" x2="65" y2="28.56" />
+			<line className="cls-7a" x1="59" y1="33.16" x2="65" y2="33.16" />
+			<line className="cls-7a" x1="59" y1="37.75" x2="65" y2="37.75" />
+			<line className="cls-7a" x1="59" y1="23.97" x2="65" y2="23.97" />
+			<line className="cls-7a" x1="59" y1="19.38" x2="65" y2="19.38" />
 		</svg>
 	),
 	/* Four column - 40/20/20/20. */
