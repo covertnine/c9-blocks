@@ -4,12 +4,6 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-
-.components-button-group.c9-column-selector-group {
-	display: grid;
-	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-}
-
 .container .row .editor-inner-blocks,
 .container-fluid .row .editor-inner-blocks,
 .container-narrow .row .editor-inner-blocks {
