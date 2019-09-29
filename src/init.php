@@ -264,23 +264,13 @@ function c9_blocks_front_assets() {
 	wp_enqueue_script(
 		'c9_blocks-frontend',
 		plugins_url( 'dist/blocks.frontend.build.js', dirname( __FILE__ ) ),
-		array( 'youtube-api', 'wp-element', 'wp-blocks', 'wp-i18n' )
+		array()
 	);
 }
 
 // Hook: c9 Blocks Frontend.
 add_action( 'wp_enqueue_scripts', 'c9_blocks_front_assets' );
 
-
-/**
- * Add image sizes
- */
-function c9_blocks_image_sizes() {
-	// Post Grid Block.
-	add_image_size( 'ab-block-post-grid-landscape', 600, 400, true );
-	add_image_size( 'ab-block-post-grid-square', 600, 600, true );
-}
-add_action( 'after_setup_theme', 'c9_blocks_image_sizes' );
 
 /**
  * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
