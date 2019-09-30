@@ -141,10 +141,10 @@ class Edit extends Component {
 			instanceId
 		} = this.props;
 
-		const { toggleCount, anchor } = attributes;
+		const { toggleCount } = attributes;
 
 		if (instanceId != attributes.instanceId) {
-			setAttributes({ instanceId });
+			setAttributes({ instanceId, anchor: `accordion-${instanceId}` });
 
 			if (block) {
 				// eslint-disable-next-line no-unused-vars
@@ -170,7 +170,7 @@ class Edit extends Component {
 				>
 					{createElement(
 						"div",
-						{ id: anchor ? anchor : null },
+						{},
 						// Workaround logic for this bug https://github.com/WordPress/gutenberg/issues/9897
 						"undefined" !== typeof this.props.insertBlocksAfter
 							? createElement(InnerBlocks, {
