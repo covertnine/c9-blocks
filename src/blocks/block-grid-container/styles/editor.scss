@@ -289,6 +289,14 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 	}
 }
 
+@media only screen and (min-width: 768px) {
+
+	/* for some themes that set left setting */
+	.editor-styles-wrapper .container-fluid.wp-block[data-align="full"] {
+		left: auto;
+	}
+}
+
 @media only screen and (min-width: 1200px) {
 
 	//max width of inner containers is 100% of the available space of the .c9-grid
@@ -386,10 +394,10 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 
 @media only screen and (min-width: 1500px) {
 
-	.c9-grid > .editor-inner-blocks > .editor-block-list__layout {
+	.c9-grid>.editor-inner-blocks>.editor-block-list__layout {
 		justify-content: center;
 	}
-	
+
 	// Narrow container width with all 4 editing screen variations
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-narrow,
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-narrow,
@@ -406,7 +414,7 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 		width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
-}
+	}
 
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container,
 	body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
@@ -423,7 +431,7 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
+
 }
 
 /****************************************************************************************/

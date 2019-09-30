@@ -124,6 +124,11 @@
 	left: 0;
 }
 
+.container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 @media only screen and (min-width: 1px) {
 	.page-template-default .entry-content>.c9-grid {
 		width: 100vw;
@@ -257,6 +262,11 @@
 }
 
 @media only screen and (min-width: 1200px) {
+
+	.container-narrow {
+		width: 960px;
+		margin: 0 auto;
+	}
 
 	.c9-blocks-column-containers .columns:not(.alignfull),
 	.c9-blocks-column-containers .columns.alignwide {

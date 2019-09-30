@@ -5,6 +5,16 @@
  * that are used across the project.
 */
 
+/*for adjusting for post/page container grids for some themes*/
+@media only screen and (min-width: 768px) {
+
+	/* to unset widths on backend editor for some themes */
+	body .editor-styles-wrapper .editor-writing-flow {
+		max-width: 100%;
+		margin: 0px;
+	}
+}
+
 .components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon {
 	width: 48px;
 	height: 48px;

@@ -120,6 +120,11 @@
 	left: 0;
 }
 
+.container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 @media only screen and (min-width: 1px) {
 	.page-template-default .entry-content>.c9-posts-grid {
 		width: 100vw;
@@ -237,5 +242,12 @@
 
 	.page-template-default .entry-content>.c9-posts-grid .container {
 		max-width: 1140px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.container-narrow {
+		width: 960px;
+		margin: 0 auto;
 	}
 }
