@@ -35,7 +35,6 @@ class Edit extends Component {
 		this.checkToggleCountAndUpdate();
 	}
 
-
 	/**
 	 * Removes event hooks assigned on creation.
 	 */
@@ -52,7 +51,6 @@ class Edit extends Component {
 		});
 	}
 
-
 	/**
 	 * Generates the child toggle blocks.
 	 */
@@ -65,7 +63,6 @@ class Edit extends Component {
 
 		return result;
 	};
-
 
 	/**
 	 * Checks if there has been change in toggle count, if so update attributes and adjust classes.
@@ -144,7 +141,7 @@ class Edit extends Component {
 			instanceId
 		} = this.props;
 
-		const { toggleCount } = attributes;
+		const { toggleCount, anchor } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -173,7 +170,7 @@ class Edit extends Component {
 				>
 					{createElement(
 						"div",
-						{},
+						{ id: anchor ? anchor : null },
 						// Workaround logic for this bug https://github.com/WordPress/gutenberg/issues/9897
 						"undefined" !== typeof this.props.insertBlocksAfter
 							? createElement(InnerBlocks, {

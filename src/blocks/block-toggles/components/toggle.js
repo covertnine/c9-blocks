@@ -82,7 +82,7 @@ class Toggle extends Component {
 			className = ""
 		} = this.props;
 
-		const { heading, active } = attributes;
+		const { heading, active, anchor } = attributes;
 
 		if (
 			!isSelectedBlockInRoot &&
@@ -118,7 +118,10 @@ class Toggle extends Component {
 						]}
 					/>
 				</BlockControls>
-				<div className={classnames("c9-toggles-toggle", className)}>
+				<div
+					className={classnames("c9-toggles-toggle", className)}
+					id={anchor ? anchor : null}
+				>
 					<div
 						className="c9-toggles-item-heading"
 						id={`c9-toggles-heading${attributes.toggleNumber}-${attributes.id}`}
@@ -198,7 +201,8 @@ registerBlockType("c9-blocks/toggles-toggle", {
 	category: "common",
 	supports: {
 		inserter: false,
-		className: false
+		className: false,
+		anchor: true
 	},
 	attributes: {
 		heading: {
@@ -250,11 +254,11 @@ registerBlockType("c9-blocks/toggles-toggle", {
 
 	save: function(props) {
 		const {
-			attributes: { heading, toggleNumber, id }
+			attributes: { heading, toggleNumber, id, anchor }
 		} = props;
 
 		return (
-			<div className={"c9-toggles-toggle"}>
+			<div className={"c9-toggles-toggle"} id={anchor ? anchor : null}>
 				<div
 					className="c9-toggles-item-heading"
 					id={`c9-toggles-heading${toggleNumber}-${id}`}
