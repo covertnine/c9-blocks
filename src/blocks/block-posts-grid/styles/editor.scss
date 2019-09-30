@@ -208,8 +208,15 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 @media only screen and (min-width: 768px) {
 
 	/* for some themes that set left setting */
-	.editor-styles-wrapper .container-fluid.wp-block[data-align="full"] {
+	.editor-styles-wrapper .c9-posts-grid .container-fluid.wp-block[data-align="full"] {
 		left: auto;
+	}
+
+	.editor-styles-wrapper .c9-posts-grid .container-narrow,
+	.editor-styles-wrapper .c9-posts-grid .container,
+	.editor-styles-wrapper .c9-posts-grid .container.alignwide {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
@@ -301,8 +308,8 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 
 	body .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .c9-posts-grid .container-fluid.wp-block[data-align="full"]>.block-editor-block-list__block-edit,
 	body .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .c9-posts-grid .container-fluid.wp-block[data-align="full"]:only-child>.block-editor-block-list__block-edit {
-		margin-left: 30px;
-		margin-right: 30px;
+		margin-left: -28px;
+		margin-right: -28px;
 	}
 }
 
