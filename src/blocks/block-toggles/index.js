@@ -26,7 +26,7 @@ registerBlockType("c9-blocks/toggles", {
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {
-		// fill in features
+		anchor: true
 	},
 	styles: [
 		{ name: "default", label: __("Default", "c9-blocks") },

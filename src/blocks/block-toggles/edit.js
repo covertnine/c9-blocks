@@ -35,7 +35,6 @@ class Edit extends Component {
 		this.checkToggleCountAndUpdate();
 	}
 
-
 	/**
 	 * Removes event hooks assigned on creation.
 	 */
@@ -52,7 +51,6 @@ class Edit extends Component {
 		});
 	}
 
-
 	/**
 	 * Generates the child toggle blocks.
 	 */
@@ -65,7 +63,6 @@ class Edit extends Component {
 
 		return result;
 	};
-
 
 	/**
 	 * Checks if there has been change in toggle count, if so update attributes and adjust classes.
@@ -147,7 +144,7 @@ class Edit extends Component {
 		const { toggleCount } = attributes;
 
 		if (instanceId != attributes.instanceId) {
-			setAttributes({ instanceId });
+			setAttributes({ instanceId, anchor: `accordion-${instanceId}` });
 
 			if (block) {
 				// eslint-disable-next-line no-unused-vars

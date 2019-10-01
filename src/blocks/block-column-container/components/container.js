@@ -157,6 +157,7 @@ export default class Container extends Component {
 				columnMaxWidth,
 				centerColumns,
 				align,
+				anchor
 			},
 			isSelectedBlockInRoot,
 			save = false,
@@ -193,6 +194,7 @@ export default class Container extends Component {
 						: null
 				)}
 				style={this.c9ContainerStyles(minScreenHeight)}
+				id={anchor ? anchor : null}
 			>
 				{!!containerImgURL && (
 					<div
