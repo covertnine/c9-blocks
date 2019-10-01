@@ -125,6 +125,14 @@
 	margin-right: auto;
 }
 
+/* WP 2019 Theme */
+@media only screen and (min-width: 1px) and (max-width: 667px) {
+	.page.page-template-default .entry .entry-content>.c9-grid {
+		margin-left: -1rem;
+		margin-right: -1rem;
+	}
+}
+
 @media only screen and (min-width: 1px) {
 	.page-template-default .entry-content>.c9-posts-grid {
 		width: 100vw;
@@ -173,12 +181,6 @@
 	.page-template-default .entry-content>.c9-posts-grid .container-fluid {
 		padding-left: 0px;
 		padding-right: 0px;
-	}
-}
-
-@media only screen and (max-width: 767px) and (min-width: 1px) {
-	:root {
-		font-size: 50%;
 	}
 }
 

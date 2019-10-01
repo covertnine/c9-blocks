@@ -16,8 +16,18 @@
 	justify-content: center;
 }
 
+.entry .entry-content .c9-cta-button a {
+	text-decoration: none;
+}
+
 .c9-cta-text p {
 	margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+	.entry .entry-content>.c9-cta.alignfull {
+		left: auto;
+	}
 }
 
 @media only screen and (min-width: 1200px) {
