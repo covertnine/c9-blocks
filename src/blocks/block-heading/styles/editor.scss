@@ -32,3 +32,29 @@ div[data-type="c9-blocks/column-container"] .editor-block-list__block-edit.block
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+
+@media only screen and (min-width: 768px) {
+	.editor-styles-wrapper div[data-type="c9-blocks/heading"] h1 {
+		font-size: 4rem;
+	}
+
+	.editor-styles-wrapper div[data-type="c9-blocks/heading"] h2 {
+		font-size: 3.6rem;
+	}
+
+	.editor-styles-wrapper div[data-type="c9-blocks/heading"] h3 {
+		font-size: 3rem;
+	}
+
+	.editor-styles-wrapper div[data-type="c9-blocks/heading"] h4 {
+		font-size: 2.8rem;
+	}
+
+	.editor-styles-wrapper div[data-type="c9-blocks/heading"] h5 {
+		font-size: 2rem;
+	}
+
+	.editor-styles-wrapper div[data-type="c9-blocks/heading"] h6 {
+		font-size: 1.4rem;
+	}
+}

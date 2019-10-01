@@ -8,6 +8,10 @@
 	position: relative;
 	z-index: 7;
 
+	a {
+		color: inherit;
+	}
+
 	&.c9-is-vertically-aligned-top {
 		-ms-flex-item-align: start;
 		align-self: flex-start;

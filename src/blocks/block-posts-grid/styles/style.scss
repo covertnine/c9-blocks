@@ -176,6 +176,12 @@
 	}
 }
 
+@media only screen and (max-width: 767px) and (min-width: 1px) {
+	:root {
+		font-size: 50%;
+	}
+}
+
 @media only screen and (min-width: 768px) {
 
 	.c9-posts-grid .container-narrow,

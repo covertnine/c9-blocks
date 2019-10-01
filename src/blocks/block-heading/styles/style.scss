@@ -3,43 +3,43 @@
  *
  * CSS for both Frontend+Backend.
  */
-.display-1,
-.editor-styles-wrapper .display-1 {
+.c9-heading .display-1,
+.editor-styles-wrapper .c9-heading .display-1 {
 	font-size: 8rem !important;
 	line-height: 1.1;
 }
 
-.display-2,
-.editor-styles-wrapper .display-2 {
+.c9-heading .display-2,
+.editor-styles-wrapper .c9-heading .display-2 {
 	font-size: 7.3rem !important;
 	line-height: 1.1;
 }
 
-.display-3,
-.editor-styles-wrapper .display-3 {
+.c9-heading .display-3,
+.editor-styles-wrapper .c9-heading .display-3 {
 	font-size: 6.5rem !important;
 	line-height: 1.1;
 }
 
-.display-4,
-.editor-styles-wrapper .display-4 {
+.c9-heading .display-4,
+.editor-styles-wrapper .c9-heading .display-4 {
 	font-size: 5.8rem !important;
 	line-height: 1.1;
 }
 
-.display-5,
-.editor-styles-wrapper .display-5 {
+.c9-heading .display-5,
+.editor-styles-wrapper .c9-heading .display-5 {
 	font-size: 5rem !important;
 	line-height: 1.1;
 }
 
-.display-6,
-.editor-styles-wrapper .display-6 {
+.c9-heading .display-6,
+.editor-styles-wrapper .c9-heading .display-6 {
 	font-size: 4.3rem !important;
 	line-height: 1.1;
 }
 
-.subhead {
+.c9-heading .subhead {
 	color: #6c757d;
 	line-height: 1.1;
 }
@@ -48,149 +48,143 @@
 	display: inline-block;
 }
 
-.entry-content h1,
-.wp-block-heading h1 {
+.entry-content .c9-heading h1 {
 	font-size: 4rem;
 }
 
-.entry-content .h1,
-.entry-header h1,
-.subhead-h1,
-.editor-styles-wrapper .c9-sh.subhead-h1 {
+.entry-content .c9-heading .h1,
+.c9-heading .subhead-h1,
+.editor-styles-wrapper .c9-heading .c9-sh.subhead-h1 {
 	font-size: 4rem !important;
 }
 
-.entry-content .h1.c9-txl,
-.entry-content h1.c9-txl {
+.entry-content .c9-heading .h1.c9-txl,
+.entry-content .c9-heading h1.c9-txl {
 	font-size: 8rem;
 }
 
 @media only screen and (max-width: 667px) {
 
-	.entry-content .h1.c9-txl,
-	.entry-content h1.c9-txl {
+	.entry-content .c9-heading .h1.c9-txl,
+	.entry-content .c9-heading h1.c9-txl {
 		font-size: 4rem;
 	}
 }
 
-.entry-content h2,
-.wp-block-heading h2 {
+.entry-content .c9-heading h2 {
 	font-size: 3.6rem;
 }
 
-.entry-content .h2,
-.subhead-h2,
-.editor-styles-wrapper .c9-sh.subhead-h2 {
+.entry-content .c9-heading .h2,
+.c9-heading .subhead-h2,
+.editor-styles-wrapper .c9-heading .c9-sh.subhead-h2 {
 	font-size: 3.6rem !important;
 }
 
-.entry-content .h2.c9-txl,
-.entry-content h2.c9-txl {
+.entry-content .c9-heading .h2.c9-txl,
+.entry-content .c9-heading h2.c9-txl {
 	font-size: 7.3rem;
 }
 
 @media only screen and (max-width: 667px) {
 
-	.entry-content .h2.c9-txl,
-	.entry-content h2.c9-txl {
+	.entry-content .c9-heading .h2.c9-txl,
+	.entry-content .c9-heading h2.c9-txl {
 		font-size: 3.6rem;
 	}
 }
 
-.wp-block-heading h3,
-.entry-content h3 {
+.entry-content .c9-heading h3 {
 	font-size: 3rem;
 }
 
-.entry-content .h3,
-.subhead-h3,
-.editor-styles-wrapper .c9-sh.subhead-h3 {
+.entry-content .c9-heading .h3,
+.c9-heading .subhead-h3,
+.editor-styles-wrapper .c9-heading .c9-sh.subhead-h3 {
 	font-size: 3rem !important;
 
 }
 
-.entry-content .h3.c9-txl,
-.entry-content h3.c9-txl {
+.entry-content .c9-heading .h3.c9-txl,
+.entry-content .c9-heading h3.c9-txl {
 	font-size: 6.5rem;
 }
 
 @media only screen and (max-width: 667px) {
 
-	.entry-content .h3.c9-txl,
-	.entry-content h3.c9-txl {
+	.entry-content .c9-heading .h3.c9-txl,
+	.entry-content .c9-heading h3.c9-txl {
 		font-size: 3rem;
 	}
 }
 
-.wp-block-heading h4,
-.entry-content h4 {
+.entry-content .c9-heading h4 {
 	font-size: 2.8rem;
 }
 
-.entry-content .h4,
-.subhead-h4,
-.editor-styles-wrapper .c9-sh.subhead-h4 {
+.entry-content .c9-heading .h4,
+.c9-heading .subhead-h4,
+.editor-styles-wrapper .c9-heading .c9-sh.subhead-h4 {
 	font-size: 2.8rem !important;
 }
 
-.entry-content .h4.c9-txl,
-.entry-content h4.c9-txl {
+.entry-content .c9-heading .h4.c9-txl,
+.entry-content .c9-heading h4.c9-txl {
 	font-size: 5.8rem;
 }
 
 @media only screen and (max-width: 667px) {
 
-	.entry-content .h4.c9-txl,
-	.entry-content h4.c9-txl {
+	.entry-content .c9-heading .h4.c9-txl,
+	.entry-content .c9-heading h4.c9-txl {
 		font-size: 2.8rem;
 	}
 }
 
-.wp-block-heading h5,
-.entry-content h5 {
+.entry-content .c9-heading h5 {
 	font-size: 2rem;
 
 }
 
-.entry-content .h5,
-.subhead-h5,
-.editor-styles-wrapper .c9-sh.subhead-h5 {
+.entry-content .c9-heading .h5,
+.c9-heading .subhead-h5,
+.editor-styles-wrapper .c9-heading .c9-sh.subhead-h5 {
 	font-size: 2rem !important;
 }
 
-.entry-content .h5.c9-txl,
-.entry-content h5.c9-txl {
+.entry-content .c9-heading .h5.c9-txl,
+.entry-content .c9-heading h5.c9-txl {
 	font-size: 5rem;
 }
 
 @media only screen and (max-width: 667px) {
 
-	.entry-content .h5.c9-txl,
-	.entry-content h5.c9-txl {
+	.entry-content .c9-heading .h5.c9-txl,
+	.entry-content .c9-heading h5.c9-txl {
 		font-size: 2rem;
 	}
 }
 
-.wp-block-heading h6,
-.entry-content h6 {
+.wp-block-heading .c9-heading h6,
+.entry-content .c9-heading h6 {
 	font-size: 1.4rem;
 }
 
-.entry-content .h6,
-.subhead-h6,
-.editor-styles-wrapper .c9-sh.subhead-h6 {
+.entry-content .c9-heading .h6,
+.c9-heading .subhead-h6,
+.editor-styles-wrapper .c9-heading .c9-sh.subhead-h6 {
 	font-size: 1.4rem !important;
 }
 
-.entry-content .h6.c9-txl,
-.entry-content h6.c9-txl {
+.entry-content .c9-heading .h6.c9-txl,
+.entry-content .c9-heading h6.c9-txl {
 	font-size: 4.3rem;
 }
 
 @media only screen and (max-width: 667px) {
 
-	.entry-content .h6.c9-txl,
-	.entry-content h6.c9-txl {
+	.entry-content .c9-heading .h6.c9-txl,
+	.entry-content .c9-heading h6.c9-txl {
 		font-size: 1.4rem;
 	}
 }

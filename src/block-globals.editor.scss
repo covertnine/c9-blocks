@@ -77,12 +77,12 @@
 	z-index: 10;
 }
 
-/* removing top/bottom margins that mess with spacing of gutenberg default setting*/
+/* reducing top/bottom margins that mess with spacing of gutenberg default setting*/
 .block-editor-block-list__layout .block-editor-default-block-appender>.block-editor-default-block-appender__content,
 .block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit,
 .block-editor-block-list__layout>.block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit {
-	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .block-editor-block-list__block>.block-editor-block-list__insertion-point {
@@ -179,6 +179,13 @@
 		margin: 0px auto;
 	}
 
+}
+
+@media only screen and (min-width: 768px) {
+	.editor-styles-wrapper .wp-block.editor-block-list__block {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 @media only screen and (min-width: 992px) {
