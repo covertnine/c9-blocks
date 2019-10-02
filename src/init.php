@@ -298,15 +298,15 @@ function c9_check_bootstrap() {
 	if ( sizeof( $checks ) === 0 ) {
 		// Styles.
 		wp_enqueue_style(
-			'bootstrap-css',
-			'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+			'c9-bootstrap-css',
+			plugins_url('src/vendor/c9-bootstrap.css', dirname( __FILE__ ) ),
 			array(),
 			'4.3.1'
 		);
 
 		wp_enqueue_script(
-			'bootstrap-js',
-			'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
+			'c9-bootstrap-js',
+			plugins_url( 'src/vendor/c9-bootstrap.min.js', dirname( __FILE__ ) ),
 			array(),
 			'4.3.1'
 		);
