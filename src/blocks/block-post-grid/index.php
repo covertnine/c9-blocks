@@ -328,18 +328,22 @@ function hex_to_r_g_b_a( $hex, $alpha ) {
  */
 function c9_spacing_config( $padding, $margin ) {
 	$classes = '';
-	/**
-	 * Abstract side class assignments.
-	 *
-	 * @param object $side_class Which side of the element.
-	 * @param object $level Magnitude of spacing.
-	 * @param object $classes Result to append to.
-	 */
-	function assign_side_classes( $side_class, $level, &$classes ) {
-		if ( -1 !== $level ) {
-			$classes .= ' ' . "{$side_class}-{$level}";
+
+	if ( ! function_exists( 'assign_side_classes' ) ) {
+		/**
+		 * Abstract side class assignments.
+		 *
+		 * @param object $side_class Which side of the element.
+		 * @param object $level Magnitude of spacing.
+		 * @param object $classes Result to append to.
+		 */
+		function assign_side_classes( $side_class, $level, &$classes ) {
+			if ( -1 !== $level ) {
+				$classes .= ' ' . "{$side_class}-{$level}";
+			}
 		}
 	}
+
 
 	// padding.
 	if (
