@@ -300,6 +300,7 @@ function c9_check_bootstrap() {
 		wp_enqueue_style(
 			'c9-bootstrap-css',
 			plugins_url('src/vendor/c9-bootstrap.css', dirname( __FILE__ ) ),
+
 			array(),
 			'4.3.1'
 		);
