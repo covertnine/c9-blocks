@@ -5,7 +5,9 @@
  * Custom build for C9 Blocks Plugin
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
+/************************************************************************************************************************/
+/* Modified Bootstrap.css to only include what's needed for C9 Blocks plugin with some minor adjustments to typo sizes *
+/************************************************************************************************************************/
 
 [tabindex="-1"]:focus {
 	outline: 0 !important
@@ -7734,4 +7736,307 @@ a.text-dark:focus {
 
 .invisible {
 	visibility: hidden !important
+}
+
+/************************************************************************************************************************/
+/* CSS for typography for C9-Blocks because :root cannot be styled from the plugin by itself making fonts too large */
+/************************************************************************************************************************/
+
+/* Responsive Typography */
+@media only screen and (min-width: 1px) and (max-width: 667px) {}
+
+/* larger than 667px screens */
+@media only screen and (min-width: 667px) {
+
+	.editor-styles-wrapper .c9-grid p,
+	.editor-styles-wrapper .c9-grid .container p,
+	.editor-styles-wrapper .c9-grid .container-narrow p,
+	.editor-styles-wrapper .c9-grid .container-fluid p,
+	.editor-styles-wrapper .c9-grid .editor-rich-text .mce-content-body p,
+	.editor-styles-wrapper .c9-grid .wp-block-paragraph,
+	.editor-styles-wrapper .c9-grid .wp-block-quote p,
+	.editor-styles-wrapper .c9-grid .wp-block-file,
+	.editor-styles-wrapper .c9-grid ul li,
+	.editor-styles-wrapper .c9-grid ol li,
+	.c9-grid .wp-block-pullquote,
+	.c9-grid .wp-block-pullquote blockquote p,
+	.editor-styles-wrapper .c9-grid .wp-block-pullquote,
+	.editor-styles-wrapper .c9-grid .wp-block-pullquote blockquote p {
+		font-size: 2rem;
+	}
+
+	.entry-content .c9-grid p:last-child,
+	.entry-content .c9-grid p:only-of-type,
+	.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:last-child,
+	.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:only-of-type {
+		margin-bottom: 0px;
+	}
+
+
+	.entry-content .c9-grid h1,
+	.entry-content .c9-grid .h1,
+	.entry-header .c9-grid h1 {
+		font-size: 3.6rem
+	}
+
+	.entry-content .c9-grid h2,
+	.entry-content .c9-grid .h2,
+	.c9-grid .wp-block-heading h2 {
+		font-size: 3rem
+	}
+
+	.entry-content .c9-grid h3,
+	.entry-content .c9-grid .h3,
+	.c9-grid .wp-block-heading h3 {
+		font-size: 2.4rem
+	}
+
+	.entry-content .c9-grid h4,
+	.entry-content .c9-grid .h4,
+	.c9-grid .wp-block-heading h4 {
+		font-size: 1.8rem
+	}
+
+	.entry-content .c9-grid h5,
+	.entry-content .c9-grid .h5,
+	.c9-grid .wp-block-heading h5 {
+		font-size: 1.2rem
+	}
+
+	.entry-content .c9-grid h6,
+	.entry-content .c9-grid .h6,
+	.c9-grid .wp-block-heading h6 {
+		font-size: .6rem
+	}
+
+	.c9-grid .entry-header h2 {
+		font-size: 3rem;
+	}
+
+	.entry-content .c9-grid p[class*="font-size"] {
+		line-height: 1.2;
+	}
+
+	.c9-grid .c9-h,
+	.c9-grid .c9-h.h,
+	.c9-grid .c9-txl,
+	.c9-grid .display-1,
+	.c9-grid .display-2,
+	.c9-grid .display-3,
+	.c9-grid .display-4,
+	.c9-grid .display-5,
+	.c9-grid .display-6,
+	.editor-styles-wrapper .c9-grid .c9-cta .c9-h p {
+		line-height: 1.1;
+	}
+
+	.c9-grid .display-1 {
+		font-size: 8rem;
+	}
+
+	.c9-grid .display-2 {
+		font-size: 7.3rem;
+	}
+
+	.c9-grid .display-3,
+	.c9-grid .c9-txl {
+		font-size: 6.5rem;
+	}
+
+	.c9-grid .display-4 {
+		font-size: 5.8rem;
+	}
+
+	.c9-grid .display-5 {
+		font-size: 5rem;
+	}
+
+	.c9-grid .display-6 {
+		font-size: 4.3rem;
+	}
+}
+
+/* Adjustments to C9 Blocks Headings */
+.c9-grid .c9-heading .display-1,
+.editor-styles-wrapper .c9-heading .display-1 {
+	font-size: 3.6rem !important;
+	line-height: 1.1;
+}
+
+.c9-grid .c9-heading .display-2,
+.editor-styles-wrapper .c9-grid .c9-heading .display-2 {
+	font-size: 7.3rem !important;
+	line-height: 1.1;
+}
+
+.c9-grid .c9-heading .display-3,
+.editor-styles-wrapper .c9-grid .c9-heading .display-3 {
+	font-size: 6.5rem !important;
+	line-height: 1.1;
+}
+
+.c9-grid .c9-heading .display-4,
+.editor-styles-wrapper .c9-grid .c9-heading .display-4 {
+	font-size: 5.8rem !important;
+	line-height: 1.1;
+}
+
+.c9-grid .c9-heading .display-5,
+.editor-styles-wrapper .c9-grid .c9-heading .display-5 {
+	font-size: 5rem !important;
+	line-height: 1.1;
+}
+
+.c9-grid .c9-heading .display-6,
+.editor-styles-wrapper .c9-grid .c9-heading .display-6 {
+	font-size: 4.3rem !important;
+	line-height: 1.1;
+}
+
+.c9-grid .c9-heading .subhead {
+	line-height: 1.1;
+}
+
+.c9-grid .c9-heading>* {
+	display: inline-block;
+}
+
+.entry-content .c9-heading h1 {
+	font-size: 3.6rem;
+}
+
+.entry-content .c9-grid .c9-heading .h1,
+.c9-grid .c9-heading .subhead-h1,
+.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h1 {
+	font-size: 3.6rem !important;
+}
+
+.entry-content .c9-grid .c9-heading .h1.c9-txl,
+.entry-content .c9-grid .c9-heading h1.c9-txl {
+	font-size: 3.6rem;
+}
+
+@media only screen and (max-width: 667px) {
+
+	.entry-content .c9-grid .c9-heading .h1.c9-txl,
+	.entry-content .c9-grid .c9-heading h1.c9-txl {
+		font-size: 4rem;
+	}
+}
+
+.entry-content .c9-heading h2 {
+	font-size: 3.6rem;
+}
+
+.entry-content .c9-grid .c9-heading .h2,
+.c9-grid .c9-heading .subhead-h2,
+.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h2 {
+	font-size: 3.6rem !important;
+}
+
+.entry-content .c9-grid .c9-heading .h2.c9-txl,
+.entry-content .c9-grid .c9-heading h2.c9-txl {
+	font-size: 7.3rem;
+}
+
+@media only screen and (max-width: 667px) {
+
+	.entry-content .c9-grid .c9-heading .h2.c9-txl,
+	.entry-content .c9-grid .c9-heading h2.c9-txl {
+		font-size: 3.6rem;
+	}
+}
+
+.entry-content .c9-heading h3 {
+	font-size: 3rem;
+}
+
+.entry-content .c9-grid .c9-heading .h3,
+.c9-grid .c9-heading .subhead-h3,
+.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h3 {
+	font-size: 3rem !important;
+
+}
+
+.entry-content .c9-grid .c9-heading .h3.c9-txl,
+.entry-content .c9-grid .c9-heading h3.c9-txl {
+	font-size: 6.5rem;
+}
+
+@media only screen and (max-width: 667px) {
+
+	.entry-content .c9-grid .c9-heading .h3.c9-txl,
+	.entry-content .c9-grid .c9-heading h3.c9-txl {
+		font-size: 3rem;
+	}
+}
+
+.entry-content .c9-heading h4 {
+	font-size: 2.8rem;
+}
+
+.entry-content .c9-grid .c9-heading .h4,
+.c9-grid .c9-heading .subhead-h4,
+.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h4 {
+	font-size: 2.8rem !important;
+}
+
+.entry-content .c9-heading .h4.c9-txl,
+.entry-content .c9-heading h4.c9-txl {
+	font-size: 5.8rem;
+}
+
+@media only screen and (max-width: 667px) {
+
+	.entry-content .c9-grid .c9-heading .h4.c9-txl,
+	.entry-content .c9-grid .c9-heading h4.c9-txl {
+		font-size: 2.8rem;
+	}
+}
+
+.entry-content .c9-heading h5 {
+	font-size: 2rem;
+
+}
+
+.entry-content .c9-grid .c9-heading .h5,
+.c9-grid .c9-heading .subhead-h5,
+.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h5 {
+	font-size: 2rem !important;
+}
+
+.entry-content .c9-grid .c9-heading .h5.c9-txl,
+.entry-content .c9-grid .c9-heading h5.c9-txl {
+	font-size: 5rem;
+}
+
+@media only screen and (max-width: 667px) {
+
+	.entry-content .c9-grid .c9-heading .h5.c9-txl,
+	.entry-content .c9-grid .c9-heading h5.c9-txl {
+		font-size: 2rem;
+	}
+}
+
+.entry-content .c9-heading h6 {
+	font-size: 1.4rem;
+}
+
+.entry-content .c9-grid .c9-heading .h6,
+.c9-grid .c9-heading .subhead-h6,
+.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h6 {
+	font-size: 1.4rem !important;
+}
+
+.entry-content .c9-grid .c9-heading .h6.c9-txl,
+.entry-content .c9-grid .c9-heading h6.c9-txl {
+	font-size: 4.3rem;
+}
+
+@media only screen and (max-width: 667px) {
+
+	.entry-content .c9-grid .c9-heading .h6.c9-txl,
+	.entry-content .c9-grid .c9-heading h6.c9-txl {
+		font-size: 1.4rem;
+	}
 }

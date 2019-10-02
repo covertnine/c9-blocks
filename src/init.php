@@ -175,7 +175,7 @@ function c9_blocks_cgb_block_assets() {
 } // End function c9_blocks_cgb_block_assets().
 
 // Hook: Frontend assets.
-add_action( 'enqueue_block_assets', 'c9_blocks_cgb_block_assets' );
+add_action( 'enqueue_block_assets', 'c9_blocks_cgb_block_assets', 120 );
 
 /**
  * Enqueue Gutenberg block assets for backend editor.
@@ -241,6 +241,51 @@ function c9_blocks_cgb_editor_assets() {
 // Hook: Editor assets.
 add_action( 'enqueue_block_editor_assets', 'c9_blocks_cgb_editor_assets', 9999 );
 
+/**
+ * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
+ */
+function c9_check_bootstrap() {
+	$bootstrap_handles = array( 'bootstrap', 'bootstrap-js', 'bootstrap-css', 'bootstrapcss', 'bootstrap4', 'bootstrap4css', 'bootstrap4-css', 'c9-styles' );
+
+	/**
+	 * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
+	 *
+	 * @param string $handle The handle to check.
+	 */
+	function check_handle_exist( $handle ) {
+		return wp_style_is( $handle, 'queue' ) || wp_style_is( $handle, 'done' );
+	}
+
+	$checks = array_filter(
+		array_map( 'check_handle_exist', $bootstrap_handles ),
+		function ( $c ) {
+			return $c;
+		}
+	);
+
+	// if any of them matches, then array length of $check > 0.
+	if ( sizeof( $checks ) === 0 ) {
+		// Styles.
+		wp_enqueue_style(
+			'c9-bootstrap',
+			plugins_url('dist/blocks.bootstrap.build.css', dirname( __FILE__ ) ),
+			array('c9-blocks-style'),
+			'4.3.1'
+		);
+
+		wp_enqueue_script(
+			'c9-bootstrap-js',
+			plugins_url( 'dist/c9-bootstrap.min.js', dirname( __FILE__ ) ),
+			array('jquery'),
+			'4.3.1'
+		);
+	}
+}
+
+// Check bootstrap - frontend.
+add_action( 'enqueue_block_editor_assets', 'c9_check_bootstrap', 130 );
+add_action( 'wp_enqueue_scripts', 'c9_check_bootstrap', 100 );
+
 
 /**
  * Initialize the blocks frontend
@@ -269,51 +314,4 @@ function c9_blocks_front_assets() {
 }
 
 // Hook: c9 Blocks Frontend.
-add_action( 'wp_enqueue_scripts', 'c9_blocks_front_assets' );
-
-
-/**
- * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
- */
-function c9_check_bootstrap() {
-	$bootstrap_handles = array( 'bootstrap', 'bootstrap-js', 'bootstrap-css', 'bootstrapcss', 'bootstrap4', 'bootstrap4css', 'bootstrap4-css', 'c9-styles' );
-
-	/**
-	 * Utility function, check for bootstrap for common handle names, if no match, enqueue bootstrap
-	 *
-	 * @param string $handle The handle to check.
-	 */
-	function check_handle_exist( $handle ) {
-		return wp_style_is( $handle, 'queue' ) || wp_style_is( $handle, 'done' );
-	}
-
-	$checks = array_filter(
-		array_map( 'check_handle_exist', $bootstrap_handles ),
-		function ( $c ) {
-			return $c;
-		}
-	);
-
-	// if any of them matches, then array length of $check > 0.
-	if ( sizeof( $checks ) === 0 ) {
-		// Styles.
-		wp_enqueue_style(
-			'c9-bootstrap-css',
-			plugins_url('dist/blocks.bootstrap.build.css', dirname( __FILE__ ) ),
-
-			array(),
-			'4.3.1'
-		);
-
-		wp_enqueue_script(
-			'c9-bootstrap-js',
-			plugins_url( 'dist/c9-bootstrap.min.js', dirname( __FILE__ ) ),
-			array(),
-			'4.3.1'
-		);
-	}
-}
-
-// Check bootstrap - frontend.
-add_action( 'enqueue_block_editor_assets', 'c9_check_bootstrap', 9999 );
-add_action( 'wp_enqueue_scripts', 'c9_check_bootstrap', 9999 );
+add_action( 'wp_enqueue_scripts', 'c9_blocks_front_assets', 110 );
