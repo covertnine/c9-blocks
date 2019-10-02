@@ -299,7 +299,7 @@ function c9_check_bootstrap() {
 		// Styles.
 		wp_enqueue_style(
 			'bootstrap-css',
-			plugins_url('dist/blocks.bootstrap.build.css', dirname(__FILE__)),
+			plugins_url( 'dist/blocks.bootstrap.build.css', dirname( __FILE__ ) ),
 			array(),
 			'4.3.1'
 		);

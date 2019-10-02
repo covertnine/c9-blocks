@@ -344,7 +344,6 @@ function c9_spacing_config( $padding, $margin ) {
 		}
 	}
 
-
 	// padding.
 	if (
 		$padding['top'] === $padding['left'] &&
