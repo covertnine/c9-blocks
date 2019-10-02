@@ -1,4 +1,4 @@
 /**
  * Import bootstrap styles.
  */
-import "./vendor/block-c9-bootstrap.scss";
+import "./vendor/c9-bootstrap.css";
