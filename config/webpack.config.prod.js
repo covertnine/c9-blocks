@@ -41,6 +41,11 @@ const editBlocksCSSPlugin = new ExtractTextPlugin({
 	filename: "./dist/blocks.editor.build.css"
 });
 
+// Extract editor.css for bootstrap styles.
+const bootstrapBlocksCSSPlugin = new ExtractTextPlugin({
+	filename: "./dist/blocks.bootstrap.build.css"
+});
+
 // Configuration for the ExtractTextPlugin — DRY rule.
 const extractConfig = {
 	use: [
@@ -117,6 +122,11 @@ module.exports = {
 				use: editBlocksCSSPlugin.extract(extractConfig)
 			},
 			{
+				test: /bootstrap\.s?css$/,
+				exclude: /(node_modules|bower_components|src\/components)/,
+				use: bootstrapBlocksCSSPlugin.extract(extractConfig)
+			},
+			{
 				test: /src\/components\/.+\/editor\.s?css$/,
 				use: [
 					{
@@ -177,6 +187,7 @@ module.exports = {
 	plugins: [
 		blocksCSSPlugin,
 		editBlocksCSSPlugin,
+		bootstrapBlocksCSSPlugin,
 		// Minify the code.
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {

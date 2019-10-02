@@ -19,6 +19,11 @@ import "./extend";
  */
 import "./block-globals.editor.scss";
 
+/**
+ * Import vendor styles.
+ */
+import "./vendor.js";
+
 // set locale
 import "./blocks/i18n.js";
 
