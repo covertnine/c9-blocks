@@ -13,6 +13,18 @@
 	outline: 0 !important
 }
 
+.tab-content>.tab-pane {
+	display: none;
+}
+
+.tab-content>.active {
+	display: block;
+}
+
+.c9-horizontal-tabs .tab-content {
+	padding: 25px 10px;
+}
+
 a:not([href]):not([tabindex]) {
 	color: inherit;
 	text-decoration: none
@@ -1806,114 +1818,6 @@ fieldset:disabled a.btn {
 	.collapsing {
 		transition: none
 	}
-}
-
-.btn-group,
-.btn-group-vertical {
-	position: relative;
-	display: inline-flex;
-	vertical-align: middle
-}
-
-.btn-group>.btn,
-.btn-group-vertical>.btn {
-	position: relative;
-	flex: 1 1 auto
-}
-
-.btn-group>.btn:hover,
-.btn-group-vertical>.btn:hover {
-	z-index: 1
-}
-
-.btn-group>.btn:focus,
-.btn-group>.btn:active,
-.btn-group>.btn.active,
-.btn-group-vertical>.btn:focus,
-.btn-group-vertical>.btn:active,
-.btn-group-vertical>.btn.active {
-	z-index: 1
-}
-
-.btn-toolbar {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start
-}
-
-.btn-toolbar .input-group {
-	width: auto
-}
-
-.btn-group>.btn:not(:first-child),
-.btn-group>.btn-group:not(:first-child) {
-	margin-left: -1px
-}
-
-.btn-group>.btn:not(:last-child):not(.dropdown-toggle),
-.btn-group>.btn-group:not(:last-child)>.btn {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0
-}
-
-.btn-group>.btn:not(:first-child),
-.btn-group>.btn-group:not(:first-child)>.btn {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0
-}
-
-.btn-sm+.dropdown-toggle-split,
-.btn-group-sm>.btn+.dropdown-toggle-split {
-	padding-right: .375rem;
-	padding-left: .375rem
-}
-
-.btn-lg+.dropdown-toggle-split,
-.btn-group-lg>.btn+.dropdown-toggle-split {
-	padding-right: .75rem;
-	padding-left: .75rem
-}
-
-.btn-group-vertical {
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center
-}
-
-.btn-group-vertical>.btn,
-.btn-group-vertical>.btn-group {
-	width: 100%
-}
-
-.btn-group-vertical>.btn:not(:first-child),
-.btn-group-vertical>.btn-group:not(:first-child) {
-	margin-top: -1px
-}
-
-.btn-group-vertical>.btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical>.btn-group:not(:last-child)>.btn {
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0
-}
-
-.btn-group-vertical>.btn:not(:first-child),
-.btn-group-vertical>.btn-group:not(:first-child)>.btn {
-	border-top-left-radius: 0;
-	border-top-right-radius: 0
-}
-
-.btn-group-toggle>.btn,
-.btn-group-toggle>.btn-group>.btn {
-	margin-bottom: 0
-}
-
-.btn-group-toggle>.btn input[type="radio"],
-.btn-group-toggle>.btn input[type="checkbox"],
-.btn-group-toggle>.btn-group>.btn input[type="radio"],
-.btn-group-toggle>.btn-group>.btn input[type="checkbox"] {
-	position: absolute;
-	clip: rect(0, 0, 0, 0);
-	pointer-events: none
 }
 
 .close {
@@ -5827,233 +5731,224 @@ a.text-dark:focus {
 /************************************************************************************************************************/
 /* CSS for typography for C9-Blocks because :root cannot be styled from the plugin by itself making fonts too large */
 /************************************************************************************************************************/
-
-/* Responsive Typography */
-@media only screen and (min-width: 1px) and (max-width: 667px) {}
-
-/* larger than 667px screens */
-@media only screen and (min-width: 667px) {
-
-	.c9-grid .c9-h,
-	.c9-grid .c9-h.h,
-	.c9-grid .c9-txl,
-	.c9-grid .display-1,
-	.c9-grid .display-2,
-	.c9-grid .display-3,
-	.c9-grid .display-4,
-	.c9-grid .display-5,
-	.c9-grid .display-6,
-	.editor-styles-wrapper .c9-grid .c9-cta .c9-h p {
-		line-height: 1.1;
-	}
-
-	.entry-content .c9-grid p:last-child,
-	.entry-content .c9-grid p:only-of-type,
-	.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:last-child,
-	.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:only-of-type {
-		margin-bottom: 0px;
-	}
-
-	.entry-content .c9-grid .h1 {
-		font-size: 3.6rem
-	}
-
-	.entry-content .c9-grid .h2 {
-		font-size: 3rem
-	}
-
-	.entry-content .c9-grid .h3 {
-		font-size: 2.4rem
-	}
-
-	.entry-content .c9-grid .h4 {
-		font-size: 1.8rem
-	}
-
-	.entry-content .c9-grid .h5 {
-		font-size: 1.2rem
-	}
-
-	.entry-content .c9-grid .h6 {
-		font-size: .6rem
-	}
-
-	.c9-grid .display-1 {
-		font-size: 8rem;
-	}
-
-	.c9-grid .display-2 {
-		font-size: 7.3rem;
-	}
-
-	.c9-grid .display-3,
-	.c9-grid .c9-txl {
-		font-size: 6.5rem;
-	}
-
-	.c9-grid .display-4 {
-		font-size: 5.8rem;
-	}
-
-	.c9-grid .display-5 {
-		font-size: 5rem;
-	}
-
-	.c9-grid .display-6 {
-		font-size: 4.3rem;
-	}
-}
-
-/* Adjustments to C9 Blocks Headings */
-.c9-grid .c9-heading .display-1,
-.editor-styles-wrapper .c9-heading .display-1 {
-	font-size: 3.6rem !important;
-}
-
-.c9-grid .c9-heading .display-2,
-.editor-styles-wrapper .c9-grid .c9-heading .display-2 {
-	font-size: 3.2rem !important;
-}
-
-.c9-grid .c9-heading .display-3,
-.editor-styles-wrapper .c9-grid .c9-heading .display-3 {
-	font-size: 2.8rem !important;
-}
-
-.c9-grid .c9-heading .display-4,
-.editor-styles-wrapper .c9-grid .c9-heading .display-4 {
-	font-size: 2.4rem !important;
-}
-
-.c9-grid .c9-heading .display-5,
-.editor-styles-wrapper .c9-grid .c9-heading .display-5 {
-	font-size: 2rem !important;
-}
-
-.c9-grid .c9-heading .display-6,
-.editor-styles-wrapper .c9-grid .c9-heading .display-6 {
-	font-size: 1.6rem !important;
-}
-
-.c9-grid .c9-heading .subhead {
+.c9-grid .c9-h,
+.c9-grid .c9-h.h,
+.c9-grid .c9-txl,
+.entry-content .c9-heading .display-1,
+.entry-content .c9-heading .display-2,
+.entry-content .c9-heading .display-3,
+.entry-content .c9-heading .display-4,
+.entry-content .c9-heading .display-5,
+.entry-content .c9-heading .display-6,
+.editor-styles-wrapper .c9-cta .c9-h p,
+.c9-grid .c9-heading>* {
 	line-height: 1.1;
+}
+
+.entry-content p:last-child,
+.entry-content p:only-of-type,
+.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:last-child,
+.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:only-of-type {
+	margin-bottom: 0px;
+}
+
+p:only-of-type {
+	margin-top: 0px;
 }
 
 .c9-grid .c9-heading>* {
 	display: inline-block;
 }
 
-.entry-content .c9-grid .c9-heading .h1,
-.c9-grid .c9-heading .subhead-h1,
-.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h1 {
-	font-size: 3.6rem !important;
+/* Tabs */
+.c9-horizontal-tabs .nav-tabs .nav-link {
+	font-size: .75rem;
+	letter-spacing: .02rem;
+	line-height: 1;
 }
 
-.entry-content .c9-grid .c9-heading .h1.c9-txl,
-.entry-content .c9-grid .c9-heading h1.c9-txl {
-	font-size: 3.6rem;
+.entry-content .c9-horizontal-tabs ul.nav.nav-tabs {
+	margin: 30px 0 0 0;
 }
 
-@media only screen and (max-width: 667px) {
+/* Responsive Typography */
+@media only screen and (min-width: 1px) {
 
-	.entry-content .c9-grid .c9-heading .h1.c9-txl,
-	.entry-content .c9-grid .c9-heading h1.c9-txl {
-		font-size: 4rem;
+	.entry-content .c9-heading .h1.c9-txl,
+	.entry-content .c9-heading h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h1.c9-txl {
+		font-size: 1.8rem;
+	}
+
+	.entry-content .c9-heading .h2.c9-txl,
+	.entry-content .c9-heading h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h2.c9-txl {
+		font-size: 1.5rem;
+	}
+
+	.entry-content .c9-heading .h3.c9-txl,
+	.entry-content .c9-heading h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h3.c9-txl {
+		font-size: 1.2rem;
+	}
+
+	.entry-content .c9-heading .h4.c9-txl,
+	.entry-content .c9-heading h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h4.c9-txl {
+		font-size: .9rem;
+	}
+
+	.entry-content .c9-heading .h5.c9-txl,
+	.entry-content .c9-heading h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h5.c9-txl {
+		font-size: .6rem;
+	}
+
+	.entry-content .c9-heading .h6.c9-txl,
+	.entry-content .c9-heading h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h6.c9-txl {
+		font-size: .3rem;
 	}
 }
 
-.entry-content .c9-grid .c9-heading .h2,
-.c9-grid .c9-heading .subhead-h2,
-.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h2 {
-	font-size: 3.6rem !important;
-}
+/* larger than 667px screens */
+@media only screen and (min-width: 667px) {
 
-.entry-content .c9-grid .c9-heading .h2.c9-txl,
-.entry-content .c9-grid .c9-heading h2.c9-txl {
-	font-size: 7.3rem;
-}
+	.c9-heading h1,
+	.editor-styles-wrapper .c9-heading h1,
+	.entry-content .c9-heading .h1,
+	.entry-content .c9-heading .display-1 {
+		font-size: 2.8rem
+	}
 
-@media only screen and (max-width: 667px) {
+	.c9-heading .display-1,
+	.editor-styles-wrapper .c9-heading .display-1,
+	.entry-content .c9-heading .h1,
+	.c9-grid .c9-heading .subhead-h1,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h1 {
+		font-size: 2.8rem !important;
+	}
 
-	.entry-content .c9-grid .c9-heading .h2.c9-txl,
-	.entry-content .c9-grid .c9-heading h2.c9-txl {
+	.entry-content .c9-heading .h1.c9-txl,
+	.entry-content .c9-heading h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h1.c9-txl {
 		font-size: 3.6rem;
 	}
-}
 
-.entry-content .c9-grid .c9-heading .h3,
-.c9-grid .c9-heading .subhead-h3,
-.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h3 {
-	font-size: 3rem !important;
+	.c9-heading h2,
+	.editor-styles-wrapper .c9-heading h2,
+	.entry-content .h2,
+	.entry-content .c9-heading .display-2 {
+		font-size: 2.2rem
+	}
 
-}
+	.c9-heading .display-2,
+	.editor-styles-wrapper .c9-heading .display-2,
+	.entry-content .c9-heading .h2,
+	.c9-grid .c9-heading .subhead-h2,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h2 {
+		font-size: 2.2rem !important;
+	}
 
-.entry-content .c9-grid .c9-heading .h3.c9-txl,
-.entry-content .c9-grid .c9-heading h3.c9-txl {
-	font-size: 6.5rem;
-}
-
-@media only screen and (max-width: 667px) {
-
-	.entry-content .c9-grid .c9-heading .h3.c9-txl,
-	.entry-content .c9-grid .c9-heading h3.c9-txl {
+	.entry-content .c9-heading .h2.c9-txl,
+	.entry-content .c9-heading h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h2.c9-txl {
 		font-size: 3rem;
 	}
-}
 
-.entry-content .c9-grid .c9-heading .h4,
-.c9-grid .c9-heading .subhead-h4,
-.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h4 {
-	font-size: 2.8rem !important;
-}
-
-.entry-content .c9-heading .h4.c9-txl,
-.entry-content .c9-heading h4.c9-txl {
-	font-size: 5.8rem;
-}
-
-@media only screen and (max-width: 667px) {
-
-	.entry-content .c9-grid .c9-heading .h4.c9-txl,
-	.entry-content .c9-grid .c9-heading h4.c9-txl {
-		font-size: 2.8rem;
+	.c9-heading h3,
+	.editor-styles-wrapper .c9-heading h3,
+	.entry-content .h3,
+	.entry-content .c9-heading .display-3 {
+		font-size: 1.8rem
 	}
-}
 
-.entry-content .c9-grid .c9-heading .h5,
-.c9-grid .c9-heading .subhead-h5,
-.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h5 {
-	font-size: 2rem !important;
-}
-
-.entry-content .c9-grid .c9-heading .h5.c9-txl,
-.entry-content .c9-grid .c9-heading h5.c9-txl {
-	font-size: 5rem;
-}
-
-@media only screen and (max-width: 667px) {
-
-	.entry-content .c9-grid .c9-heading .h5.c9-txl,
-	.entry-content .c9-grid .c9-heading h5.c9-txl {
-		font-size: 2rem;
+	.c9-heading .display-3,
+	.editor-styles-wrapper .c9-heading .display-3,
+	.entry-content .c9-heading .h3,
+	.c9-grid .c9-heading .subhead-h3,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h3 {
+		font-size: 1.8rem !important;
 	}
-}
 
-.entry-content .c9-grid .c9-heading .h6,
-.c9-grid .c9-heading .subhead-h6,
-.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h6 {
-	font-size: 1.4rem !important;
-}
+	.entry-content .c9-heading .h3.c9-txl,
+	.entry-content .c9-heading h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h3.c9-txl {
+		font-size: 2.4rem;
+	}
 
-.entry-content .c9-grid .c9-heading .h6.c9-txl,
-.entry-content .c9-grid .c9-heading h6.c9-txl {
-	font-size: 4.3rem;
-}
+	.c9-heading h4,
+	.editor-styles-wrapper .c9-heading h4,
+	.entry-content .h4,
+	.entry-content .c9-heading .display-4 {
+		font-size: 1.4rem
+	}
 
-@media only screen and (max-width: 667px) {
+	.c9-heading .display-4,
+	.editor-styles-wrapper .c9-heading .display-4,
+	.entry-content .c9-heading .h4,
+	.c9-grid .c9-heading .subhead-h4,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h4 {
+		font-size: 1.4rem !important;
+	}
 
-	.entry-content .c9-grid .c9-heading .h6.c9-txl,
-	.entry-content .c9-grid .c9-heading h6.c9-txl {
+	.entry-content .c9-heading .h4.c9-txl,
+	.entry-content .c9-heading h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h4.c9-txl {
+		font-size: 1.8rem;
+	}
+
+	.c9-heading h5,
+	.editor-styles-wrapper .c9-heading h5,
+	.entry-content .h5,
+	.entry-content .c9-heading .display-5 {
+		font-size: .85rem
+	}
+
+	.c9-heading .display-5,
+	.editor-styles-wrapper .c9-heading .display-5,
+	.entry-content .c9-heading .h5,
+	.c9-grid .c9-heading .subhead-h5,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h5 {
+		font-size: .85rem !important;
+	}
+
+	.entry-content .c9-heading .h5.c9-txl,
+	.entry-content .c9-heading h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h5.c9-txl {
 		font-size: 1.4rem;
+	}
+
+	.c9-heading h6,
+	.editor-styles-wrapper .c9-heading h6,
+	.entry-content .h6,
+	.entry-content .c9-heading .display-6 {
+		font-size: .5rem
+	}
+
+	.c9-heading .display-6,
+	.editor-styles-wrapper .c9-heading .display-6,
+	.entry-content .c9-heading .h6,
+	.c9-grid .c9-heading .subhead-h6,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h6 {
+		font-size: .5rem !important;
+	}
+
+	.entry-content .c9-heading .h6.c9-txl,
+	.entry-content .c9-heading h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h6.c9-txl {
+		font-size: 1rem;
 	}
 }
