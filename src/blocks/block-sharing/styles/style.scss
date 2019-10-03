@@ -217,6 +217,10 @@
 	content: '\f0e1';
 }
 
+.c9-social-sharing .c9-share-list li a {
+	text-decoration: none;
+}
+
 @media only screen and (max-width: 667px) {
 	.c9-block-sharing .c9-share-list .c9-social-text {
 		font-size: 1.6rem;

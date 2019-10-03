@@ -26,7 +26,6 @@
 }
 
 a:not([href]):not([tabindex]) {
-	color: inherit;
 	text-decoration: none
 }
 
@@ -5760,15 +5759,47 @@ p:only-of-type {
 	display: inline-block;
 }
 
-/* Tabs */
-.c9-horizontal-tabs .nav-tabs .nav-link {
+/* Horizontal + Vertical Tabs */
+.c9-horizontal-tabs .nav-tabs .nav-link,
+.c9-vertical-tabs .nav-pills .nav-link {
 	font-size: .75rem;
 	letter-spacing: .02rem;
 	line-height: 1;
+	display: block;
 }
 
-.entry-content .c9-horizontal-tabs ul.nav.nav-tabs {
+.c9-horizontal-tabs ul.nav.nav-tabs {
 	margin: 30px 0 0 0;
+}
+
+.c9-horizontal-tabs ul.nav.nav-tabs .nav-item {
+	line-height: 1.6;
+}
+
+/* Social Sharing */
+.c9-block-sharing.c9-share-size-small a {
+	font-size: .8rem;
+}
+
+.c9-block-sharing.c9-share-size-medium a {
+	font-size: 1.2rem;
+
+}
+
+.c9-block-sharing.c9-share-size-large a {
+	font-size: 1.6rem;
+}
+
+/* CTA Bar Buttons */
+/* buttons */
+.c9-cta-button .btn,
+.c9-cta-button .btn:visited,
+.c9-cta-button button,
+.c9-grid .wp-block-button__link,
+.c9-grid .wp-block-file__button,
+.c9-grid .wp-block-file .wp-block-file__button {
+	font-size: .7rem;
+	letter-spacing: .05rem;
 }
 
 /* Responsive Typography */
