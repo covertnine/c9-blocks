@@ -5777,16 +5777,19 @@ p:only-of-type {
 }
 
 /* Social Sharing */
-.c9-block-sharing.c9-share-size-small a {
+.c9-block-sharing.c9-share-size-small a,
+.c9-block-sharing.c9-share-size-small.c9-share-icon-only a {
 	font-size: .8rem;
 }
 
-.c9-block-sharing.c9-share-size-medium a {
+.c9-block-sharing.c9-share-size-medium a,
+.c9-block-sharing.c9-share-size-medium.c9-share-icon-only a {
 	font-size: 1.2rem;
 
 }
 
-.c9-block-sharing.c9-share-size-large a {
+.c9-block-sharing.c9-share-size-large a,
+.c9-block-sharing.c9-share-size-large.c9-share-icon-only a {
 	font-size: 1.6rem;
 }
 

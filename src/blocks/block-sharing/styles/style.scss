@@ -8,6 +8,8 @@
 	position: relative;
 
 	.blocks-rich-text {
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
 		display: inline-flex;
 	}
 
@@ -29,10 +31,12 @@
 			display: block;
 			line-height: 1;
 			font-size: 1.6rem;
+			-webkit-transition: 0.3s ease;
 			transition: 0.3s ease;
 			text-decoration: none;
 
 			&:hover {
+				-webkit-box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
 				box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
 			}
 		}
@@ -53,6 +57,7 @@
 		.c9-social-text {
 			border: 0;
 			clip: rect(1px, 1px, 1px, 1px);
+			-webkit-clip-path: inset(50%);
 			clip-path: inset(50%);
 			height: 1px;
 			margin: -1px;
@@ -107,13 +112,16 @@
 	&.c9-share-size-small.c9-share-icon-only {
 		a {
 			padding: 7px 6px;
-			min-width: 28px;
+			min-width: 32px;
+			min-height: 32px;
 		}
 	}
 
 	&.c9-share-size-medium {
 		a {
 			font-size: 1.6rem;
+			min-width: 48px;
+			min-height: 48px;
 		}
 	}
 
@@ -126,7 +134,8 @@
 	&.c9-share-size-large.c9-share-icon-only {
 		a {
 			font-size: 2.6rem;
-			min-width: 48px;
+			min-width: 55px;
+			min-height: 55px;
 		}
 	}
 
@@ -168,6 +177,7 @@
 }
 
 .c9-button-right {
+	-webkit-transform: translateX(-100%);
 	transform: translateX(-100%);
 	left: 100%;
 	position: relative;
@@ -219,6 +229,15 @@
 
 .c9-social-sharing .c9-share-list li a {
 	text-decoration: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 }
 
 @media only screen and (max-width: 667px) {
