@@ -80,13 +80,14 @@
 .c9-toggles .c9-toggles-item-heading .c9-toggles-toggle-label {
 	font-size: 3rem;
 	text-align: left;
-	line-height: .9;
+	line-height: 1.1;
 }
 
 /* small style toggle */
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle {
 	padding: 15px 0px;
 	border: none;
+	line-height: 1.1;
 }
 
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle:last-child {

@@ -220,7 +220,7 @@
 		}
 	}
 
-	.c9-block-post-grid-more-link {
+	.c9-block-post-grid-excerpt .c9-block-post-grid-more-link {
 		display: inline-block;
 		-webkit-box-shadow: none;
 		box-shadow: none;
@@ -237,6 +237,7 @@
 
 	.c9-block-post-grid-excerpt {
 		font-size: 1.4rem;
+		margin-bottom: 3rem;
 	}
 
 	.c9-block-post-grid-excerpt div+p {

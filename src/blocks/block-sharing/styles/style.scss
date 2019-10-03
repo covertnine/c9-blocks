@@ -28,7 +28,15 @@
 			color: #fff;
 			padding: 10px 15px;
 			text-align: center;
-			display: block;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
 			line-height: 1;
 			font-size: 1.6rem;
 			-webkit-transition: 0.3s ease;
@@ -113,6 +121,8 @@
 		a {
 			min-width: 36px;
 			min-height: 36px;
+			max-width: 36px;
+			height: auto;
 		}
 	}
 
@@ -127,6 +137,8 @@
 	&.c9-share-size-large {
 		a {
 			font-size: 2rem;
+			min-width: 55px;
+			min-height: 55px;
 		}
 	}
 
@@ -228,15 +240,6 @@
 
 .c9-social-sharing .c9-share-list li a {
 	text-decoration: none;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
 }
 
 @media only screen and (max-width: 667px) {

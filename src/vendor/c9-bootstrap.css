@@ -5740,6 +5740,8 @@ a.text-dark:focus {
 .entry-content .c9-heading .display-5,
 .entry-content .c9-heading .display-6,
 .editor-styles-wrapper .c9-cta .c9-h p,
+.c9-cta .c9-h p,
+.c9-cta .c9-sh p,
 .c9-grid .c9-heading>* {
 	line-height: 1.1;
 }
@@ -5809,6 +5811,70 @@ p:only-of-type {
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-heading .c9-toggles-toggle-label {
 	font-size: 1.2rem;
 	letter-spacing: .02rem;
+}
+
+.c9-toggles .c9-toggles-item-heading .c9-toggles-toggle-label {
+	font-size: 1.6rem;
+}
+
+.c9-toggles .c9-toggles-item-collapse {
+	font-size: 1.5rem;
+}
+
+/* carousels */
+.carousel-item .carousel-caption h5 {
+	font-size: .9rem;
+}
+
+.carousel-item .carousel-caption p {
+	font-size: .7rem;
+}
+
+/* post grids */
+.c9-block-post-grid .c9-post-grid-items .c9-block-post-grid-text .c9-block-post-grid-excerpt p {
+	line-height: 1.6;
+	font-size: .8rem;
+}
+
+.c9-block-post-grid header .c9-block-post-grid-title {
+	font-size: 1rem;
+	margin-bottom: .5rem;
+}
+
+.c9-block-post-grid .c9-block-post-grid-byline {
+	margin-bottom: .5rem;
+}
+
+.c9-block-post-grid header h1.c9-block-post-grid-title {
+	font-size: 1.5rem;
+}
+
+.c9-block-post-grid header h2.c9-block-post-grid-title {
+	font-size: 1.3rem;
+}
+
+.c9-block-post-grid header h3.c9-block-post-grid-title {
+	font-size: 1.1rem;
+}
+
+.c9-block-post-grid header h4.c9-block-post-grid-title {
+	font-size: .9rem;
+}
+
+.c9-block-post-grid header h5.c9-block-post-grid-title {
+	font-size: .8rem;
+}
+
+.c9-block-post-grid header h6.c9-block-post-grid-title {
+	font-size: .7rem;
+}
+
+.c9-block-post-grid .c9-block-post-grid-image {
+	margin-bottom: .35rem;
+}
+
+.c9-block-post-grid .c9-block-post-grid-excerpt {
+	margin-bottom: 1.5rem;
 }
 
 /* Responsive Typography */
