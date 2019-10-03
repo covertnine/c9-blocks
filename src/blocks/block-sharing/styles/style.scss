@@ -248,7 +248,15 @@
 	}
 
 	.c9-block-sharing.c9-share-icon-only a {
-		min-width: 31px;
+		min-width: 33px;
 		width: 33px;
+		min-height: 33px;
+		height: 33px;
+		padding: 8px;
+	}
+
+	.c9-block-sharing.c9-share-icon-only.c9-share-size-medium a {
+		height: 48px;
+		width: 48px;
 	}
 }

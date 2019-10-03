@@ -5770,6 +5770,15 @@ p:only-of-type {
 	display: block;
 }
 
+@media only screen and (max-width: 768px) {
+
+	.c9-horizontal-tabs>.nav.nav-tabs>.nav-item>.nav-link,
+	.c9-vertical-tabs .nav-pills .nav-link {
+		font-size: .75rem;
+		letter-spacing: .02rem;
+	}
+}
+
 .c9-horizontal-tabs ul.nav.nav-tabs {
 	margin: 30px 0 0 0;
 }
@@ -5795,16 +5804,50 @@ p:only-of-type {
 	font-size: 1.4rem;
 }
 
+@media only screen and (max-width: 667px) {
+	.c9-block-sharing.c9-share-size-small .c9-share-list .c9-social-text {
+		font-size: .6rem;
+	}
+
+	.c9-block-sharing.c9-share-size-medium .c9-share-list .c9-social-text {
+		font-size: .8rem;
+	}
+
+	.c9-block-sharing.c9-share-size-large .c9-share-list .c9-social-text {
+		font-size: 1rem;
+	}
+
+}
+
 /* CTA Bar Buttons */
-/* buttons */
 .c9-cta-button .btn,
 .c9-cta-button .btn:visited,
 .c9-cta-button button,
 .c9-grid .wp-block-button__link,
 .c9-grid .wp-block-file__button,
-.c9-grid .wp-block-file .wp-block-file__button {
+.c9-grid .wp-block-file .wp-block-file__button,
+.c9-cta .wp-block-button__link.c9-button-size-small,
+.c9-cta .wp-block-button__link.c9-button-size-medium,
+.c9-cta .wp-block-button__link.c9-button-size-large,
+.c9-cta .wp-block-button__link.c9-button-size-extralarge {
 	font-size: .7rem;
 	letter-spacing: .05rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+	.c9-cta-button .btn,
+	.c9-cta-button .btn:visited,
+	.c9-cta-button button,
+	.c9-grid .wp-block-button__link,
+	.c9-grid .wp-block-file__button,
+	.c9-grid .wp-block-file .wp-block-file__button,
+	.c9-cta .wp-block-button__link.c9-button-size-small,
+	.c9-cta .wp-block-button__link.c9-button-size-medium,
+	.c9-cta .wp-block-button__link.c9-button-size-large,
+	.c9-cta .wp-block-button__link.c9-button-size-extralarge {
+		font-size: .7rem;
+	}
 }
 
 /* big + small toggles */
