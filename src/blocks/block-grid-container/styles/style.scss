@@ -115,6 +115,19 @@
 	height: 100%;
 }
 
+/* adjustments to image aligments in grids for some themes*/
+@media only screen and (min-width: 768px) {
+	.entry>.entry-content>.c9-grid .wp-block-image .aligncenter {
+		width: auto;
+	}
+}
+
+@media only screen and (min-width: 1168px) {
+	.entry>.entry-content>.c9-grid .wp-block-image .aligncenter {
+		width: auto;
+	}
+}
+
 /****************************************************************************************/
 /* C9 Container Blocks for Bootstrap-like containers */
 /****************************************************************************************/
