@@ -128,7 +128,6 @@
 
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .fa-angle-right:before {
 	padding: 0px;
-	margin-top: -12px;
 }
 
 .c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-collapse .fas,
@@ -153,8 +152,4 @@
 
 .c9-toggles:not(.is-style-toggles-small) .c9-toggles-item-collapse {
 	top: -15px;
-}
-
-.editor-styles-wrapper .c9-toggles.is-style-toggles-small .c9-toggles-toggle .fa-angle-right:before {
-	padding-top: 2px;
 }
