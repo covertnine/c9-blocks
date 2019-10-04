@@ -40,3 +40,9 @@
 
 	}
 }
+
+@media only screen and (max-width: 667px) {
+	.c9-horizontal-tabs .nav-tabs .nav-link {
+		padding: 10px 15px;
+	}
+}

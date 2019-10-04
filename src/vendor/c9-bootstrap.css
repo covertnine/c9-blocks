@@ -5779,6 +5779,14 @@ p:only-of-type {
 	}
 }
 
+@media only screen and (max-width: 568px) {
+
+	.c9-horizontal-tabs>.nav.nav-tabs>.nav-item>.nav-link,
+	.c9-vertical-tabs .nav-pills .nav-link {
+		font-size: .4rem;
+	}
+}
+
 .c9-horizontal-tabs ul.nav.nav-tabs {
 	margin: 30px 0 0 0;
 }
@@ -5927,28 +5935,60 @@ p:only-of-type {
 	.entry-content .c9-heading h1.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h1.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h1.c9-txl {
-		font-size: 1.8rem;
+		font-size: 2.2em;
+	}
+
+	.c9-heading .display-1,
+	.editor-styles-wrapper .c9-heading .display-1,
+	.entry-content .c9-heading .h1,
+	.c9-grid .c9-heading .subhead-h1,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h1 {
+		font-size: 2.2rem !important;
 	}
 
 	.entry-content .c9-heading .h2.c9-txl,
 	.entry-content .c9-heading h2.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h2.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h2.c9-txl {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
+	}
+
+	.c9-heading .display-2,
+	.editor-styles-wrapper .c9-heading .display-2,
+	.entry-content .c9-heading .h2,
+	.c9-grid .c9-heading .subhead-h2,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h2 {
+		font-size: 1.8rem !important;
 	}
 
 	.entry-content .c9-heading .h3.c9-txl,
 	.entry-content .c9-heading h3.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h3.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h3.c9-txl {
-		font-size: 1.2rem;
+		font-size: 1.4rem;
+	}
+
+	.c9-heading .display-3,
+	.editor-styles-wrapper .c9-heading .display-3,
+	.entry-content .c9-heading .h3,
+	.c9-grid .c9-heading .subhead-h3,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h3 {
+		font-size: 1.4rem !important;
 	}
 
 	.entry-content .c9-heading .h4.c9-txl,
 	.entry-content .c9-heading h4.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h4.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h4.c9-txl {
-		font-size: .9rem;
+		font-size: 1rem;
+	}
+
+	.c9-heading .display-4,
+	.editor-styles-wrapper .c9-heading .display-4,
+	.entry-content .c9-heading .h4,
+	.c9-grid .c9-heading .subhead-h4,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h4 {
+		font-size: 1rem !important;
 	}
 
 	.entry-content .c9-heading .h5.c9-txl,
@@ -5958,11 +5998,27 @@ p:only-of-type {
 		font-size: .6rem;
 	}
 
+	.c9-heading .display-5,
+	.editor-styles-wrapper .c9-heading .display-5,
+	.entry-content .c9-heading .h5,
+	.c9-grid .c9-heading .subhead-h5,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h5 {
+		font-size: .6rem !important;
+	}
+
 	.entry-content .c9-heading .h6.c9-txl,
 	.entry-content .c9-heading h6.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h6.c9-txl,
 	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h6.c9-txl {
-		font-size: .3rem;
+		font-size: .5rem;
+	}
+
+	.c9-heading .display-6,
+	.editor-styles-wrapper .c9-heading .display-6,
+	.entry-content .c9-heading .h6,
+	.c9-grid .c9-heading .subhead-h6,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h6 {
+		font-size: .5rem !important;
 	}
 }
 
