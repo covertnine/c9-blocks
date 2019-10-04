@@ -6,12 +6,17 @@
 
 .entry-content .c9-horizontal-tabs>.nav.nav-tabs,
 .editor-styles-wrapper .c9-horizontal-tabs>.nav.nav-tabs {
+	font-size: inherit;
 	list-style: none;
 	padding: 0px;
 	flex-wrap: nowrap;
 	margin: 30px 0 0 0;
 }
-
+.c9-tabs-content {
+	p {
+		font-size: 1.6em;
+	}
+}
 .c9-horizontal-tabs .nav-tabs .nav-link {
 	border: none;
 	border-radius: 0px;

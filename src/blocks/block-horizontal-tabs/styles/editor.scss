@@ -4,8 +4,10 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-
 div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
+	ul li {
+		font-size: 1em;
+	}
 	.tab-content [data-tab] {
 		display: none;
 	}
