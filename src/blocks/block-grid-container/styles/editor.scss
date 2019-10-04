@@ -4,7 +4,9 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-
+.c9-grid {
+	font-size: 10px;
+}
 .padding-label,
 .margin-label {
 	margin-bottom: 0;

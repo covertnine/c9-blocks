@@ -8,7 +8,9 @@
 /************************************************************************************************************************/
 /* Modified Bootstrap.css to only include what's needed for C9 Blocks plugin with some minor adjustments to typo sizes *
 /************************************************************************************************************************/
-
+.c9-grid, .c9-posts-grid, .c9-heading {
+	font-size: 10px;
+}
 [tabindex="-1"]:focus {
 	outline: 0 !important;
 }

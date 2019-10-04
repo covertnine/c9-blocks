@@ -3,7 +3,9 @@
  *
  * CSS for both Frontend+Backend.
  */
-
+.c9-heading {
+	font-size: 10px;
+}
 .c9-heading h1,
 .c9-heading h2,
 .c9-heading h3,
@@ -48,7 +50,7 @@
 	color: #6c757d;
 }
 
-.c9-heading>* {
+.c9-heading > * {
 	display: inline-block;
 }
 
@@ -64,7 +66,6 @@
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h1.c9-txl,
 	.entry-content .c9-heading h1.c9-txl {
 		font-size: 4em;
@@ -83,7 +84,6 @@
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h2.c9-txl,
 	.entry-content .c9-heading h2.c9-txl {
 		font-size: 3.6em;
@@ -94,7 +94,6 @@
 .c9-heading .subhead-h3,
 .editor-styles-wrapper .c9-heading .c9-sh.subhead-h3 {
 	font-size: 3em !important;
-
 }
 
 .entry-content .c9-heading .h3.c9-txl,
@@ -103,7 +102,6 @@
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h3.c9-txl,
 	.entry-content .c9-heading h3.c9-txl {
 		font-size: 3em;
@@ -122,7 +120,6 @@
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h4.c9-txl,
 	.entry-content .c9-heading h4.c9-txl {
 		font-size: 2.8em;
@@ -141,7 +138,6 @@
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h5.c9-txl,
 	.entry-content .c9-heading h5.c9-txl {
 		font-size: 2em;
@@ -160,7 +156,6 @@
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h6.c9-txl,
 	.entry-content .c9-heading h6.c9-txl {
 		font-size: 1.4em;
