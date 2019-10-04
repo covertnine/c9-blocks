@@ -11,8 +11,8 @@
 		.c9-layout-options,
 		.c9-section-options {
 			display: grid;
-			grid-column-gap: 1rem;
-			grid-row-gap: 1rem;
+			grid-column-gap: 1em;
+			grid-row-gap: 1em;
 			grid-template-columns: repeat(4, 1fr);
 
 			button {
@@ -30,7 +30,7 @@
 
 				span {
 					display: block;
-					font-size: 0.8rem;
+					font-size: 0.8em;
 					padding: 2px 0;
 				}
 			}
