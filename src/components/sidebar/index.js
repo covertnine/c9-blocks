@@ -4,6 +4,7 @@
 import ColorAppender from "../color-appender";
 import Logo from "../../../assets/c9-feather-logo-gray.svg";
 import { TemplatesModal } from "../templates-modal";
+import icons from "../../../assets/sidebar-icons";
 
 /**
  * Styles
@@ -18,7 +19,10 @@ const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { Button, PanelBody, Dashicon } = wp.components;
+const { Button, PanelBody, Dashicon, Icon } = wp.components;
+const { withDispatch } = wp.data;
+
+const ICON_SIZE = 80;
 
 class Sidebar extends Component {
 	constructor() {
@@ -45,6 +49,7 @@ class Sidebar extends Component {
 	};
 
 	render() {
+		const { resetBlocks } = this.props;
 		const { isModalOpen, sections, layouts } = this.state;
 
 		return (
@@ -71,7 +76,7 @@ class Sidebar extends Component {
 								this.setState({ loading: false });
 							}}
 						>
-							<span className="dashicons dashicons-schedule" />
+							<Icon icon={icons.section} size={ICON_SIZE} />
 							{__("Section Templates", "c9-blocks")}
 						</Button>
 						<Button
@@ -82,7 +87,7 @@ class Sidebar extends Component {
 								this.setState({ isModalOpen: "page-templates" });
 							}}
 						>
-							<span className="dashicons dashicons-editor-code" />
+							<Icon icon={icons.page} size={ICON_SIZE} />
 							{__("Page Templates", "c9-blocks")}
 						</Button>
 						<Button
@@ -93,8 +98,19 @@ class Sidebar extends Component {
 								this.setState({ isModalOpen: "saved-blocks" });
 							}}
 						>
-							<span className="dashicons dashicons-admin-settings" />
+							<Icon icon={icons.saved} size={ICON_SIZE} />
 							{__("Saved Blocks", "c9-blocks")}
+						</Button>
+						<Button
+							className="plugin-c9-panel-button"
+							isDefault
+							isLarge
+							onClick={() => {
+								resetBlocks([]);
+							}}
+						>
+							<Icon icon={icons.close} size={ICON_SIZE} />
+							{__("Clear Page", "c9-blocks")}
 						</Button>
 					</PanelBody>
 					<PanelBody>
@@ -124,11 +140,18 @@ class Sidebar extends Component {
 	}
 }
 
+const C9Sidebar = withDispatch(dispatch => {
+	const { resetBlocks } = dispatch("core/editor");
+	return {
+		resetBlocks
+	};
+})(Sidebar);
+
 registerPlugin("c9-blocks", {
 	icon: (
 		<div className="c9-plugin-icon">
 			<Logo />
 		</div>
 	),
-	render: Sidebar
+	render: C9Sidebar
 });

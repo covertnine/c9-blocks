@@ -30,7 +30,6 @@ class TemplatesModal extends Component {
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
 
 		this.state = {
-			activeTab: this.props.initial,
 			reusables: [],
 			sections: this.props.sections,
 			layouts: this.props.layouts,
@@ -193,10 +192,33 @@ class TemplatesModal extends Component {
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
+						},
+						{
+							name: "tutorial",
+							title: (
+								<Tooltip text={__("How To's", "c9-blocks")}>
+									<span>{__("Tutorial")}</span>
+								</Tooltip>
+							),
+							className: "c9-template-tabs-tab"
+						},
+						{
+							name: "clear-page",
+							title: (
+								<button
+									onClick={() => {
+										resetBlocks([]);
+									}}
+									className="btn btn-danger"
+								>
+									<Icon icon="trash" />
+									<span>{__("Clear page", "c9-blocks")}</span>
+								</button>
+							),
+							className: "c9-template-tabs-tab"
 						}
 					]}
 					initialTabName={this.props.initial}
-					onSelect={tabName => this.setState({ activeTab: tabName })}
 				>
 					{tab => {
 						if (loading) {
@@ -244,7 +266,7 @@ class TemplatesModal extends Component {
 										</div>
 									</Fragment>
 								);
-							default:
+							case "saved-blocks":
 								return (
 									<Fragment>
 										<p>{tab.title}</p>
@@ -268,6 +290,30 @@ class TemplatesModal extends Component {
 										</div>
 									</Fragment>
 								);
+							case "tutorial":
+								return (
+									<Fragment>
+										<p>{tab.title}</p>
+										<div className="c9-section-options">
+											Insert tutorial here.
+											<button
+												onClick={() => {
+													resetBlocks([]);
+												}}
+												className="btn btn-danger"
+											>
+												<Icon icon="trash" />
+												<span>{__("Clear page", "c9-blocks")}</span>
+											</button>
+										</div>
+									</Fragment>
+								);
+							default:
+								return (
+									<Fragment>
+										The page has been cleared.
+									</Fragment>
+								)
 						}
 					}}
 				</TabPanel>
