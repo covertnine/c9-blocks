@@ -3,7 +3,9 @@
  *
  * CSS for both Frontend+Backend.
  */
-
+.c9-heading {
+	font-size: 10px;
+}
 .c9-heading h1,
 .c9-heading h2,
 .c9-heading h3,
@@ -16,153 +18,146 @@
 
 .c9-heading .display-1,
 .editor-styles-wrapper .c9-heading .display-1 {
-	font-size: 8rem !important;
+	font-size: 8em !important;
 }
 
 .c9-heading .display-2,
 .editor-styles-wrapper .c9-heading .display-2 {
-	font-size: 7.3rem !important;
+	font-size: 7.3em !important;
 }
 
 .c9-heading .display-3,
 .editor-styles-wrapper .c9-heading .display-3 {
-	font-size: 6.5rem !important;
+	font-size: 6.5em !important;
 }
 
 .c9-heading .display-4,
 .editor-styles-wrapper .c9-heading .display-4 {
-	font-size: 5.8rem !important;
+	font-size: 5.8em !important;
 }
 
 .c9-heading .display-5,
 .editor-styles-wrapper .c9-heading .display-5 {
-	font-size: 5rem !important;
+	font-size: 5em !important;
 }
 
 .c9-heading .display-6,
 .editor-styles-wrapper .c9-heading .display-6 {
-	font-size: 4.3rem !important;
+	font-size: 4.3em !important;
 }
 
 .c9-heading .subhead {
 	color: #6c757d;
 }
 
-.c9-heading>* {
+.c9-heading > * {
 	display: inline-block;
 }
 
 .entry-content .c9-heading .h1,
 .c9-heading .subhead-h1,
 .editor-styles-wrapper .c9-heading .c9-sh.subhead-h1 {
-	font-size: 4rem !important;
+	font-size: 4em !important;
 }
 
 .entry-content .c9-heading .h1.c9-txl,
 .entry-content .c9-heading h1.c9-txl {
-	font-size: 8rem;
+	font-size: 8em;
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h1.c9-txl,
 	.entry-content .c9-heading h1.c9-txl {
-		font-size: 4rem;
+		font-size: 4em;
 	}
 }
 
 .entry-content .c9-heading .h2,
 .c9-heading .subhead-h2,
 .editor-styles-wrapper .c9-heading .c9-sh.subhead-h2 {
-	font-size: 3.6rem !important;
+	font-size: 3.6em !important;
 }
 
 .entry-content .c9-heading .h2.c9-txl,
 .entry-content .c9-heading h2.c9-txl {
-	font-size: 7.3rem;
+	font-size: 7.3em;
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h2.c9-txl,
 	.entry-content .c9-heading h2.c9-txl {
-		font-size: 3.6rem;
+		font-size: 3.6em;
 	}
 }
 
 .entry-content .c9-heading .h3,
 .c9-heading .subhead-h3,
 .editor-styles-wrapper .c9-heading .c9-sh.subhead-h3 {
-	font-size: 3rem !important;
-
+	font-size: 3em !important;
 }
 
 .entry-content .c9-heading .h3.c9-txl,
 .entry-content .c9-heading h3.c9-txl {
-	font-size: 6.5rem;
+	font-size: 6.5em;
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h3.c9-txl,
 	.entry-content .c9-heading h3.c9-txl {
-		font-size: 3rem;
+		font-size: 3em;
 	}
 }
 
 .entry-content .c9-heading .h4,
 .c9-heading .subhead-h4,
 .editor-styles-wrapper .c9-heading .c9-sh.subhead-h4 {
-	font-size: 2.8rem !important;
+	font-size: 2.8em !important;
 }
 
 .entry-content .c9-heading .h4.c9-txl,
 .entry-content .c9-heading h4.c9-txl {
-	font-size: 5.8rem;
+	font-size: 5.8em;
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h4.c9-txl,
 	.entry-content .c9-heading h4.c9-txl {
-		font-size: 2.8rem;
+		font-size: 2.8em;
 	}
 }
 
 .entry-content .c9-heading .h5,
 .c9-heading .subhead-h5,
 .editor-styles-wrapper .c9-heading .c9-sh.subhead-h5 {
-	font-size: 2rem !important;
+	font-size: 2em !important;
 }
 
 .entry-content .c9-heading .h5.c9-txl,
 .entry-content .c9-heading h5.c9-txl {
-	font-size: 5rem;
+	font-size: 5em;
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h5.c9-txl,
 	.entry-content .c9-heading h5.c9-txl {
-		font-size: 2rem;
+		font-size: 2em;
 	}
 }
 
 .entry-content .c9-heading .h6,
 .c9-heading .subhead-h6,
 .editor-styles-wrapper .c9-heading .c9-sh.subhead-h6 {
-	font-size: 1.4rem !important;
+	font-size: 1.4em !important;
 }
 
 .entry-content .c9-heading .h6.c9-txl,
 .entry-content .c9-heading h6.c9-txl {
-	font-size: 4.3rem;
+	font-size: 4.3em;
 }
 
 @media only screen and (max-width: 667px) {
-
 	.entry-content .c9-heading .h6.c9-txl,
 	.entry-content .c9-heading h6.c9-txl {
-		font-size: 1.4rem;
+		font-size: 1.4em;
 	}
 }
