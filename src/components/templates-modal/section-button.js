@@ -17,7 +17,9 @@ const SectionButton = ({
 			}}
 		>
 			{preview ? (
-				<img src={preview} alt="section preview"></img>
+				<div class="c9-section-preview">
+					<img src={preview} alt="section preview"></img>
+				</div>
 			) : (
 				<Icon icon={icon} />
 			)}
