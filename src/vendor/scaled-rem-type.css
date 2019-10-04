@@ -1,0 +1,446 @@
+/************************************************************************************************************************/
+/* CSS for typography for C9-Blocks because :root cannot be styled from the plugin by itself making fonts too large */
+/************************************************************************************************************************/
+.c9-grid .c9-h,
+.c9-grid .c9-h.h,
+.c9-grid .c9-txl,
+.entry-content .c9-heading .display-1,
+.entry-content .c9-heading .display-2,
+.entry-content .c9-heading .display-3,
+.entry-content .c9-heading .display-4,
+.entry-content .c9-heading .display-5,
+.entry-content .c9-heading .display-6,
+.editor-styles-wrapper .c9-cta .c9-h p,
+.c9-cta .c9-h p,
+.c9-cta .c9-sh p,
+.c9-grid .c9-heading>* {
+	line-height: 1.1;
+}
+
+.entry-content p:last-child,
+.entry-content p:only-of-type,
+.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:last-child,
+.c9-grid .wp-block-pullquote.is-style-solid-color blockquote p:only-of-type {
+	margin-bottom: 0px;
+}
+
+p:only-of-type {
+	margin-top: 0px;
+}
+
+.c9-grid .c9-heading>* {
+	display: inline-block;
+}
+
+/* Horizontal + Vertical Tabs */
+.c9-horizontal-tabs .nav-tabs .nav-link,
+.c9-vertical-tabs .nav-pills .nav-link {
+	font-size: .75rem;
+	letter-spacing: .02rem;
+	line-height: 1;
+	display: block;
+}
+
+@media only screen and (max-width: 667px) {
+
+	.c9-horizontal-tabs>.nav.nav-tabs>.nav-item>.nav-link,
+	.c9-vertical-tabs .nav-pills .nav-link {
+		font-size: .6rem;
+		letter-spacing: .02rem;
+	}
+}
+
+@media only screen and (max-width: 568px) {
+
+	.c9-horizontal-tabs>.nav.nav-tabs>.nav-item>.nav-link,
+	.c9-vertical-tabs .nav-pills .nav-link {
+		font-size: .5rem;
+	}
+}
+
+.c9-horizontal-tabs ul.nav.nav-tabs {
+	margin: 30px 0 0 0;
+}
+
+.c9-horizontal-tabs ul.nav.nav-tabs .nav-item {
+	line-height: 1.6;
+}
+
+/* Social Sharing */
+.c9-block-sharing.c9-share-size-small a,
+.c9-block-sharing.c9-share-size-small.c9-share-icon-only a {
+	font-size: .8rem;
+}
+
+.c9-block-sharing.c9-share-size-medium a,
+.c9-block-sharing.c9-share-size-medium.c9-share-icon-only a {
+	font-size: 1rem;
+
+}
+
+.c9-block-sharing.c9-share-size-large a,
+.c9-block-sharing.c9-share-size-large.c9-share-icon-only a {
+	font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 667px) {
+	.c9-block-sharing.c9-share-size-small .c9-share-list .c9-social-text {
+		font-size: .6rem;
+	}
+
+	.c9-block-sharing.c9-share-size-medium .c9-share-list .c9-social-text {
+		font-size: .8rem;
+	}
+
+	.c9-block-sharing.c9-share-size-large .c9-share-list .c9-social-text {
+		font-size: 1rem;
+	}
+
+}
+
+/* CTA Bar Buttons */
+.c9-cta-button .btn,
+.c9-cta-button .btn:visited,
+.c9-cta-button button,
+.c9-grid .wp-block-button__link,
+.c9-grid .wp-block-file__button,
+.c9-grid .wp-block-file .wp-block-file__button,
+.c9-cta .wp-block-button__link.c9-button-size-small,
+.c9-cta .wp-block-button__link.c9-button-size-medium,
+.c9-cta .wp-block-button__link.c9-button-size-large,
+.c9-cta .wp-block-button__link.c9-button-size-extralarge {
+	font-size: .7rem;
+	letter-spacing: .05rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+	.c9-cta-button .btn,
+	.c9-cta-button .btn:visited,
+	.c9-cta-button button,
+	.c9-grid .wp-block-button__link,
+	.c9-grid .wp-block-file__button,
+	.c9-grid .wp-block-file .wp-block-file__button,
+	.c9-cta .wp-block-button__link.c9-button-size-small,
+	.c9-cta .wp-block-button__link.c9-button-size-medium,
+	.c9-cta .wp-block-button__link.c9-button-size-large,
+	.c9-cta .wp-block-button__link.c9-button-size-extralarge {
+		font-size: .7rem;
+	}
+}
+
+@media only screen and (max-width: 568px) {
+
+	.c9-cta-button .btn,
+	.c9-cta-button .btn:visited,
+	.c9-cta-button button,
+	.c9-grid .wp-block-button__link,
+	.c9-grid .wp-block-file__button,
+	.c9-grid .wp-block-file .wp-block-file__button,
+	.c9-cta .wp-block-button__link.c9-button-size-small,
+	.c9-cta .wp-block-button__link.c9-button-size-medium,
+	.c9-cta .wp-block-button__link.c9-button-size-large,
+	.c9-cta .wp-block-button__link.c9-button-size-extralarge {
+		font-size: .5rem;
+	}
+}
+
+/* big + small toggles */
+.c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-heading .c9-toggles-toggle-label {
+	font-size: 1.2rem;
+	letter-spacing: .02rem;
+}
+
+.c9-toggles .c9-toggles-item-heading .c9-toggles-toggle-label {
+	font-size: 1.6rem;
+}
+
+.c9-toggles .c9-toggles-item-collapse {
+	font-size: 1.5rem;
+}
+
+/* carousels */
+.carousel-item .carousel-caption h5 {
+	font-size: .9rem;
+}
+
+.carousel-item .carousel-caption p {
+	font-size: .7rem;
+}
+
+/* post grids */
+.c9-block-post-grid .c9-post-grid-items .c9-block-post-grid-text .c9-block-post-grid-excerpt p {
+	line-height: 1.6;
+	font-size: .8rem;
+}
+
+.c9-block-post-grid header .c9-block-post-grid-title {
+	font-size: 1rem;
+	margin-bottom: .5rem;
+}
+
+.c9-block-post-grid .c9-block-post-grid-byline {
+	margin-bottom: .5rem;
+}
+
+.c9-block-post-grid header h1.c9-block-post-grid-title {
+	font-size: 1.5rem;
+}
+
+.c9-block-post-grid header h2.c9-block-post-grid-title {
+	font-size: 1.3rem;
+}
+
+.c9-block-post-grid header h3.c9-block-post-grid-title {
+	font-size: 1.1rem;
+}
+
+.c9-block-post-grid header h4.c9-block-post-grid-title {
+	font-size: .9rem;
+}
+
+.c9-block-post-grid header h5.c9-block-post-grid-title {
+	font-size: .8rem;
+}
+
+.c9-block-post-grid header h6.c9-block-post-grid-title {
+	font-size: .7rem;
+}
+
+.c9-block-post-grid .c9-block-post-grid-image {
+	margin-bottom: .35rem;
+}
+
+.c9-block-post-grid .c9-block-post-grid-excerpt {
+	margin-bottom: 1.5rem;
+}
+
+/* Responsive Typography */
+@media only screen and (min-width: 1px) {
+
+	.entry-content .c9-heading .h1.c9-txl,
+	.entry-content .c9-heading h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h1.c9-txl {
+		font-size: 2.2em;
+	}
+
+	.c9-heading .display-1,
+	.editor-styles-wrapper .c9-heading .display-1,
+	.entry-content .c9-heading .h1,
+	.c9-grid .c9-heading .subhead-h1,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h1 {
+		font-size: 2.2rem !important;
+	}
+
+	.entry-content .c9-heading .h2.c9-txl,
+	.entry-content .c9-heading h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h2.c9-txl {
+		font-size: 1.8rem;
+	}
+
+	.c9-heading .display-2,
+	.editor-styles-wrapper .c9-heading .display-2,
+	.entry-content .c9-heading .h2,
+	.c9-grid .c9-heading .subhead-h2,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h2 {
+		font-size: 1.8rem !important;
+	}
+
+	.entry-content .c9-heading .h3.c9-txl,
+	.entry-content .c9-heading h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h3.c9-txl {
+		font-size: 1.4rem;
+	}
+
+	.c9-heading .display-3,
+	.editor-styles-wrapper .c9-heading .display-3,
+	.entry-content .c9-heading .h3,
+	.c9-grid .c9-heading .subhead-h3,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h3 {
+		font-size: 1.4rem !important;
+	}
+
+	.entry-content .c9-heading .h4.c9-txl,
+	.entry-content .c9-heading h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h4.c9-txl {
+		font-size: 1rem;
+	}
+
+	.c9-heading .display-4,
+	.editor-styles-wrapper .c9-heading .display-4,
+	.entry-content .c9-heading .h4,
+	.c9-grid .c9-heading .subhead-h4,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h4 {
+		font-size: 1rem !important;
+	}
+
+	.entry-content .c9-heading .h5.c9-txl,
+	.entry-content .c9-heading h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h5.c9-txl {
+		font-size: .6rem;
+	}
+
+	.c9-heading .display-5,
+	.editor-styles-wrapper .c9-heading .display-5,
+	.entry-content .c9-heading .h5,
+	.c9-grid .c9-heading .subhead-h5,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h5 {
+		font-size: .6rem !important;
+	}
+
+	.entry-content .c9-heading .h6.c9-txl,
+	.entry-content .c9-heading h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h6.c9-txl {
+		font-size: .5rem;
+	}
+
+	.c9-heading .display-6,
+	.editor-styles-wrapper .c9-heading .display-6,
+	.entry-content .c9-heading .h6,
+	.c9-grid .c9-heading .subhead-h6,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h6 {
+		font-size: .5rem !important;
+	}
+}
+
+/* larger than 667px screens */
+@media only screen and (min-width: 667px) {
+
+	.c9-heading h1,
+	.editor-styles-wrapper .c9-heading h1,
+	.entry-content .c9-heading .h1,
+	.entry-content .c9-heading .display-1 {
+		font-size: 2.8rem
+	}
+
+	.c9-heading .display-1,
+	.editor-styles-wrapper .c9-heading .display-1,
+	.entry-content .c9-heading .h1,
+	.c9-grid .c9-heading .subhead-h1,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h1 {
+		font-size: 2.8rem !important;
+	}
+
+	.entry-content .c9-heading .h1.c9-txl,
+	.entry-content .c9-heading h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h1.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h1.c9-txl {
+		font-size: 3.6rem;
+	}
+
+	.c9-heading h2,
+	.editor-styles-wrapper .c9-heading h2,
+	.entry-content .h2,
+	.entry-content .c9-heading .display-2 {
+		font-size: 2.2rem
+	}
+
+	.c9-heading .display-2,
+	.editor-styles-wrapper .c9-heading .display-2,
+	.entry-content .c9-heading .h2,
+	.c9-grid .c9-heading .subhead-h2,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h2 {
+		font-size: 2.2rem !important;
+	}
+
+	.entry-content .c9-heading .h2.c9-txl,
+	.entry-content .c9-heading h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h2.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h2.c9-txl {
+		font-size: 3rem;
+	}
+
+	.c9-heading h3,
+	.editor-styles-wrapper .c9-heading h3,
+	.entry-content .h3,
+	.entry-content .c9-heading .display-3 {
+		font-size: 1.8rem
+	}
+
+	.c9-heading .display-3,
+	.editor-styles-wrapper .c9-heading .display-3,
+	.entry-content .c9-heading .h3,
+	.c9-grid .c9-heading .subhead-h3,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h3 {
+		font-size: 1.8rem !important;
+	}
+
+	.entry-content .c9-heading .h3.c9-txl,
+	.entry-content .c9-heading h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h3.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h3.c9-txl {
+		font-size: 2.4rem;
+	}
+
+	.c9-heading h4,
+	.editor-styles-wrapper .c9-heading h4,
+	.entry-content .h4,
+	.entry-content .c9-heading .display-4 {
+		font-size: 1.4rem
+	}
+
+	.c9-heading .display-4,
+	.editor-styles-wrapper .c9-heading .display-4,
+	.entry-content .c9-heading .h4,
+	.c9-grid .c9-heading .subhead-h4,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h4 {
+		font-size: 1.4rem !important;
+	}
+
+	.entry-content .c9-heading .h4.c9-txl,
+	.entry-content .c9-heading h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h4.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h4.c9-txl {
+		font-size: 1.8rem;
+	}
+
+	.c9-heading h5,
+	.editor-styles-wrapper .c9-heading h5,
+	.entry-content .h5,
+	.entry-content .c9-heading .display-5 {
+		font-size: .85rem
+	}
+
+	.c9-heading .display-5,
+	.editor-styles-wrapper .c9-heading .display-5,
+	.entry-content .c9-heading .h5,
+	.c9-grid .c9-heading .subhead-h5,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h5 {
+		font-size: .85rem !important;
+	}
+
+	.entry-content .c9-heading .h5.c9-txl,
+	.entry-content .c9-heading h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h5.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h5.c9-txl {
+		font-size: 1.4rem;
+	}
+
+	.c9-heading h6,
+	.editor-styles-wrapper .c9-heading h6,
+	.entry-content .h6,
+	.entry-content .c9-heading .display-6 {
+		font-size: .5rem
+	}
+
+	.c9-heading .display-6,
+	.editor-styles-wrapper .c9-heading .display-6,
+	.entry-content .c9-heading .h6,
+	.c9-grid .c9-heading .subhead-h6,
+	.editor-styles-wrapper .c9-grid .c9-heading .c9-sh.subhead-h6 {
+		font-size: .5rem !important;
+	}
+
+	.entry-content .c9-heading .h6.c9-txl,
+	.entry-content .c9-heading h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading .h6.c9-txl,
+	.editor-styles-wrapper [data-type="c9-blocks/heading"] .c9-heading h6.c9-txl {
+		font-size: 1rem;
+	}
+}
