@@ -1,33 +1,33 @@
 // sections
-import threeColStreamingAudioAlbums from "./section-templates/3-col-streaming-audio-albums";
-import fullScreenVideoHeadlineWithFollowButton from "./section-templates/full-screen-video-headline-with-follow-button";
-import header2ColFlatColorWithTitleHeadingLogo from "./section-templates/header-2-col-flat-color-with-title-heading-logo";
-import headerFeaturedVideoCarousel from "./section-templates/header-featured-video-carousel";
-import headerVideoBackgroundWithTitleHeading from "./section-templates/header-video-background-with-title-heading";
-import heroHeaderAudioEmbed from "./section-templates/hero-header-audio-embed";
-import heroSpotifyEmbedWithImageCarousel from "./section-templates/hero-spotify-embed-with-image-carousel";
+import streamingAudioPreview from "./section-templates/streaming-audio-preview";
+import largeSpotifyEmbedPlusImageCarousel from "./section-templates/large-spotify-embed-plus-image-carousel";
+import sectionsOverviewPlusTwoTestimonial from "./section-templates/sections-overview-plus-two-testimonial";
+import serviceOverview from "./section-templates/service-overview";
+import resturantStyleMenu from "./section-templates/restaurant-style-menu";
+import resturantStyleMenuV2 from "./section-templates/restaurant-style-menu-v2";
+import fullScreenVideoHeadlinePlusButton from "./section-templates/full-screen-video-headline-plus-button";
 import largeGalleryCarousel from "./section-templates/large-gallery-carousel";
-import logoGallerySliderCarousel from "./section-templates/logo-gallery-slider-carousel";
-import section2ColAboutWithImageCarousel from "./section-templates/section-2-col-about-with-image-carousel";
-import section2ColCallToActionVideoBackgroundBigHeading from "./section-templates/section-2-col-call-to-action-video-background-big-heading";
-import section2ColHistoryAbout from "./section-templates/section-2-col-history-about";
-import section2ColServiceListWith2Testimonials from "./section-templates/section-2-col-service-list-with-2-testimonials";
-import sectionEmbedGoogleMapLocationAddress from "./section-templates/section-embed-google-map-location-address";
-import sectionEventHeaderWithVideoBgTicketsButton from "./section-templates/section-event-header-with-video-bg-tickets-button";
-import sectionEventInformation2Col from "./section-templates/section-event-information-2-col";
-import sectionFaq2ColWithSmallToggles from "./section-templates/section-faq-2-col-with-small-toggles";
-import sectionFaqWithToggles from "./section-templates/section-faq-with-toggles";
-import sectionHeaderWith3ColModules from "./section-templates/section-header-with-3-col-modules";
-import sectionHeaderWithVideoHeroButton from "./section-templates/section-header-with-video-hero-button";
-import sectionLineupHeaderWithTicketsButton from "./section-templates/section-lineup-header-with-tickets-button";
-import sectionLineupHeaderWithWhiteBackgroundTicketsBtn from "./section-templates/section-lineup-header-with-white-background-tickets-btn";
-import sectionMissionStatement2ColWithImg from "./section-templates/section-mission-statement-2-col-with-img";
-import sectionPriceMenu3ColV1 from "./section-templates/section-price-menu-3-col-v1";
-import sectionPriceMenu3ColV2 from "./section-templates/section-price-menu-3-col-v2";
-import sectionTestimonialWithLargeImgBackground from "./section-templates/section-testimonial-with-large-img-background";
-import singleProfileOrBio from "./section-templates/single-profile-or-bio";
-import testimonialCentered from "./section-templates/testimonial-centered";
-import videoBackgroundPageTitle from "./section-templates/video-background-page-title";
+import googleMapPlusAddress from "./section-templates/google-map-plus-address";
+import videoEmbedWithHeadingPlusButton from "./section-templates/video-embed-with-heading-plus-button";
+import testimonial from "./section-templates/testimonial";
+import concertBillPlusTicketsButton from "./section-templates/concert-bill-plus-tickets-button";
+import logoCarousel from "./section-templates/logo-carousel";
+import quickHistory from "./section-templates/quick-history";
+import largeMissionStatementPlusImage from "./section-templates/large-mission-statement-plus-image";
+import faqs2ColWithSmallToggles from "./section-templates/faqs-2-col-with-small-toggles";
+import callToActionPlusVideoBackground from "./section-templates/call-to-action-plus-video-background";
+import eventDetails from "./section-templates/event-details";
+import profilePlusImageCarousel from "./section-templates/profile-plus-image-carousel";
+import singleProfile from "./section-templates/single-profile";
+import eventCallToActionPlusVideoBackground from "./section-templates/event-call-to-action-plus-video-background";
+import largeTestimonialPlusBackgroundImage from "./section-templates/large-testimonial-with-image-background";
+import faqToggles from "./section-templates/faq-toggles";
+import largeAudioEmbedPlusBackgroundImage from "./section-templates/large-audio-embed-plus-background-image";
+import largeLineupPlusGetTicketsButton from "./section-templates/large-lineup-plus-get-tickets-button";
+import largedFeaturedVideoCarousel from "./section-templates/large-featured-video-carousel";
+import classicHeaderStatementPlusImage from "./section-templates/classic-header-statement-plus-image";
+import smallVideoBackgroundPlusTitle from "./section-templates/small-video-background-plus-title";
+import headerVideoBackgroundWithTitleHeading from "./section-templates/header-video-background-with-title-heading";
 
 // pages
 import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
@@ -49,35 +49,35 @@ const templateMarkups = {
 		landingPageService
 	},
 	sections: {
-		threeColStreamingAudioAlbums,
-		fullScreenVideoHeadlineWithFollowButton,
-		header2ColFlatColorWithTitleHeadingLogo,
-		headerFeaturedVideoCarousel,
-		headerVideoBackgroundWithTitleHeading,
-		heroHeaderAudioEmbed,
-		heroSpotifyEmbedWithImageCarousel,
+		streamingAudioPreview,
+		largeSpotifyEmbedPlusImageCarousel,
+		sectionsOverviewPlusTwoTestimonial,
+		serviceOverview,
+		resturantStyleMenu,
+		resturantStyleMenuV2,
+		fullScreenVideoHeadlinePlusButton,
 		largeGalleryCarousel,
-		logoGallerySliderCarousel,
-		section2ColAboutWithImageCarousel,
-		section2ColCallToActionVideoBackgroundBigHeading,
-		section2ColHistoryAbout,
-		section2ColServiceListWith2Testimonials,
-		sectionEmbedGoogleMapLocationAddress,
-		sectionEventHeaderWithVideoBgTicketsButton,
-		sectionEventInformation2Col,
-		sectionFaq2ColWithSmallToggles,
-		sectionFaqWithToggles,
-		sectionHeaderWith3ColModules,
-		sectionHeaderWithVideoHeroButton,
-		sectionLineupHeaderWithTicketsButton,
-		sectionLineupHeaderWithWhiteBackgroundTicketsBtn,
-		sectionMissionStatement2ColWithImg,
-		sectionPriceMenu3ColV1,
-		sectionPriceMenu3ColV2,
-		sectionTestimonialWithLargeImgBackground,
-		singleProfileOrBio,
-		testimonialCentered,
-		videoBackgroundPageTitle
+		googleMapPlusAddress,
+		videoEmbedWithHeadingPlusButton,
+		testimonial,
+		concertBillPlusTicketsButton,
+		logoCarousel,
+		quickHistory,
+		largeMissionStatementPlusImage,
+		faqs2ColWithSmallToggles,
+		callToActionPlusVideoBackground,
+		eventDetails,
+		profilePlusImageCarousel,
+		singleProfile,
+		eventCallToActionPlusVideoBackground,
+		largeTestimonialPlusBackgroundImage,
+		faqToggles,
+		largeAudioEmbedPlusBackgroundImage,
+		largeLineupPlusGetTicketsButton,
+		largedFeaturedVideoCarousel,
+		classicHeaderStatementPlusImage,
+		smallVideoBackgroundPlusTitle,
+		headerVideoBackgroundWithTitleHeading,
 	}
 };
 

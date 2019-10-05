@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="279px" height="207px" viewBox="0 0 279 207" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Sections Overview + 2 Testimonial</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Sections-Overview-+-2-Testimonial" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-13" fill="#313131" x="0" y="0" width="279" height="207"></rect>
+        <g id="What-we-do" transform="translate(26.000000, 24.000000)">
+            <g id="testimonial-block" transform="translate(0.000000, 131.043000)">
+                <g id="Another-testimonial">
+                    <g id="1-testimonial" transform="translate(20.691000, 5.747500)" stroke="#FFFFFF" stroke-linecap="square">
+                        <path d="M0,1.1495 L98.857,1.1495" id="Line-Copy-5"></path>
+                        <path d="M0,10.3455 L98.857,10.3455" id="Line-Copy-6"></path>
+                        <path d="M0,19.5415 L98.857,19.5415" id="Line-Copy-7"></path>
+                    </g>
+                    <path d="M12.6445,4.598 L12.6445,27.588" id="Line-5" stroke="#FFFFFF" stroke-width="3.4485" stroke-linecap="square"></path>
+                    <text id="“" font-family="Helvetica-Bold, Helvetica" font-size="14.9435" font-weight="bold" letter-spacing="0.265534407" fill="#FFFFFF">
+                        <tspan x="0" y="15">“</tspan>
+                    </text>
+                </g>
+                <text id="ANOTHER-TESTIMONIAL" font-family="Helvetica-Bold, Helvetica" font-size="6.897" font-weight="bold" letter-spacing="0.265534407" fill="#FFFFFF">
+                    <tspan x="137.94" y="16.3455">ANOTHER TESTIMONIAL</tspan>
+                </text>
+            </g>
+            <g id="Testimonial-1" transform="translate(6.897000, 88.511500)">
+                <text id="A-TESTIMONIAL" font-family="Helvetica-Bold, Helvetica" font-size="10.3455" font-weight="bold" letter-spacing="0.265534407" fill="#FFFFFF">
+                    <tspan x="0" y="15.7475">A TESTIMONIAL</tspan>
+                </text>
+                <path d="M113.8005,6.897 L212.6575,6.897" id="Line-Copy-5" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M113.8005,16.093 L212.6575,16.093" id="Line-Copy-6" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M113.8005,25.289 L212.6575,25.289" id="Line-Copy-7" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M105.754,4.598 L105.754,27.588" id="Line-5" stroke="#FFFFFF" stroke-width="3.4485" stroke-linecap="square"></path>
+                <text id="“" font-family="Helvetica-Bold, Helvetica" font-size="14.9435" font-weight="bold" letter-spacing="0.265534407" fill="#FFFFFF">
+                    <tspan x="93.1095" y="15">“</tspan>
+                </text>
+            </g>
+            <g id="WHAT-WE-DO" transform="translate(8.046500, 0.000000)">
+                <text font-family="Helvetica-Bold, Helvetica" font-size="20.691" font-weight="bold" letter-spacing="0.265534407" fill="#FFFFFF">
+                    <tspan x="36.784" y="20">WHAT WE DO</tspan>
+                </text>
+                <path d="M0,35.6345 L98.857,35.6345" id="Line-Copy-2" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M0,54.0265 L98.857,54.0265" id="Line-Copy-4" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M0,72.4185 L98.857,72.4185" id="Line-Copy-8" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M112.651,35.6345 L211.508,35.6345" id="Line-Copy-2" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M112.651,54.0265 L211.508,54.0265" id="Line-Copy-4" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M112.651,72.4185 L211.508,72.4185" id="Line-Copy-5" stroke="#FFFFFF" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="279px" height="207px" viewBox="0 0 279 207" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Quick History</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Quick-History" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-13" fill="#313131" x="0" y="0" width="279" height="207"></rect>
+        <g id="Section" transform="translate(33.000000, 51.000000)">
+            <text id="HISTORY" font-family="Helvetica-Bold, Helvetica" font-size="20.691" font-weight="bold" letter-spacing="0.265534407" fill="#FFFFFF">
+                <tspan x="0" y="20">HISTORY</tspan>
+            </text>
+            <text id="SHORT-VERSION" font-family="Helvetica-Bold, Helvetica" font-size="10.3455" font-weight="bold" letter-spacing="0.265534407" fill="#FFFFFF">
+                <tspan x="105.754" y="20.3455">SHORT VERSION</tspan>
+            </text>
+            <g id="1-paragraph" transform="translate(0.000000, 45.980000)" stroke="#FFFFFF" stroke-linecap="square">
+                <path d="M0,1.1495 L98.857,1.1495" id="Line-Copy-2"></path>
+                <path d="M0,55.176 L70.1195,55.176" id="Line-Copy-3"></path>
+                <path d="M0,19.5415 L98.857,19.5415" id="Line-Copy-4"></path>
+                <path d="M0,37.9335 L98.857,37.9335" id="Line-Copy-5"></path>
+            </g>
+            <g id="1-paragraph" transform="translate(112.651000, 45.980000)" stroke="#FFFFFF" stroke-linecap="square">
+                <path d="M0,1.1495 L98.857,1.1495" id="Line-Copy-2"></path>
+                <path d="M0,55.176 L70.1195,55.176" id="Line-Copy-3"></path>
+                <path d="M0,19.5415 L98.857,19.5415" id="Line-Copy-4"></path>
+                <path d="M0,37.9335 L98.857,37.9335" id="Line-Copy-5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

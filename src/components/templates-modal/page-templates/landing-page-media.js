@@ -1,5 +1,7 @@
+import Icon from "../template-assets/svg/LandingPages__Landing Page Media.svg";
+
 export default {
-	icon: "wordpress",
+	icon: Icon,
 	markup: `
 	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":80,"videoType":"embed","containerVideoID":"dBxRw49NOiY"} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:80vh;background-color:rgba(49,49,49,1)"><div class="c9-video-container"><div class="c9-embed-container"><div id="player-dBxRw49NOiY-1" class="c9-video" video-id="dBxRw49NOiY" style="min-height:80vh"></div></div></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->

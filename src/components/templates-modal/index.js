@@ -140,7 +140,7 @@ class TemplatesModal extends Component {
 				}}
 				icon={TemplateMarkups.sections[k].icon}
 				preview={TemplateMarkups.sections[k].preview}
-				label={__(startCase(k), "c9-blocks")}
+				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
 				section={sections[k]}
 			/>
 		));
@@ -149,7 +149,7 @@ class TemplatesModal extends Component {
 			<LayoutButton
 				icon={TemplateMarkups.layouts[k].icon}
 				preview={TemplateMarkups.layouts[k].preview}
-				label={__(startCase(k), "c9-blocks")}
+				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
 				layout={layouts[k]}
 			/>
 		));
@@ -160,6 +160,17 @@ class TemplatesModal extends Component {
 					className="c9-template-tabs c9-component-modal-tab-panel"
 					tabs={[
 						{
+							name: "page-templates",
+							title: (
+								<Tooltip
+									text={__("Pre-designed ready to use pages.", "c9-blocks")}
+								>
+									<span>{__("Pages")}</span>
+								</Tooltip>
+							),
+							className: "c9-template-tabs-tab"
+						},
+						{
 							name: "section-templates",
 							title: (
 								<Tooltip
@@ -169,17 +180,6 @@ class TemplatesModal extends Component {
 									)}
 								>
 									<span>{__("Sections")}</span>
-								</Tooltip>
-							),
-							className: "c9-template-tabs-tab"
-						},
-						{
-							name: "page-templates",
-							title: (
-								<Tooltip
-									text={__("Pre-designed ready to use pages.", "c9-blocks")}
-								>
-									<span>{__("Pages")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -197,7 +197,7 @@ class TemplatesModal extends Component {
 							name: "tutorial",
 							title: (
 								<Tooltip text={__("How To's", "c9-blocks")}>
-									<span>{__("Tutorial")}</span>
+									<span>{__("Tutorials")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
