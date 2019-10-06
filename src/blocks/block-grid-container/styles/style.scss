@@ -163,6 +163,14 @@
 	}
 }
 
+@media only screen and (min-width: 1px) and (max-width: 375px) {
+
+	.page.page-template-default .post-inner>.entry-content>.c9-grid {
+		margin-left: -2rem;
+		margin-right: -2rem;
+	}
+}
+
 @media only screen and (min-width: 1px) {
 	.page-template-default .entry-content>.c9-grid {
 		width: 100vw;

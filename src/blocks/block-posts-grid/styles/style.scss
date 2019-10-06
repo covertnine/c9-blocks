@@ -128,16 +128,24 @@
 	margin-right: auto;
 }
 
-/* WP 2019 Theme */
+/* WP 2019 + 2020 Themes */
 @media only screen and (min-width: 1px) and (max-width: 667px) {
 	.page.page-template-default .entry .entry-content>.c9-posts-grid {
-		margin-left: -1em;
-		margin-right: -1em;
+		margin-left: -1rem;
+		margin-right: -1rem;
 	}
 
 	.page.page-template-default .post-inner>.entry-content>.c9-posts-grid {
 		margin-left: calc((58rem - 100vw) / 2);
 		margin-right: calc((58rem - 100vw) / 2);
+	}
+}
+
+@media only screen and (min-width: 1px) and (max-width: 375px) {
+
+	.page.page-template-default .post-inner>.entry-content>.c9-posts-grid {
+		margin-left: -2rem;
+		margin-right: -2rem;
 	}
 }
 
