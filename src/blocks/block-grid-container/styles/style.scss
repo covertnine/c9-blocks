@@ -6,6 +6,7 @@
 .c9-grid {
 	font-size: 10px;
 }
+
 .c9-fixed .c9-image-container,
 .c9-fixed .c9-video-container {
 	background-attachment: fixed;
@@ -148,11 +149,17 @@
 	margin-right: auto;
 }
 
-/* WP 2019 Theme */
+/* WP 2019 + 2020 Themes */
 @media only screen and (min-width: 1px) and (max-width: 667px) {
+
 	.page.page-template-default .entry .entry-content>.c9-grid {
-		margin-left: -1em;
-		margin-right: -1em;
+		margin-left: -1rem;
+		margin-right: -1rem;
+	}
+
+	.page.page-template-default .post-inner>.entry-content>.c9-grid {
+		margin-left: calc((58rem - 100vw) / 2);
+		margin-right: calc((58rem - 100vw) / 2);
 	}
 }
 
