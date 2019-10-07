@@ -7,6 +7,7 @@
 .c9-grid {
 	font-size: 10px;
 }
+
 .padding-label,
 .margin-label {
 	margin-bottom: 0;
@@ -379,6 +380,7 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 	body.folded .edit-post-layout.is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-fluid[data-align="full"] {
 		max-width: none;
 		width: 100%;
+		min-width: 1200px;
 	}
 
 	// Admin open. Inspector closed.
