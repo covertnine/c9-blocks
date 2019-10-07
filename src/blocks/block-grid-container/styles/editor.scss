@@ -306,9 +306,16 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 		margin-left: auto;
 		margin-right: auto;
 	}
+
 }
 
 @media only screen and (min-width: 1200px) {
+
+	/* 2019/2020 theme specific*/
+	.editor-styles-wrapper .c9-grid .container-fluid.wp-block[data-align="full"] {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
 
 	//max width of inner containers is 100% of the available space of the .c9-grid
 	body .edit-post-layout.is-sidebar-opened .editory-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .c9-grid>.block-editor-inner-blocks,
