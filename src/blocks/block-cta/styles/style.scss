@@ -16,13 +16,30 @@
 	justify-content: center;
 }
 
-.entry .entry-content .c9-cta-button a {
+.entry-content .c9-block-cta .c9-cta-button a {
 	text-decoration: none;
+	white-space: nowrap;
+	opacity: 1;
+	transition: .5s opacity;
 	white-space: nowrap;
 }
 
-.c9-cta-text p {
+.entry-content .c9-block-cta .c9-cta-button a:hover {
+	opacity: .9;
+}
+
+.entry-content .c9-cta-text p {
 	margin-bottom: 0;
+	font-size: 16px;
+}
+
+.hentry .entry-content .c9-cta-text p {
+	font-size: 21px;
+}
+
+.c9-cta-text p:only-of-type,
+.c9-cta-text p:first-child {
+	margin-top: 0px;
 }
 
 @media only screen and (min-width: 768px) {
