@@ -266,18 +266,18 @@ function c9_check_bootstrap() {
 	// if any of them matches, then array length of $check > 0.
 	if ( sizeof( $checks ) === 0 ) {
 		// Styles.
-		wp_enqueue_style('c9-fontawesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array('c9-blocks-style'), '4.7.1');
+		wp_enqueue_style( 'c9-fontawesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array( 'c9-blocks-style' ), '4.7.1' );
 		wp_enqueue_style(
 			'c9-bootstrap',
-			plugins_url('dist/blocks.bootstrap.build.css', dirname( __FILE__ ) ),
-			array('c9-blocks-style'),
+			plugins_url( 'dist/blocks.bootstrap.build.css', dirname( __FILE__ ) ),
+			array( 'c9-blocks-style' ),
 			'4.3.1'
 		);
 
 		wp_enqueue_script(
 			'c9-bootstrap-js',
 			plugins_url( 'dist/c9-bootstrap.min.js', dirname( __FILE__ ) ),
-			array('jquery'),
+			array( 'jquery' ),
 			'4.3.1'
 		);
 	}
