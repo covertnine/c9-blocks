@@ -31,6 +31,10 @@
 	text-decoration: none;
 }
 
+.c9-horizontal-tabs .tab-content {
+	padding: 25px;
+}
+
 @media only screen and (max-width: 768px) {
 	.c9-horizontal-tabs>.nav.nav-tabs {
 		flex-wrap: wrap;

@@ -27,6 +27,10 @@
 	text-decoration: none;
 }
 
+.c9-vertical-tabs .tab-content {
+	padding: 0px 25px;
+}
+
 @media only screen and (max-width: 1024px) {
 
 	.c9-layout-columns-6 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
