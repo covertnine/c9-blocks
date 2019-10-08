@@ -7,13 +7,19 @@ const LayoutButton = ({
 	preview,
 	layout,
 	resetBlocks,
-	insertBlocks
+	insertBlocks,
+	open,
+	close
 }) => {
 	return (
 		<button
 			onClick={() => {
+				open();
 				resetBlocks([]);
-				insertBlocks(layout);
+				setTimeout(() => {					
+					insertBlocks(layout);
+					close();
+				}, 0);
 			}}
 		>
 			{preview ? (
