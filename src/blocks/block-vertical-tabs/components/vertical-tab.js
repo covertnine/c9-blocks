@@ -35,7 +35,7 @@ export default class VerticalTab extends Component {
 			<div
 				className={className}
 				role="tabpanel"
-				id={`tab-${slug}-${id}`}
+				id={`vtab-${slug}-${id}`}
 				aria-labelledby={slug}
 			>
 				<InnerBlocks
@@ -98,7 +98,7 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 			<div
 				className={className}
 				role="tabpanel"
-				id={`tab-${slug}-${id}`}
+				id={`vtab-${slug}-${id}`}
 				aria-labelledby={slug}
 			>
 				<InnerBlocks.Content />

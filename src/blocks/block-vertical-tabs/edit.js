@@ -204,7 +204,7 @@ class Edit extends Component {
 											tagName="a"
 											data-toggle="pill"
 											role="tab"
-											href={`#tab-${slug}-${instanceId}`}
+											href={`#vtab-${slug}-${instanceId}`}
 											className={classnames(
 												"nav-link",
 												selected ? "active" : ""

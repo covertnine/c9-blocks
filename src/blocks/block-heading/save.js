@@ -30,7 +30,7 @@ export default class Save extends Component {
 	 * @return {string} Appropriate css class based on configuration.
 	 */
 	c9TextStyleConfig(type, display, tag, override) {
-		if (!override) {
+		if (!override && "c9-txl display-" != type) {
 			return type.split(" ")[0];
 		} else if (0 == display) {
 			return `${type}${tag}`;

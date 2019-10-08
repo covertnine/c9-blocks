@@ -210,7 +210,7 @@ class Edit extends Component {
 										tagName="a"
 										data-toggle="tab"
 										role="tab"
-										href={`#tab-${slug}-${instanceId}`}
+										href={`#htab-${slug}-${instanceId}`}
 										className={classnames("nav-link", selected ? "active" : "")}
 										id={`tab-button-${slug}`}
 										placeholder={__("Tab label", "c9-blocks")}

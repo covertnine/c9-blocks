@@ -497,7 +497,7 @@ export default {
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:70vh;background-color:rgba(49,49,49,1)"><div class="c9-image-container" style="background-position:23.502304147465438% 43.75%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/crowd-dancing.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,1);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Ready to sign up?","tagLevel":5,"displayLevel":"1","type":"c9-txl display-","textColor":"#ffffff"} -->
-	<div class="section-heading c9-heading text-left"><h5 class="c9-txl" style="color:#ffffff">Ready to sign up?</h5></div>
+	<div class="section-heading c9-heading text-left"><h5 class="c9-txl display-1" style="color:#ffffff">Ready to sign up?</h5></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"Free for one month","tagLevel":4,"displayLevel":"4","textColor":"#ffffff","weight":"light","overrideStyle":true} -->

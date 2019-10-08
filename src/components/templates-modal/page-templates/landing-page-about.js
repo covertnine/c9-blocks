@@ -5,7 +5,7 @@ export default {
 	<div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(16,158,241,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
 	<div class="container alignwide c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Company Name","type":"c9-txl display-","textColor":"#ffffff","weight":"normal"} -->
-	<div class="section-heading c9-heading text-left"><h1 class="c9-txl font-weight-normal" style="color:#ffffff">Company Name</h1></div>
+	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-normal" style="color:#ffffff">Company Name</h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"Mutually Making Weird Words Meaningless","tagLevel":2,"displayLevel":"3","type":"c9-sh subhead-h","textColor":"#8ed1fc","overrideStyle":true} -->
@@ -71,7 +71,7 @@ export default {
 	<div class="c9-grid p-5 c9-scroll" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"History","subheading":"short version","addSubheading":true,"tagLevel":3,"type":"c9-txl display-","textAlign":"center","weight":"bold"} -->
-	<div class="section-heading c9-heading text-center"><h3 class="c9-txl font-weight-bold">History</h3><div class="c9-txl display-3"><small class="text-muted">&nbsp;short version</small></div></div>
+	<div class="section-heading c9-heading text-center"><h3 class="c9-txl display-3 font-weight-bold">History</h3><div class="c9-txl display-3"><small class="text-muted">&nbsp;short version</small></div></div>
 	<!-- /wp:c9-blocks/heading --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->

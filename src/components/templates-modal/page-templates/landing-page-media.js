@@ -7,7 +7,7 @@ export default {
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:80vh;background-color:rgba(49,49,49,1)"><div class="c9-video-container"><div class="c9-embed-container"><div id="player-dBxRw49NOiY-1" class="c9-video" video-id="dBxRw49NOiY" style="min-height:80vh"></div></div></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container c9-column-container p-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Video Collection","type":"c9-txl display-","textColor":"#ffffff","weight":"bold"} -->
-	<div class="section-heading c9-heading text-left"><h1 class="c9-txl font-weight-bold" style="color:#ffffff">Video Collection</h1></div>
+	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-bold" style="color:#ffffff">Video Collection</h1></div>
 	<!-- /wp:c9-blocks/heading -->
 
 	<!-- wp:c9-blocks/heading {"heading":"Carousels, Grids, Backgrounds","type":"c9-sh subhead-h","textColor":"#eeeeee","weight":"light"} -->
