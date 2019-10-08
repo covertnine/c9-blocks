@@ -268,7 +268,10 @@
 	}
 
 	.c9-grid .container.alignwide {
-		margin: 0px auto;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: calc((-100vw + 100%) / 4);
+		margin-right: calc((-100vw + 100%) / 2);
 		padding: 0px;
 	}
 
@@ -293,7 +296,7 @@
 
 	.page-template-default .entry-content>.c9-grid .container.alignwide {
 		width: 100%;
-		max-width: 1260px;
+		max-width: 1200px;
 	}
 
 	.page-template-default .entry-content>.c9-grid .container-fluid {
