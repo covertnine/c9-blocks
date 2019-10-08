@@ -45,15 +45,14 @@
 				}
 
 				span {
-					display: flex;
-					align-items: center;
-					justify-content: center;
+					display: block;
 					font-size: 0.8em;
 					padding: 2px 0;
 					color: #576D7B;
 					font-size: 15px;
 					height: 75px;
 					overflow: scroll;
+					margin-top: 15px;
 				}
 				img {
 					width: 100%;
@@ -63,16 +62,20 @@
 
 		.components-tab-panel__tabs {
 			.c9-template-tabs-tab {
+				font-size: 10px;
 				padding: 12px 16px;
-				color: inherit;
+				color: #819FB3;
+				font-weight: 500;
+				text-transform: uppercase;
 
 				&:focus {
 					outline: none;
 				}
 
 				&.is-active {
+					background: #819FB3;
+					color: white;
 					position: relative;
-					border-bottom: 2px solid #00a0d2;
 					z-index: 1;
 				}
 			}
@@ -84,6 +87,6 @@
 
 	.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options,
 	.c9-templates-modal .c9-component-modal-tab-panel .c9-section-options {
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 }

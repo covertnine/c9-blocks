@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Video Embed with Heading plus Button.svg";
+import Icon from "../template-assets/svg-new/video_embed_with_heading_plus_button.svg";
 
 export default {
 	icon: Icon,

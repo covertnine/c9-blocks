@@ -1,4 +1,4 @@
-import Preview from "../template-assets/jpg/Large Gallery Carousel.jpg";
+import Preview from "../template-assets/svg-new/lg_gallery_carousel.svg";
 
 export default {
 	preview: Preview,

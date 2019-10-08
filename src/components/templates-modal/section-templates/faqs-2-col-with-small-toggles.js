@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/FAQS 2 Col with Small Toggles.svg";
+import Icon from "../template-assets/svg-new/faqs_2_col_w_small_toggles.svg";
 
 export default {
 	icon: Icon,

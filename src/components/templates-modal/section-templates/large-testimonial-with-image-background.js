@@ -1,4 +1,4 @@
-import Preview from "../template-assets/jpg/Large Testimonial + Background Img.jpg";
+import Preview from "../template-assets/svg-new/lg_testimonial_plus_bg_img.svg";
 
 export default {
 	preview: Preview,

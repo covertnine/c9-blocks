@@ -1,4 +1,4 @@
-import Preview from "../template-assets/jpg/Event Call to Action+ Video Background.jpg";
+import Preview from "../template-assets/svg-new/event_cta_plus_video_bg.svg";
 
 export default {
 	preview: Preview,

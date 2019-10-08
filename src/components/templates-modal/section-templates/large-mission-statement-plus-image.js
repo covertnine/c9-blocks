@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Large Mission Statement plus Image.svg";
+import Icon from "../template-assets/svg-new/lg_mission_statement_plus_img.svg";
 
 export default {
 	icon: Icon,

@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg-new/class_header_statement_plus_image.svg";
+import Icon from "../template-assets/svg-new/class_header_statement_plus_img.svg";
 
 export default {
 	icon: Icon,

@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Concert Bill plus Tickets Button.svg";
+import Icon from "../template-assets/svg-new/concert_bill_plus_tickets_button.svg";
 
 export default {
 	icon: Icon,

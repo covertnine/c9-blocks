@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Single Bio.svg";
+import Icon from "../template-assets/svg-new/single_bio.svg";
 
 export default { 
 	icon: Icon,

@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Profile plus Image Carousel.svg";
+import Icon from "../template-assets/svg-new/profile_plus_img_carousel.svg";
 
 export default {
 	icon: Icon,

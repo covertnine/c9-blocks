@@ -1,4 +1,4 @@
-import Preview from "../template-assets/jpg/Restaurant Style Menu.jpg";
+import Preview from "../template-assets/svg-new/restaurant_style_menu.svg";
 
 export default {
 	preview: Preview,

@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/STREAMING AUDIO PREVIEW  GRID ROW.svg";
+import Icon from "../template-assets/svg-new/streaming_audio_preview_grid_row.svg";
 
 export default {
 	icon: Icon,

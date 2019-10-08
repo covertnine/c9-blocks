@@ -5,6 +5,7 @@
 
 	.c9-component-modal-tab-panel .components-tab-panel__tabs {
 		margin-top: -24px;
+		margin-bottom: 24px;
 	}
 
 	@media (min-width: 600px) {
@@ -27,6 +28,10 @@
 
 		.components-modal__header-heading {
 			font-weight: 600;
+			text-transform: uppercase;
+			font-size: 16px;
+			color: #576D7B;
+			letter-spacing: .5px;
 		}
 	}
 }

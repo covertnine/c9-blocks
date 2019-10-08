@@ -1,4 +1,4 @@
-import Preview from "../template-assets/jpg/Large Featured Video Carousel.jpg";
+import Preview from "../template-assets/svg-new/lg_featured_video_carousel.svg";
 
 export default {
 	preview: Preview,

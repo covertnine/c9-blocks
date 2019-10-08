@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Sections Overview plus 2 Testimonial.svg";
+import Icon from "../template-assets/svg-new/sections_overview_plus_tutorials.svg";
 
 export default {
 	icon: Icon,

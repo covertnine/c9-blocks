@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Testimonial.svg";
+import Icon from "../template-assets/svg-new/testimonials.svg";
 
 export default {
 	icon: Icon,

@@ -1,4 +1,4 @@
-// import Icon from "../template-assets/svg/LARGE AUDIO EMBED PLUS BACKGROUND IMAGE.svg";
+import Icon from "../template-assets/svg-new/lg_audio_embed_plus_bg_img.svg";
 
 export default {
 	icon: "wordpress",

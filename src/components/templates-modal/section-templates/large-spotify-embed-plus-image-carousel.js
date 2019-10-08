@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Large Spotify Embed plus Image Carousel.svg";
+import Icon from "../template-assets/svg-new/lg_spotify_embed_plus_img_carousel.svg";
 
 export default {
 	icon: Icon,

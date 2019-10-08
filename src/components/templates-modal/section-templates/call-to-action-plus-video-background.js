@@ -1,4 +1,4 @@
-// import Icon from "../template-assets/svg/Call to Action plus Video Background.svg"
+import Icon from "../template-assets/svg-new/cta_plus_video_bg.svg";
 
 export default {
 	icon: "wordpress",

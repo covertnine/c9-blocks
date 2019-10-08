@@ -1,4 +1,4 @@
-import Icon from "../template-assets/svg/Service Overview.svg"
+import Icon from "../template-assets/svg-new/service_overview.svg"
 
 export default {
 	icon: Icon,

@@ -3,8 +3,8 @@ import streamingAudioPreview from "./section-templates/streaming-audio-preview";
 import largeSpotifyEmbedPlusImageCarousel from "./section-templates/large-spotify-embed-plus-image-carousel";
 import sectionsOverviewPlusTwoTestimonial from "./section-templates/sections-overview-plus-two-testimonial";
 import serviceOverview from "./section-templates/service-overview";
-import resturantStyleMenu from "./section-templates/restaurant-style-menu";
-import resturantStyleMenuV2 from "./section-templates/restaurant-style-menu-v2";
+import restaurantStyleMenu from "./section-templates/restaurant-style-menu";
+import restaurantStyleMenuV2 from "./section-templates/restaurant-style-menu-v2";
 import fullScreenVideoHeadlinePlusButton from "./section-templates/full-screen-video-headline-plus-button";
 import largeGalleryCarousel from "./section-templates/large-gallery-carousel";
 import googleMapPlusAddress from "./section-templates/google-map-plus-address";
@@ -53,8 +53,8 @@ const templateMarkups = {
 		largeSpotifyEmbedPlusImageCarousel,
 		sectionsOverviewPlusTwoTestimonial,
 		serviceOverview,
-		resturantStyleMenu,
-		resturantStyleMenuV2,
+		restaurantStyleMenu,
+		restaurantStyleMenuV2,
 		fullScreenVideoHeadlinePlusButton,
 		largeGalleryCarousel,
 		googleMapPlusAddress,

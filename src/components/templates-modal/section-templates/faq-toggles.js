@@ -1,4 +1,4 @@
-import Preview from "../template-assets/jpg/FAQ Toggles.jpg";
+import Preview from "../template-assets/svg-new/faq_toggles.svg";
 
 export default {
 	preview: Preview,
