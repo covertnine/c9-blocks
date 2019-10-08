@@ -10,15 +10,8 @@
 /************************************************************************************************************************/
 .c9-grid,
 .c9-posts-grid,
-.c9-heading {
-	font-size: 10px;
-}
-
-.c9-grid p,
-.c9-posts-grid p,
-.c9-grid ul li,
-.c9-grid ol li,
-.c9-grid {
+.c9-heading,
+.editor-styles-wrapper {
 	font-size: 16px;
 }
 
@@ -35,7 +28,7 @@
 .editor-styles-wrapper .c9-grid ol li,
 .editor-styles-wrapper .c9-grid .wp-block-button__link,
 .editor-styles-wrapper .c9-grid .btn {
-	font-size: 22px;
+	font-size: 1em;
 }
 
 .hentry .entry-content .c9-grid p,
@@ -43,7 +36,7 @@
 .hentry .entry-content .c9-grid ul li,
 .hentry .entry-content .c9-grid ol li,
 .editor-styles-wrapper .c9-grid .c9-cta .c9-cta-text p {
-	font-size: 21px;
+	font-size: 1em;
 }
 
 [tabindex="-1"]:focus {

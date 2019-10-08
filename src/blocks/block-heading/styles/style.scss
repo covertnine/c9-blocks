@@ -5,6 +5,7 @@
  */
 .c9-heading {
 	font-size: 10px;
+	margin-bottom: 1.2rem;
 }
 
 .c9-heading h1,
@@ -17,34 +18,44 @@
 	line-height: 1.1;
 }
 
+.c9-heading div {
+	line-height: .9;
+}
+
 .c9-heading .display-1,
-.editor-styles-wrapper .c9-heading .display-1 {
-	font-size: 8em !important;
+.editor-styles-wrapper .c9-heading .display-1.c9-txl {
+	font-size: 8em;
 }
 
 .c9-heading .display-2,
-.editor-styles-wrapper .c9-heading .display-2 {
-	font-size: 7.3em !important;
+.editor-styles-wrapper .c9-heading .display-2.c9-txl {
+	font-size: 7.3em;
 }
 
 .c9-heading .display-3,
-.editor-styles-wrapper .c9-heading .display-3 {
-	font-size: 6.5em !important;
+.editor-styles-wrapper .c9-heading .display-3.c9-txl {
+	font-size: 6.5em;
 }
 
 .c9-heading .display-4,
-.editor-styles-wrapper .c9-heading .display-4 {
-	font-size: 5.8em !important;
+.editor-styles-wrapper .c9-heading .display-4.c9-txl {
+	font-size: 5.8em;
 }
 
 .c9-heading .display-5,
-.editor-styles-wrapper .c9-heading .display-5 {
-	font-size: 5em !important;
+.editor-styles-wrapper .c9-heading .display-5.c9-txl {
+	font-size: 5em;
 }
 
 .c9-heading .display-6,
-.editor-styles-wrapper .c9-heading .display-6 {
-	font-size: 4.3em !important;
+.editor-styles-wrapper .c9-heading .display-6.c9-txl {
+	font-size: 4.3em;
+}
+
+.c9-heading .c9-sh,
+.c9-heading .c9-h,
+.c9-heading .c9-txl {
+	margin-bottom: 0;
 }
 
 .c9-heading .subhead {
@@ -70,7 +81,9 @@
 @media only screen and (max-width: 667px) {
 
 	.entry-content .c9-heading .h1.c9-txl,
-	.entry-content .c9-heading h1.c9-txl {
+	.entry-content .c9-heading h1.c9-txl,
+	.c9-heading .display-1,
+	.editor-styles-wrapper .c9-heading .display-1.c9-txl {
 		font-size: 4em;
 	}
 }
@@ -90,7 +103,9 @@
 @media only screen and (max-width: 667px) {
 
 	.entry-content .c9-heading .h2.c9-txl,
-	.entry-content .c9-heading h2.c9-txl {
+	.entry-content .c9-heading h2.c9-txl,
+	.c9-heading .display-2,
+	.editor-styles-wrapper .c9-heading .display-2.c9-txl {
 		font-size: 3.6em;
 	}
 }
@@ -110,7 +125,9 @@
 @media only screen and (max-width: 667px) {
 
 	.entry-content .c9-heading .h3.c9-txl,
-	.entry-content .c9-heading h3.c9-txl {
+	.entry-content .c9-heading h3.c9-txl,
+	.c9-heading .display-3,
+	.editor-styles-wrapper .c9-heading .display-3.c9-txl {
 		font-size: 3em;
 	}
 }
@@ -130,7 +147,9 @@
 @media only screen and (max-width: 667px) {
 
 	.entry-content .c9-heading .h4.c9-txl,
-	.entry-content .c9-heading h4.c9-txl {
+	.entry-content .c9-heading h4.c9-txl,
+	.c9-heading .display-4,
+	.editor-styles-wrapper .c9-heading .display-4.c9-txl {
 		font-size: 2.8em;
 	}
 }
@@ -150,7 +169,9 @@
 @media only screen and (max-width: 667px) {
 
 	.entry-content .c9-heading .h5.c9-txl,
-	.entry-content .c9-heading h5.c9-txl {
+	.entry-content .c9-heading h5.c9-txl,
+	.c9-heading .display-5,
+	.editor-styles-wrapper .c9-heading .display-5.c9-txl {
 		font-size: 2em;
 	}
 }
@@ -170,7 +191,9 @@
 @media only screen and (max-width: 667px) {
 
 	.entry-content .c9-heading .h6.c9-txl,
-	.entry-content .c9-heading h6.c9-txl {
+	.entry-content .c9-heading h6.c9-txl,
+	.c9-heading .display-6,
+	.editor-styles-wrapper .c9-heading .display-6.c9-txl {
 		font-size: 1.4em;
 	}
 }

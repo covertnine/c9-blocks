@@ -150,6 +150,11 @@
 }
 
 /* WP 2019 + 2020 Themes */
+.c9-grid .alignwide,
+.c9-grid .container-fluid.alignfull {
+	left: auto;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 667px) {
 
 	.page.page-template-default .entry .entry-content>.c9-grid {
