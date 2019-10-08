@@ -187,6 +187,13 @@ add_action( 'enqueue_block_assets', 'c9_blocks_cgb_block_assets', 120 );
  * @since 1.0.0
  */
 function c9_blocks_cgb_editor_assets() {
+	// Youtube Player API.
+	wp_enqueue_script(
+		'youtube-api',
+		'https://www.youtube.com/player_api',
+		false
+	);
+	
 	// update category, e.g. add icon and dequeue core blocks we don't want users using.
 	wp_enqueue_script(
 		'c9_blocks-update-category',
@@ -198,7 +205,7 @@ function c9_blocks_cgb_editor_assets() {
 	wp_enqueue_script(
 		'c9_blocks-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-api' ), // Dependencies, defined above.
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-api', 'youtube-api' ), // Dependencies, defined above.
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
@@ -221,13 +228,6 @@ function c9_blocks_cgb_editor_assets() {
 			'colors'      => get_option( 'c9_blocks_colors' ),
 			'orig_colors' => get_option( 'c9_orig_colors' ),
 		)
-	);
-
-	// Youtube Player API.
-	wp_enqueue_script(
-		'youtube-api',
-		'https://www.youtube.com/player_api',
-		false
 	);
 
 	wp_enqueue_style(
