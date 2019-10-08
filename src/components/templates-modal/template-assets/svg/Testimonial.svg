@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="279px" height="207px" viewBox="0 0 279 207" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Testimonial</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Testimonial" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-13" fill="#313131" x="0" y="0" width="279" height="207"></rect>
+        <g id="Section" transform="translate(27.000000, 55.000000)">
+            <rect id="Rectangle-Copy" fill="#819FB3" x="0" y="0" width="226.4515" height="98.857"></rect>
+            <path d="M26.4385,20.11625 L125.2955,20.691" id="Line" stroke="#FFFFFF" stroke-width="4.598" stroke-linecap="square"></path>
+            <path d="M26.4385,57.57475 L197.26089,57.57475" id="Line-Copy" stroke="#FFFFFF" stroke-linecap="square"></path>
+            <path d="M26.4385,39.57475 L197.26089,39.57475" id="Line-Copy-3" stroke="#FFFFFF" stroke-linecap="square"></path>
+            <text id="--QUOTE-Copy" font-family="Helvetica-Bold, Helvetica" font-size="10.3455" font-weight="bold" letter-spacing="0.168976491" fill="#FFFFFF">
+                <tspan x="90.8105" y="84.7175">- QUOTE</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

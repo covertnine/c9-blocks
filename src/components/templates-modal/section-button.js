@@ -7,17 +7,21 @@ const SectionButton = ({
 	preview,
 	section,
 	insertBlocks,
+	open,
 	close
 }) => {
 	return (
 		<button
 			onClick={() => {
-				insertBlocks(section);
-				close();
+				open();
+				setTimeout(() => {					
+					insertBlocks(section);
+					close();
+				}, 0);
 			}}
 		>
 			{preview ? (
-				<div class="c9-section-preview">
+				<div className="c9-section-preview">
 					<img src={preview} alt="section preview"></img>
 				</div>
 			) : (

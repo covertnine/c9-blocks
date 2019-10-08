@@ -61,7 +61,7 @@ export default class Save extends Component {
 									tagName="a"
 									data-toggle="pill"
 									role="tab"
-									href={`#tab-${slug}-${instanceId}`}
+									href={`#vtab-${slug}-${instanceId}`}
 									className={classnames("nav-link", selected ? "active" : "")}
 									id={`tab-button-${slug}`}
 									value={title}

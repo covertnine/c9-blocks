@@ -33,8 +33,12 @@ class TemplatesModal extends Component {
 			reusables: [],
 			sections: this.props.sections,
 			layouts: this.props.layouts,
-			loading: true
+			loading: true,
+			updating: false,
+			msg: ""
 		};
+
+		this.closeNotice = this.closeNotice.bind(this);
 
 		this.getReusableBlocks();
 	}
@@ -121,13 +125,65 @@ class TemplatesModal extends Component {
 		return blockObj;
 	}
 
+	/**
+	 * Closes message when user wants to hide notice.
+	 */
+	closeNotice() {
+		this.setState({ updating: false });
+	}
+
+	/**
+	 * Pushes a message onto the modal.
+	 */
+	openNotice() {
+		this.setState({ updating: true });
+	}
+
+	/**
+	 * Set the update message.
+	 */
+	setMessage(msg) {
+		this.setState({ msg });
+	}
+
 	render() {
 		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
-		const { sections, layouts, loading } = this.state;
+		const { sections, layouts, loading, updating, msg } = this.state;
+
+		const updateBar = (
+			<div className="c9-notice components-notice is-success is-dismissible">
+				<div className="components-notice__content">
+					{msg}
+				</div>
+				<button
+					type="button"
+					aria-label="Dismiss this notice"
+					className="components-button components-icon-button components-notice__dismiss"
+					onClick={this.closeNotice}
+				>
+					<svg
+						aria-hidden="true"
+						role="img"
+						focusable="false"
+						className="dashicon dashicons-no"
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+					>
+						<path d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z"></path>
+					</svg>
+				</button>
+			</div>
+		);
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => (
 			<SectionButton
+				open={() => {
+					this.setMessage("Updating page.");
+					this.openNotice();
+				}}
 				close={() => {
 					const { sections } = this.state;
 					sections[k] = rawHandler({
@@ -137,19 +193,35 @@ class TemplatesModal extends Component {
 					});
 
 					this.setState({ sections });
+					this.setMessage("Page updated.");
 				}}
 				icon={TemplateMarkups.sections[k].icon}
 				preview={TemplateMarkups.sections[k].preview}
-				label={__(startCase(k), "c9-blocks")}
+				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
 				section={sections[k]}
 			/>
 		));
 
 		const layoutItems = Object.keys(layouts).map(k => (
 			<LayoutButton
+				open={() => {
+					this.setMessage("Updating page.");
+					this.openNotice();
+				}}
+				close={() => {
+					const { layouts } = this.state;
+					layouts[k] = rawHandler({
+						HTML: TemplateMarkups.layouts[k].markup,
+						mode: "BLOCKS",
+						canUserUseUnfilteredHTML
+					});
+
+					this.setState({ layouts });
+					this.setMessage("Page updated.");
+				}}
 				icon={TemplateMarkups.layouts[k].icon}
 				preview={TemplateMarkups.layouts[k].preview}
-				label={__(startCase(k), "c9-blocks")}
+				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
 				layout={layouts[k]}
 			/>
 		));
@@ -160,6 +232,17 @@ class TemplatesModal extends Component {
 					className="c9-template-tabs c9-component-modal-tab-panel"
 					tabs={[
 						{
+							name: "page-templates",
+							title: (
+								<Tooltip
+									text={__("Pre-designed ready to use pages.", "c9-blocks")}
+								>
+									<span>{__("Pages")}</span>
+								</Tooltip>
+							),
+							className: "c9-template-tabs-tab"
+						},
+						{
 							name: "section-templates",
 							title: (
 								<Tooltip
@@ -169,17 +252,6 @@ class TemplatesModal extends Component {
 									)}
 								>
 									<span>{__("Sections")}</span>
-								</Tooltip>
-							),
-							className: "c9-template-tabs-tab"
-						},
-						{
-							name: "page-templates",
-							title: (
-								<Tooltip
-									text={__("Pre-designed ready to use pages.", "c9-blocks")}
-								>
-									<span>{__("Pages")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -197,7 +269,7 @@ class TemplatesModal extends Component {
 							name: "tutorial",
 							title: (
 								<Tooltip text={__("How To's", "c9-blocks")}>
-									<span>{__("Tutorial")}</span>
+									<span>{__("Tutorials")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -233,7 +305,9 @@ class TemplatesModal extends Component {
 							case "section-templates":
 								return (
 									<Fragment>
-										<p>{tab.title}</p>
+										{updating && (
+											updateBar
+										)}
 										<div className="c9-section-options">
 											{sectionItems}
 											<button
@@ -251,7 +325,9 @@ class TemplatesModal extends Component {
 							case "page-templates":
 								return (
 									<Fragment>
-										<p>{tab.title}</p>
+										{updating && (
+											updateBar
+										)}
 										<div className="c9-layout-options">
 											{layoutItems}
 											<button
@@ -269,7 +345,9 @@ class TemplatesModal extends Component {
 							case "saved-blocks":
 								return (
 									<Fragment>
-										<p>{tab.title}</p>
+										{updating && (
+											updateBar
+										)}
 										<div className="c9-section-options">
 											{this.state.reusables.map(obj => (
 												<SectionButton
@@ -293,7 +371,6 @@ class TemplatesModal extends Component {
 							case "tutorial":
 								return (
 									<Fragment>
-										<p>{tab.title}</p>
 										<div className="c9-section-options">
 											Insert tutorial here.
 											<button
@@ -309,11 +386,7 @@ class TemplatesModal extends Component {
 									</Fragment>
 								);
 							default:
-								return (
-									<Fragment>
-										The page has been cleared.
-									</Fragment>
-								)
+								return <Fragment>The page has been cleared.</Fragment>;
 						}
 					}}
 				</TabPanel>

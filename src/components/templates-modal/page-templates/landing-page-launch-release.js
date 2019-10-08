@@ -1,5 +1,7 @@
+import Icon from "../template-assets/svg/LandingPages__Landing Page Launch Release.svg";
+
 export default {
-	icon: "wordpress",
+	icon: Icon,
 	markup: `
 <!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/crowd-dancing.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":8,"blendMode":"multiply","minScreenHeight":84,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4"} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:84vh;background-color:rgba(49,49,49,1)"><div class="c9-video-container"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:84vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4" type="video/mp4"/></video></div></div><div class="c9-image-container" style="background-position:50% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/crowd-dancing.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.8);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":1,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":34} -->

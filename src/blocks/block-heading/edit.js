@@ -35,7 +35,7 @@ export default class Edit extends Component {
 	 * @return {string} Appropriate css class based on configuration.
 	 */
 	c9TextStyleConfig(type, displayLevel, tagLevel, override) {
-		if (!override) {
+		if (!override && "c9-txl display-" != type) {
 			return type.split(" ")[0];
 		} else if (0 == displayLevel) {
 			return `${type}${tagLevel}`;

@@ -71,6 +71,17 @@ class Sidebar extends Component {
 							isDefault
 							isLarge
 							onClick={() => {
+								this.setState({ isModalOpen: "page-templates" });
+							}}
+						>
+							<Icon icon={icons.page} size={ICON_SIZE} />
+							{__("Page Templates", "c9-blocks")}
+						</Button>
+						<Button
+							className="plugin-c9-panel-button"
+							isDefault
+							isLarge
+							onClick={() => {
 								this.setState({ loading: true });
 								this.setState({ isModalOpen: "section-templates" });
 								this.setState({ loading: false });
@@ -78,17 +89,6 @@ class Sidebar extends Component {
 						>
 							<Icon icon={icons.section} size={ICON_SIZE} />
 							{__("Section Templates", "c9-blocks")}
-						</Button>
-						<Button
-							className="plugin-c9-panel-button"
-							isDefault
-							isLarge
-							onClick={() => {
-								this.setState({ isModalOpen: "page-templates" });
-							}}
-						>
-							<Icon icon={icons.page} size={ICON_SIZE} />
-							{__("Page Templates", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"

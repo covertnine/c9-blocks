@@ -28,6 +28,23 @@
 	}
 }
 
+.editor-styles-wrapper .c9-cta-text p {
+	font-size: 16px;
+}
+
+.editor-styles-wrapper .c9-cta-text.col-md-9,
+.editor-styles-wrapper .c9-cta-text.col-md-8 {
+	max-width: 100%;
+}
+
+.editor-styles-wrapper .c9-block-cta .c9-cta-content .wp-block-button__link {
+	text-decoration: none;
+	white-space: nowrap;
+	opacity: 1;
+	transition: .5s opacity;
+	white-space: nowrap !important;
+}
+
 .c9-block-cta {
 	margin-bottom: 0;
 }

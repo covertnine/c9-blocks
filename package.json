@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"start": "node scripts/start",
-		"build": "node scripts/build",
+		"start": "node --max_old_space_size=8192 scripts/start",
+		"build": "node --max_old_space_size=8192 scripts/build",
 		"format": "prettier --write \"src/**/*.{js,jsx,css,json,vue}\"",
 		"format:check": "prettier --list-different \"src/**/*.{js,jsx,css,json,vue}\"",
 		"lint": "eslint \"src/**/*.{js,jsx}\"",

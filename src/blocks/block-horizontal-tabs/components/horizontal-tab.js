@@ -36,7 +36,7 @@ export default class Tab extends Component {
 			<div
 				className={className}
 				role="tabpanel"
-				id={`tab-${slug}-${id}`}
+				id={`htab-${slug}-${id}`}
 				aria-labelledby={slug}
 			>
 				<InnerBlocks
@@ -99,7 +99,7 @@ registerBlockType("c9-blocks/horizontal-tabs-tab", {
 			<div
 				className={className}
 				role="tabpanel"
-				id={`tab-${slug}-${id}`}
+				id={`htab-${slug}-${id}`}
 				aria-labelledby={slug}
 			>
 				<InnerBlocks.Content />

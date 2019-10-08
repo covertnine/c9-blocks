@@ -1,11 +1,13 @@
+import Icon from "../template-assets/svg/LandingPages__Landing Page Price Menu.svg";
+
 export default {
-	icon: "wordpress",
+	icon: Icon,
 	markup: `
 <!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov"} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:50vh;background-color:rgba(49,49,49,1)"><div class="c9-video-container"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov" type="video/mp4"/></video></div></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"New Fall Menu","type":"c9-txl display-","textColor":"#abb8c3","weight":"light"} -->
-<div class="section-heading c9-heading text-left"><h1 class="c9-txl font-weight-light" style="color:#abb8c3">New Fall Menu</h1></div>
+<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-light" style="color:#abb8c3">New Fall Menu</h1></div>
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:c9-blocks/heading {"heading":"ORDER THIS FISH ONLINE RIGHT NOW","tagLevel":6,"textColor":"#ffffff","weight":"normal"} -->
@@ -187,8 +189,8 @@ export default {
 <!-- /wp:spacer -->
 
 <!-- wp:c9-blocks/vertical-tabs {"tabActive":"tab-saturday","tabsData":[{"slug":"tab-saturday","title":"Saturday"},{"slug":"tab-sunday","title":"Sunday"}],"instanceId":0,"verticalAlign":"center"} -->
-<div class="c9-vertical-tabs row" data-tab-active="tab-saturday"><div class="col-xs-12 col-sm-3"><div class="nav flex-column nav-pills" role="tablist"><a data-toggle="pill" role="tab" href="#tab-tab-saturday-0" class="nav-link active" id="tab-button-tab-saturday">Saturday</a><a data-toggle="pill" role="tab" href="#tab-tab-sunday-0" class="nav-link" id="tab-button-tab-sunday">Sunday</a></div></div><div class="col-xs-12 col-sm-9"><div class="c9-tabs-content tab-content align-self-center"><!-- wp:c9-blocks/vertical-tabs-tab {"slug":"tab-saturday","tabActive":"tab-saturday","id":0} -->
-<div class="c9-vertical-tabs-tab tab-pane fade show active" role="tabpanel" id="tab-tab-saturday-0" aria-labelledby="tab-saturday"><!-- wp:heading {"level":6} -->
+<div class="c9-vertical-tabs row" data-tab-active="tab-saturday"><div class="col-xs-12 col-sm-3"><div class="nav flex-column nav-pills" role="tablist"><a data-toggle="pill" role="tab" href="#vtab-tab-saturday-0" class="nav-link active" id="tab-button-tab-saturday">Saturday</a><a data-toggle="pill" role="tab" href="#vtab-tab-sunday-0" class="nav-link" id="tab-button-tab-sunday">Sunday</a></div></div><div class="col-xs-12 col-sm-9"><div class="c9-tabs-content tab-content align-self-center"><!-- wp:c9-blocks/vertical-tabs-tab {"slug":"tab-saturday","tabActive":"tab-saturday","id":0} -->
+<div class="c9-vertical-tabs-tab tab-pane fade show active" role="tabpanel" id="vtab-tab-saturday-0" aria-labelledby="tab-saturday"><!-- wp:heading {"level":6} -->
 <h6>Saturday Brunch Specials</h6>
 <!-- /wp:heading -->
 
@@ -202,7 +204,7 @@ export default {
 <!-- /wp:c9-blocks/vertical-tabs-tab -->
 
 <!-- wp:c9-blocks/vertical-tabs-tab {"slug":"tab-sunday","tabActive":"tab-saturday","id":0} -->
-<div class="c9-vertical-tabs-tab tab-pane fade" role="tabpanel" id="tab-tab-sunday-0" aria-labelledby="tab-sunday"><!-- wp:heading {"level":6} -->
+<div class="c9-vertical-tabs-tab tab-pane fade" role="tabpanel" id="vtab-tab-sunday-0" aria-labelledby="tab-sunday"><!-- wp:heading {"level":6} -->
 <h6>Sunday Brunch Specials</h6>
 <!-- /wp:heading -->
 
