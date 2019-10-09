@@ -12,18 +12,6 @@
 	font-size: 16px;
 }
 
-/* specific to WP 2019/2020*/
-.entry .entry-content .c9-grid p,
-.entry .entry-content .c9-posts-grid p,
-.entry .entry-content .c9-grid ul li,
-.entry .entry-content .c9-grid ol li,
-.editor-styles-wrapper .c9-grid p,
-.editor-styles-wrapper .c9-posts-grid p,
-.editor-styles-wrapper .c9-grid ul li,
-.editor-styles-wrapper .c9-grid ol li {
-	font-size: 1em;
-}
-
 [tabindex="-1"]:focus {
 	outline: 0 !important;
 }
