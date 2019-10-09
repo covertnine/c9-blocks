@@ -8,42 +8,8 @@
 /************************************************************************************************************************/
 /* Modified Bootstrap.css to only include what's needed for C9 Blocks plugin with some minor adjustments to typo sizes *
 /************************************************************************************************************************/
-.c9-grid,
-.c9-posts-grid,
-.c9-heading {
-	font-size: 10px;
-}
-
-.c9-grid p,
-.c9-posts-grid p,
-.c9-grid ul li,
-.c9-grid ol li,
-.c9-grid {
+.editor-styles-wrapper {
 	font-size: 16px;
-}
-
-/* specific to WP 2019/2020*/
-.entry .entry-content .c9-grid p,
-.entry .entry-content .c9-posts-grid p,
-.entry .entry-content .c9-grid ul li,
-.entry .entry-content .c9-grid ol li,
-.entry .entry-content .c9-grid .wp-block-button__link,
-.entry .entry-content .c9-grid .btn,
-.editor-styles-wrapper .c9-grid p,
-.editor-styles-wrapper .c9-posts-grid p,
-.editor-styles-wrapper .c9-grid ul li,
-.editor-styles-wrapper .c9-grid ol li,
-.editor-styles-wrapper .c9-grid .wp-block-button__link,
-.editor-styles-wrapper .c9-grid .btn {
-	font-size: 22px;
-}
-
-.hentry .entry-content .c9-grid p,
-.hentry .entry-content .c9-posts-grid p,
-.hentry .entry-content .c9-grid ul li,
-.hentry .entry-content .c9-grid ol li,
-.editor-styles-wrapper .c9-grid .c9-cta .c9-cta-text p {
-	font-size: 21px;
 }
 
 [tabindex="-1"]:focus {

@@ -129,6 +129,11 @@
 }
 
 /* WP 2019 + 2020 Themes */
+.c9-posts-grid .alignwide,
+.c9-posts-grid .container-fluid.alignfull {
+	left: auto;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 667px) {
 	.page.page-template-default .entry .entry-content>.c9-posts-grid {
 		margin-left: -1rem;
@@ -178,8 +183,7 @@
 		overflow: hidden;
 	}
 
-	.c9-grid .container-fluid.alignfull {
-		left: auto;
+	.c9-posts-grid .container-fluid.alignfull {
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
@@ -229,6 +233,8 @@
 		max-width: 960px;
 		padding-left: 30px;
 		padding-right: 30px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.c9-posts-grid .container {
@@ -257,9 +263,6 @@
 	.page-template-default .entry-content>.c9-posts-grid .container.alignwide {
 		padding-left: 5px;
 		padding-right: 5px;
-	}
-
-	.page-template-default .entry-content>.c9-posts-grid .container.alignwide {
 		width: 100%;
 		max-width: 1260px;
 	}

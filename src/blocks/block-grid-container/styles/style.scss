@@ -3,10 +3,6 @@
  *
  * CSS for both Frontend+Backend.
  */
-.c9-grid {
-	font-size: 10px;
-}
-
 .c9-fixed .c9-image-container,
 .c9-fixed .c9-video-container {
 	background-attachment: fixed;
@@ -150,6 +146,11 @@
 }
 
 /* WP 2019 + 2020 Themes */
+.c9-grid .alignwide,
+.c9-grid .container-fluid.alignfull {
+	left: auto;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 667px) {
 
 	.page.page-template-default .entry .entry-content>.c9-grid {
@@ -160,6 +161,12 @@
 	.page.page-template-default .post-inner>.entry-content>.c9-grid {
 		margin-left: calc((58rem - 100vw) / 2);
 		margin-right: calc((58rem - 100vw) / 2);
+	}
+
+	/* WP 2019 + 2020 Themes */
+	.c9-grid .alignwide,
+	.c9-grid .container-fluid.alignfull {
+		max-width: 100vw;
 	}
 }
 
@@ -260,6 +267,8 @@
 		max-width: 960px;
 		padding-left: 30px;
 		padding-right: 30px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.c9-grid .container {
@@ -268,10 +277,7 @@
 	}
 
 	.c9-grid .container.alignwide {
-		margin-top: 0px;
-		margin-bottom: 0px;
-		margin-left: calc((-100vw + 100%) / 4);
-		margin-right: calc((-100vw + 100%) / 2);
+		margin: 0px auto;
 		padding: 0px;
 	}
 
@@ -292,11 +298,8 @@
 	.page-template-default .entry-content>.c9-grid .container.alignwide {
 		padding-left: 5px;
 		padding-right: 5px;
-	}
-
-	.page-template-default .entry-content>.c9-grid .container.alignwide {
 		width: 100%;
-		max-width: 1200px;
+		max-width: 1260px;
 	}
 
 	.page-template-default .entry-content>.c9-grid .container-fluid {

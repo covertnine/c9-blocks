@@ -4,13 +4,13 @@
 	padding-bottom: 20px;
 }
 
-.c9-cta-content {
+.c9-cta .c9-cta-content {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.c9-cta-button {
+.c9-cta .c9-cta-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -22,19 +22,16 @@
 	opacity: 1;
 	transition: .5s opacity;
 	white-space: nowrap;
+	letter-spacing: 1px;
 }
 
 .entry-content .c9-block-cta .c9-cta-button a:hover {
 	opacity: .9;
 }
 
-.entry-content .c9-cta-text p {
+.entry-content .c9-cta-text p,
+.editor-styles-wrapper .c9-cta-text p {
 	margin-bottom: 0;
-	font-size: 16px;
-}
-
-.hentry .entry-content .c9-cta-text p {
-	font-size: 21px;
 }
 
 .c9-cta-text p:only-of-type,
@@ -60,15 +57,7 @@
 }
 
 /* buttons */
-.btn,
-.btn:visited,
-.entry-content button,
-.entry-content input[type="button"],
-.entry-content input[type="reset"],
-.entry-content input[type="submit"],
-.wp-block-button__link,
-.wp-block-file__button,
-.wp-block-file .wp-block-file__button {
+.c9-cta .wp-block-button__link {
 	display: inline-block;
 	padding: 8px 35px;
 	width: auto;
@@ -87,32 +76,32 @@
 	line-height: 1;
 }
 
-.wp-block-button__link.c9-button-shape-square {
+.c9-cta .wp-block-button__link.c9-button-shape-square {
 	border-radius: 0;
 }
 
-.wp-block-button__link.c9-button-shape-round {
+.c9-cta .wp-block-button__link.c9-button-shape-round {
 	border-radius: 28px;
 }
 
-.wp-block-button__link.c9-button-shape-outline {
+.c9-cta .wp-block-button__link.c9-button-shape-outline {
 	background-color: transparent;
 	border: 2px solid;
 }
 
-.wp-block-button__link.c9-button-size-small {
+.c9-cta .wp-block-button__link.c9-button-size-small {
 	padding: 4px 20px;
 }
 
-.wp-block-button__link.c9-button-size-medium {
+.c9-cta .wp-block-button__link.c9-button-size-medium {
 	padding: 8px 35px;
 }
 
-.wp-block-button__link.c9-button-size-large {
+.c9-cta .wp-block-button__link.c9-button-size-large {
 	padding: 12px 45px;
 }
 
-.wp-block-button__link.c9-button-size-extralarge {
+.c9-cta .wp-block-button__link.c9-button-size-extralarge {
 	padding: 16px 55px;
 }
 

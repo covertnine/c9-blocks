@@ -20,11 +20,19 @@
 	border-radius: 0px;
 	color: #979797;
 	text-transform: uppercase;
-	font-size: 1.5em;
+	font-size: 16px;
 	padding: 13px 20px;
 	font-weight: 700;
 	letter-spacing: .005em;
 	text-decoration: none;
+}
+
+.c9-vertical-tabs .tab-content {
+	padding: 0px 25px;
+}
+
+.c9-vertical-tabs p:only-child {
+	margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 1024px) {
