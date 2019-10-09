@@ -8,7 +8,6 @@ import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
 import icons from "../../../assets/sidebar-icons";
 
-
 /**
  * Styles
  */
@@ -154,9 +153,7 @@ class TemplatesModal extends Component {
 
 		const updateBar = (
 			<div className="c9-notice components-notice is-success is-dismissible">
-				<div className="components-notice__content">
-					{msg}
-				</div>
+				<div className="components-notice__content">{msg}</div>
 				<button
 					type="button"
 					aria-label="Dismiss this notice"
@@ -285,8 +282,8 @@ class TemplatesModal extends Component {
 									}}
 									className="btn btn-danger btn-clear"
 								>
-									<Icon icon={icons.close}  />
-									<span>{__("Clear pager", "c9-blocks")}</span>
+									<Icon icon={icons.close} />
+									<span>{__("Clear page", "c9-blocks")}</span>
 								</Fragment>
 							),
 							className: "c9-template-tabs-tab"
@@ -307,9 +304,7 @@ class TemplatesModal extends Component {
 							case "section-templates":
 								return (
 									<Fragment>
-										{updating && (
-											updateBar
-										)}
+										{updating && updateBar}
 										<div className="c9-section-options">
 											{sectionItems}
 											<button
@@ -318,8 +313,8 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger btn-clear"
 											>
-												<Icon icon={icons.close}  />
-												<span>{__("Clear pagee", "c9-blocks")}</span>
+												<Icon icon={icons.close} />
+												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
@@ -327,9 +322,7 @@ class TemplatesModal extends Component {
 							case "page-templates":
 								return (
 									<Fragment>
-										{updating && (
-											updateBar
-										)}
+										{updating && updateBar}
 										<div className="c9-layout-options">
 											{layoutItems}
 											<button
@@ -338,8 +331,8 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger btn-clear"
 											>
-												<Icon icon={icons.close}  />
-												<span>{__("Clear pagez", "c9-blocks")}</span>
+												<Icon icon={icons.close} />
+												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
@@ -347,9 +340,7 @@ class TemplatesModal extends Component {
 							case "saved-blocks":
 								return (
 									<Fragment>
-										{updating && (
-											updateBar
-										)}
+										{updating && updateBar}
 										<div className="c9-section-options">
 											{this.state.reusables.map(obj => (
 												<SectionButton
@@ -364,8 +355,8 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger btn-clear"
 											>
-												<Icon icon={icons.close}  />
-												<span>{__("Clear paged", "c9-blocks")}</span>
+												<Icon icon={icons.close} />
+												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
@@ -381,8 +372,8 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger btn-clear"
 											>
-												<Icon icon={icons.close}  />
-												<span>{__("Clear paget", "c9-blocks")}</span>
+												<Icon icon={icons.close} />
+												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
