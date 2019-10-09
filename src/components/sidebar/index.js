@@ -128,7 +128,7 @@ class Sidebar extends Component {
 						setSections={this.setSections}
 						setLayouts={this.setLayouts}
 						title="Templates"
-						icon={<Dashicon icon={"schedule"} />}
+						icon={<Logo style={{ width: "20px", margin: "0 10px 0 6px" }} />}
 						onRequestClose={() => this.setState({ isModalOpen: false })}
 						initial={isModalOpen}
 					/>

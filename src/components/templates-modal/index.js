@@ -279,15 +279,15 @@ class TemplatesModal extends Component {
 						{
 							name: "clear-page",
 							title: (
-								<button
+								<Fragment
 									onClick={() => {
 										resetBlocks([]);
 									}}
-									className="btn btn-danger"
+									className="btn btn-danger btn-clear"
 								>
 									<Icon icon={icons.close}  />
-									<span>{__("Clear page", "c9-blocks")}</span>
-								</button>
+									<span>{__("Clear pager", "c9-blocks")}</span>
+								</Fragment>
 							),
 							className: "c9-template-tabs-tab"
 						}
@@ -316,10 +316,10 @@ class TemplatesModal extends Component {
 												onClick={() => {
 													resetBlocks([]);
 												}}
-												className="btn btn-danger"
+												className="btn btn-danger btn-clear"
 											>
 												<Icon icon={icons.close}  />
-												<span>{__("Clear page", "c9-blocks")}</span>
+												<span>{__("Clear pagee", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
@@ -336,10 +336,10 @@ class TemplatesModal extends Component {
 												onClick={() => {
 													resetBlocks([]);
 												}}
-												className="btn btn-danger"
+												className="btn btn-danger btn-clear"
 											>
 												<Icon icon={icons.close}  />
-												<span>{__("Clear page", "c9-blocks")}</span>
+												<span>{__("Clear pagez", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
@@ -362,10 +362,10 @@ class TemplatesModal extends Component {
 												onClick={() => {
 													resetBlocks([]);
 												}}
-												className="btn btn-danger"
+												className="btn btn-danger btn-clear"
 											>
 												<Icon icon={icons.close}  />
-												<span>{__("Clear page", "c9-blocks")}</span>
+												<span>{__("Clear paged", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
@@ -379,10 +379,10 @@ class TemplatesModal extends Component {
 												onClick={() => {
 													resetBlocks([]);
 												}}
-												className="btn btn-danger"
+												className="btn btn-danger btn-clear"
 											>
 												<Icon icon={icons.close}  />
-												<span>{__("Clear page", "c9-blocks")}</span>
+												<span>{__("Clear paget", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
