@@ -6,6 +6,8 @@ import LayoutButton from "./layout-button";
 import SectionButton from "./section-button";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
+import icons from "../../../assets/sidebar-icons";
+
 
 /**
  * Styles
@@ -283,7 +285,7 @@ class TemplatesModal extends Component {
 									}}
 									className="btn btn-danger"
 								>
-									<Icon icon="trash" />
+									<Icon icon={icons.close}  />
 									<span>{__("Clear page", "c9-blocks")}</span>
 								</button>
 							),
@@ -316,7 +318,7 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger"
 											>
-												<Icon icon="trash" />
+												<Icon icon={icons.close}  />
 												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
@@ -336,7 +338,7 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger"
 											>
-												<Icon icon="trash" />
+												<Icon icon={icons.close}  />
 												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
@@ -362,7 +364,7 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger"
 											>
-												<Icon icon="trash" />
+												<Icon icon={icons.close}  />
 												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
@@ -379,7 +381,7 @@ class TemplatesModal extends Component {
 												}}
 												className="btn btn-danger"
 											>
-												<Icon icon="trash" />
+												<Icon icon={icons.close}  />
 												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>

@@ -4,6 +4,8 @@
 	}
 
 	.c9-component-modal-tab-panel .components-tab-panel__tabs {
+		display: flex;
+		align-items: center;
 		margin-top: -24px;
 		margin-bottom: 24px;
 	}

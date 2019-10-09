@@ -25,7 +25,6 @@ const DEFAULT_WIDTH_CONTROLS = [
 	}
 ];
 
-
 /**
  * Create a Width Toolbar Component
  */
