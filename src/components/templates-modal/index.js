@@ -324,6 +324,7 @@ class TemplatesModal extends Component {
 									<Fragment>
 										{updating && updateBar}
 										<div className="c9-layout-options">
+											<h1>sick</h1>
 											{layoutItems}
 											<button
 												onClick={() => {

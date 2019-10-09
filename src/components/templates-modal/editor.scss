@@ -89,10 +89,15 @@
 					font-size: 15px;
 					// height: 75px;
 					overflow: scroll;
-					// margin-top: 15px;
 				}
 				img {
 					width: 100%;
+				}
+
+				&:not(.btn-clear) {
+					min-height: 52px;
+					width: 95%;
+					margin: 5px auto;
 				}
 			}
 		}
