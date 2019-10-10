@@ -95,8 +95,17 @@
 
 	.entry-content .c9-heading h1.c9-txl,
 	.c9-heading .display-1,
-	.editor-styles-wrapper .c9-heading .display-1.c9-txl {
+	.editor-styles-wrapper .c9-heading .display-1.c9-txl,
+	.entry-content .c9-heading .c9-txl.display-1,
+	.entry-content .c9-heading h1.c9-txl {
 		font-size: 4em;
+	}
+
+	.c9-heading .subhead-h1,
+	.entry-content .c9-heading .c9-h.h1,
+	.editor-styles-wrapper .c9-heading .c9-sh.subhead-h1,
+	.editor-styles-wrapper .c9-heading .c9-h.h1 {
+		font-size: 3em !important;
 	}
 }
 
@@ -115,8 +124,17 @@
 
 	.entry-content .c9-heading h2.c9-txl,
 	.c9-heading .display-2,
-	.editor-styles-wrapper .c9-heading .display-2.c9-txl {
+	.editor-styles-wrapper .c9-heading .display-2.c9-txl,
+	.entry-content .c9-heading .c9-txl.display-2,
+	.entry-content .c9-heading h2.c9-txl {
 		font-size: 3.6em;
+	}
+
+	.c9-heading .subhead-h2,
+	.entry-content .c9-heading .c9-h.h2,
+	.editor-styles-wrapper .c9-heading .c9-sh.subhead-h2,
+	.editor-styles-wrapper .c9-heading .c9-h.h2 {
+		font-size: 2.5em !important;
 	}
 }
 
@@ -135,8 +153,17 @@
 
 	.entry-content .c9-heading h3.c9-txl,
 	.c9-heading .display-3,
-	.editor-styles-wrapper .c9-heading .display-3.c9-txl {
+	.editor-styles-wrapper .c9-heading .display-3.c9-txl,
+	.entry-content .c9-heading .c9-txl.display-3,
+	.entry-content .c9-heading h3.c9-txl {
 		font-size: 3em;
+	}
+
+	.c9-heading .subhead-h3,
+	.entry-content .c9-heading .c9-h.h3,
+	.editor-styles-wrapper .c9-heading .c9-sh.subhead-h3,
+	.editor-styles-wrapper .c9-heading .c9-h.h3 {
+		font-size: 2.25em !important;
 	}
 }
 
@@ -155,8 +182,17 @@
 
 	.entry-content .c9-heading h4.c9-txl,
 	.c9-heading .display-4,
-	.editor-styles-wrapper .c9-heading .display-4.c9-txl {
+	.editor-styles-wrapper .c9-heading .display-4.c9-txl,
+	.entry-content .c9-heading .c9-txl.display-4,
+	.entry-content .c9-heading h4.c9-txl {
 		font-size: 2.8em;
+	}
+
+	.c9-heading .subhead-h4,
+	.entry-content .c9-heading .c9-h.h4,
+	.editor-styles-wrapper .c9-heading .c9-sh.subhead-h4,
+	.editor-styles-wrapper .c9-heading .c9-h.h4 {
+		font-size: 1.9em !important;
 	}
 }
 
@@ -175,8 +211,17 @@
 
 	.entry-content .c9-heading h5.c9-txl,
 	.c9-heading .display-5,
-	.editor-styles-wrapper .c9-heading .display-5.c9-txl {
+	.editor-styles-wrapper .c9-heading .display-5.c9-txl,
+	.entry-content .c9-heading .c9-txl.display-5,
+	.entry-content .c9-heading h5.c9-txl {
 		font-size: 2em;
+	}
+
+	.c9-heading .subhead-h5,
+	.entry-content .c9-heading .c9-h.h5,
+	.editor-styles-wrapper .c9-heading .c9-sh.subhead-h5,
+	.editor-styles-wrapper .c9-heading .c9-h.h5 {
+		font-size: 1.5em !important;
 	}
 }
 
@@ -195,7 +240,16 @@
 
 	.entry-content .c9-heading h6.c9-txl,
 	.c9-heading .display-6,
-	.editor-styles-wrapper .c9-heading .display-6.c9-txl {
+	.editor-styles-wrapper .c9-heading .display-6.c9-txl,
+	.entry-content .c9-heading .c9-txl.display-6,
+	.entry-content .c9-heading h6.c9-txl {
 		font-size: 1.4em;
+	}
+
+	.c9-heading .subhead-h6,
+	.entry-content .c9-heading .c9-h.h6,
+	.editor-styles-wrapper .c9-heading .c9-sh.subhead-h6,
+	.editor-styles-wrapper .c9-heading .c9-h.h6 {
+		font-size: 1.15em !important;
 	}
 }
