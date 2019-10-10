@@ -87,7 +87,7 @@
 					padding: 2px 0;
 					color: #576d7b;
 					font-size: 15px;
-					// height: 75px;
+					height: 45px;
 					overflow: scroll;
 				}
 				img {
@@ -148,5 +148,25 @@
 	.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options,
 	.c9-templates-modal .c9-component-modal-tab-panel .c9-section-options {
 		grid-template-columns: repeat(4, 1fr);
+	}
+	.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options {
+		grid-template-columns: repeat(2, 1fr);
+
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: left;
+			background: #FFFFFF;
+			border: 1px solid #979797;
+			padding: 10px;
+			h3 {
+				padding-left: 20px;
+				color: #819FB3;
+			}
+			svg {
+				width: 30%;
+				border: 1px solid #979797;
+			}
+		}
 	}
 }

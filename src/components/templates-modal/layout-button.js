@@ -27,7 +27,7 @@ const LayoutButton = ({
 			) : (
 				<Icon icon={icon} />
 			)}
-			<span>{label}</span>
+			<h3>{label}</h3>
 		</button>
 	);
 };
