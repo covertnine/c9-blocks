@@ -114,6 +114,12 @@
 	height: 100%;
 }
 
+/* preventing margin below last items that are embeds */
+.c9-grid .c9-column-inner>.wp-block-embed:last-child,
+.c9-grid .wp-block-embed:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter):last-child {
+	margin-bottom: 0px;
+}
+
 /* adjustments to image aligments in grids for some themes*/
 @media only screen and (min-width: 768px) {
 	.entry>.entry-content>.c9-grid .wp-block-image .aligncenter {
