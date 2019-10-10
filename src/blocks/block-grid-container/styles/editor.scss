@@ -184,10 +184,17 @@
 
 /*c9 column container innerblocks set to full width + innerblock full width */
 .wp-block[data-type="c9-blocks/grid"] .editor-inner-blocks,
-.wp-block[data-type="c9-blocks/grid"] .editor-inner-blocks>.editor-block-list__layout {
+.wp-block[data-type="c9-blocks/grid"]>.editor-inner-blocks>.editor-block-list__layout {
 	width: 100%;
 	z-index: 10;
 	position: relative;
+}
+
+@media only screen and (min-width: 1200px) {
+	.wp-block[data-type="c9-blocks/grid"]>.editor-inner-blocks>.editor-block-list__layout {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 }
 
 // set z-indexes of columns to prevent toolbars from overlapping under columns

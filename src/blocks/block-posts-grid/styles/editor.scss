@@ -159,10 +159,17 @@
 
 /*c9 post container innerblocks set to full width + innerblock full width */
 .wp-block[data-type="c9-blocks/posts-grid"] .editor-inner-blocks,
-.wp-block[data-type="c9-blocks/posts-grid"] .editor-inner-blocks>.editor-block-list__layout {
+.wp-block[data-type="c9-blocks/posts-grid"]>.editor-inner-blocks>.editor-block-list__layout {
 	width: 100%;
 	z-index: 10;
 	position: relative;
+}
+
+@media only screen and (min-width: 1200px) {
+	.wp-block[data-type="c9-blocks/posts-grid"]>.editor-inner-blocks>.editor-block-list__layout {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 }
 
 // set width of editor screen and a max width
