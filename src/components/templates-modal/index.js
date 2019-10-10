@@ -2,6 +2,7 @@
  * Internal dependencies
  */
 import startCase from "lodash/startCase";
+import PageTypes from "./page-types";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import TemplateMarkups from "./templates-markup";
@@ -201,30 +202,38 @@ class TemplatesModal extends Component {
 			/>
 		));
 
-		const layoutItems = Object.keys(layouts).map(k => (
-			<LayoutButton
-				open={() => {
-					this.setMessage("Updating page.");
-					this.openNotice();
-				}}
-				close={() => {
-					const { layouts } = this.state;
-					layouts[k] = rawHandler({
-						HTML: TemplateMarkups.layouts[k].markup,
-						mode: "BLOCKS",
-						canUserUseUnfilteredHTML
-					});
+		const pageLayoutSections = Object.keys(PageTypes).map(k => (
+			<div class="row">
+				{k}
+			</div>
+		))
 
-					this.setState({ layouts });
-					this.setMessage("Page updated.");
-				}}
-				icon={TemplateMarkups.layouts[k].icon}
-				preview={TemplateMarkups.layouts[k].preview}
-				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
-				layout={layouts[k]}
-				description={TemplateMarkups.layouts[k].description}
-			/>
-		));
+		const layoutItems = Object.keys(layouts).map(function(k) {
+			return (
+				<LayoutButton
+					open={() => {
+						this.setMessage("Updating page.");
+						this.openNotice();
+					}}
+					close={() => {
+						const { layouts } = this.state;
+						layouts[k] = rawHandler({
+							HTML: TemplateMarkups.layouts[k].markup,
+							mode: "BLOCKS",
+							canUserUseUnfilteredHTML
+						});
+
+						this.setState({ layouts });
+						this.setMessage("Page updated.");
+					}}
+					icon={TemplateMarkups.layouts[k].icon}
+					preview={TemplateMarkups.layouts[k].preview}
+					label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
+					layout={layouts[k]}
+					description={TemplateMarkups.layouts[k].description}
+				/>
+			);
+		});
 
 		return (
 			<LargeModal {...this.props}>
@@ -324,6 +333,7 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
+										{pageLayoutSections}
 										<div className="c9-layout-options">
 											{layoutItems}
 											<button

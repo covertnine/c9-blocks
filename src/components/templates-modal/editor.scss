@@ -3,7 +3,7 @@
 		border-left-color: #819fb3;
 		color: white;
 		background: #576d7b;
-		opacity: .8;
+		opacity: 0.8;
 		svg path {
 			fill: white;
 			&:hover {
@@ -56,7 +56,7 @@
 				flex-direction: column;
 				background: #ffffff;
 				border: 1px solid #979797;
-				box-shadow: 0 2px 4px 0 #000000;
+				box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
 				span {
 					font-size: 26px;
 					line-height: 1;
