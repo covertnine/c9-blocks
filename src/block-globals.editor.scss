@@ -58,7 +58,7 @@
 	min-height: 160px;
 }
 
-.c9-grid .components-icon-button:not(:disabled):not([aria-disabled="true"]):not(.is-default) {
+.c9-grid .components-icon-button:not(:disabled):not([aria-disabled="true"]):not(.is-default):not(.blocks-gallery-item__remove) {
 	background-color: #fff;
 }
 
