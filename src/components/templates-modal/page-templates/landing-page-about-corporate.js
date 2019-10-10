@@ -1,6 +1,6 @@
 export default {
 	icon: "wordpress",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing `,
+	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
 	markup: `
 	<!-- wp:c9-blocks/grid {"instanceId":9,"containerHue":"#109ef1","minScreenHeight":50} -->
 	<div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(16,158,241,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->

@@ -2,7 +2,7 @@ import Icon from "../template-assets/svg/LandingPages__Landing Page Price Menu.s
 
 export default {
 	icon: Icon,
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing `,
+	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
 	markup: `
 <!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov"} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:50vh;background-color:rgba(49,49,49,1)"><div class="c9-video-container"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov" type="video/mp4"/></video></div></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom"} -->

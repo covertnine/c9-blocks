@@ -1,4 +1,16 @@
 .c9-templates-modal {
+	.components-notice.is-success {
+		border-left-color: #819fb3;
+		color: white;
+		background: #576d7b;
+		opacity: .8;
+		svg path {
+			fill: white;
+			&:hover {
+				fill: #819fb3;
+			}
+		}
+	}
 	.c9-loading-wrapper {
 		display: flex;
 		justify-content: center;
@@ -39,6 +51,8 @@
 			&.btn-clear {
 				min-height: 200px;
 				display: flex;
+				align-items: center;
+				justify-content: center;
 				flex-direction: column;
 				background: #ffffff;
 				border: 1px solid #979797;
@@ -107,6 +121,31 @@
 		.c9-layout-options {
 			.c9-layout-button-content {
 				width: 70%;
+				text-align: left;
+				padding-left: 20px;
+				padding-top: 10px;
+			}
+			h3 {
+				padding-left: 0;
+				color: #819fb3;
+				margin-bottom: 15px;
+				font-weight: 700;
+			}
+			p {
+				text-transform: none;
+				color: #819fb3;
+				line-height: 1.6;
+			}
+			svg {
+				width: 30%;
+				border: 1px solid #979797;
+			}
+			button {
+				display: flex;
+				justify-content: left;
+				background: #ffffff;
+				border: 1px solid #979797;
+				padding: 10px;
 			}
 		}
 
@@ -159,22 +198,5 @@
 	}
 	.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options {
 		grid-template-columns: repeat(2, 1fr);
-
-		button {
-			display: flex;
-			align-items: center;
-			justify-content: left;
-			background: #ffffff;
-			border: 1px solid #979797;
-			padding: 10px;
-			h3 {
-				padding-left: 20px;
-				color: #819fb3;
-			}
-			svg {
-				width: 30%;
-				border: 1px solid #979797;
-			}
-		}
 	}
 }
