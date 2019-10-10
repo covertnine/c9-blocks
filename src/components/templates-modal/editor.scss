@@ -93,12 +93,20 @@
 				img {
 					width: 100%;
 				}
+			}
+		}
 
-				&:not(.btn-clear) {
-					min-height: 52px;
-					width: 95%;
-					margin: 5px auto;
-				}
+		.c9-section-options {
+			button:not(.btn-clear) {
+				min-height: 52px;
+				width: 95%;
+				margin: 5px auto;
+			}
+		}
+
+		.c9-layout-options {
+			.c9-layout-button-content {
+				width: 70%;
 			}
 		}
 
@@ -156,12 +164,12 @@
 			display: flex;
 			align-items: center;
 			justify-content: left;
-			background: #FFFFFF;
+			background: #ffffff;
 			border: 1px solid #979797;
 			padding: 10px;
 			h3 {
 				padding-left: 20px;
-				color: #819FB3;
+				color: #819fb3;
 			}
 			svg {
 				width: 30%;

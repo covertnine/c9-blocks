@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import startCase from "lodash/startCase";
-import LayoutButton from "./layout-button";
+import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
@@ -222,6 +222,7 @@ class TemplatesModal extends Component {
 				preview={TemplateMarkups.layouts[k].preview}
 				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
 				layout={layouts[k]}
+				description={TemplateMarkups.layouts[k].description}
 			/>
 		));
 

@@ -4,6 +4,7 @@ const { withDispatch } = wp.data;
 const LayoutButton = ({
 	label,
 	icon,
+	description,
 	preview,
 	layout,
 	resetBlocks,
@@ -27,7 +28,12 @@ const LayoutButton = ({
 			) : (
 				<Icon icon={icon} />
 			)}
+			<div class="c9-layout-button-content">
 			<h3>{label}</h3>
+			<p>
+				{description}
+			</p>
+			</div>
 		</button>
 	);
 };
