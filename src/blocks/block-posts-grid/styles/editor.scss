@@ -71,6 +71,14 @@
 	align-items: flex-start;
 }
 
+/* for adjusting insertion points to account for select container buttons (grid items only)  */
+[data-type="c9-blocks/post-grid"]>.editor-block-list__block-edit.block-editor-block-list__block-edit .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__insertion-point,
+[data-type="c9-blocks/post-grid"]>.editor-block-list__block-edit.block-editor-block-list__block-edit .c9-column-inner .block-editor-block-list__block>.block-editor-block-list__insertion-point {
+	z-index: 22;
+	height: 22px;
+	top: 12px;
+}
+
 .c9-posts-grid>.editor-inner-blocks {
 	height: 100%;
 
@@ -131,7 +139,6 @@
 /****************************************************************************************/
 /***************************** C9 Container block edits for backend only
  /****************************************************************************************/
-
 .container .row .editor-inner-blocks,
 .container-fluid .row .editor-inner-blocks,
 .container-narrow .row .editor-inner-blocks {
