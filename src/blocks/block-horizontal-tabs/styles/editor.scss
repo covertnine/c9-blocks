@@ -4,10 +4,17 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
+
+div[data-type="c9-blocks/horizontal-tabs"] .editor-block-list__block-edit.block-editor-block-list__block-edit {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 	ul li {
 		font-size: 1em;
 	}
+
 	.tab-content [data-tab] {
 		display: none;
 	}
