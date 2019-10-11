@@ -1,13 +1,16 @@
 .c9-templates-modal {
+	.components-modal__icon-container svg {
+		height: 100%;
+	}
 	.c9-type-heading {
 		display: flex;
 		align-items: baseline;
 		justify-content: left;
-		margin-bottom: 7px;
+		margin-bottom: 10px;
 		h2,
 		p {
 			margin: 0;
-			color: #576D7B;
+			color: #576d7b;
 			font-size: 1.6em;
 		}
 		p {
@@ -15,7 +18,7 @@
 		}
 		h2 {
 			font-size: 2.5em;
-			color: #576D7B;
+			color: #576d7b;
 			text-transform: uppercase;
 			position: relative;
 		}
@@ -23,8 +26,8 @@
 			content: "";
 			position: absolute;
 			height: 4px;
-			background: #576D7B;
-			width: 100%;
+			background: #576d7b;
+			width: 98%;
 			bottom: 0;
 			left: 0;
 		}
@@ -33,7 +36,6 @@
 		border-left-color: #819fb3;
 		color: white;
 		background: #576d7b;
-		opacity: 0.8;
 		svg path {
 			fill: white;
 			&:hover {
@@ -51,6 +53,10 @@
 		margin: 0 0 10px;
 		padding: 6px 12px;
 		min-height: 50px;
+		width: 97.5%;
+		position: fixed;
+		z-index: 10;
+		opacity: 1;
 
 		button {
 			margin: 10px 5px;
@@ -149,6 +155,7 @@
 		}
 
 		.c9-layout-options {
+			margin-bottom: 20px;
 			.c9-layout-button-content {
 				width: 70%;
 				text-align: left;
