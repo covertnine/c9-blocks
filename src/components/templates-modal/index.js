@@ -176,6 +176,10 @@ class TemplatesModal extends Component {
 			</div>
 		);
 
+		// tutorial iframe
+		const iframe =
+			'<iframe src="https://www.covertnine.com/about" width="540" height="450"></iframe>';
+
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => (
 			<SectionButton
@@ -368,7 +372,7 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										<div className="c9-section-options">
-											Insert tutorial here.
+											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
 											<button
 												onClick={() => {
 													resetBlocks([]);
