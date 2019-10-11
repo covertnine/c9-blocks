@@ -2,8 +2,6 @@
  * Editor Styles
  */
 
- 
- 
 .edit-post-pinned-plugins
 	.components-icon-button:not(.is-toggled)
 	.c9-plugin-icon
@@ -14,13 +12,10 @@
 	svg,
 .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg {
 	display: block;
-
+	width: 30px;
 	* {
 		stroke: initial !important; // stylelint-disable-line
-	}
-
-	[fill="#fff"] {
-		fill: #fff !important; // stylelint-disable-line
+		fill: url(#c9-feather-logo-gradient_svg__a); // stylelint-disable-line
 	}
 
 	height: 16px;
@@ -30,14 +25,6 @@
 // so, we need to compensate the padding
 .edit-post-pinned-plugins .components-icon-button .c9-plugin-icon span {
 	margin: -2px;
-}
-
-.edit-post-pinned-plugins
-	.components-icon-button.is-toggled
-	.c9-plugin-icon
-	span
-	[fill="#fff"] {
-	fill: #555d66 !important; // stylelint-disable-line
 }
 
 .plugin-c9-panel {
