@@ -2,6 +2,7 @@ import Icon from "../template-assets/svg/LandingPages__Landing Page Media.svg";
 
 export default {
 	icon: Icon,
+	type: "awareness",
 	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
 	markup: `
 	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":80,"videoType":"embed","containerVideoID":"dBxRw49NOiY"} -->

@@ -4,6 +4,8 @@
 import startCase from "lodash/startCase";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
+import { PageTypeHeading } from "./page-type-heading";
+import PageTypes from "./page-types";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
 import icons from "../../../assets/sidebar-icons";
@@ -34,6 +36,7 @@ class TemplatesModal extends Component {
 			reusables: [],
 			sections: this.props.sections,
 			layouts: this.props.layouts,
+			PageTypes,
 			loading: true,
 			updating: false,
 			msg: ""
@@ -201,7 +204,46 @@ class TemplatesModal extends Component {
 			/>
 		));
 
-		const layoutItems = Object.keys(layouts).map((k) => {
+		// const pageTypes = [];
+
+		// Object.keys(PageTypes).forEach(type => {
+		// 	let typeLayouts = layouts.filter((layout) => {
+		// 		return layout.type === 
+		// 	})
+		// 	let layoutItems = Object.keys(layouts).map(k => {
+		// 		return (
+		// 			<LayoutButton
+		// 				open={() => {
+		// 					this.setMessage("Updating page.");
+		// 					this.openNotice();
+		// 				}}
+		// 				close={() => {
+		// 					const { layouts } = this.state;
+		// 					layouts[k] = rawHandler({
+		// 						HTML: TemplateMarkups.layouts[k].markup,
+		// 						mode: "BLOCKS",
+		// 						canUserUseUnfilteredHTML
+		// 					});
+	
+		// 					this.setState({ layouts });
+		// 					this.setMessage("Page updated.");
+		// 				}}
+		// 				icon={TemplateMarkups.layouts[k].icon}
+		// 				preview={TemplateMarkups.layouts[k].preview}
+		// 				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
+		// 				layout={layouts[k]}
+		// 				description={TemplateMarkups.layouts[k].description}
+		// 			/>
+		// 		);
+		// 	});
+		// 	pageTypes.push(
+		// 		<div className="c9-layout-options">
+		// 		<PageTypeHeading name={type} description={PageTypes[type]} />
+		// 		</div>
+		// 	);
+		// });
+
+		const layoutItems = Object.keys(layouts).map(k => {
 			return (
 				<LayoutButton
 					open={() => {
@@ -326,18 +368,17 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
-										<div className="c9-layout-options">
-											{layoutItems}
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
-											</button>
-										</div>
+										{pageTypes}
+										{layoutItems}
+										<button
+											onClick={() => {
+												resetBlocks([]);
+											}}
+											className="btn btn-danger btn-clear"
+										>
+											<Icon icon={icons.close} />
+											<span>{__("Clear page", "c9-blocks")}</span>
+										</button>
 									</Fragment>
 								);
 							case "saved-blocks":
