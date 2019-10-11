@@ -89,7 +89,9 @@ class TemplatesModal extends Component {
 		const { canUserUseUnfilteredHTML } = this.props;
 
 		const postType = await apiFetch({ path: `/wp/v2/types/wp_block` });
-		const reusables = await apiFetch({ path: `/wp/v2/${postType.rest_base}` });
+		const reusables = await apiFetch({
+			path: `/wp/v2/${postType.rest_base}/?per_page=-1`
+		});
 
 		const blocks = reusables.map(item => {
 			return {
@@ -327,9 +329,7 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
-										<div className="c9-section-options">
-											{sectionItems}
-										</div>
+										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
 							case "page-templates":
@@ -349,6 +349,13 @@ class TemplatesModal extends Component {
 													icon="wordpress"
 													label={__(obj.name, "c9-blocks")}
 													section={obj.content}
+													open={() => {
+														this.setMessage("Updating page.");
+														this.openNotice();
+													}}
+													close={() => {
+														this.setMessage("Page updated.");
+													}}
 												/>
 											))}
 										</div>

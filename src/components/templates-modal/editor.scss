@@ -53,8 +53,8 @@
 		margin: 0 0 10px;
 		padding: 6px 12px;
 		min-height: 50px;
-		width: 97.5%;
-		position: fixed;
+		// width: 97.5%;
+		// position: fixed;
 		z-index: 10;
 		opacity: 1;
 
@@ -65,6 +65,13 @@
 
 	// tab panel
 	.c9-component-modal-tab-panel {
+		button:hover {
+			box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
+			svg path {
+				transform-origin: center;
+				animation: .5s scaleIn;
+			}
+		}
 		.btn-danger {
 			color: #819fb3;
 			background: white;
@@ -237,3 +244,13 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+@keyframes scaleIn {
+	from {
+	  transform: scale(.5);
+	}
+  
+	to {
+	  transform: scale(1);
+	}
+  }
