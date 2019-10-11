@@ -4,6 +4,8 @@
 import startCase from "lodash/startCase";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
+import { PageTypeHeading } from "./page-type-heading";
+import PageTypes from "./page-types";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
 import icons from "../../../assets/sidebar-icons";
@@ -34,6 +36,7 @@ class TemplatesModal extends Component {
 			reusables: [],
 			sections: this.props.sections,
 			layouts: this.props.layouts,
+			PageTypes,
 			loading: true,
 			updating: false,
 			msg: ""
@@ -201,30 +204,46 @@ class TemplatesModal extends Component {
 			/>
 		));
 
-		const layoutItems = Object.keys(layouts).map((k) => {
-			return (
-				<LayoutButton
-					open={() => {
-						this.setMessage("Updating page.");
-						this.openNotice();
-					}}
-					close={() => {
-						const { layouts } = this.state;
-						layouts[k] = rawHandler({
-							HTML: TemplateMarkups.layouts[k].markup,
-							mode: "BLOCKS",
-							canUserUseUnfilteredHTML
-						});
+		const pageTypes = [];
 
-						this.setState({ layouts });
-						this.setMessage("Page updated.");
-					}}
-					icon={TemplateMarkups.layouts[k].icon}
-					preview={TemplateMarkups.layouts[k].preview}
-					label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
-					layout={layouts[k]}
-					description={TemplateMarkups.layouts[k].description}
-				/>
+		// Build out the whole pagetypes thing with headings mixed in
+		//
+		Object.keys(PageTypes).forEach(type => {
+			let layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
+				return TemplateMarkups.layouts[k].type === type;
+			});
+
+			let layoutItems = layoutsByType.map(name => {
+				return (
+					<LayoutButton
+						open={() => {
+							this.setMessage("Updating page.");
+							this.openNotice();
+						}}
+						close={() => {
+							const { layouts } = this.state;
+							layouts[name] = rawHandler({
+								HTML: TemplateMarkups.layouts[name].markup,
+								mode: "BLOCKS",
+								canUserUseUnfilteredHTML
+							});
+
+							this.setState({ layouts });
+							this.setMessage("Page updated.");
+						}}
+						icon={TemplateMarkups.layouts[name].icon}
+						preview={TemplateMarkups.layouts[name].preview}
+						label={__(startCase(name).replace("Plus", "+"), "c9-blocks")}
+						layout={layouts[name]}
+						description={TemplateMarkups.layouts[name].description}
+					/>
+				);
+			});
+			pageTypes.push(
+				<Fragment>
+					<PageTypeHeading name={type} description={PageTypes[type]} />
+					<div className="c9-layout-options">{layoutItems}</div>
+				</Fragment>
 			);
 		});
 
@@ -310,15 +329,6 @@ class TemplatesModal extends Component {
 										{updating && updateBar}
 										<div className="c9-section-options">
 											{sectionItems}
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
-											</button>
 										</div>
 									</Fragment>
 								);
@@ -326,18 +336,7 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
-										<div className="c9-layout-options">
-											{layoutItems}
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
-											</button>
-										</div>
+										{pageTypes}
 									</Fragment>
 								);
 							case "saved-blocks":
@@ -352,15 +351,6 @@ class TemplatesModal extends Component {
 													section={obj.content}
 												/>
 											))}
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
-											</button>
 										</div>
 									</Fragment>
 								);
@@ -369,15 +359,6 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<div className="c9-section-options">
 											Insert tutorial here.
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
-											</button>
 										</div>
 									</Fragment>
 								);
