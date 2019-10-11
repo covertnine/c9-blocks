@@ -218,6 +218,10 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 		width: 960px;
 		max-width: 960px;
 	}
+
+	body .edit-post-layout .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"]>.block-editor-block-list__insertion-point {
+		z-index: 21;
+	}
 }
 
 @media only screen and (min-width: 768px) {
