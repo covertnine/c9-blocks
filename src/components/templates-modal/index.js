@@ -201,12 +201,12 @@ class TemplatesModal extends Component {
 			/>
 		));
 
-		const layoutItems = Object.keys(layouts).map(function(k) {
+		const layoutItems = Object.keys(layouts).map((k) => {
 			return (
 				<LayoutButton
 					open={() => {
-						// this.setMessage("Updating page.");
-						// this.openNotice();
+						this.setMessage("Updating page.");
+						this.openNotice();
 					}}
 					close={() => {
 						const { layouts } = this.state;
@@ -217,7 +217,7 @@ class TemplatesModal extends Component {
 						});
 
 						this.setState({ layouts });
-						// this.setMessage("Page updated.");
+						this.setMessage("Page updated.");
 					}}
 					icon={TemplateMarkups.layouts[k].icon}
 					preview={TemplateMarkups.layouts[k].preview}

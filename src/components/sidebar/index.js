@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import ColorAppender from "../color-appender";
-import Logo from "../../../assets/c9-feather-logo-gray.svg";
+import Logo from "../../../assets/c9-feather-logo-gradient.svg";
 import { TemplatesModal } from "../templates-modal";
 import icons from "../../../assets/sidebar-icons";
 
