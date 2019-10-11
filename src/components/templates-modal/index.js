@@ -2,7 +2,6 @@
  * Internal dependencies
  */
 import startCase from "lodash/startCase";
-import PageTypes from "./page-types";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import TemplateMarkups from "./templates-markup";
@@ -202,18 +201,12 @@ class TemplatesModal extends Component {
 			/>
 		));
 
-		const pageLayoutSections = Object.keys(PageTypes).map(k => (
-			<div class="row">
-				{k}
-			</div>
-		))
-
 		const layoutItems = Object.keys(layouts).map(function(k) {
 			return (
 				<LayoutButton
 					open={() => {
-						this.setMessage("Updating page.");
-						this.openNotice();
+						// this.setMessage("Updating page.");
+						// this.openNotice();
 					}}
 					close={() => {
 						const { layouts } = this.state;
@@ -224,7 +217,7 @@ class TemplatesModal extends Component {
 						});
 
 						this.setState({ layouts });
-						this.setMessage("Page updated.");
+						// this.setMessage("Page updated.");
 					}}
 					icon={TemplateMarkups.layouts[k].icon}
 					preview={TemplateMarkups.layouts[k].preview}
@@ -333,7 +326,6 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
-										{pageLayoutSections}
 										<div className="c9-layout-options">
 											{layoutItems}
 											<button
