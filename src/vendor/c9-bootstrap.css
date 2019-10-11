@@ -3723,6 +3723,7 @@ a.close.disabled {
 	margin-left: -3em !important;
 }
 
+
 /* added by C9 to account for rems not changing from plugin only*/
 @media only screen and (max-width: 667px) {
 	.m-1 {
@@ -6093,4 +6094,11 @@ a.text-dark:focus {
 
 .invisible {
 	visibility: hidden !important;
+}
+
+.wp-block-image.img-fluid,
+.img-fluid img {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
 }
