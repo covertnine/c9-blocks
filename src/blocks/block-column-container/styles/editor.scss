@@ -225,6 +225,7 @@
 	.c9-layout-columns-3>.c9-layout-column-wrap-admin>.editor-inner-blocks>.editor-block-list__layout>.wp-block[data-type="c9-blocks/column"] [data-type^="core-embed"] {
 		max-width: 100%;
 		width: 100%;
+		overflow: hidden;
 	}
 }
 
