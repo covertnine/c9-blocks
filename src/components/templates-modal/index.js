@@ -214,7 +214,6 @@ class TemplatesModal extends Component {
 		const pageTypes = [];
 
 		// Build out the whole pagetypes thing with headings mixed in
-		//
 		Object.keys(PageTypes).forEach(type => {
 			let layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
 				return TemplateMarkups.layouts[k].type === type;
@@ -240,7 +239,7 @@ class TemplatesModal extends Component {
 						}}
 						icon={TemplateMarkups.layouts[name].icon}
 						preview={TemplateMarkups.layouts[name].preview}
-						label={__(startCase(name).replace("Plus", "+"), "c9-blocks")}
+						label={__(startCase(TemplateMarkups.layouts[name].title).replace("Plus", "+"), "c9-blocks")}
 						layout={layouts[name]}
 						description={TemplateMarkups.layouts[name].description}
 					/>

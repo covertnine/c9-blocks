@@ -36,23 +36,47 @@ import widescreenVidSimpleBigHeading from "./new-section-templates/widescreen-vi
 import widescreenVideoWTitleDescription from "./new-section-templates/widescreen-video-with-title-description";
 
 // pages
-import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
-import landingPageAbout from "./page-templates/landing-page-about";
-import landingPageEvent from "./page-templates/landing-page-event";
-import landingPageLaunchRelease from "./page-templates/landing-page-launch-release";
-import landingPageMedia from "./page-templates/landing-page-media";
-import landingPagePriceMenu from "./page-templates/landing-page-price-menu";
-import landingPageService from "./page-templates/landing-page-service";
+// import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
+// import landingPageAbout from "./page-templates/landing-page-about";
+// import landingPageEvent from "./page-templates/landing-page-event";
+// import landingPageLaunchRelease from "./page-templates/landing-page-launch-release";
+// import landingPageMedia from "./page-templates/landing-page-media";
+// import landingPagePriceMenu from "./page-templates/landing-page-price-menu";
+// import landingPageService from "./page-templates/landing-page-service";
+
+import lpAboutCorporate from "./new-page-templates/landing-page-about-corporate";
+import lpAboutCreative from "./new-page-templates/landing-page-about-creative";
+import lpContactShort from "./new-page-templates/landing-page-contact-short";
+import lpContact from "./new-page-templates/landing-page-contact";
+import lpEvent from "./new-page-templates/landing-page-event";
+import lpLaunchRelease from "./new-page-templates/landing-page-launch-release";
+import lpMedia from "./new-page-templates/landing-page-media";
+import lpPortfolio from "./new-page-templates/landing-page-portfolio";
+import lpPriceMenu from "./new-page-templates/landing-page-price-menu";
+import lpResources from "./new-page-templates/landing-page-resources";
+import lpService from "./new-page-templates/landing-page-service";
+import lpStyle from "./new-page-templates/landing-page-style";
+import leadGen1 from "./new-page-templates/lead-generation-1";
+import leadGen2 from "./new-page-templates/lead-generation-2";
+import leadGen3 from "./new-page-templates/lead-generation-3";
 
 const templateMarkups = {
 	layouts: {
-		landingPageAboutCorporate,
-		landingPageAbout,
-		landingPageEvent,
-		landingPageLaunchRelease,
-		landingPageMedia,
-		landingPagePriceMenu,
-		landingPageService
+		lpAboutCorporate,
+		lpAboutCreative,
+		lpContactShort,
+		lpContact,
+		lpEvent,
+		lpLaunchRelease,
+		lpMedia,
+		lpPortfolio,
+		lpPriceMenu,
+		lpResources,
+		lpService,
+		lpStyle,
+		leadGen1,
+		leadGen2,
+		leadGen3
 	},
 	sections: {
 		aboutPictureContactCard,
@@ -89,7 +113,7 @@ const templateMarkups = {
 		threeStepServiceOverview,
 		vidEmbedHeadingBtn,
 		widescreenVidSimpleBigHeading,
-		widescreenVideoWTitleDescription,
+		widescreenVideoWTitleDescription
 	}
 };
 
