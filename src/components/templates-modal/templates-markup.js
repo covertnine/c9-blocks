@@ -29,6 +29,10 @@ import classicHeaderStatementPlusImage from "./section-templates/classic-header-
 import smallVideoBackgroundPlusTitle from "./section-templates/small-video-background-plus-title";
 import headerVideoBackgroundWithTitleHeading from "./section-templates/header-video-background-with-title-heading";
 
+// New Sections
+import aboutPictureContactCard from "./new-section-templates/about-picture-contact-card";
+import classicHeaderStatementLogo from "./new-section-templates/classic-header-statement-logo";
+
 // pages
 import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
 import landingPageAbout from "./page-templates/landing-page-about";
@@ -49,6 +53,8 @@ const templateMarkups = {
 		landingPageService
 	},
 	sections: {
+		aboutPictureContactCard,
+		classicHeaderStatementLogo,
 		streamingAudioPreview,
 		largeSpotifyEmbedPlusImageCarousel,
 		sectionsOverviewPlusTwoTestimonial,
