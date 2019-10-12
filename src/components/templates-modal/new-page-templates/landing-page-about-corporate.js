@@ -1,6 +1,7 @@
 export default {
 	icon: "wordpress",
-    type: "consideration",
+	type: "consideration",
+	title: "Landing Page About Corporate",
 	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#109ef1","minScreenHeight":50} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(16,158,241,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
