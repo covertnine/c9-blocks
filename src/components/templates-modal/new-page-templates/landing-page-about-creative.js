@@ -1,4 +1,4 @@
-import Icon from "./page-icons/landing-page"
+import Icon from "./page-icons/landing-page-about-creative.js";
 
 export default {
 	icon: "wordpress",
