@@ -206,7 +206,7 @@ class TemplatesModal extends Component {
 				}}
 				icon={TemplateMarkups.sections[k].icon}
 				preview={TemplateMarkups.sections[k].preview}
-				label={__(startCase(TemplateMarkups.sections[k]).replace("Plus", "+"), "c9-blocks")}
+				label={__(startCase(TemplateMarkups.sections[k].title).replace("Plus", "+"), "c9-blocks")}
 				section={sections[k]}
 			/>
 		));
