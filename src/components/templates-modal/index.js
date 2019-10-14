@@ -187,29 +187,35 @@ class TemplatesModal extends Component {
 			'<iframe src="https://www.covertnine.com/about" width="540" height="450"></iframe>';
 
 		// convert above to React DOM elements
-		const sectionItems = Object.keys(sections).map(k => (
-			<SectionButton
-				open={() => {
-					this.setMessage("Updating page.");
-					this.openNotice();
-				}}
-				close={() => {
-					const { sections } = this.state;
-					sections[k] = rawHandler({
-						HTML: TemplateMarkups.sections[k].markup,
-						mode: "BLOCKS",
-						canUserUseUnfilteredHTML
-					});
+		const sectionItems = Object.keys(sections).map(k => {
+			console.log("cool");
+			return (
+				<SectionButton
+					open={() => {
+						this.setMessage("Updating page.");
+						this.openNotice();
+					}}
+					close={() => {
+						const { sections } = this.state;
+						sections[k] = rawHandler({
+							HTML: TemplateMarkups.sections[k].markup,
+							mode: "BLOCKS",
+							canUserUseUnfilteredHTML
+						});
 
-					this.setState({ sections });
-					this.setMessage("Page updated.");
-				}}
-				icon={TemplateMarkups.sections[k].icon}
-				preview={TemplateMarkups.sections[k].preview}
-				label={__(startCase(TemplateMarkups.sections[k].title).replace("Plus", "+"), "c9-blocks")}
-				section={sections[k]}
-			/>
-		));
+						this.setState({ sections });
+						this.setMessage("Page updated.");
+					}}
+					icon={TemplateMarkups.sections[k].icon}
+					preview={TemplateMarkups.sections[k].preview}
+					label={__(
+						startCase(TemplateMarkups.sections[k].title).replace("Plus", "+"),
+						"c9-blocks"
+					)}
+					section={sections[k]}
+				/>
+			);
+		});
 
 		const pageTypes = [];
 
@@ -239,7 +245,13 @@ class TemplatesModal extends Component {
 						}}
 						icon={TemplateMarkups.layouts[name].icon}
 						preview={TemplateMarkups.layouts[name].preview}
-						label={__(startCase(TemplateMarkups.layouts[name].title).replace("Plus", "+"), "c9-blocks")}
+						label={__(
+							startCase(TemplateMarkups.layouts[name].title).replace(
+								"Plus",
+								"+"
+							),
+							"c9-blocks"
+						)}
 						layout={layouts[name]}
 						description={TemplateMarkups.layouts[name].description}
 					/>
