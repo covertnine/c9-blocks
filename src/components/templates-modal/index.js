@@ -24,8 +24,9 @@ const { Component, Fragment } = wp.element;
 const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
-const { rawHandler } = wp.blocks;
+const { rawHandler, createBlock } = wp.blocks;
 const apiFetch = wp.apiFetch;
+const { BlockPreview } = wp.blockEditor;
 
 class TemplatesModal extends Component {
 	constructor() {
@@ -347,52 +348,54 @@ class TemplatesModal extends Component {
 							case "section-templates":
 								return (
 									<Fragment>
-										{updating && updateBar}
 										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
 							case "page-templates":
-								return (
-									<Fragment>
-										{updating && updateBar}
-										{pageTypes}
-									</Fragment>
-								);
+								return <Fragment>{pageTypes}</Fragment>;
 							case "saved-blocks":
 								return (
 									<Fragment>
-										{updating && updateBar}
-										<div className="c9-section-options">
-											{this.state.reusables.map((obj, index) => {
-												return (
-													<ReusableButton
-														icon="wordpress"
-														label={__(obj.name, "c9-blocks")}
-														section={obj.content}
-														open={() => {
-															this.setMessage("Updating page.");
-															this.openNotice();
-														}}
-														close={() => {
-															const { reusables } = this.state;
-															reusables[index].content = rawHandler({
-																HTML: TemplateMarkups.reusables[index],
-																mode: "BLOCKS",
-																canUserUseUnfilteredHTML
-															});
-															this.setState({ reusables });
-															this.setMessage("Page updated.");
-														}}
-													/>
-												);
-											})}
+										<div className="c9-reusable-options">
+											<div className="c9-reusable-list">
+												{this.state.reusables.map((obj, index) => {
+													return (
+														<ReusableButton
+															icon="wordpress"
+															label={__(obj.name, "c9-blocks")}
+															section={obj.content}
+															open={() => {
+																this.setMessage("Updating page.");
+																this.openNotice();
+															}}
+															close={() => {
+																const { reusables } = this.state;
+																reusables[index].content = rawHandler({
+																	HTML: TemplateMarkups.reusables[index],
+																	mode: "BLOCKS",
+																	canUserUseUnfilteredHTML
+																});
+																this.setState({ reusables });
+																this.setMessage("Page updated.");
+															}}
+														/>
+													);
+												})}
+											</div>
+											<div className="c9-reusable-preview">
+												<h1>Block Preview</h1>
+												{/* <BlockPreview
+													viewportWidth={500}
+													blocks={TemplateMarkups.reusables[0]}
+												/> */}
+											</div>
 										</div>
 									</Fragment>
 								);
 							case "tutorial":
 								return (
 									<Fragment>
-										<div className="c9-reusable-options">
+										<div className="c9-tutorial">
 											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
 											<button
 												onClick={() => {
