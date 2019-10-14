@@ -94,6 +94,11 @@ class TemplatesModal extends Component {
 			path: `/wp/v2/${postType.rest_base}/?per_page=-1`
 		});
 
+		// Add Reusable Markup to Templates array to add block
+		TemplateMarkups.reusables = reusables.map(item => {
+			return item.content.raw;
+		});
+
 		const blocks = reusables.map(item => {
 			return {
 				name: item.title.raw,
@@ -188,7 +193,6 @@ class TemplatesModal extends Component {
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => {
-			console.log("cool");
 			return (
 				<SectionButton
 					open={() => {
@@ -202,7 +206,6 @@ class TemplatesModal extends Component {
 							mode: "BLOCKS",
 							canUserUseUnfilteredHTML
 						});
-
 						this.setState({ sections });
 						this.setMessage("Page updated.");
 					}}
@@ -360,20 +363,29 @@ class TemplatesModal extends Component {
 									<Fragment>
 										{updating && updateBar}
 										<div className="c9-section-options">
-											{this.state.reusables.map(obj => (
-												<ReusableButton
-													icon="wordpress"
-													label={__(obj.name, "c9-blocks")}
-													section={obj.content}
-													open={() => {
-														this.setMessage("Updating page.");
-														this.openNotice();
-													}}
-													close={() => {
-														this.setMessage("Page updated.");
-													}}
-												/>
-											))}
+											{this.state.reusables.map((obj, index) => {
+												return (
+													<ReusableButton
+														icon="wordpress"
+														label={__(obj.name, "c9-blocks")}
+														section={obj.content}
+														open={() => {
+															this.setMessage("Updating page.");
+															this.openNotice();
+														}}
+														close={() => {
+															const { reusables } = this.state;
+															reusables[index].content = rawHandler({
+																HTML: TemplateMarkups.reusables[index],
+																mode: "BLOCKS",
+																canUserUseUnfilteredHTML
+															});
+															this.setState({ reusables });
+															this.setMessage("Page updated.");
+														}}
+													/>
+												);
+											})}
 										</div>
 									</Fragment>
 								);

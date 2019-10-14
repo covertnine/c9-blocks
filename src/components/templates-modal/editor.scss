@@ -142,13 +142,13 @@
 				span {
 					display: block;
 					font-size: 0.8em;
-					padding: 2px 0;
 					color: #576d7b;
-					font-size: 15px;
-					padding-top: 6px;
-					font-size: 15px;
-					height: 58px;
-					line-height: 25px;
+					padding-top: 1px;
+					font-size: 1.2em;
+					height: 26px;
+					line-height: 21px;
+					margin-bottom: 3px;
+					overflow: auto;
 				}
 				img {
 					width: 100%;
@@ -164,7 +164,7 @@
 			}
 			span {
 				margin: 0 auto;
-				width: 80%;
+				width: 95%;
 			}
 		}
 
