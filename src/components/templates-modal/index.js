@@ -368,7 +368,6 @@ class TemplatesModal extends Component {
 												<div className="c9-reusable-list">
 													{this.state.reusables.map((obj, index) => {
 														const blockType = getBlockType(obj.content[0].name);
-														console.log(blockType.icon);
 														return (
 															<ReusableButton
 																icon={blockType.icon}
