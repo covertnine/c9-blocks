@@ -390,13 +390,13 @@ class TemplatesModal extends Component {
 															/>
 														);
 													})}
-													<a
-														class="c9-modal-manage-reusable"
-														href="edit.php?post_type=wp_block"
-													>
-														manage all reusable blocks
-													</a>
 												</div>
+												<a
+													className="c9-modal-manage-reusable"
+													href="edit.php?post_type=wp_block"
+												>
+													manage all reusable blocks
+												</a>
 											</div>
 											<div className="c9-reusable-preview">
 												<h1>Block Preview</h1>
@@ -420,7 +420,6 @@ class TemplatesModal extends Component {
 												className="btn btn-danger btn-clear"
 											>
 												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
 											</button>
 										</div>
 									</Fragment>
