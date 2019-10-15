@@ -429,11 +429,10 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<div className="c9-reusable-options">
 											{this.state.tuts.map(tut => {
-												console.log(tut);
 												return (
 													<TutButton
 														title={tut.title.rendered}
-														imgURL={"cool"}
+														url={tut.link}
 													/>
 												);
 											})}

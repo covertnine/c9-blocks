@@ -1,8 +1,9 @@
-export const TutButton = ({ title, imgURL }) => {
+export const TutButton = ({ title, url }) => {
 	return (
 		<div className="c9-type-heading">
-			<img src="{imgURL}" />
-			<h2>{title}</h2>
+			<a href={url} target="_blank">
+				<h4>{title}</h4>
+			</a>
 		</div>
 	);
 };
