@@ -1,4 +1,4 @@
-const { Icon } = wp.components;
+const { BlockIcon } = wp.blockEditor;
 const { withDispatch } = wp.data;
 
 const ReusableButton = ({
@@ -20,7 +20,8 @@ const ReusableButton = ({
 				}, 0);
 			}}
 		>
-			<span>{label}</span>
+			<BlockIcon icon={icon} />
+			<span className="c9-reusable-label">{label}</span>
 		</button>
 	);
 };

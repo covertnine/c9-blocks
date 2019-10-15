@@ -1,4 +1,27 @@
 .c9-templates-modal {
+	button {
+		border: none;
+		margin: 0;
+		padding: 0;
+		width: auto;
+		overflow: visible;
+
+		background: transparent;
+
+		/* inherit font & color from ancestor */
+		color: inherit;
+		font: inherit;
+
+		/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+		line-height: normal;
+
+		/* Corrects font smoothing for webkit */
+		-webkit-font-smoothing: inherit;
+		-moz-osx-font-smoothing: inherit;
+
+		/* Corrects inability to style clickable `input` types in iOS */
+		-webkit-appearance: none;
+	}
 	.components-modal__icon-container svg {
 		height: 100%;
 	}
@@ -67,11 +90,12 @@
 	// tab panel
 	.c9-component-modal-tab-panel {
 		button:hover {
+			cursor: pointer;
 			box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
-			svg path {
-				transform-origin: center;
-				animation: 0.5s scaleIn;
-			}
+			// svg path {
+			// 	transform-origin: center;
+			// 	animation: 0.5s scaleIn;
+			// }
 		}
 		.btn-danger {
 			color: #819fb3;
@@ -114,7 +138,8 @@
 		}
 
 		.c9-layout-options,
-		.c9-section-options {
+		.c9-section-options,
+		.c9-reusable-list {
 			display: grid;
 			grid-column-gap: 1em;
 			grid-row-gap: 1.3em;
@@ -142,12 +167,27 @@
 				span {
 					display: block;
 					font-size: 0.8em;
-					padding: 2px 0;
 					color: #576d7b;
-					font-size: 15px;
-					height: 45px;
-					line-height: 38px;
-					overflow: scroll;
+					padding-top: 1px;
+					font-size: 1.2em;
+					height: 26px;
+					line-height: 21px;
+					margin: 2px auto;
+					margin-top: 4px;
+					&.c9-reusable-label {
+						height: 40px;
+						line-height: 18px;
+					}
+					&.block-editor-block-icon {
+						height: 40px;
+						width: 40px;
+						svg {
+							max-width: none;
+							max-height: none;
+							height: 40px;
+							width: 40px;
+						}
+					}
 				}
 				img {
 					width: 100%;
@@ -160,10 +200,14 @@
 				min-height: 52px;
 				width: 95%;
 				margin: 5px auto;
+				svg {
+					height: 100%;
+					width: 100%;
+				}
 			}
 			span {
 				margin: 0 auto;
-				width: 80%;
+				width: 95%;
 			}
 		}
 
@@ -196,6 +240,22 @@
 				background: #ffffff;
 				border: 1px solid #979797;
 				padding: 10px;
+			}
+		}
+
+		.c9-reusable-options {
+			.c9-reusable-list-container {
+				width: 50%;
+				float: left;
+				// .c9-modal-manage-reusable {
+				// 	width: 100%;
+				// 	display: block;
+				// 	text-align: right;
+				// }
+			}
+			.c9-reusable-preview {
+				width: 50%;
+				float: right;
 			}
 		}
 

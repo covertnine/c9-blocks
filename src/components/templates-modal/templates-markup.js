@@ -1,83 +1,110 @@
-// sections
-import streamingAudioPreview from "./section-templates/streaming-audio-preview";
-import largeSpotifyEmbedPlusImageCarousel from "./section-templates/large-spotify-embed-plus-image-carousel";
-import sectionsOverviewPlusTwoTestimonial from "./section-templates/sections-overview-plus-two-testimonial";
-import serviceOverview from "./section-templates/service-overview";
-import restaurantStyleMenu from "./section-templates/restaurant-style-menu";
-import restaurantStyleMenuV2 from "./section-templates/restaurant-style-menu-v2";
-import fullScreenVideoHeadlinePlusButton from "./section-templates/full-screen-video-headline-plus-button";
-import largeGalleryCarousel from "./section-templates/large-gallery-carousel";
-import googleMapPlusAddress from "./section-templates/google-map-plus-address";
-import videoEmbedWithHeadingPlusButton from "./section-templates/video-embed-with-heading-plus-button";
-import testimonial from "./section-templates/testimonial";
-import concertBillPlusTicketsButton from "./section-templates/concert-bill-plus-tickets-button";
-import logoCarousel from "./section-templates/logo-carousel";
-import quickHistory from "./section-templates/quick-history";
-import largeMissionStatementPlusImage from "./section-templates/large-mission-statement-plus-image";
-import faqs2ColWithSmallToggles from "./section-templates/faqs-2-col-with-small-toggles";
-import callToActionPlusVideoBackground from "./section-templates/call-to-action-plus-video-background";
+// New Sections
+import aboutPictureContactCard from "./section-templates/about-picture-contact-card";
+import classicHeaderStatementLogo from "./section-templates/classic-header-statement-logo";
+import concertBillTicketsButton from "./section-templates/concert-bill-tickets-button";
+import eventCallToActionFullscreenVideo from "./section-templates/event-call-to-action-fullscreen-video";
 import eventDetails from "./section-templates/event-details";
-import profilePlusImageCarousel from "./section-templates/profile-plus-image-carousel";
+import faqs2Col from "./section-templates/faqs-2-col-small-toggles";
+import fullscreenVidLgHeadingBtn from "./section-templates/fullscreen-video-large-heading-button";
+import googMapAdd from "./section-templates/google-map-address";
+import lgAboutResumeSocialLinks from "./section-templates/large-about-resume-social-links";
+import lgAudioEmbedFullscreenPhoto from "./section-templates/large-audio-embed-fullscreen-photo";
+import lgCaseStudyPortfolio from "./section-templates/large-case-study-portfolio";
+import lgFeatVidCarousel from "./section-templates/large-featured-video-carousel";
+import lgGalCarousel from "./section-templates/large-gallery-carousel";
+import lgLineupGetTickBtn from "./section-templates/large-lineup-get-tickets-button";
+import lgMissionStmntPhoto from "./section-templates/large-mission-statement-photo";
+import lgPageTitleDescriptionBgImg from "./section-templates/large-page-title-description-background-image";
+import lgSpotifyEmbedImgCarousel from "./section-templates/large-spotify-embed-image-carousel";
+import lgTestimonialFullscreenPhoto from "./section-templates/large-testimonial-fullscreen-photo";
+import leadGenFormOffer from "./section-templates/lead-gen-form-offer";
+import logoCarousel from "./section-templates/logo-carousel";
+import offerDetailsListImgGalShare from "./section-templates/offer-details-list-image-gallery-share";
+import profileImgCarousel from "./section-templates/profile-image-carousel";
+import quickHistory from "./section-templates/quick-history";
+import restStyleMenuV1 from "./section-templates/restaurant-style-menu-v-1";
+import restStyleMenuV2 from "./section-templates/restaurant-style-menu-v-2";
+import serviceOverviewTwoTestimonials from "./section-templates/service-overview-two-testimonials";
 import singleProfile from "./section-templates/single-profile";
-import eventCallToActionPlusVideoBackground from "./section-templates/event-call-to-action-plus-video-background";
-import largeTestimonialPlusBackgroundImage from "./section-templates/large-testimonial-with-image-background";
-import faqToggles from "./section-templates/faq-toggles";
-import largeAudioEmbedPlusBackgroundImage from "./section-templates/large-audio-embed-plus-background-image";
-import largeLineupPlusGetTicketsButton from "./section-templates/large-lineup-plus-get-tickets-button";
-import largedFeaturedVideoCarousel from "./section-templates/large-featured-video-carousel";
-import classicHeaderStatementPlusImage from "./section-templates/classic-header-statement-plus-image";
-import smallVideoBackgroundPlusTitle from "./section-templates/small-video-background-plus-title";
-import headerVideoBackgroundWithTitleHeading from "./section-templates/header-video-background-with-title-heading";
+import streamingAudioPreview from "./section-templates/streaming-audio-preview";
+import teamMemberBios from "./section-templates/team-member-bios";
+import tellAFriendSocialShare from "./section-templates/tell-a-friend-social-share";
+import testimonial from "./section-templates/testimonial";
+import threeStepServiceOverview from "./section-templates/three-step-service-overview";
+import vidEmbedHeadingBtn from "./section-templates/video-embed-heading-button";
+import widescreenVidSimpleBigHeading from "./section-templates/widescreen-video-simple-big-heading";
+import widescreenVideoWTitleDescription from "./section-templates/widescreen-video-with-title-description";
 
-// pages
-import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
-import landingPageAbout from "./page-templates/landing-page-about";
-import landingPageEvent from "./page-templates/landing-page-event";
-import landingPageLaunchRelease from "./page-templates/landing-page-launch-release";
-import landingPageMedia from "./page-templates/landing-page-media";
-import landingPagePriceMenu from "./page-templates/landing-page-price-menu";
-import landingPageService from "./page-templates/landing-page-service";
+import lpAboutCorporate from "./page-templates/landing-page-about-corporate";
+import lpAboutCreative from "./page-templates/landing-page-about-creative";
+import lpContactShort from "./page-templates/contact-short";
+import lpContact from "./page-templates/contact";
+import lpEvent from "./page-templates/event";
+import lpLaunchRelease from "./page-templates/launch-release";
+import lpMedia from "./page-templates/media";
+import lpPortfolio from "./page-templates/portfolio";
+import lpPriceMenu from "./page-templates/price-menu";
+import lpResources from "./page-templates/resources";
+import lpService from "./page-templates/service";
+import lpStyle from "./page-templates/style-guide";
+import leadGen1 from "./page-templates/lead-generation-1";
+import leadGen2 from "./page-templates/lead-generation-2";
+import leadGen3 from "./page-templates/lead-generation-3";
 
 const templateMarkups = {
 	layouts: {
-		landingPageAboutCorporate,
-		landingPageAbout,
-		landingPageEvent,
-		landingPageLaunchRelease,
-		landingPageMedia,
-		landingPagePriceMenu,
-		landingPageService
+		lpAboutCorporate,
+		lpAboutCreative,
+		lpContactShort,
+		lpContact,
+		lpEvent,
+		lpLaunchRelease,
+		lpMedia,
+		// lpPortfolio,
+		lpPriceMenu,
+		lpResources,
+		lpService,
+		lpStyle,
+		// leadGen1,
+		leadGen2,
+		leadGen3
 	},
 	sections: {
-		streamingAudioPreview,
-		largeSpotifyEmbedPlusImageCarousel,
-		sectionsOverviewPlusTwoTestimonial,
-		serviceOverview,
-		restaurantStyleMenu,
-		restaurantStyleMenuV2,
-		fullScreenVideoHeadlinePlusButton,
-		largeGalleryCarousel,
-		googleMapPlusAddress,
-		videoEmbedWithHeadingPlusButton,
-		testimonial,
-		concertBillPlusTicketsButton,
-		logoCarousel,
-		quickHistory,
-		largeMissionStatementPlusImage,
-		faqs2ColWithSmallToggles,
-		callToActionPlusVideoBackground,
+		aboutPictureContactCard,
+		classicHeaderStatementLogo,
+		concertBillTicketsButton,
+		eventCallToActionFullscreenVideo,
 		eventDetails,
-		profilePlusImageCarousel,
+		faqs2Col,
+		fullscreenVidLgHeadingBtn,
+		googMapAdd,
+		lgAboutResumeSocialLinks,
+		lgAudioEmbedFullscreenPhoto,
+		lgCaseStudyPortfolio,
+		lgFeatVidCarousel,
+		lgGalCarousel,
+		lgLineupGetTickBtn,
+		lgMissionStmntPhoto,
+		lgPageTitleDescriptionBgImg,
+		lgSpotifyEmbedImgCarousel,
+		lgTestimonialFullscreenPhoto,
+		leadGenFormOffer,
+		logoCarousel,
+		offerDetailsListImgGalShare,
+		profileImgCarousel,
+		quickHistory,
+		restStyleMenuV1,
+		restStyleMenuV2,
+		serviceOverviewTwoTestimonials,
 		singleProfile,
-		eventCallToActionPlusVideoBackground,
-		largeTestimonialPlusBackgroundImage,
-		faqToggles,
-		largeAudioEmbedPlusBackgroundImage,
-		largeLineupPlusGetTicketsButton,
-		largedFeaturedVideoCarousel,
-		classicHeaderStatementPlusImage,
-		smallVideoBackgroundPlusTitle,
-		headerVideoBackgroundWithTitleHeading,
+		streamingAudioPreview,
+		teamMemberBios,
+		tellAFriendSocialShare,
+		testimonial,
+		threeStepServiceOverview,
+		vidEmbedHeadingBtn,
+		widescreenVidSimpleBigHeading,
+		widescreenVideoWTitleDescription
 	}
 };
 

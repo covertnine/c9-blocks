@@ -6,6 +6,7 @@ import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import ReusableButton from "./reusable-button";
 import { PageTypeHeading } from "./page-type-heading";
+import { TutButton } from "./tut-button";
 import PageTypes from "./page-types";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
@@ -24,14 +25,16 @@ const { Component, Fragment } = wp.element;
 const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
-const { rawHandler } = wp.blocks;
+const { rawHandler, getBlockType, createBlock } = wp.blocks;
 const apiFetch = wp.apiFetch;
+const { BlockPreview } = wp.blockEditor;
 
 class TemplatesModal extends Component {
 	constructor() {
 		super(...arguments);
 
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
+		this.getTuts = this.getTuts.bind(this);
 
 		this.state = {
 			reusables: [],
@@ -40,10 +43,13 @@ class TemplatesModal extends Component {
 			PageTypes,
 			loading: true,
 			updating: false,
-			msg: ""
+			msg: "",
+			tuts: []
 		};
 
 		this.closeNotice = this.closeNotice.bind(this);
+
+		this.getTuts();
 
 		this.getReusableBlocks();
 	}
@@ -94,6 +100,11 @@ class TemplatesModal extends Component {
 			path: `/wp/v2/${postType.rest_base}/?per_page=-1`
 		});
 
+		// Add Reusable Markup to Templates array to add block
+		TemplateMarkups.reusables = reusables.map(item => {
+			return item.content.raw;
+		});
+
 		const blocks = reusables.map(item => {
 			return {
 				name: item.title.raw,
@@ -107,6 +118,17 @@ class TemplatesModal extends Component {
 
 		this.setState({
 			reusables: blocks
+		});
+	}
+
+	async getTuts() {
+		// tuts endpoint created in init.php
+		const tuts = await apiFetch({
+			path: "c9-blocks/v1/tuts"
+		});
+
+		this.setState({
+			tuts
 		});
 	}
 
@@ -187,40 +209,43 @@ class TemplatesModal extends Component {
 			'<iframe src="https://www.covertnine.com/about" width="540" height="450"></iframe>';
 
 		// convert above to React DOM elements
-		const sectionItems = Object.keys(sections).map(k => (
-			<SectionButton
-				open={() => {
-					this.setMessage("Updating page.");
-					this.openNotice();
-				}}
-				close={() => {
-					const { sections } = this.state;
-					sections[k] = rawHandler({
-						HTML: TemplateMarkups.sections[k].markup,
-						mode: "BLOCKS",
-						canUserUseUnfilteredHTML
-					});
-
-					this.setState({ sections });
-					this.setMessage("Page updated.");
-				}}
-				icon={TemplateMarkups.sections[k].icon}
-				preview={TemplateMarkups.sections[k].preview}
-				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
-				section={sections[k]}
-			/>
-		));
+		const sectionItems = Object.keys(sections).map(k => {
+			return (
+				<SectionButton
+					open={() => {
+						this.setMessage("Updating page.");
+						this.openNotice();
+					}}
+					close={() => {
+						const { sections } = this.state;
+						sections[k] = rawHandler({
+							HTML: TemplateMarkups.sections[k].markup,
+							mode: "BLOCKS",
+							canUserUseUnfilteredHTML
+						});
+						this.setState({ sections });
+						this.setMessage("Page updated.");
+					}}
+					icon={TemplateMarkups.sections[k].icon}
+					preview={TemplateMarkups.sections[k].preview}
+					label={__(
+						startCase(TemplateMarkups.sections[k].title).replace("Plus", "+"),
+						"c9-blocks"
+					)}
+					section={sections[k]}
+				/>
+			);
+		});
 
 		const pageTypes = [];
 
 		// Build out the whole pagetypes thing with headings mixed in
-		//
 		Object.keys(PageTypes).forEach(type => {
-			let layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
+			const layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
 				return TemplateMarkups.layouts[k].type === type;
 			});
 
-			let layoutItems = layoutsByType.map(name => {
+			const layoutItems = layoutsByType.map(name => {
 				return (
 					<LayoutButton
 						open={() => {
@@ -240,7 +265,13 @@ class TemplatesModal extends Component {
 						}}
 						icon={TemplateMarkups.layouts[name].icon}
 						preview={TemplateMarkups.layouts[name].preview}
-						label={__(startCase(name).replace("Plus", "+"), "c9-blocks")}
+						label={__(
+							startCase(TemplateMarkups.layouts[name].title).replace(
+								"Plus",
+								"+"
+							),
+							"c9-blocks"
+						)}
 						layout={layouts[name]}
 						description={TemplateMarkups.layouts[name].description}
 					/>
@@ -348,21 +379,48 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
-										<div className="c9-section-options">
-											{this.state.reusables.map(obj => (
-												<ReusableButton
-													icon="wordpress"
-													label={__(obj.name, "c9-blocks")}
-													section={obj.content}
-													open={() => {
-														this.setMessage("Updating page.");
-														this.openNotice();
-													}}
-													close={() => {
-														this.setMessage("Page updated.");
-													}}
-												/>
-											))}
+										<div className="c9-reusable-options">
+											<div className="c9-reusable-list-container">
+												<div className="c9-reusable-list">
+													{this.state.reusables.map((obj, index) => {
+														const blockType = getBlockType(obj.content[0].name);
+														return (
+															<ReusableButton
+																icon={blockType.icon}
+																label={__(obj.name, "c9-blocks")}
+																section={obj.content}
+																open={() => {
+																	this.setMessage("Updating page.");
+																	this.openNotice();
+																}}
+																close={() => {
+																	const { reusables } = this.state;
+																	reusables[index].content = rawHandler({
+																		HTML: TemplateMarkups.reusables[index],
+																		mode: "BLOCKS",
+																		canUserUseUnfilteredHTML
+																	});
+																	this.setState({ reusables });
+																	this.setMessage("Page updated.");
+																}}
+															/>
+														);
+													})}
+												</div>
+												<a
+													className="c9-modal-manage-reusable"
+													href="edit.php?post_type=wp_block"
+												>
+													manage all reusable blocks
+												</a>
+											</div>
+											<div className="c9-reusable-preview">
+												<h1>Block Preview</h1>
+												{/* <BlockPreview
+													viewportWidth={500}
+													blocks={TemplateMarkups.reusables[0]}
+												/> */}
+											</div>
 										</div>
 									</Fragment>
 								);
@@ -370,16 +428,14 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										<div className="c9-reusable-options">
-											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
-											</button>
+											{this.state.tuts.map(tut => {
+												return (
+													<TutButton
+														title={tut.title.rendered}
+														url={tut.link}
+													/>
+												);
+											})}
 										</div>
 									</Fragment>
 								);
