@@ -71,6 +71,35 @@ function load_settings() {
 add_action( 'admin-init', 'load_settings' );
 add_action( 'rest_api_init', 'load_settings' );
 
+
+/**
+ * Add API endpoint for C9 Block tus
+ *
+ * @return void
+ */
+function register_tuts_endpoint() {
+	register_rest_route(
+		'c9-blocks/v1',
+		'/tuts',
+		array(
+			'methods'  => 'GET',
+			'callback' => 'c9_get_tuts',
+		)
+	);
+}
+add_action( 'rest_api_init', 'register_tuts_endpoint' );
+
+/**
+ * Get Covertnine tuts on hitting rest api endpoint
+ *
+ * @return string
+ */
+function c9_get_tuts() {
+	$response = wp_remote_get( 'https://covertnine.com/wp-json/wp/v2/posts' );
+	$tuts     = json_decode( wp_remote_retrieve_body( $response ) );
+	return $tuts;
+}
+
 /**
  * Load Gutenberg Palette
  */

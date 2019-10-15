@@ -6,6 +6,7 @@ import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import ReusableButton from "./reusable-button";
 import { PageTypeHeading } from "./page-type-heading";
+import { TutButton } from "./tut-button";
 import PageTypes from "./page-types";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
@@ -33,6 +34,7 @@ class TemplatesModal extends Component {
 		super(...arguments);
 
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
+		this.getTuts = this.getTuts.bind(this);
 
 		this.state = {
 			reusables: [],
@@ -41,10 +43,13 @@ class TemplatesModal extends Component {
 			PageTypes,
 			loading: true,
 			updating: false,
-			msg: ""
+			msg: "",
+			tuts: []
 		};
 
 		this.closeNotice = this.closeNotice.bind(this);
+
+		this.getTuts();
 
 		this.getReusableBlocks();
 	}
@@ -113,6 +118,17 @@ class TemplatesModal extends Component {
 
 		this.setState({
 			reusables: blocks
+		});
+	}
+
+	async getTuts() {
+		// tuts endpoint created in init.php
+		const tuts = await apiFetch({
+			path: "c9-blocks/v1/tuts"
+		});
+
+		this.setState({
+			tuts
 		});
 	}
 
@@ -390,13 +406,13 @@ class TemplatesModal extends Component {
 															/>
 														);
 													})}
-													<a
-														class="c9-modal-manage-reusable"
-														href="edit.php?post_type=wp_block"
-													>
-														manage all reusable blocks
-													</a>
 												</div>
+												<a
+													className="c9-modal-manage-reusable"
+													href="edit.php?post_type=wp_block"
+												>
+													manage all reusable blocks
+												</a>
 											</div>
 											<div className="c9-reusable-preview">
 												<h1>Block Preview</h1>
@@ -412,16 +428,15 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										<div className="c9-reusable-options">
-											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-												<span>{__("Clear page", "c9-blocks")}</span>
-											</button>
+											{this.state.tuts.map(tut => {
+												console.log(tut);
+												return (
+													<TutButton
+														title={tut.title.rendered}
+														imgURL={"cool"}
+													/>
+												);
+											})}
 										</div>
 									</Fragment>
 								);

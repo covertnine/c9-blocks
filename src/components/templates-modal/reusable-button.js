@@ -21,7 +21,7 @@ const ReusableButton = ({
 			}}
 		>
 			<BlockIcon icon={icon} />
-			<span>{label}</span>
+			<span className="c9-reusable-label">{label}</span>
 		</button>
 	);
 };

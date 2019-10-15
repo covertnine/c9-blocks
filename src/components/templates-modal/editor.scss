@@ -171,8 +171,23 @@
 					font-size: 1.2em;
 					height: 26px;
 					line-height: 21px;
+					margin: 0 auto;
 					margin-bottom: 3px;
 					overflow: auto;
+					&.c9-reusable-label {
+						height: 40px;
+						line-height: 18px;
+					}
+					&.block-editor-block-icon {
+						height: 40px;
+						width: 40px;
+						svg {
+							max-width: none;
+							max-height: none;
+							height: 40px;
+							width: 40px;
+						}
+					}
 				}
 				img {
 					width: 100%;
@@ -228,6 +243,11 @@
 			.c9-reusable-list-container {
 				width: 50%;
 				float: left;
+				// .c9-modal-manage-reusable {
+				// 	width: 100%;
+				// 	display: block;
+				// 	text-align: right;
+				// }
 			}
 			.c9-reusable-preview {
 				width: 50%;

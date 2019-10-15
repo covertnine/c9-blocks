@@ -35,27 +35,18 @@ import vidEmbedHeadingBtn from "./new-section-templates/video-embed-heading-butt
 import widescreenVidSimpleBigHeading from "./new-section-templates/widescreen-video-simple-big-heading";
 import widescreenVideoWTitleDescription from "./new-section-templates/widescreen-video-with-title-description";
 
-// pages
-// import landingPageAboutCorporate from "./page-templates/landing-page-about-corporate";
-// import landingPageAbout from "./page-templates/landing-page-about";
-// import landingPageEvent from "./page-templates/landing-page-event";
-// import landingPageLaunchRelease from "./page-templates/landing-page-launch-release";
-// import landingPageMedia from "./page-templates/landing-page-media";
-// import landingPagePriceMenu from "./page-templates/landing-page-price-menu";
-// import landingPageService from "./page-templates/landing-page-service";
-
 import lpAboutCorporate from "./new-page-templates/landing-page-about-corporate";
 import lpAboutCreative from "./new-page-templates/landing-page-about-creative";
-import lpContactShort from "./new-page-templates/landing-page-contact-short";
-import lpContact from "./new-page-templates/landing-page-contact";
-import lpEvent from "./new-page-templates/landing-page-event";
-import lpLaunchRelease from "./new-page-templates/landing-page-launch-release";
-import lpMedia from "./new-page-templates/landing-page-media";
-import lpPortfolio from "./new-page-templates/landing-page-portfolio";
-import lpPriceMenu from "./new-page-templates/landing-page-price-menu";
-import lpResources from "./new-page-templates/landing-page-resources";
-import lpService from "./new-page-templates/landing-page-service";
-import lpStyle from "./new-page-templates/landing-page-style";
+import lpContactShort from "./new-page-templates/contact-short";
+import lpContact from "./new-page-templates/contact";
+import lpEvent from "./new-page-templates/event";
+import lpLaunchRelease from "./new-page-templates/launch-release";
+import lpMedia from "./new-page-templates/media";
+import lpPortfolio from "./new-page-templates/portfolio";
+import lpPriceMenu from "./new-page-templates/price-menu";
+import lpResources from "./new-page-templates/resources";
+import lpService from "./new-page-templates/service";
+import lpStyle from "./new-page-templates/style-guide";
 import leadGen1 from "./new-page-templates/lead-generation-1";
 import leadGen2 from "./new-page-templates/lead-generation-2";
 import leadGen3 from "./new-page-templates/lead-generation-3";
