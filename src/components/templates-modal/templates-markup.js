@@ -35,21 +35,21 @@ import vidEmbedHeadingBtn from "./new-section-templates/video-embed-heading-butt
 import widescreenVidSimpleBigHeading from "./new-section-templates/widescreen-video-simple-big-heading";
 import widescreenVideoWTitleDescription from "./new-section-templates/widescreen-video-with-title-description";
 
-import lpAboutCorporate from "./new-page-templates/landing-page-about-corporate";
-import lpAboutCreative from "./new-page-templates/landing-page-about-creative";
-import lpContactShort from "./new-page-templates/contact-short";
-import lpContact from "./new-page-templates/contact";
-import lpEvent from "./new-page-templates/event";
-import lpLaunchRelease from "./new-page-templates/launch-release";
-import lpMedia from "./new-page-templates/media";
-import lpPortfolio from "./new-page-templates/portfolio";
-import lpPriceMenu from "./new-page-templates/price-menu";
-import lpResources from "./new-page-templates/resources";
-import lpService from "./new-page-templates/service";
-import lpStyle from "./new-page-templates/style-guide";
-import leadGen1 from "./new-page-templates/lead-generation-1";
-import leadGen2 from "./new-page-templates/lead-generation-2";
-import leadGen3 from "./new-page-templates/lead-generation-3";
+import lpAboutCorporate from "./page-templates/landing-page-about-corporate";
+import lpAboutCreative from "./page-templates/landing-page-about-creative";
+import lpContactShort from "./page-templates/contact-short";
+import lpContact from "./page-templates/contact";
+import lpEvent from "./page-templates/event";
+import lpLaunchRelease from "./page-templates/launch-release";
+import lpMedia from "./page-templates/media";
+import lpPortfolio from "./page-templates/portfolio";
+import lpPriceMenu from "./page-templates/price-menu";
+import lpResources from "./page-templates/resources";
+import lpService from "./page-templates/service";
+import lpStyle from "./page-templates/style-guide";
+import leadGen1 from "./page-templates/lead-generation-1";
+import leadGen2 from "./page-templates/lead-generation-2";
+import leadGen3 from "./page-templates/lead-generation-3";
 
 const templateMarkups = {
 	layouts: {

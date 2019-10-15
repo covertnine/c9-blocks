@@ -8,7 +8,7 @@ export default {
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"http://cortex.covertnine.com/wp-content/uploads/2019/10/jared-arango-1-mh6U3qeGQ-unsplash-web.jpg","containerHue":"#000000","bgImgAttach":true,"blendMode":"normal","minScreenHeight":90,"focalPoint":{"x":0.5023041474654378,"y":0}} -->
 	<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(0,0,0,1)"><div class="c9-image-container" style="background-position:50.23041474654379% 0%;background-image:url(http://cortex.covertnine.com/wp-content/uploads/2019/10/jared-arango-1-mh6U3qeGQ-unsplash-web.jpg);background-repeat:no-repeat;background-size:cover"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","minScreenHeight":100} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column" style="min-height:100vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"We're just a bunch of old guys trying to stay hip","type":"c9-txl display-","textColor":"#ffffff","weight":"bold"} -->
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"We're just a bunch of old guys trying to stay hip","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-bold" style="color:#ffffff">We're just a bunch of old guys trying to stay hip</h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
@@ -24,7 +24,7 @@ export default {
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:c9-blocks/heading {"heading":"Design Main","tagLevel":5,"displayLevel":"5","type":"c9-sh subhead-h","textColor":"#ffffff","overrideStyle":true} -->
+	<!-- wp:c9-blocks/heading {"heading":"Design Main","tagLevel":5,"type":"c9-sh subhead-h","textColor":"#ffffff","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h5 class="c9-sh subhead-h5" style="color:#ffffff">Design Main</h5></div>
 	<!-- /wp:c9-blocks/heading --></div></div>
 	<!-- /wp:c9-blocks/column -->
@@ -37,10 +37,6 @@ export default {
 	<!-- wp:c9-blocks/heading {"heading":"» Read my \u003ca href=\u0022#\u0022\u003ecv or resume\u003c/a\u003e\u003cbr\u003e» \u003cspan style=\u0022text-decoration: underline;\u0022\u003eFollow Me\u003c/span\u003e\u003cbr\u003e» \u003ca href=\u0022#\u0022\u003eBusiness Social\u003c/a\u003e\u003cbr\u003e» \u003ca href=\u0022#\u0022\u003ePhotos of my dog\u003c/a\u003e","tagLevel":5,"displayLevel":"3","type":"c9-sh subhead-h","textColor":"#ffffff","weight":"light","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h5 class="c9-sh subhead-h3 font-weight-light" style="color:#ffffff">» Read my <a href="#">cv or resume</a><br>» <span style="text-decoration: underline;">Follow Me</span><br>» <a href="#">Business Social</a><br>» <a href="#">Photos of my dog</a></h5></div>
 	<!-- /wp:c9-blocks/heading -->
-	
-	<!-- wp:paragraph -->
-	<p></p>
-	<!-- /wp:paragraph -->
 	
 	<!-- wp:spacer {"height":26} -->
 	<div style="height:26px" aria-hidden="true" class="wp-block-spacer"></div>
