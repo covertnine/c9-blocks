@@ -95,7 +95,9 @@ add_action( 'rest_api_init', 'register_tuts_endpoint' );
  * @return string
  */
 function c9_get_tuts() {
-	return 'sick';
+	$response = wp_remote_get( 'https://covertnine.com/wp-json/wp/v2/posts' );
+	$tuts     = json_decode( wp_remote_retrieve_body( $response ) );
+	return $tuts;
 }
 
 /**

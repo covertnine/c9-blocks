@@ -6,6 +6,7 @@ import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import ReusableButton from "./reusable-button";
 import { PageTypeHeading } from "./page-type-heading";
+import { TutButton } from "./tut-button";
 import PageTypes from "./page-types";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
@@ -43,7 +44,7 @@ class TemplatesModal extends Component {
 			loading: true,
 			updating: false,
 			msg: "",
-			tuts: "cool"
+			tuts: []
 		};
 
 		this.closeNotice = this.closeNotice.bind(this);
@@ -121,11 +122,14 @@ class TemplatesModal extends Component {
 	}
 
 	async getTuts() {
+		// tuts endpoint created in init.php
 		const tuts = await apiFetch({
 			path: "c9-blocks/v1/tuts"
 		});
 
-		console.log(tuts);
+		this.setState({
+			tuts
+		});
 	}
 
 	/**
@@ -424,8 +428,15 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										<div className="c9-reusable-options">
-											{console.log(this.state.tuts)}
-											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
+											{this.state.tuts.map(tut => {
+												console.log(tut);
+												return (
+													<TutButton
+														title={tut.title.rendered}
+														imgURL={"cool"}
+													/>
+												);
+											})}
 										</div>
 									</Fragment>
 								);
