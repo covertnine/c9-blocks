@@ -1,4 +1,27 @@
 .c9-templates-modal {
+	button {
+		border: none;
+		margin: 0;
+		padding: 0;
+		width: auto;
+		overflow: visible;
+
+		background: transparent;
+
+		/* inherit font & color from ancestor */
+		color: inherit;
+		font: inherit;
+
+		/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+		line-height: normal;
+
+		/* Corrects font smoothing for webkit */
+		-webkit-font-smoothing: inherit;
+		-moz-osx-font-smoothing: inherit;
+
+		/* Corrects inability to style clickable `input` types in iOS */
+		-webkit-appearance: none;
+	}
 	.components-modal__icon-container svg {
 		height: 100%;
 	}
@@ -114,7 +137,8 @@
 		}
 
 		.c9-layout-options,
-		.c9-section-options {
+		.c9-section-options,
+		.c9-reusable-list {
 			display: grid;
 			grid-column-gap: 1em;
 			grid-row-gap: 1.3em;
@@ -197,6 +221,17 @@
 				background: #ffffff;
 				border: 1px solid #979797;
 				padding: 10px;
+			}
+		}
+
+		.c9-reusable-options {
+			.c9-reusable-list-container {
+				width: 50%;
+				float: left;
+			}
+			.c9-reusable-preview {
+				width: 50%;
+				float: right;
 			}
 		}
 
