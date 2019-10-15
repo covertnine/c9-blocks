@@ -33,6 +33,7 @@ class TemplatesModal extends Component {
 		super(...arguments);
 
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
+		this.getTuts = this.getTuts.bind(this);
 
 		this.state = {
 			reusables: [],
@@ -41,10 +42,13 @@ class TemplatesModal extends Component {
 			PageTypes,
 			loading: true,
 			updating: false,
-			msg: ""
+			msg: "",
+			tuts: "cool"
 		};
 
 		this.closeNotice = this.closeNotice.bind(this);
+
+		this.getTuts();
 
 		this.getReusableBlocks();
 	}
@@ -114,6 +118,14 @@ class TemplatesModal extends Component {
 		this.setState({
 			reusables: blocks
 		});
+	}
+
+	async getTuts() {
+		const tuts = await apiFetch({
+			path: "c9-blocks/v1/tuts"
+		});
+
+		console.log(tuts);
 	}
 
 	/**
@@ -412,15 +424,8 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										<div className="c9-reusable-options">
+											{console.log(this.state.tuts)}
 											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
-											<button
-												onClick={() => {
-													resetBlocks([]);
-												}}
-												className="btn btn-danger btn-clear"
-											>
-												<Icon icon={icons.close} />
-											</button>
 										</div>
 									</Fragment>
 								);
