@@ -65,7 +65,7 @@ const templateMarkups = {
 		lpResources,
 		lpService,
 		lpStyle,
-		// leadGen1,
+		leadGen1,
 		leadGen2,
 		leadGen3
 	},
