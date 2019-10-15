@@ -225,11 +225,11 @@ class TemplatesModal extends Component {
 
 		// Build out the whole pagetypes thing with headings mixed in
 		Object.keys(PageTypes).forEach(type => {
-			let layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
+			const layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
 				return TemplateMarkups.layouts[k].type === type;
 			});
 
-			let layoutItems = layoutsByType.map(name => {
+			const layoutItems = layoutsByType.map(name => {
 				return (
 					<LayoutButton
 						open={() => {
@@ -348,14 +348,21 @@ class TemplatesModal extends Component {
 							case "section-templates":
 								return (
 									<Fragment>
+										{updating && updateBar}
 										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
 							case "page-templates":
-								return <Fragment>{pageTypes}</Fragment>;
+								return (
+									<Fragment>
+										{updating && updateBar}
+										{pageTypes}
+									</Fragment>
+								);
 							case "saved-blocks":
 								return (
 									<Fragment>
+										{updating && updateBar}
 										<div className="c9-reusable-options">
 											<div className="c9-reusable-list">
 												{this.state.reusables.map((obj, index) => {
@@ -395,7 +402,7 @@ class TemplatesModal extends Component {
 							case "tutorial":
 								return (
 									<Fragment>
-										<div className="c9-tutorial">
+										<div className="c9-reusable-options">
 											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
 											<button
 												onClick={() => {
