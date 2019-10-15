@@ -92,6 +92,11 @@
 	top: 0px;
 }
 
+/* inspector buttons height changes to override WP defaults */
+.components-panel__body.plugin-c9-panel .components-button.is-large {
+	height: auto;
+}
+
 .block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-list__layout .block-editor-block-list__empty-block-inserter,
 .block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-list__layout .block-editor-default-block-appender .block-editor-inserter {
 	right: -4px;
