@@ -90,11 +90,12 @@
 	// tab panel
 	.c9-component-modal-tab-panel {
 		button:hover {
+			cursor: pointer;
 			box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
-			svg path {
-				transform-origin: center;
-				animation: 0.5s scaleIn;
-			}
+			// svg path {
+			// 	transform-origin: center;
+			// 	animation: 0.5s scaleIn;
+			// }
 		}
 		.btn-danger {
 			color: #819fb3;
@@ -171,9 +172,8 @@
 					font-size: 1.2em;
 					height: 26px;
 					line-height: 21px;
-					margin: 0 auto;
-					margin-bottom: 3px;
-					// overflow: auto;
+					margin: 2px auto;
+					margin-top: 4px;
 					&.c9-reusable-label {
 						height: 40px;
 						line-height: 18px;
@@ -200,6 +200,10 @@
 				min-height: 52px;
 				width: 95%;
 				margin: 5px auto;
+				svg {
+					height: 100%;
+					width: 100%;
+				}
 			}
 			span {
 				margin: 0 auto;
