@@ -36,6 +36,11 @@ div[data-type="c9-blocks/column-container"] .editor-block-list__block-edit.block
 	margin-bottom: 0px;
 }
 
+div[data-type="c9-blocks/heading"] .block-editor-block-list__block>.block-editor-block-list__insertion-point {
+	top: 8px;
+	z-index: 24;
+}
+
 .editor-styles-wrapper .c9-heading .h1.c9-txl,
 .editor-styles-wrapper .c9-heading h1.c9-txl {
 	font-size: 8em;
