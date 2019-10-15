@@ -4,6 +4,7 @@
 import startCase from "lodash/startCase";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
+import ReusableButton from "./reusable-button";
 import { PageTypeHeading } from "./page-type-heading";
 import PageTypes from "./page-types";
 import TemplateMarkups from "./templates-markup";
@@ -89,7 +90,9 @@ class TemplatesModal extends Component {
 		const { canUserUseUnfilteredHTML } = this.props;
 
 		const postType = await apiFetch({ path: `/wp/v2/types/wp_block` });
-		const reusables = await apiFetch({ path: `/wp/v2/${postType.rest_base}` });
+		const reusables = await apiFetch({
+			path: `/wp/v2/${postType.rest_base}/?per_page=-1`
+		});
 
 		const blocks = reusables.map(item => {
 			return {
@@ -178,6 +181,10 @@ class TemplatesModal extends Component {
 				</button>
 			</div>
 		);
+
+		// tutorial iframe
+		const iframe =
+			'<iframe src="https://www.covertnine.com/about" width="540" height="450"></iframe>';
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => (
@@ -327,9 +334,7 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
-										<div className="c9-section-options">
-											{sectionItems}
-										</div>
+										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
 							case "page-templates":
@@ -345,10 +350,17 @@ class TemplatesModal extends Component {
 										{updating && updateBar}
 										<div className="c9-section-options">
 											{this.state.reusables.map(obj => (
-												<SectionButton
+												<ReusableButton
 													icon="wordpress"
 													label={__(obj.name, "c9-blocks")}
 													section={obj.content}
+													open={() => {
+														this.setMessage("Updating page.");
+														this.openNotice();
+													}}
+													close={() => {
+														this.setMessage("Page updated.");
+													}}
 												/>
 											))}
 										</div>
@@ -357,8 +369,17 @@ class TemplatesModal extends Component {
 							case "tutorial":
 								return (
 									<Fragment>
-										<div className="c9-section-options">
-											Insert tutorial here.
+										<div className="c9-reusable-options">
+											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
+											<button
+												onClick={() => {
+													resetBlocks([]);
+												}}
+												className="btn btn-danger btn-clear"
+											>
+												<Icon icon={icons.close} />
+												<span>{__("Clear page", "c9-blocks")}</span>
+											</button>
 										</div>
 									</Fragment>
 								);
