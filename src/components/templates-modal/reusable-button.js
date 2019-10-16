@@ -23,6 +23,7 @@ const ReusableButton = ({
 			}}
 			onMouseEnter={() => {
 				mouseIn();
+				console.log(section);
 			}}
 			onMouseLeave={() => {
 				mouseOut();
