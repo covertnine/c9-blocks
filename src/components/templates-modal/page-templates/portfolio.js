@@ -34,8 +34,8 @@ export default {
 	<div class="section-heading c9-heading text-left"><h5 class="c9-sh subhead-h3 font-weight-light" style="color:#ffffff">Nam tempor sagittis ex vitae scelerisque. Vivamus ex eros, eleifend sit amet tincidunt in, commodo et quam. Suspendisse potenti. Suspendisse ultrices tortor pulvinar, commodo lacus vitae, efficitur felis. Cras volutpat libero neque, et cursus felis consequat nec. <br><br>Phasellus at viverra ipsum. Morbi luctus malesuada arcu, sed ullamcorper dolor luctus id. Curabitur pulvinar auctor elit, non malesuada arcu dictum id.<br><br>Phasellus at viverra ipsum. Morbi luctus malesuada arcu, sed ullamcorper dolor luctus id. </h5></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:c9-blocks/heading {"heading":"» Read my \u003ca href=\u0022#\u0022\u003ecv or resume\u003c/a\u003e\u003cbr\u003e» \u003cspan style=\u0022text-decoration: underline;\u0022\u003eFollow Me\u003c/span\u003e\u003cbr\u003e» \u003ca href=\u0022#\u0022\u003eBusiness Social\u003c/a\u003e\u003cbr\u003e» \u003ca href=\u0022#\u0022\u003ePhotos of my dog\u003c/a\u003e","tagLevel":5,"displayLevel":"3","type":"c9-sh subhead-h","textColor":"#ffffff","weight":"light","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-left"><h5 class="c9-sh subhead-h3 font-weight-light" style="color:#ffffff">» Read my <a href="#">cv or resume</a><br>» <span style="text-decoration: underline;">Follow Me</span><br>» <a href="#">Business Social</a><br>» <a href="#">Photos of my dog</a></h5></div>
+	<!-- wp:c9-blocks/heading -->
+	<div class="section-heading c9-heading text-left"><h1 class="c9-h"></h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:spacer {"height":26} -->
@@ -214,8 +214,8 @@ export default {
 	<div class="section-heading c9-heading text-center"><h3 class="c9-h h1">Namey McNamster</h3></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:c9-blocks/heading {"heading":"Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. \u003ca href=\u0022http://cortex.covertnine.com/wp-admin/post.php?post=319\u0026amp;action=edit#\u0022\u003eDramatically\u003c/a\u003e.","tagLevel":6,"displayLevel":"3","type":"c9-sh subhead-h","textAlign":"center","weight":"light","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-center"><h6 class="c9-sh subhead-h3 font-weight-light">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. <a href="http://cortex.covertnine.com/wp-admin/post.php?post=319&amp;action=edit#">Dramatically</a>.</h6></div>
+	<!-- wp:c9-blocks/heading {"className":"text-center"} -->
+	<div class="section-heading c9-heading text-center text-left"><h1 class="c9-h"></h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:spacer {"height":31} -->

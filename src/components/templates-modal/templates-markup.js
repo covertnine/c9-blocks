@@ -60,7 +60,7 @@ const templateMarkups = {
 		lpEvent,
 		lpLaunchRelease,
 		lpMedia,
-		// lpPortfolio,
+		lpPortfolio,
 		lpPriceMenu,
 		lpResources,
 		lpService,

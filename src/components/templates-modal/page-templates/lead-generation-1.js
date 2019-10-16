@@ -164,8 +164,8 @@ export default {
 	<!-- wp:c9-blocks/grid {"instanceId":5,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#e4f7ff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(228,247,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"\u0022Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.\u0022","tagLevel":5,"displayLevel":"4","textAlign":"center","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-center"><h5 class="c9-h h4">"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line."</h5></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"className":"text-center"} -->
+	<div class="section-heading c9-heading text-center text-left"><h1 class="c9-h"></h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"Dude McDudeface, Chief Officer of Cool","tagLevel":5,"displayLevel":"5","textAlign":"center","weight":"light","overrideStyle":true} -->
@@ -178,8 +178,8 @@ export default {
 	<!-- wp:c9-blocks/grid {"instanceId":6} -->
 	<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#cd2653","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(205,38,83,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"\u0022Blah Blah blah nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.\u0022","displayLevel":"4","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-center"><h1 class="c9-h h4" style="color:#ffffff">"Blah Blah blah nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line."</h1></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"className":"text-center"} -->
+	<div class="section-heading c9-heading text-center text-left"><h1 class="c9-h"></h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"\u003cstrong\u003eDude McDudeface, Chief Officer of Cool\u003c/strong\u003e","tagLevel":6,"textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
@@ -192,8 +192,8 @@ export default {
 	<!-- wp:c9-blocks/grid {"instanceId":7,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#6d6d6d","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(109,109,109,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"\u0022Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.\u0022","tagLevel":5,"displayLevel":"4","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-center"><h5 class="c9-h h4" style="color:#ffffff">"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line."</h5></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"className":"text-center"} -->
+	<div class="section-heading c9-heading text-center text-left"><h1 class="c9-h"></h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:c9-blocks/heading {"heading":"Dude McDudeface, Chief Officer of Cool","tagLevel":6,"displayLevel":"6","textColor":"#ffffff","textAlign":"center","weight":"light","overrideStyle":true} -->
