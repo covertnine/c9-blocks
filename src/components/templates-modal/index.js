@@ -25,7 +25,7 @@ const { Component, Fragment } = wp.element;
 const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
-const { rawHandler, getBlockType, createBlock } = wp.blocks;
+const { rawHandler, getBlockType, createBlock, cloneBlock } = wp.blocks;
 const apiFetch = wp.apiFetch;
 const { BlockPreview } = wp.blockEditor;
 
@@ -413,8 +413,9 @@ class TemplatesModal extends Component {
 																	this.setMessage("Page updated.");
 																}}
 																mouseIn={() => {
-																	this.setState({ hoveredItem: obj });
-																	console.log(obj);
+																	this.setState({
+																		hoveredItem: obj.content[0].clientId
+																	});
 																}}
 																mouseOut={() => {
 																	this.setState({ hoveredItem: null });
@@ -431,11 +432,9 @@ class TemplatesModal extends Component {
 												</a>
 											</div>
 											<div className="c9-reusable-preview">
-												{hoveredItem && <h1>preview</h1>}
-												{/* <BlockPreview
-													viewportWidth={500}
-													blocks={TemplateMarkups.reusables[0]}
-												/> */}
+												{hoveredItem && (
+													<BlockPreview blocks={cloneBlock(hoveredItem)} />
+												)}
 											</div>
 										</div>
 									</Fragment>
