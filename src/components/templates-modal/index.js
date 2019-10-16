@@ -346,9 +346,10 @@ class TemplatesModal extends Component {
 							title: (
 								<Fragment
 									onClick={() => {
+										console.log("sick");
 										resetBlocks([]);
 									}}
-									className="btn btn-danger btn-clear"
+									className={"btn btn-danger btn-clear"}
 								>
 									<Icon icon={icons.close} />
 									<span>{__("Clear page", "c9-blocks")}</span>
@@ -442,7 +443,7 @@ class TemplatesModal extends Component {
 							case "tutorial":
 								return (
 									<Fragment>
-										<div className="c9-reusable-options">
+										<div className="c9-tutorials">
 											{this.state.tuts.map(tut => {
 												return (
 													<TutButton
@@ -455,7 +456,11 @@ class TemplatesModal extends Component {
 									</Fragment>
 								);
 							default:
-								return <Fragment>The page has been cleared.</Fragment>;
+								return (
+									<div className="c9-page-cleared">
+										The page has been cleared.
+									</div>
+								);
 						}
 					}}
 				</TabPanel>

@@ -1,4 +1,10 @@
 .c9-templates-modal {
+	a {
+		color: #819fb3;
+	}
+	a:hover {
+		color: #576d7b;
+	}
 	button {
 		border: none;
 		margin: 0;
@@ -143,7 +149,8 @@
 
 		.c9-layout-options,
 		.c9-section-options,
-		.c9-reusable-list {
+		.c9-reusable-list,
+		.c9-tutorials {
 			display: grid;
 			grid-column-gap: 1em;
 			grid-row-gap: 1.3em;
@@ -261,6 +268,17 @@
 				width: 50%;
 				float: right;
 			}
+		}
+
+		.c9-tutorials .c9-tut-wrapper {
+			min-height: 100px;
+			padding: 10px;
+		}
+
+		.c9-page-cleared {
+			text-align: center;
+			font-size: 20px;
+			color: #576d7b;
 		}
 
 		.components-tab-panel__tabs {

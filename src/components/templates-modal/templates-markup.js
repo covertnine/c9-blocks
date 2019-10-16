@@ -35,8 +35,8 @@ import vidEmbedHeadingBtn from "./section-templates/video-embed-heading-button";
 import widescreenVidSimpleBigHeading from "./section-templates/widescreen-video-simple-big-heading";
 import widescreenVideoWTitleDescription from "./section-templates/widescreen-video-with-title-description";
 
-import lpAboutCorporate from "./page-templates/landing-page-about-corporate";
-import lpAboutCreative from "./page-templates/landing-page-about-creative";
+import lpAboutCorporate from "./page-templates/about-corporate";
+import lpAboutCreative from "./page-templates/about-creative";
 import lpContactShort from "./page-templates/contact-short";
 import lpContact from "./page-templates/contact";
 import lpEvent from "./page-templates/event";
