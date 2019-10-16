@@ -40,6 +40,7 @@ class TemplatesModal extends Component {
 			reusables: [],
 			sections: this.props.sections,
 			layouts: this.props.layouts,
+			hoveredItem: null,
 			PageTypes,
 			loading: true,
 			updating: false,
@@ -177,7 +178,14 @@ class TemplatesModal extends Component {
 
 	render() {
 		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
-		const { sections, layouts, loading, updating, msg } = this.state;
+		const {
+			sections,
+			layouts,
+			loading,
+			updating,
+			msg,
+			hoveredItem
+		} = this.state;
 
 		const updateBar = (
 			<div className="c9-notice components-notice is-success is-dismissible">
@@ -403,6 +411,13 @@ class TemplatesModal extends Component {
 																	this.setState({ reusables });
 																	this.setMessage("Page updated.");
 																}}
+																mouseIn={() => {
+																	this.setState({ hoveredItem: obj });
+																	console.log(obj);
+																}}
+																mouseOut={() => {
+																	this.setState({ hoveredItem: null });
+																}}
 															/>
 														);
 													})}
@@ -415,7 +430,7 @@ class TemplatesModal extends Component {
 												</a>
 											</div>
 											<div className="c9-reusable-preview">
-												<h1>Block Preview</h1>
+												{hoveredItem && <h1>preview</h1>}
 												{/* <BlockPreview
 													viewportWidth={500}
 													blocks={TemplateMarkups.reusables[0]}
