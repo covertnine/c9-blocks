@@ -430,9 +430,11 @@ class TemplatesModal extends Component {
 													manage all reusable blocks
 												</a>
 											</div>
-											<div className="c9-reusable-preview">
-												{/* {hoveredItem && <BlockPreview blocks={hoveredItem} />} */}
-											</div>
+											{hoveredItem && BlockPreview && (
+												<div className="c9-reusable-preview">
+													<BlockPreview blocks={hoveredItem} />
+												</div>
+											)}
 										</div>
 									</Fragment>
 								);
