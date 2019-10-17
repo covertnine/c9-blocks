@@ -255,8 +255,12 @@
 		}
 
 		.c9-reusable-options {
+			.c9-reusable-list {
+				grid-template-columns: repeat(3, 1fr);
+				padding-right: 20px;
+			}
 			.c9-reusable-list-container {
-				width: 50%;
+				width: 40%;
 				float: left;
 				// .c9-modal-manage-reusable {
 				// 	width: 100%;
@@ -265,8 +269,12 @@
 				// }
 			}
 			.c9-reusable-preview {
-				width: 50%;
+				background: #819fb3;
+				padding: 20px;
+				width: 60%;
 				float: right;
+				height: 100vh;
+				overflow: scroll;
 			}
 		}
 
