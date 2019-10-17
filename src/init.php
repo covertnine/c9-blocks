@@ -346,13 +346,10 @@ function c9_blocks_front_assets() {
 // Hook: c9 Blocks Frontend.
 add_action( 'wp_enqueue_scripts', 'c9_blocks_front_assets', 110 );
 
-add_action( 'admin_menu', 'c9_reusable_link' );
-function c9_reusable_link() {
-	add_theme_page( 'c9_manage_reusable_blocks', 'Manage All Reusable Blocks', 'read', 'c9-blocks', '', 'dashicons-text', 1 );
-}
 
-add_action( 'admin_menu', 'c9_manage_reusable_blocks' );
-function c9_manage_reusable_blocks() {
-	global $menu;
-	$menu[1][2] = 'http://www.example.com';
+function add_external_link_admin_submenu() {
+	global $submenu;
+	$permalink               = admin_url() . 'edit.php?post_type=wp_block';
+	$submenu['themes.php'][] = array( 'Reusable Blocks', 'manage_options', $permalink );
 }
+add_action( 'admin_menu', 'add_external_link_admin_submenu' );
