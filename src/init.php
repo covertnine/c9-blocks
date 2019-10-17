@@ -35,7 +35,7 @@ add_filter(
 /**
  * Set C9 blocks settings.
  */
-function load_settings() {
+function c9_load_settings() {
 	// Register setting.
 	register_setting(
 		'c9_blocks_colors',
@@ -68,8 +68,8 @@ function load_settings() {
 	);
 }
 
-add_action( 'admin-init', 'load_settings' );
-add_action( 'rest_api_init', 'load_settings' );
+add_action( 'admin-init', 'c9_load_settings' );
+add_action( 'rest_api_init', 'c9_load_settings' );
 
 
 /**
@@ -77,7 +77,7 @@ add_action( 'rest_api_init', 'load_settings' );
  *
  * @return void
  */
-function register_tuts_endpoint() {
+function c9_register_tuts_endpoint() {
 	register_rest_route(
 		'c9-blocks/v1',
 		'/tuts',
@@ -87,7 +87,7 @@ function register_tuts_endpoint() {
 		)
 	);
 }
-add_action( 'rest_api_init', 'register_tuts_endpoint' );
+add_action( 'rest_api_init', 'c9_register_tuts_endpoint' );
 
 /**
  * Get Covertnine tuts on hitting rest api endpoint
@@ -103,7 +103,7 @@ function c9_get_tuts() {
 /**
  * Load Gutenberg Palette
  */
-function load_color_palette() {
+function c9_load_color_palette() {
 	$theme_palette = get_theme_support( 'editor-color-palette' );
 	update_option( 'c9_orig_colors', $theme_palette );
 
@@ -129,8 +129,8 @@ function load_color_palette() {
 				$newpalette = $san_palette;
 			}
 			add_theme_support( 'editor-color-palette', $newpalette );
-			add_action( 'wp_head', 'print_gutenberg_style', 8 );
-			add_action( 'admin_print_styles', 'print_gutenberg_style', 21 );
+			add_action( 'wp_head', 'c9_print_gutenberg_style', 8 );
+			add_action( 'admin_print_styles', 'c9_print_gutenberg_style', 21 );
 		}
 	}
 }
@@ -138,7 +138,7 @@ function load_color_palette() {
 /**
  * Print Gutenberg Palette Styles
  */
-function print_gutenberg_style() {
+function c9_print_gutenberg_style() {
 	if ( is_admin() ) {
 		$screen = get_current_screen();
 		if ( ! $screen || ! $screen->is_block_editor() ) {
@@ -166,7 +166,7 @@ function print_gutenberg_style() {
 		}
 	}
 }
-add_action( 'after_setup_theme', 'load_color_palette', 999 );
+add_action( 'after_setup_theme', 'c9_load_color_palette', 999 );
 
 /**
  * Initialize the blocks
@@ -346,10 +346,36 @@ function c9_blocks_front_assets() {
 // Hook: c9 Blocks Frontend.
 add_action( 'wp_enqueue_scripts', 'c9_blocks_front_assets', 110 );
 
-
-function add_external_link_admin_submenu() {
+/**
+ * Create Link to Manage Reusable Blocks in Appearance Menu
+ *
+ * @return void
+ */
+function c9_add_reusable_link() {
 	global $submenu;
 	$permalink               = admin_url() . 'edit.php?post_type=wp_block';
-	$submenu['themes.php'][] = array( 'Reusable Blocks', 'manage_options', $permalink );
+	$submenu['themes.php'][] = array( 'C9 Saved Blocks', 'manage_options', $permalink );
 }
-add_action( 'admin_menu', 'add_external_link_admin_submenu' );
+add_action( 'admin_menu', 'c9_add_reusable_link' );
+
+/**
+ * Add Getting Started Page to Appearance Menu
+ *
+ * @return void
+ */
+function c9_add_getting_started_page() {
+	add_theme_page( 'C9 Blocks', 'C9 Blocks', 'manage_options', 'c9-blocks-getting-started', 'c9_render_getting_started' );
+}
+add_action( 'admin_menu', 'c9_add_getting_started_page' );
+
+/**
+ * Render Admin Page
+ *
+ * @return void
+ */
+function c9_render_getting_started() {
+	include_once( plugin_dir_path( __DIR__ ) . 'admin/class-getting-started.php' );
+	$tuts = c9_get_tuts();
+	$page = C9_Block_Getting_Started::render( $tuts );
+	echo $page;
+}
