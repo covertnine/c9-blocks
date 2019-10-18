@@ -276,6 +276,10 @@
 				padding-left: 10px;
 				grid-column-gap: 2em;
 				grid-row-gap: 1.9em;
+				button span {
+					font-size: 1.1em;
+					line-height: 1.2;
+				}
 			}
 			.c9-reusable-list-container {
 				width: 40%;
@@ -283,11 +287,6 @@
 				padding-top: 10px;
 				height: 100%;
 				overflow: scroll;
-				// .c9-modal-manage-reusable {
-				// 	width: 100%;
-				// 	display: block;
-				// 	text-align: right;
-				// }
 			}
 			.c9-reusable-preview {
 				padding-left: 20px;
