@@ -270,8 +270,15 @@
 
 		.c9-reusable-options {
 			height: 100%;
+			.c9-reusable-list-container {
+				width: 100%;
+				float: left;
+				padding-top: 10px;
+				height: 100%;
+				overflow: scroll;
+			}
 			.c9-reusable-list {
-				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(7, 1fr);
 				padding-right: 20px;
 				padding-left: 10px;
 				grid-column-gap: 2em;
@@ -281,19 +288,20 @@
 					line-height: 1.2;
 				}
 			}
-			.c9-reusable-list-container {
-				width: 40%;
-				float: left;
-				padding-top: 10px;
-				height: 100%;
-				overflow: scroll;
-			}
-			.c9-reusable-preview {
-				padding-left: 20px;
-				width: 60%;
-				float: right;
-				height: 100%;
-				overflow: scroll;
+			&.c9-preview-enabled {
+				.c9-reusable-list-container {
+					width: 40%;
+					.c9-reusable-list {
+						grid-template-columns: repeat(3, 1fr);
+					}
+				}
+				.c9-reusable-preview {
+					padding-left: 20px;
+					width: 60%;
+					float: right;
+					height: 100%;
+					overflow: scroll;
+				}
 			}
 		}
 

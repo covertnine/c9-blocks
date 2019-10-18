@@ -387,7 +387,12 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updating && updateBar}
-										<div className="c9-reusable-options">
+										<div
+											className={
+												"c9-reusable-options " +
+												(BlockPreview ? "c9-preview-enabled" : "")
+											}
+										>
 											<div className="c9-reusable-list-container">
 												<div className="c9-reusable-list">
 													{this.state.reusables.map((obj, index) => {
