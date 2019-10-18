@@ -346,7 +346,6 @@ class TemplatesModal extends Component {
 							title: (
 								<Fragment
 									onClick={() => {
-										console.log("sick");
 										resetBlocks([]);
 									}}
 									className={"btn btn-danger btn-clear"}
@@ -414,11 +413,11 @@ class TemplatesModal extends Component {
 																}}
 																mouseIn={() => {
 																	this.setState({
-																		hoveredItem: obj.content[0].clientId
+																		hoveredItem: obj.content[0]
 																	});
 																}}
 																mouseOut={() => {
-																	this.setState({ hoveredItem: null });
+																	// this.setState({ hoveredItem: null });
 																}}
 															/>
 														);
@@ -431,11 +430,11 @@ class TemplatesModal extends Component {
 													manage all reusable blocks
 												</a>
 											</div>
-											<div className="c9-reusable-preview">
-												{hoveredItem && (
-													<BlockPreview blocks={cloneBlock(hoveredItem)} />
-												)}
-											</div>
+											{hoveredItem && BlockPreview && (
+												<div className="c9-reusable-preview">
+													<BlockPreview blocks={hoveredItem} />
+												</div>
+											)}
 										</div>
 									</Fragment>
 								);
