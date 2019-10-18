@@ -265,6 +265,7 @@ class TemplatesModal extends Component {
 						)}
 						layout={layouts[name]}
 						description={TemplateMarkups.layouts[name].description}
+						recommended={TemplateMarkups.layouts[name].recommended}
 					/>
 				);
 			});
