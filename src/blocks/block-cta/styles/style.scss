@@ -7,7 +7,6 @@
 .c9-cta .c9-cta-content {
 	display: flex;
 	align-items: center;
-	justify-content: center;
 }
 
 .c9-cta .c9-cta-button {
@@ -27,6 +26,10 @@
 
 .entry-content .c9-block-cta .c9-cta-button a:hover {
 	opacity: .9;
+}
+
+.entry-content .c9-cta-text {
+	width: 100%;
 }
 
 .entry-content .c9-cta-text p,
