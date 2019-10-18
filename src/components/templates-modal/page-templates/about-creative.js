@@ -2,9 +2,10 @@ import Icon from "./page-icons/about-creative.svg";
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Landing Page About Creative",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	type: "awareness",
+	title: "About Page: Creative",
+	description: `Our second About page puts your creative side on display with photography or artwork. This landing page template works for an individual, or a small group with a short about section, testimonials, a simple photo gallery, mission statement,  profile photo, map embed, and a call-to-action video with a button at the bottom.`,
+	recommended: `“Hero” image, logo, title, short history, service listing, testimonials (2), two paragraph interlude, photo gallery, mission statement, button, vertical profile photo, map embed code, short video clip, button and call-to-action`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":18,"containerImgURL":"http://cortex.covertnine.com/wp-content/uploads/2019/08/about-page-bg.jpg","containerHue":"#313131","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":80} -->
 	<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:80vh;background-color:rgba(49,49,49,1)"><div class="c9-image-container" style="background-position:50% 50%;background-image:url(http://cortex.covertnine.com/wp-content/uploads/2019/08/about-page-bg.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideright"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->

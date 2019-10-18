@@ -4,7 +4,8 @@ export default {
 	icon: Icon,
 	type: "consideration",
 	title: "Landing Page Content Resources",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	description: `A page to organize resources in one location with a Search Block, posts or articles of any post type or category, a hero header image with a few paragraphs or headings of instructions to direct your users to your well-documented knowledgebase. Cap it off with a call-to-action to subscribe to your newsletter for updates.`,
+	recommended: `Articles or blog posts (6), hero image, 2-3 paragraphs or headings, FAQ, call-to-action bar + button`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"http://cortex.covertnine.com/wp-content/uploads/2019/10/kewal-W0qAERMnJYg-unsplash.jpg","bgCustomX":{"size":200,"unit":"%"},"minScreenHeight":79,"focalPoint":{"x":0.17511520737327188,"y":0.1231737012987013}} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:79vh"><div class="c9-image-container" style="background-position:17.51152073732719% 12.31737012987013%;background-image:url(http://cortex.covertnine.com/wp-content/uploads/2019/10/kewal-W0qAERMnJYg-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->

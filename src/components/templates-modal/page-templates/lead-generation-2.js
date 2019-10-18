@@ -2,9 +2,10 @@ import Icon from "./page-icons/lead-gen-2.svg";
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Lead Generation V2",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	type: "conversion",
+	title: "Lead Generation 2",
+	description: `Inform and entice potential customers or clients with a widescreen video that helps tell a broader story. There’s plenty of room to break up longer-form text with an image carousel. Include vertical photos, a short FAQ, and a place to tell a friend or click a call-to-action button.`,
+	recommended: `Two video clips or YouTube videos, 3-5 vertical photos, FAQ, about copy, heading, subheading, and short description text for header`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":9,"containerHue":"#000000","overlayHue":"#3d3d3d","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"http://cortex.covertnine.com/wp-content/uploads/2019/10/Pexels-Videos-1333384.mp4"} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:50vh;background-color:rgba(0,0,0,1)"><div class="c9-video-container"><div class="c9-embed-container"><video id="containerVideo-9" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="http://cortex.covertnine.com/wp-content/uploads/2019/10/Pexels-Videos-1333384.mp4" type="video/mp4"/></video></div></div><div class="c9-overlay-container" style="background-color:rgba(61,61,61,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideright"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->

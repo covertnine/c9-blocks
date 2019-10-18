@@ -3,8 +3,9 @@ import Icon from "./page-icons/price-menu.svg";
 export default {
 	icon: Icon,
 	type: "consideration",
-	title: "Landing Page Price Menu",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	title: "Restaurant-style Menu",
+	description: `Showcase your latest and tastiest with the Restaurant-style Menu page. Easily add pricing, imagery, and tantalizing descriptions to each option. The template also includes image carousels and a toggle for daily specials.`,
+	recommended: `Video clip or YouTube video, page title, page subheading, menu name (2 options), menu copywriting with pricing (2 options), 3-6 horizontal photos, 3 vertical photos, mission statement, vertical profile photo`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov"} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:50vh;background-color:rgba(49,49,49,1)"><div class="c9-video-container"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov" type="video/mp4"/></video></div></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"bottom"} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->

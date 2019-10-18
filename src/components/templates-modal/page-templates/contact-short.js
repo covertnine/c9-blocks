@@ -3,8 +3,9 @@ import Icon from "./page-icons/contact-short.svg";
 export default {
 	icon: Icon,
 	type: "consideration",
-	title: "Landing Page Contact (Short)",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	title: "Contact Short Page",
+	description: `Lead people to the right person, the right way. If you only have a single location or minimal contact information, then this is the landing page that gets messages into your inbox.`,
+	recommended: `Large heading, address, contact phone, placeholder for contact form, contact button for live-chat, embedded map with an address`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#3f3f3f"} -->
 	<div class="c9-grid p-5 c9-scroll" style="min-height:20vh;background-color:rgba(63,63,63,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->

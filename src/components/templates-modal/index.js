@@ -190,25 +190,6 @@ class TemplatesModal extends Component {
 		const updateBar = (
 			<div className="c9-notice components-notice is-success is-dismissible">
 				<div className="components-notice__content">{msg}</div>
-				<button
-					type="button"
-					aria-label="Dismiss this notice"
-					className="components-button components-icon-button components-notice__dismiss"
-					onClick={this.closeNotice}
-				>
-					<svg
-						aria-hidden="true"
-						role="img"
-						focusable="false"
-						className="dashicon dashicons-no"
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 20 20"
-					>
-						<path d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z"></path>
-					</svg>
-				</button>
 			</div>
 		);
 
@@ -233,6 +214,7 @@ class TemplatesModal extends Component {
 						});
 						this.setState({ sections });
 						this.setMessage("Page updated.");
+						this.closeNotice();
 					}}
 					icon={TemplateMarkups.sections[k].icon}
 					preview={TemplateMarkups.sections[k].preview}
@@ -270,6 +252,7 @@ class TemplatesModal extends Component {
 
 							this.setState({ layouts });
 							this.setMessage("Page updated.");
+							this.closeNotice();
 						}}
 						icon={TemplateMarkups.layouts[name].icon}
 						preview={TemplateMarkups.layouts[name].preview}
@@ -348,7 +331,7 @@ class TemplatesModal extends Component {
 									onClick={() => {
 										resetBlocks([]);
 									}}
-									className={"btn btn-danger btn-clear"}
+									className="btn btn-danger btn-clear"
 								>
 									<Icon icon={icons.close} />
 									<span>{__("Clear page", "c9-blocks")}</span>
@@ -415,14 +398,12 @@ class TemplatesModal extends Component {
 																	});
 																	this.setState({ reusables });
 																	this.setMessage("Page updated.");
+																	this.closeNotice();
 																}}
 																mouseIn={() => {
 																	this.setState({
 																		hoveredItem: obj.content[0]
 																	});
-																}}
-																mouseOut={() => {
-																	// this.setState({ hoveredItem: null });
 																}}
 															/>
 														);

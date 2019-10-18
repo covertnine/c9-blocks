@@ -3,8 +3,8 @@ import Icon from "./page-icons/portfolio.svg";
 export default {
 	icon: Icon,
 	type: "consideration",
-	title: "Landing Page Creative Portfolio",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	title: "Portfolio Page",
+	description: `Showcase a range of different works in this clean portfolio landing page template that has: Image carousels with captions for three examples, sections for describing each example and your role, an extra large header that works great with photos or textures, followed by an image gallery and a place for a short bio.`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"http://cortex.covertnine.com/wp-content/uploads/2019/10/jared-arango-1-mh6U3qeGQ-unsplash-web.jpg","containerHue":"#000000","bgImgAttach":true,"blendMode":"normal","minScreenHeight":90,"focalPoint":{"x":0.5023041474654378,"y":0}} -->
 	<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(0,0,0,1)"><div class="c9-image-container" style="background-position:50.23041474654379% 0%;background-image:url(http://cortex.covertnine.com/wp-content/uploads/2019/10/jared-arango-1-mh6U3qeGQ-unsplash-web.jpg);background-repeat:no-repeat;background-size:cover"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","minScreenHeight":100} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column" style="min-height:100vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->

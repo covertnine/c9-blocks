@@ -2,9 +2,10 @@ import Icon from "./page-icons/lead-gen-1.svg";
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Lead Generation V1",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	type: "conversion",
+	title: "Lead Generation 1",
+	description: `Publish a landing page geared towards building trust by offering generous content and expertise followed by a signup or lead gen form to progress  potential customers down the sales funnel.`,
+	recommended: `Bios with profile images (3), testimonials (3), logo carousel, featured experts with hero images, venue or event location and hero image, call-to-action bar + button `,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#000000","overlayHue":"#000000","overlayOpacity":8,"blendMode":"multiply","minScreenHeight":95,"videoType":"embed","containerVideoID":"vbv_aZuXMIw"} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:95vh;background-color:rgba(0,0,0,1)"><div class="c9-video-container"><div class="c9-embed-container"><div id="player-vbv_aZuXMIw-0" class="c9-video" video-id="vbv_aZuXMIw" style="min-height:95vh"></div></div></div><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.8);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"bottom"} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->

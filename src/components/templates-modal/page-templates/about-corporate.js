@@ -2,9 +2,10 @@ import Icon from "./page-icons/about-corporate.svg";
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Landing Page About Corporate",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	type: "awareness",
+	title: "About Page: Corporate",
+	description: `An About page with all the essential elements to jumpstart the process of “know, like, and trust.” Complete with a hero header, testimonials, individual profiles, history, services overview, FAQ, and a “call-to-action.” Simply add and subtract the blocks most useful to you.`,
+	recommended: `company name, slogan, short mission statement, logo image, history copywriting, 3 photo images, testimonials with photos (2), service list, testimonials with copy only (2), FAQ, map embed, call-to-action link`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#109ef1","minScreenHeight":50} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(16,158,241,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
 <div class="container alignwide c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->

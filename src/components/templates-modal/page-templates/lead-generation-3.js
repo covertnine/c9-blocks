@@ -2,9 +2,10 @@ import Icon from "./page-icons/lead-gen-3.svg";
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Lead Generation V3",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	type: "conversion",
+	title: "Lead Generation 3",
+	description: `Close the deal after a user has hit one of the other lead generation landing page templates. There’s a placeholder for your form, a short and concise headline, short features list, and vertical image carousel gallery for a final point of interest.`,
+	recommended: `Email contact or sign up form, heading, large hero image, tell a friend headline, bulleted feature list, 3-5 vertical photos, button`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"http://cortex.covertnine.com/wp-content/uploads/2019/10/sime-basioli-BRkikoNP0KQ-unsplash.jpg","containerHue":"#3cc5ff","overlayHue":"#0a97d4","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":70} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:70vh;background-color:rgba(60,197,255,1)"><div class="c9-image-container" style="background-position:50% 50%;background-image:url(http://cortex.covertnine.com/wp-content/uploads/2019/10/sime-basioli-BRkikoNP0KQ-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(10,151,212,1);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"align":"full","columns":3,"layout":"c9-3-col-widecenter","containerWidth":"container-fluid","verticalAlign":"center"} -->
 	<div class="container-fluid alignfull c9-column-container c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-center c9-3-col-widecenter"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->

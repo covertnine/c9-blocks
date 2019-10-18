@@ -2,9 +2,10 @@ import Icon from "./page-icons/launch-release.svg";
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Launch Release",
-	description: `Tell the story of your upcoming project with a media-rich experience. The Album Launch landing page gives your fans a download button over a video background at the top. Support your project with an image carousel and photo gallery below, ‘finished’ with a space to link over to blog posts to share your latest updates.`,
+	type: "awareness",
+	title: "Project Launch",
+	recommended: `Video clip, YouTube video, purchase link, audio embeds (3), about copywriting, 3-5 “hero” images, blog posts (3)`,
+	description: `Tell the story of your upcoming project with a media-rich experience. The Project Launch landing page gives your fans a download button over a video background at the top. Support your project with an image carousel and photo gallery below, ‘finished’ with a space to link over to blog posts to share your latest updates.`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/crowd-dancing.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":8,"blendMode":"multiply","minScreenHeight":84,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4"} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:84vh;background-color:rgba(49,49,49,1)"><div class="c9-video-container"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:84vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4" type="video/mp4"/></video></div></div><div class="c9-image-container" style="background-position:50% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/crowd-dancing.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.8);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":1,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":34} -->
 	<div class="container alignwide c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft" style="min-height:34vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-1 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
