@@ -148,7 +148,7 @@
 				justify-content: center;
 				flex-direction: column;
 				background: #ffffff;
-				border: 1px solid #979797;
+				border: 1px solid #f1f1f1;
 				box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
 				span {
 					font-size: 26px;
@@ -238,13 +238,14 @@
 		}
 
 		.c9-layout-options {
+			padding-left: 2px;
 			margin-bottom: 20px;
 			.c9-layout-button-content {
 				width: 70%;
 				text-align: left;
 				padding-left: 20px;
 				padding-top: 10px;
-				height: 200px;
+				max-height: 200px;
 				overflow: scroll;
 			}
 			h3 {
@@ -260,13 +261,13 @@
 			}
 			svg {
 				width: 30%;
-				border: 1px solid #979797;
+				border: 1px solid #f1f1f1;
 			}
 			button {
 				display: flex;
 				justify-content: left;
 				background: #ffffff;
-				border: 1px solid #979797;
+				border: 1px solid #f1f1f1;
 				padding: 10px;
 			}
 		}

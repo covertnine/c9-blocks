@@ -33,7 +33,7 @@ const LayoutButton = ({
 				<h3>{label}</h3>
 				<p>{description}</p>
 				<p>
-					<strong>recommended: </strong>
+					<strong>content: </strong>
 					{recommended}
 				</p>
 			</div>
