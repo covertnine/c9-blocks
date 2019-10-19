@@ -5,8 +5,9 @@ import startCase from "lodash/startCase";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import ReusableButton from "./reusable-button";
-import PageTypes from "./page-types";
-import TemplateMarkups from "./templates-markup";
+import SectionTemplates from "./section-templates/section-templates";
+import PageTemplates from "./page-templates/page-templates";
+import PageTypes from "./page-templates/page-types";
 import LargeModal from "../large-modal";
 import icons from "../../../assets/sidebar-icons";
 
@@ -43,7 +44,8 @@ class TemplatesModal extends Component {
 			loading: true,
 			updating: false,
 			msg: "",
-			tuts: []
+			tuts: [],
+			reusableTemplates: null
 		};
 
 		this.closeNotice = this.closeNotice.bind(this);
@@ -65,10 +67,7 @@ class TemplatesModal extends Component {
 				// define section and layout templates
 				const sections = {
 					// convert markup to actual blocks
-					...self.markupToBlock(
-						TemplateMarkups.sections,
-						canUserUseUnfilteredHTML
-					)
+					...self.markupToBlock(SectionTemplates, canUserUseUnfilteredHTML)
 				};
 
 				self.setState({ sections });
@@ -76,10 +75,7 @@ class TemplatesModal extends Component {
 
 				const layouts = {
 					// convert markup to actual blocks
-					...self.markupToBlock(
-						TemplateMarkups.layouts,
-						canUserUseUnfilteredHTML
-					)
+					...self.markupToBlock(PageTemplates, canUserUseUnfilteredHTML)
 				};
 
 				self.setState({ layouts, loading: false });
@@ -100,7 +96,7 @@ class TemplatesModal extends Component {
 		});
 
 		// Add Reusable Markup to Templates array to add block
-		TemplateMarkups.reusables = reusables.map(item => {
+		const reusableTemplates = reusables.map(item => {
 			return item.content.raw;
 		});
 
@@ -116,7 +112,8 @@ class TemplatesModal extends Component {
 		});
 
 		this.setState({
-			reusables: blocks
+			reusables: blocks,
+			reusableTemplates
 		});
 	}
 
@@ -221,7 +218,7 @@ class TemplatesModal extends Component {
 					close={() => {
 						const { sections } = this.state;
 						sections[k] = rawHandler({
-							HTML: TemplateMarkups.sections[k].markup,
+							HTML: SectionTemplates[k].markup,
 							mode: "BLOCKS",
 							canUserUseUnfilteredHTML
 						});
@@ -229,10 +226,10 @@ class TemplatesModal extends Component {
 						this.setMessage("Page updated.");
 						this.closeNotice();
 					}}
-					icon={TemplateMarkups.sections[k].icon}
-					preview={TemplateMarkups.sections[k].preview}
+					icon={SectionTemplates[k].icon}
+					preview={SectionTemplates[k].preview}
 					label={__(
-						startCase(TemplateMarkups.sections[k].title).replace("Plus", "+"),
+						startCase(SectionTemplates[k].title).replace("Plus", "+"),
 						"c9-blocks"
 					)}
 					section={sections[k]}
@@ -244,8 +241,8 @@ class TemplatesModal extends Component {
 
 		// Build out the whole pagetypes thing with headings mixed in
 		Object.keys(PageTypes).forEach(type => {
-			const layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
-				return TemplateMarkups.layouts[k].type === type;
+			const layoutsByType = Object.keys(PageTemplates).filter(k => {
+				return PageTemplates[k].type === type;
 			});
 
 			const layoutItems = layoutsByType.map(name => {
@@ -258,7 +255,7 @@ class TemplatesModal extends Component {
 						close={() => {
 							const { layouts } = this.state;
 							layouts[name] = rawHandler({
-								HTML: TemplateMarkups.layouts[name].markup,
+								HTML: PageTemplates[name].markup,
 								mode: "BLOCKS",
 								canUserUseUnfilteredHTML
 							});
@@ -267,18 +264,15 @@ class TemplatesModal extends Component {
 							this.setMessage("Page updated.");
 							this.closeNotice();
 						}}
-						icon={TemplateMarkups.layouts[name].icon}
-						preview={TemplateMarkups.layouts[name].preview}
+						icon={PageTemplates[name].icon}
+						preview={PageTemplates[name].preview}
 						label={__(
-							startCase(TemplateMarkups.layouts[name].title).replace(
-								"Plus",
-								"+"
-							),
+							startCase(PageTemplates[name].title).replace("Plus", "+"),
 							"c9-blocks"
 						)}
 						layout={layouts[name]}
-						description={TemplateMarkups.layouts[name].description}
-						recommended={TemplateMarkups.layouts[name].recommended}
+						description={PageTemplates[name].description}
+						recommended={PageTemplates[name].recommended}
 					/>
 				);
 			});
@@ -406,7 +400,7 @@ class TemplatesModal extends Component {
 																close={() => {
 																	const { reusables } = this.state;
 																	reusables[index].content = rawHandler({
-																		HTML: TemplateMarkups.reusables[index],
+																		HTML: this.state.reusableTemplates[index],
 																		mode: "BLOCKS",
 																		canUserUseUnfilteredHTML
 																	});
