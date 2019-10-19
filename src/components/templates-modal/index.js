@@ -5,8 +5,6 @@ import startCase from "lodash/startCase";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
 import ReusableButton from "./reusable-button";
-import { PageTypeHeading } from "./page-type-heading";
-import { TutButton } from "./tut-button";
 import PageTypes from "./page-types";
 import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
@@ -193,9 +191,24 @@ class TemplatesModal extends Component {
 			</div>
 		);
 
-		// tutorial iframe
-		const iframe =
-			'<iframe src="https://www.covertnine.com/about" width="540" height="450"></iframe>';
+		const PageTypeHeading = ({ name, description }) => {
+			return (
+				<div className="c9-type-heading">
+					<h2>{name}:</h2>
+					<p>{description}</p>
+				</div>
+			);
+		};
+
+		const TutButton = ({ title, url }) => {
+			return (
+				<div className="c9-tut-wrapper">
+					<a href={url} target="_blank">
+						<h4>{title}</h4>
+					</a>
+				</div>
+			);
+		};
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => {
