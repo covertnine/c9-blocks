@@ -34,6 +34,7 @@ class TemplatesModal extends Component {
 
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
 		this.getTuts = this.getTuts.bind(this);
+		this.setUpdateState = this.setUpdateState.bind(this);
 
 		this.state = {
 			reusables: [],
@@ -42,13 +43,10 @@ class TemplatesModal extends Component {
 			hoveredItem: null,
 			PageTypes,
 			loading: true,
-			updating: false,
-			msg: "",
+			updateState: "",
 			tuts: [],
 			reusableTemplates: null
 		};
-
-		this.closeNotice = this.closeNotice.bind(this);
 
 		this.getTuts();
 
@@ -151,40 +149,23 @@ class TemplatesModal extends Component {
 	}
 
 	/**
-	 * Closes message when user wants to hide notice.
+	 * Set the update state.
 	 */
-	closeNotice() {
-		this.setState({ updating: false });
-	}
-
-	/**
-	 * Pushes a message onto the modal.
-	 */
-	openNotice() {
-		this.setState({ updating: true });
-	}
-
-	/**
-	 * Set the update message.
-	 */
-	setMessage(msg) {
-		this.setState({ msg });
+	setUpdateState(updateState) {
+		this.setState({ updateState });
 	}
 
 	render() {
 		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
-		const {
-			sections,
-			layouts,
-			loading,
-			updating,
-			msg,
-			hoveredItem
-		} = this.state;
+		const { sections, layouts, loading, updateState, hoveredItem } = this.state;
 
 		const updateBar = (
-			<div className="c9-notice components-notice is-success is-dismissible">
-				<div className="components-notice__content">{msg}</div>
+			<div
+				className={
+					"c9-notice components-notice is-success is-dismissible " + updateState
+				}
+			>
+				<div className="components-notice__content">Updating</div>
 			</div>
 		);
 
@@ -212,8 +193,7 @@ class TemplatesModal extends Component {
 			return (
 				<SectionButton
 					open={() => {
-						this.setMessage("Updating page.");
-						this.openNotice();
+						this.setUpdateState("updating");
 					}}
 					close={() => {
 						const { sections } = this.state;
@@ -223,8 +203,7 @@ class TemplatesModal extends Component {
 							canUserUseUnfilteredHTML
 						});
 						this.setState({ sections });
-						this.setMessage("Page updated.");
-						this.closeNotice();
+						this.setUpdateState("updated");
 					}}
 					icon={SectionTemplates[k].icon}
 					preview={SectionTemplates[k].preview}
@@ -249,8 +228,7 @@ class TemplatesModal extends Component {
 				return (
 					<LayoutButton
 						open={() => {
-							this.setMessage("Updating page.");
-							this.openNotice();
+							this.setUpdateState("updating");
 						}}
 						close={() => {
 							const { layouts } = this.state;
@@ -261,8 +239,7 @@ class TemplatesModal extends Component {
 							});
 
 							this.setState({ layouts });
-							this.setMessage("Page updated.");
-							this.closeNotice();
+							this.setUpdateState("updated");
 						}}
 						icon={PageTemplates[name].icon}
 						preview={PageTemplates[name].preview}
@@ -337,6 +314,7 @@ class TemplatesModal extends Component {
 							title: (
 								<Fragment
 									onClick={() => {
+										console.log("sick");
 										resetBlocks([]);
 									}}
 									className="btn btn-danger btn-clear"
@@ -363,21 +341,21 @@ class TemplatesModal extends Component {
 							case "section-templates":
 								return (
 									<Fragment>
-										{updating && updateBar}
+										{updateBar}
 										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
 							case "page-templates":
 								return (
 									<Fragment>
-										{updating && updateBar}
+										{updateBar}
 										{pageTypes}
 									</Fragment>
 								);
 							case "saved-blocks":
 								return (
 									<Fragment>
-										{updating && updateBar}
+										{updateBar}
 										<div
 											className={
 												"c9-reusable-options " +
@@ -394,8 +372,7 @@ class TemplatesModal extends Component {
 																label={__(obj.name, "c9-blocks")}
 																section={obj.content}
 																open={() => {
-																	this.setMessage("Updating page.");
-																	this.openNotice();
+																	this.setUpdateState("updating");
 																}}
 																close={() => {
 																	const { reusables } = this.state;
@@ -405,8 +382,7 @@ class TemplatesModal extends Component {
 																		canUserUseUnfilteredHTML
 																	});
 																	this.setState({ reusables });
-																	this.setMessage("Page updated.");
-																	this.closeNotice();
+																	this.setUpdateState("updated");
 																}}
 																mouseIn={() => {
 																	this.setState({

@@ -91,6 +91,16 @@
 	}
 
 	.c9-notice {
+		transition: all 1s;
+		display: none;
+		&.updating {
+			animation: 1s fadeOut;
+			display: flex;
+			opacity: 1;
+		}
+		&.updated {
+			animation: 1s fadeOut;
+		}
 		width: 100%;
 		height: 100%;
 		top: 0;
@@ -102,7 +112,6 @@
 		z-index: 10;
 		opacity: 1;
 		position: absolute;
-		display: flex;
 		align-items: center;
 		justify-content: center;
 		button {
@@ -384,5 +393,14 @@
 
 	to {
 		transform: scale(1);
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }
