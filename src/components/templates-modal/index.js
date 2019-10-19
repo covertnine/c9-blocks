@@ -178,9 +178,10 @@ class TemplatesModal extends Component {
 			);
 		};
 
-		const TutButton = ({ title, url }) => {
+		const TutButton = ({ title, url, imgUrl }) => {
 			return (
 				<div className="c9-tut-wrapper">
+					<img src={imgUrl} />
 					<a href={url} target="_blank">
 						<h4>{title}</h4>
 					</a>
@@ -412,10 +413,12 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<div className="c9-tutorials">
 											{this.state.tuts.map(tut => {
+												console.log(tut);
 												return (
 													<TutButton
 														title={tut.title.rendered}
 														url={tut.link}
+														imgUrl={tut.c9_featured_img_url}
 													/>
 												);
 											})}
@@ -438,6 +441,7 @@ class TemplatesModal extends Component {
 													<TutButton
 														title={tut.title.rendered}
 														url={tut.link}
+														imgUrl={tut.c9_featured_img_url}
 													/>
 												);
 											})}
