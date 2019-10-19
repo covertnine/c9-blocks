@@ -27,6 +27,7 @@ const { withDispatch, withSelect } = wp.data;
 const { rawHandler, getBlockType, createBlock, cloneBlock } = wp.blocks;
 const apiFetch = wp.apiFetch;
 const { BlockPreview } = wp.blockEditor;
+const { decodeEntities } = wp.htmlEntities;
 
 class TemplatesModal extends Component {
 	constructor() {
@@ -183,7 +184,7 @@ class TemplatesModal extends Component {
 				<div className="c9-tut-wrapper">
 					<img src={imgUrl} />
 					<a href={url} target="_blank">
-						<h4>{title}</h4>
+						<h4>{decodeEntities(title)}</h4>
 					</a>
 				</div>
 			);
