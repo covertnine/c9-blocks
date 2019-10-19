@@ -303,7 +303,12 @@ class TemplatesModal extends Component {
 						{
 							name: "tutorial",
 							title: (
-								<Tooltip text={__("How To's", "c9-blocks")}>
+								<Tooltip
+									text={__("How To's", "c9-blocks")}
+									onClick={() => {
+										console.log("cool");
+									}}
+								>
 									<span>{__("Tutorials")}</span>
 								</Tooltip>
 							),
@@ -312,13 +317,7 @@ class TemplatesModal extends Component {
 						{
 							name: "clear-page",
 							title: (
-								<Fragment
-									onClick={() => {
-										console.log("sick");
-										resetBlocks([]);
-									}}
-									className="btn btn-danger btn-clear"
-								>
+								<Fragment className="btn btn-danger btn-clear">
 									<Icon icon={icons.close} />
 									<span>{__("Clear page", "c9-blocks")}</span>
 								</Fragment>
@@ -423,11 +422,27 @@ class TemplatesModal extends Component {
 										</div>
 									</Fragment>
 								);
-							default:
+							case "clear-page":
+								resetBlocks([]);
 								return (
 									<div className="c9-page-cleared">
 										The page has been cleared.
 									</div>
+								);
+							default:
+								return (
+									<Fragment>
+										<div className="c9-tutorials">
+											{this.state.tuts.map(tut => {
+												return (
+													<TutButton
+														title={tut.title.rendered}
+														url={tut.link}
+													/>
+												);
+											})}
+										</div>
+									</Fragment>
 								);
 						}
 					}}
