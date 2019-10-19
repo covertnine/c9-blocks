@@ -6,6 +6,7 @@ const LayoutButton = ({
 	icon,
 	description,
 	preview,
+	recommended,
 	layout,
 	resetBlocks,
 	insertBlocks,
@@ -17,7 +18,7 @@ const LayoutButton = ({
 			onClick={() => {
 				open();
 				resetBlocks([]);
-				setTimeout(() => {					
+				setTimeout(() => {
 					insertBlocks(layout);
 					close();
 				}, 0);
@@ -29,10 +30,12 @@ const LayoutButton = ({
 				<Icon icon={icon} />
 			)}
 			<div class="c9-layout-button-content">
-			<h3>{label}</h3>
-			<p>
-				{description}
-			</p>
+				<h3>{label}</h3>
+				<p>{description}</p>
+				<p>
+					<strong>content: </strong>
+					{recommended}
+				</p>
 			</div>
 		</button>
 	);

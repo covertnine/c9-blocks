@@ -4,10 +4,9 @@
 import startCase from "lodash/startCase";
 import LayoutButton from "./page-layout-button";
 import SectionButton from "./section-button";
-import ReusableButton from "./reusable-button";
-import SectionTemplates from "./section-templates/section-templates";
-import PageTemplates from "./page-templates/page-templates";
-import PageTypes from "./page-templates/page-types";
+import { PageTypeHeading } from "./page-type-heading";
+import PageTypes from "./page-types";
+import TemplateMarkups from "./templates-markup";
 import LargeModal from "../large-modal";
 import icons from "../../../assets/sidebar-icons";
 
@@ -24,31 +23,26 @@ const { Component, Fragment } = wp.element;
 const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
-const { rawHandler, getBlockType, createBlock, cloneBlock } = wp.blocks;
+const { rawHandler } = wp.blocks;
 const apiFetch = wp.apiFetch;
-const { BlockPreview } = wp.blockEditor;
 
 class TemplatesModal extends Component {
 	constructor() {
 		super(...arguments);
 
 		this.getReusableBlocks = this.getReusableBlocks.bind(this);
-		this.getTuts = this.getTuts.bind(this);
-		this.setUpdateState = this.setUpdateState.bind(this);
 
 		this.state = {
 			reusables: [],
 			sections: this.props.sections,
 			layouts: this.props.layouts,
-			hoveredItem: null,
 			PageTypes,
 			loading: true,
-			updateState: "",
-			tuts: [],
-			reusableTemplates: null
+			updating: false,
+			msg: ""
 		};
 
-		this.getTuts();
+		this.closeNotice = this.closeNotice.bind(this);
 
 		this.getReusableBlocks();
 	}
@@ -65,7 +59,10 @@ class TemplatesModal extends Component {
 				// define section and layout templates
 				const sections = {
 					// convert markup to actual blocks
-					...self.markupToBlock(SectionTemplates, canUserUseUnfilteredHTML)
+					...self.markupToBlock(
+						TemplateMarkups.sections,
+						canUserUseUnfilteredHTML
+					)
 				};
 
 				self.setState({ sections });
@@ -73,7 +70,10 @@ class TemplatesModal extends Component {
 
 				const layouts = {
 					// convert markup to actual blocks
-					...self.markupToBlock(PageTemplates, canUserUseUnfilteredHTML)
+					...self.markupToBlock(
+						TemplateMarkups.layouts,
+						canUserUseUnfilteredHTML
+					)
 				};
 
 				self.setState({ layouts, loading: false });
@@ -89,14 +89,7 @@ class TemplatesModal extends Component {
 		const { canUserUseUnfilteredHTML } = this.props;
 
 		const postType = await apiFetch({ path: `/wp/v2/types/wp_block` });
-		const reusables = await apiFetch({
-			path: `/wp/v2/${postType.rest_base}/?per_page=-1`
-		});
-
-		// Add Reusable Markup to Templates array to add block
-		const reusableTemplates = reusables.map(item => {
-			return item.content.raw;
-		});
+		const reusables = await apiFetch({ path: `/wp/v2/${postType.rest_base}` });
 
 		const blocks = reusables.map(item => {
 			return {
@@ -110,19 +103,7 @@ class TemplatesModal extends Component {
 		});
 
 		this.setState({
-			reusables: blocks,
-			reusableTemplates
-		});
-	}
-
-	async getTuts() {
-		// tuts endpoint created in init.php
-		const tuts = await apiFetch({
-			path: "c9-blocks/v1/tuts"
-		});
-
-		this.setState({
-			tuts
+			reusables: blocks
 		});
 	}
 
@@ -149,107 +130,116 @@ class TemplatesModal extends Component {
 	}
 
 	/**
-	 * Set the update state.
+	 * Closes message when user wants to hide notice.
 	 */
-	setUpdateState(updateState) {
-		this.setState({ updateState });
+	closeNotice() {
+		this.setState({ updating: false });
+	}
+
+	/**
+	 * Pushes a message onto the modal.
+	 */
+	openNotice() {
+		this.setState({ updating: true });
+	}
+
+	/**
+	 * Set the update message.
+	 */
+	setMessage(msg) {
+		this.setState({ msg });
 	}
 
 	render() {
 		const { resetBlocks, canUserUseUnfilteredHTML } = this.props;
-		const { sections, layouts, loading, updateState, hoveredItem } = this.state;
+		const { sections, layouts, loading, updating, msg } = this.state;
 
 		const updateBar = (
-			<div
-				className={
-					"c9-notice components-notice is-success is-dismissible " + updateState
-				}
-			>
-				<div className="components-notice__content">Updating</div>
+			<div className="c9-notice components-notice is-success is-dismissible">
+				<div className="components-notice__content">{msg}</div>
+				<button
+					type="button"
+					aria-label="Dismiss this notice"
+					className="components-button components-icon-button components-notice__dismiss"
+					onClick={this.closeNotice}
+				>
+					<svg
+						aria-hidden="true"
+						role="img"
+						focusable="false"
+						className="dashicon dashicons-no"
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+					>
+						<path d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z"></path>
+					</svg>
+				</button>
 			</div>
 		);
 
-		const PageTypeHeading = ({ name, description }) => {
-			return (
-				<div className="c9-type-heading">
-					<h2>{name}:</h2>
-					<p>{description}</p>
-				</div>
-			);
-		};
-
-		const TutButton = ({ title, url }) => {
-			return (
-				<div className="c9-tut-wrapper">
-					<a href={url} target="_blank">
-						<h4>{title}</h4>
-					</a>
-				</div>
-			);
-		};
+		// tutorial iframe
+		const iframe =
+			'<iframe src="https://www.covertnine.com/about" width="540" height="450"></iframe>';
 
 		// convert above to React DOM elements
-		const sectionItems = Object.keys(sections).map(k => {
-			return (
-				<SectionButton
-					open={() => {
-						this.setUpdateState("updating");
-					}}
-					close={() => {
-						const { sections } = this.state;
-						sections[k] = rawHandler({
-							HTML: SectionTemplates[k].markup,
-							mode: "BLOCKS",
-							canUserUseUnfilteredHTML
-						});
-						this.setState({ sections });
-						this.setUpdateState("updated");
-					}}
-					icon={SectionTemplates[k].icon}
-					preview={SectionTemplates[k].preview}
-					label={__(
-						startCase(SectionTemplates[k].title).replace("Plus", "+"),
-						"c9-blocks"
-					)}
-					section={sections[k]}
-				/>
-			);
-		});
+		const sectionItems = Object.keys(sections).map(k => (
+			<SectionButton
+				open={() => {
+					this.setMessage("Updating page.");
+					this.openNotice();
+				}}
+				close={() => {
+					const { sections } = this.state;
+					sections[k] = rawHandler({
+						HTML: TemplateMarkups.sections[k].markup,
+						mode: "BLOCKS",
+						canUserUseUnfilteredHTML
+					});
+
+					this.setState({ sections });
+					this.setMessage("Page updated.");
+				}}
+				icon={TemplateMarkups.sections[k].icon}
+				preview={TemplateMarkups.sections[k].preview}
+				label={__(startCase(k).replace("Plus", "+"), "c9-blocks")}
+				section={sections[k]}
+			/>
+		));
 
 		const pageTypes = [];
 
 		// Build out the whole pagetypes thing with headings mixed in
+		//
 		Object.keys(PageTypes).forEach(type => {
-			const layoutsByType = Object.keys(PageTemplates).filter(k => {
-				return PageTemplates[k].type === type;
+			let layoutsByType = Object.keys(TemplateMarkups.layouts).filter(k => {
+				return TemplateMarkups.layouts[k].type === type;
 			});
 
-			const layoutItems = layoutsByType.map(name => {
+			let layoutItems = layoutsByType.map(name => {
 				return (
 					<LayoutButton
 						open={() => {
-							this.setUpdateState("updating");
+							this.setMessage("Updating page.");
+							this.openNotice();
 						}}
 						close={() => {
 							const { layouts } = this.state;
 							layouts[name] = rawHandler({
-								HTML: PageTemplates[name].markup,
+								HTML: TemplateMarkups.layouts[name].markup,
 								mode: "BLOCKS",
 								canUserUseUnfilteredHTML
 							});
 
 							this.setState({ layouts });
-							this.setUpdateState("updated");
+							this.setMessage("Page updated.");
 						}}
-						icon={PageTemplates[name].icon}
-						preview={PageTemplates[name].preview}
-						label={__(
-							startCase(PageTemplates[name].title).replace("Plus", "+"),
-							"c9-blocks"
-						)}
+						icon={TemplateMarkups.layouts[name].icon}
+						preview={TemplateMarkups.layouts[name].preview}
+						label={__(startCase(name).replace("Plus", "+"), "c9-blocks")}
 						layout={layouts[name]}
-						description={PageTemplates[name].description}
-						recommended={PageTemplates[name].recommended}
+						description={TemplateMarkups.layouts[name].description}
 					/>
 				);
 			});
@@ -303,12 +293,7 @@ class TemplatesModal extends Component {
 						{
 							name: "tutorial",
 							title: (
-								<Tooltip
-									text={__("How To's", "c9-blocks")}
-									onClick={() => {
-										console.log("cool");
-									}}
-								>
+								<Tooltip text={__("How To's", "c9-blocks")}>
 									<span>{__("Tutorials")}</span>
 								</Tooltip>
 							),
@@ -317,7 +302,12 @@ class TemplatesModal extends Component {
 						{
 							name: "clear-page",
 							title: (
-								<Fragment className="btn btn-danger btn-clear">
+								<Fragment
+									onClick={() => {
+										resetBlocks([]);
+									}}
+									className="btn btn-danger btn-clear"
+								>
 									<Icon icon={icons.close} />
 									<span>{__("Clear page", "c9-blocks")}</span>
 								</Fragment>
@@ -340,110 +330,53 @@ class TemplatesModal extends Component {
 							case "section-templates":
 								return (
 									<Fragment>
-										{updateBar}
-										<div className="c9-section-options">{sectionItems}</div>
+										{updating && updateBar}
+										<div className="c9-section-options">
+											{sectionItems}
+										</div>
 									</Fragment>
 								);
 							case "page-templates":
 								return (
 									<Fragment>
-										{updateBar}
+										{updating && updateBar}
 										{pageTypes}
 									</Fragment>
 								);
 							case "saved-blocks":
 								return (
 									<Fragment>
-										{updateBar}
-										<div
-											className={
-												"c9-reusable-options " +
-												(BlockPreview ? "c9-preview-enabled" : "")
-											}
-										>
-											<div className="c9-reusable-list-container">
-												<div className="c9-reusable-list">
-													{this.state.reusables.map((obj, index) => {
-														const blockType = getBlockType(obj.content[0].name);
-														return (
-															<ReusableButton
-																icon={blockType.icon}
-																label={__(obj.name, "c9-blocks")}
-																section={obj.content}
-																open={() => {
-																	this.setUpdateState("updating");
-																}}
-																close={() => {
-																	const { reusables } = this.state;
-																	reusables[index].content = rawHandler({
-																		HTML: this.state.reusableTemplates[index],
-																		mode: "BLOCKS",
-																		canUserUseUnfilteredHTML
-																	});
-																	this.setState({ reusables });
-																	this.setUpdateState("updated");
-																}}
-																mouseIn={() => {
-																	this.setState({
-																		hoveredItem: obj.content[0]
-																	});
-																}}
-															/>
-														);
-													})}
-												</div>
-												<a
-													className="c9-modal-manage-reusable"
-													href="edit.php?post_type=wp_block"
-												>
-													manage all reusable blocks
-												</a>
-											</div>
-											{hoveredItem && BlockPreview && (
-												<div className="c9-reusable-preview">
-													<BlockPreview blocks={hoveredItem} />
-												</div>
-											)}
+										{updating && updateBar}
+										<div className="c9-section-options">
+											{this.state.reusables.map(obj => (
+												<SectionButton
+													icon="wordpress"
+													label={__(obj.name, "c9-blocks")}
+													section={obj.content}
+												/>
+											))}
 										</div>
 									</Fragment>
 								);
 							case "tutorial":
 								return (
 									<Fragment>
-										<div className="c9-tutorials">
-											{this.state.tuts.map(tut => {
-												return (
-													<TutButton
-														title={tut.title.rendered}
-														url={tut.link}
-													/>
-												);
-											})}
+										<div className="c9-section-options">
+											<div dangerouslySetInnerHTML={{ __html: iframe }}></div>
+											<button
+												onClick={() => {
+													resetBlocks([]);
+												}}
+												className="btn btn-danger btn-clear"
+											>
+												<Icon icon={icons.close} />
+												<span>{__("Clear page", "c9-blocks")}</span>
+											</button>
 										</div>
 									</Fragment>
-								);
-							case "clear-page":
-								resetBlocks([]);
-								return (
-									<div className="c9-page-cleared">
-										The page has been cleared.
-									</div>
 								);
 							default:
-								return (
-									<Fragment>
-										<div className="c9-tutorials">
-											{this.state.tuts.map(tut => {
-												return (
-													<TutButton
-														title={tut.title.rendered}
-														url={tut.link}
-													/>
-												);
-											})}
-										</div>
-									</Fragment>
-								);
+								return <Fragment>The page has been cleared.</Fragment>;
 						}
 					}}
 				</TabPanel>

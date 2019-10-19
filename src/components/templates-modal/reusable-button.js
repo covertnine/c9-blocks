@@ -9,8 +9,7 @@ const ReusableButton = ({
 	insertBlocks,
 	open,
 	close,
-	mouseIn,
-	mouseOut
+	mouseIn
 }) => {
 	return (
 		<button
@@ -23,9 +22,6 @@ const ReusableButton = ({
 			}}
 			onMouseEnter={() => {
 				mouseIn();
-			}}
-			onMouseLeave={() => {
-				mouseOut();
 			}}
 		>
 			<BlockIcon icon={icon} />
