@@ -181,7 +181,7 @@
 			grid-template-columns: repeat(4, 1fr);
 
 			button {
-				border: none;
+				border: 1px solid #f1f1f1;
 				border-radius: 0;
 				padding: 5px;
 				background: white;
@@ -189,6 +189,9 @@
 				text-transform: uppercase;
 				padding: 0;
 
+				&:hover {
+					box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
+				}
 				.c9-section-preview {
 					height: 180px;
 					width: 242px;
@@ -322,9 +325,22 @@
 			}
 		}
 
+		.c9-tutorials {
+			height: 100%;
+		}
+
 		.c9-tutorials .c9-tut-wrapper {
+			img {
+				height: 50%;
+				width: auto;
+				margin-bottom: 5px;
+			}
+			h4 {
+				margin-bottom: 10px;
+			}
 			min-height: 100px;
 			padding: 10px;
+			border: 1px solid #f1f1f1;
 		}
 
 		.c9-page-cleared {
