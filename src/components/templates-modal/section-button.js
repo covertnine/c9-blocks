@@ -1,5 +1,6 @@
 const { Icon } = wp.components;
 const { withDispatch } = wp.data;
+const { decodeEntities } = wp.htmlEntities;
 
 const SectionButton = ({
 	label,
@@ -14,7 +15,7 @@ const SectionButton = ({
 		<button
 			onClick={() => {
 				open();
-				setTimeout(() => {					
+				setTimeout(() => {
 					insertBlocks(section);
 					close();
 				}, 0);
@@ -27,7 +28,7 @@ const SectionButton = ({
 			) : (
 				<Icon icon={icon} />
 			)}
-			<span>{label}</span>
+			<span>{decodeEntities(label)}</span>
 		</button>
 	);
 };

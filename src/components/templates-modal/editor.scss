@@ -1,5 +1,8 @@
 .c9-templates-modal {
 	overflow: hidden;
+	.c9-modal-manage-reusable {
+		padding-left: 10px;
+	}
 	.components-tab-panel__tab-content {
 		height: 65vh;
 		overflow: auto;
@@ -91,15 +94,15 @@
 	}
 
 	.c9-notice {
-		transition: all 1s;
+		transition: all 2s;
 		display: none;
 		&.updating {
-			animation: 1s fadeOut;
+			animation: 2s fadeOut;
 			display: flex;
 			opacity: 1;
 		}
 		&.updated {
-			animation: 1s fadeOut;
+			animation: 2s fadeOut;
 		}
 		width: 100%;
 		height: 100%;
@@ -126,10 +129,6 @@
 		button:hover {
 			cursor: pointer;
 			box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
-			// svg path {
-			// 	transform-origin: center;
-			// 	animation: 0.5s scaleIn;
-			// }
 		}
 		.btn-danger {
 			color: #819fb3;
@@ -215,6 +214,8 @@
 					&.c9-reusable-label {
 						height: 40px;
 						line-height: 18px;
+						margin: 0px auto;
+						margin-top: 7px;
 					}
 					&.block-editor-block-icon {
 						height: 40px;
@@ -299,6 +300,7 @@
 				padding-left: 10px;
 				grid-column-gap: 2em;
 				grid-row-gap: 1.9em;
+				margin-bottom: 10px;
 				button {
 					padding-left: 3px;
 					padding-right: 3px;

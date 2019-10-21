@@ -192,6 +192,7 @@ class TemplatesModal extends Component {
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => {
+			console.log(SectionTemplates[k].title);
 			return (
 				<SectionButton
 					open={() => {
@@ -305,12 +306,7 @@ class TemplatesModal extends Component {
 						{
 							name: "tutorial",
 							title: (
-								<Tooltip
-									text={__("How To's", "c9-blocks")}
-									onClick={() => {
-										console.log("cool");
-									}}
-								>
+								<Tooltip text={__("How To's", "c9-blocks")}>
 									<span>{__("Tutorials")}</span>
 								</Tooltip>
 							),
@@ -414,7 +410,6 @@ class TemplatesModal extends Component {
 									<Fragment>
 										<div className="c9-tutorials">
 											{this.state.tuts.map(tut => {
-												console.log(tut);
 												return (
 													<TutButton
 														title={tut.title.rendered}
