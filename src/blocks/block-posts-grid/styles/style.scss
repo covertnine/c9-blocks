@@ -12,6 +12,14 @@
 	background-attachment: fixed;
 }
 
+@media only screen and (max-width: 991px) {
+
+	.c9-posts-grid.c9-fixed .c9-image-container,
+	.c9-posts-grid.c9-fixed .c9-video-container {
+		background-attachment: local;
+	}
+}
+
 .c9-scroll {
 	background-attachment: scroll;
 }
