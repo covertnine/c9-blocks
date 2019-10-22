@@ -172,13 +172,6 @@
 		max-width: 1140px;
 	}
 
-	.editor-styles-wrapper>*:not(.wp-block[data-align="wide"]) {
-		width: 100%;
-		max-width: 960px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
 	.editor-styles-wrapper .editor-block-list__block.wp-block[data-align="wide"] {
 		width: 100%;
 		max-width: 1200px;
