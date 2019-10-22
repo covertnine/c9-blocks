@@ -1,4 +1,4 @@
-import Icon from "../icons/widescreen-video-with-title-description.svg";
+import Icon from "../../../../../assets/section-template-icons/widescreen-video-with-title-description.svg";
 
 export default {
 	icon: Icon,

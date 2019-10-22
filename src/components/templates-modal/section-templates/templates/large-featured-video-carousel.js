@@ -1,4 +1,4 @@
-import Icon from "../icons/large-featured-video-carousel.svg";
+import Icon from "../../../../../assets/section-template-icons/large-featured-video-carousel.svg";
 
 export default {
 	icon: Icon,

@@ -1,4 +1,4 @@
-import Icon from "../icons/team-member-bios.svg";
+import Icon from "../../../../../assets/section-template-icons/team-member-bios.svg";
 
 export default {
 	icon: Icon,

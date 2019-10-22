@@ -1,4 +1,4 @@
-import Icon from "../icons/contact-short.svg";
+import Icon from "../../../../../assets/page-template-icons/contact-short.svg";
 
 export default {
 	icon: Icon,

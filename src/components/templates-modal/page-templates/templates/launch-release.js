@@ -1,4 +1,4 @@
-import Icon from "../icons/launch-release.svg";
+import Icon from "../../../../../assets/page-template-icons/launch-release.svg";
 
 export default {
 	icon: Icon,

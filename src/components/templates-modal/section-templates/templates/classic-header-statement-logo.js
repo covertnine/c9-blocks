@@ -1,4 +1,4 @@
-import Icon from "../icons/classic-header-statement-logo.svg";
+import Icon from "../../../../../assets/section-template-icons/classic-header-statement-logo.svg";
 
 export default {
 	icon: Icon,

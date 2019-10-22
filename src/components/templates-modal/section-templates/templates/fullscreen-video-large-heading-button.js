@@ -1,4 +1,4 @@
-import Icon from "../icons/fullscreen-video-large-heading-button.svg";
+import Icon from "../../../../../assets/section-template-icons/fullscreen-video-large-heading-button.svg";
 
 export default {
 	icon: Icon,

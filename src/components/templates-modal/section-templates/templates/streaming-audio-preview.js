@@ -1,4 +1,4 @@
-import Icon from "../icons/streaming-audio-preview.svg";
+import Icon from "../../../../../assets/section-template-icons/streaming-audio-preview.svg";
 
 export default {
 	icon: Icon,

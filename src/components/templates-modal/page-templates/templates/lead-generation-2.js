@@ -1,4 +1,4 @@
-import Icon from "../icons/lead-gen-2.svg";
+import Icon from "../../../../../assets/page-template-icons/lead-gen-2.svg";
 
 export default {
 	icon: Icon,

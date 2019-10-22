@@ -1,4 +1,4 @@
-import Icon from "../icons/three-step-service-overview.svg";
+import Icon from "../../../../../assets/section-template-icons/three-step-service-overview.svg";
 
 export default {
 	icon: Icon,

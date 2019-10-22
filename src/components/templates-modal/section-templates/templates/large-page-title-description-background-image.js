@@ -1,4 +1,4 @@
-import Icon from "../icons/large-page-title-description-background-image.svg";
+import Icon from "../../../../../assets/section-template-icons/large-page-title-description-background-image.svg";
 
 export default {
 	icon: Icon,

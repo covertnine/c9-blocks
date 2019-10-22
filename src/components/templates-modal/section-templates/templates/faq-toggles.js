@@ -1,4 +1,4 @@
-import Icon from "../icons/faq-toggles.svg";
+import Icon from "../../../../../assets/section-template-icons/faq-toggles.svg";
 
 export default {
 	icon: Icon,
