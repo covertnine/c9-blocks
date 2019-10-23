@@ -1,4 +1,4 @@
-import Icon from "../icons/price-menu.svg";
+import Icon from "../../../../../assets/page-template-icons/price-menu.svg";
 
 export default {
 	icon: Icon,

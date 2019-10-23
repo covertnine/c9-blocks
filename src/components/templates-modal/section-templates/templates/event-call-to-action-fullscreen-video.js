@@ -1,4 +1,4 @@
-import Icon from "../icons/event-call-to-action-fullscreen-video.svg";
+import Icon from "../../../../../assets/section-template-icons/event-call-to-action-fullscreen-video.svg";
 
 export default {
 	icon: Icon,

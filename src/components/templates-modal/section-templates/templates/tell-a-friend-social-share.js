@@ -1,4 +1,4 @@
-import Icon from "../icons/tell-a-friend-social-share.svg";
+import Icon from "../../../../../assets/section-template-icons/tell-a-friend-social-share.svg";
 
 export default {
 	icon: Icon,

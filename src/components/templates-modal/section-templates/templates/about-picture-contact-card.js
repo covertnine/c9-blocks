@@ -1,4 +1,4 @@
-import Icon from "../icons/about-picture-contact-card.svg";
+import Icon from "../../../../../assets/section-template-icons/about-picture-contact-card.svg";
 
 export default {
 	icon: Icon,

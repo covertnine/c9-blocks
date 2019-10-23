@@ -1,4 +1,4 @@
-import Icon from "../icons/google-map-address.svg";
+import Icon from "../../../../../assets/section-template-icons/google-map-address.svg";
 
 export default {
 	icon: Icon,

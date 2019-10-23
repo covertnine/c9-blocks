@@ -1,5 +1,5 @@
 // Does exist yet
-import Icon from "../icons/single-profile.svg";
+import Icon from "../../../../../assets/section-template-icons/single-profile.svg";
 
 export default {
 	icon: Icon,

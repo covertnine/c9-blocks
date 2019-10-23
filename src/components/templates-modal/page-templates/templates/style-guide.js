@@ -1,4 +1,4 @@
-import Icon from "../icons/style-guide.svg";
+import Icon from "../../../../../assets/page-template-icons/style-guide.svg";
 
 export default {
 	icon: Icon,

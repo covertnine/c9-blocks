@@ -1,4 +1,4 @@
-import Icon from "../icons/large-lineup-get-tickets-button.svg";
+import Icon from "../../../../../assets/section-template-icons/large-lineup-get-tickets-button.svg";
 
 export default {
 	icon: Icon,

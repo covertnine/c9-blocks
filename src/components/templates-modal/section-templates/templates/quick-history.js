@@ -1,4 +1,4 @@
-import Icon from "../icons/quick-history.svg";
+import Icon from "../../../../../assets/section-template-icons/quick-history.svg";
 
 export default {
 	icon: Icon,

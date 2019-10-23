@@ -1,4 +1,4 @@
-import Icon from "../icons/large-gallery-carousel.svg";
+import Icon from "../../../../../assets/section-template-icons/large-gallery-carousel.svg";
 
 export default {
   icon: Icon,

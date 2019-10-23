@@ -1,4 +1,4 @@
-import Icon from "../icons/about-corporate.svg";
+import Icon from "../../../../../assets/page-template-icons/about-corporate.svg";
 
 export default {
 	icon: Icon,

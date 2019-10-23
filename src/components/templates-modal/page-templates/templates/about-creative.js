@@ -1,4 +1,4 @@
-import Icon from "../icons/about-creative.svg";
+import Icon from "../../../../../assets/page-template-icons/about-creative.svg";
 
 export default {
 	icon: Icon,
