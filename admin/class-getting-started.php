@@ -4,7 +4,7 @@
  */
 class C9_Block_Getting_Started {
 	public function __construct( $tuts = [] ) {
-	self::render( $tuts );
+		self::render( $tuts );
 	}
 	public static function render( $tuts ) {
 		$assets = plugin_dir_url( __DIR__ ) . 'assets';
