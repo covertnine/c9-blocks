@@ -44,6 +44,14 @@
 	right: -70px;
 }
 
+.is-hovered .carousel-control-prev,
+.is-hovered .carousel-control-next,
+.is-selected .carousel-control-prev,
+.is-selected .carousel-control-next {
+	border: 2px dashed #aaa;
+	background-color: rgba(12, 12, 12, .1);
+}
+
 .carousel-control-prev {
 	left: -70px;
 }
