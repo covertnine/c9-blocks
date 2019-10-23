@@ -377,5 +377,5 @@ function c9_render_getting_started() {
 	include_once( plugin_dir_path( __DIR__ ) . 'admin/class-getting-started.php' );
 	$tuts = c9_get_tuts();
 	$page = C9_Block_Getting_Started::render( $tuts );
-	echo $page;
+	return $page;
 }

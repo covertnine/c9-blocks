@@ -28,10 +28,7 @@ registerBlockType("c9-blocks/carousel", {
 	supports: {
 		// fill in features
 	},
-	keywords: [
-		__("carousel", "c9-blocks"),
-		__("responsive", "c9-blocks")
-	],
+	keywords: [__("carousel", "c9-blocks"), __("responsive", "c9-blocks")],
 	attributes,
 	// Render the block components
 	edit: compose([
