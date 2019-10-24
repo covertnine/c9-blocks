@@ -1327,6 +1327,9 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
     margin: 10px 0px 0px 0px; }
   .c9-carousel .carousel-inner .c9-carousel-slide .editor-inner-blocks > .editor-block-list__layout {
     display: block; }
+  .c9-carousel .carousel-inner .c9-carousel-slide .editor-inner-blocks > .editor-block-list__layout div[data-type="c9-blocks/column-container"] .c9-column-container > .c9-layout-column-wrap-admin > .editor-inner-blocks > .editor-block-list__layout {
+    display: -ms-flexbox;
+    display: flex; }
 
 /*this should be overwritten by a carousel slide setting for how many slides are shown at once or how many columns in the slide are visible at once*/
 .c9-carousel [data-type="c9-blocks/carousel-slide"],

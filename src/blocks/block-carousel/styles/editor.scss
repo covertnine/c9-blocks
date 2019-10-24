@@ -22,6 +22,10 @@
 		.c9-carousel-slide .editor-inner-blocks>.editor-block-list__layout {
 			display: block;
 		}
+
+		.c9-carousel-slide .editor-inner-blocks>.editor-block-list__layout div[data-type="c9-blocks/column-container"] .c9-column-container>.c9-layout-column-wrap-admin>.editor-inner-blocks>.editor-block-list__layout {
+			display: flex;
+		}
 	}
 }
 
