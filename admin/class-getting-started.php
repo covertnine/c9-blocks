@@ -16,6 +16,18 @@ class C9_Block_Getting_Started {
 				background: rgba(0,0,0,.88);
 				font-size: 10px;
 			}
+			#wpcontent li {
+				display: flex;
+			}
+			#wpcontent li:before {
+				content: "";
+				background-image: url(/wp-content/plugins/c9-blocks/assets/fa-icons/chevron-circle-right-solid.svg);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 1em;
+				margin-right: 5px;
+			}
 			section {
 				width: 100%;
 				box-sizing: border-box;
@@ -95,7 +107,7 @@ class C9_Block_Getting_Started {
 				background: white;
 				margin: 2em 0;
 			}
-			.c9-admin-hero a {
+			.c9-click-preview {
 				text-transform: uppercase;
 				text-decoration: none;
 				color: black;
@@ -104,7 +116,7 @@ class C9_Block_Getting_Started {
 				margin-bottom: 20px;
 				position: relative;
 			}
-			.c9-admin-hero a:after {
+			.c9-click-preview:after {
 				content: "";
 				height: 1em;
 				width: 1em;
@@ -147,7 +159,7 @@ class C9_Block_Getting_Started {
 			.c9-section-examples h2 {
 				text-align: center;
 				margin-top: 4vh;
-				margin-bottom: 2vh;
+				margin-bottom: 3vh;
 			}
 			.c9-section-examples-wrapper  {
 				display: flex;
@@ -174,6 +186,8 @@ class C9_Block_Getting_Started {
 				font-size: 1.5em;
 				line-height: 1.2;
 				margin-top: 10px;
+				display: block;
+				height: 2.5em;
 			}
 			.c9-if-you-love {
 				padding-top: 7vh;
@@ -183,17 +197,54 @@ class C9_Block_Getting_Started {
 				color: white;
 				font-size: 3.5em;
 				margin-bottom: 3.5vh;
+				line-height: 1.5;
+			}
+			.c9-if-you-love h3 {
+				color: white;
+				font-size: 5em;
+				margin-bottom: 10px;
+			}
+			.c9-if-you-love h5 {
+				color: #C9292C;
+				font-size: 1.8em;
+				font-weight: 700;
+				line-height: 1.5;
+			}
+			.c9-if-you-love .c9-click-preview {
+				color: white;
 			}
 			.c9-if-you-love-content {
 				display: flex;
 			}
 			.c9-if-you-love-content .c9-content-left {
-				width: 55%;
+				width: 50%;
+			}
+			.c9-if-you-love-content .c9-content-right {
+				width: 50%;
+				padding: 5vh 12vw 7vh 6vw;
+				box-sizing: border-box;
+				line-height: 
+			}
+			.c9-if-you-love ul {
+				margin-top: 4vh;
+				margin-bottom: 4vh;
+			}
+			.c9-if-you-love li {
+				color: white;
+				font-size: 1.5em;
+				font-weight: 300;
+				letter-spacing: .5px;
+				margin-bottom: 1.5vh;
 			}
 			.c9-awareness-consideration-conversion {
 				width: 100%;
 				background-image: linear-gradient(white, white);
 				background-repeat: no-repeat;
+				margin-top: 3vh;
+			}
+			.c9-awareness-header {
+				width: 100%;
+				margin-bottom: -5px;
 			}
 			.c9-template-types {
 				display: flex;
@@ -229,7 +280,24 @@ class C9_Block_Getting_Started {
 				padding: 3em;
 			}
 			.c9-build-your-own-inner .image-left {
-				width: 55%;
+				width: 50%;
+			}
+			.c9-build-your-own-inner .content-right {
+				padding: 4em;
+				display: flex;
+				flex-direction: column;
+			}
+			.c9-build-your-own-inner .content-right h2 {
+				padding: 0;
+			}
+			.c9-build-your-own-inner .content-right h3 {
+				color: #C04035;
+				font-size: 1.5em;
+			}
+			.c9-build-your-own-inner .content-right .c9-content-right-first,
+			.c9-build-your-own-inner .content-right .c9-content-right-second {
+				margin-bottom: 9vh;
+				margin-top: 1.5vh;
 			}
 			.c9-never-easier {
 				margin-top: 8em;
@@ -266,13 +334,17 @@ class C9_Block_Getting_Started {
 				padding-bottom: 20px;
 			}
 			.c9-blocks-list .c9-block h4 {
-				font-size: 2.7em;
+				font-size: 2.3em;
 				color: #819FB3;
 				text-transform: uppercase;
 				margin-top: 1em 0;
 			}
+			.c9-blocks-list .c9-block p {
+				width: 90%;
+				margin: 3vh auto;
+			}
 			.c9-block-icon {
-				width: 30%;
+				width: 20%;
 			}
 			.c9-how-to {
 				background-image: linear-gradient(#F4F4F1, #F4F4F1);
@@ -333,14 +405,24 @@ class C9_Block_Getting_Started {
 				color: white;
 				text-decoration: none;
 				text-transform: uppercase;
-				font-size: 1.8em;
+				font-size: 1.4em;
 			}
 			.c9-support-forums-contact p {
 				text-align: left;
 			}
 			.c9-who-are-we {
 				margin-top: 10vh;
-				margin-bottom: 10vh;
+				margin-bottom: 7vh;
+			}
+			.c9-who-are-we .c9-social {
+				width: 50%;
+				margin: 0 auto;
+				justify-content: space-between;
+				display: flex;
+				margin-top: 2em;
+			}
+			.c9-who-are-we .c9-social > a {
+				width: 30px;
 			}
 			.c9-who-are-we .c9-content-right h4 {
 				font-size: 2em;
@@ -354,6 +436,24 @@ class C9_Block_Getting_Started {
 				margin: 0 auto;
 				text-align: left;
 			}
+			.c9-how-to .c9-video-tutorials {
+				margin-top: 4vh;
+				margin-bottom: 4vh;
+				display: flex;
+				justify-content: space-between;
+			}
+			.c9-how-to .c9-video-tutorials .c9-video-tutorial {
+				width: 32.5%;
+				margin-bottom: 2.5vh;
+			}
+			.c9-how-to .c9-how-to-inner img {
+				margin-bottom: 7px;
+			}
+			.c9-how-to .c9-video-tutorials .c9-video-tutorial a {
+				margin-top: 5px;
+				font-size: 1.5em;
+				color: black;
+			}
 			@media all and (max-width: 1024px) {
 				#wpcontent {
 					font-size: 8px;
@@ -361,7 +461,7 @@ class C9_Block_Getting_Started {
 			}
 			@media all and (max-width: 768px) {
 				#wpwrap #wpcontent {
-					font-size: 4.5px;
+					font-size: 6px;
 					padding: 0;
 				}
 				.c9-section-templates {
@@ -376,8 +476,11 @@ class C9_Block_Getting_Started {
 				.c9-admin-hero h5, .c9-admin-hero p {
 					width: 100%;
 				}
-			}
-			@media all and (max-width: 767px) {
+				.c9-section-examples-wrapper .c9-section-wrapper h5 {
+					font-size: 2.5em;
+					width: 80%;
+					margin: 0 auto;
+				}
 				.c9-admin-hero {
 					background-size: cover !important;
 					background-position: center;
@@ -388,6 +491,62 @@ class C9_Block_Getting_Started {
 				}
 				.c9-section-templates .c9-content-left {
 					width: 100%;
+				}
+				.c9-section-examples h2 {
+					margin-bottom: 1vh;
+				}
+				.c9-section-examples-wrapper {
+					padding-bottom: 5em;
+					flex-direction: column;
+				}
+				.c9-section-examples-wrapper .c9-section-wrapper:first-child, .c9-section-examples-wrapper .c9-section-wrapper:last-child, .c9-section-examples-wrapper .c9-section-wrapper {
+					padding: 10px;
+				}
+				.c9-section-examples-wrapper .c9-section-wrapper img {
+					width: 80%;
+				}
+				.c9-if-you-love {
+					font-size: 6px;
+				}
+				.c9-if-you-love-content {
+					display: block;
+				}
+				.c9-if-you-love-content .c9-content-right {
+					width: 100%;
+				}
+				.c9-if-you-love li {
+					font-size: 1.8em;
+				}
+				.c9-template-types h3 {
+					margin-left: 6px;
+					font-size: 1.8em;
+				}
+				.c9-template-types p {
+					line-height: 1.3;
+				}
+				.c9-awareness-header {
+					margin-bottom: -7px;
+				}
+				.c9-build-your-own-inner {
+					display: block;
+				}
+				.c9-build-your-own-inner .image-left {
+					width: 100%;
+				}
+				.c9-blocks-list {
+					grid-template-columns: repeat(1, 1fr);
+				}
+				.c9-how-to {
+					padding-left: 3vw;
+					padding-right: 3vw;
+				}
+				.c9-support-forums-contact {
+					flex-direction: column;
+				}
+				.c9-support-forums-contact .c9-card {
+					width: 100%;
+					box-sizing: border-box;
+					margin-bottom: 10px;
 				}
 			}
 		</style>
@@ -410,7 +569,7 @@ class C9_Block_Getting_Started {
 				<p>
 				Make your own layouts from scratch or use ours! Dragging and dropping layouts. Save custom built sections for to make sections modular. Easily duplicate designs across an entire ecosystem. 
 				</p>
-				<a href="#">Click here for preview</a>
+				<a href="#" class="c9-click-preview">Click here for preview</a>
 			</div>
 			</section>
 			<section class="c9-section-templates">
@@ -430,26 +589,26 @@ class C9_Block_Getting_Started {
 				<h2>Section Examples</h2>
 				<div class="c9-section-examples-wrapper">
 					<div class="c9-section-wrapper">
-						<img src="<?php echo $assets . '/section-template-icons/about-picture-contact-card.svg'; ?>"/>
+						<img src="<?php echo $assets . '/section-template-icons/event-call-to-action-fullscreen-video.svg'; ?>"/>
 						<h5>Event “Call to Action” + Video Background</h5>
 					</div>
 					<div class="c9-section-wrapper">
-						<img src="<?php echo $assets . '/section-template-icons/about-picture-contact-card.svg'; ?>"/>
-						<h5>Event “Call to Action” + Video Background</h5>
+						<img src="<?php echo $assets . '/section-template-icons/large-testimonial-fullscreen-photo.svg'; ?>"/>
+						<h5>Large Testimonial + Background Image</h5>
 					</div>
 					<div class="c9-section-wrapper">
-						<img src="<?php echo $assets . '/section-template-icons/about-picture-contact-card.svg'; ?>"/>
-						<h5>Event “Call to Action” + Video Background</h5>
+						<img src="<?php echo $assets . '/section-template-icons/faq-toggles.svg'; ?>"/>
+						<h5>FAQ Toggles</h5>
 
 					</div>
 					<div class="c9-section-wrapper">
-						<img src="<?php echo $assets . '/section-template-icons/about-picture-contact-card.svg'; ?>"/>
-						<h5>Event “Call to Action” + Video Background</h5>
+						<img src="<?php echo $assets . '/section-template-icons/large-audio-embed-fullscreen-photo.svg'; ?>"/>
+						<h5>Large Audio Embed + Background Image</h5>
 
 					</div>
 					<div class="c9-section-wrapper">
-						<img src="<?php echo $assets . '/section-template-icons/about-picture-contact-card.svg'; ?>"/>
-						<h5>Event “Call to Action” + Video Background</h5>
+						<img src="<?php echo $assets . '/section-template-icons/large-lineup-get-tickets-button.svg'; ?>"/>
+						<h5>Large Lineup + "Get Tickets" Button</h5>
 
 					</div>
 				</div>
@@ -463,16 +622,16 @@ class C9_Block_Getting_Started {
 					<h3>
 						C9 Admin Plugin
 					</h3>
-					<div>
+					<h5>
 						More room to format pages with a collapsible panels
-					</div>
+					</h5>
 					<ul>
 						<li>Disable Admin bar on Frontend</li>
-						<li>Disable Admin bar on Frontend</li>
-						<li>Disable Admin bar on Frontend</li>
-						<li>Disable Admin bar on Frontend</li>
-						<li>Disable Admin bar on Frontend</li>
+						<li>Disable Media Attachment Pages</li>
+						<li>Hide Developer-specific menu items</li>
+						<li>Make notification visible to admins only</li>
 					</ul>
+					<a href="#" class="c9-click-preview">Click here for preview</a>
 				</div>
 				</div>
 			</section>
@@ -484,9 +643,7 @@ class C9_Block_Getting_Started {
 					Designed for the customer journey
 				</h2>
 				<div class="c9-awareness-consideration-conversion">
-					<div class="c9-wrapper-header">
-						<img src="<?php echo $assets . '/awareness-consideration-conversion.jpg'; ?>" />
-					</div>
+					<img class="c9-awareness-header" src="<?php echo $assets . '/awareness-consideration-conversion.jpg'; ?>" />
 					<div class="c9-template-types">
 						<h3>
 							Awareness:
@@ -520,26 +677,30 @@ class C9_Block_Getting_Started {
 				<div class="c9-build-your-own-inner">
 					<img class="image-left" src="<?php echo $assets . '/device-previews.png'; ?>">
 					<div class="content-right">
-						<h2>
-							BUILD YOUR OWN PAGES with mobile responsive BLOCKS
-						</h2>
-						<h3>
-							CLICK THE + MODAL & START BUILDING
-						</h3>
-						<p>
-						There’s even more social media strategy content online that’s just as bad as the GOT clickbait.COVERT NINE develops distribution plans and full digital marketing plans to locate and connect with elusive audiences that exist outside of an algorithm, with content that doesn’t make you the 80,000,001 search result.
-						</p>
-						<a>click for overview</a>
-						<h2>
-							BUILD YOUR OWN PAGES with mobile responsive BLOCKS
-						</h2>
-						<h3>
-							CLICK THE + MODAL & START BUILDING
-						</h3>
-						<p>
-						There’s even more social media strategy content online that’s just as bad as the GOT clickbait.COVERT NINE develops distribution plans and full digital marketing plans to locate and connect with elusive audiences that exist outside of an algorithm, with content that doesn’t make you the 80,000,001 search result.
-						</p>
-						<a>click for overview</a>
+						<div class="c9-content-right-first">
+							<h2>
+								BUILD YOUR OWN PAGES with mobile responsive BLOCKS
+							</h2>
+							<h3>
+								CLICK THE + MODAL & START BUILDING
+							</h3>
+							<p>
+								There’s even more social media strategy content online that’s just as bad as the GOT clickbait.COVERT NINE develops distribution plans and full digital marketing plans to locate and connect with elusive audiences that exist outside of an algorithm, with content that doesn’t make you the 80,000,001 search result.
+							</p>
+							<a href="#" class="c9-click-preview">click for overview</a>
+						</div>
+						<div class="c9-content-right-second">
+							<h2>
+								USE SHORTCUT KEY ‘/ C9’ ACCESS FEATURES IN PANEL
+							</h2>
+							<h3>
+								QUICK WAY TO EDIT IN PARAGRAPH BLOCK
+							</h3>
+							<p>
+								Hit the /c9 key in the paragraphy block to access the block  
+							</p>
+							<a href="#" class="c9-click-preview">click for overview</a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -563,84 +724,84 @@ class C9_Block_Getting_Started {
 							</p>
 						</div>
 						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-heading.svg'; ?>"/>
 							<h4>
-								C9 Grid
+								C9 Heading
 							</h4>
 							<p>
 								COVERT NINE helps our clients develop digital marketing plans are
 							</p>
 						</div>
 						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-cta-bar.svg'; ?>"/>
 							<h4>
-								C9 Grid
+								C9 CALL TO ACTION
 							</h4>
 							<p>
 								COVERT NINE helps our clients develop digital marketing plans are
 							</p>
 						</div>
 						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-social-share.svg'; ?>"/>
 							<h4>
-								C9 Grid
+								C9 SOCIAL SHARE
+							</h4>
+							<p>
+								COVERT NINE helps our clients develop digital marketing plans are b
+							</p>
+						</div>
+						<div class="c9-block">
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-tabs-horizontal.svg'; ?>"/>
+							<h4>
+								C9 HORIZONTAL TABS
+							</h4>
+							<p>
+								COVERT NINE helps our clients develop digital marketing plans are b
+							</p>
+						</div>
+						<div class="c9-block">
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-tabs-vertical-tabs.svg'; ?>"/>
+							<h4>
+								C9 VERTICAL TABS
 							</h4>
 							<p>
 								COVERT NINE helps our clients develop digital marketing plans are
 							</p>
 						</div>
 						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-toggles.svg'; ?>"/>
 							<h4>
-								C9 Grid
+								C9 Toggles
+							</h4>
+							<p>
+								COVERT NINE helps our clients develop digital marketing plans are b
+							</p>
+						</div>
+						<div class="c9-block">
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-post-grid.svg'; ?>"/>
+							<h4>
+								C9 POSTS GRID
 							</h4>
 							<p>
 								COVERT NINE helps our clients develop digital marketing plans are
 							</p>
 						</div>
 						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-anything-carousel.svg'; ?>"/>
 							<h4>
-								C9 Grid
+								C9 VERTICAL TABS
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
+								COVERT NINE helps our clients develop digital marketing plans are b
 							</p>
 						</div>
 						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
+							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-image-carousel.svg'; ?>"/>
 							<h4>
-								C9 Grid
+								C9 TOGGLES
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
-							</p>
-						</div>
-						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
-							<h4>
-								C9 Grid
-							</h4>
-							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
-							</p>
-						</div>
-						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
-							<h4>
-								C9 Grid
-							</h4>
-							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
-							</p>
-						</div>
-						<div class="c9-block">
-							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
-							<h4>
-								C9 Grid
-							</h4>
-							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
+								COVERT NINE helps our clients develop digital marketing plans are b
 							</p>
 						</div>
 					</div>
@@ -652,13 +813,15 @@ class C9_Block_Getting_Started {
 					<p class="c9-how-to-blurb">There are 80,000,000+ results on Google for “Which Game of Thrones character am I?”It’s safe to say there is A LOT of content online. There’s even more social media strategy content online that’s just as bad as the GOT clickbait.There are 80,000,000+ results on Google for “Which Game of Thrones character am I?”It’s safe to say there is A LOT of content online. There’s even more social media strategy content online that’s just as bad as the GOT clickbait.</p>
 					<div class="c9-video-tutorials">
 						<div class="c9-video-tutorial">
-
+							<img src="<?php echo $assets . '/change-number-columns.jpg'; ?>" alt="">
 							<a>CHANGING OVERALL WIDTH VIDEO</a>
 						</div>
 						<div class="c9-video-tutorial">
+							<img src="<?php echo $assets . '/change-number-rows.jpg'; ?>" alt="">
 							<a>CHANGING # of Rows (ADDING ROW BUTTON)</a>
 						</div>
 						<div class="c9-video-tutorial">
+							<img src="<?php echo $assets . '/change-overall-width.jpg'; ?>" alt="">
 							<a>CHANGING # of COLUMNS WATCH VIDEO</a>
 						</div>
 					</div>
@@ -669,6 +832,15 @@ class C9_Block_Getting_Started {
 						<div class="c9-content-left">
 							<img src="<?php echo $assets . '/c9-logo.jpg'; ?>" alt="">
 							<div class="c9-social">
+								<a href="#" class="c9-fb">
+									<img src="<?php echo $assets . '/fa-icons/facebook-square-brands.svg'; ?>">
+								</a>
+								<a href="#" class="c9-twitter">
+									<img src="<?php echo $assets . '/fa-icons/twitter-square-brands.svg'; ?>">
+								</a>
+								<a href="#" class="c9-insta">
+									<img src="<?php echo $assets . '/fa-icons/instagram-brands.svg'; ?>">
+								</a>
 							</div>
 						</div>
 						<div class="c9-content-right">
