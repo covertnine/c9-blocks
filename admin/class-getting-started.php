@@ -582,6 +582,9 @@ class C9_Block_Getting_Started {
 				.c9-who-are-we .c9-content-right p {
 					width: 85%;
 				}
+				.c9-how-to .c9-how-to-blurb {
+					width: 95%;
+				}
 			}
 		</style>
 		<div class="c9-admin-wrapper">
