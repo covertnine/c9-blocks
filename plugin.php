@@ -22,3 +22,29 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Block Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+
+/**
+ * Adds a redirect option during plugin activation on non-multisite installs.
+ *
+ * @param bool $network_wide Whether or not the plugin is being network activated.
+ */
+function c9_blocks_activate( $network_wide = false ) {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only used to do a redirect. False positive.
+	if ( ! $network_wide && ! isset( $_GET['activate-multi'] ) ) {
+		add_option( 'c9_blocks_do_activation_redirect', true );
+	}
+}
+register_activation_hook( __FILE__, 'c9_blocks_activate' );
+
+
+/**
+ * Redirect to the C9 Blocks Getting Started page on single plugin activation.
+ */
+function c9_blocks_redirect() {
+	if ( get_option( 'c9_blocks_do_activation_redirect', false ) ) {
+		delete_option( 'c9_blocks_do_activation_redirect' );
+		wp_safe_redirect( esc_url( admin_url( 'themes.php?page=c9-blocks-getting-started' ) ) );
+		exit;
+	}
+}
+add_action( 'admin_init', 'c9_blocks_redirect' );
