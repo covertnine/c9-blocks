@@ -458,8 +458,57 @@ class C9_Block_Getting_Started {
 				#wpcontent {
 					font-size: 8px;
 				}
+				.c9-if-you-love-content {
+					display: block;
+				}
+				.c9-if-you-love-content .c9-content-right {
+					width: 100%;
+				}
+				.c9-if-you-love li {
+					font-size: 1.8em;
+				}
+				.c9-build-your-own-inner {
+					display: block;
+				}
+				.c9-build-your-own-inner .image-left {
+					width: 100%;
+				}
+				.c9-how-to {
+					padding-left: 3vw;
+					padding-right: 3vw;
+				}
+				.c9-how-to .c9-video-tutorials .c9-video-tutorial a {
+					line-height: 1.1;
+				}
+				.c9-admin-hero {
+					min-height: 0;
+				}
+				.c9-admin-hero h5, .c9-admin-hero p {
+					width: 100%;
+				}
+				.c9-section-templates {
+					padding-left: 0;
+					padding-right: 0;
+				}
+				.c9-section-templates .c9-content-right {
+					background-size: auto 100% !important;
+				}
+				.c9-blocks-list {
+					grid-template-columns: repeat(2, 1fr);
+				}
+				.c9-section-examples {
+					padding-left: 0;
+					padding-right: 0;
+				}
+				.c9-support-forums-contact p {
+					width: 90%;
+					margin: 15px auto;
+				}
+				.c9-support-forums-contact button {
+					padding: 8px 40px;
+				}
 			}
-			@media all and (max-width: 768px) {
+			@media all and (max-width: 767px) {
 				#wpwrap #wpcontent {
 					font-size: 6px;
 					padding: 0;
@@ -467,14 +516,14 @@ class C9_Block_Getting_Started {
 				.c9-section-templates {
 					padding-top: 5vh;
 				}
+				.c9-section-templates {
+					display: block;
+				}
+				.c9-section-templates .c9-content-left {
+					width: 100%;
+				}
 				.c9-content-wrapper {
 					width: 90%;
-				}
-				.c9-admin-hero {
-					min-height: 0;
-				}
-				.c9-admin-hero h5, .c9-admin-hero p {
-					width: 100%;
 				}
 				.c9-section-examples-wrapper .c9-section-wrapper h5 {
 					font-size: 2.5em;
@@ -485,12 +534,6 @@ class C9_Block_Getting_Started {
 					background-size: cover !important;
 					background-position: center;
 					background-image: linear-gradient( white, white) !important;
-				}
-				.c9-section-templates {
-					display: block;
-				}
-				.c9-section-templates .c9-content-left {
-					width: 100%;
 				}
 				.c9-section-examples h2 {
 					margin-bottom: 1vh;
@@ -508,15 +551,6 @@ class C9_Block_Getting_Started {
 				.c9-if-you-love {
 					font-size: 6px;
 				}
-				.c9-if-you-love-content {
-					display: block;
-				}
-				.c9-if-you-love-content .c9-content-right {
-					width: 100%;
-				}
-				.c9-if-you-love li {
-					font-size: 1.8em;
-				}
 				.c9-template-types h3 {
 					margin-left: 6px;
 					font-size: 1.8em;
@@ -527,18 +561,8 @@ class C9_Block_Getting_Started {
 				.c9-awareness-header {
 					margin-bottom: -7px;
 				}
-				.c9-build-your-own-inner {
-					display: block;
-				}
-				.c9-build-your-own-inner .image-left {
-					width: 100%;
-				}
 				.c9-blocks-list {
 					grid-template-columns: repeat(1, 1fr);
-				}
-				.c9-how-to {
-					padding-left: 3vw;
-					padding-right: 3vw;
 				}
 				.c9-support-forums-contact {
 					flex-direction: column;
@@ -547,6 +571,16 @@ class C9_Block_Getting_Started {
 					width: 100%;
 					box-sizing: border-box;
 					margin-bottom: 10px;
+				}
+				.c9-who-are-we .c9-social {
+					width: 80%;
+					margin-top: 0;
+				}
+				.c9-who-are-we .c9-social > a {
+					width: 30%;
+				}
+				.c9-who-are-we .c9-content-right p {
+					width: 85%;
 				}
 			}
 		</style>
