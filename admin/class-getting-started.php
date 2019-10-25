@@ -15,6 +15,7 @@ class C9_Block_Getting_Started {
 				padding-left: 0;
 				background: rgba(0,0,0,.88);
 				font-size: 10px;
+				background: url(/wp-content/plugins/c9-blocks/assets/wood-tile.jpg);
 			}
 			#wpcontent li {
 				display: flex;
