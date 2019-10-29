@@ -79,6 +79,12 @@
 	top: 8px;
 }
 
+/* for putting block editors inside of column containers on top of insert points so there's no toolbar buttons being covered*/
+[data-type="c9-blocks/column-container"]>.editor-block-list__block-edit.block-editor-block-list__block-edit .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit,
+[data-type="c9-blocks/column-container"]>.editor-block-list__block-edit.block-editor-block-list__block-edit .c9-column-inner .block-editor-block-list__block>.block-editor-block-list__block-edit {
+	z-index: 24;
+}
+
 .c9-grid>.editor-inner-blocks {
 	height: 100%;
 

@@ -99,7 +99,7 @@ class Sidebar extends Component {
 							}}
 						>
 							<Icon icon={icons.saved} size={ICON_SIZE} />
-							{__("Saved Blocks", "c9-blocks")}
+							{__("Reusable Blocks", "c9-blocks")}
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"

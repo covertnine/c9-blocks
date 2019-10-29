@@ -9,7 +9,7 @@ const icons = {
 			<defs>
 				<style>{`.close-1{fill:#81a0b4;}`}</style>
 			</defs>
-			<title>Inspector_</title>
+			<title>Close</title>
 			<path
 				className="close-1"
 				d="M50,70.48A23.5,23.5,0,1,1,73.49,47,23.44,23.44,0,0,1,50,70.48ZM53.06,47c.16-.13.23-.18.3-.25l6.24-6.24c.16-.17.31-.34.46-.52a1.92,1.92,0,0,0,.25-2.23,2.23,2.23,0,0,0-2.08-1.34,2.17,2.17,0,0,0-1.58.79l-6.4,6.4a1.14,1.14,0,0,0-.16.31,2,2,0,0,1-.32-.3q-3.12-3.12-6.25-6.23a5.68,5.68,0,0,0-.51-.47,1.92,1.92,0,0,0-2.23-.25,2.23,2.23,0,0,0-1.34,2.08,2.19,2.19,0,0,0,.79,1.59l6.4,6.4a1.79,1.79,0,0,0,.31.16,2.41,2.41,0,0,1-.35.36l-6.3,6.31c-.12.13-.25.26-.36.4a2,2,0,0,0-.24,2.24,2.23,2.23,0,0,0,2.11,1.33,2.14,2.14,0,0,0,1.53-.76l6.42-6.42a1.14,1.14,0,0,0,.16-.31,2,2,0,0,1,.36.34l6.32,6.3a3,3,0,0,0,.32.3,1.9,1.9,0,0,0,2.22.32,2.33,2.33,0,0,0,1.4-2,2.08,2.08,0,0,0-.74-1.64l-6.39-6.4A3.38,3.38,0,0,0,53.06,47Z"
@@ -21,7 +21,7 @@ const icons = {
 			<defs>
 				<style>{`.sbi-1,.sbi-4{fill:#fff;}.sbi-2{fill:#81a0b4;}.sbi-3,.sbi-6{fill:none;stroke-linecap:round;}.sbi-3,.sbi-4,.sbi-6{stroke:#81a0b4;stroke-miterlimit:10;}.sbi-3,.sbi-4{stroke-width:2px;}.sbi-3{stroke-dasharray:3 4;}.sbi-5{opacity:0.62;}`}</style>
 			</defs>
-			<title>Inspector_</title>
+			<title>Section Templates</title>
 			<g id="Layer_1" data-name="Layer 1">
 				<rect className="sbi-1" x="1.5" y="1.5" width="97" height="91" />
 				<path className="sbi-2" d="M97,3V91H3V3H97m3-3H0V94H100V0Z" />
@@ -77,7 +77,7 @@ const icons = {
 			<defs>
 				<style>{`.sbi-1,.sbi-4,.sbi-7{fill:#fff;}.sbi-2{fill:#81a0b4;}.sbi-3,.sbi-6,.sbi-8{fill:none;}.sbi-3,.sbi-4,.sbi-6,.sbi-8{stroke:#81a0b4;stroke-miterlimit:10;}.sbi-3,.sbi-6{stroke-linecap:round;}.sbi-3,.sbi-4{stroke-width:2px;}.sbi-3{stroke-dasharray:3 4;}.sbi-5{font-size:5px;fill:#f1f2f2;font-family:Helvetica-Bold, Helvetica;font-weight:700;}.sbi-7{opacity:0.44;}.sbi-9{fill:#c9292c;}`}</style>
 			</defs>
-			<title>Inspector_</title>
+			<title>Page Templates</title>
 			<g id="Layer_1" data-name="Layer 1">
 				<rect className="sbi-1" x="1.5" y="1.71" width="97" height="91" />
 				<path className="sbi-2" d="M97,3.21v88H3v-88H97m3-3H0v94H100V.21Z" />
@@ -85,9 +85,27 @@ const icons = {
 					className="sbi-3"
 					points="97.83 27.21 84.34 7.18 73.28 20.21 65.6 17.77 52.83 27.21"
 				/>
-				<rect className="sbi-3" x="6.58" y="33.85" width="25.72" height="24.34" />
-				<rect className="sbi-3" x="36.14" y="33.85" width="25.72" height="24.34" />
-				<rect className="sbi-3" x="65.7" y="33.85" width="27.72" height="24.34" />
+				<rect
+					className="sbi-3"
+					x="6.58"
+					y="33.85"
+					width="25.72"
+					height="24.34"
+				/>
+				<rect
+					className="sbi-3"
+					x="36.14"
+					y="33.85"
+					width="25.72"
+					height="24.34"
+				/>
+				<rect
+					className="sbi-3"
+					x="65.7"
+					y="33.85"
+					width="27.72"
+					height="24.34"
+				/>
 				<line className="sbi-4" y1="27.54" x2="100" y2="27.54" />
 			</g>
 			<g id="logo_dark_grey" data-name="logo dark grey">
@@ -124,7 +142,7 @@ const icons = {
 			<defs>
 				<style>{`.sbi-1{fill:#fff;}.sbi-2{fill:#81a0b4;}.sbi-3,.sbi-4{fill:none;stroke:#81a0b4;stroke-linecap:round;stroke-miterlimit:10;}.sbi-3{stroke-width:2px;stroke-dasharray:3 4;}`}</style>
 			</defs>
-			<title>Inspector_</title>
+			<title>Reusable Blocks</title>
 			<g id="Layer_1" data-name="Layer 1">
 				<rect className="sbi-1" x="1.65" y="1.62" width="97" height="90.97" />
 				<path
