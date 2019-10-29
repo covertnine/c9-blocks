@@ -298,7 +298,7 @@ class TemplatesModal extends Component {
 							name: "saved-blocks",
 							title: (
 								<Tooltip text={__("My Templates.", "c9-blocks")}>
-									<span>{__("Saved Blocks")}</span>
+									<span>{__("Reusable Blocks")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
