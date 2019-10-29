@@ -333,16 +333,17 @@
 
 		.c9-tutorials .c9-tut-wrapper {
 			img {
-				height: 50%;
+				height: 70%;
 				width: auto;
 				margin-bottom: 5px;
 			}
 			h4 {
 				margin-bottom: 10px;
 			}
-			min-height: 100px;
+			min-height: 150px;
 			padding: 10px;
 			border: 1px solid #f1f1f1;
+			overflow: scroll;
 		}
 
 		.c9-page-cleared {

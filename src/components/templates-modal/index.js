@@ -192,7 +192,6 @@ class TemplatesModal extends Component {
 
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => {
-			console.log(SectionTemplates[k].title);
 			return (
 				<SectionButton
 					open={() => {
@@ -414,7 +413,7 @@ class TemplatesModal extends Component {
 													<TutButton
 														title={tut.title.rendered}
 														url={tut.link}
-														imgUrl={tut.c9_featured_img_url}
+														imgUrl={tut.c9_feat_img_url}
 													/>
 												);
 											})}
@@ -437,7 +436,7 @@ class TemplatesModal extends Component {
 													<TutButton
 														title={tut.title.rendered}
 														url={tut.link}
-														imgUrl={tut.c9_featured_img_url}
+														imgUrl={tut.c9_feat_img_url}
 													/>
 												);
 											})}
