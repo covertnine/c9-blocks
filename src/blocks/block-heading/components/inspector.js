@@ -7,7 +7,7 @@ import HeadingToolbar from "./heading-toolbar";
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Component } = wp.element;
+const { Component, Fragment } = wp.element;
 const { AlignmentToolbar } = wp.editor;
 const { ContrastChecker } = wp.blockEditor;
 const { InspectorControls, PanelColorSettings, ColorPalette } = wp.editor;
@@ -78,10 +78,15 @@ class Inspector extends Component {
 						onChange={value => setAttributes({ addSubheading: value })}
 					/>
 					{addSubheading && (
-						<ColorPalette
-							value={subTextColor}
-							onChange={subTextColor => setAttributes({ subTextColor })}
-						/>
+						<Fragment>
+							<p className="components-base-control__label">
+								{__("Subheading Colors", "c9-blocks")}
+							</p>
+							<ColorPalette
+								value={subTextColor}
+								onChange={subTextColor => setAttributes({ subTextColor })}
+							/>
+						</Fragment>
 					)}
 				</PanelBody>
 				<PanelBody>
