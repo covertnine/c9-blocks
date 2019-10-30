@@ -10,7 +10,7 @@ const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { AlignmentToolbar } = wp.editor;
 const { ContrastChecker } = wp.blockEditor;
-const { InspectorControls, PanelColorSettings } = wp.editor;
+const { InspectorControls, PanelColorSettings, ColorPalette } = wp.editor;
 const { PanelBody, SelectControl, ToggleControl } = wp.components;
 
 /**
@@ -32,6 +32,7 @@ class Inspector extends Component {
 				weight,
 				backgroundColor,
 				textColor,
+				subTextColor,
 				tagLevel,
 				overrideStyle,
 				addSubheading
@@ -76,6 +77,12 @@ class Inspector extends Component {
 						checked={addSubheading}
 						onChange={value => setAttributes({ addSubheading: value })}
 					/>
+					{addSubheading && (
+						<ColorPalette
+							value={subTextColor}
+							onChange={subTextColor => setAttributes({ subTextColor })}
+						/>
+					)}
 				</PanelBody>
 				<PanelBody>
 					<p>{__("Element Tag Type", "c9-blocks")}</p>
