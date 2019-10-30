@@ -596,16 +596,16 @@ class C9_Block_Getting_Started {
 			<section class="c9-admin-hero" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/hero-screenshot.jpg'; ?>), linear-gradient( white, white);">
 			<div class="c9-content-wrapper">
 				<h2 class="c9-heading">
-					Expandable Window
+					A Quick Start Guide
 				</h2>
 				<h2 class="c9-subheading">
-					Premade Templates
+					C9 Blocks
 				</h2>
 				<h5>
-				C9 - BLOCKS | LOCATE THE FEATHER TO ACCESS EDITING FEATURES
+					C9 - BLOCKS | FIND THE FEATHER TO ADD BLOCKS
 				</h5>
 				<p>
-				Make your own layouts from scratch or use ours! Dragging and dropping layouts. Save custom built sections for to make sections modular. Easily duplicate designs across an entire ecosystem. 
+					Build well-crafted, responsive layouts from readymade section templates and page templates. You can even create & save your own sections and page templates. And try the C9 Admin plugin for a refreshing backend experience.
 				</p>
 				<a href="#" class="c9-click-preview">Click here for preview</a>
 			</div>
@@ -613,12 +613,10 @@ class C9_Block_Getting_Started {
 			<section class="c9-section-templates">
 				<div class="c9-content-left">
 					<h2>Section Templates</h2>
-					<p> Make your own layouts from scratch or use ours! Dragging and dropping layouts.</p>
-					<p>Save custom built sections for to make sections modular.</p>
-					<p>Easily duplicate designs across an entire ecosystem.</p>
-					<p>Make your own layouts from scratch or use ours! Dragging and dropping layouts.</p>
-					<p>Save custom built sections for to make sections modular.</p>
-					<p>Easily duplicate designs across an entire ecosystem.</p>
+					<p> Eliminate time-consuming design decisions with pre-built section templates.</p>
+					<p>35 customizable section templates are one click away.</p>
+					<p>If a pre-made section doesn’t fit the bill, create and save your own custom section to be reused on any other page.</p>
+					<p>Entire blocks can be reordered with a simple drag & drop.</p>
 				</div>
 				<div class="c9-content-right" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/drag-drop-section.jpg'; ?>)">
 				</div>
@@ -661,7 +659,7 @@ class C9_Block_Getting_Started {
 						C9 Admin Plugin
 					</h3>
 					<h5>
-						More room to format pages with a collapsible panels
+						A FULL-FEATURED, ENJOYABLE ADMIN EXPERIENCE
 					</h5>
 					<ul>
 						<li>Disable Admin bar on Frontend</li>
@@ -687,7 +685,7 @@ class C9_Block_Getting_Started {
 							Awareness:
 						</h3>
 						<p>
-						For Customers learning about your product, service, event for the first time. Give them the most information they need right upfront.
+							Provide newcomers with something they can’t get elsewhere: Your take on their interests. Earn their trust as an authority. Answer their questions. Be there when they need you.
 						</p>
 						<img src="<?php echo $assets . '/page-template-icons/awareness.svg'; ?>" />
 					</div>
@@ -696,7 +694,7 @@ class C9_Block_Getting_Started {
 							Consideration:
 						</h3>
 						<p>
-						Second touchpoint, Customers are familiar with you, but need some information. 
+							Help your visitors make a decision by sharing what sets you apart. Give them details, comparisons, testimonials, case studies, etc.
 						</p>
 						<img src="<?php echo $assets . '/page-template-icons/consideration.svg'; ?>" />
 					</div>
@@ -705,7 +703,7 @@ class C9_Block_Getting_Started {
 							Conversion:
 						</h3>
 						<p>
-						For Customers learning about your product, service, event for the first time. Give them the most information they need right upfront.
+							Make it easy for visitors to sign up, purchase, ask questions. Give them brief forms, easy-to-read product details, and support information to reassure their decisions.
 						</p>
 						<img src="<?php echo $assets . '/page-template-icons/conversion.svg'; ?>" />
 					</div>
@@ -717,25 +715,27 @@ class C9_Block_Getting_Started {
 					<div class="content-right">
 						<div class="c9-content-right-first">
 							<h2>
-								BUILD YOUR OWN PAGES with mobile responsive BLOCKS
+								DISPLAY PERFECTLY ON ANY DEVICE WITH RESPONSIVE BLOCKS
 							</h2>
 							<h3>
-								CLICK THE + MODAL & START BUILDING
+								CLICK THE ‘+’ & START BUILDING
 							</h3>
 							<p>
-								There’s even more social media strategy content online that’s just as bad as the GOT clickbait.COVERT NINE develops distribution plans and full digital marketing plans to locate and connect with elusive audiences that exist outside of an algorithm, with content that doesn’t make you the 80,000,001 search result.
+								Page elements like text and images automatically scale to the correct size no matter your screen size.</p>
+							<p>
+								Minimized and combined production files keep pages loading fast on all devices and internet connections.
 							</p>
 							<a href="#" class="c9-click-preview">click for overview</a>
 						</div>
 						<div class="c9-content-right-second">
 							<h2>
-								USE SHORTCUT KEY ‘/ C9’ ACCESS FEATURES IN PANEL
+								SPEED UP YOUR WORKFLOW WITH THIS SHORTCUT
 							</h2>
 							<h3>
-								QUICK WAY TO EDIT IN PARAGRAPH BLOCK
+								QUICK EDIT IN THE PARAGRAPH BLOCK
 							</h3>
 							<p>
-								Hit the /c9 key in the paragraphy block to access the block  
+								Open any paragraph block, move to a new line and type ‘/c9’
 							</p>
 							<a href="#" class="c9-click-preview">click for overview</a>
 						</div>
