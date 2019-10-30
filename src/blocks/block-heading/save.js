@@ -46,6 +46,7 @@ export default class Save extends Component {
 				heading,
 				subheading,
 				textColor,
+				subTextColor,
 				tagLevel,
 				type,
 				displayLevel,
@@ -80,7 +81,7 @@ export default class Save extends Component {
 							}
 						})(type, displayLevel, tagLevel)}
 					>
-						<small className="text-muted">
+						<small className="text-muted" style={{ color: subTextColor }}>
 							{subheading.startsWith("&nbsp;")
 								? subheading
 								: "&nbsp;" + subheading}
