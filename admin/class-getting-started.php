@@ -596,16 +596,16 @@ class C9_Block_Getting_Started {
 			<section class="c9-admin-hero" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/hero-screenshot.jpg'; ?>), linear-gradient( white, white);">
 			<div class="c9-content-wrapper">
 				<h2 class="c9-heading">
-					Expandable Window
+					A Quick Start Guide
 				</h2>
 				<h2 class="c9-subheading">
-					Premade Templates
+					C9 Blocks
 				</h2>
 				<h5>
-				C9 - BLOCKS | LOCATE THE FEATHER TO ACCESS EDITING FEATURES
+					C9 - BLOCKS | FIND THE FEATHER TO ADD BLOCKS
 				</h5>
 				<p>
-				Make your own layouts from scratch or use ours! Dragging and dropping layouts. Save custom built sections for to make sections modular. Easily duplicate designs across an entire ecosystem. 
+					Build well-crafted, responsive layouts from readymade section templates and page templates. You can even create & save your own sections and page templates. And try the C9 Admin plugin for a refreshing backend experience.
 				</p>
 				<a href="#" class="c9-click-preview">Click here for preview</a>
 			</div>
@@ -613,12 +613,10 @@ class C9_Block_Getting_Started {
 			<section class="c9-section-templates">
 				<div class="c9-content-left">
 					<h2>Section Templates</h2>
-					<p> Make your own layouts from scratch or use ours! Dragging and dropping layouts.</p>
-					<p>Save custom built sections for to make sections modular.</p>
-					<p>Easily duplicate designs across an entire ecosystem.</p>
-					<p>Make your own layouts from scratch or use ours! Dragging and dropping layouts.</p>
-					<p>Save custom built sections for to make sections modular.</p>
-					<p>Easily duplicate designs across an entire ecosystem.</p>
+					<p> Eliminate time-consuming design decisions with pre-built section templates.</p>
+					<p>35 customizable section templates are one click away.</p>
+					<p>If a pre-made section doesn’t fit the bill, create and save your own custom section to be reused on any other page.</p>
+					<p>Entire blocks can be reordered with a simple drag & drop.</p>
 				</div>
 				<div class="c9-content-right" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/drag-drop-section.jpg'; ?>)">
 				</div>
@@ -661,7 +659,7 @@ class C9_Block_Getting_Started {
 						C9 Admin Plugin
 					</h3>
 					<h5>
-						More room to format pages with a collapsible panels
+						A FULL-FEATURED, ENJOYABLE ADMIN EXPERIENCE
 					</h5>
 					<ul>
 						<li>Disable Admin bar on Frontend</li>
@@ -687,7 +685,7 @@ class C9_Block_Getting_Started {
 							Awareness:
 						</h3>
 						<p>
-						For Customers learning about your product, service, event for the first time. Give them the most information they need right upfront.
+							Provide newcomers with something they can’t get elsewhere: Your take on their interests. Earn their trust as an authority. Answer their questions. Be there when they need you.
 						</p>
 						<img src="<?php echo $assets . '/page-template-icons/awareness.svg'; ?>" />
 					</div>
@@ -696,7 +694,7 @@ class C9_Block_Getting_Started {
 							Consideration:
 						</h3>
 						<p>
-						Second touchpoint, Customers are familiar with you, but need some information. 
+							Help your visitors make a decision by sharing what sets you apart. Give them details, comparisons, testimonials, case studies, etc.
 						</p>
 						<img src="<?php echo $assets . '/page-template-icons/consideration.svg'; ?>" />
 					</div>
@@ -705,7 +703,7 @@ class C9_Block_Getting_Started {
 							Conversion:
 						</h3>
 						<p>
-						For Customers learning about your product, service, event for the first time. Give them the most information they need right upfront.
+							Make it easy for visitors to sign up, purchase, ask questions. Give them brief forms, easy-to-read product details, and support information to reassure their decisions.
 						</p>
 						<img src="<?php echo $assets . '/page-template-icons/conversion.svg'; ?>" />
 					</div>
@@ -717,25 +715,27 @@ class C9_Block_Getting_Started {
 					<div class="content-right">
 						<div class="c9-content-right-first">
 							<h2>
-								BUILD YOUR OWN PAGES with mobile responsive BLOCKS
+								DISPLAY PERFECTLY ON ANY DEVICE WITH RESPONSIVE BLOCKS
 							</h2>
 							<h3>
-								CLICK THE + MODAL & START BUILDING
+								CLICK THE ‘+’ & START BUILDING
 							</h3>
 							<p>
-								There’s even more social media strategy content online that’s just as bad as the GOT clickbait.COVERT NINE develops distribution plans and full digital marketing plans to locate and connect with elusive audiences that exist outside of an algorithm, with content that doesn’t make you the 80,000,001 search result.
+								Page elements like text and images automatically scale to the correct size no matter your screen size.</p>
+							<p>
+								Minimized and combined production files keep pages loading fast on all devices and internet connections.
 							</p>
 							<a href="#" class="c9-click-preview">click for overview</a>
 						</div>
 						<div class="c9-content-right-second">
 							<h2>
-								USE SHORTCUT KEY ‘/ C9’ ACCESS FEATURES IN PANEL
+								SPEED UP YOUR WORKFLOW WITH THIS SHORTCUT
 							</h2>
 							<h3>
-								QUICK WAY TO EDIT IN PARAGRAPH BLOCK
+								QUICK EDIT IN THE PARAGRAPH BLOCK
 							</h3>
 							<p>
-								Hit the /c9 key in the paragraphy block to access the block  
+								Open any paragraph block, move to a new line and type ‘/c9’
 							</p>
 							<a href="#" class="c9-click-preview">click for overview</a>
 						</div>
@@ -758,7 +758,7 @@ class C9_Block_Getting_Started {
 								C9 Grid
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
+								The C9 Grid contains 1-6 columns.
 							</p>
 						</div>
 						<div class="c9-block">
@@ -767,7 +767,7 @@ class C9_Block_Getting_Started {
 								C9 Heading
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
+								Drop in an H1 to H6 anywhere on the page. You can also enable optional inline subheading.
 							</p>
 						</div>
 						<div class="c9-block">
@@ -776,7 +776,7 @@ class C9_Block_Getting_Started {
 								C9 CALL TO ACTION
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
+							Invite site visitors to click a button
 							</p>
 						</div>
 						<div class="c9-block">
@@ -785,7 +785,7 @@ class C9_Block_Getting_Started {
 								C9 SOCIAL SHARE
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are b
+							Invite site users to share your article or page.
 							</p>
 						</div>
 						<div class="c9-block">
@@ -794,7 +794,7 @@ class C9_Block_Getting_Started {
 								C9 HORIZONTAL TABS
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are b
+								Horizontal tabs, fill with any child blocks.
 							</p>
 						</div>
 						<div class="c9-block">
@@ -803,7 +803,7 @@ class C9_Block_Getting_Started {
 								C9 VERTICAL TABS
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
+							Vertical tabs, fill with any child blocks
 							</p>
 						</div>
 						<div class="c9-block">
@@ -812,7 +812,7 @@ class C9_Block_Getting_Started {
 								C9 Toggles
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are b
+								Toggle content open to save space on the page.
 							</p>
 						</div>
 						<div class="c9-block">
@@ -821,25 +821,25 @@ class C9_Block_Getting_Started {
 								C9 POSTS GRID
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are
+								Generate a grid of posts. Define layout, post type, category, tag, and more!
 							</p>
 						</div>
 						<div class="c9-block">
 							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-anything-carousel.svg'; ?>"/>
 							<h4>
-								C9 VERTICAL TABS
+								C9 Carousel
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are b
+								Simple carousel built on Bootstrap's owl carousel, fill with any child blocks you like.
 							</p>
 						</div>
 						<div class="c9-block">
 							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-image-carousel.svg'; ?>"/>
 							<h4>
-								C9 TOGGLES
+								C9 Image Carousel
 							</h4>
 							<p>
-								COVERT NINE helps our clients develop digital marketing plans are b
+								Simple carousel, but just for images.
 							</p>
 						</div>
 					</div>
@@ -848,59 +848,59 @@ class C9_Block_Getting_Started {
 			<section class="c9-how-to">
 				<div class="c9-how-to-inner">
 					<h2>How to use C9 Grid</h2>
-					<p class="c9-how-to-blurb">There are 80,000,000+ results on Google for “Which Game of Thrones character am I?”It’s safe to say there is A LOT of content online. There’s even more social media strategy content online that’s just as bad as the GOT clickbait.There are 80,000,000+ results on Google for “Which Game of Thrones character am I?”It’s safe to say there is A LOT of content online. There’s even more social media strategy content online that’s just as bad as the GOT clickbait.</p>
+					<p class="c9-how-to-blurb">Building responsive landing pages that work on all devices can be a tricky business with the Gutenberg editor, so we’ve compiled a few of our most helpful tips for working with the C9 Grid block, the foundation block for a responsive website.</p>
 					<div class="c9-video-tutorials">
 						<div class="c9-video-tutorial">
-							<img src="<?php echo $assets . '/change-number-columns.jpg'; ?>" alt="">
-							<a>CHANGING OVERALL WIDTH VIDEO</a>
+							<img src="<?php echo $assets . '/building-from-scratch.jpg'; ?>" alt="">
+							<a target="_blank" href="https://c9.covertnine.com/documentation/using-the-c9-grid-block-for-responsive-layouts/">Building responsive landing page layouts from scratch</a>
 						</div>
 						<div class="c9-video-tutorial">
-							<img src="<?php echo $assets . '/change-number-rows.jpg'; ?>" alt="">
-							<a>CHANGING # of Rows (ADDING ROW BUTTON)</a>
+							<img src="<?php echo $assets . '/building-from-templates.jpg'; ?>" alt="">
+							<a target="_blank" href="https://c9.covertnine.com/documentation/building-layouts-from-templates">Building layouts from C9 Block templates</a>
 						</div>
 						<div class="c9-video-tutorial">
-							<img src="<?php echo $assets . '/change-overall-width.jpg'; ?>" alt="">
-							<a>CHANGING # of COLUMNS WATCH VIDEO</a>
+							<img src="<?php echo $assets . '/reusable-layouts.jpg'; ?>" alt="">
+							<a target="_blank" href="https://c9.covertnine.com/documentation/using-saved-block-layouts/">Creating landing pages from reusable block layouts</a>
 						</div>
 					</div>
 					<img src="<?php echo $assets . '/grid-screenshot.jpg'; ?>" alt="" />
-					<h2 class="c9-pick-layouts-heading">Pick a Column Layout then pick a more specific layout</h2>
+					<h2 class="c9-pick-layouts-heading">CHOOSE # OF COLUMNS + THEN SELECT COLUMN WIDTHS</h2>
 					<img src="<?php echo $assets . '/pick-your-layout.svg'; ?>"/>
 					<div class="c9-who-are-we">
 						<div class="c9-content-left">
-							<img src="<?php echo $assets . '/c9-logo.jpg'; ?>" alt="">
+							<img src="<?php echo $assets . '/c9-logo.png'; ?>" alt="">
 							<div class="c9-social">
-								<a href="#" class="c9-fb">
-									<img src="<?php echo $assets . '/fa-icons/facebook-square-brands.svg'; ?>">
+								<a target="_blank" href="https://www.linkedin.com/company/covert-nine/" class="c9-linkedin">
+									<img src="<?php echo $assets . '/fa-icons/linkedin-in-brands.svg'; ?>">
 								</a>
-								<a href="#" class="c9-twitter">
+								<a target="_blank" href="https://twitter.com/covertnine?lang=en class="c9-twitter">
 									<img src="<?php echo $assets . '/fa-icons/twitter-square-brands.svg'; ?>">
 								</a>
-								<a href="#" class="c9-insta">
+								<a target="_blank" href="https://www.instagram.com/covertnine/" class="c9-insta">
 									<img src="<?php echo $assets . '/fa-icons/instagram-brands.svg'; ?>">
 								</a>
 							</div>
 						</div>
 						<div class="c9-content-right">
 							<h4>Who are we?</h4>
-							<p>There’s even more social media strategy content online that’s just as bad as the GOT clickbait. COVERT NINE develops distribution plans and full digital marketing plans to locate and connect.</p>
+							<p>We’re a small team of five based out of Chicago, Illinois. We spent the last year or so planning, testing, and coding this plugin because it was something we needed to make our client websites better, and we hope that these tools help you do the same!</p>
 						</div>
 					</div>
 					<div class="c9-support-forums-contact">
 						<div class="c9-card">
 							<h4>Paid Support</h4>
-							<p>There’s even more social media strategy content online that’s just as bad as the GOT clickbait. COVERT NINE develops distribution plans and full digital marketing plans to locate and connect.</p>
-							<button><a href="/forums">View Forums</a></button>
+							<p>We’re still actively developing this plugin, along with our other plugins and themes. If you need support, head over to contact us (links to our contact page) and reach out as we’re still developing our paid support plans. For now, you can reference our very detailed documentation located <a target="_blank" href="https://c9.covertnine.com/c9-blocks-plugin/">here</a>.</p>
+							<button><a target="_blank" href="https://www.covertnine.com/contact/">Get in touch</a></button>
 						</div>
 						<div class="c9-card">
-							<h4>Forums</h4>
-							<p>There’s even more social media strategy content online that’s just as bad as the GOT clickbait. COVERT NINE develops distribution plans and full digital marketing plans to locate and connect.</p>
-							<button><a href="/forums">View Forums</a></button>
+							<h4>Community Forums</h4>
+							<p>There is a section of our website dedicated to using our tools and getting support for them. If you need help, this is a great place to start, and if you don’t find what you need there, you can always reach out to us @covertnine on Twitter or <a target="_blank" href="https://www.covertnine.com/contact/">contact us.</a></p>
+							<button><a target="_blank" href="https://www.covertnine.com/community/">Community</a></button>
 						</div>
 						<div class="c9-card">
-							<h4>Contact Us</h4>
-							<p>There’s even more social media strategy content online that’s just as bad as the GOT clickbait. COVERT NINE develops distribution plans and full digital marketing plans to locate and connect.</p>
-							<button><a href="/forums">View Forums</a></button>
+							<h4>WE NEED YOUR HELP</h4>
+							<p>C9 Blocks is still being actively developed by the team at COVERT NINE as we learn the ins and outs of the new Gutenberg Editor. After you’ve had time to try out all the features of our plugins and themes, we ask that you provide us with feedback so we can make them even better below:</p>
+							<button><a target="_blank" href="https://covertnine.com/form/what-did-you-think">GIVE FEEDBACK</a></button>
 						</div>
 					</div>
 				</div>
