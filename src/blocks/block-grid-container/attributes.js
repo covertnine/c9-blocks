@@ -5,6 +5,10 @@ const attributes = {
 	instanceId: {
 		type: "number"
 	},
+	lockMovement: {
+		type: "boolean",
+		default: true
+	},
 	rows: {
 		type: "number",
 		default: 1

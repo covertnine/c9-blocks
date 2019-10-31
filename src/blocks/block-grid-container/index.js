@@ -18,7 +18,7 @@ import Icon from "../../../assets/icon-c9-grid.svg";
  */
 const { __ } = wp.i18n;
 const { compose } = wp.compose;
-const { withSelect } = wp.data;
+const { withSelect, withDispatch } = wp.data;
 const { registerBlockType } = wp.blocks;
 
 registerBlockType("c9-blocks/grid", {

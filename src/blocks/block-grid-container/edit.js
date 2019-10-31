@@ -24,8 +24,12 @@ const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 class Edit extends Component {
 	constructor() {
 		super(...arguments);
-	}
 
+		this.state = {
+			templateLock: "all",
+			lockIcon: "editor-unlink"
+		}
+	}
 
 	/**
 	 * Generates the child (row) column container blocks.
@@ -42,7 +46,7 @@ class Edit extends Component {
 			isSelectedBlockInRoot
 		} = this.props;
 
-		const { rows } = attributes;
+		const { rows, lockMovement } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -56,7 +60,7 @@ class Edit extends Component {
 				<Container {...this.props}>
 					<InnerBlocks
 						template={this.getRowsTemplate(rows)}
-						templateLock="all"
+						templateLock = {this.state.templateLock}
 						allowedBlocks={ALLOWED_BLOCKS}
 					/>
 				</Container>
@@ -83,6 +87,21 @@ class Edit extends Component {
 							}}
 						>
 							{__("Add Row", "c9-blocks")}
+						</IconButton>
+						<IconButton
+							label={__("Swap Rows", "c9-blocks")}
+							icon={this.state.lockIcon}
+							onClick={() => {
+								if (lockMovement) {
+									this.setState({ templateLock: "insert", lockIcon: "admin-links" })
+									setAttributes({ lockMovement: false });
+								} else {
+									this.setState({ templateLock: "all", lockIcon: "editor-unlink" })
+									setAttributes({ lockMovement: true });
+								}
+							}}
+						>
+							{__(lockMovement ? "Unlock Row Movement" : "Lock Row Movement", "c9-blocks")}
 						</IconButton>
 					</div>
 				)}
