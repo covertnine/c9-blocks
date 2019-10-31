@@ -19,7 +19,7 @@ export default class Inspector extends Component {
 		const { attributes, setAttributes } = this.props;
 
 		const {
-			buttonsAlign,
+			textAlign,
 			tabBackgroundColor,
 			tabTextColor,
 			tabContentBackgroundColor,
@@ -30,8 +30,8 @@ export default class Inspector extends Component {
 			<InspectorControls>
 				<BaseControl label={__("Tabs Align", "c9-blocks")}>
 					<AlignmentToolbar
-						value={buttonsAlign}
-						onChange={value => setAttributes({ buttonsAlign: value })}
+						value={textAlign}
+						onChange={value => setAttributes({ textAlign: value })}
 						controls={["left", "center", "right"]}
 					/>
 				</BaseControl>

@@ -48,6 +48,9 @@ const attributes = {
 	textColor: {
 		type: "string"
 	},
+	subTextColor: {
+		type: "string"
+	},
 	textAlign: {
 		type: "string",
 		default: "left"

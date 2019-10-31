@@ -56,6 +56,7 @@ export default class Edit extends Component {
 				textAlign,
 				backgroundColor,
 				textColor,
+				subTextColor,
 				type,
 				weight,
 				overrideStyle,
@@ -123,6 +124,9 @@ export default class Edit extends Component {
 								tagName="small"
 								className="text-muted"
 								placeholder={__("Write subheading…", "c9-blocks")}
+								style={{
+									color: subTextColor
+								}}
 								value={subheading}
 								onChange={value => setAttributes({ subheading: value })}
 							/>
