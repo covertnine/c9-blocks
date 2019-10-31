@@ -240,7 +240,8 @@ export default class Inspector extends Component {
 				containerHue,
 				containerOpacity,
 				instanceId,
-				rows
+				rows,
+				lockMovement
 			},
 			setAttributes
 		} = this.props;
@@ -336,19 +337,21 @@ export default class Inspector extends Component {
 						max={100}
 					/>
 				</BaseControl>
-				<PanelBody>
-					<RangeControl
-						label={__("Number of rows to produce", "c9-blocks")}
-						value={rows}
-						onChange={value => setAttributes({ rows: value })}
-						min={1}
-						max={20}
-						help={__(
-							"Note: Changing the row count can cause loss of content.",
-							"c9-blocks"
-						)}
-					/>
-				</PanelBody>
+				{lockMovement && (
+					<PanelBody>
+						<RangeControl
+							label={__("Number of rows to produce", "c9-blocks")}
+							value={rows}
+							onChange={value => setAttributes({ rows: value })}
+							min={1}
+							max={20}
+							help={__(
+								"Note: Changing the row count can cause loss of content.",
+								"c9-blocks"
+							)}
+						/>
+					</PanelBody>
+				)}
 				<PanelBody
 					title={__("Spacing Options", "c9-blocks")}
 					initialOpen={false}
