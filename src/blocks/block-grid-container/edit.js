@@ -66,28 +66,32 @@ class Edit extends Component {
 				</Container>
 				{isSelectedBlockInRoot && (
 					<div className="c9-add-remove-rows">
-						<IconButton
-							label={__("Remove Image", "c9-blocks")}
-							icon="dismiss"
-							onClick={() => {
-								if (1 < rows) {
-									setAttributes({ rows: rows - 1 });
-								}
-							}}
-						>
-							{__("Remove Row", "c9-blocks")}
-						</IconButton>
-						<IconButton
-							label={__("Remove Image", "c9-blocks")}
-							icon="plus-alt"
-							onClick={() => {
-								if (20 > rows) {
-									setAttributes({ rows: rows + 1 });
-								}
-							}}
-						>
-							{__("Add Row", "c9-blocks")}
-						</IconButton>
+						{lockMovement && (
+							<Fragment>
+								<IconButton
+									label={__("Remove Image", "c9-blocks")}
+									icon="dismiss"
+									onClick={() => {
+										if (1 < rows) {
+											setAttributes({ rows: rows - 1 });
+										}
+									}}
+								>
+									{__("Remove Row", "c9-blocks")}
+								</IconButton>
+								<IconButton
+									label={__("Remove Image", "c9-blocks")}
+									icon="plus-alt"
+									onClick={() => {
+										if (20 > rows) {
+											setAttributes({ rows: rows + 1 });
+										}
+									}}
+								>
+									{__("Add Row", "c9-blocks")}
+								</IconButton>
+							</Fragment>
+						)}
 						<IconButton
 							label={__("Swap Rows", "c9-blocks")}
 							icon={this.state.lockIcon}
