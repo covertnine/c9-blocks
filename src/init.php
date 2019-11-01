@@ -90,7 +90,7 @@ function c9_register_tuts_endpoint() {
 add_action( 'rest_api_init', 'c9_register_tuts_endpoint' );
 
 /**
- * Get Covertnine tutorialsrs on hitting rest api endpoint
+ * Get Covertnine tutorials on hitting rest api endpoint
  *
  * @return string
  */
