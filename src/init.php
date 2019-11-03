@@ -90,14 +90,14 @@ function c9_register_tuts_endpoint() {
 add_action( 'rest_api_init', 'c9_register_tuts_endpoint' );
 
 /**
- * Get Covertnine tutorialsrs on hitting rest api endpoint
+ * Get Covertnine tutorials on hitting rest api endpoint
  *
  * @return string
  */
 function c9_get_tuts() {
 	// https://c9.covertnine.com/wp-json/wp/v2/posts?per_page=50&categories=1 to limit by tutorial categories
 	$response = wp_remote_get(
-		'https://c9.covertnine.com/wp-json/wp/v2/posts?per_page=50'
+		'https://covertnine.com/wp-json/wp/v2/posts?per_page=50&categories[]=727'
 	);
 	$tuts     = json_decode( wp_remote_retrieve_body( $response ) );
 	return $tuts;

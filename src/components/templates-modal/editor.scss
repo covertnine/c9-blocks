@@ -332,18 +332,19 @@
 		}
 
 		.c9-tutorials .c9-tut-wrapper {
+			min-height: 250px;
+			text-align: center;
+			padding: 10px;
+			border: 1px solid #f1f1f1;
+			overflow: scroll;
 			img {
-				height: 70%;
-				width: auto;
+				width: 100%;
+				height: auto;
 				margin-bottom: 5px;
 			}
 			h4 {
 				margin-bottom: 10px;
 			}
-			min-height: 150px;
-			padding: 10px;
-			border: 1px solid #f1f1f1;
-			overflow: scroll;
 		}
 
 		.c9-page-cleared {

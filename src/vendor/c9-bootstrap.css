@@ -6102,3 +6102,7 @@ a.text-dark:focus {
 	width: 100%;
 	height: auto;
 }
+
+.editor-styles-wrapper div[data-type="c9-blocks/grid"] {
+	font-size: 10px;
+}
