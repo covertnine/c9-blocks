@@ -4,7 +4,7 @@ export default {
 	icon: Icon,
 	type: "consideration",
 	title: "Landing Page Style Guide",
-	description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and `,
+	description: `Create a Style Guide as a benchmark for the rest of your website`,
 	markup: `<!-- wp:heading -->
 	<h2>Paragraphs</h2>
 	<!-- /wp:heading -->
