@@ -32,10 +32,12 @@ const LayoutButton = ({
 			<div class="c9-layout-button-content">
 				<h3>{label}</h3>
 				<p>{description}</p>
-				<p>
-					<strong>content: </strong>
-					{recommended}
-				</p>
+				{recommended && (
+					<p>
+						<strong>content: </strong>
+						{recommended}
+					</p>
+				)}
 			</div>
 		</button>
 	);
