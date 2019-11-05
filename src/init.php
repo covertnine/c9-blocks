@@ -384,7 +384,7 @@ function c9_render_getting_started() {
 }
 
 function c9_enqueue_admin_style( $hook_suffix ) {
-	if ( 'appearance_page_c9-blocks-getting-started' != $hook_suffix ) {
+	if ( 'appearance_page_c9-blocks-getting-started' !== $hook_suffix ) {
 		return;
 	}
 
