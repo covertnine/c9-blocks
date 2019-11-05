@@ -382,3 +382,18 @@ function c9_render_getting_started() {
 	$page = C9_Block_Getting_Started::render( $tuts );
 	return $page;
 }
+
+/**
+ * Conditionally enqueue admin assets
+ */
+function c9_enqueue_admin_style( $hook_suffix ) {
+	if ( 'appearance_page_c9-blocks-getting-started' !== $hook_suffix ) {
+		return;
+	}
+
+	// Load your css.
+	wp_register_style( 'c9_admin_css', plugin_dir_url( __DIR__ ) . '/admin/admin-style.css', false, '1.0.0' );
+	wp_enqueue_style( 'c9_admin_css' );
+}
+
+add_action( 'admin_enqueue_scripts', 'c9_enqueue_admin_style' );
