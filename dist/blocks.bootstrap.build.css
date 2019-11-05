@@ -4436,7 +4436,7 @@ a.text-dark:focus {
   color: #333 !important; }
 
 .text-muted {
-  color: #6c757d !important; }
+  color: #6c757d; }
 
 .text-black-50 {
   color: rgba(0, 0, 0, 0.5) !important; }
