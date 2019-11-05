@@ -343,6 +343,11 @@ div[data-type="c9-blocks/column-container"] {
 			}
 		}
 
+		.c9-column-innner .wp-block[data-type="core/paragraph"]>.editor-block-list__block-edit.block-editor-block-list__block-edit {
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+
 	}
 
 	.block-editor-block-list__layout .block-editor-default-block-appender>.block-editor-default-block-appender__content {
