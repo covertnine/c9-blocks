@@ -24,17 +24,21 @@ const LayoutButton = ({
 				}, 0);
 			}}
 		>
-			{preview ? (
-				<img src={preview} alt="layout preview"></img>
-			) : (
-				<Icon icon={icon} />
-			)}
-			<div class="c9-layout-button-content">
-				<h3>{label}</h3>
-				<p>{description}</p>
+			<div className="c9-icon-and-about">
+				{preview ? (
+					<img src={preview} alt="layout preview"></img>
+				) : (
+					<Icon icon={icon} />
+				)}
+				<div className="c9-layout-button-content">
+					<h3>{label}</h3>
+					<p>{description}</p>
+				</div>
+			</div>
+			<div className="c9-recommended">
 				{recommended && (
-					<p>
-						<strong>content: </strong>
+					<p className="c9-includes">
+						<strong>includes: </strong>
 						{recommended}
 					</p>
 				)}

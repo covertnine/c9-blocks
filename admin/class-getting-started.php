@@ -29,7 +29,7 @@ class C9_Block_Getting_Started {
 				<p>
 					Build well-crafted, responsive layouts from readymade section templates and page templates. You can even create & save your own sections and page templates. And try the C9 Admin plugin for a refreshing backend experience.
 				</p>
-				<a href="#" class="c9-click-preview">Click here for preview</a>
+				<a href="#" class="c9-click-preview c9-arrow-after">Click here for preview</a>
 			</div>
 			</section>
 			<section class="c9-section-templates">
@@ -89,7 +89,7 @@ class C9_Block_Getting_Started {
 						<li>Hide Developer-specific menu items</li>
 						<li>Make notification visible to admins only</li>
 					</ul>
-					<a href="#" class="c9-click-preview">Click here for preview</a>
+					<a href="#" class="c9-click-preview c9-arrow-after">Click here for preview</a>
 				</div>
 				</div>
 			</section>
@@ -133,7 +133,7 @@ class C9_Block_Getting_Started {
 			</section>
 			<section class="c9-build-your-own">
 				<div class="c9-build-your-own-inner">
-					<img class="image-left" src="<?php echo $assets . '/device-previews.png'; ?>">
+					<img class="image-left" src="<?php echo $assets . '/device-previews.svg'; ?>">
 					<div class="content-right">
 						<div class="c9-content-right-first">
 							<h2>
@@ -147,7 +147,7 @@ class C9_Block_Getting_Started {
 							<p>
 								Minimized and combined production files keep pages loading fast on all devices and internet connections.
 							</p>
-							<a href="#" class="c9-click-preview">click for overview</a>
+							<a href="#" class="c9-click-preview c9-arrow-after">click for overview</a>
 						</div>
 						<div class="c9-content-right-second">
 							<h2>
@@ -159,12 +159,12 @@ class C9_Block_Getting_Started {
 							<p>
 								Open any paragraph block, move to a new line and type ‘/c9’
 							</p>
-							<a href="#" class="c9-click-preview">click for overview</a>
+							<a href="#" class="c9-click-preview c9-arrow-after">click for overview</a>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="c9-never-easier" style="background-size: 100% auto; background-repeat: repeat-y; background-image: url(<?php echo $assets . '/device-size-backgrounds.svg'; ?>)">
+			<section class="c9-never-easier" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/device-size-twice.svg'; ?>);">
 				<div class="c9-never-easier-inner">
 					<h2 class="c9-heading">
 						Building Pages With Gutenberg
@@ -274,18 +274,18 @@ class C9_Block_Getting_Started {
 					<div class="c9-video-tutorials">
 						<div class="c9-video-tutorial">
 							<img src="<?php echo $assets . '/building-from-scratch.jpg'; ?>" alt="">
-							<a target="_blank" href="https://c9.covertnine.com/documentation/using-the-c9-grid-block-for-responsive-layouts/">Building responsive landing page layouts from scratch</a>
+							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/using-the-c9-grid-block-for-responsive-layouts/">Building responsive landing page layouts from scratch</a>
 						</div>
 						<div class="c9-video-tutorial">
 							<img src="<?php echo $assets . '/building-from-templates.jpg'; ?>" alt="">
-							<a target="_blank" href="https://c9.covertnine.com/documentation/building-layouts-from-templates">Building layouts from C9 Block templates</a>
+							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/building-layouts-from-templates">Building layouts from C9 Block templates</a>
 						</div>
 						<div class="c9-video-tutorial">
 							<img src="<?php echo $assets . '/reusable-layouts.jpg'; ?>" alt="">
-							<a target="_blank" href="https://c9.covertnine.com/documentation/using-saved-block-layouts/">Creating landing pages from reusable block layouts</a>
+							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/using-saved-block-layouts/">Creating landing pages from reusable block layouts</a>
 						</div>
 					</div>
-					<img src="<?php echo $assets . '/grid-screenshot.jpg'; ?>" alt="" />
+					<img src="<?php echo $assets . '/col-number.png'; ?>" alt="" />
 					<h2 class="c9-pick-layouts-heading">CHOOSE # OF COLUMNS + THEN SELECT COLUMN WIDTHS</h2>
 					<img src="<?php echo $assets . '/pick-your-layout.svg'; ?>"/>
 					<div class="c9-who-are-we">
