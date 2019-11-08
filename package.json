@@ -23,7 +23,8 @@
 		"memize": "^1.0.5",
 		"moment": "^2.24.0",
 		"qs": "^6.8.0",
-		"react": "^16.4.1"
+		"react": "^16.4.1",
+		"react-hoverintent": "0.0.10"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.0.0",

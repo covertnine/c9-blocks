@@ -233,7 +233,7 @@ class TemplatesModal extends Component {
 							this.setUpdateState("updating");
 						}}
 						close={() => {
-							const { layouts } = this.state;
+						const { layouts } = this.state;
 							layouts[name] = rawHandler({
 								HTML: PageTemplates[name].markup,
 								mode: "BLOCKS",
