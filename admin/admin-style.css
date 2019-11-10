@@ -1,8 +1,20 @@
 #wpcontent {
-	padding-left: 0;
 	background: rgba(0, 0, 0, 0.88);
 	font-size: 10px;
 	background: url(/wp-content/plugins/c9-blocks/assets/wood-tile.jpg);
+}
+p {
+	font-size: 16px;
+}
+button {
+	border: none;
+}
+a:hover {
+	color: inherit;
+}
+button:hover {
+	opacity: 0.8;
+	cursor: pointer;
 }
 #wpcontent li {
 	display: flex;
@@ -109,13 +121,18 @@ p {
 	font-size: 1.8em;
 	margin-bottom: 20px;
 	position: relative;
+	display: inline;
 }
-.c9-click-preview:after {
-	content: "";
+.c9-click-preview:hover {
+	opacity: 0.8;
+}
+.c9-arrow-after:after {
+	content: " ";
 	height: 1em;
 	width: 1em;
 	position: absolute;
-	top: 1px;
+	display: inline-block;
+	top: 1.5px;
 	right: -1.5em;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -142,7 +159,7 @@ p {
 	padding-left: 0;
 }
 .c9-section-templates .c9-content-right {
-	width: 70%;
+	width: 72%;
 }
 .c9-section-examples {
 	background-image: linear-gradient(white, white);
@@ -179,7 +196,7 @@ p {
 	color: #576d7b;
 	font-size: 1.5em;
 	line-height: 1.2;
-	margin-top: 10px;
+	margin-top: 3px;
 	display: block;
 	height: 2.5em;
 }
@@ -217,7 +234,6 @@ p {
 	width: 50%;
 	padding: 5vh 12vw 7vh 6vw;
 	box-sizing: border-box;
-	line-height: ;
 }
 .c9-if-you-love ul {
 	margin-top: 4vh;
@@ -271,6 +287,7 @@ p {
 }
 .c9-build-your-own-inner {
 	display: flex;
+	align-items: flex-start;
 	padding: 3em;
 }
 .c9-build-your-own-inner .image-left {
@@ -278,6 +295,7 @@ p {
 }
 .c9-build-your-own-inner .content-right {
 	padding: 4em;
+	padding-top: 2.5em;
 	display: flex;
 	flex-direction: column;
 }
@@ -324,7 +342,7 @@ p {
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 30px;
 	padding-bottom: 20px;
 }
 .c9-blocks-list .c9-block h4 {
@@ -335,7 +353,7 @@ p {
 }
 .c9-blocks-list .c9-block p {
 	width: 90%;
-	margin: 3vh auto;
+	margin: 1.5vh auto;
 }
 .c9-block-icon {
 	width: 20%;
@@ -372,6 +390,9 @@ p {
 }
 .c9-who-are-we .c9-content-right {
 	width: 70%;
+}
+.c9-who-are-we p {
+	font-size: 13px;
 }
 .c9-support-forums-contact {
 	display: flex;
@@ -439,6 +460,9 @@ p {
 .c9-how-to .c9-video-tutorials .c9-video-tutorial {
 	width: 32.5%;
 	margin-bottom: 2.5vh;
+}
+.c9-how-to .c9-video-tutorials .c9-video-tutorial img {
+	border: 2px solid black;
 }
 .c9-how-to .c9-how-to-inner img {
 	margin-bottom: 7px;

@@ -1,5 +1,7 @@
 const { Icon } = wp.components;
 const { withDispatch } = wp.data;
+const { useState } = wp.element;
+import HoverIntent from "react-hoverintent";
 
 const LayoutButton = ({
 	label,
@@ -13,8 +15,11 @@ const LayoutButton = ({
 	open,
 	close
 }) => {
+	const [hovered, setHovered] = useState(false);
+	const toggleHover = () => setHovered(!hovered);
 	return (
 		<button
+			className={hovered ? "c9-layout-button c9-hovered" : "c9-layout-button"}
 			onClick={() => {
 				open();
 				resetBlocks([]);
@@ -24,17 +29,29 @@ const LayoutButton = ({
 				}, 0);
 			}}
 		>
-			{preview ? (
-				<img src={preview} alt="layout preview"></img>
-			) : (
-				<Icon icon={icon} />
-			)}
-			<div class="c9-layout-button-content">
-				<h3>{label}</h3>
-				<p>{description}</p>
+			<HoverIntent
+				onMouseOver={toggleHover}
+				onMouseOut={toggleHover}
+				sensitivity={10}
+				interval={200}
+				timeout={250}
+			>
+				<div className="c9-icon-and-about">
+					{preview ? (
+						<img src={preview} alt="layout preview"></img>
+					) : (
+						<Icon icon={icon} />
+					)}
+					<div className="c9-layout-button-content">
+						<h3>{label}</h3>
+						<p>{description}</p>
+					</div>
+				</div>
+			</HoverIntent>
+			<div className="c9-recommended">
 				{recommended && (
-					<p>
-						<strong>content: </strong>
+					<p className="c9-includes">
+						<strong>includes: </strong>
 						{recommended}
 					</p>
 				)}
