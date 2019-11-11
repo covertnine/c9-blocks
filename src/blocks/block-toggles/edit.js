@@ -9,7 +9,7 @@ import BlockSelector from "../../components/block-selector";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment, createElement } = wp.element;
-const { InnerBlocks, BlockControls } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { IconButton } = wp.components;
 const { withInstanceId } = wp.compose;

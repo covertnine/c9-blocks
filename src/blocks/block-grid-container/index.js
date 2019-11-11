@@ -18,7 +18,7 @@ import Icon from "../../../assets/icon-c9-grid.svg";
  */
 const { __ } = wp.i18n;
 const { compose } = wp.compose;
-const { withSelect, withDispatch } = wp.data;
+const { withSelect } = wp.data;
 const { registerBlockType } = wp.blocks;
 
 registerBlockType("c9-blocks/grid", {
@@ -33,7 +33,7 @@ registerBlockType("c9-blocks/grid", {
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
+			const { isBlockSelected, hasSelectedInnerBlock } = select("core/block-editor");
 
 			const { clientId } = ownProps;
 

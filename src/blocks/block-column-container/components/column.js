@@ -9,9 +9,9 @@ import classnames from "classnames";
  */
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { registerBlockType, getBlockTypes } = wp.blocks;
-const { AlignmentToolbar, BlockControls } = wp.editor;
+const { AlignmentToolbar } = wp.editor;
 const { Fragment } = wp.element;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;

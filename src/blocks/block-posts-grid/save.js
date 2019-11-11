@@ -7,7 +7,7 @@ import Container from "./components/container";
  * WordPress dependencies
  */
 const { Component } = wp.element;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 
 export default class Save extends Component {
 	constructor() {

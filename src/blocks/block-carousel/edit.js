@@ -7,7 +7,7 @@ import Inspector from "./components/inspector";
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
-const { InnerBlocks, BlockControls } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 

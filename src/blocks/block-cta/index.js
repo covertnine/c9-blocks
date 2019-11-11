@@ -43,7 +43,7 @@ registerBlockType("c9-blocks/cta", {
 
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
+			const { isBlockSelected, hasSelectedInnerBlock } = select("core/block-editor");
 
 			const { clientId } = ownProps;
 

@@ -8,7 +8,7 @@ import Container from "./components/container";
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
-const { InnerBlocks, BlockControls } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { withInstanceId } = wp.compose;
 
 const ALLOWED_BLOCKS = ["c9-blocks/post-grid"];

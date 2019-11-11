@@ -9,7 +9,7 @@ import Container from "./components/container";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { InnerBlocks, BlockControls } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { withInstanceId } = wp.compose;
 const { IconButton } = wp.components;
 
@@ -27,8 +27,18 @@ class Edit extends Component {
 
 		this.state = {
 			templateLock: "all",
-			lockIcon: "editor-unlink"
-		}
+			lockIcon: "editor-unlink",
+			getTemplate: this.blankTemplate
+		};
+	}
+
+	componentDidMount() {
+		this.setState({ getTemplate: this.getRowsTemplate });
+	}
+
+	// eslint-disable-next-line no-unused-vars
+	blankTemplate = rows => {
+		return [];
 	}
 
 	/**
@@ -47,6 +57,9 @@ class Edit extends Component {
 		} = this.props;
 
 		const { rows, lockMovement } = attributes;
+		const { getTemplate } = this.state;
+
+		const template = getTemplate(rows);
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -59,8 +72,8 @@ class Edit extends Component {
 
 				<Container {...this.props}>
 					<InnerBlocks
-						template={this.getRowsTemplate(rows)}
-						templateLock = {this.state.templateLock}
+						template={template}
+						templateLock={this.state.templateLock || "all"}
 						allowedBlocks={ALLOWED_BLOCKS}
 					/>
 				</Container>
@@ -97,15 +110,24 @@ class Edit extends Component {
 							icon={this.state.lockIcon}
 							onClick={() => {
 								if (lockMovement) {
-									this.setState({ templateLock: "insert", lockIcon: "admin-links" })
+									this.setState({
+										templateLock: "insert",
+										lockIcon: "admin-links"
+									});
 									setAttributes({ lockMovement: false });
 								} else {
-									this.setState({ templateLock: "all", lockIcon: "editor-unlink" })
+									this.setState({
+										templateLock: "all",
+										lockIcon: "editor-unlink"
+									});
 									setAttributes({ lockMovement: true });
 								}
 							}}
 						>
-							{__(lockMovement ? "Unlock Row Movement" : "Lock Row Movement", "c9-blocks")}
+							{__(
+								lockMovement ? "Unlock Row Movement" : "Lock Row Movement",
+								"c9-blocks"
+							)}
 						</IconButton>
 					</div>
 				)}

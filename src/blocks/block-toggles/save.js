@@ -3,7 +3,7 @@
  */
 const { Component } = wp.element;
 const { applyFilters } = wp.hooks;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 
 /**
  * External Dependencies.

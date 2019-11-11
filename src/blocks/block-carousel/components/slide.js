@@ -4,7 +4,7 @@
 const { Component } = wp.element;
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 const { registerBlockType } = wp.blocks;
 
 /**

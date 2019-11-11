@@ -22,7 +22,7 @@ import icons from "../../../assets/c9-col-layout-icons";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Tooltip, Placeholder, ButtonGroup, Button } = wp.components;
-const { InnerBlocks, BlockControls } = wp.editor;
+const { InnerBlocks, BlockControls } = wp.blockEditor;
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 

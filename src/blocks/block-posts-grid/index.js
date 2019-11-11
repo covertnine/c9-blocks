@@ -33,7 +33,7 @@ registerBlockType("c9-blocks/posts-grid", {
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } = select("core/editor");
+			const { isBlockSelected, hasSelectedInnerBlock } = select("core/block-editor");
 
 			const { clientId } = ownProps;
 

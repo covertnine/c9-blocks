@@ -2,8 +2,7 @@
  * WordPress dependencies
  */
 const { Component } = wp.element;
-const { InnerBlocks } = wp.editor;
-const { RichText } = wp.blockEditor;
+const { RichText, InnerBlocks } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 
 /**

@@ -7,7 +7,7 @@ import classnames from "classnames";
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 
 export default class Save extends Component {

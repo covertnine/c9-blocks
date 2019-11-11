@@ -11,8 +11,7 @@ const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Toolbar } = wp.components;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
-const { BlockControls, RichText } = wp.blockEditor;
+const { BlockControls, RichText, InnerBlocks } = wp.blockEditor;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
