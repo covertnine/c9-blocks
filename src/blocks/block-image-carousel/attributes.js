@@ -44,6 +44,10 @@ const attributes = {
 	slideTime: {
 		type: "number",
 		default: 5000
+	},
+	isResponsive: {
+		type: "boolean",
+		default: false
 	}
 };
 

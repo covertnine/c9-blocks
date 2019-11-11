@@ -23,7 +23,8 @@ export default class Inspector extends Component {
 			showControls,
 			showIndicators,
 			wrapAround,
-			slideTime
+			slideTime,
+			isResponsive
 		} = attributes;
 
 		return (
@@ -104,6 +105,11 @@ export default class Inspector extends Component {
 						label={__("Show indicators", "c9-blocks")}
 						checked={showIndicators}
 						onChange={showIndicators => setAttributes({ showIndicators })}
+					/>
+					<ToggleControl
+						label={__("Responsive image loading", "c9-blocks")}
+						checked={isResponsive}
+						onChange={isResponsive => setAttributes({ isResponsive })}
 					/>
 				</PanelBody>
 			</InspectorControls>

@@ -44,14 +44,28 @@ export default class Save extends Component {
 	 * Generates the slides using the given images.
 	 */
 	createSlides(slides) {
-		const { url, captionTitle, captionContent } = this.props.attributes;
+		const {
+			url,
+			id,
+			captionTitle,
+			captionContent,
+			isResponsive
+		} = this.props.attributes;
 
 		let template = [];
 		for (let i = 0; i < slides; i++) {
 			template.push(
 				<div className={classnames("carousel-item", 0 == i ? "active" : null)}>
 					<Fragment>
-						{url[i] && <img src={url[i]} className="d-block w-100" />}
+						{url[i] && (
+							<img
+								src={url[i]}
+								className={classnames(
+									"d-block w-100",
+									isResponsive && id[i] ? `wp-image-${id[i]}` : null
+								)}
+							/>
+						)}
 						{(captionTitle[i] || captionContent[i]) && (
 							<div className={classnames("carousel-caption d-none d-md-block")}>
 								{captionTitle[i] && (
