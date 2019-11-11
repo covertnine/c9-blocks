@@ -128,6 +128,7 @@ export default class Edit extends Component {
 								style={{
 									color: subTextColor
 								}}
+								keepPlaceholderOnFocus={true}
 								value={subheading}
 								onChange={value => setAttributes({ subheading: value })}
 							/>
