@@ -11,7 +11,8 @@ const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Toolbar } = wp.components;
 const { registerBlockType } = wp.blocks;
-const { BlockControls, InnerBlocks, RichText } = wp.editor;
+const { InnerBlocks } = wp.editor;
+const { BlockControls, RichText } = wp.blockEditor;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
@@ -135,7 +136,7 @@ class Toggle extends Component {
 								onChange={value => {
 									setAttributes({ heading: value });
 								}}
-								formattingControls={["bold", "italic", "strikethrough"]}
+								allowedFormats={["bold", "italic", "strikethrough"]}
 								isSelected={isSelected}
 								keepPlaceholderOnFocus
 							/>
@@ -230,7 +231,7 @@ registerBlockType("c9-blocks/toggles-toggle", {
 				getBlock,
 				isBlockSelected,
 				hasSelectedInnerBlock
-			} = select("core/editor");
+			} = select("core/block-editor");
 
 			const { clientId } = ownProps;
 

@@ -12,7 +12,8 @@ import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { IconButton, Tooltip } = wp.components;
-const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
+const { InnerBlocks, AlignmentToolbar } = wp.editor;
+const { RichText, BlockControls } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { select, dispatch } = wp.data;
@@ -241,7 +242,7 @@ class Edit extends Component {
 													});
 												}
 											}}
-											formattingControls={["bold", "italic", "strikethrough"]}
+											allowedFormats={["bold", "italic", "strikethrough"]}
 											keepPlaceholderOnFocus
 										/>
 										<RemoveButton

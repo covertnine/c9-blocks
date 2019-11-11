@@ -34,7 +34,7 @@ registerBlockType("c9-blocks/carousel", {
 	edit: compose([
 		withSelect((select, ownProps) => {
 			const { getBlock, isBlockSelected, hasSelectedInnerBlock } = select(
-				"core/editor"
+				"core/block-editor"
 			);
 
 			const { clientId } = ownProps;

@@ -7,7 +7,7 @@ import CustomHeading from "./components/custom-heading";
  * WordPress dependencies
  */
 const { Component } = wp.element;
-const { RichText } = wp.editor;
+const { RichText } = wp.blockEditor;
 
 /**
  * External Dependencies.

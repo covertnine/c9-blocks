@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 const { Component } = wp.element;
-const { InspectorControls } = wp.editor;
+const { InspectorControls } = wp.blockEditor;
 
 /**
  * Create an Inspector Controls wrapper Component

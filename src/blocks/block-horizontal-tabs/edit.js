@@ -11,7 +11,8 @@ import RemoveButton from "../../components/remove-button";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { IconButton, Tooltip } = wp.components;
-const { RichText, InnerBlocks, BlockControls, AlignmentToolbar } = wp.editor;
+const { InnerBlocks, AlignmentToolbar } = wp.editor;
+const { BlockControls, RichText } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { select, dispatch } = wp.data;
 const { withInstanceId } = wp.compose;
@@ -244,7 +245,7 @@ class Edit extends Component {
 												});
 											}
 										}}
-										formattingControls={["bold", "italic", "strikethrough"]}
+										allowedFormats={["bold", "italic", "strikethrough"]}
 										keepPlaceholderOnFocus
 									/>
 									<RemoveButton

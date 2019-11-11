@@ -10,7 +10,8 @@ const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { AlignmentToolbar } = wp.editor;
 const { ContrastChecker } = wp.blockEditor;
-const { InspectorControls, PanelColorSettings, ColorPalette } = wp.editor;
+const { PanelColorSettings, ColorPalette } = wp.editor;
+const { InspectorControls } = wp.blockEditor;
 const { PanelBody, SelectControl, ToggleControl } = wp.components;
 
 /**

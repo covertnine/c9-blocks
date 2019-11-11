@@ -9,7 +9,8 @@ import SubheadingToolbar from "./components/subheading-toolbar";
 /**
  * WordPress dependencies
  */
-const { AlignmentToolbar, BlockControls, RichText } = wp.editor;
+const { AlignmentToolbar } = wp.editor;
+const { BlockControls, RichText } = wp.blockEditor;
 const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { Component } = wp.element;

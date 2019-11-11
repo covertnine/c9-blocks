@@ -9,7 +9,8 @@ import WidthToolbar from "../../components/width-toolbar";
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
-const { AlignmentToolbar, URLInput, BlockControls, RichText } = wp.editor;
+const { AlignmentToolbar, URLInput } = wp.editor;
+const { BlockControls, RichText } = wp.blockEditor;
 const { IconButton, Dashicon, Button } = wp.components;
 const { __ } = wp.i18n;
 
@@ -150,7 +151,7 @@ export default class Edit extends Component {
 							placeholder={__("Button text...", "c9-blocks")}
 							keepPlaceholderOnFocus={true}
 							value={buttonText}
-							formattingControls={[]}
+							allowedFormats={[]}
 							className={classnames(
 								"wp-block-button__link",
 								`c9-button-shape-${buttonShape}`,

@@ -10,11 +10,11 @@ const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { ContrastChecker } = wp.blockEditor;
 const {
-	InspectorControls,
 	PanelColorSettings,
 	MediaUpload,
 	ColorPalette
 } = wp.editor;
+const { InspectorControls } = wp.blockEditor;
 const {
 	PanelBody,
 	RangeControl,

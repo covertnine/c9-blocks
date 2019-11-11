@@ -5,7 +5,8 @@
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { InspectorControls, MediaUpload, ColorPalette } = wp.editor;
+const { MediaUpload, ColorPalette } = wp.editor;
+const { InspectorControls } = wp.blockEditor;
 const {
 	RadioControl,
 	PanelBody,

@@ -10,7 +10,7 @@ import Inspector from "./components/inspector";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { RichText, BlockControls, MediaPlaceholder } = wp.editor;
+const { BlockControls, RichText, MediaPlaceholder } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
@@ -349,7 +349,7 @@ class Edit extends Component {
 											captionTitle: newCaptionTitle
 										});
 									}}
-									formattingControls={["bold", "italic", "strikethrough"]}
+									allowedFormats={["bold", "italic", "strikethrough"]}
 									keepPlaceholderOnFocus
 								/>
 								<RichText
@@ -367,7 +367,7 @@ class Edit extends Component {
 											captionContent: newCaptionContent
 										});
 									}}
-									formattingControls={["bold", "italic", "strikethrough"]}
+									allowedFormats={["bold", "italic", "strikethrough"]}
 									keepPlaceholderOnFocus
 								/>
 							</div>
