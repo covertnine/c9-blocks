@@ -28,7 +28,7 @@ class Edit extends Component {
 		this.state = {
 			templateLock: "all",
 			lockIcon: "editor-unlink",
-			getTemplate: this.blankTemplate
+			getTemplate: this.dummyTemplate
 		};
 	}
 
@@ -37,8 +37,8 @@ class Edit extends Component {
 	}
 
 	// eslint-disable-next-line no-unused-vars
-	blankTemplate = rows => {
-		return [];
+	dummyTemplate = rows => {
+		return this.getRowsTemplate(rows + 1);
 	}
 
 	/**
