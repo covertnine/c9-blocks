@@ -24,12 +24,12 @@ class C9_Block_Getting_Started {
 					C9 Blocks
 				</h2>
 				<h5>
-					C9 - BLOCKS | FIND THE FEATHER TO ADD BLOCKS
+					CLICK THE FEATHER TO ADD TEMPLATES + SAVED LAYOUTS
 				</h5>
 				<p>
-					Build well-crafted, responsive layouts from readymade section templates and page templates. You can even create & save your own sections and page templates. And try the C9 Admin plugin for a refreshing backend experience.
+					Build agency-designed, responsive layouts from readymade section templates and page templates. You can even create & save your own sections and page templates. Just locate the feather in the upper right hand corner of any Gutenberg Editing screen to see the templates.
 				</p>
-				<a href="#" class="c9-click-preview c9-arrow-after">Click here for preview</a>
+				<a href="https://www.covertnine.com/c9-blocks-plugin" class="c9-click-preview c9-arrow-after" target="_blank">Detailed Video Walk Throughs</a>
 			</div>
 			</section>
 			<section class="c9-section-templates">
@@ -40,7 +40,7 @@ class C9_Block_Getting_Started {
 					<p>If a pre-made section doesn’t fit the bill, create and save your own custom section to be reused on any other page.</p>
 					<p>Entire blocks can be reordered with a simple drag & drop.</p>
 				</div>
-				<div class="c9-content-right" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/drag-drop-section.jpg'; ?>)">
+				<div class="c9-content-right" style="background-size: 100.3% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/drag-drop-section.jpg'; ?>)">
 				</div>
 			</section>
 			<section class="c9-section-examples">
@@ -72,7 +72,7 @@ class C9_Block_Getting_Started {
 				</div>
 			</section>
 			<section class="c9-if-you-love">
-				<h2>IF you love c9 Blocks, then you’ll love our ADMIN PLUGIN</h2>
+				<h2>Enhance the WordPress admin editing experience</h2>
 				<div class="c9-if-you-love-content">
 				<div class="c9-content-left" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/c9-admin-plugin-screenshot.jpg'; ?>)">
 				</div>
@@ -81,15 +81,18 @@ class C9_Block_Getting_Started {
 						C9 Admin Plugin
 					</h3>
 					<h5>
-						A FULL-FEATURED, ENJOYABLE ADMIN EXPERIENCE
+						Simplify the WordPress Admin in a few clicks
 					</h5>
 					<ul>
-						<li>Disable Admin bar on Frontend</li>
-						<li>Disable Media Attachment Pages</li>
-						<li>Hide Developer-specific menu items</li>
-						<li>Make notification visible to admins only</li>
+						<li>Frees up space for Gutenberg editing</li>
+						<li>Disable admin bar on frontend</li>
+						<li>Disable media attachment pages</li>
+						<li>Hide developer-specific menu items</li>
+						<li>Hide notifications for non-admins</li>
+						<li>Free to download and use</li>
 					</ul>
-					<a href="#" class="c9-click-preview c9-arrow-after">Click here for preview</a>
+					<a href="https://c9.covertnine.com/c9-admin-plugin/" class="c9-click-preview c9-arrow-after" target="_blank">Learn More</a><br /><br />
+					<a href="https://www.covertnine.com/form/c9-beta" class="c9-click-preview c9-arrow-after" target="_blank">Download Now</a>
 				</div>
 				</div>
 			</section>
@@ -98,13 +101,13 @@ class C9_Block_Getting_Started {
 					Page Templates
 				</h2>
 				<h2 class="c9-subheading">
-					Designed for the customer journey
+					Designed for the content journey
 				</h2>
 				<div class="c9-awareness-consideration-conversion">
 					<img class="c9-awareness-header" src="<?php echo $assets . '/awareness-consideration-conversion.jpg'; ?>" />
 					<div class="c9-template-types">
 						<h3>
-							Awareness:
+							Awareness
 						</h3>
 						<p>
 							Provide newcomers with something they can’t get elsewhere: Your take on their interests. Earn their trust as an authority. Answer their questions. Be there when they need you.
@@ -113,7 +116,7 @@ class C9_Block_Getting_Started {
 					</div>
 					<div class="c9-template-types">
 						<h3>
-							Consideration:
+							Consideration
 						</h3>
 						<p>
 							Help your visitors make a decision by sharing what sets you apart. Give them details, comparisons, testimonials, case studies, etc.
@@ -122,7 +125,7 @@ class C9_Block_Getting_Started {
 					</div>
 					<div class="c9-template-types">
 						<h3>
-							Conversion:
+							Conversion
 						</h3>
 						<p>
 							Make it easy for visitors to sign up, purchase, ask questions. Give them brief forms, easy-to-read product details, and support information to reassure their decisions.
@@ -137,29 +140,29 @@ class C9_Block_Getting_Started {
 					<div class="content-right">
 						<div class="c9-content-right-first">
 							<h2>
-								DISPLAY PERFECTLY ON ANY DEVICE WITH RESPONSIVE BLOCKS
+								DISPLAY PIXEL PERFECT CONTENT ON ANY DEVICE
 							</h2>
 							<h3>
-								CLICK THE ‘+’ & START BUILDING
+								CLICK THE + TO START BUILDING RESPONSIVE LAYOUTS
 							</h3>
 							<p>
 								Page elements like text and images automatically scale to the correct size no matter your screen size.</p>
 							<p>
 								Minimized and combined production files keep pages loading fast on all devices and internet connections.
 							</p>
-							<a href="#" class="c9-click-preview c9-arrow-after">click for overview</a>
+							<a href="https://c9.covertnine.com/sample-content/" target="_blank" class="c9-click-preview c9-arrow-after">SEE SAMPLE CONTENT</a>
 						</div>
 						<div class="c9-content-right-second">
 							<h2>
-								SPEED UP YOUR WORKFLOW WITH THIS SHORTCUT
+								SPEED UP YOUR WORKFLOW WITH THE / SHORTCUT
 							</h2>
 							<h3>
-								QUICK EDIT IN THE PARAGRAPH BLOCK
+								Quickly insert blocks from any empty line by typing the slash key to see a list of blocks. 
 							</h3>
 							<p>
-								Open any paragraph block, move to a new line and type ‘/c9’
+								For those of you looking for short cuts so you don't have to keep clicking the + icon to add new blocks, try the '/' shortcut. Open any paragraph block, move to a new line and type ‘/c9’ to see the C9 blocks or just type the / key to see any of your currently installed blocks.
 							</p>
-							<a href="#" class="c9-click-preview c9-arrow-after">click for overview</a>
+							<a href="https://www.covertnine.com/category/block-walk-through-videos/" target="_blank" class="c9-click-preview c9-arrow-after">Watch Walk-Through Videos</a>
 						</div>
 					</div>
 				</div>
@@ -167,12 +170,11 @@ class C9_Block_Getting_Started {
 			<section class="c9-never-easier" style="background-size: 100% auto; background-repeat: no-repeat; background-image: url(<?php echo $assets . '/device-size-twice.svg'; ?>);">
 				<div class="c9-never-easier-inner">
 					<h2 class="c9-heading">
-						Building Pages With Gutenberg
+						Bring complex landing pages to life
 					</h2>
 					<h2 class="c9-subheading">
-						HAS NEVER BEEN EASIER
+						 In minutes
 					</h2>
-					<h3>TOUR THROUGH THE PANEL</h3>
 					<div class="c9-blocks-list">
 						<div class="c9-block">
 							<img class="c9-block-icon" src="<?php echo $assets . '/icon-c9-grid.svg'; ?>"/>
@@ -269,20 +271,20 @@ class C9_Block_Getting_Started {
 			</section>
 			<section class="c9-how-to">
 				<div class="c9-how-to-inner">
-					<h2>How to use C9 Grid</h2>
+					<h2>How to use the responsive C9 Grid</h2>
 					<p class="c9-how-to-blurb">Building responsive landing pages that work on all devices can be a tricky business with the Gutenberg editor, so we’ve compiled a few of our most helpful tips for working with the C9 Grid block, the foundation block for a responsive website.</p>
 					<div class="c9-video-tutorials">
 						<div class="c9-video-tutorial">
-							<img src="<?php echo $assets . '/building-from-scratch.jpg'; ?>" alt="">
-							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/using-the-c9-grid-block-for-responsive-layouts/">Building responsive landing page layouts from scratch</a>
+							<img src="<?php echo $assets . '/c9-blocks-netflix-tutorial.jpg'; ?>" alt="">
+							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/using-the-c9-grid-block-for-responsive-layouts/">VIDEO: Building Pages From Scratch</a>
 						</div>
 						<div class="c9-video-tutorial">
-							<img src="<?php echo $assets . '/building-from-templates.jpg'; ?>" alt="">
-							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/building-layouts-from-templates">Building layouts from C9 Block templates</a>
+							<img src="<?php echo $assets . '/using-templates.jpg'; ?>" alt="">
+							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/building-layouts-from-templates">VIDEO: Building layouts from C9 Block templates</a>
 						</div>
 						<div class="c9-video-tutorial">
-							<img src="<?php echo $assets . '/reusable-layouts.jpg'; ?>" alt="">
-							<a class="c9-click-preview" target="_blank" href="https://c9.covertnine.com/documentation/using-saved-block-layouts/">Creating landing pages from reusable block layouts</a>
+							<img src="<?php echo $assets . '/responsive-landing-2020-theme.jpg'; ?>" alt="">
+							<a class="c9-click-preview" target="_blank" href="https://www.youtube.com/watch?v=urLN4C3YFaM">VIDEO: A New Homepage for the new Twenty Twenty theme</a>
 						</div>
 					</div>
 					<img src="<?php echo $assets . '/col-number.png'; ?>" alt="" />
