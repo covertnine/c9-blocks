@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: C9 Blocks
- * Plugin URI: https://www.covertnine.com
- * Description: COVERT NINE blocks for C9 WordPress theme using a combination of Bootstrap + CSS Grid
+ * Plugin URI: https://www.c9blocks.com
+ * Description: 10 new Gutenberg blocks with section templates and page templates that use Bootstrap + CSS Grid to make responsive page building with the native Blocks API a breeze. Compatible with the C9 starter theme, Twenty Nineteen, and Twenty Twenty WordPress themes.
  * Author: COVERT NINE
  * Author URI: https://www.covertnine.com
  * Version: 1.0.1
