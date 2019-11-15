@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: ttoomey, htmercury, lgdrewc9, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
-Tags: blocks, gutenberg, page builder, marketing, 
+Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive
 Requires at least: 5.2.4
 Tested up to: 5.3
 Stable tag: 1.0.1
