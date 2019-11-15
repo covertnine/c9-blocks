@@ -331,18 +331,11 @@ function c9_blocks_front_assets() {
 		false
 	);
 
-	// jQuery for frontend.
-	wp_enqueue_script(
-		'jquery',
-		'https://code.jquery.com/jquery-3.3.1.slim.min.js',
-		false
-	);
-
 	// blocks frontend.
 	wp_enqueue_script(
 		'c9_blocks-frontend',
 		plugins_url( 'dist/blocks.frontend.build.js', dirname( __FILE__ ) ),
-		array()
+		array('jquery')
 	);
 }
 
