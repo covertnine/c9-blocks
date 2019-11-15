@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== C9 Blocks ===
 Contributors: ttoomey, htmercury, lgdrewc9, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive
