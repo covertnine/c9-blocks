@@ -1,5 +1,5 @@
 === C9 Blocks ===
-Contributors: ttoomey, htmercury, lgdrewc9, samirillion, malzdesigns
+Contributors: ttoomey, htmercury, lgdrew, samirillion
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive
 Requires at least: 5.2.4
@@ -74,6 +74,11 @@ but there may be some conflicts that exist as we haven't fully tested the latest
 * WordPress Twenty Nineteen and Twenty Twenty Support
 * C9 Starter Theme Support
 
+== Upgrade Notice ==
+
+= 1.0.1 = 
+* Better readme.txt file
+* Better screen shots
 
 == C9 Blocks currently includes the following blocks ==
 
