@@ -9,49 +9,36 @@ Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-10 new Gutenberg blocks with section templates and page templates that use Bootstrap + CSS Grid to make responsive 
-page building easy.
+10 new Gutenberg blocks with section templates and page templates that use Bootstrap + CSS Grid to make responsive page building easy.
 
 == Description ==
 
-C9 Blocks is COVERT NINE's block plugin featured 10 new blocks, plus an interface for creating pages from section 
-templates, or fully built page templates. Block landing page templates are organized in a modal by the "content
- journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper 
- right corner after installing the WordPress plugin.
+C9 Blocks is COVERT NINE's block plugin featured 10 new blocks, plus an interface for creating pages from section templates, or fully built page templates. Block landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper  right corner after installing the WordPress plugin.
 
 Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo.
 
-For an overview of each of the blocks, and more up to date documentation, head over to our documentation and demo 
-site.
-https://c9.covertnine.com
+For an overview of each of the blocks, and more up to date documentation, head over to our [documentation and demo site](https://c9.covertnine.com).
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/c9-blocks` directory, or install the plugin through the 
-WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/c9-blocks` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Use the Appearance->C9 Blocks screen to see a quick overview for using the plugin, and you can access your 
-Reusable Block Layouts you save at Appearance -> C9 Reusable Blocks.
-4. The C9 Blocks plugin should redirect you to this quick start guide after activation. Blocks can be accessed from 
-the + icon or the feather logo icon in the upper right hand corner form any Gutenberg editing screen
+3. Use the Appearance->C9 Blocks screen to see a quick overview for using the plugin, and you can access your Reusable Block Layouts you save at Appearance -> C9 Reusable Blocks.
+4. The C9 Blocks plugin should redirect you to this quick start guide after activation. Blocks can be accessed from the + icon or the feather logo icon in the upper right hand corner form any Gutenberg editing screen
 
 
 == Frequently Asked Questions ==
 
 = Can C9 Blocks be used with any theme? =
 
-The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well 
-as the C9 Starter Theme. We're working to make the plugin work with other themes as well, and if you have a page template 
-that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
+The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well as the C9 Starter Theme. We're working to make the plugin work with other themes as well, and if you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
-Get the C9 Theme
-https://c9.covertnine.com
+[Get the C9 Theme](https://c9.covertnine.com)
+
 
 = Do I need the new block editor to use C9 Blocks? =
 
-Yes, you will need to have WordPress 5.0 or later installed to take advantage of C9 Blocks, and if you have the latest 
-versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, 
-but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
+Yes, you will need to have WordPress 5.0 or later installed to take advantage of C9 Blocks, and if you have the latest versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
 
 == Screenshots ==
 
@@ -97,29 +84,26 @@ https://www.youtube.com/watch?v=urLN4C3YFaM
 
 **Creating a Homepage for the Twenty Twenty WordPress Theme**
 
+
 https://www.youtube.com/watch?v=ekwe_CaDlP0
 
 **Building A Netflix Inspired Landing Page with C9 Blocks**
 
-For an overview of each of the blocks, and more up to date documentation, head over to our documentation and 
-demo site.
-https://c9.covertnine.com
+
+For an overview of each of the blocks, and more up to date documentation, head over to our [documentation and 
+demo site](https://c9.covertnine.com).
+
 
 == C9 WordPress Theme ==
-To build your own themes with our Bootstrap and CSS Grid based responsive blocks plugin, we've set up a minimal Bootstrap 4
-theme that utilizes most of Bootstrap's componennts, and works seamlessly with the new custom editor style from WordPress 5. 
-If you're at the 'logo and an address' phase of your website, this theme is a great starting point.
+To build your own themes with our Bootstrap and CSS Grid based responsive blocks plugin, we've set up a minimal Bootstrap 4 theme that utilizes most of Bootstrap's componennts, and works seamlessly with the new custom editor style from WordPress 5. If you're at the 'logo and an address' phase of your website, this theme is a great starting point.
 
-If you're working on behalf of a client or customer, then the theme has a client boilerplate folder, and has 
-full child theme support should you want to build your own style guide and themes on top of our starter theme. 
-The starter theme is based on [Understrap](https://understrap.com/), but with a more modern approach to using 
-Gutenberg's editing system, and a more minimal theme starting skin.
+If you're working on behalf of a client or customer, then the theme has a client boilerplate folder, and has full child theme support should you want to build your own style guide and themes on top of our starter theme. The starter theme is based on [Understrap](https://understrap.com/), but with a more modern approach to using Gutenberg's editing system, and a more minimal theme starting skin.
 
 == Follow Along ==
 
-* https://twitter.com/covertnine
-* https://github.com/covertnine
-* https://www.covertnine.com
+* [COVERT NINE Twitter](https://twitter.com/covertnine)
+* [COVERT NINE GitHub](https://github.com/covertnine)
+* [COVERT NINE Website](https://www.covertnine.com)
 
 == Online Documentation ==
 
