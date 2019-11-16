@@ -93,6 +93,14 @@ but there may be some conflicts that exist as we haven't fully tested the latest
 * Toggles Block
 * Grid Block
 
+https://www.youtube.com/watch?v=urLN4C3YFaM
+
+**Creating a Homepage for the Twenty Twenty WordPress Theme**
+
+https://www.youtube.com/watch?v=ekwe_CaDlP0
+
+**Building A Netflix Inspired Landing Page with C9 Blocks**
+
 For an overview of each of the blocks, and more up to date documentation, head over to our documentation and 
 demo site.
 https://c9.covertnine.com
