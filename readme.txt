@@ -1,5 +1,5 @@
 === C9 Blocks ===
-Contributors: ttoomey, htmercury, lgdrew, samirillion
+Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive
 Requires at least: 5.2.4
@@ -61,7 +61,6 @@ but there may be some conflicts that exist as we haven't fully tested the latest
 4. Page Templates in the C9 Blocks modal.
 5. Reusable Blocks that you have saved on a site will display and can be previewed with the C9 Blocks modal.
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
-7. Animation of the C9 Blocks modal tabs
 
 == Changelog ==
 
@@ -113,3 +112,21 @@ Gutenberg's editing system, and a more minimal theme starting skin.
 * https://twitter.com/covertnine
 * https://github.com/covertnine
 * https://www.covertnine.com
+
+== Online Documentation ==
+
+* [C9 Plugin Homepage](https://c9.covertnine.com)
+* [C9 Blocks Documentation](https://c9.covertnine.com/documentation/)
+* [C9 Theme Documentation](https://c9.covertnine.com/c9-theme/)
+* [C9 Admin Theme Documentation](https://c9.covertnine.com/c9-admin-plugin/)
+* [Sample Content](https://c9.covertnine.com/sample-content/)
+
+== Support ==
+
+Please visit our support forum: [Here](https://www.covertnine.com/community/support/).
+
+Main documentation can be found [Here](https://c9.covertnine.com/documentation/)
+
+The Blocks Development Guide lives [Here](https://c9.covertnine.com/c9-blocks-development/)
+
+Tutorials and demo content can be found [Here](https://c9.covertnine.com/)
