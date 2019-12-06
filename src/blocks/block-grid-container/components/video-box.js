@@ -123,7 +123,8 @@ export default class VideoBox extends Component {
 		}
 	}
 	componentDidMount() {
-		this.setYoutube();
+		const init = this.setYoutube;
+		setTimeout(() => init(), 500);
 	}
 
 	render() {
