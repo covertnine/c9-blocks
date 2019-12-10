@@ -1,10 +1,14 @@
+![WordPress Campatible Badge](https://img.shields.io/wordpress/plugin/wp-version/c9-blocks) ![Plugin Version](https://img.shields.io/wordpress/plugin/v/c9-blocks) ![GPL Version](https://img.shields.io/github/license/covertnine/c9-blocks)
+
 ## Landing page building blocks for the new WordPress editor.
 
-C9 Blocks is COVERT NINE's block plugin featured 10 new blocks, plus an interface for creating pages from section templates, or fully built page templates. Block landing page templates are organized in a modal by the customer's journey step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper right corner after installing the WordPress plugin.
+C9 Blocks gives you the tools to work entirely within the Gutenberg block editing API with 10 new content blocks, 30+ section templates, and 15+ landing page templates. The grid block provides a container for repeatable rows of content, which can be split into columns, and are responsive by default.
 
-Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo.
+This plugin is compatible with the Twenty Nineteen and Twenty Twenty themes but can be paired with the C9 starter theme and C9 admin plugin to great effect for developers, agencies, and website content managers.
 
-## C9 Blocks currently includes the following blocks:
+![C9 Blocks Header](https://www.covertnine.com/wp-content/uploads/2019/12/c9-blocks-header-git-1.jpg)
+
+## C9 Blocks includes the following blocks:
 
 * Heading Block
 * Social Share Block
@@ -22,9 +26,9 @@ For an overview of each of the blocks, and more up to date documentation, head o
 https://c9.covertnine.com
 
 ## C9 WordPress Theme
-To build your own themes with our Bootstrap and CSS Grid based responsive blocks plugin, we've set up a starter theme that utilizes most of Bootstrap's componennts, and works seamlessly with the new custom editor style from WordPress 5. If you're at the 'logo and an address' phase of your website, this theme is a great starting point.
+The C9 Theme is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with the new custom editor style from WordPress 5. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system and a more minimal minimal theme skin to start with.
 
-If you're working on behalf of a client or customer, then the theme has a client boilerplate folder, and has full child theme support should you want to build your own style guide and themes on top of our starter theme. The starter theme is based on Understrap(https://understrap.com/), but with a more modern approach to using Gutenberg's editing system.
+If you're working on behalf of a client or customer and want to build your own style guide and/or themes on top of the C9 theme, included is a client boilerplate folder and full child theme support.
 
 ## Follow Along:
 
@@ -41,21 +45,37 @@ This plugin can be installed directly from your site.
 3. Locate the C9 Blocks plugin zip file you downloaded from Github or covertnine.com and click **Install Now**.
 4. Once installed, click the Activate link.
 
-It can also be installed bu cloning the Github repo into your Plugins directory if you plan on making changes and making use of NPM.
+It can also be installed by cloning the Github repo into your Plugins directory if you plan on making changes and making use of NPM.
+
+== Demo Videos ==
+
+**How to Create a Homepage for the Twenty Twenty WordPress Theme**
+
+https://www.youtube.com/watch?v=urLN4C3YFaM
+
+
+**Building A Netflix Inspired Landing Page with C9 Blocks**
+
+https://www.youtube.com/watch?v=ekwe_CaDlP0
 
 ## Frequently Asked Questions
 
 **Can C9 Blocks be used with any theme?**
 
-The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well as the C9 Starter Theme. We're working to make the plugin work with other themes as well, and if you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
+The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well as the C9 Starter Theme. 
+
+We're working to make the plugin work with other themes as well. If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
 [Get the C9 Theme](https://c9.covertnine.com)
 
 **Do I need the new block editor to use C9 Blocks?**
 
-Yes, you will need to have WordPress 5.0 or later installed to take advantage of C9 Blocks, and if you have the latest versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
+Yes, you will need to have WordPress 5.0 or later installed to take advantage of C9 Blocks. If you have the latest version of the Gutenberg plugin installed, you can use the BlockPreview support that is built into the saved templates modal. *If you experience any conflicts, please let us know so we can make the necessary updates.
 
 ## Changelog
 
-**1.0**
+**1.0.2**
+Updated readme files, and fixed bugs related to display of backgrounds on iOS devices.
+
+**1.0.1**
 * Initial release with 10 new blocks, 38 section templates, 15 full landing page templates, and our first version of documentation. Plugin is currently tested with the WordPress Twenty Nineteen and Twenty Twenty beta themes, as well as the [C9 Starter Theme](https://c9.covertnine.com)
