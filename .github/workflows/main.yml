@@ -1,20 +1,17 @@
-name: CI
-
-on: 
+name: Deploy to WordPress.org
+on:
   push:
-    branches:
-    - 'workflow'
-
+    tags:
+      - "*"
 jobs:
-  build:
-
+  tag:
+    name: New tag - deploy
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - uses: actions/checkout@master
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@master
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SLUG: c9-blocks
