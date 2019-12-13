@@ -8,7 +8,7 @@ import SettingsSpacer from "../../../components/settings-spacer";
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { ContrastChecker } = wp.blockEditor;
+const { ContrastChecker, FontSizePicker } = wp.blockEditor;
 const {
 	PanelColorSettings,
 	MediaUpload,
@@ -156,6 +156,7 @@ export default class Inspector extends Component {
 			ctaLayout,
 			ctaPadding,
 			ctaMargin,
+			dropCap,
 			imgURL,
 			imgID,
 			imgAttach,
@@ -166,7 +167,9 @@ export default class Inspector extends Component {
 		} = this.props.attributes;
 
 		const {
+			fontSize,
 			setAttributes,
+			setFontSize,
 			buttonTextColor,
 			buttonBackgroundColor
 		} = this.props;
@@ -242,6 +245,21 @@ export default class Inspector extends Component {
 
 		return (
 			<InspectorControls key="inspector">
+				<PanelBody title={ __( 'Text Settings' ) } className="blocks-font-size">
+					<FontSizePicker
+						value={ fontSize.size }
+						onChange={ setFontSize }
+					/>
+					<ToggleControl
+						label={ __( 'Drop Cap' ) }
+						checked={ !! dropCap }
+						onChange={ () => setAttributes( { dropCap: ! dropCap } ) }
+						help={ dropCap ?
+							__( 'Showing large initial letter.' ) :
+							__( 'Toggle to show a large initial letter.' )
+						}
+					/>
+				</PanelBody>
 				<PanelBody>
 					<RadioControl
 						label={__("Content Width", "c9-blocks")}

@@ -18,7 +18,7 @@ const attributes = {
 	},
 	buttonAlignment: {
 		type: "string",
-		default: "center"
+		default: "left"
 	},
 	buttonBackgroundColor: {
 		type: "string"
@@ -138,7 +138,17 @@ const attributes = {
 	disableToolbar: {
 		type: "boolean",
 		default: false
-	}
+	},
+	fontSize: {
+		type: "string"
+	},
+	customFontSize: {
+		type: "number"
+	},
+	dropCap: {
+		type: "boolean",
+		default: false
+	},
 };
 
 export default attributes;

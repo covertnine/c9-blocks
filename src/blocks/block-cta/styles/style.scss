@@ -40,6 +40,7 @@
 .c9-cta-text p:only-of-type,
 .c9-cta-text p:first-child {
 	margin-top: 0px;
+	font-size: inherit;
 }
 
 @media only screen and (min-width: 768px) {

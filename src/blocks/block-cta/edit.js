@@ -10,8 +10,9 @@ import WidthToolbar from "../../components/width-toolbar";
  */
 const { Component, Fragment } = wp.element;
 const { AlignmentToolbar, URLInput } = wp.editor;
-const { BlockControls, RichText } = wp.blockEditor;
+const { BlockControls, RichText, withFontSizes } = wp.blockEditor;
 const { IconButton, Dashicon, Button } = wp.components;
+const { compose } = wp.compose;
 const { __ } = wp.i18n;
 
 /**
@@ -19,13 +20,35 @@ const { __ } = wp.i18n;
  */
 import classnames from "classnames";
 
-export default class Edit extends Component {
+/**
+ * Browser dependencies
+ */
+const { getComputedStyle } = window;
+const querySelector = window.document.querySelector.bind(document);
+
+const PARAGRAPH_DROP_CAP_SELECTOR = "p.has-drop-cap";
+
+class Edit extends Component {
 	constructor() {
 		super(...arguments);
 
 		this.state = {
 			hideForm: false
 		};
+	}
+
+	// DropCap effect adapted from
+	// https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/paragraph/edit.js
+	useDropCapMinimumHeight(isDropCap) {
+		let minimumHeight;
+		const element = querySelector(PARAGRAPH_DROP_CAP_SELECTOR);
+		if (isDropCap && element) {
+			minimumHeight = getComputedStyle(element, "first-letter").height;
+		} else if (minimumHeight) {
+			minimumHeight = undefined;
+		}
+
+		return minimumHeight;
 	}
 
 	/**
@@ -65,13 +88,17 @@ export default class Edit extends Component {
 				ctaWidth,
 				ctaTextColor,
 				ctaLayout,
+				dropCap,
 				align,
 				type,
 				disableToolbar
 			},
 			isSelectedBlockInRoot,
-			setAttributes
+			setAttributes,
+			fontSize
 		} = this.props;
+
+		const dropCapMinimumHeight = this.useDropCapMinimumHeight(dropCap);
 
 		let currWidth;
 		if (0 != align.length) {
@@ -133,10 +160,16 @@ export default class Edit extends Component {
 							className={classnames(
 								this.layoutClass(ctaLayout, "text"),
 								"c9-cta-text",
-								type
+								type,
+								{
+									"has-drop-cap": dropCap,
+									[fontSize.class]: fontSize.class
+								}
 							)}
 							style={{
-								color: ctaTextColor
+								fontSize: fontSize.size ? fontSize.size + "px" : undefined,
+								color: ctaTextColor,
+								minHeight: dropCapMinimumHeight
 							}}
 							onChange={value => setAttributes({ ctaText: value })}
 						/>
@@ -200,3 +233,7 @@ export default class Edit extends Component {
 		);
 	}
 }
+
+const CtaEdit = compose([withFontSizes("fontSize")])(Edit);
+
+export default CtaEdit;
