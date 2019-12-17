@@ -4,6 +4,7 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
+import PauseToolBar from "../../components/pause-toolbar";
 
 /**
  * WordPress dependencies
@@ -37,7 +38,8 @@ class Edit extends Component {
 			wrap: wrapAround,
 			time: slideTime,
 			slideActive: 0,
-			slideTarget: 0
+			slideTarget: 0,
+			pause: false
 		};
 
 		this.onSelectImage = this.onSelectImage.bind(this);
@@ -87,7 +89,7 @@ class Edit extends Component {
 	 * If so, update state and carousel directly using the react ref.
 	 */
 	componentDidUpdate() {
-		const { auto, wrap, time } = this.state;
+		const { auto, wrap, time, pause } = this.state;
 		const { autoSlide, wrapAround, slideTime } = this.props.attributes;
 		const $ = window.jQuery;
 
@@ -98,7 +100,11 @@ class Edit extends Component {
 		if ($(this.carouselRef.current).data()["bs.carousel"]) {
 			let options = $(this.carouselRef.current).data()["bs.carousel"]._config;
 
-			if (auto != autoSlide) {
+			if (pause && false != auto) {
+				options.interval = false;
+				this.setState({ auto: false });
+
+		 	} else if (!pause && auto != autoSlide) {
 				let interval = autoSlide ? slideTime : false;
 				options.interval = interval;
 				this.setState({ auto: autoSlide });
@@ -410,7 +416,7 @@ class Edit extends Component {
 	}
 
 	render() {
-		const { slideTarget } = this.state;
+		const { slideTarget, pause } = this.state;
 
 		const {
 			attributes,
@@ -436,7 +442,14 @@ class Edit extends Component {
 
 		return (
 			<Fragment>
-				<BlockControls />
+				<BlockControls>
+					<PauseToolBar
+						value={pause}
+						onChange={value => {
+							this.setState({ pause: value });
+						}}
+					/>
+				</BlockControls>
 
 				<Inspector
 					{...this.props}

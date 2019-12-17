@@ -2,6 +2,7 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
+import PauseToolBar from "../../components/pause-toolbar";
 
 /**
  * WordPress dependencies
@@ -32,7 +33,8 @@ class Edit extends Component {
 			auto: autoSlide,
 			wrap: wrapAround,
 			time: slideTime,
-			active: 0
+			active: 0,
+			pause: false
 		};
 
 		this.createIndicators = this.createIndicators.bind(this);
@@ -48,6 +50,12 @@ class Edit extends Component {
 		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
 			self.setState({ active: to });
 		});
+
+		const { slides } = this.props.attributes;
+
+		if (slides == undefined) {
+			this.props.setAttributes({ slides: 3 });
+		}
 	}
 
 	/**
@@ -81,14 +89,18 @@ class Edit extends Component {
 			updateBlockAttributes(child.clientId, { slideActive: this.state.active });
 		}
 
-		const { auto, wrap, time } = this.state;
+		const { auto, wrap, time, pause } = this.state;
 		const { autoSlide, wrapAround, slideTime } = this.props.attributes;
 		const $ = window.jQuery;
 
 		if ($(this.carouselRef.current).data()["bs.carousel"]) {
 			let options = $(this.carouselRef.current).data()["bs.carousel"]._config;
 
-			if (auto != autoSlide) {
+			if (pause && false != auto) {
+				options.interval = false;
+				this.setState({ auto: false });
+
+		 	} else if (!pause && auto != autoSlide) {
 				let interval = autoSlide ? slideTime : false;
 				options.interval = interval;
 				this.setState({ auto: autoSlide });
@@ -96,6 +108,7 @@ class Edit extends Component {
 				if (autoSlide && time != slideTime) {
 					this.setState({ time: slideTime });
 				}
+
 			} else if (autoSlide && time != slideTime) {
 				options.interval = slideTime;
 				this.setState({ time: slideTime });
@@ -167,13 +180,22 @@ class Edit extends Component {
 			slideTime
 		} = attributes;
 
+		const { pause } = this.state;
+
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 		}
 
 		return (
 			<Fragment>
-				<BlockControls />
+				<BlockControls>
+					<PauseToolBar
+						value={pause}
+						onChange={value => {
+							this.setState({ pause: value });
+						}}
+					/>
+				</BlockControls>
 
 				<Inspector
 					{...this.props}
@@ -187,7 +209,7 @@ class Edit extends Component {
 						"carousel slide"
 					)}
 					data-ride="carousel"
-					data-interval={autoSlide ? slideTime : false}
+					data-interval={(!pause && autoSlide) ? slideTime : false}
 					data-wrap={wrapAround}
 					ref={this.carouselRef}
 				>
