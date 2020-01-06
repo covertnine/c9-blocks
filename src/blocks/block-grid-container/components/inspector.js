@@ -242,7 +242,10 @@ export default class Inspector extends Component {
 				containerOpacity,
 				instanceId,
 				rows,
-				lockMovement
+				lockMovement,
+				overrideMobile,
+				focalPointMobile,
+				bgImgSizeMobile
 			},
 			setAttributes
 		} = this.props;
@@ -682,6 +685,42 @@ export default class Inspector extends Component {
 												}
 											/>
 										</div>
+
+										<h5>{__("Override Mobile?", "c9-blocks")}</h5>
+										<ToggleControl
+											label={__("Default | Override", "c9-blocks")}
+											checked={overrideMobile}
+											onChange={overrideMobile => setAttributes({ overrideMobile })}
+										/>
+
+										{overrideMobile && (
+											<PanelBody
+												title={__("Mobile Override Settings", "c9-blocks")}
+												initialOpen={true}
+											>
+												<h5>Position</h5>
+												<FocalPointPicker
+													label={__("Focal Point Picker", "c9-blocks")}
+													url={containerImgURL}
+													value={focalPointMobile}
+													onChange={value => setAttributes({ focalPointMobile: value })}
+												/>
+
+												<hr />
+
+												<h5>{__("Size", "c9-blocks")}</h5>
+												<SelectControl
+													help={__(
+														"Choose between cover or contain.",
+														"c9-blocks"
+													)}
+													options={sizeTypes.slice(0, -1)}
+													value={bgImgSizeMobile}
+													onChange={value => setAttributes({ bgImgSizeMobile: value })}
+												/>
+											</PanelBody>
+										)}
+											
 									</div>
 								)}
 							</div>

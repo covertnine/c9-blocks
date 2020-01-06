@@ -32,6 +32,10 @@ const attributes = {
 		type: "string",
 		default: "cover"
 	},
+	bgImgSizeMobile: {
+		type: "string",
+		default: "cover"
+	},
 	bgCustomX: {
 		type: "object",
 		default: {
@@ -103,6 +107,13 @@ const attributes = {
 			y: 0.5
 		}
 	},
+	focalPointMobile: {
+		type: "object",
+		default: {
+			x: 0.5,
+			y: 0.5
+		}
+	},
 	videoType: {
 		type: "string",
 		default: "upload"
@@ -118,7 +129,11 @@ const attributes = {
 	cannotEmbed: {
 		type: "boolean",
 		default: false
-	}
+	},
+	overrideMobile: {
+		type: "boolean",
+		default: false
+	},
 };
 
 export default attributes;
