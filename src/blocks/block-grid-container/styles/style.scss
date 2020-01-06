@@ -326,7 +326,8 @@
 		padding-right: 0px;
 	}
 
-	.page-template-default .entry-content>.c9-grid .container {
+	.page-template-default .entry-content>.c9-grid .container,
+	.page-template-fullwidthpage .entry-content>.c9-grid>.container {
 		max-width: 1140px;
 	}
 }
