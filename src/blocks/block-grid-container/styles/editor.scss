@@ -71,6 +71,10 @@
 	align-items: flex-start;
 }
 
+.c9-grid .c9-grid-mobile-focal > .components-focal-point-picker_position-display-container {
+	display: none;
+}
+
 /* for adjusting insertion points to account for select container buttons (grid items only)  */
 [data-type="c9-blocks/column-container"]>.editor-block-list__block-edit.block-editor-block-list__block-edit .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__insertion-point,
 [data-type="c9-blocks/column-container"]>.editor-block-list__block-edit.block-editor-block-list__block-edit .c9-column-inner .block-editor-block-list__block>.block-editor-block-list__insertion-point {

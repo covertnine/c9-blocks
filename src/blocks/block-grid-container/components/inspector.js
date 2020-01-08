@@ -40,7 +40,8 @@ export default class Inspector extends Component {
 				bgCustomX,
 				bgCustomY,
 				bgCustomXMobile,
-				bgCustomYMobile
+				bgCustomYMobile,
+				focalPointMobile
 			},
 			setAttributes
 		} = this.props;
@@ -65,7 +66,8 @@ export default class Inspector extends Component {
 			bgCustomX: bgCustomX,
 			bgCustomY: bgCustomY,
 			bgCustomXMobile: bgCustomXMobile,
-			bgCustomYMobile: bgCustomYMobile
+			bgCustomYMobile: bgCustomYMobile,
+			focalPointMobile: focalPointMobile
 		};
 	}
 
@@ -738,11 +740,43 @@ export default class Inspector extends Component {
 											>
 												<h5>Position</h5>
 												<FocalPointPicker
+													className="c9-grid-mobile-focal"
 													label={__("Focal Point Picker", "c9-blocks")}
 													url={containerImgURL}
-													value={focalPointMobile}
-													onChange={value =>
-														setAttributes({ focalPointMobile: value })
+													value={this.state.focalPointMobile}
+													onChange={value => {
+														const self = this;
+														setTimeout(function() {
+															let x, y;
+															if (0.33 >= value.x) {
+																x = 0.25;
+															}
+															else if (0.66 >= value.x) {
+																x = 0.5;
+															}
+															else {
+																x = 0.75;
+															}
+															
+															if (0.33 >= value.y) {
+																y = 0.25;
+															}
+															else if (0.66 >= value.y) {
+																y = 0.5;
+															}
+															else {
+																y = 0.75;
+															}
+
+															setAttributes({ focalPointMobile: { x,y } });
+															self.setState({ focalPointMobile: { x,y } });
+
+														}, 10);
+
+														// console.log(value);
+
+														// setAttributes({ focalPointMobile: value });
+													}
 													}
 												/>
 
