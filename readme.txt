@@ -16,6 +16,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 [Description](#description) | [Installation](#installation) | [Frequently Asked Questions](#frequently-asked-questions)
 [Screenshots](#screenshots) | [Changelog](#changelog) | [Upgrade Notice](#upgrade-notice)
 [C9 Blocks Includes the Following Blocks](#c9-blocks-includes-the-following-blocks) | [Demo Videos](#demo-videos) | [C9 Wordpress Theme](#c9-wordpress-theme)
+
 [Follow Along](#follow-along) | [Online Documentation](#online-documentation) | [Support](#support)
 
 == Description ==
@@ -26,7 +27,7 @@ The landing page templates are organized in a modal by the "content journey" ste
 
 Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo.
 
-For an overview of each of the blocks, and more up to date documentation, head over to our [documentation and demo site](https://c9.covertnine.com).
+For an overview of each of the blocks, and more up to date documentation, head over to our [documentation  site](https://c9.covertnine.com).
 
 == Installation ==
 
@@ -60,6 +61,13 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
+= 1.0.3
+* Added font size controls to call to action block
+* Added mobile override settings for background imagery in C9 Grid Block (Initial beta of the mobile settings)
+
+= 1.0.2 =
+* Updated readme files, and fixed bugs related to display of backgrounds on iOS devices.
+
 = 1.0.1 =
 * Initial release 
 * 10 new blocks
@@ -70,6 +78,10 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 * C9 Starter Theme Support
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+* Additional settings for C9 Grid
+* Font size controls and default font sizes added for C9 CTA Block
 
 = 1.0.1 = 
 * Better readme.txt file

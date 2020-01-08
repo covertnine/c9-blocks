@@ -74,6 +74,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.0.3**
+Added mobile override settings for background imagery in C9 Grid Block (Initial beta of the mobile settings
+
 **1.0.2**
 Updated readme files, and fixed bugs related to display of backgrounds on iOS devices.
 
