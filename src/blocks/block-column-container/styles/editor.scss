@@ -350,6 +350,13 @@ div[data-type="c9-blocks/column-container"] {
 
 	}
 
+	.block-editor-block-list__block .block-editor-block-list__layout {
+		margin-left: -38px;
+		margin-right: -38px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
 	.block-editor-block-list__layout .block-editor-default-block-appender>.block-editor-default-block-appender__content {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -439,8 +446,8 @@ div[data-type="c9-blocks/column-container"] {
 }
 
 .c9-layout-column-wrap-admin .editor-inner-blocks .block-editor-block-list__layout .block-editor-block-list__block {
-	padding-left: 35px;
-	padding-right: 35px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .c9-block-layout-column .wp-block-image,
