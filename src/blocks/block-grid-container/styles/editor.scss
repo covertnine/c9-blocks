@@ -98,11 +98,21 @@
 }
 
 .c9-add-remove-rows {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20px;
+	z-index: 14;
+
+	.components-button {
+		background-color: rgba(255, 255, 255, .7);
+	}
+
 	>.components-button.components-icon-button {
 		margin: 0;
 	}
 
-	padding-bottom: 20px;
+	// padding-bottom: 20px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -299,8 +309,8 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 	//setting the outer .c9-grid container width for the main blocks window when all admin sidebars are hidden or collapsed
 	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
 		width: 100%;
-		margin-top: 16px;
-		margin-bottom: 16px;
+		// margin-top: 16px;
+		// margin-bottom: 16px;
 	}
 
 	body .edit-post-layout .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .c9-grid .container-narrow {
