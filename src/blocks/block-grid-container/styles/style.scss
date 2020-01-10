@@ -27,6 +27,56 @@
 .c9-grid {
 	display: grid;
 	position: relative;
+
+	@media (max-width: 667px) {		
+		.c9-image-mobile-size-custom {
+			background-size: var(--mobile-height) var(--mobile-width);
+		}
+
+		.c9-image-mobile-size-cover {
+			background-size: cover;
+		}
+
+		.c9-image-mobile-size-contain {
+			background-size: contain;
+		}
+
+		.c9-image-mobile-top-left {
+			
+		}
+
+		.c9-image-mobile-top-center {
+			
+		}
+
+		.c9-image-mobile-top-right {
+
+		}
+
+		.c9-image-mobile-center-left {
+
+		}
+
+		.c9-image-mobile-center-center {
+
+		}
+
+		.c9-image-mobile-center-right {
+
+		}
+
+		.c9-image-mobile-bottom-left {
+
+		}
+
+		.c9-image-mobile-bottom-center {
+
+		}
+
+		.c9-image-mobile-bottom-right {
+
+		}
+	}
 }
 
 .c9-grid a {
