@@ -86,7 +86,12 @@
 	// margin-bottom: 20px;
 }
 
-.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit>[data-block]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.block-editor-block-list__block-edit:before {
+.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit>[data-block]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.block-editor-block-list__block-edit:before,
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit>[data-block]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.block-editor-block-list__block-edit:before,
+.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit>[data-block]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.block-editor-block-list__block-edit:before,
+.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit>[data-block]>div>.wp-block-cover__inner-container>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.block-editor-block-list__block-edit:before,
+.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit>[data-block]>div>.wp-block-group__inner-container>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.block-editor-block-list__block-edit:before,
+[data-type="c9-blocks/grid"] .block-editor-block-list__layout .block-editor-block-list__block.has-child-selected>.block-editor-block-list__block-edit:before {
 	border: none;
 }
 
@@ -123,7 +128,11 @@
 	.editor-styles-wrapper .editor-writing-flow>div>div>div>.editor-block-list__layout {
 		padding-left: 0px;
 		padding-right: 0px;
-		margin-top: 35px;
+		margin-top: 0px;
+	}
+
+	.edit-post-visual-editor .editor-post-title__block {
+		margin-bottom: 0px;
 	}
 
 	.block-editor-block-list__block .block-editor-block-list__block-edit {
