@@ -309,8 +309,8 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 	//setting the outer .c9-grid container width for the main blocks window when all admin sidebars are hidden or collapsed
 	body .edit-post-layout .editor-block-list__layout .wp-block[data-type="c9-blocks/grid"] {
 		width: 100%;
-		// margin-top: 16px;
-		// margin-bottom: 16px;
+		margin-top: 16px;
+		margin-bottom: 16px;
 	}
 
 	body .edit-post-layout .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .c9-grid .container-narrow {
