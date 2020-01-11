@@ -722,10 +722,7 @@ export default class Inspector extends Component {
 
 										<h5>{__("Mobile Background", "c9-blocks")}</h5>
 										<ToggleControl
-											label={__(
-												"Same as Desktop | Change Mobile Background",
-												"c9-blocks"
-											)}
+											label={__("Same as Desktop | Change", "c9-blocks")}
 											checked={overrideMobile}
 											onChange={overrideMobile =>
 												setAttributes({ overrideMobile })
