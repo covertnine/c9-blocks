@@ -78,12 +78,9 @@
 	z-index: 10;
 }
 
-/* reducing top/bottom margins that mess with spacing of gutenberg default setting*/
-.block-editor-block-list__layout .block-editor-default-block-appender>.block-editor-default-block-appender__content,
-.block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit,
-.block-editor-block-list__layout>.block-editor-block-list__layout>.block-editor-block-list__block>.block-editor-block-list__block-edit {
-	// margin-top: 10px;
-	// margin-bottom: 20px;
+/* adjusts initial line height for Gutenberg editor so it lines up on blank screens */
+.editor-default-block-appender textarea.editor-default-block-appender__content {
+	line-height: 1.8;
 }
 
 .c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit>[data-block]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.block-editor-block-list__block-edit:before,
