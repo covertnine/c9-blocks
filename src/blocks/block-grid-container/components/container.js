@@ -89,8 +89,10 @@ export default class Container extends Component {
 		const styles = {};
 
 		if (allowMobile && !bgSize) {
-			styles["--mobile-height"] = "auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
-			styles["--mobile-width"] = "auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+			styles["--mobile-height"] =
+				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+			styles["--mobile-width"] =
+				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 		}
 
 		return styles;
@@ -108,7 +110,7 @@ export default class Container extends Component {
 			if (selected) {
 				styles.backgroundImage = `url(${url})`;
 			} else {
-				styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
+				styles.backgroundImage = ` url(${url})`;
 			}
 			styles.backgroundRepeat = repeat;
 		}
@@ -223,9 +225,10 @@ export default class Container extends Component {
 								  }`
 								: null,
 							"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
-							"contain" == bgImgSizeMobile ? "c9-image-mobile-size-contain" : null,
+							"contain" == bgImgSizeMobile
+								? "c9-image-mobile-size-contain"
+								: null,
 							!bgImgSizeMobile ? "c9-image-mobile-size-custom" : null
-							
 						)}
 						style={this.c9BackgroundStyles(
 							containerImgURL,
