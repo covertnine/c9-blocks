@@ -39,7 +39,7 @@ class Edit extends Component {
 	// eslint-disable-next-line no-unused-vars
 	dummyTemplate = rows => {
 		return this.getRowsTemplate(rows + 1);
-	}
+	};
 
 	/**
 	 * Generates the child (row) column container blocks.
@@ -90,7 +90,7 @@ class Edit extends Component {
 										}
 									}}
 								>
-									{__("Remove Row", "c9-blocks")}
+									{__("Remove Bottom Row", "c9-blocks")}
 								</IconButton>
 								<IconButton
 									label={__("Remove Image", "c9-blocks")}
