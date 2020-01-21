@@ -3,8 +3,8 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive
 Requires at least: 5.2.4
-Tested up to: 5.3
-Stable tag: 1.0.2
+Tested up to: 5.3.2
+Stable tag: 1.0.3
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-C9 Blocks provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages. 
+C9 Blocks provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages.
 
 The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper  right corner after installing the WordPress plugin.
 
@@ -64,12 +64,15 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 = 1.0.3
 * Added font size controls to call to action block
 * Added mobile override settings for background imagery in C9 Grid Block (Initial beta of the mobile settings)
+* Fixed bugs causing jumpy row buttons on c9-grid block
+* Adjustments to editor spacing of grids and columns to more accurately reflect the frontend display
+* Removed dotted outlines for columns
 
 = 1.0.2 =
 * Updated readme files, and fixed bugs related to display of backgrounds on iOS devices.
 
 = 1.0.1 =
-* Initial release 
+* Initial release
 * 10 new blocks
 * 38 section templates
 * 15 full landing page templates
@@ -83,7 +86,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 * Additional settings for C9 Grid
 * Font size controls and default font sizes added for C9 CTA Block
 
-= 1.0.1 = 
+= 1.0.1 =
 * Better readme.txt file
 * Better screen shots
 
@@ -115,7 +118,7 @@ https://www.youtube.com/watch?v=ekwe_CaDlP0
 
 **Overview & Documentation**
 
-Get an overview of each of the blocks and the latest documentation by heading over to our [documentation and 
+Get an overview of each of the blocks and the latest documentation by heading over to our [documentation and
 demo site](https://c9.covertnine.com).
 
 
