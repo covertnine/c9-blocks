@@ -173,7 +173,7 @@ class TemplatesModal extends Component {
 		const PageTypeHeading = ({ name, description }) => {
 			return (
 				<div className="c9-type-heading">
-					<h2>{name}:</h2>
+					<h2>{name}</h2>
 					<p>{description}</p>
 				</div>
 			);
@@ -233,7 +233,7 @@ class TemplatesModal extends Component {
 							this.setUpdateState("updating");
 						}}
 						close={() => {
-						const { layouts } = this.state;
+							const { layouts } = this.state;
 							layouts[name] = rawHandler({
 								HTML: PageTemplates[name].markup,
 								mode: "BLOCKS",
@@ -319,7 +319,7 @@ class TemplatesModal extends Component {
 									<span>{__("Clear page", "c9-blocks")}</span>
 								</Fragment>
 							),
-							className: "c9-template-tabs-tab"
+							className: "c9-template-tabs-tab tab-clear"
 						}
 					]}
 					initialTabName={this.props.initial}
