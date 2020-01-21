@@ -292,6 +292,11 @@ body .edit-post-layout .editor-styles-wrapper .c9-grid .container-narrow:not(:fi
 		width: 100%;
 	}
 
+	/* show add/remove rows buttons only when no child continer are selected to make room for editing text in bototm of containers */
+	body .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"]:not(.is-selected).has-child-selected .c9-add-remove-rows {
+		display: none;
+	}
+
 }
 
 @media only screen and (min-width: 576px) {
