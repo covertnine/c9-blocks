@@ -67,6 +67,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 * Fixed bugs causing jumpy row buttons on c9-grid block
 * Adjustments to editor spacing of grids and columns to more accurately reflect the frontend display
 * Removed dotted outlines for columns
+* Updated modal design
 
 = 1.0.2 =
 * Updated readme files, and fixed bugs related to display of backgrounds on iOS devices.
@@ -85,6 +86,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 = 1.0.3 =
 * Additional settings for C9 Grid
 * Font size controls and default font sizes added for C9 CTA Block
+* CTA Blocks and C9 Grid blocks may need blocks recovered by clicking the "Attempt Block Recovery" link on the C9 Grid block options dropdown
 
 = 1.0.1 =
 * Better readme.txt file
