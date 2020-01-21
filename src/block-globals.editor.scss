@@ -62,11 +62,6 @@
 	background-color: #fff;
 }
 
-/* makes grid column containers and columns themselves easier to see when hovering*/
-.c9-grid .wp-block[data-type="c9-blocks/column-container"] .is-hovered[data-type="c9-blocks/column"] .block-editor-block-list__block-edit:before {
-	border: 1px dotted #ccc;
-}
-
 /* makes embeds min width narrower for inner column embeds */
 @media (min-width: 600px) {
 	.c9-grid .wp-block-embed {
