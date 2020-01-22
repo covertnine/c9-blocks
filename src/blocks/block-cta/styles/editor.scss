@@ -28,6 +28,15 @@
 	}
 }
 
+.editor-styles-wrapper .c9-cta-content .c9-cta-text:not(.c9-p),
+.editor-styles-wrapper .c9-cta-content .c9-p {
+	font-size: 16px;
+}
+
+.editor-styles-wrapper .c9-cta-text p {
+	font-size: inherit;
+}
+
 .editor-styles-wrapper .c9-cta-text.col-md-9,
 .editor-styles-wrapper .c9-cta-text.col-md-8 {
 	max-width: 100%;

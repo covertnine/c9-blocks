@@ -24,10 +24,6 @@
 	letter-spacing: 1px;
 }
 
-.c9-cta-text {
-	font-size: 1.6em;
-}
-
 .entry-content .c9-block-cta .c9-cta-button a:hover {
 	opacity: .9;
 }
@@ -41,10 +37,18 @@
 	margin-bottom: 0;
 }
 
+.entry-content .c9-cta-content .c9-cta-text:not(.c9-p),
+.entry-content .c9-cta-content .c9-p {
+	font-size: 16px;
+}
+
+.entry-content .c9-cta-text p {
+	font-size: inherit;
+}
+
 .c9-cta-text p:only-of-type,
 .c9-cta-text p:first-child {
 	margin-top: 0px;
-	font-size: inherit;
 }
 
 @media only screen and (min-width: 768px) {
@@ -73,7 +77,6 @@
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border: none;
-	font-size: 16px;
 	letter-spacing: .02em;
 	text-align: center;
 	text-transform: uppercase;
