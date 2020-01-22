@@ -15,6 +15,12 @@
 	justify-content: center;
 }
 
+@media only screen and (min-width: 992px) {
+	.entry-content>.c9-cta.container-narrow {
+		min-width: 960px;
+	}
+}
+
 .entry-content .c9-block-cta .c9-cta-button a {
 	text-decoration: none;
 	white-space: nowrap;
