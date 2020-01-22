@@ -52,20 +52,25 @@
 	margin-top: 0px;
 }
 
+.entry .entry-content>.c9-cta {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 @media only screen and (min-width: 768px) {
 	.entry .entry-content>.c9-cta.alignfull {
 		left: auto;
 	}
+
 }
 
 @media only screen and (min-width: 1200px) {
 
 	.c9-block-cta.alignwide,
-	.page-template-default .page .entry-content .c9-block-cta.alignwide,
-	.entry-content .c9-block-cta.alignwide {
+	.page-template-default .page .entry-content>.c9-block-cta.alignwide,
+	.entry-content>.c9-block-cta.alignwide {
 		width: 1200px;
 		max-width: 1200px;
-		margin-left: -30px;
 	}
 }
 
