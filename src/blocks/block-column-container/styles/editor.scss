@@ -350,7 +350,7 @@ div[data-type="c9-blocks/column-container"] {
 
 	}
 
-	.block-editor-block-list__block .block-editor-block-list__layout {
+	[data-type="c9-blocks/column"]>.c9-column-inner>.block-editor-inner-blocks>.block-editor-block-list__layout {
 		margin-left: -38px;
 		margin-right: -38px;
 		padding-left: 15px;
