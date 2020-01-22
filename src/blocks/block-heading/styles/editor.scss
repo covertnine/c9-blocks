@@ -11,15 +11,16 @@
  * CSS for both Frontend+Backend.
  */
 
-// .container
-// 	.row
-// 	> .editor-inner-blocks
-// 	> .editor-block-list__layout
-// 	.editor-block-list__block {
-//     max-width: 33.3%;
-// }
 .editor-styles-wrapper .c9-heading {
 	font-size: 10px;
+}
+
+.editor-styles-wrapper .c9-heading,
+.editor-styles-wrapper .c9-heading .c9-sh,
+.editor-styles-wrapper .c9-heading .c9-h,
+.editor-styles-wrapper .c9-heading .c9-txl {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 div[data-type="c9-blocks/heading"] small.block-editor-rich-text__editable.editor-rich-text__editable.text-muted {
