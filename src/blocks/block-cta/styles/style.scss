@@ -71,7 +71,15 @@
 		max-width: 120%;
 		width: 120%;
 	}
+}
 
+@media only screen and (min-width: 568px) {
+	.entry .entry-content>.c9-cta.alignwide {
+		margin-left: -22px;
+		margin-right: -22px;
+		width: 120%;
+		max-width: 100vw;
+	}
 }
 
 @media only screen and (min-width: 768px) {
