@@ -239,7 +239,8 @@
 	}
 
 	.page-template-default .entry-content>.c9-posts-grid,
-	.page-template-default .entry-content>.container-fluid {
+	.page-template-default .entry-content>.container-fluid,
+	.page-template-default .entry-content>.c9-posts-grid:not(.alignwide):not(.alignleft):not(.alignright):not(.is-style-wide) {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 100%) / 2);
