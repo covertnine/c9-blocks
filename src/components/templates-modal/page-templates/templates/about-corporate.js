@@ -7,8 +7,8 @@ export default {
 	description: `An About page with all the essential elements to jumpstart the process of “know, like, and trust.” Complete with a hero header, testimonials, individual profiles, history, services overview, FAQ, and a “call-to-action.” Simply add and subtract the blocks most useful to you.`,
 	recommended: `company name, slogan, short mission statement, logo image, history copywriting, 3 photo images, testimonials with photos (2), service list, testimonials with copy only (2), FAQ, map embed, call-to-action link`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#109ef1","minScreenHeight":50} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(16,158,241,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
-<div class="container alignwide c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(16,158,241,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"bottom"} -->
+<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Company Name","type":"c9-txl display-","textColor":"#ffffff","weight":"normal"} -->
 <div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-normal" style="color:#ffffff">Company Name</h1></div>
 <!-- /wp:c9-blocks/heading -->
@@ -18,7 +18,7 @@ export default {
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:paragraph {"customTextColor":"#ffffff","customFontSize":15} -->
-<p style="color:#ffffff;font-size:15px" class="has-text-color">Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+<p style="color:#ffffff;font-size:15px" class="has-text-color">Click the outer edges of the container to change the background color, image, or video! Once you highlight the <strong>C9 Grid block</strong>, click on it, and you can make changes under <strong>Background Settings</strong> in the sidebar from the WordPress edit screen.</p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column -->
 
@@ -30,105 +30,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":1} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#e4f7ff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(228,247,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.","tagLevel":5,"displayLevel":"4","textColor":"#313131","textAlign":"center","overrideStyle":true} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h h4" style="color:#313131">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</h5></div>
-<!-- /wp:c9-blocks/heading -->
-
-<!-- wp:c9-blocks/heading {"heading":"Dude McDudeface, Chief Officer of Cool","tagLevel":6,"displayLevel":"5","textAlign":"center","weight":"light","overrideStyle":true} -->
-<div class="section-heading c9-heading text-center"><h6 class="c9-h h5 font-weight-light">Dude McDudeface, Chief Officer of Cool</h6></div>
-<!-- /wp:c9-blocks/heading --></div></div>
-<!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->
-
-<!-- wp:c9-blocks/grid {"instanceId":2} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center"} -->
-<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:separator -->
-<hr class="wp-block-separator"/>
-<!-- /wp:separator -->
-
-<!-- wp:c9-blocks/heading {"heading":"Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.\u003cbr\u003e\u003cbr\u003eCollaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.\u003cbr\u003e\u003cbr\u003eBring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.  Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.\u003cbr\u003e\u003cbr\u003eCapitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. \u003cbr\u003e\u003cbr\u003eNanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.\u003cbr\u003e\u003cbr\u003ePodcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.","tagLevel":5,"displayLevel":"6","overrideStyle":true} -->
-<div class="section-heading c9-heading text-left"><h5 class="c9-h h6">Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.<br><br>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.<br><br>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.  Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.<br><br>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. <br><br>Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.<br><br>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</h5></div>
-<!-- /wp:c9-blocks/heading -->
-
-<!-- wp:spacer {"height":28} -->
-<div style="height:28px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:image {"align":"center","width":29,"height":49,"className":"aligncenter is-resized"} -->
-<div class="wp-block-image aligncenter is-resized"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" width="29" height="49"/></figure></div>
-<!-- /wp:image --></div></div>
-<!-- /wp:c9-blocks/column -->
-
-<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/image-carousel {"instanceId":0,"url":["//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg"],"id":[7801,7802,7800],"captionTitle":["Person Name","Person Name",null],"captionContent":[null,null,null]} -->
-<div id="c9-image-carousel-indicator-0" class="c9-image-carousel carousel slide" data-ride="carousel" data-interval="5000" data-wrap="true"><ol class="carousel-indicators"><li data-target="#c9-image-carousel-indicator-0" data-slide-to="0" class="active"></li><li data-target="#c9-image-carousel-indicator-0" data-slide-to="1"></li><li data-target="#c9-image-carousel-indicator-0" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><h5>Person Name</h5></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><h5>Person Name</h5></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg" class="d-block w-100"/></div></div><a class="carousel-control-prev" href="#c9-image-carousel-indicator-0" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-image-carousel-indicator-0" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
-<!-- /wp:c9-blocks/image-carousel --></div></div>
-<!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->
-
-<!-- wp:c9-blocks/grid {"instanceId":3,"rows":2,"containerHue":"#f4f4f4","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
-<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"History","subheading":"short version","addSubheading":true,"tagLevel":3,"type":"c9-txl display-","textAlign":"center","weight":"bold"} -->
-<div class="section-heading c9-heading text-center"><h3 class="c9-txl display-3 font-weight-bold">History</h3><div class="c9-txl display-3"><small class="text-muted">&nbsp;short version</small></div></div>
-<!-- /wp:c9-blocks/heading --></div></div>
-<!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container -->
-
-<!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"top","containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-top c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
-<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:c9-blocks/column -->
-
-<!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
-<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->
-
-<!-- wp:c9-blocks/grid {"instanceId":4,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/amos-bar-zeev-hVk6pIFbW9o-unsplash.jpg","bgImgAttach":true,"overlayHue":"#cf2e2e","overlayOpacity":6,"blendMode":"darken","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.5299539170506913,"y":0.4236111111111111}} -->
-<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:75vh"><div class="c9-image-container" style="background-position:52.995391705069125% 42.36111111111111%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/amos-bar-zeev-hVk6pIFbW9o-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(207,46,46,.6);mix-blend-mode:darken"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
-<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.","tagLevel":5,"textColor":"#eeeeee","weight":"bold"} -->
-<div class="section-heading c9-heading text-left"><h5 class="c9-h font-weight-bold" style="color:#eeeeee">Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</h5></div>
-<!-- /wp:c9-blocks/heading -->
-
-<!-- wp:spacer {"height":106} -->
-<div style="height:106px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:c9-blocks/heading {"heading":"Person Name","displayLevel":"3","type":"c9-txl display-","textColor":"#ffffff","overrideStyle":true} -->
-<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-3" style="color:#ffffff">Person Name</h1></div>
-<!-- /wp:c9-blocks/heading -->
-
-<!-- wp:c9-blocks/heading {"heading":"Title","tagLevel":4,"type":"c9-sh subhead-h","textColor":"#ffffff","weight":"light","overrideStyle":true} -->
-<div class="section-heading c9-heading text-left"><h4 class="c9-sh subhead-h4 font-weight-light" style="color:#ffffff">Title</h4></div>
-<!-- /wp:c9-blocks/heading -->
-
-<!-- wp:spacer {"height":106} -->
-<div style="height:106px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></div></div>
-<!-- /wp:c9-blocks/column -->
-
-<!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph --></div></div>
-<!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->
-
-<!-- wp:c9-blocks/grid {"instanceId":5,"rows":4,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/grid {"instanceId":1,"rows":4,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"what we do","tagLevel":2,"type":"c9-txl display-","textAlign":"center","weight":"bold","overrideStyle":true} -->
@@ -216,7 +118,159 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":6,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/audience-celebration-concert-1179581-web66.jpg","containerHue":"#313131","bgImgSizeMobile":"","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"}} -->
+<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1);--mobile-height:auto;--mobile-width:100%"><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-custom" style="background-position:50% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/audience-celebration-concert-1179581-web66.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
+<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer {"height":155} -->
+<div style="height:155px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:c9-blocks/heading {"heading":"Service Offering","subheading":"Landing Page Header","addSubheading":true,"displayLevel":"5","type":"c9-txl display-","textColor":"#eeeeee","weight":"light","overrideStyle":true} -->
+<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-5 font-weight-light" style="color:#eeeeee">Service Offering</h1><div class="c9-txl display-5"><small class="text-muted">&nbsp;Landing Page Header</small></div></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:c9-blocks/heading {"heading":"Click on the section's outer edge of the C9 Grid block to select it and changes its background overlay, imagery, or video. If you don't see a sidebar when clicking on the C9 Grid block, click the gear icon and then change Background Settings","tagLevel":5,"type":"c9-sh subhead-h","textColor":"#b2b2b2","weight":"light"} -->
+<div class="section-heading c9-heading text-left"><h5 class="c9-sh font-weight-light" style="color:#b2b2b2">Click on the section's outer edge of the C9 Grid block to select it and changes its background overlay, imagery, or video. If you don't see a sidebar when clicking on the C9 Grid block, click the gear icon and then change Background Settings</h5></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container -->
+
+<!-- wp:c9-blocks/column-container {"columns":3,"layout":"c9-3-col-equal","verticalAlign":"center","overlayHue":"#eeeeee","overlayOpacity":10,"blendMode":"normal","minScreenHeight":1,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="container c9-column-container p-5 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-center c9-3-col-equal" style="min-height:1vh"><div class="c9-overlay-container" style="background-color:rgba(238,238,238,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading {"level":3} -->
+<h3>Step 1</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Delete content you don't need and update settings in the inspector of WordPress after clicking each block to customize blocks!</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:c9-blocks/column -->
+
+<!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading {"level":3} -->
+<h3>Step 2</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Easily add background images, videos, toggles, tabs, carousels, and the best part is, they work on all screen sizes</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:c9-blocks/column -->
+
+<!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading {"level":3} -->
+<h3>Step 3</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Adjust columns, column spacing, and even the horizontal and vertical alignments with ease.</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/grid -->
+
+<!-- wp:c9-blocks/grid {"instanceId":3} -->
+<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#e4f7ff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(228,247,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.","tagLevel":5,"displayLevel":"4","textColor":"#313131","textAlign":"center","overrideStyle":true} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h h4" style="color:#313131">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</h5></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:c9-blocks/heading {"heading":"Dude McDudeface, Chief Officer of Cool","tagLevel":6,"displayLevel":"5","textAlign":"center","weight":"light","overrideStyle":true} -->
+<div class="section-heading c9-heading text-center"><h6 class="c9-h h5 font-weight-light">Dude McDudeface, Chief Officer of Cool</h6></div>
+<!-- /wp:c9-blocks/heading --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/grid -->
+
+<!-- wp:c9-blocks/grid {"instanceId":4,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/amos-bar-zeev-hVk6pIFbW9o-unsplash.jpg","bgImgAttach":true,"overlayHue":"#cf2e2e","overlayOpacity":6,"blendMode":"darken","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.4838709677419355,"y":0.5},"focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true} -->
+<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:75vh"><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-cover" style="background-position:48.38709677419355% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/amos-bar-zeev-hVk6pIFbW9o-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(207,46,46,.6);mix-blend-mode:darken"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
+<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Highlight the text in the WordPress admin to change quotes, or click on the outer edge C9 Grid block to change the background image or color overlay settings!","tagLevel":5,"displayLevel":"5","textColor":"#eeeeee","weight":"bold","overrideStyle":true} -->
+<div class="section-heading c9-heading text-left"><h5 class="c9-h h5 font-weight-bold" style="color:#eeeeee">Highlight the text in the WordPress admin to change quotes, or click on the outer edge C9 Grid block to change the background image or color overlay settings!</h5></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:spacer {"height":106} -->
+<div style="height:106px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:c9-blocks/heading {"heading":"Person Name","displayLevel":"3","type":"c9-txl display-","textColor":"#ffffff","overrideStyle":true} -->
+<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-3" style="color:#ffffff">Person Name</h1></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:c9-blocks/heading {"heading":"Title","tagLevel":4,"type":"c9-sh subhead-h","textColor":"#ffffff","weight":"light","overrideStyle":true} -->
+<div class="section-heading c9-heading text-left"><h4 class="c9-sh subhead-h4 font-weight-light" style="color:#ffffff">Title</h4></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:spacer {"height":106} -->
+<div style="height:106px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div></div>
+<!-- /wp:c9-blocks/column -->
+
+<!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/grid -->
+
+<!-- wp:c9-blocks/grid {"instanceId":5,"rows":2,"containerHue":"#f4f4f4","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+<div class="c9-grid p-5 c9-scroll" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
+<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
+<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"History","subheading":"short version","addSubheading":true,"tagLevel":3,"type":"c9-txl display-","textAlign":"center","weight":"bold"} -->
+<div class="section-heading c9-heading text-center"><h3 class="c9-txl display-3 font-weight-bold">History</h3><div class="c9-txl display-3"><small class="text-muted">&nbsp;short version</small></div></div>
+<!-- /wp:c9-blocks/heading --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container -->
+
+<!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"top","containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="container c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-top c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
+<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:c9-blocks/column -->
+
+<!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
+<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/grid -->
+
+<!-- wp:c9-blocks/grid {"instanceId":6} -->
+<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":9,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center"} -->
+<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-9 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:c9-blocks/heading {"heading":"Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.\u003cbr\u003e\u003cbr\u003eCollaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.\u003cbr\u003e\u003cbr\u003eBring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.  Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.\u003cbr\u003e\u003cbr\u003eCapitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. \u003cbr\u003e\u003cbr\u003ePodcasting operational change.","tagLevel":5,"displayLevel":"6","overrideStyle":true} -->
+<div class="section-heading c9-heading text-left"><h5 class="c9-h h6">Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.<br><br>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.<br><br>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.  Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.<br><br>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. <br><br>Podcasting operational change.</h5></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:spacer {"height":28} -->
+<div style="height:28px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:image {"align":"center","width":29,"height":49,"className":"aligncenter is-resized"} -->
+<div class="wp-block-image aligncenter is-resized"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" width="29" height="49"/></figure></div>
+<!-- /wp:image --></div></div>
+<!-- /wp:c9-blocks/column -->
+
+<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/image-carousel {"instanceId":0,"url":["//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg"],"id":[7801,7802,7800],"captionTitle":["Person Name","Person Name",null],"captionContent":[null,null,null]} -->
+<div id="c9-image-carousel-indicator-0" class="c9-image-carousel carousel slide" data-ride="carousel" data-interval="5000" data-wrap="true"><ol class="carousel-indicators"><li data-target="#c9-image-carousel-indicator-0" data-slide-to="0" class="active"></li><li data-target="#c9-image-carousel-indicator-0" data-slide-to="1"></li><li data-target="#c9-image-carousel-indicator-0" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><h5>Person Name</h5></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><h5>Person Name</h5></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg" class="d-block w-100"/></div></div><a class="carousel-control-prev" href="#c9-image-carousel-indicator-0" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-image-carousel-indicator-0" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
+<!-- /wp:c9-blocks/image-carousel --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/grid -->
+
+<!-- wp:c9-blocks/grid {"instanceId":7,"rows":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow"} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"FAQ Toggles","subheading":"with image carousels","addSubheading":true} -->
@@ -271,29 +325,17 @@ export default {
 <!-- /wp:c9-blocks/toggles-toggle --></div>
 <!-- /wp:c9-blocks/toggles --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->
+<!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/grid {"instanceId":7,"containerHue":"#0c162f","overlayHue":"#313131","overlayOpacity":8,"blendMode":"multiply","minScreenHeight":56,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/Pexels-Videos-2706-1.mp4"} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:56vh;background-color:rgba(12,22,47,1)"><div class="c9-video-container"><div class="c9-embed-container"><video id="containerVideo-7" class="c9-video-custom" playsinline autoplay muted loop style="min-height:56vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/Pexels-Videos-2706-1.mp4" type="video/mp4"/></video></div></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.8);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center"} -->
-<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideright"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"We\u003cbr\u003ethink\u003cbr\u003ereal good","tagLevel":6,"displayLevel":"1","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","overrideStyle":true} -->
-<div class="section-heading c9-heading text-left"><h6 class="c9-txl display-1 font-weight-bold" style="color:#ffffff">We<br>think<br>real good</h6></div>
-<!-- /wp:c9-blocks/heading --></div></div>
-<!-- /wp:c9-blocks/column -->
-
-<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Ready to get started?","tagLevel":5,"textColor":"#109ef1","textAlign":"center","weight":"bold"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h font-weight-bold" style="color:#109ef1">Ready to get started?</h5></div>
-<!-- /wp:c9-blocks/heading -->
-
-<!-- wp:spacer {"height":30} -->
-<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
+<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:button {"textColor":"very-light-gray","align":"center","className":"is-style-default"} -->
-<div class="wp-block-button aligncenter is-style-default"><a class="wp-block-button__link has-text-color has-very-light-gray-color" href="#">A dudeBro You Can Trust</a></div>
-<!-- /wp:button --></div></div>
+<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","ctaBackgroundColor":"#f8f8f8","disableToolbar":true,"fontSize":"medium"} -->
+<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh has-medium-font-size"><p>Sign up today for a 30% off annual discount and waiving all fees, today!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Sign up</a></div></div></div>
+<!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
@@ -308,14 +350,13 @@ export default {
 
 <!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:paragraph {"align":"center"} -->
-<p style="text-align:center"><strong>Headquarters</strong> (Not the bar)<br>2999 N. Chicago Ave.<br>Chicago, Illinois 60666</p>
+<p class="has-text-align-center"><strong>Headquarters</strong> (Not the bar)<br>2999 N. Chicago Ave.<br>Chicago, Illinois 60666</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p style="text-align:center">555-666-4000</p>
+<p class="has-text-align-center">555-666-4000</p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->
-    `
+<!-- /wp:c9-blocks/grid -->`
 };
