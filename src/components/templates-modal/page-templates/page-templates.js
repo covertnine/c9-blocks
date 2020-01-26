@@ -13,6 +13,7 @@ import lpStyle from "./templates/style-guide";
 import leadGen1 from "./templates/lead-generation-1";
 import leadGen2 from "./templates/lead-generation-2";
 import leadGen3 from "./templates/lead-generation-3";
+import lpVideos from "./templates/videos";
 
 const pageTemplates = {
 	lpAboutCorporate,
@@ -21,7 +22,8 @@ const pageTemplates = {
 	lpContact,
 	lpEvent,
 	lpLaunchRelease,
-	lpMedia,
+    lpMedia,
+    lpVideos,
 	lpPortfolio,
 	lpPriceMenu,
 	lpResources,
