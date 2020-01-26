@@ -38,7 +38,15 @@ export default class Inspector extends Component {
 	constructor() {
 		super(...arguments);
 		const {
-			attributes: { containerPadding, containerMargin, bgCustomX, bgCustomY },
+			attributes: {
+				containerPadding,
+				containerMargin,
+				bgCustomX,
+				bgCustomY,
+				bgCustomXMobile,
+				bgCustomYMobile,
+				focalPointMobile
+			},
 			setAttributes
 		} = this.props;
 
@@ -55,8 +63,13 @@ export default class Inspector extends Component {
 			setAttributes: setAttributes,
 			customX: "auto" != bgCustomX.size,
 			customY: "auto" != bgCustomY.size,
+			customXMobile: "auto" != bgCustomXMobile.size,
+			customYMobile: "auto" != bgCustomYMobile.size,
 			bgCustomX: bgCustomX,
-			bgCustomY: bgCustomY
+			bgCustomY: bgCustomY,
+			bgCustomXMobile: bgCustomXMobile,
+			bgCustomYMobile: bgCustomYMobile,
+			focalPointMobile: focalPointMobile
 		};
 	}
 
@@ -68,20 +81,46 @@ export default class Inspector extends Component {
 		this.preview = preview;
 	}
 
-	updateBgX = (position, value) => {
-		let sizeObject = Object.assign({}, this.state.bgCustomX);
+	updateBgX = (position, value, mobile = false) => {
+		let targ;
+		if (mobile) {
+			targ = this.state.bgCustomXMobile;
+		} else {
+			targ = this.state.bgCustomX;
+		}
+
+		let sizeObject = Object.assign({}, targ);
 
 		sizeObject[position] = value;
-		this.setState({ bgCustomX: sizeObject });
-		this.setAttributes({ bgCustomX: sizeObject });
+
+		if (mobile) {
+			this.setState({ bgCustomXMobile: sizeObject });
+			this.setAttributes({ bgCustomXMobile: sizeObject });
+		} else {
+			this.setState({ bgCustomX: sizeObject });
+			this.setAttributes({ bgCustomX: sizeObject });
+		}
 	};
 
-	updateBgY = (position, value) => {
-		let sizeObject = Object.assign({}, this.state.bgCustomY);
+	updateBgY = (position, value, mobile = false) => {
+		let targ;
+		if (mobile) {
+			targ = this.state.bgCustomYMobile;
+		} else {
+			targ = this.state.bgCustomY;
+		}
+
+		let sizeObject = Object.assign({}, targ);
 
 		sizeObject[position] = value;
-		this.setState({ bgCustomY: sizeObject });
-		this.setAttributes({ bgCustomY: sizeObject });
+
+		if (mobile) {
+			this.setState({ bgCustomYMobile: sizeObject });
+			this.setAttributes({ bgCustomYMobile: sizeObject });
+		} else {
+			this.setState({ bgCustomY: sizeObject });
+			this.setAttributes({ bgCustomY: sizeObject });
+		}
 	};
 
 	togglePaddingLinkage = () => {
@@ -236,7 +275,9 @@ export default class Inspector extends Component {
 				columnsGap,
 				columnMaxWidth,
 				centerColumns,
-				responsiveToggle
+				responsiveToggle,
+				overrideMobile,
+				bgImgSizeMobile
 			},
 			setAttributes
 		} = this.props;
@@ -724,6 +765,149 @@ export default class Inspector extends Component {
 												}
 											/>
 										</div>
+										<h5>{__("Mobile Background", "c9-blocks")}</h5>
+										<ToggleControl
+											label={__("Same as Desktop | Change", "c9-blocks")}
+											checked={overrideMobile}
+											onChange={overrideMobile =>
+												setAttributes({ overrideMobile })
+											}
+										/>
+
+										{overrideMobile && (
+											<PanelBody
+												title={__("Mobile Background Settings", "c9-blocks")}
+												initialOpen={true}
+											>
+												<h5>Position</h5>
+												<FocalPointPicker
+													className="c9-grid-mobile-focal"
+													label={__("Focal Point Picker", "c9-blocks")}
+													url={containerImgURL}
+													value={this.state.focalPointMobile}
+													onChange={value => {
+														const self = this;
+														setTimeout(function() {
+															let x, y;
+															if (0.33 >= value.x) {
+																x = 0.25;
+															} else if (0.66 >= value.x) {
+																x = 0.5;
+															} else {
+																x = 0.75;
+															}
+
+															if (0.33 >= value.y) {
+																y = 0.25;
+															} else if (0.66 >= value.y) {
+																y = 0.5;
+															} else {
+																y = 0.75;
+															}
+
+															setAttributes({ focalPointMobile: { x, y } });
+															self.setState({ focalPointMobile: { x, y } });
+														}, 10);
+
+														// console.log(value);
+
+														// setAttributes({ focalPointMobile: value });
+													}}
+												/>
+
+												<hr />
+
+												<h5>{__("Size", "c9-blocks")}</h5>
+												<SelectControl
+													help={__(
+														"Choose between cover, contain, or custom.",
+														"c9-blocks"
+													)}
+													options={sizeTypes}
+													value={bgImgSizeMobile}
+													onChange={value =>
+														setAttributes({ bgImgSizeMobile: value })
+													}
+												/>
+
+												{!bgImgSizeMobile && (
+													<div>
+														<h5>{__("Horizontal", "c9-blocks")}</h5>
+														<ToggleControl
+															label={__("Auto | Manual", "c9-blocks")}
+															checked={this.state.customXMobile}
+															onChange={value => {
+																this.setState({ customXMobile: value });
+
+																if (value) {
+																	this.updateBgX("unit", "%", true);
+																	this.updateBgX("size", 100, true);
+																} else {
+																	this.updateBgX("size", "auto", true);
+																}
+															}}
+														/>
+														{this.state.customXMobile && (
+															<div style={{ display: "flex" }}>
+																<RangeControl
+																	value={this.state.bgCustomXMobile.size}
+																	onChange={value =>
+																		this.updateBgX("size", value, true)
+																	}
+																	className="bgSize"
+																	min={0}
+																	max={Number.MAX_SAFE_INTEGER}
+																/>
+																<SelectControl
+																	options={cssUnits}
+																	value={this.state.bgCustomXMobile.unit}
+																	onChange={value =>
+																		this.updateBgX("unit", value, true)
+																	}
+																	className="bgSize"
+																/>
+															</div>
+														)}
+														<h5>{__("Vertical", "c9-blocks")}</h5>
+														<ToggleControl
+															label={__("Auto | Manual", "c9-blocks")}
+															checked={this.state.customYMobile}
+															onChange={value => {
+																this.setState({ customYMobile: value });
+
+																if (value) {
+																	this.updateBgY("unit", "%", true);
+																	this.updateBgY("size", 100, true);
+																} else {
+																	this.updateBgY("size", "auto", true);
+																}
+															}}
+														/>
+														{this.state.customYMobile && (
+															<div style={{ display: "flex" }}>
+																<RangeControl
+																	value={this.state.bgCustomYMobile.size}
+																	onChange={value =>
+																		this.updateBgY("size", value, true)
+																	}
+																	className="bgSize"
+																	min={0}
+																	max={Number.MAX_SAFE_INTEGER}
+																/>
+																<SelectControl
+																	options={cssUnits}
+																	value={this.state.bgCustomYMobile.unit}
+																	onChange={value =>
+																		this.updateBgY("unit", value, true)
+																	}
+																	className="bgSize"
+																/>
+															</div>
+														)}
+													</div>
+												)}
+											</PanelBody>
+										)}
 									</div>
 								)}
 							</div>

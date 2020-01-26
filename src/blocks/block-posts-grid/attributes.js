@@ -110,6 +110,35 @@ const attributes = {
 	cannotEmbed: {
 		type: "boolean",
 		default: false
+	},
+	bgImgSizeMobile: {
+		type: "string",
+		default: "cover"
+	},
+	focalPointMobile: {
+		type: "object",
+		default: {
+			x: 0.5,
+			y: 0.5
+		}
+	},
+	overrideMobile: {
+		type: "boolean",
+		default: false
+	},
+	bgCustomXMobile: {
+		type: "object",
+		default: {
+			size: "auto",
+			unit: "px"
+		}
+	},
+	bgCustomYMobile: {
+		type: "object",
+		default: {
+			size: "auto",
+			unit: "px"
+		}
 	}
 };
 

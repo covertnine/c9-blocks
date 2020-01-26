@@ -10,6 +10,18 @@ import VideoBox from "./video-box";
 const { Component } = wp.element;
 const { applyFilters } = wp.hooks;
 
+const MOBILE_Y_SIZE = {
+	0.25: "top",
+	0.5: "center",
+	0.75: "bottom"
+};
+
+const MOBILE_X_SIZE = {
+	0.25: "left",
+	0.5: "center",
+	0.75: "right"
+};
+
 /**
  * Create a Container wrapper Component
  */
@@ -68,6 +80,19 @@ export default class Container extends Component {
 
 		if (hue) {
 			styles.backgroundColor = this.hexToRGBA(hue, opacity);
+		}
+
+		return styles;
+	}
+
+	c9ContainerStylesMobile(allowMobile, bgSize, bgX, bgY) {
+		const styles = {};
+
+		if (allowMobile && !bgSize) {
+			styles["--mobile-height"] =
+				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+			styles["--mobile-width"] =
+				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 		}
 
 		return styles;
@@ -149,7 +174,12 @@ export default class Container extends Component {
 				focalPoint,
 				containerVideoURL,
 				containerVideoID,
-				cannotEmbed
+				cannotEmbed,
+				overrideMobile,
+				focalPointMobile,
+				bgImgSizeMobile,
+				bgCustomXMobile,
+				bgCustomYMobile
 			},
 			className = "",
 			isSelectedBlockInRoot
@@ -166,18 +196,38 @@ export default class Container extends Component {
 						? "c9-posts-grid-has-video"
 						: null
 				)}
-				style={this.c9ContainerStyles(
-					minScreenHeight,
-					containerHue,
-					containerOpacity
-				)}
+				style={{
+					...this.c9ContainerStyles(
+						minScreenHeight,
+						containerHue,
+						containerOpacity
+					),
+					...this.c9ContainerStylesMobile(
+						overrideMobile,
+						bgImgSizeMobile,
+						bgCustomXMobile,
+						bgCustomYMobile
+					)
+				}}
 			>
 				{(!!containerVideoURL || !!containerVideoID) && !cannotEmbed && (
 					<VideoBox {...this.props} />
 				)}
 				{!!containerImgURL && (
 					<div
-						className="c9-image-container"
+						className={classnames(
+							"c9-image-container",
+							overrideMobile
+								? `c9-image-mobile-${MOBILE_Y_SIZE[focalPointMobile.y]}-${
+										MOBILE_X_SIZE[focalPointMobile.x]
+								  }`
+								: null,
+							"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
+							"contain" == bgImgSizeMobile
+								? "c9-image-mobile-size-contain"
+								: null,
+							!bgImgSizeMobile ? "c9-image-mobile-size-custom" : null
+						)}
 						style={this.c9BackgroundStyles(
 							containerImgURL,
 							bgImgSize,

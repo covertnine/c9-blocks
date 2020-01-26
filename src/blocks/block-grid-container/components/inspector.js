@@ -278,7 +278,6 @@ export default class Inspector extends Component {
 				rows,
 				lockMovement,
 				overrideMobile,
-				focalPointMobile,
 				bgImgSizeMobile
 			},
 			setAttributes

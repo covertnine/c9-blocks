@@ -8,6 +8,18 @@ const { Component } = wp.element;
  */
 import classnames from "classnames";
 
+const MOBILE_Y_SIZE = {
+	0.25: "top",
+	0.5: "center",
+	0.75: "bottom"
+};
+
+const MOBILE_X_SIZE = {
+	0.25: "left",
+	0.5: "center",
+	0.75: "right"
+};
+
 /**
  * Create a Container wrapper Component
  */
@@ -67,15 +79,20 @@ export default class Container extends Component {
 		return styles;
 	}
 
-	c9BackgroundStyles(
-		url,
-		size,
-		bgX,
-		bgY,
-		repeat,
-		focalPoint,
-		selected = true
-	) {
+	c9ContainerStylesMobile(allowMobile, bgSize, bgX, bgY) {
+		const styles = {};
+
+		if (allowMobile && !bgSize) {
+			styles["--mobile-height"] =
+				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+			styles["--mobile-width"] =
+				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+		}
+
+		return styles;
+	}
+
+	c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint, selected = true) {
 		const styles = {};
 
 		if (focalPoint) {
@@ -157,7 +174,12 @@ export default class Container extends Component {
 				columnMaxWidth,
 				centerColumns,
 				align,
-				anchor
+				anchor,
+				overrideMobile,
+				focalPointMobile,
+				bgImgSizeMobile,
+				bgCustomXMobile,
+				bgCustomYMobile
 			},
 			isSelectedBlockInRoot,
 			save = false,
@@ -193,12 +215,32 @@ export default class Container extends Component {
 						? "c9-columns-has-video"
 						: null
 				)}
-				style={this.c9ContainerStyles(minScreenHeight)}
+				style={{
+					...this.c9ContainerStyles(minScreenHeight),
+					...this.c9ContainerStylesMobile(
+						overrideMobile,
+						bgImgSizeMobile,
+						bgCustomXMobile,
+						bgCustomYMobile
+					)
+				}}
 				id={anchor ? anchor : null}
 			>
 				{!!containerImgURL && (
 					<div
-						className="c9-image-container"
+						className={classnames(
+							"c9-image-container",
+							overrideMobile
+								? `c9-image-mobile-${MOBILE_Y_SIZE[focalPointMobile.y]}-${
+										MOBILE_X_SIZE[focalPointMobile.x]
+								  }`
+								: null,
+							"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
+							"contain" == bgImgSizeMobile
+								? "c9-image-mobile-size-contain"
+								: null,
+							!bgImgSizeMobile ? "c9-image-mobile-size-custom" : null
+						)}
 						style={this.c9BackgroundStyles(
 							containerImgURL,
 							bgImgSize,
