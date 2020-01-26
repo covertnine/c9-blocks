@@ -63,11 +63,15 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 = 1.0.3
 * Added font size controls to call to action block
-* Added mobile override settings for background imagery in C9 Grid Block (Initial beta of the mobile settings)
+* Added mobile override settings for background imagery in C9 Grid and C9 Posts Grid Block (Initial beta of the mobile settings)
 * Fixed bugs causing jumpy row buttons on c9-grid block
 * Adjustments to editor spacing of grids and columns to more accurately reflect the frontend display
 * Removed dotted outlines for columns
 * Updated modal design
+* Updates to page templates and section templates
+* Added several new layouts to templates modal
+* Updated bugs for WordPress Twenty Twenty and Twenty Nineteen Themes to remain compatible with the latest version of WordPress 5.3.2
+* Updates to mobile layouts for most templates with background imagery
 
 = 1.0.2 =
 * Updated readme files, and fixed bugs related to display of backgrounds on iOS devices.
