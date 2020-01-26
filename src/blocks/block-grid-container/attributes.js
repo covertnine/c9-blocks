@@ -32,10 +32,6 @@ const attributes = {
 		type: "string",
 		default: "cover"
 	},
-	bgImgSizeMobile: {
-		type: "string",
-		default: "cover"
-	},
 	bgCustomX: {
 		type: "object",
 		default: {
@@ -101,13 +97,6 @@ const attributes = {
 		}
 	},
 	focalPoint: {
-		type: "object",
-		default: {
-			x: 0.5,
-			y: 0.5
-		}
-	},
-	focalPointMobile: {
 		type: "object",
 		default: {
 			x: 0.5,
