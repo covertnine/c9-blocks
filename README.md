@@ -74,6 +74,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.0.4**
+Fixed error from orig colors being exposed to rest API.
+
 **1.0.3**
 Added mobile override settings for background imagery in C9 Grid Block (Initial beta of the mobile settings.) Modal template adjustments, and spacing adjustments for grid block columns, and paragraph font sizing on CTA blocks. Page templates and section templates were also updated and improved from 1.0.1.
 
