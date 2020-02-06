@@ -64,7 +64,6 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 = 1.0.4 =
 * Fixed error message related to colors in backend being exposed to rest API
 
-
 = 1.0.3 =
 * Added font size controls to call to action block
 * Added mobile override settings for background imagery in C9 Grid and C9 Posts Grid Block (Initial beta of the mobile settings)
@@ -128,8 +127,7 @@ https://www.youtube.com/watch?v=ekwe_CaDlP0
 
 **Overview & Documentation**
 
-Get an overview of each of the blocks and the latest documentation by heading over to our [documentation and
-demo site](https://c9.covertnine.com).
+Get an overview of each of the blocks and the latest documentation by heading over to our [documentation site](https://c9.covertnine.com).
 
 
 == C9 WordPress Theme ==
