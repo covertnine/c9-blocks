@@ -61,7 +61,11 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
-= 1.0.3
+= 1.0.4 =
+* Fixed error message related to colors in backend being exposed to rest API
+
+
+= 1.0.3 =
 * Added font size controls to call to action block
 * Added mobile override settings for background imagery in C9 Grid and C9 Posts Grid Block (Initial beta of the mobile settings)
 * Fixed bugs causing jumpy row buttons on c9-grid block
