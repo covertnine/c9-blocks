@@ -62,7 +62,7 @@ function c9_load_settings() {
 			'sanitize_callback' => function( $colors ) {
 				return array_map( 'esc_attr', $colors );
 			},
-			'show_in_rest'      => true,
+			'show_in_rest'      => false,
 			'default'           => array(),
 		)
 	);
