@@ -385,7 +385,7 @@ function c9_enqueue_admin_style( $hook_suffix ) {
 	}
 
 	// Load your css.
-	wp_register_style( 'c9_admin_css', plugin_dir_url( __DIR__ ) . '/admin/admin-style.css', false, '1.0.0' );
+	wp_register_style( 'c9_admin_css', plugin_dir_url( __DIR__ ) . 'admin/admin-style.css', false, '1.0.0' );
 	wp_enqueue_style( 'c9_admin_css' );
 }
 

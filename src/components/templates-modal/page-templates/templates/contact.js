@@ -7,8 +7,8 @@ export default {
 	description: `Your team has multiple points of contacts or departments, with a few different methods of getting in touch. Your users will appreciate being directed to the right point of contact. This landing page has a place for everything and a placeholder for your form plugin of choice.`,
 	recommended: `Large heading with contact form, multiple points of phone contact, multiple addresses, several paragraphs of instructions, a call-to-action bar + button, multiple phone numbers, header call-to-action + button, one hero image`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#ffffff","overlayOpacity":1,"blendMode":"normal","minScreenHeight":50} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(255,255,255,1)"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-fluid","verticalAlign":"center","containerImgURL":"http://cortex.covertnine.com/wp-content/uploads/2019/10/ryoji-iwata-IBaVuZsJJTo-unsplash-w.jpg","bgImgAttach":true,"overlayHue":"#2f2f2f","overlayOpacity":9,"blendMode":"normal","minScreenHeight":50,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.5207373271889401,"y":0.5069444444444444}} -->
-<div class="container-fluid alignfull c9-column-container p-5 c9-fixed c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft c9-columns-has-background" style="min-height:50vh"><div class="c9-image-container" style="background-position:52.07373271889401% 50.69444444444444%;background-image:url(http://cortex.covertnine.com/wp-content/uploads/2019/10/ryoji-iwata-IBaVuZsJJTo-unsplash-w.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(47,47,47,.9);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+<div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(255,255,255,1)"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-fluid","verticalAlign":"center","containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/10/ryoji-iwata-IBaVuZsJJTo-unsplash-w.jpg","bgImgAttach":true,"overlayHue":"#2f2f2f","overlayOpacity":9,"blendMode":"normal","minScreenHeight":50,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.5207373271889401,"y":0.5069444444444444}} -->
+<div class="container-fluid alignfull c9-column-container p-5 c9-fixed c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft c9-columns-has-background" style="min-height:50vh"><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:52.07373271889401% 50.69444444444444%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/10/ryoji-iwata-IBaVuZsJJTo-unsplash-w.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(47,47,47,.9);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Contact","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","weight":"light"} -->
 <div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1 font-weight-light" style="color:#ffffff">Contact</h1></div>
 <!-- /wp:c9-blocks/heading --></div></div>
@@ -26,16 +26,6 @@ export default {
 <!-- wp:button {"customBackgroundColor":"#0089c4","align":"center"} -->
 <div class="wp-block-button aligncenter"><a class="wp-block-button__link has-background" href="#" style="background-color:#0089c4">LIVE CHAT</a></div>
 <!-- /wp:button --></div></div>
-<!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->
-
-<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#ebebeb","minScreenHeight":10,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
-<div class="c9-grid c9-scroll" style="min-height:10vh;background-color:rgba(235,235,235,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnsGap":4,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
-<div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Call us","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","disableToolbar":true,"customFontSize":25} -->
-<div style="text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh" style="font-size:25px"><p>Prefer to speak with a real live person? </p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="tel:8005551000" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Call us</a></div></div></div>
-<!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
@@ -142,5 +132,15 @@ export default {
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->
+
+<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#ebebeb","minScreenHeight":10,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+<div class="c9-grid my-5 c9-scroll" style="min-height:10vh;background-color:rgba(235,235,235,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnsGap":4,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
+<div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Call us","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","disableToolbar":true,"customFontSize":25} -->
+<div style="text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh" style="font-size:25px"><p>Prefer to speak with a real live person? </p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="tel:8005551000" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Call us</a></div></div></div>
+<!-- /wp:c9-blocks/cta --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/grid --></div>`
 };

@@ -1,7 +1,7 @@
 #wpcontent {
 	background: rgba(0, 0, 0, 0.88);
 	font-size: 10px;
-	background: url(/wp-content/plugins/c9-blocks/assets/wood-tile.jpg);
+	background: #333333 url(../assets/wood-tile.jpg);
 }
 
 .c9-admin-wrapper p {
@@ -23,12 +23,13 @@ button:hover {
 }
 
 #wpcontent li {
+	display: -webkit-box;
 	display: flex;
 }
 
 #wpcontent li:before {
 	content: "";
-	background-image: url(/wp-content/plugins/c9-blocks/assets/fa-icons/chevron-circle-right-solid.svg);
+	background-image: url(../assets/fa-icons/chevron-circle-right-solid.svg);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -91,7 +92,9 @@ p {
 }
 
 .c9-header {
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-align: center;
 	align-items: center;
 	padding: 5em;
 	padding-bottom: 0;
@@ -162,12 +165,14 @@ p {
 	right: -1.5em;
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-image: url("/wp-content/plugins/c9-blocks/assets/fa-icons/chevron-circle-right-solid.svg");
+	background-image: url(../assets/fa-icons/chevron-circle-right-solid.svg);
 }
 
 .c9-section-templates {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
+	display: -webkit-box;
 	display: flex;
 	padding-bottom: 0;
 	padding-top: 10vh;
@@ -194,6 +199,7 @@ p {
 }
 
 .c9-section-examples {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	text-align: center;
@@ -207,7 +213,9 @@ p {
 }
 
 .c9-section-examples-wrapper {
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-align: center;
 	align-items: center;
 	justify-content: space-around;
 	padding-bottom: 20px;
@@ -270,6 +278,7 @@ p {
 }
 
 .c9-if-you-love-content {
+	display: -webkit-box;
 	display: flex;
 }
 
@@ -298,6 +307,7 @@ p {
 
 .c9-awareness-consideration-conversion {
 	width: 100%;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	margin-top: 3vh;
@@ -309,8 +319,11 @@ p {
 }
 
 .c9-template-types {
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-align: center;
 	align-items: center;
+	-webkit-box-pack: justify;
 	justify-content: space-between;
 	border-bottom: 4px solid #819fb3;
 	border-left: 4px solid #819fb3;
@@ -341,12 +354,15 @@ p {
 }
 
 .c9-build-your-own {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f1), to(#f4f4f1));
 	background-image: linear-gradient(#f4f4f1, #f4f4f1);
 	background-repeat: no-repeat;
 }
 
 .c9-build-your-own-inner {
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-align: start;
 	align-items: flex-start;
 	padding: 3em;
 }
@@ -358,7 +374,10 @@ p {
 .c9-build-your-own-inner .content-right {
 	padding: 4em;
 	padding-top: 2.5em;
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
 	flex-direction: column;
 }
 
@@ -411,6 +430,7 @@ p {
 }
 
 .c9-blocks-list .c9-block {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	text-align: center;
@@ -437,6 +457,7 @@ p {
 }
 
 .c9-how-to {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f1), to(#f4f4f1));
 	background-image: linear-gradient(#f4f4f1, #f4f4f1);
 	background-repeat: no-repeat;
 	padding-left: 10em;
@@ -466,6 +487,7 @@ p {
 }
 
 .c9-who-are-we {
+	display: -webkit-box;
 	display: flex;
 }
 
@@ -482,7 +504,9 @@ p {
 }
 
 .c9-support-forums-contact {
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-pack: justify;
 	justify-content: space-between;
 }
 
@@ -512,6 +536,7 @@ p {
 	position: absolute;
 	bottom: 25px;
 	left: 50%;
+	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
 
@@ -534,7 +559,9 @@ p {
 .c9-who-are-we .c9-social {
 	width: 50%;
 	margin: 0 auto;
+	-webkit-box-pack: justify;
 	justify-content: space-between;
+	display: -webkit-box;
 	display: flex;
 	margin-top: 2em;
 }
@@ -548,6 +575,7 @@ p {
 	margin: 0;
 	margin-bottom: 17px;
 	font-weight: 800;
+	-webkit-text-decoration: uppercase;
 	text-decoration: uppercase;
 }
 
@@ -560,7 +588,9 @@ p {
 .c9-how-to .c9-video-tutorials {
 	margin-top: 60px;
 	margin-bottom: 4vh;
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-pack: justify;
 	justify-content: space-between;
 }
 
@@ -685,6 +715,7 @@ p {
 	.c9-admin-hero {
 		background-size: cover !important;
 		background-position: center;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)) !important;
 		background-image: linear-gradient(white, white) !important;
 	}
 
@@ -694,6 +725,8 @@ p {
 
 	.c9-section-examples-wrapper {
 		padding-bottom: 5em;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
 		flex-direction: column;
 	}
 
@@ -729,6 +762,8 @@ p {
 	}
 
 	.c9-support-forums-contact {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
 		flex-direction: column;
 	}
 
