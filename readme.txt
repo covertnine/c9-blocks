@@ -61,6 +61,11 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
+= 1.0.5 =
+* Fixed contact template that had unexpected block output
+* Fixed color and image path background image bugs. Thanks Drew + Christian.
+* Fixed admin-style path double /
+
 = 1.0.4 =
 * Fixed error message related to colors in backend being exposed to rest API
 
@@ -89,6 +94,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 * C9 Starter Theme Support
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+* Contact template update should halve errors fixed from 1.0.4
 
 = 1.0.3 =
 * Additional settings for C9 Grid

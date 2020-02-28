@@ -74,6 +74,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.0.5**
+Fixed contact template that had unexpected block output and two other minor bugs.
+
 **1.0.4**
 Fixed error from orig colors being exposed to rest API.
 
