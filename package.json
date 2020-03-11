@@ -54,7 +54,7 @@
 		"extract-text-webpack-plugin": "^3.0.2",
 		"filesize": "^4.2.1",
 		"gzip-size": "^5.1.1",
-		"node-sass": "^4.13.0",
+		"node-sass": "^4.13.1",
 		"ora": "^1.4.0",
 		"postcss-loader": "^2.1.6",
 		"prettier": "^1.19.1",
