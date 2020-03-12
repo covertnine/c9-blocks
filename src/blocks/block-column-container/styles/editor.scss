@@ -15,7 +15,6 @@
 .container-fluid .row>.editor-inner-blocks>.editor-block-list__layout {
 	width: 100%;
 	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -23,27 +22,32 @@
 .container-narrow .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
 .container-fluid .row>.editor-inner-blocks>.editor-block-list__layout .editor-block-list__block {
 	-webkit-box-flex: 1;
-	-ms-flex-positive: 1;
 	flex-grow: 1;
-	-ms-flex-preferred-size: 0px;
 	flex-basis: 0px;
 }
 
 .wp-block-c9-blocks-column-containers .container-fluid .row {
 	-webkit-box-flex: 1;
-	-ms-flex-positive: 1;
 	flex-grow: 1;
 }
 
 .padding-wrapper {
 	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 }
 
-.editor-styles-wrapper div[data-type="c9-blocks/column-container"] .wp-block {
+.editor-styles-wrapper .c9-grid .wp-block[data-type="c9-blocks/column-container"] .wp-block,
+.is-sidebar-opened .editor-styles-wrapper .c9-grid [data-type="c9-blocks/column-container"].container .wp-block {
 	max-width: 100%;
 	word-break: break-word;
+}
+
+.editor-styles-wrapper .c9-grid [data-type="c9-blocks/column-container"].container .wp-block {
+	max-width: 1140px;
+}
+
+.editor-styles-wrapper .c9-grid [data-type="c9-blocks/column-container"].container-narrow .wp-block {
+	max-width: 960px;
 }
 
 .c9-layout-column-wrap-admin>.editor-inner-blocks {
@@ -303,17 +307,14 @@ div[data-type="c9-blocks/column-container"] {
 	z-index: 12;
 
 	&.c9-is-vertically-aligned-top {
-		-ms-flex-item-align: start;
 		align-self: flex-start;
 	}
 
 	&.c9-is-vertically-aligned-center {
-		-ms-flex-item-align: center;
 		align-self: center;
 	}
 
 	&.c9-is-vertically-aligned-bottom {
-		-ms-flex-item-align: end;
 		align-self: flex-end;
 	}
 
@@ -370,17 +371,14 @@ div[data-type="c9-blocks/column-container"] {
 
 div[data-type="c9-blocks/column"] {
 	&.c9-is-vertically-aligned-top {
-		-ms-flex-item-align: start;
 		align-self: flex-start;
 	}
 
 	&.c9-is-vertically-aligned-center {
-		-ms-flex-item-align: center;
 		align-self: center;
 	}
 
 	&.c9-is-vertically-aligned-bottom {
-		-ms-flex-item-align: end;
 		align-self: flex-end;
 	}
 }
@@ -410,7 +408,6 @@ div[data-type="c9-blocks/column-container"] {
 	&:focus,
 	&:focus:enabled {
 		background-color: transparent;
-		-webkit-box-shadow: none;
 		box-shadow: none;
 	}
 

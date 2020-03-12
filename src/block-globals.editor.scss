@@ -80,13 +80,13 @@
 	line-height: 1.8;
 }
 
-.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.wp-block>[data-type]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.wp-block:before,
-.block-editor-block-list__layout .block-editor-block-list__block.is-selected>.wp-block>[data-type]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.wp-block:before,
-.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.wp-block>[data-type]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.wp-block:before,
-.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.wp-block>[data-type]>div>.wp-block-cover__inner-container>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.wp-block:before,
-.c9-grid .block-editor-block-list__layout .block-editor-block-list__block.is-selected>.wp-block>[data-type]>div>.wp-block-group__inner-container>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-editor-block-list__block:not(.is-selected)>.wp-block:before,
-[data-type="c9-blocks/grid"] .block-editor-block-list__layout .block-editor-block-list__block.has-child-selected>.wp-block:before {
-	border: none;
+.c9-grid .block-editor-block-list__layout .wp-block.is-selected>.wp-block>[data-type]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block:not(.is-selected)>.wp-block:before,
+.block-editor-block-list__layout .wp-block.is-selected>.wp-block>[data-type]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block:not(.is-selected)>.wp-block:before,
+.c9-grid .block-editor-block-list__layout .wp-block.is-selected>.wp-block>[data-type]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block:not(.is-selected)>.wp-block:before,
+.c9-grid .block-editor-block-list__layout .wp-block.is-selected>.wp-block>[data-type]>div>.wp-block-cover__inner-container>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block:not(.is-selected)>.wp-block:before,
+.c9-grid .block-editor-block-list__layout .wp-block.is-selected>.wp-block>[data-type]>div>.wp-block-group__inner-container>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block:not(.is-selected)>.wp-block:before,
+[data-type="c9-blocks/grid"] .block-editor-block-list__layout .wp-block.has-child-selected>.wp-block:before {
+	border: 1px dotted #000;
 }
 
 .editor-styles-wrapper .c9-grid [data-block] {
@@ -94,7 +94,7 @@
 	margin-bottom: 0px;
 }
 
-.block-editor-block-list__block>.block-editor-block-list__insertion-point {
+.wp-block>.block-editor-block-list__insertion-point {
 	z-index: 18;
 	height: 22px;
 	top: 0px;
@@ -105,16 +105,32 @@
 	height: auto;
 }
 
-.block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-list__layout .block-editor-block-list__empty-block-inserter,
-.block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-list__layout .block-editor-default-block-appender .block-editor-inserter {
+/* adding position relative so fonts will display in heading dashicons */
+.components-toolbar__control.components-button {
+	position: relative;
+}
+
+.components-toolbar__control.components-button[data-subscript]:after {
+	font-size: 9px;
+	right: 6px;
+	bottom: 8px;
+}
+
+.components-toolbar__control.components-button[data-subscript] svg {
+	width: 30px;
+	height: 30px;
+}
+
+.block-editor-block-list__layout .wp-block .block-editor-block-list__layout .block-editor-block-list__empty-block-inserter,
+.block-editor-block-list__layout .wp-block .block-editor-block-list__layout .block-editor-default-block-appender .block-editor-inserter {
 	right: 8px;
 }
 
 @media (min-width: 600px) {
 
-	.edit-post-visual-editor .block-editor-block-list__block>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
-	.edit-post-visual-editor .block-editor-block-list__block[data-align="full"]>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
-	.edit-post-visual-editor .block-editor-block-list__block[data-align="wide"]>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar {
+	.edit-post-visual-editor .wp-block>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
+	.edit-post-visual-editor .wp-block[data-align="full"]>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
+	.edit-post-visual-editor .wp-block[data-align="wide"]>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar {
 		z-index: 15;
 	}
 
@@ -129,11 +145,11 @@
 		margin-bottom: 0px;
 	}
 
-	.block-editor-block-list__block .wp-block {
+	.wp-block .wp-block {
 		z-index: 20;
 	}
 
-	.block-editor-block-list__block.is-selected .wp-block {
+	.wp-block.is-selected .wp-block {
 		z-index: 26;
 	}
 
@@ -148,7 +164,6 @@
 
 	/* moving add block inserter inwards a bit because it hides behind menu otherwise */
 	.block-editor-block-list__empty-block-inserter,
-	.block-editor-default-block-appender .block-editor-inserter,
 	.post-type-page .block-editor-block-list__empty-block-inserter {
 		left: -17px;
 	}
@@ -157,18 +172,12 @@
 /****************************************************************************************/
 /* Main column width settings */
 /****************************************************************************************/
-// set width of editor screen and a max width
+// width: 94%; no longer needed after Wp 5.4 defaults to full screen
 .block-editor-editor-skeleton__content .editor-styles-wrapper {
-	width: 94%;
 	margin: 0px auto;
+	min-width: 94%;
 }
 
-// .wp-block[data-type="core/paragraph"],
-// .wp-block[data-type="core/heading"],
-// .wp-block[data-type="core/block"],
-// .wp-block[data-type="core/button"],
-// .wp-block[data-type="core/columns"],
-// .wp-block[data-type="core/image"]
 .editor-styles-wrapper .editor-default-block-appender,
 .editor-styles-wrapper .editor-post-title,
 .editor-styles-wrapper .editor-post-title__block {
