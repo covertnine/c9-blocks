@@ -29,7 +29,7 @@ const attributes = {
 	},
 	containerWidth: {
 		type: "string",
-		default: "container"
+		default: "container-narrow"
 	},
 	verticalAlign: {
 		type: "string"
