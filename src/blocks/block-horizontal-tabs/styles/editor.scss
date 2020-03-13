@@ -5,7 +5,7 @@
  * which makes it higher in priority.
  */
 
-div[data-type="c9-blocks/horizontal-tabs"] .editor-block-list__block-edit.block-editor-block-list__block-edit {
+div[data-type="c9-blocks/horizontal-tabs"] .wp-block {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -25,6 +25,10 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 
 		position: relative;
 
+		-webkit-transition: 0.15s border-color,
+		0.15s background-color,
+		0.15s opacity;
+
 		transition: 0.15s border-color,
 		0.15s background-color,
 		0.15s opacity;
@@ -33,8 +37,10 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 
 .c9-component-remove-button {
 	position: absolute;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	        justify-content: center;
 	top: 0;
 	right: 0;
 	width: 20px;
@@ -46,6 +52,7 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 	background-color: #4f5969;
 	border-radius: 50%;
 	opacity: 0.7;
+	-webkit-transition: 0.2s opacity, 0.2s background-color;
 	transition: 0.2s opacity, 0.2s background-color;
 
 	&:hover {

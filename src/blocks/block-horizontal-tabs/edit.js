@@ -313,7 +313,7 @@ class Edit extends Component {
 				</div>
 				<style>
 					{`
-                    [data-block="${this.props.clientId}"] > .c9-horizontal-tabs > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
+                    [data-block="${this.props.clientId}"] > .c9-horizontal-tabs > .tab-content > .block-editor-inner-blocks > .block-editor-block-list__layout [data-tab="${tabActive}"] {
                         display: block;
                     }
                     `}

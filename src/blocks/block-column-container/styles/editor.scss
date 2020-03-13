@@ -4,29 +4,29 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-.container .row .editor-inner-blocks,
-.container-fluid .row .editor-inner-blocks,
-.container-narrow .row .editor-inner-blocks {
+.container .c9-layout-column-wrap-admin .block-editor-inner-blocks,
+.container-fluid .c9-layout-column-wrap-admin .block-editor-inner-blocks,
+.container-narrow .c9-layout-column-wrap-admin .block-editor-inner-blocks {
 	width: 100%;
 }
 
-.container .row>.block-editor-inner-blocks>.editor-block-list__layout,
-.container-narrow .row>.block-editor-inner-blocks>.editor-block-list__layout,
-.container-fluid .row>.block-editor-inner-blocks>.block-editor-block-list__layout {
+.container .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout,
+.container-narrow .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout,
+.container-fluid .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
 	width: 100%;
 	display: -webkit-box;
 	display: flex;
 }
 
-.container .row>.block-editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
-.container-narrow .row>.block-editor-inner-blocks>.editor-block-list__layout .editor-block-list__block,
-.container-fluid .row>.block-editor-inner-blocks>.editor-block-list__layout .editor-block-list__block {
+.container .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.wp-block,
+.container-narrow .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.wp-block,
+.container-fluid .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.wp-block {
 	-webkit-box-flex: 1;
 	flex-grow: 1;
 	flex-basis: 0px;
 }
 
-.wp-block-c9-blocks-column-containers .container-fluid .row {
+.wp-block-c9-blocks-column-containers .container-fluid .c9-layout-column-wrap-admin {
 	-webkit-box-flex: 1;
 	flex-grow: 1;
 }
