@@ -128,7 +128,7 @@
 	right: 8px;
 }
 
-@media (min-width: 600px) {
+@media only screen and (min-width: 600px) {
 
 	.edit-post-visual-editor .wp-block>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
 	.edit-post-visual-editor .wp-block[data-align="full"]>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
@@ -174,7 +174,7 @@
 /****************************************************************************************/
 /* Main column width settings */
 /****************************************************************************************/
-// width: 94%; no longer needed after Wp 5.4 defaults to full screen
+
 .block-editor-editor-skeleton__content .editor-styles-wrapper {
 	margin: 0px auto;
 	width: 94%;
