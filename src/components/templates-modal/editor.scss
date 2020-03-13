@@ -422,23 +422,25 @@
 
 			.c9-reusable-list-container {
 				width: 100%;
-				float: left;
 				padding-top: 10px;
-				height: 100%;
+				height: 100px;
 				overflow: scroll;
 			}
 
 			.c9-reusable-list {
-				grid-template-columns: repeat(7, 1fr);
-				padding-right: 20px;
-				padding-left: 10px;
-				grid-column-gap: 7px;
-				grid-row-gap: 7px;
+				// grid-template-columns: repeat(7, 1fr);
+				// padding-right: 20px;
+				// padding-left: 10px;
+				// grid-column-gap: 7px;
+				// grid-row-gap: 7px;
+				display: block;
 				margin-bottom: 10px;
 
 				button {
 					padding-left: 3px;
 					padding-right: 3px;
+					width: 90px;
+					height: 90px;
 
 					span {
 						font-size: 11px;
@@ -449,18 +451,17 @@
 
 			&.c9-preview-enabled {
 				.c9-reusable-list-container {
-					width: 40%;
+					width: 100%;
 
 					.c9-reusable-list {
-						grid-template-columns: repeat(3, 1fr);
+						// grid-template-columns: repeat(3, 1fr);
 					}
 				}
 
 				.c9-reusable-preview {
-					padding-left: 20px;
-					width: 60%;
-					float: right;
-					height: 100%;
+					padding: 0px;
+					width: 100%;
+					height: calc(100% - 90px);
 					overflow: scroll;
 				}
 			}

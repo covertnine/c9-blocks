@@ -103,7 +103,8 @@
 
 /* inspector buttons height changes to override WP defaults */
 .components-panel__body.plugin-c9-panel .components-button.is-small,
-.components-panel__body.plugin-c9-panel .components-button.is-large {
+.components-panel__body.plugin-c9-panel .components-button.is-large,
+.block-editor-editor-skeleton__sidebar .components-button.is-small.c9-column-selector-button {
 	height: auto;
 }
 

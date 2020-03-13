@@ -13,6 +13,7 @@
 	div[data-type="c9-blocks/toggles-toggle"] {
 		.c9-toggles-item-heading {
 			.block-editor-rich-text .components-autocomplete {
+				display: -webkit-box;
 				display: flex;
 			}
 		}
@@ -38,7 +39,9 @@
 
 .c9-component-remove-button {
 	position: absolute;
+	-webkit-box-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
 	justify-content: center;
 	top: 0;
 	right: 0;
@@ -51,6 +54,7 @@
 	background-color: #4f5969;
 	border-radius: 50%;
 	opacity: 0.7;
+	-webkit-transition: 0.2s opacity, 0.2s background-color;
 	transition: 0.2s opacity, 0.2s background-color;
 
 	&:hover {
@@ -134,6 +138,19 @@
 .c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
 .c9-toggles.small-toggle .c9-toggles-toggle .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
 	line-height: 0.7;
+}
+
+.editor-styles-wrapper .c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
+.editor-styles-wrapper .c9-toggles .c9-toggles-item-heading[aria-expanded="false"] .c9-toggles-item-collapse .fa-angle-right {
+	-webkit-transform: rotate(0);
+	transform: rotate(0);
+	line-height: 1;
+}
+
+.editor-styles-wrapper .c9-toggles .is-selected .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	line-height: 1;
 }
 
 @media (min-width: 600px) {

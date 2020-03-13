@@ -21,23 +21,24 @@
 		will-change: transform;
 		height: 100%;
 		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
 		-webkit-box-pack: center;
-		-ms-flex-pack: center;
 		justify-content: center;
 
 		>svg {
 			height: 100%;
 		}
 
+		.fa-angle-right {
+			color: #4a4a4a;
+		}
 	}
 
 	.c9-toggles-item-heading {
 		position: relative;
+		-webkit-transition: opacity .4s;
 		transition: opacity .4s;
 		cursor: pointer;
 		font-size: 10px;
@@ -115,6 +116,7 @@
 	position: absolute;
 	left: -50px;
 	top: 50%;
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	right: auto;
 	line-height: 1.1;
@@ -129,13 +131,10 @@
 
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-collapse {
 	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
 	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
 	border: 2.8px solid #000000;
 	padding: 3px;

@@ -316,7 +316,7 @@ class Edit extends Component {
 				</div>
 				<style>
 					{`
-                    [data-block="${this.props.clientId}"] > .c9-vertical-tabs > div > .tab-content > .editor-inner-blocks > .editor-block-list__layout [data-tab="${tabActive}"] {
+                    [data-block="${this.props.clientId}"] > .c9-vertical-tabs > div > .tab-content > .block-editor-inner-blocks > .block-editor-block-list__layout [data-tab="${tabActive}"] {
                         display: block;
                     }
                     `}
