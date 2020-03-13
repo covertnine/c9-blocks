@@ -89,6 +89,7 @@
 	border: 1px dotted #000;
 }
 
+/* removes margins above/below blocks to make it more closely resemble frontend*/
 .editor-styles-wrapper .c9-grid [data-block] {
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -101,6 +102,7 @@
 }
 
 /* inspector buttons height changes to override WP defaults */
+.components-panel__body.plugin-c9-panel .components-button.is-small,
 .components-panel__body.plugin-c9-panel .components-button.is-large {
 	height: auto;
 }
