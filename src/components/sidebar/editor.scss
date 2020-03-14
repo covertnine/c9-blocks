@@ -4,17 +4,13 @@
 .edit-post-pinned-plugins {
 	margin-left: 5px;
 }
-.edit-post-pinned-plugins
-	.components-icon-button:not(.is-toggled)
-	.c9-plugin-icon
-	svg,
-.edit-post-pinned-plugins
-	.components-icon-button.is-toggled
-	.c9-plugin-icon
-	svg,
+
+.edit-post-pinned-plugins .components-icon-button:not(.is-toggled) .c9-plugin-icon svg,
+.edit-post-pinned-plugins .components-icon-button.is-toggled .c9-plugin-icon svg,
 .edit-post-pinned-plugins .components-icon-button:hover .c9-plugin-icon svg {
 	display: block;
 	width: auto;
+
 	* {
 		stroke: initial !important; // stylelint-disable-line
 		fill: url(#c9-feather-logo-gradient_svg__a); // stylelint-disable-line
@@ -31,9 +27,14 @@
 
 .plugin-c9-panel {
 	.plugin-c9-panel-button {
+		display: -webkit-box;
 		display: flex;
+		-webkit-box-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
 		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
 		flex-direction: column;
 		width: 100%;
 		height: auto;
@@ -47,6 +48,8 @@
 		background: none;
 		border: 1px solid;
 		border-radius: 4px;
+		-webkit-transition: 0.2s color, 0.2s background-color, 0.2s border-color,
+			0.2s box-shadow;
 		transition: 0.2s color, 0.2s background-color, 0.2s border-color,
 			0.2s box-shadow;
 
@@ -82,4 +85,13 @@
 			height: 24px;
 		}
 	}
+}
+
+.c9-block-default-palette .components-color-palette__item,
+.c9-block-default-palette .components-color-palette__item-wrapper {
+	display: inline-block;
+}
+
+.c9-block-default-palette .components-color-palette__item svg {
+	color: inherit;
 }

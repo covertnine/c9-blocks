@@ -1,28 +1,35 @@
 .c9-custom-color-settings-container {
+	display: -webkit-box;
 	display: flex;
+	-webkit-box-align: center;
 	align-items: center;
 }
 
 .c9-custom-color-settings-container .c9-color-icon-indicate {
 	position: relative;
+	-webkit-transform: scale(1);
 	transform: scale(1);
+	-webkit-transition: -webkit-transform 0.1s ease;
+	transition: -webkit-transform 0.1s ease;
 	transition: transform 0.1s ease;
+	transition: transform 0.1s ease, -webkit-transform 0.1s ease;
 	border-radius: 50%;
 	padding: 0;
 }
+
 .c9-custom-color-settings-container .c9-color-icon-indicate:hover {
-	transform: scale(1.2);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	height: auto;
 }
-.c9-custom-color-settings-container
-	.c9-color-icon-indicate
-	.component-color-indicator.c9-advanced-color-indicate {
+
+.c9-custom-color-settings-container .c9-color-icon-indicate .component-color-indicator.c9-advanced-color-indicate {
 	width: 28px;
 	height: 28px;
 	border-radius: 50%;
 	margin: 0;
 }
-.components-popover.popover-color
-	> .components-popover__content
-	> .components-base-control {
+
+.components-popover.popover-color>.components-popover__content>.components-base-control {
 	padding: 0 10px;
 }
