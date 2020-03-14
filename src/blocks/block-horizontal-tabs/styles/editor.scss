@@ -38,9 +38,9 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 .c9-component-remove-button {
 	position: absolute;
 	-webkit-box-align: center;
-	        align-items: center;
+	align-items: center;
 	-webkit-box-pack: center;
-	        justify-content: center;
+	justify-content: center;
 	top: 0;
 	right: 0;
 	width: 20px;
@@ -144,4 +144,12 @@ div[data-type="c9-blocks/horizontal-tabs"] .c9-horizontal-tabs {
 
 .c9-horizontal-tabs .nav-tabs .nav-link {
 	line-height: 1;
+}
+
+.editor-styles-wrapper .c9-horizontal-tabs p:only-child {
+	margin-bottom: 0px;
+}
+
+.editor-styles-wrapper .c9-horizontal-tabs .wp-block[data-type="core/paragraph"] {
+	margin-bottom: 20px;
 }
