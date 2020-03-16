@@ -62,7 +62,7 @@
 	background-attachment: fixed;
 }
 
-.c9-grid .c9-layout-column-wrap {
+.c9-posts-grid .c9-layout-column-wrap {
 	position: relative;
 }
 
@@ -87,7 +87,6 @@
 	display: -ms-grid;
 	position: relative;
 	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
 }
 
@@ -203,20 +202,20 @@
 
 @media only screen and (min-width: 1px) and (max-width: 667px) {
 	.page.page-template-default .entry .entry-content>.c9-posts-grid {
-		margin-left: -1rem;
-		margin-right: -1rem;
+		margin-left: -1em;
+		margin-right: -1em;
 	}
 
 	.page.page-template-default .post-inner>.entry-content>.c9-posts-grid {
-		margin-left: calc((58rem - 100vw) / 2);
-		margin-right: calc((58rem - 100vw) / 2);
+		margin-left: calc((58em - 100vw) / 2);
+		margin-right: calc((58em - 100vw) / 2);
 	}
 }
 
 @media only screen and (min-width: 1px) and (max-width: 375px) {
 	.page.page-template-default .post-inner>.entry-content>.c9-posts-grid {
-		margin-left: -2rem;
-		margin-right: -2rem;
+		margin-left: -2em;
+		margin-right: -2em;
 	}
 }
 
@@ -337,7 +336,7 @@
 	}
 
 	.page-template-default .entry-content>.c9-posts-grid .container-fluid {
-		width: 100%;
+		width: 100vw;
 		padding-left: 0px;
 		padding-right: 0px;
 	}

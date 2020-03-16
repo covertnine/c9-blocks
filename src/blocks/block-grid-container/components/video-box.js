@@ -147,7 +147,10 @@ export default class VideoBox extends Component {
 
 		if (containerVideoURL && "upload" == videoType) {
 			return (
-				<div className="c9-video-container" ref={this.videoContainerRef}>
+				<div
+					className="c9-video-container d-none d-sm-block"
+					ref={this.videoContainerRef}
+				>
 					<div className="c9-embed-container">
 						<video
 							id={`containerVideo-${instanceId}`}
@@ -172,7 +175,10 @@ export default class VideoBox extends Component {
 		} else {
 			// return <WpEmbedPreview html={previewHTML} />;
 			return (
-				<div className="c9-video-container" ref={this.videoContainerRef}>
+				<div
+					className="c9-video-container d-none d-sm-block"
+					ref={this.videoContainerRef}
+				>
 					<div className="c9-embed-container">
 						<div
 							id={`player-${containerVideoID}-${instanceId}`}
