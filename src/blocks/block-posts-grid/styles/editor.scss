@@ -271,6 +271,12 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 		margin-right: -44px;
 	}
 
+	// compensate for posts grid within container grid (videos page template)
+	body.folded .is-sidebar-opened .editor-styles-wrapper .c9-grid .wp-block[data-type="c9-blocks/posts-grid"] {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] {
 		width: calc(100vw - 116px);
 		max-width: calc(100vw - 116px);
@@ -336,14 +342,14 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 
 	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"],
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"] {
-		margin-left: calc((-100vw + 58px + 280px) / 2);
-		margin-right: calc((-100vw + 58px + 280px) / 2);
+		margin-left: calc((-100vw + 116px + 280px) / 2);
+		margin-right: calc((-100vw + 116px + 280px) / 2);
 	}
 
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .block-editor-editor-skeleton__content .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"],
 	body.folded .edit-post-layout:not(.is-sidebar-opened) .block-editor-editor-skeleton__content .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"] {
-		margin-left: calc((-100vw + 58px) / 2);
-		margin-right: calc((-100vw + 58px) / 2);
+		margin-left: calc((-100vw + 116px) / 2);
+		margin-right: calc((-100vw + 116px) / 2);
 	}
 
 	// Admin closed. Inspector closed.
