@@ -2,7 +2,7 @@
 Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive
-Requires at least: 5.4
+Requires at least: 5.3
 Tested up to: 5.4
 Stable tag: 1.0.6
 Requires PHP: 7.1
