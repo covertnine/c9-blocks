@@ -21,11 +21,17 @@
 	height: 48px;
 }
 
-.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon svg {
+.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon svg,
+.block-editor-block-types-list__item .block-editor-block-types-list__item-icon .block-editor-block-icon svg {
 	min-width: 48px;
 	min-height: 48px;
 	max-width: 48px;
 	max-height: 48px;
+}
+
+.block-editor-block-types-list__item .block-editor-block-types-list__item-title {
+	font-size: 10px;
+	line-height: 1;
 }
 
 /* flip container c9 grid element height vertically */
