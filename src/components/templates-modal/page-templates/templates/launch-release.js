@@ -50,7 +50,7 @@ export default {
 <!-- wp:c9-blocks/column-container {"columns":3,"columnsGap":4,"layout":"c9-3-col-equal","overlayHue":"#000000","overlayOpacity":9,"blendMode":"normal","containerMargin":{"linked":false,"top":"5","bottom":"5","left":"-1","right":"-1","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container c9-column-container p-5 my-5 c9-scroll c9-layout-columns-3 c9-3-col-equal"><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.9);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:image {"id":472,"width":293,"height":293,"className":"img-fluid"} -->
-<figure class="wp-block-image is-resized img-fluid"><img src="http://cortex.covertnine.com/wp-content/uploads/2019/10/fake-album-3-768x768.jpg" alt="" class="wp-image-472" width="293" height="293"/></figure>
+<figure class="wp-block-image is-resized img-fluid"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/10/fake-album-3-768x768.jpg" alt="" class="wp-image-472" width="293" height="293"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:core-embed/spotify {"url":"https://open.spotify.com/album/49Q3EfStlDspsaOo8VAgtW?si=AFBKe_uuSPK80YWuxOODGA","type":"rich","providerNameSlug":"spotify","allowResponsive":false,"className":""} -->
@@ -62,7 +62,7 @@ https://open.spotify.com/album/49Q3EfStlDspsaOo8VAgtW?si=AFBKe_uuSPK80YWuxOODGA
 
 <!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:image {"id":471,"width":296,"height":296,"className":"img-fluid"} -->
-<figure class="wp-block-image is-resized img-fluid"><img src="http://cortex.covertnine.com/wp-content/uploads/2019/10/fake-album-2-768x768.jpg" alt="" class="wp-image-471" width="296" height="296"/></figure>
+<figure class="wp-block-image is-resized img-fluid"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/10/fake-album-2-768x768.jpg" alt="" class="wp-image-471" width="296" height="296"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:core-embed/spotify {"url":"https://open.spotify.com/album/1nzDVfQopF9YBkpPAfUck3?si=lCYs7A3mRhuW34qG0YB_YA","type":"rich","providerNameSlug":"spotify","allowResponsive":false,"className":""} -->
@@ -74,7 +74,7 @@ https://open.spotify.com/album/1nzDVfQopF9YBkpPAfUck3?si=lCYs7A3mRhuW34qG0YB_YA
 
 <!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:image {"id":470,"width":290,"height":290,"className":"img-fluid"} -->
-<figure class="wp-block-image is-resized img-fluid"><img src="http://cortex.covertnine.com/wp-content/uploads/2019/10/fake-album-1-768x768.jpg" alt="" class="wp-image-470" width="290" height="290"/></figure>
+<figure class="wp-block-image is-resized img-fluid"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/10/fake-album-1-768x768.jpg" alt="" class="wp-image-470" width="290" height="290"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:core-embed/spotify {"url":"https://open.spotify.com/album/5baJxk2fGaLorySaf6173S?si=8-F5eOhyQ1ut_CkWnAUonQ","type":"rich","providerNameSlug":"spotify","allowResponsive":false,"className":""} -->
