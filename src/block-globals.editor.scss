@@ -34,38 +34,6 @@
 	line-height: 1;
 }
 
-/* flip container c9 grid element height vertically */
-.c9-height-range-control {
-	overflow: visible;
-	-webkit-transform: rotate(90deg) translateY(80px);
-	transform: rotate(90deg) translateY(80px);
-	margin-top: 125px;
-}
-
-.c9-height-range-control .components-base-control__label {
-	text-align: right;
-	z-index: 2;
-}
-
-.c9-height-range-control .components-range-control__slider {
-	z-index: 4;
-}
-
-.c9-height-range-control .components-range-control .dashicon {
-	margin-right: 0px;
-	z-index: 5;
-}
-
-.c9-height-range-control .components-base-control__label,
-.c9-height-range-control .components-range-control__number {
-	-webkit-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-}
-
-.c9-container-base-control>.components-base-control__field {
-	min-height: 160px;
-}
-
 .c9-grid .components-icon-button:not(:disabled):not([aria-disabled="true"]):not(.is-default):not(.blocks-gallery-item__remove) {
 	background-color: #fff;
 }

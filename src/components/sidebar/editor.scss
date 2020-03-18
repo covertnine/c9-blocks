@@ -95,3 +95,40 @@
 .c9-block-default-palette .components-color-palette__item svg {
 	color: inherit;
 }
+
+/* sidebar buttons */
+// .block-editor-editor-skeleton__sidebar .components-panel__body>div>span {
+// 	display: block;
+// }
+
+/* flip container c9 grid element height vertically */
+.c9-height-range-control {
+	overflow: visible;
+	-webkit-transform: rotate(90deg) translateY(80px);
+	transform: rotate(90deg) translateY(80px);
+	margin-top: 125px;
+}
+
+.c9-height-range-control .components-base-control__label {
+	text-align: right;
+	z-index: 2;
+}
+
+.c9-height-range-control .components-range-control__slider {
+	z-index: 4;
+}
+
+.c9-height-range-control .components-range-control .dashicon {
+	margin-right: 0px;
+	z-index: 5;
+}
+
+.c9-height-range-control .components-base-control__label,
+.c9-height-range-control .components-range-control__number {
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+.c9-container-base-control>.components-base-control__field {
+	min-height: 160px;
+}
