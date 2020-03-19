@@ -438,8 +438,10 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 	// Admin closed. Inspector open.
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-fluid[data-align="full"] {
 		max-width: none;
-		width: calc(100vw - 280px - 7%);
+		width: calc((100vw * .96) - 280px - 22px);
 		min-width: 1200px;
+		margin-left: calc((-100vw + 100% + 116px + 280px - 18px) / 2);
+		margin-right: calc((-100vw + 100% + 116px + 280px - 18px) / 2);
 	}
 
 	// Admin open. Inspector closed.
