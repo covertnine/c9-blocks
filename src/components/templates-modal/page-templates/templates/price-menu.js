@@ -34,10 +34,16 @@ export default {
 
 <!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:group {"backgroundColor":"covertnine-palette-1"} -->
-<div class="wp-block-group has-covertnine-palette-1-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:list -->
+<div class="wp-block-group has-covertnine-palette-1-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:group {"customBackgroundColor":"#ffffff"} -->
+<div class="wp-block-group has-background" style="background-color:#ffffff"><div class="wp-block-group__inner-container"><!-- wp:list -->
 <ul><li><strong>Saturday </strong>10am until 3pm</li><li><strong>Sunday</strong> 10am until 2pm</li><li><strong>Click the C9 Grid block to change background image settings in the sidebar panel</strong></li></ul>
 <!-- /wp:list --></div></div>
 <!-- /wp:group --></div></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 

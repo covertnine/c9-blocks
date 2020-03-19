@@ -6,7 +6,7 @@ export default {
 	title: "Lead Generation 3",
 	description: `Close the deal after a user has hit one of the other lead generation landing page templates. There’s a placeholder for your form, a short and concise headline, short features list, and vertical image carousel gallery for a final point of interest.`,
 	recommended: `Email contact or sign up form, heading, large hero image, tell a friend headline, bulleted feature list, 3-5 vertical photos, button`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2020/01/spacex-uj3hvdfQujI-unsplash.jpg","containerHue":"#070707","bgImgAttach":true,"overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":70,"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2020/01/spacex-uj3hvdfQujI-unsplash.jpg","containerHue":"#070707","bgImgAttach":true,"overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":70,"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
 <div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:70vh;background-color:rgba(7,7,7,1)"><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:28.110599078341014% 57.638888888888886%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2020/01/spacex-uj3hvdfQujI-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(40,40,40,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"align":"full","columns":1,"columnMaxWidth":600,"layout":"c9-1-col-equal","containerWidth":"container-fluid","verticalAlign":"center"} -->
 <div class="container-fluid alignfull c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center c9-1-col-equal c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:600px"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer -->
@@ -21,8 +21,8 @@ export default {
 <hr class="wp-block-separator"/>
 <!-- /wp:separator -->
 
-<!-- wp:paragraph {"align":"center","textColor":"covertnine-palette-1","customFontSize":22} -->
-<p style="font-size:22px" class="has-text-color has-text-align-center has-covertnine-palette-1-color"><strong>Click on the section's outer edge of the C9 Grid block to select it and changes its background overlay, imagery, or video. If you don't see a sidebar when clicking on the C9 Grid block, click the gear icon and then change Background Settings</strong></p>
+<!-- wp:paragraph {"align":"center","customTextColor":"#ffffff","customFontSize":22} -->
+<p style="color:#ffffff;font-size:22px" class="has-text-color has-text-align-center"><strong>Click on the section's outer edge of the C9 Grid block to select it and changes its background overlay, imagery, or video. If you don't see a sidebar when clicking on the C9 Grid block, click the gear icon and then change Background Settings</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:separator -->
@@ -30,8 +30,8 @@ export default {
 <!-- /wp:separator -->
 
 <!-- wp:group {"customBackgroundColor":"#1e1e1e"} -->
-<div class="wp-block-group has-background" style="background-color:#1e1e1e"><div class="wp-block-group__inner-container"><!-- wp:paragraph {"align":"center","textColor":"covertnine-palette-1","fontSize":"medium"} -->
-<p class="has-text-color has-text-align-center has-medium-font-size has-covertnine-palette-1-color"><strong>Enter your email now!</strong></p>
+<div class="wp-block-group has-background" style="background-color:#1e1e1e"><div class="wp-block-group__inner-container"><!-- wp:paragraph {"align":"center","customTextColor":"#ffffff","fontSize":"medium"} -->
+<p style="color:#ffffff" class="has-text-color has-text-align-center has-medium-font-size"><strong>Enter your email now!</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","textColor":"covertnine-palette-1","fontSize":"larger"} -->
@@ -50,7 +50,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerPadding":{"linked":true,"icon":"admin-links","top":"5","bottom":"5","left":"5","right":"5"}} -->
+<!-- wp:c9-blocks/grid {"instanceId":1,"rows":2,"containerPadding":{"linked":true,"icon":"admin-links","top":"5","bottom":"5","left":"5","right":"5"}} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":8,"layout":"c9-2-col-equal"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-8 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Offer","subheading":"Details","addSubheading":true,"tagLevel":3,"overrideStyle":true} -->
