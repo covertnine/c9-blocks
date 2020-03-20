@@ -156,13 +156,16 @@ class Edit extends Component {
 			align = buttonsAlign;
 		}
 
-		select("core/editor")
-			.getBlocksByClientId(clientId)[0]
-			.innerBlocks.forEach(function(block) {
-				dispatch("core/editor").updateBlockAttributes(block.clientId, {
-					tabActive
+		const targetBlock = select("core/editor").getBlocksByClientId(clientId)[0];
+
+		if (targetBlock !== null) {
+			targetBlock
+				.innerBlocks.forEach(function(block) {
+					dispatch("core/editor").updateBlockAttributes(block.clientId, {
+						tabActive
+					});
 				});
-			});
+		}
 
 		return (
 			<Fragment>
