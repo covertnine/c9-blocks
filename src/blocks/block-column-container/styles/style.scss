@@ -19,8 +19,6 @@
 		align-self: flex-end;
 	}
 
-	display: -ms-grid;
-	display: grid;
 	position: relative;
 
 	@media (max-width: 667px) {
@@ -77,6 +75,7 @@
 .c9-layout-column-wrap {
 	display: -ms-grid;
 	display: grid;
+	-ms-grid-rows: 1fr;
 	grid-template-rows: 1fr;
 	grid-gap: 0 2em;
 }
@@ -248,8 +247,8 @@ div[data-type="c9-blocks/c9-column"],
 /* One column grid. */
 
 .c9-layout-columns-1>.c9-layout-column-wrap {
-	display: -ms-grid;
-	display: grid;
+	display: -webkit-box;
+	display: flex;
 }
 
 /* Two column grid. */
@@ -261,6 +260,7 @@ div[data-type="c9-blocks/c9-column"],
 
 	&.c9-is-responsive-column {
 		@media only screen and (max-width: 600px) {
+			-ms-grid-columns: 1fr;
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				"col1"
@@ -275,7 +275,7 @@ div[data-type="c9-blocks/c9-column"],
 }
 
 .c9-2-col-wideright>.c9-layout-column-wrap {
-	-ms-grid-columns: 2fr 1fr;
+	-ms-grid-columns: 1fr 2fr;
 	grid-template-columns: 1fr 2fr;
 }
 
@@ -288,6 +288,7 @@ div[data-type="c9-blocks/c9-column"],
 
 	&.c9-is-responsive-column {
 		@media only screen and (max-width: 768px) {
+			-ms-grid-columns: 1fr;
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				"col1"
@@ -364,7 +365,7 @@ div[data-type="c9-blocks/c9-column"],
 }
 
 .c9-4-col-wideleft>.c9-layout-column-wrap {
-	-ms-grid-columns: 1fr 1fr 1fr 2fr;
+	-ms-grid-columns: 2fr 1fr 1fr 1fr;
 	grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
