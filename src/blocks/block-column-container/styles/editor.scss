@@ -51,14 +51,14 @@
 }
 
 .c9-layout-column-wrap-admin>.block-editor-inner-blocks {
-	display: grid;
 	display: -ms-grid;
+	display: grid;
 	height: 100%;
 }
 
 .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
-	display: grid;
 	display: -ms-grid;
+	display: grid;
 	grid-template-rows: 1fr;
 	grid-gap: 0 2em;
 	min-height: 0;

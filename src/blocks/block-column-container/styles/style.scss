@@ -19,8 +19,8 @@
 		align-self: flex-end;
 	}
 
-	display: grid;
 	display: -ms-grid;
+	display: grid;
 	position: relative;
 
 	@media (max-width: 667px) {
@@ -75,8 +75,8 @@
 }
 
 .c9-layout-column-wrap {
-	display: grid;
 	display: -ms-grid;
+	display: grid;
 	grid-template-rows: 1fr;
 	grid-gap: 0 2em;
 }
@@ -248,8 +248,7 @@ div[data-type="c9-blocks/c9-column"],
 /* One column grid. */
 
 .c9-layout-columns-1>.c9-layout-column-wrap {
-	grid-template-columns: 1fr;
-	grid-template-areas: "col1";
+	display: block;
 }
 
 /* Two column grid. */
