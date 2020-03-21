@@ -19,6 +19,8 @@
 		align-self: flex-end;
 	}
 
+	display: -ms-grid;
+	display: grid;
 	position: relative;
 
 	@media (max-width: 667px) {
@@ -78,6 +80,8 @@
 	-ms-grid-rows: 1fr;
 	grid-template-rows: 1fr;
 	grid-gap: 0 2em;
+	-webkit-box-align: stretch;
+	align-items: stretch;
 }
 
 div[data-type="c9-blocks/c9-column"],
@@ -245,10 +249,14 @@ div[data-type="c9-blocks/c9-column"],
 }
 
 /* One column grid. */
-
 .c9-layout-columns-1>.c9-layout-column-wrap {
 	display: -webkit-box;
 	display: flex;
+}
+
+.c9-layout-columns-1>.c9-layout-column-wrap>.c9-column {
+	display: block;
+	width: 100%;
 }
 
 /* Two column grid. */
