@@ -480,4 +480,12 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	.page-template-default .entry-content>.c9-grid .container-fluid.alignfull,
+	.page-template-default .entry-content>.c9-grid .container-fluid,
+	.c9-grid>.container-fluid {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
 }
