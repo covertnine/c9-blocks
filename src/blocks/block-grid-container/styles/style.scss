@@ -29,7 +29,6 @@
 	display: grid;
 	position: relative;
 	-ms-grid-columns: 100%;
-	grid-template-areas: "row1""row2""row3""row4""row5""row6""row7""row8""row9""row10";
 
 	/* IE 11 min-height flexbox bug fix */
 	@media all and (-ms-high-contrast: none),
@@ -97,6 +96,10 @@
 /* IE 11 support for multiple rows of grids requires manual assignment of rows */
 @media all and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
+	.c9-grid {
+		grid-template-areas: "row1""row2""row3""row4""row5""row6""row7""row8""row9""row10";
+	}
+
 	.c9-grid .c9-column-container:nth-child(1) {
 		-ms-grid-row: 1;
 		grid-area: row1;
