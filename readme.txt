@@ -62,7 +62,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 == Changelog ==
 
 = 1.0.7 =
-* Microsoft Edge browser compatibility updates
+* Microsoft Edge browser compatibility updates. Internet explorer 11 compatibility updates for grid alignments.
 
 = 1.0.6 =
 * Fixed markup changes for WordPress 5.4 Gutenberg updates
