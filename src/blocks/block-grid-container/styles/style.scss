@@ -29,6 +29,7 @@
 	display: grid;
 	position: relative;
 	-ms-grid-columns: 100%;
+	grid-template-areas: "row1""row2""row3""row4""row5""row6""row7""row8""row9""row10";
 
 	/* IE 11 min-height flexbox bug fix */
 	@media all and (-ms-high-contrast: none),
@@ -90,6 +91,60 @@
 		.c9-image-mobile-bottom-right {
 			background-position: right bottom !important;
 		}
+	}
+}
+
+/* IE 11 support for multiple rows of grids requires manual assignment of rows */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+	.c9-grid .c9-column-container:nth-child(1) {
+		-ms-grid-row: 1;
+		grid-area: row1;
+	}
+
+	.c9-grid .c9-column-container:nth-child(2) {
+		-ms-grid-row: 2;
+		grid-area: row2;
+	}
+
+	.c9-grid .c9-column-container:nth-child(3) {
+		-ms-grid-row: 3;
+		grid-area: row3;
+	}
+
+	.c9-grid .c9-column-container:nth-child(4) {
+		-ms-grid-row: 4;
+		grid-area: row4;
+	}
+
+	.c9-grid .c9-column-container:nth-child(5) {
+		-ms-grid-row: 5;
+		grid-area: row5;
+	}
+
+	.c9-grid .c9-column-container:nth-child(6) {
+		-ms-grid-row: 6;
+		grid-area: row6;
+	}
+
+	.c9-grid .c9-column-container:nth-child(7) {
+		-ms-grid-row: 7;
+		grid-area: row7;
+	}
+
+	.c9-grid .c9-column-container:nth-child(8) {
+		-ms-grid-row: 8;
+		grid-area: row8;
+	}
+
+	.c9-grid .c9-column-container:nth-child(9) {
+		-ms-grid-row: 9;
+		grid-area: row9;
+	}
+
+	.c9-grid .c9-column-container:nth-child(10) {
+		-ms-grid-row: 10;
+		grid-area: row10;
 	}
 }
 

@@ -22,10 +22,11 @@
 		align-self: flex-end;
 	}
 
-	-ms-grid-columns: 100%;
 	display: -ms-grid;
 	display: grid;
 	position: relative;
+	-ms-grid-columns: 100%;
+
 
 	/* IE 11 min-height flexbox bug fix */
 	@media all and (-ms-high-contrast: none),
@@ -103,7 +104,6 @@
 div[data-type="c9-blocks/c9-column"],
 .c9-block-layout-column {
 	display: block;
-	vertical-align: top;
 	min-width: 0;
 }
 
@@ -125,16 +125,10 @@ div[data-type="c9-blocks/c9-column"],
 }
 
 .c9-block-layout-column {
-	display: block;
 	max-width: 100%;
 }
 
-.c9-columns-center .c9-layout-column-wrap {
-	margin: 0 auto;
-}
-
 /* Grid gap classes */
-
 .c9-block-layout-column-gap-0 {
 	grid-gap: 0 0;
 }
@@ -179,6 +173,7 @@ div[data-type="c9-blocks/c9-column"],
 	grid-gap: 0 100px;
 }
 
+/* use margins for IE11 support for grid gaps */
 @media all and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
 
@@ -237,9 +232,7 @@ div[data-type="c9-blocks/c9-column"],
 }
 
 /* Grid column classes. */
-
 /* IE 11 support - Rows and column location must be explicitly defined. */
-
 .c9-block-layout-column:nth-child(1) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 1;
@@ -294,7 +287,6 @@ div[data-type="c9-blocks/c9-column"],
 }
 
 /* Two column grid. */
-
 .c9-layout-columns-2>.c9-layout-column-wrap {
 	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
