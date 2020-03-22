@@ -8,21 +8,24 @@
 	z-index: 8;
 
 	&.c9-is-vertically-aligned-top {
+		-ms-grid-row-align: start;
 		align-self: flex-start;
 	}
 
 	&.c9-is-vertically-aligned-center {
+		-ms-grid-row-align: center;
 		align-self: center;
 	}
 
 	&.c9-is-vertically-aligned-bottom {
+		-ms-grid-row-align: end;
 		align-self: flex-end;
 	}
 
+	-ms-grid-columns: 100%;
 	display: -ms-grid;
 	display: grid;
 	position: relative;
-	-ms-grid-columns: 100%;
 
 	/* IE 11 min-height flexbox bug fix */
 	@media all and (-ms-high-contrast: none),
@@ -93,6 +96,7 @@
 	grid-template-rows: 1fr;
 	grid-gap: 0 2em;
 	-webkit-box-align: stretch;
+	-ms-grid-columns: 100%;
 	align-items: stretch;
 }
 
@@ -105,14 +109,17 @@ div[data-type="c9-blocks/c9-column"],
 
 .c9-block-layout-column {
 	&.c9-is-vertically-aligned-top {
+		-ms-grid-row-align: start;
 		align-self: flex-start;
 	}
 
 	&.c9-is-vertically-aligned-center {
+		-ms-grid-row-align: center;
 		align-self: center;
 	}
 
 	&.c9-is-vertically-aligned-bottom {
+		-ms-grid-row-align: end;
 		align-self: flex-end;
 	}
 }
