@@ -1430,7 +1430,7 @@
  * CSS for both Frontend+Backend.
  */
 .c9-column-container {
-  z-index: 8;
+  z-index: 15;
   display: -ms-grid;
   display: grid;
   position: relative;

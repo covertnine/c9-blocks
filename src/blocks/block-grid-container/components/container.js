@@ -212,6 +212,13 @@ export default class Container extends Component {
 				}}
 				id={anchor ? anchor : null}
 			>
+				{this.props.children}
+				{!!overlayHue && (
+					<div
+						className="c9-overlay-container"
+						style={this.c9OverlayStyles(overlayHue, overlayOpacity, blendMode)}
+					/>
+				)}
 				{(!!containerVideoURL || !!containerVideoID) && !cannotEmbed && (
 					<VideoBox {...this.props} />
 				)}
@@ -241,13 +248,6 @@ export default class Container extends Component {
 						)}
 					/>
 				)}
-				{!!overlayHue && (
-					<div
-						className="c9-overlay-container"
-						style={this.c9OverlayStyles(overlayHue, overlayOpacity, blendMode)}
-					/>
-				)}
-				{this.props.children}
 			</div>
 		);
 	}
