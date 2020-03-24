@@ -4,6 +4,7 @@
 import Edit from "./edit";
 import Save from "./save";
 import attributes from "./attributes";
+import Deprecated from "./deprecated";
 
 /**
  * Styles
@@ -47,5 +48,7 @@ registerBlockType("c9-blocks/grid", {
 	// Save the attributes and markup
 	save: props => {
 		return <Save {...props} />;
-	}
+	},
+
+	deprecated: Deprecated
 });
