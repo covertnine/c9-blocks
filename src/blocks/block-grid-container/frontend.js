@@ -42,7 +42,8 @@ function onPlayerReady(event) {
 	event.target.playVideo();
 
 	// this .c9-video element -> .c9-embed-container -> .c9-video-container
-	event.target.a.parentNode.parentNode.style.opacity = 1;
+	console.log(event.target)
+	event.target.f.parentNode.parentNode.style.opacity = 1;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
