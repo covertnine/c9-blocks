@@ -3,8 +3,8 @@
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { AlignmentToolbar, PanelColorSettings } = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { PanelColorSettings } = wp.editor;
+const { InspectorControls, AlignmentToolbar } = wp.blockEditor;
 const { BaseControl } = wp.components;
 const { ContrastChecker } = wp.blockEditor;
 

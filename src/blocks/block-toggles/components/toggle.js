@@ -244,7 +244,7 @@ registerBlockType("c9-blocks/toggles-toggle", {
 			};
 		}),
 		withDispatch(dispatch => {
-			const { removeBlock } = dispatch("core/editor");
+			const { removeBlock } = dispatch("core/block-editor");
 
 			return {
 				removeBlock
