@@ -932,14 +932,14 @@ export default class Inspector extends Component {
 
 							<div>
 								<Button
-									isDefault
+									isSecondary
 									onClick={() => this.submitID()}
 									style={{ marginRight: "10px" }}
 								>
 									{__("Set", "c9-blocks")}
 								</Button>
 
-								<Button isDefault onClick={() => this.resetID()}>
+								<Button isSecondary onClick={() => this.resetID()}>
 									{__("Reset", "c9-blocks")}
 								</Button>
 							</div>
