@@ -11,7 +11,7 @@ import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { IconButton, Tooltip } = wp.components;
+const { Button, Tooltip } = wp.components;
 const { RichText, BlockControls, InnerBlocks, AlignmentToolbar } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
@@ -269,7 +269,7 @@ class Edit extends Component {
 							})}
 							{isSelectedBlockInRoot ? (
 								<Tooltip text={__("Add Tab", "c9-blocks")}>
-									<IconButton
+									<Button
 										icon={"insert"}
 										onClick={() => {
 											const newTabsData = [];

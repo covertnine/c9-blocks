@@ -11,7 +11,7 @@ const { __ } = wp.i18n;
 const { Component, Fragment, createElement } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
-const { IconButton } = wp.components;
+const { Button } = wp.components;
 const { withInstanceId } = wp.compose;
 
 /**
@@ -182,14 +182,14 @@ class Edit extends Component {
 				</div>
 				{isSelectedBlockInRoot ? (
 					<div className="c9-toggles-add-item">
-						<IconButton
+						<Button
 							icon="insert"
 							onClick={() => {
 								addToggle(instanceId);
 							}}
 						>
 							{__("Add Toggle", "c9-blocks")}
-						</IconButton>
+						</Button>
 					</div>
 				) : (
 					""

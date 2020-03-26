@@ -17,7 +17,7 @@ const {
 	SelectControl,
 	TextControl,
 	ToggleControl,
-	IconButton
+	Button
 } = wp.components;
 const { addQueryArgs } = wp.url;
 const { apiFetch } = wp;
@@ -499,7 +499,7 @@ export default class Inspector extends Component {
 							value={bgPadding.left}
 							onChange={value => this.updatePadding("left", value)}
 						/>
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.bgPadding.icon}
 							onClick={this.togglePaddingLinkage}
@@ -538,7 +538,7 @@ export default class Inspector extends Component {
 						/>
 					</div>
 					<div className="margin-sides-wrapper">
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.bgMargin.icon}
 							onClick={this.toggleMarginLinkage}

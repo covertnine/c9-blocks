@@ -15,7 +15,7 @@ const { BlockControls, RichText, MediaPlaceholder } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
-const { IconButton } = wp.components;
+const { Button } = wp.components;
 
 /**
  * External Dependencies.
@@ -379,7 +379,7 @@ class Edit extends Component {
 							</div>
 							{isSelectedBlockInRoot && (
 								<div className="c9-remove-image">
-									<IconButton
+									<Button
 										label={__("Remove Image", "c9-blocks")}
 										icon="dismiss"
 										onClick={() => {
@@ -403,7 +403,7 @@ class Edit extends Component {
 										}}
 									>
 										{__("Remove", "c9-blocks")}
-									</IconButton>
+									</Button>
 								</div>
 							)}
 						</Fragment>

@@ -10,7 +10,7 @@ import RemoveButton from "../../components/remove-button";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { IconButton, Tooltip } = wp.components;
+const { Button, Tooltip } = wp.components;
 const { BlockControls, RichText, InnerBlocks, AlignmentToolbar } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { select, dispatch } = wp.data;
@@ -275,7 +275,7 @@ class Edit extends Component {
 						})}
 						{isSelectedBlockInRoot ? (
 							<Tooltip text={__("Add Tab", "c9-blocks")}>
-								<IconButton
+								<Button
 									icon={"insert"}
 									onClick={() => {
 										const newTabsData = [];

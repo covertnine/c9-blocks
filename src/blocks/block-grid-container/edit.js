@@ -11,7 +11,7 @@ const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { withInstanceId } = wp.compose;
-const { IconButton } = wp.components;
+const { Button } = wp.components;
 
 /**
  * External Dependencies.
@@ -81,7 +81,7 @@ class Edit extends Component {
 					<div className="c9-add-remove-rows">
 						{lockMovement && (
 							<Fragment>
-								<IconButton
+								<Button
 									label={__("Remove Image", "c9-blocks")}
 									icon="dismiss"
 									onClick={() => {
@@ -91,8 +91,8 @@ class Edit extends Component {
 									}}
 								>
 									{__("Remove Bottom Row", "c9-blocks")}
-								</IconButton>
-								<IconButton
+								</Button>
+								<Button
 									label={__("Remove Image", "c9-blocks")}
 									icon="plus-alt"
 									onClick={() => {
@@ -102,10 +102,10 @@ class Edit extends Component {
 									}}
 								>
 									{__("Add Row", "c9-blocks")}
-								</IconButton>
+								</Button>
 							</Fragment>
 						)}
-						<IconButton
+						<Button
 							label={__("Swap Rows", "c9-blocks")}
 							icon={this.state.lockIcon}
 							onClick={() => {
@@ -128,7 +128,7 @@ class Edit extends Component {
 								lockMovement ? "Unlock Row Movement" : "Lock Row Movement",
 								"c9-blocks"
 							)}
-						</IconButton>
+						</Button>
 					</div>
 				)}
 			</Fragment>
