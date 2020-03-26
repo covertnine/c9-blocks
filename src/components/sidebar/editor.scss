@@ -25,7 +25,7 @@
 	margin: -2px;
 }
 
-.plugin-c9-panel {
+.block-editor-editor-skeleton__sidebar .plugin-c9-panel {
 	.plugin-c9-panel-button {
 		display: -webkit-box;
 		display: flex;
@@ -47,6 +47,7 @@
 		cursor: pointer;
 		background: none;
 		border: 1px solid;
+		border-color: rgba(79, 89, 105, 0.2);
 		border-radius: 4px;
 		-webkit-transition: 0.2s color, 0.2s background-color, 0.2s border-color,
 			0.2s box-shadow;
