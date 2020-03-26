@@ -486,6 +486,14 @@
 					width: 100%;
 					height: calc(100% - 90px);
 					overflow: scroll;
+
+					.block-editor-block-preview__content {
+						transform: scale(1) !important;
+
+						>div > .block-editor-block-list__layout > .wp-block > * {
+							width: 60vw;
+						}
+					}
 				}
 			}
 		}
