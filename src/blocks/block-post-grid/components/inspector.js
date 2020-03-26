@@ -8,8 +8,7 @@ import SettingsSpacer from "../../../components/settings-spacer";
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { ColorPalette } = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, ColorPalette } = wp.blockEditor;
 const {
 	PanelBody,
 	QueryControls,

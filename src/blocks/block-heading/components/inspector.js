@@ -9,8 +9,7 @@ import HeadingToolbar from "./heading-toolbar";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { ContrastChecker, AlignmentToolbar } = wp.blockEditor;
-const { PanelColorSettings, ColorPalette } = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, ColorPalette, PanelColorSettings } = wp.blockEditor;
 const { PanelBody, SelectControl, ToggleControl } = wp.components;
 
 /**

@@ -10,8 +10,7 @@ import icons from "../../../../assets/c9-col-layout-icons";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { MediaUpload, ColorPalette } = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, MediaUpload, ColorPalette } = wp.blockEditor;
 const {
 	PanelBody,
 	RangeControl,

@@ -9,12 +9,7 @@ import SettingsSpacer from "../../../components/settings-spacer";
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { ContrastChecker, FontSizePicker } = wp.blockEditor;
-const {
-	PanelColorSettings,
-	MediaUpload,
-	ColorPalette
-} = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, MediaUpload, ColorPalette, PanelColorSettings } = wp.blockEditor;
 const {
 	PanelBody,
 	RangeControl,
