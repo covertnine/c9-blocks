@@ -149,10 +149,10 @@ class Edit extends Component {
 
 		const tabs = this.getTabs();
 
-		select("core/editor")
+		select("core/block-editor")
 			.getBlocksByClientId(clientId)[0]
 			.innerBlocks.forEach(function(block) {
-				dispatch("core/editor").updateBlockAttributes(block.clientId, {
+				dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
 					tabActive
 				});
 			});

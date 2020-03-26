@@ -456,7 +456,8 @@ class TemplatesModal extends Component {
 
 const TemplatesModalWithSelect = compose([
 	withSelect((select, { clientId }) => {
-		const { getBlock, canUserUseUnfilteredHTML } = select("core/editor");
+		const { canUserUseUnfilteredHTML } = select("core/editor");
+		const { getBlock } = select("core/block-editor");
 		const block = getBlock(clientId);
 		return {
 			block,
@@ -464,7 +465,7 @@ const TemplatesModalWithSelect = compose([
 		};
 	}),
 	withDispatch(dispatch => {
-		const { resetBlocks } = dispatch("core/editor");
+		const { resetBlocks } = dispatch("core/block-editor");
 		return {
 			resetBlocks
 		};

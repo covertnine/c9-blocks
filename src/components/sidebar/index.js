@@ -141,7 +141,7 @@ class Sidebar extends Component {
 }
 
 const C9Sidebar = withDispatch(dispatch => {
-	const { resetBlocks } = dispatch("core/editor");
+	const { resetBlocks } = dispatch("core/block-editor");
 	return {
 		resetBlocks
 	};

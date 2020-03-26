@@ -50,7 +50,7 @@ registerBlockType("c9-blocks/toggles", {
 			};
 		}),
 		withDispatch((dispatch, ownProps) => {
-			const { insertBlock, updateBlockAttributes } = dispatch("core/editor");
+			const { insertBlock, updateBlockAttributes } = dispatch("core/block-editor");
 
 			const { clientId } = ownProps;
 
