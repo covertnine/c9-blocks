@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive
 Requires at least: 5.3
 Tested up to: 5.4
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,7 +61,10 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
-= 1.0.8 = 
+= 1.0.9 =
+Fixed bug on alignwide alignment for containers on some tablet devices.
+
+= 1.0.8 =
 Compatibility updates for WP 5.4 release to deprecated code. Fixed video background display bug. Better Internet Explorer 11 support.
 
 = 1.0.7 =

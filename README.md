@@ -74,6 +74,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.0.9**
+Fixed bug on alignwide alignment for containers on some tablet devices.
+
 **1.0.8**
 Compatibility updates for WP 5.4 release to deprecated code. Fixed video background display bug. Better Internet Explorer 11 support.
 
