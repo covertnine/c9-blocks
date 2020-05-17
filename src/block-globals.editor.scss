@@ -16,7 +16,7 @@
 
 }
 
-.components-panel__body .padding-sides-wrapper > .components-base-control {
+.components-panel__body .padding-sides-wrapper>.components-base-control {
 	margin-bottom: 0 !important;
 }
 
@@ -36,6 +36,11 @@
 .block-editor-block-types-list__item .block-editor-block-types-list__item-title {
 	font-size: 10px;
 	line-height: 1;
+}
+
+/*adjustment to tooltip font size */
+.components-tooltip.components-popover .components-popover__content {
+	font-size: 11px;
 }
 
 .c9-grid .components-icon-button:not(:disabled):not([aria-disabled="true"]):not(.is-default):not(.blocks-gallery-item__remove) {
