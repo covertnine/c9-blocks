@@ -61,6 +61,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
+= 1.1 =
+Fixed margins on column buttons. Added appender buttons for column grids to make it easier to add content.
+
 = 1.0.9 =
 Fixed bug on alignwide alignment for containers on some tablet devices.
 
