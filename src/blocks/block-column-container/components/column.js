@@ -27,6 +27,7 @@ const Column = props => {
 		setAttributes,
 		className,
 		block,
+		hasChildBlocks,
 		updateBlockAttributes
 	} = props;
 
@@ -83,9 +84,12 @@ const Column = props => {
 				<div className="c9-column-innner">
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
-						renderAppender={() => (
-							<InnerBlocks.ButtonBlockAppender />
-						)}
+						// renderAppender={() => (
+						// 	<InnerBlocks.ButtonBlockAppender />
+						// )}
+						renderAppender={
+							hasChildBlocks ? undefined : () => <InnerBlocks.ButtonBlockAppender />
+						}
 						templateLock={false}
 					/>
 				</div>
@@ -125,7 +129,7 @@ registerBlockType("c9-blocks/column", {
 
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { getBlock, isBlockSelected, hasSelectedInnerBlock } = select(
+			const { getBlock, isBlockSelected, hasSelectedInnerBlock, getBlockOrder } = select(
 				"core/block-editor"
 			);
 
@@ -134,7 +138,8 @@ registerBlockType("c9-blocks/column", {
 			return {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+				hasChildBlocks: getBlockOrder(clientId).length > 0,
 			};
 		}),
 		withDispatch(dispatch => {
