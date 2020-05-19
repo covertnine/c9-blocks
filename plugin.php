@@ -5,7 +5,7 @@
  * Description: 10 new Gutenberg blocks with section templates and page templates that use Bootstrap + CSS Grid to make responsive page building with the native Blocks API a breeze. Compatible with the C9 starter theme, Twenty Nineteen, and Twenty Twenty WordPress themes.
  * Author: COVERT NINE
  * Author URI: https://www.covertnine.com
- * Version: 1.1
+ * Version: 1.1.0
  * License: GPL2+
  * Text Domain: c9-blocks
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
