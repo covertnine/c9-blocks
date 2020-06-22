@@ -25,6 +25,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 			'cat'                 => $categories,
 			'offset'              => $attributes['offset'],
 			'post_type'           => $attributes['postType'],
+			'tag_type'			  => $attributes['tagType'],
 			'ignore_sticky_posts' => 1,
 		)
 	);
@@ -488,6 +489,10 @@ function covertnine_blocks_register_block_core_latest_posts() {
 					'type'    => 'string',
 					'default' => 'post',
 				),
+				'tagType'            => array(
+					'type'    => 'string',
+					'default' => 'tag',
+				),
 				'sectionTag'          => array(
 					'type'    => 'string',
 					'default' => 'section',
@@ -515,6 +520,10 @@ function covertnine_blocks_register_block_core_latest_posts() {
 				'postTypes'           => array(
 					'type'    => 'string',
 					'default' => json_encode( array_values( get_post_types() ) ), // '["' . implode('", "', get_post_types()) . '"]'
+				),
+				'tagTypes'            => array(
+					'type'    => 'string',
+					'default' => json_encode( array_values( get_tags() ) )
 				),
 				'verticalAlign'       => array(
 					'type' => 'string',

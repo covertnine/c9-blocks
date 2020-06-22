@@ -188,6 +188,7 @@ export default class Inspector extends Component {
 			order,
 			orderBy,
 			postTypes,
+			tagTypes,
 			bgColor,
 			bgOpacity,
 			bgMargin,
@@ -203,6 +204,15 @@ export default class Inspector extends Component {
 				label: __(p.charAt(0).toUpperCase() + p.slice(1), "c9-blocks")
 			};
 		});
+
+		// Tag type options
+		const tagTypeOptions = JSON.parse(tagTypes).map(t => {
+			return {
+				value: t,
+				label: __(t.name, "c9-blocks")
+			}
+		})
+		console.log(tagTypes);
 
 		// Section title tags
 		const sectionTags = [
@@ -283,6 +293,12 @@ export default class Inspector extends Component {
 						value={attributes.postType}
 						onChange={value => this.props.setAttributes({ postType: value })}
 					/>
+					<SelectControl
+						label={__("Tag Type", "c9-blocks")}
+						options={tagTypeOptions}
+						value={attributes.tagType}
+						onChange={value => this.props.setAttributes({ tagType: value })}
+					/>
 					<QueryControls
 						{...{ order, orderBy }}
 						numberOfItems={attributes.postsToShow}
@@ -292,6 +308,9 @@ export default class Inspector extends Component {
 						onOrderByChange={value => setAttributes({ orderBy: value })}
 						onCategoryChange={value =>
 							setAttributes({ categories: "" !== value ? value : undefined })
+						}
+						onTagChange={value =>
+							setAttributes({ tags: "" !== value ? value : undefined })
 						}
 						onNumberOfItemsChange={value =>
 							setAttributes({ postsToShow: value })
