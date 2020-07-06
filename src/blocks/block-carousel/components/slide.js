@@ -6,6 +6,7 @@ const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.blockEditor;
 const { registerBlockType } = wp.blocks;
+const { withSelect } = wp.data;
 
 /**
  * External Dependencies.
@@ -37,7 +38,7 @@ class Slide extends Component {
 
 	render() {
 		// eslint-disable-next-line no-unused-vars
-		let { className = "" } = this.props;
+		let { className = "", hasChildBlocks } = this.props;
 
 		className = classnames(className, "c9-carousel-slide");
 
@@ -46,6 +47,9 @@ class Slide extends Component {
 				<InnerBlocks
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
+					renderAppender={
+						hasChildBlocks ? undefined : () => <InnerBlocks.ButtonBlockAppender />
+					}
 				/>
 			</div>
 		);
@@ -83,7 +87,17 @@ registerBlockType("c9-blocks/carousel-slide", {
 		}
 	},
 
-	edit: Slide,
+	edit: withSelect((select, ownProps) => {
+		const { getBlockOrder } = select(
+			"core/block-editor"
+		);
+
+		const { clientId } = ownProps;
+
+		return {
+			hasChildBlocks: 0 < getBlockOrder(clientId).length,
+		};
+	})(Slide),
 
 	save: function(props) {
 		const { id } = props.attributes;

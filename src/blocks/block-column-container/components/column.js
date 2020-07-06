@@ -139,7 +139,7 @@ registerBlockType("c9-blocks/column", {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
-				hasChildBlocks: getBlockOrder(clientId).length > 0,
+				hasChildBlocks: 0 < getBlockOrder(clientId).length,
 			};
 		}),
 		withDispatch(dispatch => {
