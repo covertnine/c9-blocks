@@ -49,13 +49,17 @@ export default class Save extends Component {
 			id,
 			captionTitle,
 			captionContent,
-			isResponsive
+			isResponsive,
+			slideMaxHeight
 		} = this.props.attributes;
 
 		let template = [];
 		for (let i = 0; i < slides; i++) {
 			template.push(
-				<div className={classnames("carousel-item", 0 == i ? "active" : null)}>
+				<div
+					className={classnames("carousel-item", 0 == i ? "active" : null)}
+					style={0 <= slideMaxHeight ? { height: slideMaxHeight } : {}}
+				>
 					<Fragment>
 						{url[i] && (
 							<img
