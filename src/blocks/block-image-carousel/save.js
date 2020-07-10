@@ -49,17 +49,13 @@ export default class Save extends Component {
 			id,
 			captionTitle,
 			captionContent,
-			isResponsive,
-			slideMaxHeight
+			isResponsive
 		} = this.props.attributes;
 
 		let template = [];
 		for (let i = 0; i < slides; i++) {
 			template.push(
-				<div
-					className={classnames("carousel-item", 0 == i ? "active" : null)}
-					style={0 <= slideMaxHeight ? { height: slideMaxHeight } : {}}
-				>
+				<div className={classnames("carousel-item", 0 == i ? "active" : null)}>
 					<Fragment>
 						{url[i] && (
 							<img
@@ -96,7 +92,9 @@ export default class Save extends Component {
 			showControls,
 			instanceId,
 			wrapAround,
-			slideTime
+			slideTime,
+			slideEqualHeight,
+			slideMaxHeight
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -111,6 +109,11 @@ export default class Save extends Component {
 				data-ride="carousel"
 				data-interval={autoSlide ? slideTime : false}
 				data-wrap={wrapAround}
+				style={
+					0 <= slideMaxHeight && slideEqualHeight
+						? { height: slideMaxHeight }
+						: {}
+				}
 			>
 				{showIndicators && (
 					<ol className="carousel-indicators">

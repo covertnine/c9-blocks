@@ -297,13 +297,7 @@ class Edit extends Component {
 	 */
 	createSlides(slides, allActive = false) {
 		const { isSelectedBlockInRoot, setAttributes } = this.props;
-		const {
-			id,
-			url,
-			captionTitle,
-			captionContent,
-			slideMaxHeight
-		} = this.props.attributes;
+		const { id, url, captionTitle, captionContent } = this.props.attributes;
 
 		let template = [];
 		let sizes = [];
@@ -361,10 +355,9 @@ class Edit extends Component {
 						allActive
 							? {
 									position: "absolute",
-									left: "-10000em",
-									height: 0 <= slideMaxHeight ? slideMaxHeight : "auto"
+									left: "-10000em"
 							  }
-							: (0 <= slideMaxHeight ? {height: slideMaxHeight} : {})
+							: {}
 					}
 				>
 					{!url[i] ? (
@@ -480,6 +473,7 @@ class Edit extends Component {
 			showControls,
 			url,
 			slideTime,
+			slideEqualHeight,
 			slideMaxHeight
 		} = attributes;
 
@@ -491,6 +485,8 @@ class Edit extends Component {
 		const TempComponent = this.cloneAndSetSlideSizes(slides);
 
 		const SlidesComponent = this.createSlides(slides);
+
+		const setHeight = isSelectedBlockInRoot ? slideMaxHeight + 40 : slideMaxHeight;
 
 		return (
 			<Fragment>
@@ -518,6 +514,11 @@ class Edit extends Component {
 					data-interval={autoSlide ? slideTime : false}
 					data-wrap={wrapAround}
 					ref={this.carouselRef}
+					style={
+						0 <= slideMaxHeight && slideEqualHeight
+							? { height: setHeight }
+							: {}
+					}
 				>
 					<ol
 						className={classnames(
@@ -528,7 +529,6 @@ class Edit extends Component {
 						{this.createIndicators(slides, instanceId)}
 					</ol>
 					<div className="carousel-inner">{SlidesComponent}</div>
-					{TempComponent}
 					{showControls && (
 						<Fragment>
 							<a
@@ -568,6 +568,7 @@ class Edit extends Component {
 						</Fragment>
 					)}
 				</div>
+				{slideEqualHeight ? TempComponent : null}
 			</Fragment>
 		);
 	}
