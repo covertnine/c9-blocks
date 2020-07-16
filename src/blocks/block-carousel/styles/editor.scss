@@ -5,6 +5,14 @@
  * which makes it higher in priority.
  */
 
+.c9-equal-height-check {
+	> div {
+	position: absolute;
+	left: -10000em;
+	display: block;
+	}
+}
+
 .c9-carousel {
 	.hide-indicator {
 		display: none;

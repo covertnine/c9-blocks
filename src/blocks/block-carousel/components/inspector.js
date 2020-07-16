@@ -23,7 +23,8 @@ export default class Inspector extends Component {
 			showControls,
 			showIndicators,
 			wrapAround,
-			slideTime
+			slideTime,
+			slideEqualHeight
 		} = attributes;
 
 		return (
@@ -81,6 +82,11 @@ export default class Inspector extends Component {
 						label={__("Show indicators", "c9-blocks")}
 						checked={showIndicators}
 						onChange={showIndicators => setAttributes({ showIndicators })}
+					/>
+					<ToggleControl
+						label={__("Set slides to have equal height", "c9-blocks")}
+						checked={slideEqualHeight}
+						onChange={slideEqualHeight => setAttributes({ slideEqualHeight })}
 					/>
 				</PanelBody>
 			</InspectorControls>

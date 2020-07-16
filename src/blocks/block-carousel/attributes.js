@@ -28,6 +28,18 @@ const attributes = {
 	slideTime: {
 		type: "number",
 		default: 5000
+	},
+	slideMaxHeight: {
+		type: "number",
+		default: -1
+	},
+	slideEqualHeight: {
+		type: "boolean",
+		default: false
+	},
+	slideSizes: {
+		type: "array",
+		default: []
 	}
 };
 
