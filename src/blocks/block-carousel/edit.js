@@ -184,7 +184,10 @@ class Edit extends Component {
 			wrapAround,
 			showControls,
 			showIndicators,
-			slideTime
+			slideTime,
+			slideSizes,
+			slideMaxHeight,
+			slideEqualHeight
 		} = attributes;
 
 		const { pause } = this.state;
@@ -192,6 +195,16 @@ class Edit extends Component {
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 		}
+
+		if (
+			slideSizes.length === slides &&
+			Math.max(...slideSizes) !== slideMaxHeight
+		) {
+			const newHeight = Math.max(...slideSizes);
+			setAttributes({ slideMaxHeight: newHeight });
+		}
+
+		const setHeight = isSelectedBlockInRoot ? slideMaxHeight + 120 : slideMaxHeight + 80;
 
 		return (
 			<Fragment>
@@ -218,6 +231,9 @@ class Edit extends Component {
 					data-ride="carousel"
 					data-interval={!pause && autoSlide ? slideTime : false}
 					data-wrap={wrapAround}
+					style={
+						0 <= slideMaxHeight && slideEqualHeight ? { height: setHeight } : {}
+					}
 					ref={this.carouselRef}
 				>
 					<ol

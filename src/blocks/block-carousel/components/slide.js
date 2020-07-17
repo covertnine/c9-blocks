@@ -61,14 +61,9 @@ class Slide extends Component {
 		let {
 			className = "",
 			hasChildBlocks,
-			attributes,
 			rootBlock,
 			updateBlockAttributes
 		} = this.props;
-
-		const { id } = attributes;
-
-		console.log(id, attributes, rootBlock);
 
 		const refCallback = async element => {
 			if (element) {
@@ -86,7 +81,7 @@ class Slide extends Component {
 					);
 					
 					updateBlockAttributes(rootBlock.clientId, { slideSizes: result })
-					console.log(result);
+					// console.log(result);
 				}
 			}
 		};

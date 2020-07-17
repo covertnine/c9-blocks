@@ -46,7 +46,9 @@ export default class Save extends Component {
 			showControls,
 			instanceId,
 			wrapAround,
-			slideTime
+			slideTime,
+			slideMaxHeight,
+			slideEqualHeight
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -61,6 +63,11 @@ export default class Save extends Component {
 				data-ride="carousel"
 				data-interval={autoSlide ? slideTime : false}
 				data-wrap={wrapAround}
+				style={
+					0 <= slideMaxHeight && slideEqualHeight
+						? { height: slideMaxHeight }
+						: {}
+				}
 			>
 				{showIndicators && (
 					<ol className="carousel-indicators">
