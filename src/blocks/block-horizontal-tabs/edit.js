@@ -157,7 +157,7 @@ class Edit extends Component {
 
 		const targetBlock = select("core/block-editor").getBlocksByClientId(clientId)[0];
 
-		if (targetBlock !== null) {
+		if (null !== targetBlock) {
 			targetBlock
 				.innerBlocks.forEach(function(block) {
 					dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
