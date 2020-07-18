@@ -76,5 +76,46 @@ registerBlockType("c9-blocks/horizontal-tabs-tab", {
 	// Render via PHP
 	save() {
 		return <InnerBlocks.Content />;
-	}
+	},
+
+	deprecated: [
+		{
+			supports: {
+				inserter: false,
+				className: false
+			},
+			attributes: {
+				slug: {
+					type: "string"
+				},
+				tabActive: {
+					type: "string"
+				},
+				id: {
+					type: "number"
+				}
+			},
+			save: function(props) {
+				const { slug, tabActive, id } = props.attributes;
+				let { className = "" } = props;
+
+				className = classnames(
+					"c9-horizontal-tabs-tab",
+					"tab-pane fade",
+					tabActive === slug ? "show active" : null
+				);
+
+				return (
+					<div
+						className={className}
+						role="tabpanel"
+						id={`htab-${slug}-${id}`}
+						aria-labelledby={slug}
+					>
+						<InnerBlocks.Content />
+					</div>
+				);
+			}
+		}
+	]
 });
