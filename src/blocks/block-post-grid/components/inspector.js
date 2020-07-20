@@ -210,8 +210,8 @@ export default class Inspector extends Component {
 			return {
 				value: t,
 				label: __(t.name, "c9-blocks")
-			}
-		})
+			};
+		});
 		console.log(tagTypes);
 
 		// Section title tags
@@ -293,25 +293,8 @@ export default class Inspector extends Component {
 						value={attributes.postType}
 						onChange={value => this.props.setAttributes({ postType: value })}
 					/>
-					<SelectControl
-						label={__("Tag Type", "c9-blocks")}
-						options={tagTypeOptions}
-						value={attributes.tagType}
-						onChange={value => this.props.setAttributes({ tagType: value })}
-					/>
 					<QueryControls
-						{...{ order, orderBy }}
 						numberOfItems={attributes.postsToShow}
-						categoriesList={categoriesList}
-						selectedCategoryId={attributes.categories}
-						onOrderChange={value => setAttributes({ order: value })}
-						onOrderByChange={value => setAttributes({ orderBy: value })}
-						onCategoryChange={value =>
-							setAttributes({ categories: "" !== value ? value : undefined })
-						}
-						onTagChange={value =>
-							setAttributes({ tags: "" !== value ? value : undefined })
-						}
 						onNumberOfItemsChange={value =>
 							setAttributes({ postsToShow: value })
 						}
@@ -337,10 +320,27 @@ export default class Inspector extends Component {
 						/>
 					)}
 				</PanelBody>
-				<PanelBody
-					title={__("Post and Page Grid Content", "c9-blocks")}
-					initialOpen={false}
-				>
+				<PanelBody title={__("Grid Content", "c9-blocks")} initialOpen={false}>
+					<SelectControl
+						label={__("Tag Type", "c9-blocks")}
+						options={tagTypeOptions}
+						value={attributes.tagType}
+						onChange={value => this.props.setAttributes({ tagType: value })}
+					/>
+					<QueryControls
+						{...{ order, orderBy }}
+						categoriesList={categoriesList}
+						selectedCategoryId={attributes.categories}
+						onOrderChange={value => setAttributes({ order: value })}
+						onOrderByChange={value => setAttributes({ orderBy: value })}
+						onCategoryChange={value =>
+							setAttributes({ categories: "" !== value ? value : undefined })
+						}
+						onTagChange={value =>
+							setAttributes({ tags: "" !== value ? value : undefined })
+						}
+					/>
+
 					<ToggleControl
 						label={__("Display Section Title", "c9-blocks")}
 						checked={attributes.displaySectionTitle}
@@ -447,7 +447,7 @@ export default class Inspector extends Component {
 					)}
 				</PanelBody>
 				<PanelBody
-					title={__("Post and Page Grid Markup", "c9-blocks")}
+					title={__("Grid Markup", "c9-blocks")}
 					initialOpen={false}
 					className="c9-block-post-grid-markup-settings"
 				>
