@@ -36,7 +36,7 @@ export default class VerticalTab extends Component {
 				className={className}
 				role="tabpanel"
 				id={`vtab-${slug}-${id}`}
-				aria-labelledby={slug}
+				aria-labelledby={`tab-button-${slug}`}
 			>
 				<InnerBlocks
 					templateLock={false}
@@ -99,10 +99,51 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 				className={className}
 				role="tabpanel"
 				id={`vtab-${slug}-${id}`}
-				aria-labelledby={slug}
+				aria-labelledby={`tab-button-${slug}`}
 			>
 				<InnerBlocks.Content />
 			</div>
 		);
-	}
+	},
+
+	deprecated: [
+		{
+			supports: {
+				inserter: false,
+				className: false
+			},
+			attributes: {
+				slug: {
+					type: "string"
+				},
+				tabActive: {
+					type: "string"
+				},
+				id: {
+					type: "number"
+				}
+			},
+			save: function(props) {
+				const { slug, tabActive, id } = props.attributes;
+				let { className = "" } = props;
+
+				className = classnames(
+					"c9-vertical-tabs-tab",
+					"tab-pane fade",
+					tabActive === slug ? "show active" : null
+				);
+
+				return (
+					<div
+						className={className}
+						role="tabpanel"
+						id={`vtab-${slug}-${id}`}
+						aria-labelledby={slug}
+					>
+						<InnerBlocks.Content />
+					</div>
+				);
+			}
+		}
+	]
 });
