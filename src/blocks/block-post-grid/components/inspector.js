@@ -83,7 +83,7 @@ export default class Inspector extends Component {
 			attributes: { bgPadding }
 		} = this.props;
 
-		bgPadding = Object.assign({}, bfgPadding);
+		bgPadding = Object.assign({}, bgPadding);
 		bgPadding.linked = !bgPadding.linked;
 		bgPadding.icon = bgPadding.linked ? "admin-links" : "editor-unlink";
 		this.setState({ bgPadding });
