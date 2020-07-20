@@ -59,7 +59,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 
 			/* Start the markup for the post */
 			$post_grid_markup .= sprintf(
-				'<article id="post-%1$s" class="%2$s">',
+				'<article id="post-%1$s" class="%2$s" itemscope>',
 				esc_attr( $post_id ),
 				esc_attr( $post_classes )
 			);
@@ -120,7 +120,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 				/* Get the post author */
 				if ( isset( $attributes['displayPostAuthor'] ) && $attributes['displayPostAuthor'] ) {
 					$post_grid_markup .= sprintf(
-						'<div class="c9-block-post-grid-author" itemprop="author" itemtype="https://schema.org/Person"><a class="c9-text-link" href="%2$s" itemprop="url" rel="author"><span itemprop="name">%1$s</span></a></div>',
+						'<div class="c9-block-post-grid-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a class="c9-text-link" href="%2$s" itemprop="url" rel="author"><span itemprop="name">%1$s</span></a></div>',
 						esc_html( get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ) ),
 						esc_html( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
 					);
