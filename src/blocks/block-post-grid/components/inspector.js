@@ -52,7 +52,7 @@ export default class Inspector extends Component {
 			bgPadding: bgPadding,
 			bgMargin: bgMargin,
 			setAttributes: setAttributes,
-			categoriesList: []
+			categoriesList: [],
 		};
 	}
 
@@ -83,7 +83,7 @@ export default class Inspector extends Component {
 			attributes: { bgPadding }
 		} = this.props;
 
-		bgPadding = Object.assign({}, bgPadding);
+		bgPadding = Object.assign({}, bfgPadding);
 		bgPadding.linked = !bgPadding.linked;
 		bgPadding.icon = bgPadding.linked ? "admin-links" : "editor-unlink";
 		this.setState({ bgPadding });
@@ -189,7 +189,7 @@ export default class Inspector extends Component {
 			orderBy,
 			categories,
 			postTypes,
-			tagTypes,
+			tagsList,
 			bgColor,
 			bgOpacity,
 			bgMargin,
@@ -207,16 +207,18 @@ export default class Inspector extends Component {
 		});
 
 		// Tag type options
-		const tagTypeOptions = [
-			{ value: null, label: __("All tags", "c9-blocks") }
+		const tagsListOptions = [
+			{ value: "", label: __("All tags", "c9-blocks") }
 		].concat(
-			JSON.parse(tagTypes).map(t => {
+			JSON.parse(tagsList).map(t => {
 				return {
-					value: t.slug,
-					label: _	_(t.name, "c9-blocks")
+					value: t.term_id,
+					label: __(t.name, "c9-blocks")
 				};
 			})
 		);
+
+		// console.log(tagsListOptions)
 
 		// Section title tags
 		const sectionTags = [
@@ -357,9 +359,11 @@ export default class Inspector extends Component {
 					{attributes.filterByTag ? (
 						<SelectControl
 							label={__("Tag", "c9-blocks")}
-							options={tagTypeOptions}
-							value={attributes.tagType}
-							onChange={value => this.props.setAttributes({ tagType: value })}
+							options={tagsListOptions}
+							value={attributes.tags}
+							onChange={value =>
+								setAttributes({ tags: "" !== value ? value : undefined })
+							}
 						/>
 					) : null}
 
@@ -367,7 +371,6 @@ export default class Inspector extends Component {
 
 					<QueryControls
 						{...{ order, orderBy }}
-						categoriesList={categoriesList}
 						onOrderChange={value => setAttributes({ order: value })}
 						onOrderByChange={value => setAttributes({ orderBy: value })}
 					/>

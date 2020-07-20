@@ -14,6 +14,9 @@
 function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 
 	$categories = isset( $attributes['categories'] ) ? $attributes['categories'] : '';
+	$tags = isset( $attributes['tags'] ) ? $attributes['tags'] : '';
+
+	echo "<script>console.log('Debug Objects: " . $tags . "' );</script>";
 
 	/* Setup the query */
 	$grid_query = new WP_Query(
@@ -23,9 +26,9 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 			'order'               => $attributes['order'],
 			'orderby'             => $attributes['orderBy'],
 			'cat'                 => $categories,
+			'tag_id'			  => $tags,
 			'offset'              => $attributes['offset'],
 			'post_type'           => $attributes['postType'],
-			'tag_type'			  => $attributes['tagType'],
 			'ignore_sticky_posts' => 1,
 		)
 	);
@@ -487,11 +490,10 @@ function covertnine_blocks_register_block_core_latest_posts() {
 				),
 				'postType'            => array(
 					'type'    => 'string',
-					'default' => 'post',
+					'default' => 'post', 
 				),
-				'tagType'            => array(
+				'tags'            => array(
 					'type'    => 'string',
-					'default' => 'tag',
 				),
 				'sectionTag'          => array(
 					'type'    => 'string',
@@ -521,7 +523,7 @@ function covertnine_blocks_register_block_core_latest_posts() {
 					'type'    => 'string',
 					'default' => json_encode( array_values( get_post_types() ) ), // '["' . implode('", "', get_post_types()) . '"]'
 				),
-				'tagTypes'            => array(
+				'tagsList'            => array(
 					'type'    => 'string',
 					'default' => json_encode( array_values( get_tags() ) )
 				),
