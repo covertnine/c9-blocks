@@ -564,6 +564,14 @@ function covertnine_blocks_register_block_core_latest_posts() {
 					'type'    => 'boolean',
 					'default' => false,
 				),
+				'filterByCategory'    => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'filterByTag'         => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
 			),
 			'render_callback' => 'covertnine_blocks_render_block_core_latest_posts',
 		)

@@ -187,6 +187,7 @@ export default class Inspector extends Component {
 		const {
 			order,
 			orderBy,
+			categories,
 			postTypes,
 			tagTypes,
 			bgColor,
@@ -206,13 +207,16 @@ export default class Inspector extends Component {
 		});
 
 		// Tag type options
-		const tagTypeOptions = JSON.parse(tagTypes).map(t => {
-			return {
-				value: t,
-				label: __(t.name, "c9-blocks")
-			};
-		});
-		console.log(tagTypes);
+		const tagTypeOptions = [
+			{ value: null, label: __("All tags", "c9-blocks") }
+		].concat(
+			JSON.parse(tagTypes).map(t => {
+				return {
+					value: t.slug,
+					label: _	_(t.name, "c9-blocks")
+				};
+			})
+		);
 
 		// Section title tags
 		const sectionTags = [
@@ -321,24 +325,51 @@ export default class Inspector extends Component {
 					)}
 				</PanelBody>
 				<PanelBody title={__("Grid Content", "c9-blocks")} initialOpen={false}>
-					<SelectControl
-						label={__("Tag Type", "c9-blocks")}
-						options={tagTypeOptions}
-						value={attributes.tagType}
-						onChange={value => this.props.setAttributes({ tagType: value })}
+					<ToggleControl
+						label={__("Filter by Category", "c9-blocks")}
+						checked={attributes.filterByCategory}
+						onChange={() =>
+							this.props.setAttributes({
+								filterByCategory: !attributes.filterByCategory
+							})
+						}
 					/>
+					{attributes.filterByCategory ? (
+						<QueryControls
+							{...{ categories }}
+							selectedCategoryId={categories}
+							categoriesList={categoriesList}
+							onCategoryChange={value =>
+								setAttributes({ categories: "" !== value ? value : undefined })
+							}
+						/>
+					) : null}
+
+					<ToggleControl
+						label={__("Filter by Tag", "c9-blocks")}
+						checked={attributes.filterByTag}
+						onChange={() =>
+							this.props.setAttributes({
+								filterByTag: !attributes.filterByTag
+							})
+						}
+					/>
+					{attributes.filterByTag ? (
+						<SelectControl
+							label={__("Tag", "c9-blocks")}
+							options={tagTypeOptions}
+							value={attributes.tagType}
+							onChange={value => this.props.setAttributes({ tagType: value })}
+						/>
+					) : null}
+
+					<hr />
+
 					<QueryControls
 						{...{ order, orderBy }}
 						categoriesList={categoriesList}
-						selectedCategoryId={attributes.categories}
 						onOrderChange={value => setAttributes({ order: value })}
 						onOrderByChange={value => setAttributes({ orderBy: value })}
-						onCategoryChange={value =>
-							setAttributes({ categories: "" !== value ? value : undefined })
-						}
-						onTagChange={value =>
-							setAttributes({ tags: "" !== value ? value : undefined })
-						}
 					/>
 
 					<ToggleControl
