@@ -13,8 +13,10 @@
  */
 function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 
-	$categories = isset( $attributes['categories'] ) ? $attributes['categories'] : '';
-	$tags = isset( $attributes['tags'] ) ? $attributes['tags'] : '';
+	$categories = isset( $attributes['categories'] ) && $attributes['filterByCategory'] 
+		? $attributes['categories'] : '';
+	$tags = isset( $attributes['tags'] ) && $attributes['filterByTag'] 
+		? $attributes['tags'] : '';
 
 	echo "<script>console.log('Debug Objects: " . $tags . "' );</script>";
 
