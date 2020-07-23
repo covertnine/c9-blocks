@@ -9,6 +9,9 @@ const Deprecated = [
 	{
 		attributes: attributes,
 		save: BlockGridContainerDeprecated,
+		supports: {
+			anchor: true
+		}
 	},
 ];
 
