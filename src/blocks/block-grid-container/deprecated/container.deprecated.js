@@ -98,7 +98,7 @@ export default class Container extends Component {
 		return styles;
 	}
 
-	c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint, selected = true) {
+	c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint) {
 		const styles = {};
 
 		if (focalPoint) {
@@ -107,11 +107,7 @@ export default class Container extends Component {
 		}
 
 		if (url) {
-			if (selected) {
-				styles.backgroundImage = `url(${url})`;
-			} else {
-				styles.backgroundImage = ` url(${url})`;
-			}
+			styles.backgroundImage = `url(${url})`;
 			styles.backgroundRepeat = repeat;
 		}
 		if (0 < size.length) {
@@ -182,8 +178,7 @@ export default class Container extends Component {
 				bgCustomXMobile,
 				bgCustomYMobile
 			},
-			className = "",
-			isSelectedBlockInRoot
+			className = ""
 		} = this.props;
 
 		return (
@@ -236,8 +231,7 @@ export default class Container extends Component {
 							bgCustomX,
 							bgCustomY,
 							bgImgRepeat,
-							focalPoint,
-							isSelectedBlockInRoot
+							focalPoint
 						)}
 					/>
 				)}
