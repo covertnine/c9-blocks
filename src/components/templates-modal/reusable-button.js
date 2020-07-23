@@ -31,7 +31,7 @@ const ReusableButton = ({
 };
 
 export default withDispatch(dispatch => {
-	const { insertBlocks } = dispatch("core/editor");
+	const { insertBlocks } = dispatch("core/block-editor");
 
 	return {
 		insertBlocks

@@ -32,7 +32,8 @@ registerBlockType("c9-blocks/column-container", {
 	supports: {
 		// fill in features
 		className: false,
-		anchor: true
+		anchor: true,
+		reusable: false
 	},
 	keywords: [__("container", "c9-blocks"), __("responsive", "c9-blocks")],
 	attributes,

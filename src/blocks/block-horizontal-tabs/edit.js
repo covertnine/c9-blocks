@@ -10,9 +10,8 @@ import RemoveButton from "../../components/remove-button";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { IconButton, Tooltip } = wp.components;
-const { AlignmentToolbar } = wp.editor;
-const { BlockControls, RichText, InnerBlocks } = wp.blockEditor;
+const { Button, Tooltip } = wp.components;
+const { BlockControls, RichText, InnerBlocks, AlignmentToolbar } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { select, dispatch } = wp.data;
 const { withInstanceId } = wp.compose;
@@ -156,12 +155,12 @@ class Edit extends Component {
 			align = buttonsAlign;
 		}
 
-		const targetBlock = select("core/editor").getBlocksByClientId(clientId)[0];
+		const targetBlock = select("core/block-editor").getBlocksByClientId(clientId)[0];
 
-		if (targetBlock !== null) {
+		if (null !== targetBlock) {
 			targetBlock
 				.innerBlocks.forEach(function(block) {
-					dispatch("core/editor").updateBlockAttributes(block.clientId, {
+					dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
 						tabActive
 					});
 				});
@@ -276,7 +275,7 @@ class Edit extends Component {
 						})}
 						{isSelectedBlockInRoot ? (
 							<Tooltip text={__("Add Tab", "c9-blocks")}>
-								<IconButton
+								<Button
 									icon={"insert"}
 									onClick={() => {
 										const newTabsData = [];

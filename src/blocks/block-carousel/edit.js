@@ -19,6 +19,7 @@ import classnames from "classnames";
 import React from "react";
 import memoize from "memize";
 import times from "lodash/times";
+import constant from "lodash/constant";
 
 const ALLOWED_BLOCKS = ["c9-blocks/carousel-slide"];
 
@@ -99,8 +100,7 @@ class Edit extends Component {
 			if (pause && false != auto) {
 				options.interval = false;
 				this.setState({ auto: false });
-
-		 	} else if (!pause && auto != autoSlide) {
+			} else if (!pause && auto != autoSlide) {
 				let interval = autoSlide ? slideTime : false;
 				options.interval = interval;
 				this.setState({ auto: autoSlide });
@@ -108,7 +108,6 @@ class Edit extends Component {
 				if (autoSlide && time != slideTime) {
 					this.setState({ time: slideTime });
 				}
-
 			} else if (autoSlide && time != slideTime) {
 				options.interval = slideTime;
 				this.setState({ time: slideTime });
@@ -154,9 +153,17 @@ class Edit extends Component {
 	 * Generates the child slide blocks.
 	 */
 	getSlidesTemplate = memoize(slides => {
+		let sizes = times(slides, constant(-1));
+		console.log(sizes);
+		const slideHeightCallback = (id, height) => {
+			console.log(id, height);
+			sizes[id] = height;
+			console.log(sizes);
+		};
+
 		let templates = times(slides, id => [
 			"c9-blocks/carousel-slide",
-			{ id, slideActive: this.state.active, slides }
+			{ id, slideActive: this.state.active, slides, slideHeightCallback }
 		]);
 
 		return templates;
@@ -177,7 +184,10 @@ class Edit extends Component {
 			wrapAround,
 			showControls,
 			showIndicators,
-			slideTime
+			slideTime,
+			slideSizes,
+			slideMaxHeight,
+			slideEqualHeight
 		} = attributes;
 
 		const { pause } = this.state;
@@ -185,6 +195,16 @@ class Edit extends Component {
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 		}
+
+		if (
+			slideSizes.length === slides &&
+			Math.max(...slideSizes) !== slideMaxHeight
+		) {
+			const newHeight = Math.max(...slideSizes);
+			setAttributes({ slideMaxHeight: newHeight });
+		}
+
+		const setHeight = isSelectedBlockInRoot ? slideMaxHeight + 120 : slideMaxHeight + 80;
 
 		return (
 			<Fragment>
@@ -209,8 +229,11 @@ class Edit extends Component {
 						"carousel slide"
 					)}
 					data-ride="carousel"
-					data-interval={(!pause && autoSlide) ? slideTime : false}
+					data-interval={!pause && autoSlide ? slideTime : false}
 					data-wrap={wrapAround}
+					style={
+						0 <= slideMaxHeight && slideEqualHeight ? { height: setHeight } : {}
+					}
 					ref={this.carouselRef}
 				>
 					<ol

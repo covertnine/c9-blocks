@@ -48,6 +48,14 @@ const attributes = {
 	isResponsive: {
 		type: "boolean",
 		default: false
+	},
+	slideMaxHeight: {
+		type: "number",
+		default: -1
+	},
+	slideEqualHeight: {
+		type: "boolean",
+		default: false
 	}
 };
 

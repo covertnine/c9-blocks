@@ -9,9 +9,9 @@ import WidthToolbar from "../../components/width-toolbar";
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
-const { AlignmentToolbar, URLInput } = wp.editor;
-const { BlockControls, RichText, withFontSizes } = wp.blockEditor;
-const { IconButton, Dashicon, Button } = wp.components;
+const { URLInput } = wp.editor;
+const { BlockControls, RichText, withFontSizes, AlignmentToolbar } = wp.blockEditor;
+const { Button, Dashicon } = wp.components;
 const { compose } = wp.compose;
 const { __ } = wp.i18n;
 
@@ -220,7 +220,7 @@ class Edit extends Component {
 									value={buttonUrl}
 									onChange={value => setAttributes({ buttonUrl: value })}
 								/>
-								<IconButton
+								<Button
 									icon="editor-break"
 									label={__("Apply", "c9-blocks")}
 									type="submit"

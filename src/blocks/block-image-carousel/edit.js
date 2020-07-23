@@ -15,7 +15,7 @@ const { BlockControls, RichText, MediaPlaceholder } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
-const { IconButton } = wp.components;
+const { Button } = wp.components;
 
 /**
  * External Dependencies.
@@ -103,8 +103,7 @@ class Edit extends Component {
 			if (pause && false != auto) {
 				options.interval = false;
 				this.setState({ auto: false });
-
-		 	} else if (!pause && auto != autoSlide) {
+			} else if (!pause && auto != autoSlide) {
 				let interval = autoSlide ? slideTime : false;
 				options.interval = interval;
 				this.setState({ auto: autoSlide });
@@ -286,13 +285,44 @@ class Edit extends Component {
 	}
 
 	/**
+	 * Clones the slides DOM component to measure sizes
+	 */
+	cloneAndSetSlideSizes = slides => {
+		// calls with the allActive config such that all slides are visible and can be measured
+		return this.createSlides(slides, true);
+	};
+
+	/**
 	 * Generates the slides using the given images.
 	 */
-	createSlides(slides) {
+	createSlides(slides, allActive = false) {
 		const { isSelectedBlockInRoot, setAttributes } = this.props;
 		const { id, url, captionTitle, captionContent } = this.props.attributes;
 
 		let template = [];
+		let sizes = [];
+
+		const refCallback = async element => {
+			if (element && allActive) {
+				let config = element.getBoundingClientRect();
+				while (0 === config.height) {
+					// wait and check again
+					await new Promise(r => setTimeout(r, 500));
+					config = element.getBoundingClientRect();
+				}
+				// console.log(config);
+				sizes.push(config.height);
+				if (sizes.length == slides) {
+					// console.log("full", sizes);
+					allActive = false;
+					// set largest height to be attribute
+					setAttributes({
+						slideMaxHeight: Math.ceil(Math.max(...sizes) / 10) * 10
+					});
+				}
+			}
+		};
+
 		for (let i = 0; i < slides; i++) {
 			const labels = {
 				title: !url[i] ? __("Image") : __("Edit image"),
@@ -316,10 +346,19 @@ class Edit extends Component {
 
 			template.push(
 				<div
+					ref={refCallback}
 					className={classnames(
 						"carousel-item",
-						i == this.state.slideActive ? "active" : null
+						i == this.state.slideActive || allActive ? "active" : null
 					)}
+					style={
+						allActive
+							? {
+									position: "absolute",
+									left: "-10000em"
+							  }
+							: {}
+					}
 				>
 					{!url[i] ? (
 						<MediaPlaceholder
@@ -379,7 +418,7 @@ class Edit extends Component {
 							</div>
 							{isSelectedBlockInRoot && (
 								<div className="c9-remove-image">
-									<IconButton
+									<Button
 										label={__("Remove Image", "c9-blocks")}
 										icon="dismiss"
 										onClick={() => {
@@ -403,7 +442,7 @@ class Edit extends Component {
 										}}
 									>
 										{__("Remove", "c9-blocks")}
-									</IconButton>
+									</Button>
 								</div>
 							)}
 						</Fragment>
@@ -433,12 +472,21 @@ class Edit extends Component {
 			showIndicators,
 			showControls,
 			url,
-			slideTime
+			slideTime,
+			slideEqualHeight,
+			slideMaxHeight
 		} = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 		}
+
+		// search for largest slide and update attributes
+		const TempComponent = this.cloneAndSetSlideSizes(slides);
+
+		const SlidesComponent = this.createSlides(slides);
+
+		const setHeight = isSelectedBlockInRoot ? slideMaxHeight + 40 : slideMaxHeight;
 
 		return (
 			<Fragment>
@@ -466,6 +514,11 @@ class Edit extends Component {
 					data-interval={autoSlide ? slideTime : false}
 					data-wrap={wrapAround}
 					ref={this.carouselRef}
+					style={
+						0 <= slideMaxHeight && slideEqualHeight
+							? { height: setHeight }
+							: {}
+					}
 				>
 					<ol
 						className={classnames(
@@ -475,7 +528,7 @@ class Edit extends Component {
 					>
 						{this.createIndicators(slides, instanceId)}
 					</ol>
-					<div className="carousel-inner">{this.createSlides(slides)}</div>
+					<div className="carousel-inner">{SlidesComponent}</div>
 					{showControls && (
 						<Fragment>
 							<a
@@ -515,6 +568,7 @@ class Edit extends Component {
 						</Fragment>
 					)}
 				</div>
+				{slideEqualHeight ? TempComponent : null}
 			</Fragment>
 		);
 	}

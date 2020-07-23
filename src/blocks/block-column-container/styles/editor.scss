@@ -21,19 +21,22 @@
 .container .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.wp-block,
 .container-narrow .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.wp-block,
 .container-fluid .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.wp-block {
-	-webkit-box-flex: 1;
 	flex-grow: 1;
 	flex-basis: 0px;
 }
 
 .wp-block-c9-blocks-column-containers .container-fluid .c9-layout-column-wrap-admin {
-	-webkit-box-flex: 1;
 	flex-grow: 1;
 }
 
 .padding-wrapper {
 	display: -ms-grid;
 	display: grid;
+}
+
+.editor-styles-wrapper .c9-column-selector button:hover {
+	margin-right: 0px;
+	opacity: .8;
 }
 
 .editor-styles-wrapper .c9-grid .wp-block[data-type="c9-blocks/column-container"] .wp-block,
@@ -62,6 +65,10 @@
 	grid-template-rows: 1fr;
 	grid-gap: 0 2em;
 	min-height: 0;
+}
+
+.c9-columns-center .c9-layout-column-wrap-admin {
+	margin: 0px auto;
 }
 
 /* Grid gap classes */

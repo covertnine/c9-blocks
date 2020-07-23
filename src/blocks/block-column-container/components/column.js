@@ -3,6 +3,8 @@
  */
 import VerticalAlignmentToolbar from "../../../components/vertical-alignment-toolbar";
 import classnames from "classnames";
+// import HideWhenChildBlocks from './hide-when-child-blocks';
+// InnerBlocks.HideWhenChildBlocks = HideWhenChildBlocks;
 
 /**
  * WordPress dependencies
@@ -25,6 +27,7 @@ const Column = props => {
 		setAttributes,
 		className,
 		block,
+		hasChildBlocks,
 		updateBlockAttributes
 	} = props;
 
@@ -81,7 +84,12 @@ const Column = props => {
 				<div className="c9-column-innner">
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
-						template={[["core/paragraph"]]}
+						// renderAppender={() => (
+						// 	<InnerBlocks.ButtonBlockAppender />
+						// )}
+						renderAppender={
+							hasChildBlocks ? undefined : () => <InnerBlocks.ButtonBlockAppender />
+						}
 						templateLock={false}
 					/>
 				</div>
@@ -106,7 +114,8 @@ registerBlockType("c9-blocks/column", {
 
 	supports: {
 		inserter: false,
-		className: false
+		className: false,
+		reusable: false
 	},
 
 	attributes: {
@@ -121,7 +130,7 @@ registerBlockType("c9-blocks/column", {
 
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { getBlock, isBlockSelected, hasSelectedInnerBlock } = select(
+			const { getBlock, isBlockSelected, hasSelectedInnerBlock, getBlockOrder } = select(
 				"core/block-editor"
 			);
 
@@ -130,11 +139,12 @@ registerBlockType("c9-blocks/column", {
 			return {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+				hasChildBlocks: 0 < getBlockOrder(clientId).length,
 			};
 		}),
 		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch("core/editor");
+			const { updateBlockAttributes, removeBlock } = dispatch("core/block-editor");
 
 			return {
 				updateBlockAttributes,

@@ -42,13 +42,17 @@ registerBlockType("c9-blocks/post-grid", {
 
 	edit: compose([
 		withSelect((select, props) => {
-			const { order, categories } = props.attributes;
+			const { order, categories, tags, filterByCategory, filterByTag } = props.attributes;
 
 			const { getEntityRecords } = select("core", "c9-blocks");
 
+			const setCategories = filterByCategory ? categories : undefined;
+			const setTags = filterByTag ? tags : undefined;
+
 			const latestPostsQuery = pickBy(
 				{
-					categories,
+					categories: setCategories,
+					tags: setTags,
 					order,
 					orderby: props.attributes.orderBy,
 					// eslint-disable-next-line camelcase

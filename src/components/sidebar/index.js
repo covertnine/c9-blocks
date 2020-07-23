@@ -68,7 +68,7 @@ class Sidebar extends Component {
 					<PanelBody className="plugin-c9-panel">
 						<Button
 							className="plugin-c9-panel-button"
-							isDefault
+							isSecondary
 							isLarge
 							onClick={() => {
 								this.setState({ isModalOpen: "page-templates" });
@@ -79,7 +79,7 @@ class Sidebar extends Component {
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
-							isDefault
+							isSecondary
 							isLarge
 							onClick={() => {
 								this.setState({ loading: true });
@@ -92,7 +92,7 @@ class Sidebar extends Component {
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
-							isDefault
+							isSecondary
 							isLarge
 							onClick={() => {
 								this.setState({ isModalOpen: "saved-blocks" });
@@ -103,7 +103,7 @@ class Sidebar extends Component {
 						</Button>
 						<Button
 							className="plugin-c9-panel-button"
-							isDefault
+							isSecondary
 							isLarge
 							onClick={() => {
 								resetBlocks([]);
@@ -141,7 +141,7 @@ class Sidebar extends Component {
 }
 
 const C9Sidebar = withDispatch(dispatch => {
-	const { resetBlocks } = dispatch("core/editor");
+	const { resetBlocks } = dispatch("core/block-editor");
 	return {
 		resetBlocks
 	};

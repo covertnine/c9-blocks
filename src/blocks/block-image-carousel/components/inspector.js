@@ -24,7 +24,8 @@ export default class Inspector extends Component {
 			showIndicators,
 			wrapAround,
 			slideTime,
-			isResponsive
+			isResponsive,
+			slideEqualHeight
 		} = attributes;
 
 		return (
@@ -110,6 +111,11 @@ export default class Inspector extends Component {
 						label={__("Responsive image loading", "c9-blocks")}
 						checked={isResponsive}
 						onChange={isResponsive => setAttributes({ isResponsive })}
+					/>
+					<ToggleControl
+						label={__("Set slides to have equal height", "c9-blocks")}
+						checked={slideEqualHeight}
+						onChange={slideEqualHeight => setAttributes({ slideEqualHeight })}
 					/>
 				</PanelBody>
 			</InspectorControls>

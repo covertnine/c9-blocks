@@ -74,8 +74,17 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.1**
+Fixed margins on column buttons. Added appender buttons for column grids to make it easier to add content.
+
+**1.0.9**
+Fixed bug on alignwide alignment for containers on some tablet devices.
+
+**1.0.8**
+Compatibility updates for WP 5.4 release to deprecated code. Fixed video background display bug. Better Internet Explorer 11 support.
+
 **1.0.7**
-Microsoft Edge browser compatibility updates. Internet explorer 11 compatibility updates for grid alignments.
+Microsoft Edge browser compatibility updates. Internet Explorer 11 compatibility updates for grid alignments.
 
 **1.0.6**
 Fixed markup changes for WordPress 5.4 Gutenberg Updates. Alignwide and alignfull class updates for Posts. Bug related to display of embeds and Twitter embeds. Single post big header entry meta bug fixes. Updates to templates modal. Fixing Netflix style page template queries. Backend mobile updates.

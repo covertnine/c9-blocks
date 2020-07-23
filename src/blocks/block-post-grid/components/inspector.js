@@ -8,8 +8,7 @@ import SettingsSpacer from "../../../components/settings-spacer";
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { ColorPalette } = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, ColorPalette } = wp.blockEditor;
 const {
 	PanelBody,
 	QueryControls,
@@ -17,7 +16,7 @@ const {
 	SelectControl,
 	TextControl,
 	ToggleControl,
-	IconButton
+	Button
 } = wp.components;
 const { addQueryArgs } = wp.url;
 const { apiFetch } = wp;
@@ -53,7 +52,7 @@ export default class Inspector extends Component {
 			bgPadding: bgPadding,
 			bgMargin: bgMargin,
 			setAttributes: setAttributes,
-			categoriesList: []
+			categoriesList: [],
 		};
 	}
 
@@ -188,7 +187,9 @@ export default class Inspector extends Component {
 		const {
 			order,
 			orderBy,
+			categories,
 			postTypes,
+			tagsList,
 			bgColor,
 			bgOpacity,
 			bgMargin,
@@ -204,6 +205,20 @@ export default class Inspector extends Component {
 				label: __(p.charAt(0).toUpperCase() + p.slice(1), "c9-blocks")
 			};
 		});
+
+		// Tag type options
+		const tagsListOptions = [
+			{ value: "", label: __("All tags", "c9-blocks") }
+		].concat(
+			JSON.parse(tagsList).map(t => {
+				return {
+					value: t.term_id,
+					label: __(t.name, "c9-blocks")
+				};
+			})
+		);
+
+		// console.log(tagsListOptions)
 
 		// Section title tags
 		const sectionTags = [
@@ -285,15 +300,7 @@ export default class Inspector extends Component {
 						onChange={value => this.props.setAttributes({ postType: value })}
 					/>
 					<QueryControls
-						{...{ order, orderBy }}
 						numberOfItems={attributes.postsToShow}
-						categoriesList={categoriesList}
-						selectedCategoryId={attributes.categories}
-						onOrderChange={value => setAttributes({ order: value })}
-						onOrderByChange={value => setAttributes({ orderBy: value })}
-						onCategoryChange={value =>
-							setAttributes({ categories: "" !== value ? value : undefined })
-						}
 						onNumberOfItemsChange={value =>
 							setAttributes({ postsToShow: value })
 						}
@@ -319,10 +326,55 @@ export default class Inspector extends Component {
 						/>
 					)}
 				</PanelBody>
-				<PanelBody
-					title={__("Post and Page Grid Content", "c9-blocks")}
-					initialOpen={false}
-				>
+				<PanelBody title={__("Grid Content", "c9-blocks")} initialOpen={false}>
+					<ToggleControl
+						label={__("Filter by Category", "c9-blocks")}
+						checked={attributes.filterByCategory}
+						onChange={() =>
+							this.props.setAttributes({
+								filterByCategory: !attributes.filterByCategory
+							})
+						}
+					/>
+					{attributes.filterByCategory ? (
+						<QueryControls
+							{...{ categories }}
+							selectedCategoryId={categories}
+							categoriesList={categoriesList}
+							onCategoryChange={value =>
+								setAttributes({ categories: "" !== value ? value : undefined })
+							}
+						/>
+					) : null}
+
+					<ToggleControl
+						label={__("Filter by Tag", "c9-blocks")}
+						checked={attributes.filterByTag}
+						onChange={() =>
+							this.props.setAttributes({
+								filterByTag: !attributes.filterByTag
+							})
+						}
+					/>
+					{attributes.filterByTag ? (
+						<SelectControl
+							label={__("Tag", "c9-blocks")}
+							options={tagsListOptions}
+							value={attributes.tags}
+							onChange={value =>
+								setAttributes({ tags: "" !== value ? value : undefined })
+							}
+						/>
+					) : null}
+
+					<hr />
+
+					<QueryControls
+						{...{ order, orderBy }}
+						onOrderChange={value => setAttributes({ order: value })}
+						onOrderByChange={value => setAttributes({ orderBy: value })}
+					/>
+
 					<ToggleControl
 						label={__("Display Section Title", "c9-blocks")}
 						checked={attributes.displaySectionTitle}
@@ -429,7 +481,7 @@ export default class Inspector extends Component {
 					)}
 				</PanelBody>
 				<PanelBody
-					title={__("Post and Page Grid Markup", "c9-blocks")}
+					title={__("Grid Markup", "c9-blocks")}
 					initialOpen={false}
 					className="c9-block-post-grid-markup-settings"
 				>
@@ -499,7 +551,7 @@ export default class Inspector extends Component {
 							value={bgPadding.left}
 							onChange={value => this.updatePadding("left", value)}
 						/>
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.bgPadding.icon}
 							onClick={this.togglePaddingLinkage}
@@ -538,7 +590,7 @@ export default class Inspector extends Component {
 						/>
 					</div>
 					<div className="margin-sides-wrapper">
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.bgMargin.icon}
 							onClick={this.toggleMarginLinkage}

@@ -15,8 +15,7 @@ const { __ } = wp.i18n;
 const { addFilter } = wp.hooks;
 const { Component, Fragment } = wp.element;
 const { createHigherOrderComponent } = wp.compose;
-const { ColorPalette } = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, ColorPalette } = wp.blockEditor;
 const { PanelBody, BaseControl } = wp.components;
 
 /**

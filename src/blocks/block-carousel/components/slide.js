@@ -6,11 +6,15 @@ const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.blockEditor;
 const { registerBlockType } = wp.blocks;
+const { compose } = wp.compose;
+const { withSelect, withDispatch } = wp.data;
 
 /**
  * External Dependencies.
  */
 import classnames from "classnames";
+import times from "lodash/times";
+import constant from "lodash/constant";
 
 /**
  * Create a Slide wrapper Component
@@ -19,7 +23,6 @@ class Slide extends Component {
 	constructor() {
 		super(...arguments);
 	}
-
 
 	/**
 	 * Checks if component needs to re-render, only re-renders when slide count has changed.
@@ -35,17 +38,69 @@ class Slide extends Component {
 		return true;
 	}
 
+	processRootBlockData(sizes, height) {
+		const { slides, id } = this.props.attributes;
+
+		if (sizes.length !== slides) {
+			let newSizes = times(slides, constant(-1));
+
+			for (let i = 0; i < sizes.length; i++) {
+				newSizes[i] = sizes[i];
+			}
+			newSizes[id] = height;
+
+			return newSizes;
+		} else {
+			sizes[id] = height;
+			return sizes;
+		}
+	}
+
 	render() {
 		// eslint-disable-next-line no-unused-vars
-		let { className = "" } = this.props;
+		let {
+			className = "",
+			hasChildBlocks,
+			rootBlock,
+			updateBlockAttributes
+		} = this.props;
+
+		const refCallback = async element => {
+			if (element) {
+				let config = element.getBoundingClientRect();
+				while (0 === config.height) {
+					// wait and check again
+					await new Promise(r => setTimeout(r, 500));
+					config = element.getBoundingClientRect();
+				}
+
+				if (rootBlock) {
+					const result = this.processRootBlockData(
+						rootBlock.attributes.slideSizes,
+						config.height
+					);
+					
+					updateBlockAttributes(rootBlock.clientId, { slideSizes: result })
+					// console.log(result);
+				}
+			}
+		};
 
 		className = classnames(className, "c9-carousel-slide");
 
 		return (
-			<div className={classnames(className, this.props.attributes.id)}>
+			<div
+				ref={refCallback}
+				className={classnames(className, this.props.attributes.id)}
+			>
 				<InnerBlocks
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
+					renderAppender={
+						hasChildBlocks
+							? undefined
+							: () => <InnerBlocks.ButtonBlockAppender />
+					}
 				/>
 			</div>
 		);
@@ -80,10 +135,38 @@ registerBlockType("c9-blocks/carousel-slide", {
 		},
 		slides: {
 			type: "number"
+		},
+		slideEqualHeight: {
+			type: "boolean"
+		},
+		slideHeightCallback: {
+			type: "number"
 		}
 	},
 
-	edit: Slide,
+	edit: compose([
+		withSelect((select, ownProps) => {
+			const { getBlockOrder, getBlock, getBlockHierarchyRootClientId } = select(
+				"core/block-editor"
+			);
+
+			const { clientId } = ownProps;
+
+			return {
+				hasChildBlocks: 0 < getBlockOrder(clientId).length,
+				rootBlock: clientId
+					? getBlock(getBlockHierarchyRootClientId(clientId))
+					: null
+			};
+		}),
+		withDispatch(dispatch => {
+			const { updateBlockAttributes } = dispatch("core/block-editor");
+
+			return {
+				updateBlockAttributes
+			};
+		})
+	])(Slide),
 
 	save: function(props) {
 		const { id } = props.attributes;
@@ -118,7 +201,7 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 							"carousel-item",
 							props.attributes.slideActive === props.attributes.id
 								? "active"
-								: null
+								: "c9-equal-height-check"
 						)}
 					/>
 				);

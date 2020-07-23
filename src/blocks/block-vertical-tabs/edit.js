@@ -11,9 +11,8 @@ import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { IconButton, Tooltip } = wp.components;
-const { AlignmentToolbar } = wp.editor;
-const { RichText, BlockControls, InnerBlocks } = wp.blockEditor;
+const { Button, Tooltip } = wp.components;
+const { RichText, BlockControls, InnerBlocks, AlignmentToolbar } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { select, dispatch } = wp.data;
@@ -149,10 +148,10 @@ class Edit extends Component {
 
 		const tabs = this.getTabs();
 
-		select("core/editor")
+		select("core/block-editor")
 			.getBlocksByClientId(clientId)[0]
 			.innerBlocks.forEach(function(block) {
-				dispatch("core/editor").updateBlockAttributes(block.clientId, {
+				dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
 					tabActive
 				});
 			});
@@ -270,7 +269,7 @@ class Edit extends Component {
 							})}
 							{isSelectedBlockInRoot ? (
 								<Tooltip text={__("Add Tab", "c9-blocks")}>
-									<IconButton
+									<Button
 										icon={"insert"}
 										onClick={() => {
 											const newTabsData = [];

@@ -61,7 +61,7 @@ const LayoutButton = ({
 };
 
 export default withDispatch(dispatch => {
-	const { resetBlocks, insertBlocks } = dispatch("core/editor");
+	const { resetBlocks, insertBlocks } = dispatch("core/block-editor");
 
 	return {
 		resetBlocks,

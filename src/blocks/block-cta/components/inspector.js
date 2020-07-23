@@ -9,18 +9,13 @@ import SettingsSpacer from "../../../components/settings-spacer";
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { ContrastChecker, FontSizePicker } = wp.blockEditor;
-const {
-	PanelColorSettings,
-	MediaUpload,
-	ColorPalette
-} = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls, MediaUpload, ColorPalette, PanelColorSettings } = wp.blockEditor;
 const {
 	PanelBody,
 	RangeControl,
 	SelectControl,
 	ToggleControl,
-	IconButton,
+	Button,
 	RadioControl,
 	FocalPointPicker
 } = wp.components;
@@ -397,7 +392,7 @@ export default class Inspector extends Component {
 							value={ctaPadding.left}
 							onChange={value => this.updatePadding("left", value)}
 						/>
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.ctaPadding.icon}
 							onClick={this.togglePaddingLinkage}
@@ -436,7 +431,7 @@ export default class Inspector extends Component {
 						/>
 					</div>
 					<div className="margin-sides-wrapper">
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.ctaMargin.icon}
 							onClick={this.toggleMarginLinkage}
@@ -464,23 +459,23 @@ export default class Inspector extends Component {
 						value={imgID}
 						render={({ open }) => (
 							<div>
-								<IconButton
+								<Button
 									label={__("Edit image", "c9-blocks")}
 									icon="format-image"
 									onClick={open}
 								>
 									{__("Background Image", "c9-blocks")}
-								</IconButton>
+								</Button>
 
 								{imgURL && !!imgURL.length && (
 									<div>
-										<IconButton
+										<Button
 											label={__("Remove Image", "c9-blocks")}
 											icon="dismiss"
 											onClick={onRemoveImage}
 										>
 											{__("Remove", "c9-blocks")}
-										</IconButton>
+										</Button>
 
 										<h5>Position</h5>
 										<FocalPointPicker

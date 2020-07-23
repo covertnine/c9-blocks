@@ -5,8 +5,13 @@
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { MediaUpload, ColorPalette } = wp.editor;
-const { InspectorControls } = wp.blockEditor;
+const {
+	InspectorControls,
+	MediaUpload,
+	ColorPalette,
+	__experimentalColorGradientControl: ColorGradientControl
+} = wp.blockEditor;
+
 const {
 	RadioControl,
 	PanelBody,
@@ -14,7 +19,6 @@ const {
 	TextControl,
 	ToggleControl,
 	SelectControl,
-	IconButton,
 	Button,
 	FocalPointPicker,
 	BaseControl
@@ -415,7 +419,7 @@ export default class Inspector extends Component {
 							value={containerPadding.left}
 							onChange={value => this.updatePadding("left", value)}
 						/>
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.containerPadding.icon}
 							onClick={this.togglePaddingLinkage}
@@ -454,7 +458,7 @@ export default class Inspector extends Component {
 						/>
 					</div>
 					<div className="margin-sides-wrapper">
-						<IconButton
+						<Button
 							label={__("Linked Padding Toggle", "c9-blocks")}
 							icon={this.state.containerMargin.icon}
 							onClick={this.toggleMarginLinkage}
@@ -481,23 +485,23 @@ export default class Inspector extends Component {
 						value={containerImgID}
 						render={({ open }) => (
 							<div>
-								<IconButton
+								<Button
 									label={__("Edit image", "c9-blocks")}
 									icon="format-image"
 									onClick={open}
 								>
 									{__("Background Image", "c9-blocks")}
-								</IconButton>
+								</Button>
 
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
-										<IconButton
+										<Button
 											label={__("Remove Image", "c9-blocks")}
 											icon="dismiss"
 											onClick={onRemoveImage}
 										>
 											{__("Remove", "c9-blocks")}
-										</IconButton>
+										</Button>
 
 										<h5>Position</h5>
 										<FocalPointPicker
@@ -905,13 +909,13 @@ export default class Inspector extends Component {
 							allowedTypes={["video"]}
 							render={({ open }) => (
 								<div>
-									<IconButton
+									<Button
 										label={__("Edit Video", "c9-blocks")}
 										icon="format-image"
 										onClick={open}
 									>
 										{__("Background Video", "c9-blocks")}
-									</IconButton>
+									</Button>
 								</div>
 							)}
 						/>
@@ -921,13 +925,13 @@ export default class Inspector extends Component {
 						containerVideoURL &&
 						!!containerVideoURL.length && (
 							<div>
-								<IconButton
+								<Button
 									label={__("Remove Video", "c9-blocks")}
 									icon="dismiss"
 									onClick={onRemoveVideo}
 								>
 									{__("Remove", "c9-blocks")}
-								</IconButton>
+								</Button>
 							</div>
 						)}
 
@@ -950,14 +954,14 @@ export default class Inspector extends Component {
 
 							<div>
 								<Button
-									isDefault
+									isSecondary
 									onClick={() => this.submitID()}
 									style={{ marginRight: "10px" }}
 								>
 									{__("Set", "c9-blocks")}
 								</Button>
 
-								<Button isDefault onClick={() => this.resetID()}>
+								<Button isSecondary onClick={() => this.resetID()}>
 									{__("Reset", "c9-blocks")}
 								</Button>
 							</div>

@@ -13,7 +13,12 @@
  */
 function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 
-	$categories = isset( $attributes['categories'] ) ? $attributes['categories'] : '';
+	$categories = isset( $attributes['categories'] ) && $attributes['filterByCategory'] 
+		? $attributes['categories'] : '';
+	$tags = isset( $attributes['tags'] ) && $attributes['filterByTag'] 
+		? $attributes['tags'] : '';
+
+	echo "<script>console.log('Debug Objects: " . $tags . "' );</script>";
 
 	/* Setup the query */
 	$grid_query = new WP_Query(
@@ -23,6 +28,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 			'order'               => $attributes['order'],
 			'orderby'             => $attributes['orderBy'],
 			'cat'                 => $categories,
+			'tag_id'			  => $tags,
 			'offset'              => $attributes['offset'],
 			'post_type'           => $attributes['postType'],
 			'ignore_sticky_posts' => 1,
@@ -58,7 +64,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 
 			/* Start the markup for the post */
 			$post_grid_markup .= sprintf(
-				'<article id="post-%1$s" class="%2$s">',
+				'<article id="post-%1$s" class="%2$s" itemscope>',
 				esc_attr( $post_id ),
 				esc_attr( $post_classes )
 			);
@@ -119,7 +125,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 				/* Get the post author */
 				if ( isset( $attributes['displayPostAuthor'] ) && $attributes['displayPostAuthor'] ) {
 					$post_grid_markup .= sprintf(
-						'<div class="c9-block-post-grid-author" itemprop="author" itemtype="https://schema.org/Person"><a class="c9-text-link" href="%2$s" itemprop="url" rel="author"><span itemprop="name">%1$s</span></a></div>',
+						'<div class="c9-block-post-grid-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a class="c9-text-link" href="%2$s" itemprop="url" rel="author"><span itemprop="name">%1$s</span></a></div>',
 						esc_html( get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ) ),
 						esc_html( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
 					);
@@ -486,7 +492,10 @@ function covertnine_blocks_register_block_core_latest_posts() {
 				),
 				'postType'            => array(
 					'type'    => 'string',
-					'default' => 'post',
+					'default' => 'post', 
+				),
+				'tags'            => array(
+					'type'    => 'string',
 				),
 				'sectionTag'          => array(
 					'type'    => 'string',
@@ -515,6 +524,10 @@ function covertnine_blocks_register_block_core_latest_posts() {
 				'postTypes'           => array(
 					'type'    => 'string',
 					'default' => json_encode( array_values( get_post_types() ) ), // '["' . implode('", "', get_post_types()) . '"]'
+				),
+				'tagsList'            => array(
+					'type'    => 'string',
+					'default' => json_encode( array_values( get_tags() ) )
 				),
 				'verticalAlign'       => array(
 					'type' => 'string',
@@ -554,6 +567,14 @@ function covertnine_blocks_register_block_core_latest_posts() {
 				'disableToolbar'      => array(
 					'type'    => 'boolean',
 					'default' => false,
+				),
+				'filterByCategory'    => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'filterByTag'         => array(
+					'type'    => 'boolean',
+					'default' => true,
 				),
 			),
 			'render_callback' => 'covertnine_blocks_render_block_core_latest_posts',

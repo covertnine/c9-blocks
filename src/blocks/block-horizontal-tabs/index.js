@@ -50,7 +50,7 @@ registerBlockType("c9-blocks/horizontal-tabs", {
 			};
 		}),
 		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch("core/editor");
+			const { updateBlockAttributes, removeBlock } = dispatch("core/block-editor");
 
 			return {
 				updateBlockAttributes,
