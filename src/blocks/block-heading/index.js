@@ -35,6 +35,14 @@ registerBlockType("c9-blocks/heading", {
 		__("covertnine", "c9-blocks")
 	],
 
+	example: {
+		attributes: {
+			heading: "PIZZA",
+			textColor: "#cd2653",
+			weight: "bold"
+		}
+	},
+
 	attributes: attributes,
 
 	// Render the block components
