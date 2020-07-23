@@ -114,7 +114,8 @@ registerBlockType("c9-blocks/column", {
 
 	supports: {
 		inserter: false,
-		className: false
+		className: false,
+		reusable: false
 	},
 
 	attributes: {
