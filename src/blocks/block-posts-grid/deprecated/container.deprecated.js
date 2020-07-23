@@ -210,29 +210,23 @@ export default class Container extends Component {
 					)
 				}}
 			>
-				{!!overlayHue && (
-					<div
-					className="c9-overlay-container"
-					style={this.c9OverlayStyles(overlayHue, overlayOpacity, blendMode)}
-					/>
-					)}
 				{(!!containerVideoURL || !!containerVideoID) && !cannotEmbed && (
 					<VideoBox {...this.props} />
-					)}
+				)}
 				{!!containerImgURL && (
 					<div
-					className={classnames(
-						"c9-image-container",
-						overrideMobile
-						? `c9-image-mobile-${MOBILE_Y_SIZE[focalPointMobile.y]}-${
-							MOBILE_X_SIZE[focalPointMobile.x]
-						}`
-						: null,
-						"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
-						"contain" == bgImgSizeMobile
-						? "c9-image-mobile-size-contain"
-						: null,
-						!bgImgSizeMobile ? "c9-image-mobile-size-custom" : null
+						className={classnames(
+							"c9-image-container",
+							overrideMobile
+								? `c9-image-mobile-${MOBILE_Y_SIZE[focalPointMobile.y]}-${
+										MOBILE_X_SIZE[focalPointMobile.x]
+								  }`
+								: null,
+							"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
+							"contain" == bgImgSizeMobile
+								? "c9-image-mobile-size-contain"
+								: null,
+							!bgImgSizeMobile ? "c9-image-mobile-size-custom" : null
 						)}
 						style={this.c9BackgroundStyles(
 							containerImgURL,
@@ -242,9 +236,15 @@ export default class Container extends Component {
 							bgImgRepeat,
 							focalPoint,
 							isSelectedBlockInRoot
-							)}
-							/>
-					)}
+						)}
+					/>
+				)}
+				{!!overlayHue && (
+					<div
+						className="c9-overlay-container"
+						style={this.c9OverlayStyles(overlayHue, overlayOpacity, blendMode)}
+					/>
+				)}
 				{this.props.children}
 			</div>
 		);
