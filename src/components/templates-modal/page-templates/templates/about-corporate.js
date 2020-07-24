@@ -118,8 +118,8 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/audience-celebration-concert-1179581-web66.jpg","containerHue":"#313131","bgImgSizeMobile":"","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"}} -->
-<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1);--mobile-height:auto;--mobile-width:100%"><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-custom" style="background-position:50% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/audience-celebration-concert-1179581-web66.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
+<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/audience-celebration-concert-1179581-web66.jpg","containerHue":"#313131","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"}} -->
+<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1);--mobile-height:auto;--mobile-width:100%"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer {"height":155} -->
 <div style="height:155px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -169,7 +169,7 @@ export default {
 <p>Adjust columns, column spacing, and even the horizontal and vertical alignments with ease.</p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-custom" style="background-position:50% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/audience-celebration-concert-1179581-web66.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":3} -->
@@ -187,7 +187,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":4,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/amos-bar-zeev-hVk6pIFbW9o-unsplash.jpg","bgImgAttach":true,"overlayHue":"#cf2e2e","overlayOpacity":6,"blendMode":"darken","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.4838709677419355,"y":0.5},"focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true} -->
-<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:75vh"><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-cover" style="background-position:48.38709677419355% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/amos-bar-zeev-hVk6pIFbW9o-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(207,46,46,.6);mix-blend-mode:darken"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
+<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:75vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Highlight the text in the WordPress admin to change quotes, or click on the outer edge C9 Grid block to change the background image or color overlay settings!","tagLevel":5,"displayLevel":"5","textColor":"#eeeeee","weight":"bold","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h5 class="c9-h h5 font-weight-bold" style="color:#eeeeee">Highlight the text in the WordPress admin to change quotes, or click on the outer edge C9 Grid block to change the background image or color overlay settings!</h5></div>
@@ -215,7 +215,7 @@ export default {
 <p></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(207,46,46,.6);mix-blend-mode:darken"></div><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-cover" style="background-position:48.38709677419355% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/amos-bar-zeev-hVk6pIFbW9o-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":5,"rows":2,"containerHue":"#f4f4f4","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->

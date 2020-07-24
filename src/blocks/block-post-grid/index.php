@@ -18,7 +18,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 	$tags = isset( $attributes['tags'] ) && $attributes['filterByTag'] 
 		? $attributes['tags'] : '';
 
-	echo "<script>console.log('Debug Objects: " . $tags . "' );</script>";
+	// echo "<script>console.log('Debug Objects: " . $tags . "' );</script>";
 
 	/* Setup the query */
 	$grid_query = new WP_Query(

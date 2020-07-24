@@ -6,8 +6,8 @@ export default {
 	title: "Lead Generation 2",
 	description: `Inform and entice potential customers or clients with a widescreen video that helps tell a broader story. There’s plenty of room to break up longer-form text with an image carousel. Include vertical photos, a short FAQ, and a place to tell a friend or click a call-to-action button.`,
 	recommended: `Two video clips or YouTube videos, 3-5 vertical photos, FAQ, about copy, heading, subheading, and short description text for header`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":35,"containerHue":"#000000","overlayHue":"#3d3d3d","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"https://cortex.covertnine.com/wp-content/uploads/2019/10/Pexels-Videos-1333384.mp4"} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:50vh;background-color:rgba(0,0,0,1)"><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-35" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="https://cortex.covertnine.com/wp-content/uploads/2019/10/Pexels-Videos-1333384.mp4" type="video/mp4"/></video></div></div><div class="c9-overlay-container" style="background-color:rgba(61,61,61,.9);mix-blend-mode:multiply"></div><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":16,"containerHue":"#000000","overlayHue":"#3d3d3d","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"https://cortex.covertnine.com/wp-content/uploads/2019/10/Pexels-Videos-1333384.mp4"} -->
+<div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:50vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideright"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Heading Title","displayLevel":"2","textColor":"#ffffff","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h1 class="c9-h h2" style="color:#ffffff">Heading Title</h1></div>
@@ -27,10 +27,10 @@ export default {
 <p style="color:#ffffff" class="has-text-color has-text-align-center">Vestibulum aliquam felis imperdiet, ornare turpis ut, feugiat est. Curabitur eget molestie diam. Aliquam erat volutpat. Maecenas efficitur dignissim lorem, ac ultrices.</p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(61,61,61,.9);mix-blend-mode:multiply"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-16" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="https://cortex.covertnine.com/wp-content/uploads/2019/10/Pexels-Videos-1333384.mp4" type="video/mp4"/></video></div></div></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":36,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/grid {"instanceId":17,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="c9-grid c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-equal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container alignwide c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Teaser Video","tagLevel":3,"displayLevel":"1","type":"c9-txl display-","textAlign":"center","weight":"light","overrideStyle":true} -->
@@ -54,7 +54,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":37} -->
+<!-- wp:c9-blocks/grid {"instanceId":18} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center"} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:separator -->
@@ -75,14 +75,14 @@ export default {
 <!-- /wp:c9-blocks/column -->
 
 <!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/image-carousel {"instanceId":5,"url":["//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg"],"id":[7801,7802,7800],"captionTitle":["","Title",null],"captionContent":["Caption","Caption","Caption"]} -->
-<div id="c9-image-carousel-indicator-5" class="c9-image-carousel carousel slide" data-ride="carousel" data-interval="5000" data-wrap="true"><ol class="carousel-indicators"><li data-target="#c9-image-carousel-indicator-5" data-slide-to="0" class="active"></li><li data-target="#c9-image-carousel-indicator-5" data-slide-to="1"></li><li data-target="#c9-image-carousel-indicator-5" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><p>Caption</p></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><h5>Title</h5><p>Caption</p></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><p>Caption</p></div></div></div><a class="carousel-control-prev" href="#c9-image-carousel-indicator-5" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-image-carousel-indicator-5" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
+<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/image-carousel {"instanceId":1,"url":["//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg","//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg"],"id":[7801,7802,7800],"captionTitle":["","Title",null],"captionContent":["Caption","Caption","Caption"]} -->
+<div id="c9-image-carousel-indicator-1" class="c9-image-carousel carousel slide" data-ride="carousel" data-interval="5000" data-wrap="true"><ol class="carousel-indicators"><li data-target="#c9-image-carousel-indicator-1" data-slide-to="0" class="active"></li><li data-target="#c9-image-carousel-indicator-1" data-slide-to="1"></li><li data-target="#c9-image-carousel-indicator-1" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/chris-fuller-FXCTFXpMfn0-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><p>Caption</p></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/jacob-mejicanos-Fbl6bWYl1IY-unsplash-683x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><h5>Title</h5><p>Caption</p></div></div><div class="carousel-item"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/alec-favale-MZJOBxOXbt0-unsplash-e1567213350812-698x1024.jpg" class="d-block w-100"/><div class="carousel-caption d-none d-md-block"><p>Caption</p></div></div></div><a class="carousel-control-prev" href="#c9-image-carousel-indicator-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-image-carousel-indicator-1" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
 <!-- /wp:c9-blocks/image-carousel --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":38,"containerHue":"#f4f4f4","minScreenHeight":64} -->
+<!-- wp:c9-blocks/grid {"instanceId":19,"containerHue":"#f4f4f4","minScreenHeight":64} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":10} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","width":275,"height":412} -->
@@ -95,33 +95,33 @@ export default {
 <div class="section-heading c9-heading text-left"><h5 class="c9-h">Toggle-able Limitations</h5></div>
 <!-- /wp:c9-blocks/heading -->
 
-<!-- wp:c9-blocks/toggles {"toggleCount":5,"instanceId":4,"className":"is-style-toggles-small"} -->
-<div class="c9-toggles is-style-toggles-small accordion" id="accordion-4"><!-- wp:c9-blocks/toggles-toggle {"toggleNumber":1,"id":4} -->
-<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading1-4" data-toggle="collapse" data-target="#c9-toggles-collapse1-4"><div class="mb-0"><span class="c9-toggles-toggle-label">Can I bring water?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse1-4" data-parent="#accordion-4"><div><!-- wp:paragraph -->
+<!-- wp:c9-blocks/toggles {"toggleCount":5,"instanceId":1,"className":"is-style-toggles-small"} -->
+<div class="c9-toggles is-style-toggles-small accordion" id="accordion-1"><!-- wp:c9-blocks/toggles-toggle {"toggleNumber":1,"id":1} -->
+<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading1-1" data-toggle="collapse" data-target="#c9-toggles-collapse1-1"><div class="mb-0"><span class="c9-toggles-toggle-label">Can I bring water?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse1-1" data-parent="#accordion-1"><div><!-- wp:paragraph -->
 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. </p>
 <!-- /wp:paragraph --></div></div></div>
 <!-- /wp:c9-blocks/toggles-toggle -->
 
-<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":2,"id":4} -->
-<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading2-4" data-toggle="collapse" data-target="#c9-toggles-collapse2-4"><div class="mb-0"><span class="c9-toggles-toggle-label">When do doors open?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse2-4" data-parent="#accordion-4"><div><!-- wp:paragraph -->
+<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":2,"id":1} -->
+<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading2-1" data-toggle="collapse" data-target="#c9-toggles-collapse2-1"><div class="mb-0"><span class="c9-toggles-toggle-label">When do doors open?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse2-1" data-parent="#accordion-1"><div><!-- wp:paragraph -->
 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. </p>
 <!-- /wp:paragraph --></div></div></div>
 <!-- /wp:c9-blocks/toggles-toggle -->
 
-<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":3,"id":4} -->
-<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading3-4" data-toggle="collapse" data-target="#c9-toggles-collapse3-4"><div class="mb-0"><span class="c9-toggles-toggle-label">What weapons can I bring?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse3-4" data-parent="#accordion-4"><div><!-- wp:paragraph -->
+<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":3,"id":1} -->
+<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading3-1" data-toggle="collapse" data-target="#c9-toggles-collapse3-1"><div class="mb-0"><span class="c9-toggles-toggle-label">What weapons can I bring?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse3-1" data-parent="#accordion-1"><div><!-- wp:paragraph -->
 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. </p>
 <!-- /wp:paragraph --></div></div></div>
 <!-- /wp:c9-blocks/toggles-toggle -->
 
-<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":4,"id":4} -->
-<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading4-4" data-toggle="collapse" data-target="#c9-toggles-collapse4-4"><div class="mb-0"><span class="c9-toggles-toggle-label">Can we leave?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse4-4" data-parent="#accordion-4"><div><!-- wp:paragraph -->
+<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":4,"id":1} -->
+<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading4-1" data-toggle="collapse" data-target="#c9-toggles-collapse4-1"><div class="mb-0"><span class="c9-toggles-toggle-label">Can we leave?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse4-1" data-parent="#accordion-1"><div><!-- wp:paragraph -->
 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. </p>
 <!-- /wp:paragraph --></div></div></div>
 <!-- /wp:c9-blocks/toggles-toggle -->
 
-<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":5,"id":4} -->
-<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading5-4" data-toggle="collapse" data-target="#c9-toggles-collapse5-4"><div class="mb-0"><span class="c9-toggles-toggle-label">What time is it?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse5-4" data-parent="#accordion-4"><div><!-- wp:paragraph -->
+<!-- wp:c9-blocks/toggles-toggle {"toggleNumber":5,"id":1} -->
+<div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading5-1" data-toggle="collapse" data-target="#c9-toggles-collapse5-1"><div class="mb-0"><span class="c9-toggles-toggle-label">What time is it?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse5-1" data-parent="#accordion-1"><div><!-- wp:paragraph -->
 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. </p>
 <!-- /wp:paragraph --></div></div></div>
 <!-- /wp:c9-blocks/toggles-toggle --></div>
@@ -130,7 +130,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":39} -->
+<!-- wp:c9-blocks/grid {"instanceId":20} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Tell a friend","subheading":"or our boss will yell at us","addSubheading":true,"textAlign":"center"} -->
@@ -142,7 +142,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":40,"containerHue":"#000000"} -->
+<!-- wp:c9-blocks/grid {"instanceId":21,"containerHue":"#000000"} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow"} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"buttonText":"SUbscribe","buttonBackgroundColor":"#23cd34","buttonSize":"c9-button-size-extralarge","ctaPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":19} -->

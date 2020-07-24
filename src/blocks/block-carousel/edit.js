@@ -154,7 +154,7 @@ class Edit extends Component {
 	 */
 	getSlidesTemplate = memoize(slides => {
 		let sizes = times(slides, constant(-1));
-		console.log(sizes);
+		// console.log(sizes);
 		const slideHeightCallback = (id, height) => {
 			console.log(id, height);
 			sizes[id] = height;

@@ -41,6 +41,10 @@ class Slide extends Component {
 	processRootBlockData(sizes, height) {
 		const { slides, id } = this.props.attributes;
 
+		if (sizes === undefined) {
+			return;
+		}
+
 		if (sizes.length !== slides) {
 			let newSizes = times(slides, constant(-1));
 
