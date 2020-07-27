@@ -32,6 +32,27 @@ registerBlockType("c9-blocks/cta", {
 		"c9-blocks"
 	),
 
+	example: {
+		attributes: {
+			type: "c9-h",
+			buttonText: "Sign Up Now",
+			ctaBackgroundColor: "#ededed",
+			fontSize: "larger",
+			customFontSize: 32,
+			ctaText: [
+				{
+					type: "p",
+					props: {
+						children: [
+							"Use the call to action to entice a user to sign up, navigate to another page, or call attention to what you want them to do next."
+						]
+					}
+				}
+			],
+			buttonUrl: "#"
+		}
+	},
+
 	attributes: attributes,
 
 	/* Add alignment to block wrapper. */
@@ -48,7 +69,9 @@ registerBlockType("c9-blocks/cta", {
 
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } = select("core/block-editor");
+			const { isBlockSelected, hasSelectedInnerBlock } = select(
+				"core/block-editor"
+			);
 
 			const { clientId } = ownProps;
 
