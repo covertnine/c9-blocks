@@ -42,9 +42,10 @@ registerBlockType("c9-blocks/heading", {
 
 	example: {
 		attributes: {
-			heading: "PIZZA",
-			textColor: "#cd2653",
-			weight: "bold"
+			heading: "Headlines H1-H6",
+			subheading: "Subheading H1-H6",
+			addSubheading: true,
+			tagLevel: 3
 		}
 	},
 
