@@ -33,6 +33,10 @@ registerBlockType("c9-blocks/horizontal-tabs", {
 		__("container", "c9-blocks"),
 		__("responsive", "c9-blocks")
 	],
+	description: __(
+		"Display tabbed content with a horizontal button interface for switching between multiple types of content.",
+		"c9-blocks"
+	),
 	attributes,
 	// Render the block components
 	edit: compose([

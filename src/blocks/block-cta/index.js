@@ -27,6 +27,11 @@ registerBlockType("c9-blocks/cta", {
 	category: "c9-blocks",
 	keywords: [__("call to action", "c9-blocks"), __("cta", "c9-blocks")],
 
+	description: __(
+		"Get users to action with stylized text, colors, and buttons in one responsive block.",
+		"c9-blocks"
+	),
+
 	attributes: attributes,
 
 	/* Add alignment to block wrapper. */

@@ -33,6 +33,10 @@ registerBlockType("c9-blocks/vertical-tabs", {
 		__("container", "c9-blocks"),
 		__("responsive", "c9-blocks")
 	],
+	description: __(
+		"Display tabbed content with a vertical button interface for switching between multiple types of content.",
+		"c9-blocks"
+	),
 	attributes,
 	// Render the block components
 	edit: compose([

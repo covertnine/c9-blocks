@@ -409,6 +409,7 @@ function covertnine_blocks_register_block_core_latest_posts() {
 				__( 'page', 'c9-blocks' ),
 				__( 'grid', 'c9-blocks' ),
 			),
+			'description'     => __( 'Display responsive grids with post content of any kind with filtering, sorting, and flexible layout settings.', 'c9-blocks' ),
 			'category'        => 'c9-blocks',
 			'parent'          => 'c9-blocks/post-container',
 			'attributes'      => array(

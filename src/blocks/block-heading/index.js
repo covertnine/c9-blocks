@@ -27,13 +27,18 @@ registerBlockType("c9-blocks/heading", {
 	icon: Icon,
 	category: "c9-blocks",
 	supports: {
-		anchor: true,
+		anchor: true
 	},
 	keywords: [
 		__("heading", "c9-blocks"),
 		__("c9", "c9-blocks"),
 		__("covertnine", "c9-blocks")
 	],
+
+	description: __(
+		"An advanced heading block with inline subheading font, custom colors, and style settings.",
+		"c9-blocks"
+	),
 
 	example: {
 		attributes: {

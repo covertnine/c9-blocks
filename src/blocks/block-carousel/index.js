@@ -29,6 +29,10 @@ registerBlockType("c9-blocks/carousel", {
 		// fill in features
 	},
 	keywords: [__("carousel", "c9-blocks"), __("responsive", "c9-blocks")],
+	description: __(
+		"Display animated carousel of any kind of content including columns, videos, images, buttons, and text.",
+		"c9-blocks"
+	),
 	attributes,
 	// Render the block components
 	edit: compose([

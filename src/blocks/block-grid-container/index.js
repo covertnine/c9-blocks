@@ -30,6 +30,12 @@ registerBlockType("c9-blocks/grid", {
 		anchor: true
 	},
 	keywords: [__("responsive", "c9-blocks")],
+
+	description: __(
+		"C9 Grids with column containers help display content for all types of devices.",
+		"c9-blocks"
+	),
+
 	attributes,
 	// Render the block components
 	edit: compose([

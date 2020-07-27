@@ -30,6 +30,7 @@ registerBlockType("c9-blocks/posts-grid", {
 		// fill in features
 	},
 	keywords: [__("responsive", "c9-blocks")],
+	description: __("Display responsive grids with post content of any kind with filtering, sorting, and flexible layout settings.", "c9-blocks"),
 	attributes,
 	// Render the block components
 	edit: compose([

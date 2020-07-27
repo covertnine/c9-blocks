@@ -29,6 +29,10 @@ registerBlockType("c9-blocks/image-carousel", {
 		// fill in features
 	},
 	keywords: [__("carousel", "c9-blocks"), __("responsive", "c9-blocks")],
+	description: __(
+		"Display an animated carousel of images with captions with custom settings for navigation.",
+		"c9-blocks"
+	),
 	attributes,
 	// Render the block components
 	edit: compose([

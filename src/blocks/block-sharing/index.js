@@ -21,10 +21,11 @@ registerBlockType("c9-blocks/social-share", {
 	title: __("C9 Social Share", "c9-blocks"),
 	icon: Icon,
 	category: "c9-blocks",
-	keywords: [
-		__("share", "c9-blocks"),
-		__("social", "c9-blocks")
-	],
+	description: __(
+		"Add buttons for social media share links to any page or post with custom color and shape settings.",
+		"c9-blocks"
+	),
+	keywords: [__("share", "c9-blocks"), __("social", "c9-blocks")],
 
 	// Render the block components
 	edit: Edit,

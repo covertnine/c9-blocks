@@ -33,6 +33,10 @@ registerBlockType("c9-blocks/toggles", {
 		{ name: "toggles-small", label: __("Small", "c9-blocks"), isSecondary: true }
 	],
 	keywords: [__("responsive", "c9-blocks")],
+	description: __(
+		"Hide or show content with a toggleable heading link. Great for FAQ content.",
+		"c9-blocks"
+	),
 	attributes,
 	// Render the block components
 	edit: compose([
