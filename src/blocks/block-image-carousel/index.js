@@ -33,6 +33,30 @@ registerBlockType("c9-blocks/image-carousel", {
 		"Display an animated carousel of images with captions with custom settings for navigation.",
 		"c9-blocks"
 	),
+	example: {
+		attributes: {
+			autoSlide: false,
+			url: [
+				"https://work.covertnine.com/wp-content/uploads/2020/07/clark-young-fQxMGkYXqFU-unsplash-55.jpg",
+				"https://work.covertnine.com/wp-content/uploads/2020/07/jezael-melgoza-HYQvV8wWX18-unsplash-55.jpg",
+				"https://work.covertnine.com/wp-content/uploads/2020/07/set-of-tool-wrench-162553-55.jpg"
+			],
+			id: [null, null, null],
+			captionTitle: [
+				"Slide Caption Top",
+				"Slide Caption Top",
+				"Slide Caption Top"
+			],
+			captionContent: [
+				"Slide Caption Bottom",
+				"Slide Caption Bottom",
+				"Slide Caption Bottom"
+			],
+			isResponsive: true,
+			slideMaxHeight: 640,
+			slideEqualHeight: true
+		}
+	},	
 	attributes,
 	// Render the block components
 	edit: compose([
