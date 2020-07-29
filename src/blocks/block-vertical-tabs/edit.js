@@ -12,7 +12,12 @@ import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Button, Tooltip } = wp.components;
-const { RichText, BlockControls, InnerBlocks, AlignmentToolbar } = wp.blockEditor;
+const {
+	RichText,
+	BlockControls,
+	InnerBlocks,
+	AlignmentToolbar
+} = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { select, dispatch } = wp.data;
@@ -148,13 +153,17 @@ class Edit extends Component {
 
 		const tabs = this.getTabs();
 
-		select("core/block-editor")
-			.getBlocksByClientId(clientId)[0]
-			.innerBlocks.forEach(function(block) {
+		const targetedBlock = select("core/block-editor").getBlocksByClientId(
+			clientId
+		)[0];
+
+		if (targetedBlock) {
+			targetedBlock.innerBlocks.forEach(function(block) {
 				dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
 					tabActive
 				});
 			});
+		}
 
 		return (
 			<Fragment>
