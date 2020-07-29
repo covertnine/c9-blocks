@@ -25,6 +25,14 @@ registerBlockType("c9-blocks/social-share", {
 		"Add buttons for social media share links to any page or post with custom color and shape settings.",
 		"c9-blocks"
 	),
+	example: {
+		attributes: {
+			linkedin: true,
+			email: true,
+			shareAlignment: "center",
+			shareButtonColor: "c9-share-color-social"
+		}
+	},
 	keywords: [__("share", "c9-blocks"), __("social", "c9-blocks")],
 
 	// Render the block components
