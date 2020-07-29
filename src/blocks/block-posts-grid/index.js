@@ -30,12 +30,36 @@ registerBlockType("c9-blocks/posts-grid", {
 		// fill in features
 	},
 	keywords: [__("responsive", "c9-blocks")],
-	description: __("Display responsive grids with post content of any kind with filtering, sorting, and flexible layout settings.", "c9-blocks"),
+	description: __(
+		"Display responsive grids with post content of any kind with filtering, sorting, and flexible layout settings. (Includes customizable outer container)",
+		"c9-blocks"
+	),
+	example: {
+		attributes: {},
+		innerBlocks: [
+			{
+				name: "c9-blocks/post-grid",
+				attributes: {
+					displayPostDate: true,
+					displayPostExcerpt: true,
+					displayPostAuthor: true,
+					displayPostLink: true,
+					displaySectionTitle: true,
+					columns: 3,
+					excerptLength: 20,
+					sectionTitle: "The Latest News",
+					imageSize: "c9-feature-medium-crop"
+				}
+			}
+		]
+	},
 	attributes,
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } = select("core/block-editor");
+			const { isBlockSelected, hasSelectedInnerBlock } = select(
+				"core/block-editor"
+			);
 
 			const { clientId } = ownProps;
 
