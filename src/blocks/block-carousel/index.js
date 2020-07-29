@@ -33,6 +33,113 @@ registerBlockType("c9-blocks/carousel", {
 		"Display animated carousel of any kind of content including columns, videos, images, buttons, and text.",
 		"c9-blocks"
 	),
+	example: {
+		attributes: {
+			slides: 3,
+			autoSlide: false,
+			slideMaxHeight: 728.140625,
+			slideEqualHeight: true,
+			slideSizes: [728.140625, 728.140625, 728.140625]
+		},
+		innerBlocks: [
+			{
+				name: "c9-blocks/carousel-slide",
+				attributes: {
+					id: 0,
+					slideActive: 0,
+					slides: 3
+				},
+				innerBlocks: [
+					{
+						name: "core/image",
+						attributes: {
+							sizeSlug: "large",
+							url:
+								"https://work.covertnine.com/wp-content/uploads/2020/07/jezael-melgoza-HYQvV8wWX18-unsplash-55-1024x638-1.jpg"
+						}
+					},
+					{
+						name: "c9-blocks/heading",
+						attributes: {
+							heading: "Headline H1-H6",
+							tagLevel: 3
+						}
+					},
+					{
+						name: "core/paragraph",
+						attributes: {
+							content:
+								"Use the anything carousel for columns of content that can be cycled through automatically, or paused until a user clicks the arrows or indicators. Show or hide indicators, and customize the number of slides with inspector settings."
+						}
+					}
+				]
+			},
+			{
+				name: "c9-blocks/carousel-slide",
+				attributes: {
+					id: 1,
+					slideActive: 0,
+					slides: 3
+				},
+				innerBlocks: [
+					{
+						name: "core/image",
+						attributes: {
+							sizeSlug: "large",
+							url:
+								"https://work.covertnine.com/wp-content/uploads/2020/07/jezael-melgoza-HYQvV8wWX18-unsplash-55-1024x638-1.jpg"
+						}
+					},
+					{
+						name: "c9-blocks/heading",
+						attributes: {
+							heading: "Headline H1-H6",
+							tagLevel: 3
+						}
+					},
+					{
+						name: "core/paragraph",
+						attributes: {
+							content:
+								"Use the anything carousel for columns of content that can be cycled through automatically, or paused until a user clicks the arrows or indicators. Show or hide indicators, and customize the number of slides with inspector settings."
+						}
+					}
+				]
+			},
+			{
+				name: "c9-blocks/carousel-slide",
+				attributes: {
+					id: 2,
+					slideActive: 0,
+					slides: 3
+				},
+				innerBlocks: [
+					{
+						name: "core/image",
+						attributes: {
+							sizeSlug: "large",
+							url:
+								"https://work.covertnine.com/wp-content/uploads/2020/07/jezael-melgoza-HYQvV8wWX18-unsplash-55-1024x638-1.jpg"
+						}
+					},
+					{
+						name: "c9-blocks/heading",
+						attributes: {
+							heading: "Headline H1-H6",
+							tagLevel: 3
+						}
+					},
+					{
+						name: "core/paragraph",
+						attributes: {
+							content:
+								"Use the anything carousel for columns of content that can be cycled through automatically, or paused until a user clicks the arrows or indicators. Show or hide indicators, and customize the number of slides with inspector settings."
+						}
+					}
+				]
+			}
+		]
+	},
 	attributes,
 	// Render the block components
 	edit: compose([
@@ -50,7 +157,9 @@ registerBlockType("c9-blocks/carousel", {
 			};
 		}),
 		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch("core/block-editor");
+			const { updateBlockAttributes, removeBlock } = dispatch(
+				"core/block-editor"
+			);
 
 			return {
 				updateBlockAttributes,
