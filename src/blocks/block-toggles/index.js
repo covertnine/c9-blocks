@@ -37,6 +37,82 @@ registerBlockType("c9-blocks/toggles", {
 		"Hide or show content with a toggleable heading link. Great for FAQ content.",
 		"c9-blocks"
 	),
+	example: {
+		attributes: {
+			toggleCount: 3
+		},
+		innerBlocks: [
+			{
+				name: "c9-blocks/toggles-toggle",
+				attributes: {
+					toggleNumber: 1,
+					heading: [
+						{
+							type: "span",
+							props: {
+								children: ["What are Toggles?"]
+							}
+						}
+					]
+				},
+				innerBlocks: [
+					{
+						name: "core/paragraph",
+						attributes: {
+							content:
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis."
+						}
+					}
+				]
+			},
+			{
+				name: "c9-blocks/toggles-toggle",
+				attributes: {
+					toggleNumber: 2,
+					heading: [
+						{
+							type: "span",
+							props: {
+								children: ["How do you open them?"]
+							}
+						}
+					]
+				},
+				innerBlocks: [
+					{
+						name: "core/paragraph",
+						attributes: {
+							content:
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis."
+						}
+					}
+				]
+			},
+			{
+				name: "c9-blocks/toggles-toggle",
+				attributes: {
+					toggleNumber: 3,
+					heading: [
+						{
+							type: "span",
+							props: {
+								children: ["Duplicate as needed."]
+							}
+						}
+					]
+				},
+				innerBlocks: [
+					{
+						name: "core/paragraph",
+						attributes: {
+							content:
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis."
+						}
+					}
+				]
+			}
+		]
+	},
 	attributes,
 	// Render the block components
 	edit: compose([
