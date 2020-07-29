@@ -29,6 +29,19 @@ registerBlockType("c9-blocks/post-grid", {
 	icon: Icon,
 	parent: "c9-blocks/post-container",
 	/* Add alignment to block wrapper. */
+	example: {
+		attributes: {
+			displayPostDate: true,
+			displayPostExcerpt: true,
+			displayPostAuthor: true,
+			displayPostLink: true,
+			displaySectionTitle: true,
+			columns: 3,
+			excerptLength: 20,
+			sectionTitle: "The Latest News",
+			imageSize: "c9-feature-medium-crop"
+		}
+	},
 	getEditWrapperProps({ align }) {
 		if (
 			"full" === align ||
