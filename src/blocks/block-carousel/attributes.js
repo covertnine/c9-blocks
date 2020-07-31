@@ -40,6 +40,9 @@ const attributes = {
 	slideSizes: {
 		type: "array",
 		default: []
+	},
+	verticalAlign: {
+		type: "string"
 	}
 };
 

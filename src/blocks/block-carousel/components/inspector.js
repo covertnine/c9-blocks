@@ -6,6 +6,8 @@ const { Component } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { BaseControl, PanelBody, RangeControl, ToggleControl } = wp.components;
 
+import VerticalAlignmentToolbar from "../../../components/vertical-alignment-toolbar";
+
 /**
  * Create an Inspector Controls wrapper Component
  */
@@ -24,7 +26,8 @@ export default class Inspector extends Component {
 			showIndicators,
 			wrapAround,
 			slideTime,
-			slideEqualHeight
+			slideEqualHeight,
+			verticalAlign
 		} = attributes;
 
 		return (
@@ -88,6 +91,14 @@ export default class Inspector extends Component {
 						checked={slideEqualHeight}
 						onChange={slideEqualHeight => setAttributes({ slideEqualHeight })}
 					/>
+					{slideEqualHeight ? (
+						<VerticalAlignmentToolbar
+							value={verticalAlign}
+							onChange={value => {
+								setAttributes({ verticalAlign: value });
+							}}
+						/>
+					) : null}
 				</PanelBody>
 			</InspectorControls>
 		);
