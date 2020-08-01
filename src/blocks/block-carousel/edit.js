@@ -256,7 +256,12 @@ class Edit extends Component {
 					>
 						{this.createIndicators(slides, instanceId)}
 					</ol>
-					<div className="carousel-inner">
+					<div
+						className={classnames(
+							"carousel-inner",
+							verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+						)}
+					>
 						<InnerBlocks
 							template={this.getSlidesTemplate(slides)}
 							templateLock="all"
