@@ -56,6 +56,9 @@ const attributes = {
 	slideEqualHeight: {
 		type: "boolean",
 		default: false
+	},
+	verticalAlign: {
+		type: "string"
 	}
 };
 

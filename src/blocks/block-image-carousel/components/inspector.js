@@ -1,3 +1,5 @@
+import VerticalAlignmentToolbar from "../../../components/vertical-alignment-toolbar";
+
 /**
  * WordPress dependencies
  */
@@ -25,7 +27,8 @@ export default class Inspector extends Component {
 			wrapAround,
 			slideTime,
 			isResponsive,
-			slideEqualHeight
+			slideEqualHeight,
+			verticalAlign
 		} = attributes;
 
 		return (
@@ -117,6 +120,14 @@ export default class Inspector extends Component {
 						checked={slideEqualHeight}
 						onChange={slideEqualHeight => setAttributes({ slideEqualHeight })}
 					/>
+					{slideEqualHeight ? (
+						<VerticalAlignmentToolbar
+							value={verticalAlign}
+							onChange={value => {
+								setAttributes({ verticalAlign: value });
+							}}
+						/>
+					) : null}
 				</PanelBody>
 			</InspectorControls>
 		);

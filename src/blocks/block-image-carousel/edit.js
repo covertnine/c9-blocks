@@ -5,6 +5,7 @@
  */
 import Inspector from "./components/inspector";
 import PauseToolBar from "../../components/pause-toolbar";
+import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 
 /**
  * WordPress dependencies
@@ -474,7 +475,8 @@ class Edit extends Component {
 			url,
 			slideTime,
 			slideEqualHeight,
-			slideMaxHeight
+			slideMaxHeight,
+			verticalAlign
 		} = attributes;
 
 		if (instanceId != attributes.instanceId) {
@@ -486,7 +488,9 @@ class Edit extends Component {
 
 		const SlidesComponent = this.createSlides(slides);
 
-		const setHeight = isSelectedBlockInRoot ? slideMaxHeight + 40 : slideMaxHeight;
+		const setHeight = isSelectedBlockInRoot
+			? slideMaxHeight + 40
+			: slideMaxHeight;
 
 		return (
 			<Fragment>
@@ -497,6 +501,14 @@ class Edit extends Component {
 							this.setState({ pause: value });
 						}}
 					/>
+					{slideEqualHeight ? (
+						<VerticalAlignmentToolbar
+							value={verticalAlign}
+							onChange={value => {
+								setAttributes({ verticalAlign: value });
+							}}
+						/>
+					) : null}
 				</BlockControls>
 
 				<Inspector
@@ -515,9 +527,7 @@ class Edit extends Component {
 					data-wrap={wrapAround}
 					ref={this.carouselRef}
 					style={
-						0 <= slideMaxHeight && slideEqualHeight
-							? { height: setHeight }
-							: {}
+						0 <= slideMaxHeight && slideEqualHeight ? { height: setHeight } : {}
 					}
 				>
 					<ol
