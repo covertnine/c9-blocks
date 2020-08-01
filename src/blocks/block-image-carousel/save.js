@@ -94,7 +94,8 @@ export default class Save extends Component {
 			wrapAround,
 			slideTime,
 			slideEqualHeight,
-			slideMaxHeight
+			slideMaxHeight,
+			verticalAlign
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
@@ -120,7 +121,14 @@ export default class Save extends Component {
 						{this.createIndicators(slides, instanceId)}
 					</ol>
 				)}
-				<div className="carousel-inner">{this.createSlides(slides)}</div>
+				<div
+					className={classnames(
+						"carousel-inner",
+						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+					)}
+				>
+					{this.createSlides(slides)}
+				</div>
 				{showControls && (
 					<Fragment>
 						<a

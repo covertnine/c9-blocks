@@ -3,6 +3,26 @@
  *
  * CSS for both Frontend+Backend.
  */
+
+.c9-image-carousel {
+	display: flex;
+}
+
+.c9-image-carousel .carousel-inner {
+	&.c9-is-vertically-aligned-top {
+		-ms-grid-row-align: start;
+		align-self: flex-start;
+	}
+	&.c9-is-vertically-aligned-center {
+		-ms-grid-row-align: center;
+		align-self: center;
+	}
+	&.c9-is-vertically-aligned-bottom {
+		-ms-grid-row-align: end;
+		align-self: flex-end;
+	}
+}
+
 .c9-image-carousel .carousel-indicators li:after,
 .c9-image-carousel .carousel-indicators li:before {
 	display: none;

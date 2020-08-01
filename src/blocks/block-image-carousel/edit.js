@@ -538,7 +538,14 @@ class Edit extends Component {
 					>
 						{this.createIndicators(slides, instanceId)}
 					</ol>
-					<div className="carousel-inner">{SlidesComponent}</div>
+					<div
+						className={classnames(
+							"carousel-inner",
+							verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+						)}
+					>
+						{SlidesComponent}
+					</div>
 					{showControls && (
 						<Fragment>
 							<a
