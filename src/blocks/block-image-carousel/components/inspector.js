@@ -4,7 +4,7 @@ import VerticalAlignmentToolbar from "../../../components/vertical-alignment-too
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Component } = wp.element;
+const { Component, Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { BaseControl, PanelBody, RangeControl, ToggleControl } = wp.components;
 
@@ -121,12 +121,17 @@ export default class Inspector extends Component {
 						onChange={slideEqualHeight => setAttributes({ slideEqualHeight })}
 					/>
 					{slideEqualHeight ? (
-						<VerticalAlignmentToolbar
-							value={verticalAlign}
-							onChange={value => {
-								setAttributes({ verticalAlign: value });
-							}}
-						/>
+						<Fragment>
+							<p className="components-base-control__label">
+								Vertical alignment for slides
+							</p>
+							<VerticalAlignmentToolbar
+								value={verticalAlign}
+								onChange={value => {
+									setAttributes({ verticalAlign: value });
+								}}
+							/>
+						</Fragment>
 					) : null}
 				</PanelBody>
 			</InspectorControls>
