@@ -91,9 +91,44 @@
 	height: auto;
 }
 
+.components-panel__body.plugin-c9-panel .plugin-c9-panel-button {
+	height: auto;
+	display: block;
+	margin: 0px 0px 10px 0px;
+	padding: 8px 0px;
+	width: 100%;
+	border-radius: 0px;
+	border: 1px solid #f0f0f0;
+	box-shadow: none;
+	color: #191e23;
+}
+
+.components-panel__body.plugin-c9-panel .plugin-c9-panel-button:hover {
+	color: #0075af;
+	border: 1px solid #0075af;
+	box-shadow: none;
+}
+
+.components-panel__body.plugin-c9-panel .plugin-c9-panel-button svg {
+	display: block;
+	margin: 0px auto 4px auto;
+}
+
 /* adding position relative so fonts will display in heading dashicons */
 .components-toolbar__control.components-button {
 	position: relative;
+}
+.block-editor-block-inspector .components-toolbar[icon="heading"] div .components-button.has-icon {
+	min-width: 30px;
+	padding-left: 6px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.block-editor-block-inspector .components-toolbar[icon="heading"] .components-toolbar div:first-child .components-button.has-icon:before {
+	left: 2px;
+	right: 2px;
 }
 
 .components-toolbar__control.components-button[data-subscript]:after {
@@ -105,6 +140,7 @@
 .components-toolbar__control.components-button[data-subscript] svg {
 	width: 30px;
 	height: 30px;
+	padding: 3px;
 }
 
 .block-editor-block-list__layout .wp-block .block-editor-block-list__layout .block-editor-block-list__empty-block-inserter,

@@ -1,24 +1,14 @@
-.c9-custom-color-settings-container {
-	display: -webkit-box;
-	display: flex;
-	-webkit-box-align: center;
-	align-items: center;
-}
-
 .c9-custom-color-settings-container .c9-color-icon-indicate {
 	position: relative;
-	-webkit-transform: scale(1);
 	transform: scale(1);
-	-webkit-transition: -webkit-transform 0.1s ease;
-	transition: -webkit-transform 0.1s ease;
 	transition: transform 0.1s ease;
-	transition: transform 0.1s ease, -webkit-transform 0.1s ease;
 	border-radius: 50%;
 	padding: 0;
 }
 
+.c9-block-default-palette .components-color-palette__item-wrapper {padding: 2px;}
+
 .c9-custom-color-settings-container .c9-color-icon-indicate:hover {
-	-webkit-transform: scale(1);
 	transform: scale(1);
 	height: auto;
 }
@@ -29,6 +19,8 @@
 	border-radius: 50%;
 	margin: 0;
 }
+
+.components-popover.popover-color .components-popover__content>div>.components-base-control {padding: 16px 16px 12px;}
 
 .components-popover.popover-color>.components-popover__content>.components-base-control {
 	padding: 0 10px;

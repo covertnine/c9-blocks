@@ -398,9 +398,9 @@ class TemplatesModal extends Component {
 											</div>
 											{hoveredItem && BlockPreview && (
 												<div className="c9-reusable-preview">
-													<BlockPreview 
-														blocks={hoveredItem} 
-														viewportWidth={ Math.round(window.innerWidth * 0.8) } 
+													<BlockPreview
+														blocks={hoveredItem}
+														viewportWidth={ Math.round(window.innerWidth * 0.8) }
 													/>
 												</div>
 											)}
