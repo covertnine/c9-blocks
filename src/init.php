@@ -84,9 +84,7 @@ function c9_register_tuts_endpoint() {
 		array(
 			'methods'  => 'GET',
 			'callback' => 'c9_get_tuts',
-			'permission_callback'	=> function() {
-				return true;
-			},
+			'permission_callback'	=> '__return_true',
 		)
 	);
 }
