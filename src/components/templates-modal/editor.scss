@@ -58,11 +58,8 @@ body .c9-templates-modal {
 	}
 
 	.c9-type-heading {
-		display: -webkit-box;
 		display: flex;
-		-webkit-box-align: center;
 		align-items: center;
-		-webkit-box-pack: end;
 		justify-content: flex-end;
 		margin: 40px 60px 40px 0px;
 
@@ -111,23 +108,18 @@ body .c9-templates-modal {
 	}
 
 	.c9-loading-wrapper {
-		display: -webkit-box;
 		display: flex;
-		-webkit-box-pack: center;
 		justify-content: center;
-		-webkit-box-align: center;
 		align-items: center;
 	}
 
 	.c9-notice {
-		-webkit-transition: all 2s;
 		transition: all 2s;
 		display: none;
 
 		&.updating {
 			-webkit-animation: 2s fadeOut;
 			animation: 2s fadeOut;
-			display: -webkit-box;
 			display: flex;
 			opacity: 1;
 		}
@@ -148,9 +140,7 @@ body .c9-templates-modal {
 		z-index: 10;
 		opacity: 1;
 		position: absolute;
-		-webkit-box-align: center;
 		align-items: center;
-		-webkit-box-pack: center;
 		justify-content: center;
 
 		button {
@@ -164,17 +154,14 @@ body .c9-templates-modal {
 	.c9-component-modal-tab-panel {
 		button:hover {
 			cursor: pointer;
-			box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.5);
+			color: #121212;
 		}
 
 		.btn-danger {
 			color: #819fb3;
 			background: white;
-			display: -webkit-box;
 			display: flex;
-			-webkit-box-align: center;
 			align-items: center;
-			-webkit-box-pack: center;
 			justify-content: center;
 			font-size: 10px;
 			font-weight: 700;
@@ -194,14 +181,9 @@ body .c9-templates-modal {
 
 			&.btn-clear {
 				min-height: 200px;
-				display: -webkit-box;
 				display: flex;
-				-webkit-box-align: center;
 				align-items: center;
-				-webkit-box-pack: center;
 				justify-content: center;
-				-webkit-box-orient: vertical;
-				-webkit-box-direction: normal;
 				flex-direction: column;
 				background: #ffffff;
 				border: 1px solid #f1f1f1;
@@ -254,14 +236,13 @@ body .c9-templates-modal {
 
 				span {
 					display: block;
-					font-size: 8px;
 					color: #576d7b;
 					padding-top: 1px;
-					font-size: 11px;
+					font-size: 13px;
 					height: 40px;
 					line-height: 1.1;
-					margin: 2px auto;
-					margin-top: 4px;
+					margin: 0px auto;
+					margin-top: 5px;
 
 					&.c9-reusable-label {
 						height: 40px;
@@ -271,14 +252,14 @@ body .c9-templates-modal {
 					}
 
 					&.block-editor-block-icon {
-						height: 40px;
-						width: 40px;
+						height: 20px;
+						width: 20px;
 
 						svg {
 							max-width: none;
 							max-height: none;
-							height: 40px;
-							width: 40px;
+							height: 20px;
+							width: 20px;
 						}
 					}
 				}
@@ -325,7 +306,6 @@ body .c9-templates-modal {
 			}
 
 			.c9-icon-and-about {
-				display: -webkit-box;
 				display: flex;
 			}
 
@@ -356,7 +336,6 @@ body .c9-templates-modal {
 				content: '';
 				background: rgba(255, 255, 255, 0);
 				background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(47%, rgba(255, 255, 255, 0)), color-stop(96%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-				background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(47%, rgba(255, 255, 255, 0)), color-stop(96%, rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 1)));
 				background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 47%, rgba(255, 255, 255, 1) 96%, rgba(255, 255, 255, 1) 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
 				position: absolute;
@@ -367,7 +346,6 @@ body .c9-templates-modal {
 				left: 0;
 				right: 0;
 				opacity: 1;
-				-webkit-transition: opacity .5s ease-out;
 				transition: opacity .5s ease-out;
 			}
 
@@ -414,12 +392,8 @@ body .c9-templates-modal {
 			}
 
 			button {
-				display: -webkit-box;
 				display: flex;
-				-webkit-box-orient: vertical;
-				-webkit-box-direction: normal;
 				flex-direction: column;
-				-webkit-box-pack: left;
 				justify-content: left;
 				background: #ffffff;
 				border: 1px solid #e8e8e8;
@@ -460,7 +434,7 @@ body .c9-templates-modal {
 					padding-left: 6px;
 					padding-right: 6px;
 					margin: 0px 3px;
-					width: 90px;
+					width: 150px;
 					height: 90px;
 					display: inline-block;
 					white-space: normal;
@@ -489,7 +463,6 @@ body .c9-templates-modal {
 					overflow: scroll;
 
 					.block-editor-block-preview__content {
-						-webkit-transform: scale(1) !important;
 						transform: scale(1) !important;
 
 						>div>.block-editor-block-list__layout>.wp-block>* {
@@ -505,7 +478,7 @@ body .c9-templates-modal {
 		}
 
 		.c9-tutorials .c9-tut-wrapper {
-			min-height: 220px;
+			min-height: 265px;
 			text-align: center;
 			padding: 10px;
 			border: 1px solid #f1f1f1;
@@ -520,7 +493,8 @@ body .c9-templates-modal {
 			h4 {
 				margin-bottom: 10px;
 				text-transform: uppercase;
-				font-size: 11px;
+				font-size: 13px;
+				letter-spacing: .5px;
 				line-height: 1.2;
 				text-decoration: none;
 				color: #576d7b;
@@ -540,27 +514,25 @@ body .c9-templates-modal {
 		}
 
 		.components-tab-panel__tabs {
-			display: -webkit-box;
 			display: flex;
-			-webkit-box-align: center;
 			align-items: center;
-			-webkit-box-pack: justify;
 			justify-content: flex-start;
+			margin-bottom: 25px;
 
 			.c9-template-tabs-tab {
-				font-size: 10px;
-				padding: 12px 22px 16px 22px;
+				font-size: 15px;
+				padding: 20px 28px;
 				color: #819fb3;
 				font-weight: 700;
 				text-transform: uppercase;
-				margin-top: 9px;
+				margin-top: 0px;
 				margin-right: 8px;
 				line-height: 1;
-				display: -webkit-box;
 				display: flex;
-				-webkit-box-align: center;
 				align-items: center;
 				height: 30px;
+				border: 1px solid #f0f0f0;
+				box-shadow: none;
 
 				&:focus {
 					outline: none;
@@ -586,6 +558,20 @@ body .c9-templates-modal {
 			.c9-template-tabs-tab.tab-clear {
 				margin-top: 0px !important;
 			}
+
+			.c9-template-tabs-tab span {
+				transition: color .3s ease-in;
+			}
+
+			.c9-template-tabs-tab:hover span,
+			.c9-template-tabs-tab:hover span:hover {
+				color: #121212;
+			}
+
+			.c9-template-tabs-tab.is-active:hover span,
+			.c9-template-tabs-tab.is-active:hover span:hover {
+				color: #f0f0f0;
+			}
 		}
 	}
 }
@@ -604,24 +590,20 @@ body .c9-templates-modal {
 
 @-webkit-keyframes scaleIn {
 	from {
-		-webkit-transform: scale(0.5);
 		transform: scale(0.5);
 	}
 
 	to {
-		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
 }
 
 @keyframes scaleIn {
 	from {
-		-webkit-transform: scale(0.5);
 		transform: scale(0.5);
 	}
 
 	to {
-		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
 }

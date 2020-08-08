@@ -60,7 +60,7 @@
 
 /* adjusts initial line height for Gutenberg editor so it lines up on blank screens */
 .editor-default-block-appender textarea.editor-default-block-appender__content {
-	line-height: 1.8;
+	// line-height: 1.8;
 }
 
 .c9-grid .block-editor-block-list__layout .wp-block.is-selected>.wp-block>[data-type]>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block:not(.is-selected)>.wp-block:before,
@@ -72,10 +72,10 @@
 	border: 1px dotted #000;
 }
 
-/* removes margins above/below blocks to make it more closely resemble frontend*/
+/* leaves just enough room for inbetween block inserter, more closely resembling frontend */
 .editor-styles-wrapper .c9-grid [data-block] {
-	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .wp-block>.block-editor-block-list__insertion-point {
@@ -118,6 +118,7 @@
 .components-toolbar__control.components-button {
 	position: relative;
 }
+
 .block-editor-block-inspector .components-toolbar[icon="heading"] div .components-button.has-icon {
 	min-width: 30px;
 	padding-left: 6px;
