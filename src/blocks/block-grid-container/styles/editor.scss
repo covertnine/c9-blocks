@@ -72,7 +72,6 @@
 
 
 /* overrides default paragraph margin added to editor styles */
-
 .editor-styles-wrapper .c9-grid p[data-block] {
 	margin-top: 0px;
 	margin-bottom: 20px;
@@ -178,9 +177,7 @@
 
 
 /****************************************************************************************/
-
-
-/***************************** C9 Container block edits for backend only
+/* C9 Container block edits for backend only
 /****************************************************************************************/
 
 //prevents inner columns from aligning center with no min width when added with empty content
@@ -452,6 +449,27 @@
 		width: 100vw;
 	}
 
+	// post single has narrower container
+	body.folded.post-type-post .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] {
+		width: 100vw;
+		max-width: calc(100vw - 280px);
+		margin-left: calc((-280px / 2) + 9px); //accounts for 15px of padding and borders from editor-styles-wrapper and other gutenberg elements
+	}
+
+	/* c9 grid on blog post with wide container width unsetting additional align wide class*/
+	body.folded.post-type-post .editor-styles-wrapper .is-root-container .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"]>.wp-block[data-align="wide"] {
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
+	}
+
+	/* c9 grid on blog post with full container width unsetting additional align full class*/
+	body.folded.post-type-post .editor-styles-wrapper .is-root-container .wp-block[data-type="c9-blocks/grid"] .container[data-align="full"]>.wp-block[data-align="full"] {
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
+	}
+
 	body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] {
 		width: calc(100vw - 116px);
 		max-width: calc(100vw - 116px);
@@ -484,8 +502,15 @@
 
 	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container,
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
-		max-width: calc(100vw - 280px - 100px);
+		max-width: calc(100vw - 280px);
+		width: 1140px;
 		min-width: 1000px;
+	}
+
+	body.folded.post-type-post .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
+		width: 1140px;
+		max-width: calc(100vw - 280px);
+		// margin-left: calc((-280px / 2) + 9px); //accounts for 15px of padding and borders from editor-styles-wrapper and other gutenberg elements
 	}
 
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"],
@@ -601,12 +626,26 @@
 		margin-right: 0;
 	}
 
+	/* c9 grid on blog post with default container width */
+	.post-type-post .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
+		width: 1140px;
+		max-width: calc(100vw - 280px - 116px - 6%);
+	}
+
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"],
 	body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"] {
 		width: 120%;
 		max-width: 1368px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	/* c9 grid on blog post with default container width */
+	.post-type-post .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"] {
+		width: 120%;
+		max-width: 1368px;
+		margin-left: -10%;
+		margin-right: -10%;
 	}
 
 	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"],
