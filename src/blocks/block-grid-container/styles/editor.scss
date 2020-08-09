@@ -510,7 +510,6 @@
 	body.folded.post-type-post .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
 		width: 1140px;
 		max-width: calc(100vw - 280px);
-		// margin-left: calc((-280px / 2) + 9px); //accounts for 15px of padding and borders from editor-styles-wrapper and other gutenberg elements
 	}
 
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"],
