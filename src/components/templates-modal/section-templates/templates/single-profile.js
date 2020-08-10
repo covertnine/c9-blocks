@@ -12,7 +12,7 @@ export default {
 		<div class="section-heading c9-heading text-center"><h3 class="c9-h h1">Namey McNamster</h3></div>
 		<!-- /wp:c9-blocks/heading -->
 
-		<!-- wp:c9-blocks/heading {"heading":"Click on the section's outer edge of the C9 Grid block to select it and changes its background overlay, imagery, or video. If you don't see a sidebar when clicking on the C9 Grid block, click the gear icon and then change \u003ca href=\u0022#\u0022\u003eBackground Settings\u003c/a\u003e","tagLevel":6,"displayLevel":"3","type":"c9-sh subhead-h","textAlign":"center","weight":"light","overrideStyle":true} -->
+		<!-- wp:c9-blocks/heading {"heading":"Click on the section's outer edge of the C9 Grid block to select it and changes its background overlay, imagery, or video. If you don't see a sidebar when clicking on the C9 Grid block, click the gear icon and then change Background Settings.","tagLevel":6,"displayLevel":"3","type":"c9-sh subhead-h","textAlign":"center","weight":"light","overrideStyle":true} -->
 		<div class="section-heading c9-heading text-center"><h6 class="c9-sh subhead-h3 font-weight-light">Click on the section's outer edge of the C9 Grid block to select it and changes its background overlay, imagery, or video. If you don't see a sidebar when clicking on the C9 Grid block, click the gear icon and then change <a href="#">Background Settings</a></h6></div>
 		<!-- /wp:c9-blocks/heading -->
 

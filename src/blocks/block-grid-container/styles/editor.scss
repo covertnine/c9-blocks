@@ -619,6 +619,14 @@
 		max-width: calc(100vw - 280px);
 	}
 
+	/* WP 5.5 updates */
+	// Admin closed. Inspector open.
+	body.folded.post-type-page .is-sidebar-opened .editor-styles-wrapper .is-root-container .wp-block[data-type="c9-blocks/grid"] .container-fluid[data-align="full"] {
+		max-width: calc(100vw - 280px);
+		min-width: 1100px; //added to account for strange bug that doesnt make width 100% inside a grid
+		width: calc(100vw - 280px);
+	}
+
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .block-editor-editor-skeleton__content .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-fluid[data-align="full"],
 	body.folded .edit-post-layout:not(.is-sidebar-opened) .block-editor-editor-skeleton__content .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-fluid[data-align="full"] {
 		margin-left: calc((-100vw + 100% + 116px) / 2);
