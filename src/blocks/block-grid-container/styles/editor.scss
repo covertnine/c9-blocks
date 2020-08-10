@@ -449,11 +449,14 @@
 		width: 100vw;
 	}
 
+	body.folded.post-type-page .is-sidebar-opened .editor-styles-wrapper .is-root-container .wp-block[data-type="c9-blocks/grid"] {
+		max-width: calc(100vw - 280px);
+	}
+
 	// post single has narrower container
 	body.folded.post-type-post .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] {
-		width: 100vw;
+		width: 100%;
 		max-width: calc(100vw - 280px);
-		margin-left: calc((-280px / 2) + 9px); //accounts for 15px of padding and borders from editor-styles-wrapper and other gutenberg elements
 	}
 
 	/* c9 grid on blog post with wide container width unsetting additional align wide class*/
