@@ -211,8 +211,8 @@ export default {
 	<div class="section-heading c9-heading text-center"><h3 class="c9-h h1">Namey McNamster</h3></div>
 	<!-- /wp:c9-blocks/heading -->
 
-	<!-- wp:c9-blocks/heading {"heading":"Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. \u003ca href=\u0022https://cortex.covertnine.com/wp-admin/post.php?post=319\u0026amp;action=edit#\u0022\u003eDramatically\u003c/a\u003e.","tagLevel":6,"displayLevel":"3","type":"c9-sh subhead-h","textAlign":"center","weight":"light","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-center"><h6 class="c9-sh subhead-h3 font-weight-light">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. <a href="https://cortex.covertnine.com/wp-admin/post.php?post=319&amp;action=edit#">Dramatically</a>.</h6></div>
+	<!-- wp:c9-blocks/heading {"heading":"Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.","tagLevel":6,"displayLevel":"3","type":"c9-sh subhead-h","textAlign":"center","weight":"light","overrideStyle":true} -->
+	<div class="section-heading c9-heading text-center"><h6 class="c9-sh subhead-h3 font-weight-light">Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</h6></div>
 	<!-- /wp:c9-blocks/heading -->
 
 	<!-- wp:spacer {"height":31} -->

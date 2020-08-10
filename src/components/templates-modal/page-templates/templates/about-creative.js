@@ -26,7 +26,7 @@ export default {
 	<div class="c9-grid p-5 c9-scroll" style="min-height:20vh;background-color:rgba(25,25,25,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#ffffff","overlayOpacity":10,"containerMargin":{"linked":false,"top":"5","bottom":"-1","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 mt-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":404,"sizeSlug":"large"} -->
-	<figure class="wp-block-image size-large"><img src="http://c9-starter.local/wp-content/uploads/2019/10/hermes-rivera-6k78FL6hlN8-unsplash-1024x576.jpg" alt="" class="wp-image-404"/></figure>
+	<figure class="wp-block-image size-large"><img src="//cortex.covertnine.com/wp-content/uploads/2019/10/hermes-rivera-6k78FL6hlN8-unsplash-1024x576.jpg" alt="" class="wp-image-404"/></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:c9-blocks/heading {"heading":"Cras vitae fermentum ips ue convallis, sem ac malesuada eleifend, nunc tortor aliquam"} -->

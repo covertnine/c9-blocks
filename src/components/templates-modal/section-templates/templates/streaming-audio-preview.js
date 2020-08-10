@@ -3,7 +3,7 @@ import Icon from "../../../../../assets/section-template-icons/streaming-audio-p
 export default {
 	icon: Icon,
 	title: "Streaming Audio Preview",
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"http://c9-starter.local/wp-content/uploads/2020/01/neonbrand-271745-unsplash-e1521416335547.jpg","overlayHue":"#000000","overlayOpacity":4,"blendMode":"normal","minScreenHeight":10,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2020/01/neonbrand-271745-unsplash-e1521416335547.jpg","overlayHue":"#000000","overlayOpacity":4,"blendMode":"normal","minScreenHeight":10,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
 	<div class="c9-grid c9-scroll c9-grid-has-background" style="min-height:10vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer -->
@@ -52,6 +52,6 @@ export default {
 	</div></figure>
 	<!-- /wp:core-embed/spotify --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.4);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:50% 50%;background-image:url(http://c9-starter.local/wp-content/uploads/2020/01/neonbrand-271745-unsplash-e1521416335547.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.4);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:50% 50%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2020/01/neonbrand-271745-unsplash-e1521416335547.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->`
 };

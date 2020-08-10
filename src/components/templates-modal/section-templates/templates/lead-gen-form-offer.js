@@ -3,7 +3,7 @@ import Icon from "../../../../../assets/section-template-icons/lead-gen-form-off
 export default {
 	icon: Icon,
 	title: "Lead Gen Form + Offer",
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"http://c9-starter.local/wp-content/uploads/2019/10/spacex-uj3hvdfQujI-unsplash.jpg","containerHue":"#070707","overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":70,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/10/spacex-uj3hvdfQujI-unsplash.jpg","containerHue":"#070707","overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":70,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
 	<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:70vh;background-color:rgba(7,7,7,1)"><!-- wp:c9-blocks/column-container {"align":"full","columns":1,"columnMaxWidth":600,"layout":"c9-1-col-equal","containerWidth":"container-fluid","verticalAlign":"center"} -->
 	<div class="container-fluid alignfull c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center c9-1-col-equal c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:600px"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Offer Headline","displayLevel":"4","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
@@ -40,6 +40,6 @@ export default {
 	<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(40,40,40,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:28.110599078341014% 57.638888888888886%;background-image:url(http://c9-starter.local/wp-content/uploads/2019/10/spacex-uj3hvdfQujI-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(40,40,40,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:28.110599078341014% 57.638888888888886%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/10/spacex-uj3hvdfQujI-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->`
 };
