@@ -3,15 +3,15 @@ import Icon from "../../../../../assets/section-template-icons/large-spotify-emb
 export default {
 	icon: Icon,
 	title: "Large Spotify Embed + Image Carousel",
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":5,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/music-bg.jpg","overlayHue":"#7a0002","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":78} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:78vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center"} -->
-<div class="container alignwide c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/music-bg.jpg","overlayHue":"#7a0002","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":78} -->
+<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:78vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-equal","verticalAlign":"center"} -->
+<div class="container alignwide c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Listen","subheading":"Spotify Playlist","addSubheading":true,"displayLevel":"3","textColor":"#ffffff","weight":"bold","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h1 class="c9-h h3 font-weight-bold" style="color:#ffffff">Listen</h1><div class="c9-h h3"><small class="text-muted">&nbsp;Spotify Playlist</small></div></div>
 <!-- /wp:c9-blocks/heading -->
 
-<!-- wp:core-embed/spotify {"url":"https://open.spotify.com/playlist/37i9dQZF1DXd0ZFXhY0CRF?","type":"rich","providerNameSlug":"spotify","allowResponsive":false,"className":""} -->
-<figure class="wp-block-embed-spotify wp-block-embed is-type-rich is-provider-spotify"><div class="wp-block-embed__wrapper">
+<!-- wp:core-embed/spotify {"url":"https://open.spotify.com/playlist/37i9dQZF1DXd0ZFXhY0CRF?","type":"rich","providerNameSlug":"spotify","className":"wp-embed-aspect-9-16 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed-spotify wp-block-embed is-type-rich is-provider-spotify wp-embed-aspect-9-16 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 https://open.spotify.com/playlist/37i9dQZF1DXd0ZFXhY0CRF?
 </div></figure>
 <!-- /wp:core-embed/spotify --></div></div>
