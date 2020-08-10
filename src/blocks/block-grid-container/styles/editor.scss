@@ -568,6 +568,12 @@
 		width: calc(100vw - 280px - 6%);
 	}
 
+	/* WP 5.5 update */
+	body.folded .is-sidebar-opened .editor-styles-wrapper .is-root-container>.wp-block[data-type="c9-blocks/grid"] .container-fluid[data-align="full"] {
+		max-width: calc(100vw - 280px);
+		width: calc(100vw - 280px);
+	}
+
 	/* WP 5.5 updates */
 	// Admin closed. Inspector open.
 	body.folded.post-type-page .is-sidebar-opened .editor-styles-wrapper .is-root-container .wp-block[data-type="c9-blocks/grid"] .container-fluid[data-align="full"] {
