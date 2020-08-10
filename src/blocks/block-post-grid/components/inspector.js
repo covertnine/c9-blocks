@@ -52,7 +52,7 @@ export default class Inspector extends Component {
 			bgPadding: bgPadding,
 			bgMargin: bgMargin,
 			setAttributes: setAttributes,
-			categoriesList: [],
+			categoriesList: []
 		};
 	}
 
@@ -206,6 +206,18 @@ export default class Inspector extends Component {
 			};
 		});
 
+		// Category type options
+		const categoriesTypeOptions = [
+			{ value: "", label: __("All categories", "c9-blocks") }
+		].concat(
+			categoriesList.map(c => {
+				return {
+					value: c.id,
+					label: __(c.name, "c9-blocks")
+				};
+			})
+		);
+
 		// Tag type options
 		const tagsListOptions = [
 			{ value: "", label: __("All tags", "c9-blocks") }
@@ -337,11 +349,11 @@ export default class Inspector extends Component {
 						}
 					/>
 					{attributes.filterByCategory ? (
-						<QueryControls
-							{...{ categories }}
-							selectedCategoryId={categories}
-							categoriesList={categoriesList}
-							onCategoryChange={value =>
+						<SelectControl
+							label={__("Category", "c9-blocks")}
+							options={categoriesTypeOptions}
+							value={attributes.categories}
+							onChange={value =>
 								setAttributes({ categories: "" !== value ? value : undefined })
 							}
 						/>
