@@ -55,7 +55,7 @@ class Edit extends Component {
 
 		const { slides } = this.props.attributes;
 
-		if (slides == undefined) {
+		if (slides === undefined) {
 			this.props.setAttributes({ slides: 3 });
 		}
 	}

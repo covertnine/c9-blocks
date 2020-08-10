@@ -7,7 +7,7 @@ const attributes = {
 	},
 	slides: {
 		type: "number",
-		default: undefined
+		default: 3
 	},
 	showControls: {
 		type: "boolean",

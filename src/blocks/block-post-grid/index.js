@@ -75,8 +75,6 @@ registerBlockType("c9-blocks/post-grid", {
 				value => !isUndefined(value)
 			);
 
-			console.log(setCategories, setTags)
-
 			return {
 				latestPosts: getEntityRecords(
 					"postType",
