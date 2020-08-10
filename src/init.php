@@ -87,7 +87,7 @@ function c9_register_tuts_endpoint() {
 			'permission_callback'	=> function() {
 				return true;
 			},
-		),
+		)
 	);
 }
 add_action( 'rest_api_init', 'c9_register_tuts_endpoint' );
