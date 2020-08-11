@@ -190,7 +190,9 @@ If you're working on behalf of a client or customer and want to build your own s
 
 == Support ==
 
-Please visit our support forum: [Here](https://www.covertnine.com/community/support/).
+Please visit our support forum: [Here](https://www.covertnine.com/community/support/)
+
+Get premium paid support: [Here](https://www.covertnien.com/get-support)
 
 Main documentation can be found [Here](https://c9.covertnine.com/documentation/)
 
