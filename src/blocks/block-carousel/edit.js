@@ -151,9 +151,9 @@ class Edit extends Component {
 		let sizes = times(slides, constant(-1));
 		// console.log(sizes);
 		const slideHeightCallback = (id, height) => {
-			console.log(id, height);
+			// console.log(id, height);
 			sizes[id] = height;
-			console.log(sizes);
+			// console.log(sizes);
 		};
 
 		let templates = times(slides, id => [
