@@ -52,12 +52,6 @@ class Edit extends Component {
 		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
 			self.setState({ active: to });
 		});
-
-		const { slides } = this.props.attributes;
-
-		if (slides === undefined) {
-			this.props.setAttributes({ slides: 3 });
-		}
 	}
 
 	/**
