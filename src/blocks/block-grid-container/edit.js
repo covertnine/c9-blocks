@@ -41,6 +41,21 @@ class Edit extends Component {
 		return this.getRowsTemplate(rows + 1);
 	};
 
+	// temp fix until template re-rendering upon insertion is fixed
+	setAndUnsetLock = () => {
+		this.setState({
+			templateLock: "insert",
+			lockIcon: "admin-links"
+		});
+		// re-render immediately after next event cycle
+		setTimeout(() => {
+			this.setState({
+				templateLock: "all",
+				lockIcon: "editor-unlink"
+			});
+		});
+	}
+
 	/**
 	 * Generates the child (row) column container blocks.
 	 */
@@ -87,6 +102,7 @@ class Edit extends Component {
 									onClick={() => {
 										if (1 < rows) {
 											setAttributes({ rows: rows - 1 });
+											this.setAndUnsetLock();
 										}
 									}}
 								>
@@ -98,6 +114,7 @@ class Edit extends Component {
 									onClick={() => {
 										if (20 > rows) {
 											setAttributes({ rows: rows + 1 });
+											this.setAndUnsetLock();
 										}
 									}}
 								>
