@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
 Tested up to: 5.5
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.1.2 =
+Fixed bugs to grid row buttons and icons missing for delete toggle buttons.
 
 = 1.1.1 =
 Updated backend settings and CSS for WordPress 5.5. Added equal height slide settings for image carousels and carousels. Added WP Query filtering by tags or categories for Post Grids. Usability enhancements for WP 5.5 to make it easier to add content to C9 Grids and carousels. C9 Grids can be used on Posts in addition to Pages. Added better support for IE11.

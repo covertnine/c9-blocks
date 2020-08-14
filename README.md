@@ -74,6 +74,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.1.2**
+Fixed bugs to grid row buttons and icons missing for delete toggle buttons.
+
 **1.1.1**
 Added tag filtering, updated for WP 5.5, equal height slides for carousels setting, cleaned up code, templates.
 
