@@ -66,6 +66,18 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 		className: false
 	},
 
+	attributes: {
+		slug: {
+			type: "string"
+		},
+		tabActive: {
+			type: "string"
+		},
+		id: {
+			type: "number"
+		}
+	},
+
 	edit: VerticalTab,
 
 	getEditWrapperProps(attributes) {
