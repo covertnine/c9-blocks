@@ -189,9 +189,9 @@ function c9_blocks_loader() {
 	require_once plugin_dir_path( __FILE__ ) . 'blocks/block-post-grid/index.php';
 
 	/**
-	 * Load Horizontal Tab Component PHP
+	 * Load Vertical Tab Component PHP
 	 */
-	require_once plugin_dir_path( __FILE__ ) . 'blocks/block-horizontal-tabs/components/horizontal-tab/index.php';
+	require_once plugin_dir_path( __FILE__ ) . 'blocks/block-vertical-tabs/components/vertical-tab/index.php';
 }
 add_action( 'plugins_loaded', 'c9_blocks_loader' );
 

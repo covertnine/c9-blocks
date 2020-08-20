@@ -43,7 +43,7 @@ import "./blocks/block-image-carousel";
 import "./blocks/block-column-container";
 import "./blocks/block-column-container/components/column.js";
 import "./blocks/block-horizontal-tabs/components/horizontal-tab";
-import "./blocks/block-vertical-tabs/components/vertical-tab.js";
+import "./blocks/block-vertical-tabs/components/vertical-tab";
 import "./blocks/block-toggles/components/toggle.js";
 import "./blocks/block-carousel/components/slide.js";
 import "./blocks/block-post-grid";
