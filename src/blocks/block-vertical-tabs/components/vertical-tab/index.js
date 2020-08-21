@@ -39,7 +39,8 @@ export default class VerticalTab extends Component {
 				aria-labelledby={`tab-button-${slug}`}
 			>
 				<InnerBlocks
-					// template={[['core/paragraph']]}
+					// temp fix for innerblock not showing up on initial render
+					template={[['core/paragraph']]}
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
 				/>
