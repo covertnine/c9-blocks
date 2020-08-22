@@ -6,6 +6,7 @@ const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.blockEditor;
 const { registerBlockType } = wp.blocks;
+const { withSelect } = wp.data;
 
 /**
  * External Dependencies.
@@ -23,7 +24,7 @@ export default class VerticalTab extends Component {
 	render() {
 		const { tabActive, slug, id } = this.props.attributes;
 		// eslint-disable-next-line no-unused-vars
-		let { className = "" } = this.props;
+		let { className = "", hasChildBlocks } = this.props;
 
 		className = classnames(
 			"c9-vertical-tabs-tab",
@@ -40,7 +41,11 @@ export default class VerticalTab extends Component {
 			>
 				<InnerBlocks
 					// temp fix for innerblock not showing up on initial render
-					template={[['core/paragraph']]}
+					renderAppender={
+						hasChildBlocks
+							? undefined
+							: () => <InnerBlocks.ButtonBlockAppender />
+					}
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
 				/>
@@ -80,7 +85,15 @@ registerBlockType("c9-blocks/vertical-tabs-tab", {
 		}
 	},
 
-	edit: VerticalTab,
+	edit: withSelect((select, ownProps) => {
+		const { getBlockOrder } = select("core/block-editor");
+
+		const { clientId } = ownProps;
+
+		return {
+			hasChildBlocks: 0 < getBlockOrder(clientId).length
+		};
+	})(VerticalTab),
 
 	getEditWrapperProps(attributes) {
 		return { "data-tab": attributes.slug };
