@@ -321,7 +321,7 @@ function c9_check_bootstrap() {
 
 		wp_enqueue_script(
 			'c9-bootstrap-js',
-			plugins_url( 'dist/c9-bootstrap.min.js', dirname( __FILE__ ) ),
+			plugins_url( 'src/vendor/c9-bootstrap.min.js', dirname( __FILE__ ) ),
 			array( 'jquery' ),
 			'4.3.1'
 		);
