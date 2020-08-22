@@ -74,6 +74,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.1.3**
+Fixed issues with new toggles and tabs not displaying appender buttons and some alignfull container issues on some browsers in WordPress 5.5.
+
 **1.1.2**
 Fixed bugs to grid row buttons and icons missing for delete toggle buttons.
 
