@@ -2,6 +2,7 @@
  * Internal dependencies
  */
 import HeadingToolbar from "./heading-toolbar";
+import AnimationPanel from "../../../components/animations-panel";
 
 /**
  * WordPress dependencies
@@ -34,7 +35,11 @@ class Inspector extends Component {
 				subTextColor,
 				tagLevel,
 				overrideStyle,
-				addSubheading
+				addSubheading,
+				enableAnimate,
+				animateVal,
+				animateDelay,
+				animateSpeed
 			}
 		} = this.props;
 
@@ -175,6 +180,14 @@ class Inspector extends Component {
 						}}
 					/>
 				</PanelColorSettings>
+
+				<AnimationPanel
+					enableAnimate={enableAnimate}
+					animateVal={animateVal}
+					animateDelay={animateDelay}
+					animateSpeed={animateSpeed}
+					setAttributes={setAttributes}
+				/>
 			</InspectorControls>
 		);
 	}

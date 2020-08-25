@@ -12,10 +12,10 @@ const animationPanel = props => {
 	} = props;
 
 	const sampleAnimationOptions = [
-		{ value: null, label: "Select animation", disabled: true },
+		{ value: null, label: "Select animation" },
 		{ value: "a", label: "option A" },
 		{ value: "b", label: "option B" },
-		{ value: "c", label: "option c" }
+		{ value: "c", label: "option C" }
 	];
 
 	return (

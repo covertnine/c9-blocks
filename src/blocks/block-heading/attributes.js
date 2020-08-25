@@ -61,6 +61,21 @@ const attributes = {
 	overrideStyle: {
 		type: "boolean",
 		default: false
+	},
+	enableAnimate: {
+		type: "",
+		default: false
+	},
+	animateVal: {
+		type: ""
+	},
+	animateDelay: {
+		type: "",
+		default: 2000
+	},
+	animateSpeed: {
+		type: "",
+		default: 2000
 	}
 };
 
