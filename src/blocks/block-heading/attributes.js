@@ -67,14 +67,14 @@ const attributes = {
 		default: false
 	},
 	animateVal: {
-		type: ""
+		type: "object"
 	},
 	animateDelay: {
-		type: "",
+		type: "number",
 		default: 2000
 	},
 	animateSpeed: {
-		type: "",
+		type: "number",
 		default: 2000
 	}
 };

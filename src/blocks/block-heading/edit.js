@@ -18,6 +18,13 @@ const { Component } = wp.element;
  * External Dependencies.
  */
 import classnames from "classnames";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== `undefined`) {
+	gsap.registerPlugin(ScrollTrigger);
+	gsap.core.globals("ScrollTrigger", ScrollTrigger);
+}
 
 export default class Edit extends Component {
 	constructor() {
@@ -42,6 +49,9 @@ export default class Edit extends Component {
 		} else {
 			return `${type}${displayLevel}`;
 		}
+	}
+
+	componentDidMount() {
 	}
 
 	render() {
