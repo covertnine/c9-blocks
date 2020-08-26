@@ -325,6 +325,13 @@ function c9_check_bootstrap() {
 			array( 'jquery' ),
 			'4.3.1'
 		);
+
+		wp_enqueue_script(
+			'c9-gsap-js',
+			plugins_url( 'src/vendor/gsap/gsap.min.js', dirname( __FILE__ ) ),
+			array(),
+			'3.5.0'
+		);
 	}
 }
 

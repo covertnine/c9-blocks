@@ -65,10 +65,7 @@ const animationPanel = props => {
 
 	// init animation
 	useEffect(() => {
-		tl.to(".c9-heading", {
-			rotation: 360,
-			duration: 3
-		}).pause();
+		tl.to(".c9-heading", animateConfigs[animateVal]).pause();
 
 		if (enableAnimate) {
 			// console.log("play", tl.paused());
@@ -79,8 +76,11 @@ const animationPanel = props => {
 	// toggle animation / restart
 	useEffect(() => {
 		if (enableAnimate) {
-			console.log(tl);
+			// console.log(tl);
 			tl.restart().resume();
+		}
+		else {
+			tl.pause(0);
 		}
 		// console.log("test", enableAnimate);
 	}, [enableAnimate]);
@@ -89,11 +89,11 @@ const animationPanel = props => {
 	useEffect(() => {
 		// skip initial run
 		if (isFirstRun.current || null == animateVal) {
-			console.log("exit");
+			// console.log("exit");
 			isFirstRun.current = false;
 			return;
 		}
-		console.log(animateVal);
+		// console.log(animateVal);
 
 		tl.pause(0);
 		tl.clear();

@@ -67,7 +67,8 @@ const attributes = {
 		default: false
 	},
 	animateVal: {
-		type: "object"
+		type: "string",
+		default: "spin"
 	},
 	animateDelay: {
 		type: "number",
