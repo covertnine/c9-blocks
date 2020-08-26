@@ -10,25 +10,34 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.registerPlugin(ScrollTrigger);
 
     // console.log("test");
-    
+    const spinTargets = document.querySelectorAll("[data-animate='spin']");
+    const moveXTargets = document.querySelectorAll("[data-animate='moveX']");
+    const moveYTargets = document.querySelectorAll("[data-animate='moveY']");
+
     // target spins
-    gsap.to("[data-animate='spin'", {
-        scrollTrigger: "[data-animate='spin'",
-        rotation: 360,
-        duration: 3
-    });
+    for (let element of spinTargets) {
+        gsap.to(element, {
+            scrollTrigger: element,
+            rotation: 360,
+            duration: 3
+        });
+    }
 
     // target move x
-    gsap.to("[data-animate='moveX'", {
-        scrollTrigger: "[data-animate='moveX'",
-        x: 100,
-        duration: 3
-    });
+    for (let element of moveXTargets) {
+        gsap.to(element, {
+            scrollTrigger: element,
+            rotation: 360,
+            duration: 3
+        });
+    }
 
     // target move y
-    gsap.to("[data-animate='moveY'", {
-        scrollTrigger: "[data-animate='moveY'",
-        y: 100,
-        duration: 3
-    });
+    for (let element of moveYTargets) {
+        gsap.to(element, {
+            scrollTrigger: element,
+            rotation: 360,
+            duration: 3
+        });
+    }
 });
