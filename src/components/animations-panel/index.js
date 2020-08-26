@@ -12,37 +12,6 @@ if (typeof window !== `undefined`) {
 	gsap.core.globals("ScrollTrigger", ScrollTrigger);
 }
 
-const animateConfigs = {
-	spin: {
-		rotation: 360,
-		duration: 3
-	},
-	moveX: {
-		x: 100,
-		duration: 3
-	},
-	moveY: {
-		y: 100,
-		duration: 3
-	}
-};
-
-const sampleAnimationOptions = [
-	{ value: null, label: "Select animation", disabled: true },
-	{
-		value: "spin",
-		label: "spinning"
-	},
-	{
-		value: "moveX",
-		label: "moving x"
-	},
-	{
-		value: "moveY",
-		label: "moving y"
-	}
-];
-
 const animationPanel = props => {
 	const {
 		enableAnimate,
@@ -61,7 +30,9 @@ const animationPanel = props => {
 			}
 		})
 	);
+	
 	const isFirstRun = useRef(true);
+	const currDelay = useRef(animateDelay);
 
 	// init animation
 	useEffect(() => {
@@ -93,14 +64,38 @@ const animationPanel = props => {
 			isFirstRun.current = false;
 			return;
 		}
-		console.log(animateVal);
+		// console.log(animateVal);
 
 		tl.pause(0);
 		tl.clear();
 		tl.to(".c9-heading", animateConfigs[animateVal]).pause();
 		tl.resume();
-		console.log("change", animateConfigs[animateVal]);
+		// console.log("change", animateConfigs[animateVal]);
 	}, [animateVal]);
+
+	// update delay
+	useEffect(() => {
+		setTimeout(
+			prevDelay => {
+				console.log("diff", prevDelay, currDelay.current);
+				// if same, then start updating timeline
+				if (prevDelay === currDelay.current) {
+					// console.log("check")
+					tl.pause(0);
+					tl.clear();
+					const customConfig = {
+						...animateConfigs[animateVal],
+						delay: currDelay.current / 1000
+					};
+					// console.log(customConfig);
+					tl.to(".c9-heading", customConfig).pause();
+					tl.resume();
+				}
+			},
+			200,
+			animateDelay
+		);
+	}, [animateDelay]);
 
 	return (
 		<PanelBody title={__("Animations", "c9-blocks")} initialOpen={false}>
@@ -120,7 +115,10 @@ const animationPanel = props => {
 					<RangeControl
 						label={__("Delay (ms)", "c9-blocks")}
 						value={animateDelay}
-						onChange={animateDelay => setAttributes({ animateDelay })}
+						onChange={animateDelay => {
+							setAttributes({ animateDelay });
+							currDelay.current = animateDelay;
+						}}
 						min={0}
 						max={5000}
 					/>
@@ -136,5 +134,36 @@ const animationPanel = props => {
 		</PanelBody>
 	);
 };
+
+const animateConfigs = {
+	spin: {
+		rotation: 360,
+		duration: 3
+	},
+	moveX: {
+		x: 100,
+		duration: 3
+	},
+	moveY: {
+		y: 100,
+		duration: 3
+	}
+};
+
+const sampleAnimationOptions = [
+	{ value: null, label: "Select animation", disabled: true },
+	{
+		value: "spin",
+		label: "spinning"
+	},
+	{
+		value: "moveX",
+		label: "moving x"
+	},
+	{
+		value: "moveY",
+		label: "moving y"
+	}
+];
 
 export default animationPanel;
