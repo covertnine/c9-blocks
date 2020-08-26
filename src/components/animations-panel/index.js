@@ -31,7 +31,7 @@ const animationPanel = props => {
 		})
 	);
 	
-	const isFirstRun = useRef(true);
+	const isFirstRun = useRef([true, true, true]);
 	const currDelay = useRef(animateDelay);
 
 	// init animation
@@ -59,9 +59,9 @@ const animationPanel = props => {
 	// set new animation and kill old one
 	useEffect(() => {
 		// skip initial run
-		if (isFirstRun.current || null == animateVal) {
+		if (isFirstRun.current[0] || null == animateVal) {
 			// console.log("exit");
-			isFirstRun.current = false;
+			isFirstRun.current[0] = false;
 			return;
 		}
 		// console.log(animateVal);
@@ -75,6 +75,12 @@ const animationPanel = props => {
 
 	// update delay
 	useEffect(() => {
+		// skip initial run
+		if (isFirstRun.current[1] || null == animateVal) {
+			// console.log("exit");
+			isFirstRun.current[1] = false;
+			return;
+		}
 		setTimeout(
 			prevDelay => {
 				console.log("diff", prevDelay, currDelay.current);
