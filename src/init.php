@@ -332,6 +332,13 @@ function c9_check_bootstrap() {
 			array(),
 			'3.5.0'
 		);
+
+		wp_enqueue_script(
+			'c9-ScrollTrigger-js',
+			plugins_url( 'src/vendor/gsap/ScrollTrigger.min.js', dirname( __FILE__ ) ),
+			array(),
+			'3.5.0'
+		);
 	}
 }
 

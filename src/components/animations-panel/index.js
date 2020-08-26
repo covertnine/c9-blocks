@@ -65,11 +65,12 @@ const animationPanel = props => {
 
 	// init animation
 	useEffect(() => {
-		tl.to(".c9-heading", animateConfigs[animateVal]).pause();
-
 		if (enableAnimate) {
+			tl.to(".c9-heading", animateConfigs[animateVal]).pause();
 			// console.log("play", tl.paused());
 			tl.resume();
+		} else {
+			tl.to(".c9-heading", { paused: true, ...animateConfigs[animateVal] });
 		}
 	}, []);
 
@@ -78,8 +79,7 @@ const animationPanel = props => {
 		if (enableAnimate) {
 			// console.log(tl);
 			tl.restart().resume();
-		}
-		else {
+		} else {
 			tl.pause(0);
 		}
 		// console.log("test", enableAnimate);
@@ -93,7 +93,7 @@ const animationPanel = props => {
 			isFirstRun.current = false;
 			return;
 		}
-		// console.log(animateVal);
+		console.log(animateVal);
 
 		tl.pause(0);
 		tl.clear();
