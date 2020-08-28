@@ -24,7 +24,8 @@ export default class C9CustomHeading extends Component {
 				anchor,
 				enableAnimate,
 				animateVal,
-				animateDelay
+				animateDelay,
+				animateSpeed
 			},
 			className = ""
 		} = this.props;
@@ -40,6 +41,7 @@ export default class C9CustomHeading extends Component {
 				id={anchor ? anchor : null}
 				data-animate={enableAnimate ? animateVal : null}
 				data-animate-delay={enableAnimate ? animateDelay : null}
+				data-animate-speed={enableAnimate ? animateSpeed : null}
 			>
 				{this.props.children}
 			</div>
