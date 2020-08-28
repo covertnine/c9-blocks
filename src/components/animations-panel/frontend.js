@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
         gsap.to(element, {
             scrollTrigger: element,
             rotation: 360,
-            duration: 3
+            duration: 3,
+            delay: element.dataset.animateDelay
         });
     }
 
@@ -28,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
         gsap.to(element, {
             scrollTrigger: element,
             rotation: 360,
-            duration: 3
+            duration: 3,
+            delay: element.dataset.animateDelay
         });
     }
 
@@ -37,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
         gsap.to(element, {
             scrollTrigger: element,
             rotation: 360,
-            duration: 3
+            duration: 3,
+            delay: element.dataset.animateDelay
         });
     }
 });

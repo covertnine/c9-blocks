@@ -19,7 +19,13 @@ export default class C9CustomHeading extends Component {
 
 	render() {
 		const {
-			attributes: { textAlign, anchor, enableAnimate, animateVal },
+			attributes: {
+				textAlign,
+				anchor,
+				enableAnimate,
+				animateVal,
+				animateDelay
+			},
 			className = ""
 		} = this.props;
 
@@ -33,6 +39,7 @@ export default class C9CustomHeading extends Component {
 				style={{ backgroundColor: this.props.attributes.backgroundColor }}
 				id={anchor ? anchor : null}
 				data-animate={enableAnimate ? animateVal : null}
+				data-animate-delay={enableAnimate ? animateDelay : null}
 			>
 				{this.props.children}
 			</div>

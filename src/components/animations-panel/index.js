@@ -30,18 +30,25 @@ const animationPanel = props => {
 			}
 		})
 	);
-	
+
 	const isFirstRun = useRef([true, true, true]);
 	const currDelay = useRef(animateDelay);
 
 	// init animation
 	useEffect(() => {
 		if (enableAnimate) {
-			tl.to(".c9-heading", animateConfigs[animateVal]).pause();
+			tl.to(".c9-heading", {
+				...animateConfigs[animateVal],
+				delay: currDelay.current / 1000
+			}).pause();
 			// console.log("play", tl.paused());
 			tl.resume();
 		} else {
-			tl.to(".c9-heading", { paused: true, ...animateConfigs[animateVal] });
+			tl.to(".c9-heading", {
+				paused: true,
+				...animateConfigs[animateVal],
+				delay: currDelay.current / 1000
+			});
 		}
 	}, []);
 
@@ -68,7 +75,10 @@ const animationPanel = props => {
 
 		tl.pause(0);
 		tl.clear();
-		tl.to(".c9-heading", animateConfigs[animateVal]).pause();
+		tl.to(".c9-heading", {
+			...animateConfigs[animateVal],
+			delay: currDelay.current / 1000
+		}).pause();
 		tl.resume();
 		// console.log("change", animateConfigs[animateVal]);
 	}, [animateVal]);

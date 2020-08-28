@@ -72,7 +72,7 @@ const attributes = {
 	},
 	animateDelay: {
 		type: "number",
-		default: 2000
+		default: 0
 	},
 	animateSpeed: {
 		type: "number",
