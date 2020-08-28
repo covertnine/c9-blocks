@@ -33,13 +33,15 @@ const animationPanel = props => {
 
 	const isFirstRun = useRef([true, true, true]);
 	const currDelay = useRef(animateDelay);
+	const currSpeed = useRef(animateSpeed);
 
 	// init animation
 	useEffect(() => {
 		if (enableAnimate) {
 			tl.to(".c9-heading", {
 				...animateConfigs[animateVal],
-				delay: currDelay.current / 1000
+				delay: currDelay.current / 1000,
+				duration: currSpeed.current / 1000
 			}).pause();
 			// console.log("play", tl.paused());
 			tl.resume();
@@ -47,7 +49,8 @@ const animationPanel = props => {
 			tl.to(".c9-heading", {
 				paused: true,
 				...animateConfigs[animateVal],
-				delay: currDelay.current / 1000
+				delay: currDelay.current / 1000,
+				duration: currSpeed.current / 1000
 			});
 		}
 	}, []);
@@ -77,7 +80,8 @@ const animationPanel = props => {
 		tl.clear();
 		tl.to(".c9-heading", {
 			...animateConfigs[animateVal],
-			delay: currDelay.current / 1000
+			delay: currDelay.current / 1000,
+			duration: currSpeed.current / 1000
 		}).pause();
 		tl.resume();
 		// console.log("change", animateConfigs[animateVal]);
@@ -93,7 +97,7 @@ const animationPanel = props => {
 		}
 		setTimeout(
 			prevDelay => {
-				console.log("diff", prevDelay, currDelay.current);
+				// console.log("diff", prevDelay, currDelay.current);
 				// if same, then start updating timeline
 				if (prevDelay === currDelay.current) {
 					// console.log("check")
@@ -101,7 +105,8 @@ const animationPanel = props => {
 					tl.clear();
 					const customConfig = {
 						...animateConfigs[animateVal],
-						delay: currDelay.current / 1000
+						delay: currDelay.current / 1000,
+						duration: currSpeed.current / 1000
 					};
 					// console.log(customConfig);
 					tl.to(".c9-heading", customConfig).pause();
@@ -112,6 +117,36 @@ const animationPanel = props => {
 			animateDelay
 		);
 	}, [animateDelay]);
+
+	// update duration
+	useEffect(() => {
+		// skip initial run
+		if (isFirstRun.current[2] || null == animateVal) {
+			// console.log("exit");
+			isFirstRun.current[2] = false;
+			return;
+		}
+		setTimeout(
+			prevSpeed => {
+				// if same, then start updating timeline
+				if (prevSpeed === currSpeed.current) {
+					// console.log("check")
+					tl.pause(0);
+					tl.clear();
+					const customConfig = {
+						...animateConfigs[animateVal],
+						delay: currDelay.current / 1000,
+						duration: currSpeed.current / 1000
+					};
+					// console.log(customConfig);
+					tl.to(".c9-heading", customConfig).pause();
+					tl.resume();
+				}
+			},
+			200,
+			animateSpeed
+		);
+	}, [animateSpeed]);
 
 	return (
 		<PanelBody title={__("Animations", "c9-blocks")} initialOpen={false}>
@@ -141,8 +176,11 @@ const animationPanel = props => {
 					<RangeControl
 						label={__("Speed (ms)", "c9-blocks")}
 						value={animateSpeed}
-						onChange={animateSpeed => setAttributes({ animateSpeed })}
-						min={0}
+						onChange={animateSpeed => {
+							setAttributes({ animateSpeed });
+							currSpeed.current = animateSpeed;
+						}}
+						min={500}
 						max={5000}
 					/>
 				</Fragment>
@@ -151,18 +189,20 @@ const animationPanel = props => {
 	);
 };
 
+const DEFAULT_SPEED = 2;
+
 const animateConfigs = {
 	spin: {
 		rotation: 360,
-		duration: 3
+		duration: DEFAULT_SPEED
 	},
 	moveX: {
 		x: 100,
-		duration: 3
+		duration: DEFAULT_SPEED
 	},
 	moveY: {
 		y: 100,
-		duration: 3
+		duration: DEFAULT_SPEED
 	}
 };
 
