@@ -18,18 +18,11 @@ const animationPanel = props => {
 		animateVal,
 		animateDelay,
 		animateSpeed,
-		setAttributes
+		setAttributes,
+		target,
+		tl
 	} = props;
-
-	const [tl, setTl] = useState(
-		gsap.timeline({
-			paused: true,
-			scrollTrigger: {
-				trigger: ".c9-heading"
-				// markers: true
-			}
-		})
-	);
+	console.log(target, tl);
 
 	const isFirstRun = useRef([true, true, true]);
 	const currDelay = useRef(animateDelay);
@@ -38,7 +31,7 @@ const animationPanel = props => {
 	// init animation
 	useEffect(() => {
 		if (enableAnimate) {
-			tl.to(".c9-heading", {
+			tl.to(target, {
 				...animateConfigs[animateVal],
 				delay: currDelay.current / 1000,
 				duration: currSpeed.current / 1000
@@ -46,7 +39,7 @@ const animationPanel = props => {
 			// console.log("play", tl.paused());
 			tl.resume();
 		} else {
-			tl.to(".c9-heading", {
+			tl.to(target, {
 				paused: true,
 				...animateConfigs[animateVal],
 				delay: currDelay.current / 1000,
@@ -78,7 +71,7 @@ const animationPanel = props => {
 
 		tl.pause(0);
 		tl.clear();
-		tl.to(".c9-heading", {
+		tl.to(target, {
 			...animateConfigs[animateVal],
 			delay: currDelay.current / 1000,
 			duration: currSpeed.current / 1000
@@ -109,7 +102,7 @@ const animationPanel = props => {
 						duration: currSpeed.current / 1000
 					};
 					// console.log(customConfig);
-					tl.to(".c9-heading", customConfig).pause();
+					tl.to(target, customConfig).pause();
 					tl.resume();
 				}
 			},
@@ -139,7 +132,7 @@ const animationPanel = props => {
 						duration: currSpeed.current / 1000
 					};
 					// console.log(customConfig);
-					tl.to(".c9-heading", customConfig).pause();
+					tl.to(target, customConfig).pause();
 					tl.resume();
 				}
 			},

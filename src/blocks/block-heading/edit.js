@@ -52,6 +52,14 @@ export default class Edit extends Component {
 	}
 
 	componentDidMount() {
+		this.tl = gsap.timeline({
+			paused: true,
+			scrollTrigger: {
+				trigger: `#block-${this.props.clientId} > *`,
+				scroller: ".interface-interface-skeleton__content",
+				markers: true
+			}
+		});
 	}
 
 	render() {
@@ -97,7 +105,7 @@ export default class Edit extends Component {
 						}}
 					/>
 				</BlockControls>
-				<Inspector {...{ setAttributes, ...this.props }} />
+				<Inspector {...this.props} tl={this.tl} />
 				<CustomHeading {...this.props}>
 					<RichText
 						tagName={`h${tagLevel}`}

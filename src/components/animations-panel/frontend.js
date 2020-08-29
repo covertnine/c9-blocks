@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// target spins
 	for (let element of spinTargets) {
-		console.log(element.dataset.animateSpeed);
 		gsap.to(element, {
 			scrollTrigger: element,
 			rotation: 360,
