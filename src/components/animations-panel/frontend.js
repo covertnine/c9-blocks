@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	for (let element of moveXTargets) {
 		gsap.to(element, {
 			scrollTrigger: element,
-			rotation: 360,
+			x: 100,
 			duration: element.dataset.animateSpeed / 1000,
 			delay: element.dataset.animateDelay / 1000
 		});
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	for (let element of moveYTargets) {
 		gsap.to(element, {
 			scrollTrigger: element,
-			rotation: 360,
+			y: 100,
 			duration: element.dataset.animateSpeed / 1000,
 			delay: element.dataset.animateDelay / 1000
 		});

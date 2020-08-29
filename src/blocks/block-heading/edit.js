@@ -5,6 +5,7 @@ import CustomHeading from "./components/custom-heading";
 import Inspector from "./components/inspector";
 import HeadingToolbar from "./components/heading-toolbar";
 import SubheadingToolbar from "./components/subheading-toolbar";
+import { initTimeline } from "../../components/animations-panel/utils";
 
 /**
  * WordPress dependencies
@@ -52,14 +53,18 @@ export default class Edit extends Component {
 	}
 
 	componentDidMount() {
-		this.tl = gsap.timeline({
-			paused: true,
-			scrollTrigger: {
-				trigger: `#block-${this.props.clientId} > *`,
-				scroller: ".interface-interface-skeleton__content",
-				markers: true
-			}
-		});
+		const {
+			attributes: { enableAnimate, animateVal, animateDelay, animateSpeed }
+		} = this.props;
+
+		const target = `#block-${this.props.clientId} > *`;
+		this.tl = initTimeline(
+			target,
+			enableAnimate,
+			animateVal,
+			animateDelay,
+			animateSpeed
+		);
 	}
 
 	render() {

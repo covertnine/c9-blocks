@@ -1,16 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const { __ } = wp.i18n;
 const { PanelBody, RangeControl, ToggleControl, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== `undefined`) {
-	gsap.registerPlugin(ScrollTrigger);
-	gsap.core.globals("ScrollTrigger", ScrollTrigger);
-}
+import { animateConfigs, animateOptions } from "./utils";
 
 const animationPanel = props => {
 	const {
@@ -22,31 +16,10 @@ const animationPanel = props => {
 		target,
 		tl
 	} = props;
-	console.log(target, tl);
 
 	const isFirstRun = useRef([true, true, true]);
 	const currDelay = useRef(animateDelay);
 	const currSpeed = useRef(animateSpeed);
-
-	// init animation
-	useEffect(() => {
-		if (enableAnimate) {
-			tl.to(target, {
-				...animateConfigs[animateVal],
-				delay: currDelay.current / 1000,
-				duration: currSpeed.current / 1000
-			}).pause();
-			// console.log("play", tl.paused());
-			tl.resume();
-		} else {
-			tl.to(target, {
-				paused: true,
-				...animateConfigs[animateVal],
-				delay: currDelay.current / 1000,
-				duration: currSpeed.current / 1000
-			});
-		}
-	}, []);
 
 	// toggle animation / restart
 	useEffect(() => {
@@ -152,7 +125,7 @@ const animationPanel = props => {
 				<Fragment>
 					<SelectControl
 						label={__("Animation", "c9-blocks")}
-						options={sampleAnimationOptions}
+						options={animateOptions}
 						value={animateVal}
 						onChange={animateVal => setAttributes({ animateVal })}
 					/>
@@ -181,38 +154,5 @@ const animationPanel = props => {
 		</PanelBody>
 	);
 };
-
-const DEFAULT_SPEED = 2;
-
-const animateConfigs = {
-	spin: {
-		rotation: 360,
-		duration: DEFAULT_SPEED
-	},
-	moveX: {
-		x: 100,
-		duration: DEFAULT_SPEED
-	},
-	moveY: {
-		y: 100,
-		duration: DEFAULT_SPEED
-	}
-};
-
-const sampleAnimationOptions = [
-	{ value: null, label: "Select animation", disabled: true },
-	{
-		value: "spin",
-		label: "spinning"
-	},
-	{
-		value: "moveX",
-		label: "moving x"
-	},
-	{
-		value: "moveY",
-		label: "moving y"
-	}
-];
 
 export default animationPanel;
