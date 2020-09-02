@@ -20,14 +20,6 @@ const animationPanel = props => {
 	const currDelay = useRef(animateDelay);
 	const currSpeed = useRef(animateSpeed);
 
-	// toggle animation / restart
-	useEffect(() => {
-		if (enableAnimate) {
-			restartAnimate(target, animateVal, currDelay.current, currSpeed.current);
-		}
-		// console.log("test", enableAnimate);
-	}, [enableAnimate]);
-
 	// set new animation and kill old one
 	useEffect(() => {
 		// skip initial run
@@ -38,8 +30,10 @@ const animationPanel = props => {
 		}
 		// console.log(animateVal);
 
-		restartAnimate(target, animateVal, currDelay.current, currSpeed.current);
-	}, [animateVal]);
+		if (enableAnimate) {
+			restartAnimate(target, animateVal, currDelay.current, currSpeed.current);
+		}
+	}, [enableAnimate, animateVal]);
 
 	// update delay
 	useEffect(() => {
