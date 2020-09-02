@@ -77,6 +77,10 @@ const attributes = {
 	animateSpeed: {
 		type: "number",
 		default: 2000
+	},
+	animateScrub: {
+		type: "boolean",
+		default: false
 	}
 };
 

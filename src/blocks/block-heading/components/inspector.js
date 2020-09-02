@@ -39,7 +39,8 @@ class Inspector extends Component {
 				enableAnimate,
 				animateVal,
 				animateDelay,
-				animateSpeed
+				animateSpeed,
+				animateScrub
 			}
 		} = this.props;
 
@@ -187,6 +188,7 @@ class Inspector extends Component {
 					animateVal={animateVal}
 					animateDelay={animateDelay}
 					animateSpeed={animateSpeed}
+					animateScrub={animateScrub}
 					setAttributes={setAttributes}
 				/>
 			</InspectorControls>

@@ -90,37 +90,56 @@ export const initAnimate = (
 	enableAnimate,
 	animateVal,
 	animateDelay,
-	animateSpeed
+	animateSpeed,
+	animateScrub
 ) => {
-	const customConfig = createCustomConfig(
-		animateVal,
-		animateDelay,
-		animateSpeed
-	);
+	let customConfig = createCustomConfig(animateVal, animateDelay, animateSpeed);
+	customConfig = editorCustomConfigModify(customConfig, target, animateScrub);
 
 	if (enableAnimate) {
-		gsap.fromTo(target, customConfig[0], {
-			...customConfig[1],
+		gsap.fromTo(target, ...customConfig);
+	}
+};
+
+const editorCustomConfigModify = (config, target, animateScrub) => {
+	return [
+		config[0],
+		{
+			...config[1],
 			scrollTrigger: {
+				id: target,
 				trigger: target,
 				scroller: SCROLLER,
-				markers: true
+				markers: true,
+				scrub: animateScrub
 			}
-		});
-	}
+		}
+	];
 };
 
 export const restartAnimate = (
 	target,
 	animateVal,
 	animateDelay,
-	animateSpeed
+	animateSpeed,
+	animateScrub,
+	enableAnimate
 ) => {
-	const customConfig = createCustomConfig(
+	let customConfig = createCustomConfig(
 		animateVal,
 		animateDelay,
-		animateSpeed
+		animateSpeed,
+		animateScrub
 	);
-	// console.log("repeat", customConfig, target, animateDelay, animateSpeed);
+	ScrollTrigger.getAll(target).forEach(st => st.kill());
+	gsap.set(target, { clearProps: true });
+
+	if (!enableAnimate) {
+		return;
+	}
+
+	if (animateScrub) {
+		customConfig = editorCustomConfigModify(customConfig, target, animateScrub);
+	}
 	gsap.fromTo(target, ...customConfig);
 };

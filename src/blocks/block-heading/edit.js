@@ -54,11 +54,24 @@ export default class Edit extends Component {
 
 	componentDidMount() {
 		const {
-			attributes: { enableAnimate, animateVal, animateDelay, animateSpeed }
+			attributes: {
+				enableAnimate,
+				animateVal,
+				animateDelay,
+				animateSpeed,
+				animateScrub
+			}
 		} = this.props;
 
 		const target = `#block-${this.props.clientId} > *`;
-		initAnimate(target, enableAnimate, animateVal, animateDelay, animateSpeed);
+		initAnimate(
+			target,
+			enableAnimate,
+			animateVal,
+			animateDelay,
+			animateSpeed,
+			animateScrub
+		);
 	}
 
 	render() {

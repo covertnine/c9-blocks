@@ -12,6 +12,7 @@ const animationPanel = props => {
 		animateVal,
 		animateDelay,
 		animateSpeed,
+		animateScrub,
 		setAttributes,
 		target
 	} = props;
@@ -30,10 +31,15 @@ const animationPanel = props => {
 		}
 		// console.log(animateVal);
 
-		if (enableAnimate) {
-			restartAnimate(target, animateVal, currDelay.current, currSpeed.current);
-		}
-	}, [enableAnimate, animateVal]);
+		restartAnimate(
+			target,
+			animateVal,
+			currDelay.current,
+			currSpeed.current,
+			animateScrub,
+			enableAnimate
+		);
+	}, [enableAnimate, animateVal, animateScrub]);
 
 	// update delay
 	useEffect(() => {
@@ -53,7 +59,9 @@ const animationPanel = props => {
 						target,
 						animateVal,
 						currDelay.current,
-						currSpeed.current
+						currSpeed.current,
+						animateScrub,
+						enableAnimate
 					);
 				}
 			},
@@ -79,7 +87,9 @@ const animationPanel = props => {
 						target,
 						animateVal,
 						currDelay.current,
-						currSpeed.current
+						currSpeed.current,
+						animateScrub,
+						enableAnimate
 					);
 				}
 			},
@@ -122,6 +132,11 @@ const animationPanel = props => {
 						}}
 						min={500}
 						max={5000}
+					/>
+					<ToggleControl
+						label={__("Scrub Animation", "c9-blocks")}
+						checked={animateScrub}
+						onChange={animateScrub => setAttributes({ animateScrub })}
 					/>
 				</Fragment>
 			) : null}
