@@ -39,9 +39,9 @@ export default class C9CustomHeading extends Component {
 				)}
 				style={{ backgroundColor: this.props.attributes.backgroundColor }}
 				id={anchor ? anchor : null}
-				data-animate={enableAnimate ? animateVal : null}
-				data-animate-delay={enableAnimate ? animateDelay : null}
-				data-animate-speed={enableAnimate ? animateSpeed : null}
+				data-c9-animate={enableAnimate ? animateVal : null}
+				data-c9-animate-delay={enableAnimate ? animateDelay : null}
+				data-c9-animate-speed={enableAnimate ? animateSpeed : null}
 			>
 				{this.props.children}
 			</div>

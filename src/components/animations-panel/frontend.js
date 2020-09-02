@@ -2,6 +2,8 @@
  * Animations Frontend
  */
 
+import { createCustomConfig } from "./utils";
+
 document.addEventListener("DOMContentLoaded", function() {
 	// simple timeline setups
 	const gsap = window.gsap;
@@ -9,38 +11,25 @@ document.addEventListener("DOMContentLoaded", function() {
 	// register plugin
 	gsap.registerPlugin(ScrollTrigger);
 
-	// console.log("test");
-	const spinTargets = document.querySelectorAll("[data-animate='spin']");
-	const moveXTargets = document.querySelectorAll("[data-animate='moveX']");
-	const moveYTargets = document.querySelectorAll("[data-animate='moveY']");
+	const animateTargets = document.querySelectorAll("[data-c9-animate]");
+	console.log(animateTargets);
 
-	// target spins
-	for (let element of spinTargets) {
-		gsap.to(element, {
-			scrollTrigger: element,
-			rotation: 360,
-			duration: element.dataset.animateSpeed / 1000,
-			delay: element.dataset.animateDelay / 1000
-		});
-	}
-
-	// target move x
-	for (let element of moveXTargets) {
-		gsap.to(element, {
-			scrollTrigger: element,
-			x: 100,
-			duration: element.dataset.animateSpeed / 1000,
-			delay: element.dataset.animateDelay / 1000
-		});
-	}
-
-	// target move y
-	for (let element of moveYTargets) {
-		gsap.to(element, {
-			scrollTrigger: element,
-			y: 100,
-			duration: element.dataset.animateSpeed / 1000,
-			delay: element.dataset.animateDelay / 1000
+	//setup gsap
+	for (let element of animateTargets) {
+		const animateVal = element.dataset.c9Animate;
+		const animateDelay = element.dataset.c9AnimateDelay;
+		const animateSpeed = element.dataset.c9AnimateSpeed;
+		// console.log(animateVal, animateDelay, animateSpeed);
+		const customConfig = createCustomConfig(
+			animateVal,
+			animateDelay,
+			animateSpeed
+		);
+		gsap.fromTo(element, customConfig[0], {
+			...customConfig[1],
+			scrollTrigger: {
+				trigger: element
+			}
 		});
 	}
 });
