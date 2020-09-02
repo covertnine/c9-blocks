@@ -4,7 +4,7 @@ const { __ } = wp.i18n;
 const { PanelBody, RangeControl, ToggleControl, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 
-import { animateConfigs, animateOptions } from "./utils";
+import { animateOptions, restartAnimate } from "./utils";
 
 const animationPanel = props => {
 	const {
@@ -13,8 +13,7 @@ const animationPanel = props => {
 		animateDelay,
 		animateSpeed,
 		setAttributes,
-		target,
-		tl
+		target
 	} = props;
 
 	const isFirstRun = useRef([true, true, true]);
@@ -24,10 +23,7 @@ const animationPanel = props => {
 	// toggle animation / restart
 	useEffect(() => {
 		if (enableAnimate) {
-			// console.log(tl);
-			tl.restart().resume();
-		} else {
-			tl.pause(0);
+			restartAnimate(target, animateVal, currDelay.current, currSpeed.current);
 		}
 		// console.log("test", enableAnimate);
 	}, [enableAnimate]);
@@ -42,15 +38,7 @@ const animationPanel = props => {
 		}
 		// console.log(animateVal);
 
-		tl.pause(0);
-		tl.clear();
-		tl.to(target, {
-			...animateConfigs[animateVal],
-			delay: currDelay.current / 1000,
-			duration: currSpeed.current / 1000
-		}).pause();
-		tl.resume();
-		// console.log("change", animateConfigs[animateVal]);
+		restartAnimate(target, animateVal, currDelay.current, currSpeed.current);
 	}, [animateVal]);
 
 	// update delay
@@ -67,16 +55,12 @@ const animationPanel = props => {
 				// if same, then start updating timeline
 				if (prevDelay === currDelay.current) {
 					// console.log("check")
-					tl.pause(0);
-					tl.clear();
-					const customConfig = {
-						...animateConfigs[animateVal],
-						delay: currDelay.current / 1000,
-						duration: currSpeed.current / 1000
-					};
-					// console.log(customConfig);
-					tl.to(target, customConfig).pause();
-					tl.resume();
+					restartAnimate(
+						target,
+						animateVal,
+						currDelay.current,
+						currSpeed.current
+					);
 				}
 			},
 			200,
@@ -97,16 +81,12 @@ const animationPanel = props => {
 				// if same, then start updating timeline
 				if (prevSpeed === currSpeed.current) {
 					// console.log("check")
-					tl.pause(0);
-					tl.clear();
-					const customConfig = {
-						...animateConfigs[animateVal],
-						delay: currDelay.current / 1000,
-						duration: currSpeed.current / 1000
-					};
-					// console.log(customConfig);
-					tl.to(target, customConfig).pause();
-					tl.resume();
+					restartAnimate(
+						target,
+						animateVal,
+						currDelay.current,
+						currSpeed.current
+					);
 				}
 			},
 			200,

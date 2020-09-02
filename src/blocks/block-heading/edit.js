@@ -5,7 +5,7 @@ import CustomHeading from "./components/custom-heading";
 import Inspector from "./components/inspector";
 import HeadingToolbar from "./components/heading-toolbar";
 import SubheadingToolbar from "./components/subheading-toolbar";
-import { initTimeline } from "../../components/animations-panel/utils";
+import { initAnimate } from "../../components/animations-panel/utils";
 
 /**
  * WordPress dependencies
@@ -58,13 +58,7 @@ export default class Edit extends Component {
 		} = this.props;
 
 		const target = `#block-${this.props.clientId} > *`;
-		this.tl = initTimeline(
-			target,
-			enableAnimate,
-			animateVal,
-			animateDelay,
-			animateSpeed
-		);
+		initAnimate(target, enableAnimate, animateVal, animateDelay, animateSpeed);
 	}
 
 	render() {
@@ -110,7 +104,7 @@ export default class Edit extends Component {
 						}}
 					/>
 				</BlockControls>
-				<Inspector {...this.props} tl={this.tl} />
+				<Inspector {...this.props} />
 				<CustomHeading {...this.props}>
 					<RichText
 						tagName={`h${tagLevel}`}

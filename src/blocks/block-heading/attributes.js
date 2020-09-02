@@ -68,7 +68,7 @@ const attributes = {
 	},
 	animateVal: {
 		type: "string",
-		default: "spin"
+		default: "fade"
 	},
 	animateDelay: {
 		type: "number",

@@ -16,66 +16,111 @@ const SCROLLER = ".interface-interface-skeleton__content";
 export const animateOptions = [
 	{ value: null, label: "Select animation", disabled: true },
 	{
-		value: "spin",
-		label: "spinning"
+		value: "fade",
+		label: "Fade"
 	},
 	{
-		value: "moveX",
-		label: "moving x"
+		value: "fadeUp",
+		label: "Fade Up"
 	},
 	{
-		value: "moveY",
-		label: "moving y"
+		value: "fadeDown",
+		label: "Fade Down"
+	},
+	{
+		value: "fadeLeft",
+		label: "Fade Left"
+	},
+	{
+		value: "fadeRight",
+		label: "Fade Right"
 	}
 ];
 
 export const animateConfigs = {
-	spin: {
-		rotation: 360,
-		duration: DEFAULT_SPEED
-	},
-	moveX: {
-		x: 100,
-		duration: DEFAULT_SPEED
-	},
-	moveY: {
-		y: 100,
-		duration: DEFAULT_SPEED
-	}
+	fade: [
+		{
+			opacity: 0
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED }
+	],
+	fadeUp: [
+		{
+			opacity: 0,
+			y: 100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+	],
+	fadeDown: [
+		{
+			opacity: 0,
+			y: -100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+	],
+	fadeLeft: [
+		{
+			opacity: 0,
+			x: -100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+	],
+	fadeRight: [
+		{
+			opacity: 0,
+			x: 100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+	]
 };
 
-export const initTimeline = (
+export const createCustomConfig = (animateVal, animateDelay, animateSpeed) => {
+	return [
+		animateConfigs[animateVal][0],
+		{
+			...animateConfigs[animateVal][1],
+			delay: animateDelay / 1000,
+			duration: animateSpeed / 1000
+		}
+	];
+};
+
+export const initAnimate = (
 	target,
 	enableAnimate,
 	animateVal,
 	animateDelay,
 	animateSpeed
 ) => {
-    // console.log(target);
-
-	const tl = gsap.timeline({
-		paused: true,
-		scrollTrigger: {
-			trigger: target,
-			scroller: SCROLLER,
-			markers: true
-		}
-	});
+	const customConfig = createCustomConfig(
+		animateVal,
+		animateDelay,
+		animateSpeed
+	);
 
 	if (enableAnimate) {
-		tl.to(target, {
-			...animateConfigs[animateVal],
-			delay: animateDelay / 1000,
-			duration: animateSpeed / 1000
+		gsap.fromTo(target, customConfig[0], {
+			...customConfig[1],
+			scrollTrigger: {
+				trigger: target,
+				scroller: SCROLLER,
+				markers: true
+			}
 		});
-	} else {
-		tl.to(target, {
-			paused: true,
-			...animateConfigs[animateVal],
-			delay: animateDelay / 1000,
-			duration: animateSpeed / 1000
-		});
-    }
-    
-    return tl;
+	}
+};
+
+export const restartAnimate = (
+	target,
+	animateVal,
+	animateDelay,
+	animateSpeed
+) => {
+	const customConfig = createCustomConfig(
+		animateVal,
+		animateDelay,
+		animateSpeed
+	);
+	// console.log("repeat", customConfig, target, animateDelay, animateSpeed);
+	gsap.fromTo(target, ...customConfig);
 };

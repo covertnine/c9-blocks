@@ -40,8 +40,7 @@ class Inspector extends Component {
 				animateVal,
 				animateDelay,
 				animateSpeed
-			},
-			tl
+			}
 		} = this.props;
 
 		const weightTypes = [
@@ -183,7 +182,6 @@ class Inspector extends Component {
 				</PanelColorSettings>
 
 				<AnimationPanel
-					tl={tl}
 					target={`#block-${this.props.clientId} > *`}
 					enableAnimate={enableAnimate}
 					animateVal={animateVal}
