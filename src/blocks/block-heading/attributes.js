@@ -63,7 +63,7 @@ const attributes = {
 		default: false
 	},
 	enableAnimate: {
-		type: "",
+		type: "boolean",
 		default: false
 	},
 	animateVal: {

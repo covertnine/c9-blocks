@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	gsap.registerPlugin(ScrollTrigger);
 
 	const animateTargets = document.querySelectorAll("[data-c9-animate]");
-	console.log(animateTargets);
+	// console.log(animateTargets);
 
 	//setup gsap
 	for (let element of animateTargets) {
