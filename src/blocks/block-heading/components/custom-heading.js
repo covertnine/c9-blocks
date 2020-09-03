@@ -25,7 +25,8 @@ export default class C9CustomHeading extends Component {
 				enableAnimate,
 				animateVal,
 				animateDelay,
-				animateSpeed
+				animateSpeed,
+				animateScrub
 			},
 			className = ""
 		} = this.props;
@@ -42,6 +43,7 @@ export default class C9CustomHeading extends Component {
 				data-c9-animate={enableAnimate ? animateVal : null}
 				data-c9-animate-delay={enableAnimate ? animateDelay : null}
 				data-c9-animate-speed={enableAnimate ? animateSpeed : null}
+				data-c9-animate-scrub={enableAnimate ? animateScrub : null}
 			>
 				{this.props.children}
 			</div>
