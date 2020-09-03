@@ -26,14 +26,17 @@ const { __ } = wp.i18n;
 const { addFilter } = wp.hooks;
 const { Component, Fragment } = wp.element;
 const { createHigherOrderComponent } = wp.compose;
-const { InspectorControls, ColorPalette } = wp.blockEditor;
-const { PanelBody, BaseControl } = wp.components;
+const { InspectorControls } = wp.blockEditor;
+
+/**
+ * Internal dependencies
+ */
+import AnimationPanel from "../../components/animations-panel";
 
 /**
  * External dependencies
  */
 import assign from "lodash/assign";
-let initialOpenPanel = false;
 
 /**
  * Default attributes
@@ -84,16 +87,68 @@ function addAttribute(settings, name) {
 			if (settings.deprecated && settings.deprecated.length) {
 				settings.deprecated.forEach((item, i) => {
 					if (settings.deprecated[i].attributes) {
-						settings.deprecated[i].attributes[k]= settings.attributes[k];
+						settings.deprecated[i].attributes[k] = settings.attributes[k];
 					}
 				});
 			}
 		}
-
-		// console.log(settings)
 	}
 	return settings;
 }
+
+/**
+ * Override the default edit UI to include a new block inspector control for
+ * assigning the custom attribute if needed.
+ *
+ * @param {function|Component} BlockEdit Original component.
+ *
+ * @return {string} Wrapped component.
+ */
+const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
+	class C9AnimateWrapper extends Component {
+		render() {
+			const props = this.props;
+			const blockName = props.name;
+			const allow = checkCoreBlock(blockName);
+
+			if (!allow) {
+				return <OriginalComponent {...props} />;
+			}
+
+			const {
+				setAttributes,
+				attributes: {
+					enableAnimate,
+					animateVal,
+					animateDelay,
+					animateSpeed,
+					animateScrub
+				}
+			} = this.props;
+
+			// add new animation controls.
+			return (
+				<Fragment>
+					<OriginalComponent {...props} />
+
+					<InspectorControls>
+						<AnimationPanel
+							target={`#block-${this.props.clientId}`}
+							enableAnimate={enableAnimate}
+							animateVal={animateVal}
+							animateDelay={animateDelay}
+							animateSpeed={animateSpeed}
+							animateScrub={animateScrub}
+							setAttributes={setAttributes}
+						/>
+					</InspectorControls>
+				</Fragment>
+			);
+		}
+	}
+
+	return C9AnimateWrapper;
+}, "withInspectorControl");
 
 // Init filters.
 addFilter(
@@ -101,4 +156,8 @@ addFilter(
 	"c9-blocks/animate/additional-attributes",
 	addAttribute
 );
-
+addFilter(
+	"editor.BlockEdit",
+	"c9-blocks/animate/additional-attributes",
+	withInspectorControl
+);
