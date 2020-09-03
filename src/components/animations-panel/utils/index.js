@@ -131,7 +131,11 @@ export const restartAnimate = (
 		animateSpeed,
 		animateScrub
 	);
-	ScrollTrigger.getAll(target).forEach(st => st.kill());
+	ScrollTrigger.getAll().forEach(st => {
+		if (st.vars.id === target) {
+			st.kill();
+		}
+	});
 	gsap.set(target, { clearProps: true });
 
 	if (!enableAnimate) {
