@@ -5,7 +5,8 @@ const supportedBlocks = [
 	"core/paragraph",
 	"core/image",
 	"core/list",
-	"core/button"
+	"core/button",
+	"core/buttons"
 ];
 
 /**
