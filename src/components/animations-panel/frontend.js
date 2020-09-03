@@ -19,13 +19,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		const animateVal = element.dataset.c9Animate;
 		const animateDelay = element.dataset.c9AnimateDelay;
 		const animateSpeed = element.dataset.c9AnimateSpeed;
-		const animateScrub = element.dataset.c9AnimateScrub;
+		let animateScrub = element.dataset.c9AnimateScrub;
 		// console.log(animateVal, animateDelay, animateSpeed);
 		const customConfig = createCustomConfig(
 			animateVal,
 			animateDelay,
 			animateSpeed
 		);
+		// string to boolean
+		animateScrub = "true" === animateScrub;
 		gsap.fromTo(element, customConfig[0], {
 			...customConfig[1],
 			scrollTrigger: {
