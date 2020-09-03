@@ -22,7 +22,6 @@ export default function checkCoreBlock(name) {
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
 const { addFilter } = wp.hooks;
 const { Component, Fragment } = wp.element;
 const { createHigherOrderComponent } = wp.compose;
@@ -32,6 +31,7 @@ const { InspectorControls } = wp.blockEditor;
  * Internal dependencies
  */
 import AnimationPanel from "../../components/animations-panel";
+import { initAnimate } from "../../components/animations-panel/utils";
 
 /**
  * External dependencies
@@ -65,7 +65,7 @@ const defaultAttributes = {
 };
 
 /**
- * Extend gutenberg block attributes with FC.
+ * Extend gutenberg block attributes with animation.
  *
  * @param {Object} settings Original block settings.
  * @param {string} name Original block name.
@@ -97,6 +97,30 @@ function addAttribute(settings, name) {
 }
 
 /**
+ * Override props assigned to save component to inject custom styles.
+ * This is only applied if the block's save result is an
+ * element and not a markup string.
+ *
+ * @param {Object} extraProps Additional props applied to save element.
+ * @param {Object} blockType  Block type.
+ * @param {Object} attributes Current block attributes.
+ *
+ * @return {Object} Filtered props applied to save element.
+ */
+function addSaveProps(extraProps, blockType, attributes) {
+	if (attributes.enableAnimate) {
+		assign(extraProps, {
+			"data-c9-animate": attributes.animateVal,
+			"data-c9-animate-delay": attributes.animateDelay,
+			"data-c9-animate-speed": attributes.animateSpeed,
+			"data-c9-animate-scrub": attributes.animateScrub
+		});
+	}
+
+	return extraProps;
+}
+
+/**
  * Override the default edit UI to include a new block inspector control for
  * assigning the custom attribute if needed.
  *
@@ -106,6 +130,35 @@ function addAttribute(settings, name) {
  */
 const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 	class C9AnimateWrapper extends Component {
+		componentDidMount() {
+			const props = this.props;
+			const blockName = props.name;
+			const allow = checkCoreBlock(blockName);
+			if (!allow) {
+				return;
+			}
+
+			const {
+				attributes: {
+					enableAnimate,
+					animateVal,
+					animateDelay,
+					animateSpeed,
+					animateScrub
+				}
+			} = this.props;
+
+			const target = `#block-${this.props.clientId}`;
+			initAnimate(
+				target,
+				enableAnimate,
+				animateVal,
+				animateDelay,
+				animateSpeed,
+				animateScrub
+			);
+		}
+
 		render() {
 			const props = this.props;
 			const blockName = props.name;
@@ -160,4 +213,9 @@ addFilter(
 	"editor.BlockEdit",
 	"c9-blocks/animate/additional-attributes",
 	withInspectorControl
+);
+addFilter(
+	"blocks.getSaveContent.extraProps",
+	"c9-blocks/animate/save-props",
+	addSaveProps
 );
