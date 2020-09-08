@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const { __ } = wp.i18n;
 const { PanelBody, RangeControl, ToggleControl, SelectControl } = wp.components;
@@ -17,6 +17,7 @@ const animationPanel = props => {
 		target
 	} = props;
 
+	const [useMarkers, setUseMarkers] = useState(false);
 	const isFirstRun = useRef([true, true, true]);
 	const currDelay = useRef(animateDelay);
 	const currSpeed = useRef(animateSpeed);
@@ -37,9 +38,10 @@ const animationPanel = props => {
 			currDelay.current,
 			currSpeed.current,
 			animateScrub,
-			enableAnimate
+			enableAnimate,
+			useMarkers
 		);
-	}, [enableAnimate, animateVal, animateScrub]);
+	}, [enableAnimate, animateVal, animateScrub, useMarkers]);
 
 	// update delay
 	useEffect(() => {
@@ -138,6 +140,13 @@ const animationPanel = props => {
 						checked={animateScrub}
 						onChange={animateScrub => setAttributes({ animateScrub })}
 					/>
+					{animateScrub ? (
+						<ToggleControl
+							label={__("Show Markers for Scrubbing?", "c9-blocks")}
+							checked={useMarkers}
+							onChange={useMarkers => setUseMarkers(useMarkers)}
+						/>
+					) : null}
 				</Fragment>
 			) : null}
 		</PanelBody>

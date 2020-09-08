@@ -37,7 +37,7 @@ export const initAnimate = (
 	}
 };
 
-const editorCustomConfigModify = (config, target, animateScrub) => {
+const editorCustomConfigModify = (config, target, animateScrub, useMarkers) => {
 	return [
 		config[0],
 		{
@@ -46,7 +46,7 @@ const editorCustomConfigModify = (config, target, animateScrub) => {
 				id: target,
 				trigger: target,
 				scroller: SCROLLER,
-				// markers: true,
+				markers: useMarkers,
 				scrub: animateScrub
 			}
 		}
@@ -59,7 +59,8 @@ export const restartAnimate = (
 	animateDelay,
 	animateSpeed,
 	animateScrub,
-	enableAnimate
+	enableAnimate,
+	useMarkers = false
 ) => {
 	let customConfig = createCustomConfig(
 		animateVal,
@@ -79,7 +80,7 @@ export const restartAnimate = (
 	}
 
 	if (animateScrub) {
-		customConfig = editorCustomConfigModify(customConfig, target, animateScrub);
+		customConfig = editorCustomConfigModify(customConfig, target, animateScrub, useMarkers);
 	}
 	gsap.fromTo(target, ...customConfig);
 };

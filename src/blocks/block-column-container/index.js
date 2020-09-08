@@ -15,7 +15,6 @@ import "./styles/editor.scss";
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { compose } = wp.compose;
 const { withSelect } = wp.data;
 const { registerBlockType } = wp.blocks;
 
@@ -51,18 +50,18 @@ registerBlockType("c9-blocks/column-container", {
 	},
 
 	// Render the block components
-	edit: compose([
-		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } = select("core/block-editor");
+	edit: withSelect((select, ownProps) => {
+		const { isBlockSelected, hasSelectedInnerBlock } = select(
+			"core/block-editor"
+		);
 
-			const { clientId } = ownProps;
+		const { clientId } = ownProps;
 
-			return {
-				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
-			};
-		})
-	])(Edit),
+		return {
+			isSelectedBlockInRoot:
+				isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+		};
+	})(Edit),
 
 	// Save the attributes and markup
 	save: props => {
