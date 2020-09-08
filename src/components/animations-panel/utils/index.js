@@ -112,6 +112,22 @@ export const animateOptions = [
 	{
 		value: "fadeRight",
 		label: "Fade Right"
+	},
+	{
+		value: "slideUp",
+		label: "Slide Up"
+	},
+	{
+		value: "slideDown",
+		label: "Slide Down"
+	},
+	{
+		value: "slideLeft",
+		label: "Slide Left"
+	},
+	{
+		value: "slideRight",
+		label: "Slide Right"
 	}
 ];
 
@@ -146,6 +162,30 @@ export const animateConfigs = {
 	fadeRight: [
 		{
 			opacity: 0,
+			x: 100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+	],
+	slideUp: [
+		{
+			y: 100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+	],
+	slideDown: [
+		{
+			y: -100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+	],
+	slideLeft: [
+		{
+			x: -100
+		},
+		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+	],
+	slideRight: [
+		{
 			x: 100
 		},
 		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
