@@ -4,6 +4,8 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import isUndefined from "lodash/isUndefined";
+import pickBy from "lodash/pickBy";
 
 if (typeof window !== `undefined`) {
 	gsap.registerPlugin(ScrollTrigger);
@@ -37,7 +39,22 @@ export const initAnimate = (
 	}
 };
 
-const editorCustomConfigModify = (config, target, animateScrub, useMarkers) => {
+const editorCustomConfigModify = (
+	config,
+	target,
+	animateScrub,
+	useMarkers,
+	animateStart,
+	animateEnd
+) => {
+	const triggerPlacement = pickBy(
+		{
+			start: animateStart,
+			end: animateEnd
+		},
+		value => !isUndefined(value)
+	);
+
 	return [
 		config[0],
 		{
@@ -47,7 +64,8 @@ const editorCustomConfigModify = (config, target, animateScrub, useMarkers) => {
 				trigger: target,
 				scroller: SCROLLER,
 				markers: useMarkers,
-				scrub: animateScrub
+				scrub: animateScrub,
+				...triggerPlacement
 			}
 		}
 	];
@@ -60,7 +78,9 @@ export const restartAnimate = (
 	animateSpeed,
 	animateScrub,
 	enableAnimate,
-	useMarkers = false
+	useMarkers = false,
+	animateStart,
+	animateEnd
 ) => {
 	let customConfig = createCustomConfig(
 		animateVal,
@@ -80,7 +100,14 @@ export const restartAnimate = (
 	}
 
 	if (animateScrub) {
-		customConfig = editorCustomConfigModify(customConfig, target, animateScrub, useMarkers);
+		customConfig = editorCustomConfigModify(
+			customConfig,
+			target,
+			animateScrub,
+			useMarkers,
+			animateStart,
+			animateEnd
+		);
 	}
 	gsap.fromTo(target, ...customConfig);
 };

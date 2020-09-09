@@ -10,7 +10,6 @@ const {
 } = wp.components;
 const { Fragment } = wp.element;
 
-
 import SettingsSpacer from "../settings-spacer";
 import KeyframeStepper from "./keyframe-stepper";
 import { animateOptions, restartAnimate } from "./utils";
@@ -50,9 +49,18 @@ const animationPanel = props => {
 			currSpeed.current,
 			animateScrub,
 			enableAnimate,
-			useMarkers
+			useMarkers,
+			animateStart,
+			animateEnd
 		);
-	}, [enableAnimate, animateVal, animateScrub, useMarkers]);
+	}, [
+		enableAnimate,
+		animateVal,
+		animateScrub,
+		useMarkers,
+		animateStart,
+		animateEnd
+	]);
 
 	// update delay
 	useEffect(() => {
@@ -74,7 +82,10 @@ const animationPanel = props => {
 						currDelay.current,
 						currSpeed.current,
 						animateScrub,
-						enableAnimate
+						enableAnimate,
+						useMarkers,
+						animateStart,
+						animateEnd
 					);
 				}
 			},
@@ -102,7 +113,10 @@ const animationPanel = props => {
 						currDelay.current,
 						currSpeed.current,
 						animateScrub,
-						enableAnimate
+						enableAnimate,
+						useMarkers,
+						animateStart,
+						animateEnd
 					);
 				}
 			},
@@ -156,14 +170,14 @@ const animationPanel = props => {
 						label={__("Starting Keyframe", "c9-blocks")}
 						currentValue={animateStart}
 						handleClick={animateStart => setAttributes({ animateStart })}
-						resetValue="0%"
+						offset={0}
 					/>
 					<SettingsSpacer />
 					<KeyframeStepper
 						label={__("Ending Keyframe", "c9-blocks")}
 						currentValue={animateEnd}
 						handleClick={animateEnd => setAttributes({ animateEnd })}
-						resetValue="100%"
+						offset={document.querySelector(target).offsetHeight}
 					/>
 					<ToggleControl
 						label={__("Scrub Animation", "c9-blocks")}

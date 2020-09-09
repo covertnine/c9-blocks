@@ -64,12 +64,10 @@ const defaultAttributes = {
 		default: false
 	},
 	animateStart: {
-		type: "string",
-		default: "0%"
+		type: "string"
 	},
 	animateEnd: {
-		type: "string",
-		default: "100%"
+		type: "string"
 	}
 };
 
