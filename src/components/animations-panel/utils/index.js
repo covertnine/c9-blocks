@@ -121,6 +121,29 @@ export const restartAnimate = ({
 	gsap.fromTo(target, ...customConfig);
 };
 
+export const initDataAttributes = ({
+	animateVal,
+	animateDelay,
+	animateSpeed,
+	animateScrub,
+	animateStart,
+	animateEnd
+}) => {
+	const config = pickBy(
+		{
+			"data-c9-animate": animateVal,
+			"data-c9-animate-delay": animateDelay,
+			"data-c9-animate-speed": animateSpeed,
+			"data-c9-animate-scrub": animateScrub,
+			"data-c9-animate-start": animateStart,
+			"data-c9-animate-end": animateEnd
+		},
+		value => !isUndefined(value)
+	);
+
+	return config;
+};
+
 /**
  * Animate Configurations
  */

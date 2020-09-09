@@ -32,7 +32,10 @@ const { InspectorControls } = wp.blockEditor;
  * Internal dependencies
  */
 import AnimationPanel from "../../components/animations-panel";
-import { initAnimate } from "../../components/animations-panel/utils";
+import {
+	initAnimate,
+	initDataAttributes
+} from "../../components/animations-panel/utils";
 
 /**
  * External dependencies
@@ -116,12 +119,7 @@ function addAttribute(settings, name) {
  */
 function addSaveProps(extraProps, blockType, attributes) {
 	if (attributes.enableAnimate) {
-		assign(extraProps, {
-			"data-c9-animate": attributes.animateVal,
-			"data-c9-animate-delay": attributes.animateDelay,
-			"data-c9-animate-speed": attributes.animateSpeed,
-			"data-c9-animate-scrub": attributes.animateScrub
-		});
+		assign(extraProps, initDataAttributes(attributes));
 	}
 
 	return extraProps;

@@ -19,7 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
 		const animateVal = element.dataset.c9Animate;
 		const animateDelay = element.dataset.c9AnimateDelay;
 		const animateSpeed = element.dataset.c9AnimateSpeed;
+		const animateStart = element.dataset.c9AnimateStart;
+		const animateEnd = element.dataset.c9AnimateEnd;
+
 		let animateScrub = element.dataset.c9AnimateScrub;
+		const keyframeConfig = animateScrub
+			? { start: animateStart, end: animateEnd }
+			: null;
+
 		// console.log(animateVal, animateDelay, animateSpeed);
 		const customConfig = createCustomConfig(
 			animateVal,
@@ -32,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
 			...customConfig[1],
 			scrollTrigger: {
 				trigger: element,
-				scrub: animateScrub
+				scrub: animateScrub,
+				...keyframeConfig
 			}
 		});
 	}

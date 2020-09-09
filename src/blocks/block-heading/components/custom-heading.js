@@ -10,6 +10,11 @@ const { applyFilters } = wp.hooks;
 import classnames from "classnames";
 
 /**
+ * Internal Dependencies.
+ */
+import { initDataAttributes } from "../../../components/animations-panel/utils";
+
+/**
  * Create a C9CustomHeading wrapper Component
  */
 export default class C9CustomHeading extends Component {
@@ -19,15 +24,8 @@ export default class C9CustomHeading extends Component {
 
 	render() {
 		const {
-			attributes: {
-				textAlign,
-				anchor,
-				enableAnimate,
-				animateVal,
-				animateDelay,
-				animateSpeed,
-				animateScrub
-			},
+			attributes,
+			attributes: { textAlign, anchor },
 			className = ""
 		} = this.props;
 
@@ -40,10 +38,7 @@ export default class C9CustomHeading extends Component {
 				)}
 				style={{ backgroundColor: this.props.attributes.backgroundColor }}
 				id={anchor ? anchor : null}
-				data-c9-animate={enableAnimate ? animateVal : null}
-				data-c9-animate-delay={enableAnimate ? animateDelay : null}
-				data-c9-animate-speed={enableAnimate ? animateSpeed : null}
-				data-c9-animate-scrub={enableAnimate ? animateScrub : null}
+				{...initDataAttributes(attributes)}
 			>
 				{this.props.children}
 			</div>
