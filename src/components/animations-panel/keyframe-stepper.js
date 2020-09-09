@@ -4,7 +4,7 @@ const { Button, ButtonGroup, BaseControl } = wp.components;
 const SIZE_PRESETS = ["0%", "25%", "50%", "75%", "100%"];
 
 const KeyframeStepper = props => {
-	const { label, currentValue, offset, resetValue } = props;
+	const { label, currentValue, offset, resetValue, disabled } = props;
 
 	return (
 		<BaseControl label={label}>
@@ -15,6 +15,7 @@ const KeyframeStepper = props => {
 						const isCurrent = buttonValue === currentValue;
 						return (
 							<Button
+								disabled={disabled}
 								key={`${label}-${scale}`}
 								isPrimary={isCurrent}
 								isPressed={isCurrent}
@@ -26,6 +27,7 @@ const KeyframeStepper = props => {
 					})}
 				</ButtonGroup>
 				<Button
+					disabled={disabled}
 					key={`${label}-reset`}
 					isSmall
 					onClick={() => props.handleClick(resetValue)}

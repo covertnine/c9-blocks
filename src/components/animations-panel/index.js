@@ -6,7 +6,8 @@ const {
 	RangeControl,
 	ToggleControl,
 	SelectControl,
-	BaseControl
+	BaseControl,
+	Disabled
 } = wp.components;
 const { Fragment } = wp.element;
 
@@ -119,12 +120,96 @@ const animationPanel = props => {
 			/>
 			{enableAnimate ? (
 				<Fragment>
+					<SettingsSpacer />
+					<p className="components-base-control__label">
+						{__("Scroll Animation", "c9-blocks")}
+					</p>
+					<SelectControl
+						disabled={!animateScrub}
+						label={__("Animation", "c9-blocks")}
+						options={animateOptions}
+						value={animateVal}
+						onChange={animateVal => setAttributes({ animateVal })}
+					/>
+
+					<SettingsSpacer />
+
+					{animateScrub ? (
+						<ToggleControl
+							disabled={!animateScrub}
+							label={__("Show Keyframe Markers", "c9-blocks")}
+							checked={useMarkers}
+							onChange={useMarkers => setUseMarkers(useMarkers)}
+						/>
+					) : (
+						<Disabled>
+							<ToggleControl
+								disabled={!animateScrub}
+								label={__("Show Keyframe Markers", "c9-blocks")}
+								checked={useMarkers}
+								onChange={useMarkers => setUseMarkers(useMarkers)}
+							/>
+						</Disabled>
+					)}
+
+					<BaseControl
+						help={__(
+							"Select beginning and ending trigger positions in the browser window to add a scrub animation effect as the user scrolls between those positions.",
+							"c9-blocks"
+						)}
+					/>
+					<KeyframeStepper
+						disabled={!animateScrub}
+						label={__("Starting Keyframe", "c9-blocks")}
+						currentValue={animateStart}
+						handleClick={animateStart => setAttributes({ animateStart })}
+						offset={0}
+					/>
+					<SettingsSpacer />
+					<KeyframeStepper
+						disabled={!animateScrub}
+						label={__("Ending Keyframe", "c9-blocks")}
+						currentValue={animateEnd}
+						handleClick={animateEnd => setAttributes({ animateEnd })}
+						offset={
+							document.querySelector(target)
+								? document.querySelector(target).offsetHeight
+								: 0
+						}
+					/>
+				</Fragment>
+			) : null}
+
+			<SettingsSpacer />
+			<p className="components-base-control__label">
+				{__("Transition Animation", "c9-blocks")}
+			</p>
+
+			<SettingsSpacer />
+			<ToggleControl
+				label={__("Enable Transitions", "c9-blocks")}
+				checked={!animateScrub}
+				onChange={animateScrub =>
+					setAttributes({ animateScrub: !animateScrub })
+				}
+			/>
+
+			{enableAnimate && !animateScrub ? (
+				<Fragment>
+					<BaseControl
+						help={__(
+							"Settings to automatically animate the selected block with delay and speed options for fine tuning animtions.",
+							"c9-blocks"
+						)}
+					/>
+
 					<SelectControl
 						label={__("Animation", "c9-blocks")}
 						options={animateOptions}
 						value={animateVal}
 						onChange={animateVal => setAttributes({ animateVal })}
 					/>
+
 					<RangeControl
 						label={__("Delay (ms)", "c9-blocks")}
 						value={animateDelay}
@@ -145,37 +230,6 @@ const animationPanel = props => {
 						min={500}
 						max={5000}
 					/>
-					<BaseControl
-						help={__(
-							"Select beginning and ending trigger positions in the browser window to add a scrub animation effect as the user scrolls between those positions.",
-							"c9-blocks"
-						)}
-					/>
-					<KeyframeStepper
-						label={__("Starting Keyframe", "c9-blocks")}
-						currentValue={animateStart}
-						handleClick={animateStart => setAttributes({ animateStart })}
-						offset={0}
-					/>
-					<SettingsSpacer />
-					<KeyframeStepper
-						label={__("Ending Keyframe", "c9-blocks")}
-						currentValue={animateEnd}
-						handleClick={animateEnd => setAttributes({ animateEnd })}
-						offset={document.querySelector(target).offsetHeight}
-					/>
-					<ToggleControl
-						label={__("Scrub Animation", "c9-blocks")}
-						checked={animateScrub}
-						onChange={animateScrub => setAttributes({ animateScrub })}
-					/>
-					{animateScrub ? (
-						<ToggleControl
-							label={__("Show Markers for Scrubbing?", "c9-blocks")}
-							checked={useMarkers}
-							onChange={useMarkers => setUseMarkers(useMarkers)}
-						/>
-					) : null}
 				</Fragment>
 			) : null}
 		</PanelBody>
