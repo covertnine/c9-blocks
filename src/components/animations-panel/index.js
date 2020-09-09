@@ -1,9 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 
 const { __ } = wp.i18n;
-const { PanelBody, RangeControl, ToggleControl, SelectControl } = wp.components;
+const {
+	PanelBody,
+	RangeControl,
+	ToggleControl,
+	SelectControl,
+	BaseControl
+} = wp.components;
 const { Fragment } = wp.element;
 
+
+import SettingsSpacer from "../settings-spacer";
+import KeyframeStepper from "./keyframe-stepper";
 import { animateOptions, restartAnimate } from "./utils";
 
 const animationPanel = props => {
@@ -14,7 +23,9 @@ const animationPanel = props => {
 		animateSpeed,
 		animateScrub,
 		setAttributes,
-		target
+		target,
+		animateStart,
+		animateEnd
 	} = props;
 
 	const [useMarkers, setUseMarkers] = useState(false);
@@ -134,6 +145,25 @@ const animationPanel = props => {
 						}}
 						min={500}
 						max={5000}
+					/>
+					<BaseControl
+						help={__(
+							"Select beginning and ending trigger positions in the browser window to add a scrub animation effect as the user scrolls between those positions.",
+							"c9-blocks"
+						)}
+					/>
+					<KeyframeStepper
+						label={__("Starting Keyframe", "c9-blocks")}
+						currentValue={animateStart}
+						handleClick={animateStart => setAttributes({ animateStart })}
+						resetValue="0%"
+					/>
+					<SettingsSpacer />
+					<KeyframeStepper
+						label={__("Ending Keyframe", "c9-blocks")}
+						currentValue={animateEnd}
+						handleClick={animateEnd => setAttributes({ animateEnd })}
+						resetValue="100%"
 					/>
 					<ToggleControl
 						label={__("Scrub Animation", "c9-blocks")}

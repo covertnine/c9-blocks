@@ -81,6 +81,14 @@ const attributes = {
 	animateScrub: {
 		type: "boolean",
 		default: false
+	},
+	animateStart: {
+		type: "string",
+		default: "0%"
+	},
+	animateEnd: {
+		type: "string",
+		default: "100%"
 	}
 };
 

@@ -62,6 +62,14 @@ const defaultAttributes = {
 	animateScrub: {
 		type: "boolean",
 		default: false
+	},
+	animateStart: {
+		type: "string",
+		default: "0%"
+	},
+	animateEnd: {
+		type: "string",
+		default: "100%"
 	}
 };
 
@@ -171,13 +179,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 
 			const {
 				setAttributes,
-				attributes: {
-					enableAnimate,
-					animateVal,
-					animateDelay,
-					animateSpeed,
-					animateScrub
-				}
+				attributes
 			} = this.props;
 
 			// add new animation controls.
@@ -187,12 +189,8 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 
 					<InspectorControls>
 						<AnimationPanel
+							{...attributes}
 							target={`#block-${this.props.clientId}`}
-							enableAnimate={enableAnimate}
-							animateVal={animateVal}
-							animateDelay={animateDelay}
-							animateSpeed={animateSpeed}
-							animateScrub={animateScrub}
 							setAttributes={setAttributes}
 						/>
 					</InspectorControls>

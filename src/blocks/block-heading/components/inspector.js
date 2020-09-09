@@ -25,6 +25,7 @@ class Inspector extends Component {
 		// Setup the attributes
 		const {
 			setAttributes,
+			attributes,
 			attributes: {
 				displayLevel,
 				textAlign,
@@ -35,12 +36,7 @@ class Inspector extends Component {
 				subTextColor,
 				tagLevel,
 				overrideStyle,
-				addSubheading,
-				enableAnimate,
-				animateVal,
-				animateDelay,
-				animateSpeed,
-				animateScrub
+				addSubheading
 			}
 		} = this.props;
 
@@ -183,12 +179,8 @@ class Inspector extends Component {
 				</PanelColorSettings>
 
 				<AnimationPanel
+					{...attributes}
 					target={`#block-${this.props.clientId} > *`}
-					enableAnimate={enableAnimate}
-					animateVal={animateVal}
-					animateDelay={animateDelay}
-					animateSpeed={animateSpeed}
-					animateScrub={animateScrub}
 					setAttributes={setAttributes}
 				/>
 			</InspectorControls>
