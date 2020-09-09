@@ -23,16 +23,25 @@ export const createCustomConfig = (animateVal, animateDelay, animateSpeed) => {
 	];
 };
 
-export const initAnimate = (
+export const initAnimate = ({
 	target,
 	enableAnimate,
 	animateVal,
 	animateDelay,
 	animateSpeed,
-	animateScrub
-) => {
+	animateScrub,
+	animateStart,
+	animateEnd
+}) => {
 	let customConfig = createCustomConfig(animateVal, animateDelay, animateSpeed);
-	customConfig = editorCustomConfigModify(customConfig, target, animateScrub);
+	customConfig = editorCustomConfigModify(
+		customConfig,
+		target,
+		animateScrub,
+		false,
+		animateStart,
+		animateEnd
+	);
 
 	if (enableAnimate) {
 		gsap.fromTo(target, ...customConfig);
@@ -71,7 +80,7 @@ const editorCustomConfigModify = (
 	];
 };
 
-export const restartAnimate = (
+export const restartAnimate = ({
 	target,
 	animateVal,
 	animateDelay,
@@ -81,7 +90,7 @@ export const restartAnimate = (
 	useMarkers = false,
 	animateStart,
 	animateEnd
-) => {
+}) => {
 	let customConfig = createCustomConfig(
 		animateVal,
 		animateDelay,

@@ -42,17 +42,12 @@ const animationPanel = props => {
 		}
 		// console.log(animateVal);
 
-		restartAnimate(
-			target,
-			animateVal,
-			currDelay.current,
-			currSpeed.current,
-			animateScrub,
-			enableAnimate,
-			useMarkers,
-			animateStart,
-			animateEnd
-		);
+		restartAnimate({
+			...props,
+			animateDelay: currDelay.current,
+			animateSpeed: currSpeed.current,
+			useMarkers
+		});
 	}, [
 		enableAnimate,
 		animateVal,
@@ -76,17 +71,12 @@ const animationPanel = props => {
 				// if same, then start updating timeline
 				if (prevDelay === currDelay.current) {
 					// console.log("check")
-					restartAnimate(
-						target,
-						animateVal,
-						currDelay.current,
-						currSpeed.current,
-						animateScrub,
-						enableAnimate,
-						useMarkers,
-						animateStart,
-						animateEnd
-					);
+					restartAnimate({
+						...props,
+						animateDelay: currDelay.current,
+						animateSpeed: currSpeed.current,
+						useMarkers
+					});
 				}
 			},
 			200,
@@ -107,17 +97,12 @@ const animationPanel = props => {
 				// if same, then start updating timeline
 				if (prevSpeed === currSpeed.current) {
 					// console.log("check")
-					restartAnimate(
-						target,
-						animateVal,
-						currDelay.current,
-						currSpeed.current,
-						animateScrub,
-						enableAnimate,
-						useMarkers,
-						animateStart,
-						animateEnd
-					);
+					restartAnimate({
+						...props,
+						animateDelay: currDelay.current,
+						animateSpeed: currSpeed.current,
+						useMarkers
+					});
 				}
 			},
 			200,

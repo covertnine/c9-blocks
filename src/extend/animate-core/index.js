@@ -145,25 +145,13 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 				return;
 			}
 
-			const {
-				attributes: {
-					enableAnimate,
-					animateVal,
-					animateDelay,
-					animateSpeed,
-					animateScrub
-				}
-			} = this.props;
+			const { attributes } = this.props;
 
 			const target = `#block-${this.props.clientId}`;
-			initAnimate(
-				target,
-				enableAnimate,
-				animateVal,
-				animateDelay,
-				animateSpeed,
-				animateScrub
-			);
+			initAnimate({
+				...attributes,
+				target
+			});
 		}
 
 		render() {
@@ -175,10 +163,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 				return <OriginalComponent {...props} />;
 			}
 
-			const {
-				setAttributes,
-				attributes
-			} = this.props;
+			const { setAttributes, attributes } = this.props;
 
 			// add new animation controls.
 			return (
