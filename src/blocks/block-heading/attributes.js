@@ -87,6 +87,10 @@ const attributes = {
 	},
 	animateEnd: {
 		type: "string"
+	},
+	animateSettings: {
+		type: "object",
+		default: {}
 	}
 };
 

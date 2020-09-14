@@ -191,63 +191,276 @@ export const animateOptions = [
 	}
 ];
 
+export const animateSettings = {
+	fade: {
+		before: [
+			{
+				name: "Starting Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			}
+		],
+		after: [
+			{
+				name: "Ending Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			}
+		]
+	},
+	fadeUp: {
+		before: [
+			{
+				name: "Starting Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Starting Position",
+				prop: "y",
+				minValue: -500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Ending Position",
+				prop: "y",
+				minValue: 0,
+				maxValue: 500
+			}
+		]
+	},
+	fadeDown: {
+		before: [
+			{
+				name: "Starting Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Starting Position",
+				prop: "y",
+				minValue: 500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Ending Position",
+				prop: "y",
+				minValue: 0,
+				maxValue: -500
+			}
+		]
+	},
+	fadeLeft: {
+		before: [
+			{
+				name: "Starting Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Starting Position",
+				prop: "x",
+				minValue: -500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Ending Position",
+				prop: "x",
+				minValue: 0,
+				maxValue: 500
+			}
+		]
+	},
+	fadeRight: {
+		before: [
+			{
+				name: "Starting Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Starting Position",
+				prop: "x",
+				minValue: 500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Opacity",
+				prop: "AutoAlpha",
+				minValue: 0,
+				maxValue: 100
+			},
+			{
+				name: "Ending Position",
+				prop: "x",
+				minValue: 0,
+				maxValue: -500
+			}
+		]
+	},
+	slideUp: {
+		before: [
+			{
+				name: "Starting Position",
+				prop: "y",
+				minValue: -500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Position",
+				prop: "y",
+				minValue: 0,
+				maxValue: 500
+			}
+		]
+	},
+	slideDown: {
+		before: [
+			{
+				name: "Starting Position",
+				prop: "y",
+				minValue: 500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Position",
+				prop: "y",
+				minValue: 0,
+				maxValue: -500
+			}
+		]
+	},
+	slideLeft: {
+		before: [
+			{
+				name: "Starting Position",
+				prop: "x",
+				minValue: -500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Position",
+				prop: "x",
+				minValue: 0,
+				maxValue: 500
+			}
+		]
+	},
+	slideRight: {
+		before: [
+			{
+				name: "Starting Position",
+				prop: "x",
+				minValue: 500,
+				maxValue: 0
+			}
+		],
+		after: [
+			{
+				name: "Ending Position",
+				prop: "x",
+				minValue: 0,
+				maxValue: -500
+			}
+		]
+	}
+};
+
 export const animateConfigs = {
 	fade: [
 		{
-			opacity: 0
+			autoAlpha: 0
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED }
+		{ autoAlpha: 1, duration: DEFAULT_SPEED }
 	],
 	fadeUp: [
 		{
-			opacity: 0,
+			autoAlpha: 0,
 			y: 100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+		{ autoAlpha: 1, duration: DEFAULT_SPEED, y: 0 }
 	],
 	fadeDown: [
 		{
-			opacity: 0,
+			autoAlpha: 0,
 			y: -100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+		{ autoAlpha: 1, duration: DEFAULT_SPEED, y: 0 }
 	],
 	fadeLeft: [
 		{
-			opacity: 0,
+			autoAlpha: 0,
 			x: -100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+		{ autoAlpha: 1, duration: DEFAULT_SPEED, x: 0 }
 	],
 	fadeRight: [
 		{
-			opacity: 0,
+			autoAlpha: 0,
 			x: 100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+		{ autoAlpha: 1, duration: DEFAULT_SPEED, x: 0 }
 	],
 	slideUp: [
 		{
 			y: 100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+		{ duration: DEFAULT_SPEED, y: 0 }
 	],
 	slideDown: [
 		{
 			y: -100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, y: 0 }
+		{ duration: DEFAULT_SPEED, y: 0 }
 	],
 	slideLeft: [
 		{
 			x: -100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+		{ duration: DEFAULT_SPEED, x: 0 }
 	],
 	slideRight: [
 		{
 			x: 100
 		},
-		{ opacity: 1, duration: DEFAULT_SPEED, x: 0 }
+		{ duration: DEFAULT_SPEED, x: 0 }
 	]
 };
