@@ -112,9 +112,12 @@ const animationPanel = props => {
 		);
 	}, [animateSpeed]);
 
-	console.log(
-		animateSettings[animateVal] && animateSettings[animateVal].before
-	);
+	// wipe config after every animation swap
+	useEffect(() => {
+		setAttributes({ animateCustom: { before: {}, after: {} } });
+	}, [animateVal]);
+
+	// console.log(animateCustom);
 
 	return (
 		<PanelBody title={__("Animations", "c9-blocks")} initialOpen={false}>
@@ -146,6 +149,16 @@ const animationPanel = props => {
 										(animateCustom.before && animateCustom.before[c.prop]) ||
 										c.defaultValue
 									}
+									onChange={value => {
+										const newAnimateCustom = {
+											...animateCustom,
+											before: {
+												...animateCustom.before,
+												[c.prop]: value
+											}
+										};
+										setAttributes({ animateCustom: newAnimateCustom });
+									}}
 									min={c.minValue}
 									max={c.maxValue}
 								/>
@@ -161,6 +174,16 @@ const animationPanel = props => {
 										(animateCustom.after && animateCustom.after[c.prop]) ||
 										c.defaultValue
 									}
+									onChange={value => {
+										const newAnimateCustom = {
+											...animateCustom,
+											after: {
+												...animateCustom.after,
+												[c.prop]: value
+											}
+										};
+										setAttributes({ animateCustom: newAnimateCustom });
+									}}
 									min={c.minValue}
 									max={c.maxValue}
 								/>

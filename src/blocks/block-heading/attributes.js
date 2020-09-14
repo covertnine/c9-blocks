@@ -90,7 +90,10 @@ const attributes = {
 	},
 	animateCustom: {
 		type: "object",
-		default: {}
+		default: {
+			before: {},
+			after: {}
+		}
 	}
 };
 

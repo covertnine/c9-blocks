@@ -74,7 +74,10 @@ const defaultAttributes = {
 	},
 	animateCustom: {
 		type: "object",
-		default: {}
+		default: {
+			before: {},
+			after: {}
+		}
 	}
 };
 
