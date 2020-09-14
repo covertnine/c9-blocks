@@ -198,7 +198,8 @@ export const animateSettings = {
 				name: "Starting Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 0
 			}
 		],
 		after: [
@@ -206,7 +207,8 @@ export const animateSettings = {
 				name: "Ending Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 100
 			}
 		]
 	},
@@ -216,13 +218,15 @@ export const animateSettings = {
 				name: "Starting Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 0
 			},
 			{
 				name: "Starting Position",
 				prop: "y",
-				minValue: -500,
-				maxValue: 0
+				minValue: 0,
+				maxValue: 500,
+				defaultValue: 100
 			}
 		],
 		after: [
@@ -230,13 +234,15 @@ export const animateSettings = {
 				name: "Ending Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 100
 			},
 			{
 				name: "Ending Position",
 				prop: "y",
-				minValue: 0,
-				maxValue: 500
+				minValue: -500,
+				maxValue: 0,
+				defaultValue: 0
 			}
 		]
 	},
@@ -246,13 +252,15 @@ export const animateSettings = {
 				name: "Starting Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 0
 			},
 			{
 				name: "Starting Position",
 				prop: "y",
-				minValue: 500,
-				maxValue: 0
+				minValue: -500,
+				maxValue: 0,
+				defaultValue: -100
 			}
 		],
 		after: [
@@ -260,13 +268,15 @@ export const animateSettings = {
 				name: "Ending Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 100
 			},
 			{
 				name: "Ending Position",
 				prop: "y",
 				minValue: 0,
-				maxValue: -500
+				maxValue: 500,
+				defaultValue: 0
 			}
 		]
 	},
@@ -276,13 +286,15 @@ export const animateSettings = {
 				name: "Starting Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 0
 			},
 			{
 				name: "Starting Position",
 				prop: "x",
 				minValue: -500,
-				maxValue: 0
+				maxValue: 0,
+				defaultValue: -100
 			}
 		],
 		after: [
@@ -290,13 +302,15 @@ export const animateSettings = {
 				name: "Ending Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 100
 			},
 			{
 				name: "Ending Position",
 				prop: "x",
 				minValue: 0,
-				maxValue: 500
+				maxValue: 500,
+				defaultValue: 0
 			}
 		]
 	},
@@ -306,13 +320,15 @@ export const animateSettings = {
 				name: "Starting Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 0
 			},
 			{
 				name: "Starting Position",
 				prop: "x",
-				minValue: 500,
-				maxValue: 0
+				minValue: 0,
+				maxValue: 500,
+				defaultValue: 100
 			}
 		],
 		after: [
@@ -320,13 +336,15 @@ export const animateSettings = {
 				name: "Ending Opacity",
 				prop: "AutoAlpha",
 				minValue: 0,
-				maxValue: 100
+				maxValue: 100,
+				defaultValue: 100
 			},
 			{
 				name: "Ending Position",
 				prop: "x",
 				minValue: 0,
-				maxValue: -500
+				maxValue: 500,
+				defaultValue: 0
 			}
 		]
 	},
@@ -335,16 +353,18 @@ export const animateSettings = {
 			{
 				name: "Starting Position",
 				prop: "y",
-				minValue: -500,
-				maxValue: 0
+				minValue: 0,
+				maxValue: 500,
+				defaultValue: 100
 			}
 		],
 		after: [
 			{
 				name: "Ending Position",
 				prop: "y",
-				minValue: 0,
-				maxValue: 500
+				minValue: -500,
+				maxValue: 0,
+				defaultValue: 0
 			}
 		]
 	},
@@ -353,8 +373,9 @@ export const animateSettings = {
 			{
 				name: "Starting Position",
 				prop: "y",
-				minValue: 500,
-				maxValue: 0
+				minValue: -500,
+				maxValue: 0,
+				defaultValue: -100
 			}
 		],
 		after: [
@@ -362,7 +383,8 @@ export const animateSettings = {
 				name: "Ending Position",
 				prop: "y",
 				minValue: 0,
-				maxValue: -500
+				maxValue: 500,
+				defaultValue: 0
 			}
 		]
 	},
@@ -372,7 +394,8 @@ export const animateSettings = {
 				name: "Starting Position",
 				prop: "x",
 				minValue: -500,
-				maxValue: 0
+				maxValue: 0,
+				defaultValue: -100
 			}
 		],
 		after: [
@@ -380,7 +403,8 @@ export const animateSettings = {
 				name: "Ending Position",
 				prop: "x",
 				minValue: 0,
-				maxValue: 500
+				maxValue: 500,
+				defaultValue: 0
 			}
 		]
 	},
@@ -389,8 +413,9 @@ export const animateSettings = {
 			{
 				name: "Starting Position",
 				prop: "x",
-				minValue: 500,
-				maxValue: 0
+				minValue: 0,
+				maxValue: 500,
+				defaultValue: 100
 			}
 		],
 		after: [
@@ -398,7 +423,8 @@ export const animateSettings = {
 				name: "Ending Position",
 				prop: "x",
 				minValue: 0,
-				maxValue: -500
+				maxValue: 500,
+				defaultValue: 0
 			}
 		]
 	}

@@ -13,7 +13,7 @@ const { Fragment } = wp.element;
 
 import SettingsSpacer from "../settings-spacer";
 import KeyframeStepper from "./keyframe-stepper";
-import { animateOptions, restartAnimate } from "./utils";
+import { animateOptions, animateSettings, restartAnimate } from "./utils";
 
 const animationPanel = props => {
 	const {
@@ -25,7 +25,8 @@ const animationPanel = props => {
 		setAttributes,
 		target,
 		animateStart,
-		animateEnd
+		animateEnd,
+		animateCustom
 	} = props;
 
 	const [useMarkers, setUseMarkers] = useState(false);
@@ -111,6 +112,10 @@ const animationPanel = props => {
 		);
 	}, [animateSpeed]);
 
+	console.log(
+		animateSettings[animateVal] && animateSettings[animateVal].before
+	);
+
 	return (
 		<PanelBody title={__("Animations", "c9-blocks")} initialOpen={false}>
 			<ToggleControl
@@ -131,6 +136,36 @@ const animationPanel = props => {
 						value={animateVal}
 						onChange={animateVal => setAttributes({ animateVal })}
 					/>
+
+					{animateSettings[animateVal] && animateSettings[animateVal].before
+						? animateSettings[animateVal].before.map(c => (
+								<RangeControl
+									disabled={!animateScrub}
+									label={__(c.name, "c9-blocks")}
+									value={
+										(animateCustom.before && animateCustom.before[c.prop]) ||
+										c.defaultValue
+									}
+									min={c.minValue}
+									max={c.maxValue}
+								/>
+						  ))
+						: null}
+
+					{animateSettings[animateVal] && animateSettings[animateVal].after
+						? animateSettings[animateVal].after.map(c => (
+								<RangeControl
+									disabled={!animateScrub}
+									label={__(c.name, "c9-blocks")}
+									value={
+										(animateCustom.after && animateCustom.after[c.prop]) ||
+										c.defaultValue
+									}
+									min={c.minValue}
+									max={c.maxValue}
+								/>
+						  ))
+						: null}
 
 					<SettingsSpacer />
 

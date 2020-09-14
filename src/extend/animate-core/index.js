@@ -72,7 +72,7 @@ const defaultAttributes = {
 	animateEnd: {
 		type: "string"
 	},
-	animateSettings: {
+	animateCustom: {
 		type: "object",
 		default: {}
 	}
