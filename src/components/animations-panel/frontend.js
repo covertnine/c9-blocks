@@ -2,7 +2,7 @@
  * Animations Frontend
  */
 
-import { createCustomConfig } from "./utils";
+import { createCustomConfig, userCustomConfigModify } from "./utils";
 
 document.addEventListener("DOMContentLoaded", function() {
 	// simple timeline setups
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		const animateSpeed = element.dataset.c9AnimateSpeed;
 		const animateStart = element.dataset.c9AnimateStart;
 		const animateEnd = element.dataset.c9AnimateEnd;
+		const animateCustom = JSON.parse(element.dataset.c9AnimateCustom);
 
 		let animateScrub = element.dataset.c9AnimateScrub;
 		const keyframeConfig = animateScrub
@@ -28,13 +29,19 @@ document.addEventListener("DOMContentLoaded", function() {
 			: null;
 
 		// console.log(animateVal, animateDelay, animateSpeed);
-		const customConfig = createCustomConfig(
+		let customConfig = createCustomConfig(
 			animateVal,
 			animateDelay,
 			animateSpeed
 		);
 		// string to boolean
 		animateScrub = "true" === animateScrub;
+
+		if (animateScrub) {
+			customConfig = userCustomConfigModify(customConfig, animateCustom);
+			console.log(customConfig);
+		}
+
 		gsap.fromTo(element, customConfig[0], {
 			...customConfig[1],
 			scrollTrigger: {

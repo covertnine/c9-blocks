@@ -45,7 +45,7 @@ export const initAnimate = ({
 	);
 
 	if (animateScrub) {
-		customConfig = userEditorCustomConfigModify(customConfig, animateCustom);
+		customConfig = userCustomConfigModify(customConfig, animateCustom);
 	}
 
 	if (enableAnimate) {
@@ -85,7 +85,7 @@ const editorCustomConfigModify = (
 	];
 };
 
-const userEditorCustomConfigModify = (customConfig, animateCustom) => {
+export const userCustomConfigModify = (customConfig, animateCustom) => {
 	return [
 		{
 			...customConfig[0],
@@ -136,7 +136,7 @@ export const restartAnimate = ({
 			animateStart,
 			animateEnd
 		);
-		customConfig = userEditorCustomConfigModify(customConfig, animateCustom);
+		customConfig = userCustomConfigModify(customConfig, animateCustom);
 	}
 
 	gsap.fromTo(target, ...customConfig);
@@ -148,7 +148,8 @@ export const initDataAttributes = ({
 	animateSpeed,
 	animateScrub,
 	animateStart,
-	animateEnd
+	animateEnd,
+	animateCustom
 }) => {
 	const config = pickBy(
 		{
@@ -157,7 +158,8 @@ export const initDataAttributes = ({
 			"data-c9-animate-speed": animateSpeed,
 			"data-c9-animate-scrub": animateScrub,
 			"data-c9-animate-start": animateStart,
-			"data-c9-animate-end": animateEnd
+			"data-c9-animate-end": animateEnd,
+			"data-c9-animate-custom": JSON.stringify(animateCustom)
 		},
 		value => !isUndefined(value)
 	);
