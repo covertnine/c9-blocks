@@ -31,7 +31,8 @@ export const initAnimate = ({
 	animateSpeed,
 	animateScrub,
 	animateStart,
-	animateEnd
+	animateEnd,
+	animateCustom
 }) => {
 	let customConfig = createCustomConfig(animateVal, animateDelay, animateSpeed);
 	customConfig = editorCustomConfigModify(
@@ -42,6 +43,10 @@ export const initAnimate = ({
 		animateStart,
 		animateEnd
 	);
+
+	if (animateScrub) {
+		customConfig = userEditorCustomConfigModify(customConfig, animateCustom);
+	}
 
 	if (enableAnimate) {
 		gsap.fromTo(target, ...customConfig);
@@ -80,6 +85,19 @@ const editorCustomConfigModify = (
 	];
 };
 
+const userEditorCustomConfigModify = (customConfig, animateCustom) => {
+	return [
+		{
+			...customConfig[0],
+			...animateCustom.before
+		},
+		{
+			...customConfig[1],
+			...animateCustom.after
+		}
+	];
+};
+
 export const restartAnimate = ({
 	target,
 	animateVal,
@@ -89,7 +107,8 @@ export const restartAnimate = ({
 	enableAnimate,
 	useMarkers = false,
 	animateStart,
-	animateEnd
+	animateEnd,
+	animateCustom
 }) => {
 	let customConfig = createCustomConfig(
 		animateVal,
@@ -117,7 +136,11 @@ export const restartAnimate = ({
 			animateStart,
 			animateEnd
 		);
+		customConfig = userEditorCustomConfigModify(customConfig, animateCustom);
 	}
+
+	console.log(customConfig);
+
 	gsap.fromTo(target, ...customConfig);
 };
 
@@ -196,7 +219,7 @@ export const animateSettings = {
 		before: [
 			{
 				name: "Starting Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 0
@@ -205,7 +228,7 @@ export const animateSettings = {
 		after: [
 			{
 				name: "Ending Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 100
@@ -216,7 +239,7 @@ export const animateSettings = {
 		before: [
 			{
 				name: "Starting Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 0
@@ -232,7 +255,7 @@ export const animateSettings = {
 		after: [
 			{
 				name: "Ending Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 100
@@ -250,7 +273,7 @@ export const animateSettings = {
 		before: [
 			{
 				name: "Starting Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 0
@@ -266,7 +289,7 @@ export const animateSettings = {
 		after: [
 			{
 				name: "Ending Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 100
@@ -284,7 +307,7 @@ export const animateSettings = {
 		before: [
 			{
 				name: "Starting Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 0
@@ -300,7 +323,7 @@ export const animateSettings = {
 		after: [
 			{
 				name: "Ending Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 100
@@ -318,7 +341,7 @@ export const animateSettings = {
 		before: [
 			{
 				name: "Starting Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 0
@@ -334,7 +357,7 @@ export const animateSettings = {
 		after: [
 			{
 				name: "Ending Opacity",
-				prop: "AutoAlpha",
+				prop: "autoAlpha",
 				minValue: 0,
 				maxValue: 100,
 				defaultValue: 100

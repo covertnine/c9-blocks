@@ -56,7 +56,8 @@ const animationPanel = props => {
 		animateScrub,
 		useMarkers,
 		animateStart,
-		animateEnd
+		animateEnd,
+		animateCustom
 	]);
 
 	// update delay
@@ -141,53 +142,71 @@ const animationPanel = props => {
 					/>
 
 					{animateSettings[animateVal] && animateSettings[animateVal].before
-						? animateSettings[animateVal].before.map(c => (
-								<RangeControl
-									disabled={!animateScrub}
-									label={__(c.name, "c9-blocks")}
-									value={
-										(animateCustom.before && animateCustom.before[c.prop]) ||
-										c.defaultValue
-									}
-									onChange={value => {
-										const newAnimateCustom = {
-											...animateCustom,
-											before: {
-												...animateCustom.before,
-												[c.prop]: value
-											}
-										};
-										setAttributes({ animateCustom: newAnimateCustom });
-									}}
-									min={c.minValue}
-									max={c.maxValue}
-								/>
-						  ))
+						? animateSettings[animateVal].before.map(c => {
+								let currValue = c.defaultValue;
+								if (animateCustom.before && animateCustom.before[c.prop] !== undefined) {
+									let storedValue = animateCustom.before[c.prop];
+									currValue =
+										"autoAlpha" === c.prop ? storedValue * 100 : storedValue;
+								}
+
+								return (
+									<RangeControl
+										disabled={!animateScrub}
+										label={__(c.name, "c9-blocks")}
+										value={currValue}
+										onChange={value => {
+											let savedValue =
+												"autoAlpha" === c.prop ? value / 100 : value;
+
+											const newAnimateCustom = {
+												...animateCustom,
+												before: {
+													...animateCustom.before,
+													[c.prop]: savedValue
+												}
+											};
+											setAttributes({ animateCustom: newAnimateCustom });
+										}}
+										min={c.minValue}
+										max={c.maxValue}
+									/>
+								);
+						  })
 						: null}
 
 					{animateSettings[animateVal] && animateSettings[animateVal].after
-						? animateSettings[animateVal].after.map(c => (
-								<RangeControl
-									disabled={!animateScrub}
-									label={__(c.name, "c9-blocks")}
-									value={
-										(animateCustom.after && animateCustom.after[c.prop]) ||
-										c.defaultValue
-									}
-									onChange={value => {
-										const newAnimateCustom = {
-											...animateCustom,
-											after: {
-												...animateCustom.after,
-												[c.prop]: value
-											}
-										};
-										setAttributes({ animateCustom: newAnimateCustom });
-									}}
-									min={c.minValue}
-									max={c.maxValue}
-								/>
-						  ))
+						? animateSettings[animateVal].after.map(c => {
+								let currValue = c.defaultValue;
+								if (animateCustom.after && animateCustom.after[c.prop] !== undefined) {
+									let storedValue = animateCustom.after[c.prop];
+									currValue =
+										"autoAlpha" === c.prop ? storedValue * 100 : storedValue;
+								}
+
+								return (
+									<RangeControl
+										disabled={!animateScrub}
+										label={__(c.name, "c9-blocks")}
+										value={currValue}
+										onChange={value => {
+											let savedValue =
+												"autoAlpha" === c.prop ? value / 100 : value;
+
+											const newAnimateCustom = {
+												...animateCustom,
+												after: {
+													...animateCustom.after,
+													[c.prop]: savedValue
+												}
+											};
+											setAttributes({ animateCustom: newAnimateCustom });
+										}}
+										min={c.minValue}
+										max={c.maxValue}
+									/>
+								);
+						  })
 						: null}
 
 					<SettingsSpacer />
