@@ -30,9 +30,10 @@ const animationPanel = props => {
 	} = props;
 
 	const [useMarkers, setUseMarkers] = useState(false);
-	const isFirstRun = useRef([true, true, true]);
+	const isFirstRun = useRef([true, true, true, true, true]);
 	const currDelay = useRef(animateDelay);
 	const currSpeed = useRef(animateSpeed);
+	const currCustom = useRef(animateCustom);
 
 	// set new animation and kill old one
 	useEffect(() => {
@@ -48,6 +49,7 @@ const animationPanel = props => {
 			...props,
 			animateDelay: currDelay.current,
 			animateSpeed: currSpeed.current,
+			animateCustom: currCustom.current,
 			useMarkers
 		});
 	}, [
@@ -56,8 +58,7 @@ const animationPanel = props => {
 		animateScrub,
 		useMarkers,
 		animateStart,
-		animateEnd,
-		animateCustom
+		animateEnd
 	]);
 
 	// update delay
@@ -78,6 +79,7 @@ const animationPanel = props => {
 						...props,
 						animateDelay: currDelay.current,
 						animateSpeed: currSpeed.current,
+						animateCustom: currCustom.current,
 						useMarkers
 					});
 				}
@@ -104,6 +106,7 @@ const animationPanel = props => {
 						...props,
 						animateDelay: currDelay.current,
 						animateSpeed: currSpeed.current,
+						animateCustom: currCustom.current,
 						useMarkers
 					});
 				}
@@ -115,10 +118,41 @@ const animationPanel = props => {
 
 	// wipe config after every animation swap
 	useEffect(() => {
+		// skip initial run
+		if (isFirstRun.current[3] || null == animateVal) {
+			isFirstRun.current[3] = false;
+			return;
+		}
 		setAttributes({ animateCustom: { before: {}, after: {} } });
 	}, [animateVal]);
 
-	// console.log(animateCustom);
+	// update animate custom
+	useEffect(() => {
+		// skip initial run
+		if (isFirstRun.current[4] || null == animateVal) {
+			isFirstRun.current[4] = false;
+			return;
+		}
+		setTimeout(
+			prevCustom => {
+				// if same, then start updating timeline
+				if (JSON.stringify(prevCustom) === JSON.stringify(currCustom.current)) {
+					// console.log("check")
+					restartAnimate({
+						...props,
+						animateDelay: currDelay.current,
+						animateSpeed: currSpeed.current,
+						animateCustom: currCustom.current,
+						useMarkers
+					});
+				}
+			},
+			200,
+			animateCustom
+		);
+	}, [animateCustom]);
+
+	console.log(animateCustom);
 
 	return (
 		<PanelBody title={__("Animations", "c9-blocks")} initialOpen={false}>
@@ -144,7 +178,10 @@ const animationPanel = props => {
 					{animateSettings[animateVal] && animateSettings[animateVal].before
 						? animateSettings[animateVal].before.map(c => {
 								let currValue = c.defaultValue;
-								if (animateCustom.before && animateCustom.before[c.prop] !== undefined) {
+								if (
+									animateCustom.before &&
+									animateCustom.before[c.prop] !== undefined
+								) {
 									let storedValue = animateCustom.before[c.prop];
 									currValue =
 										"autoAlpha" === c.prop ? storedValue * 100 : storedValue;
@@ -167,6 +204,7 @@ const animationPanel = props => {
 												}
 											};
 											setAttributes({ animateCustom: newAnimateCustom });
+											currCustom.current = newAnimateCustom;
 										}}
 										min={c.minValue}
 										max={c.maxValue}
@@ -178,7 +216,10 @@ const animationPanel = props => {
 					{animateSettings[animateVal] && animateSettings[animateVal].after
 						? animateSettings[animateVal].after.map(c => {
 								let currValue = c.defaultValue;
-								if (animateCustom.after && animateCustom.after[c.prop] !== undefined) {
+								if (
+									animateCustom.after &&
+									animateCustom.after[c.prop] !== undefined
+								) {
 									let storedValue = animateCustom.after[c.prop];
 									currValue =
 										"autoAlpha" === c.prop ? storedValue * 100 : storedValue;
@@ -201,6 +242,7 @@ const animationPanel = props => {
 												}
 											};
 											setAttributes({ animateCustom: newAnimateCustom });
+											currCustom.current = newAnimateCustom;
 										}}
 										min={c.minValue}
 										max={c.maxValue}

@@ -139,8 +139,6 @@ export const restartAnimate = ({
 		customConfig = userEditorCustomConfigModify(customConfig, animateCustom);
 	}
 
-	console.log(customConfig);
-
 	gsap.fromTo(target, ...customConfig);
 };
 
