@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const { __ } = wp.i18n;
 const {
 	PanelBody,
+	Button,
 	RangeControl,
 	ToggleControl,
 	SelectControl,
@@ -173,6 +174,22 @@ const animationPanel = props => {
 						value={animateVal}
 						onChange={animateVal => setAttributes({ animateVal })}
 					/>
+
+					<Button
+						disabled={!animateScrub}
+						onClick={() => {
+							const animateCustomBlank = {
+								before: {},
+								after: {}
+							};
+							setAttributes({
+								animateCustom: animateCustomBlank
+							});
+							currCustom.current = animateCustomBlank;
+						}}
+					>
+						Reset Settings
+					</Button>
 
 					{animateSettings[animateVal] && animateSettings[animateVal].before
 						? animateSettings[animateVal].before.map(c => {

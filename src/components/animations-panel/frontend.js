@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		if (animateScrub) {
 			customConfig = userCustomConfigModify(customConfig, animateCustom);
-			console.log(customConfig);
 		}
 
 		gsap.fromTo(element, customConfig[0], {

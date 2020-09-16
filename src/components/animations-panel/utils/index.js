@@ -47,7 +47,7 @@ export const initAnimate = ({
 	if (animateScrub) {
 		customConfig = userCustomConfigModify(customConfig, animateCustom);
 	}
-	
+
 	if (enableAnimate) {
 		gsap.fromTo(target, ...customConfig);
 	}
