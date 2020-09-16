@@ -13,7 +13,8 @@ const { Fragment } = wp.element;
 
 import SettingsSpacer from "../settings-spacer";
 import KeyframeStepper from "./keyframe-stepper";
-import { animateOptions, animateSettings, restartAnimate } from "./utils";
+import { animateOptions, restartAnimate } from "./utils";
+import { animateSettings } from "./utils/animate-settings";
 
 const animationPanel = props => {
 	const {
@@ -151,8 +152,6 @@ const animationPanel = props => {
 			animateCustom
 		);
 	}, [animateCustom]);
-
-	console.log(animateCustom);
 
 	return (
 		<PanelBody title={__("Animations", "c9-blocks")} initialOpen={false}>
