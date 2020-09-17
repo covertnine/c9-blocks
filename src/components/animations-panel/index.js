@@ -34,8 +34,11 @@ const animationPanel = props => {
 	const [useMarkers, setUseMarkers] = useState(false);
 	const isFirstRun = useRef([true, true, true, true, true]);
 	const currDelay = useRef(animateDelay);
+	currDelay.current = animateDelay;
 	const currSpeed = useRef(animateSpeed);
+	currSpeed.current = animateSpeed;
 	const currCustom = useRef(animateCustom);
+	currCustom.current = animateCustom;
 
 	// set new animation and kill old one
 	useEffect(() => {
@@ -135,6 +138,11 @@ const animationPanel = props => {
 			isFirstRun.current[4] = false;
 			return;
 		}
+
+		if (!animateScrub) {
+			return;
+		}
+
 		setTimeout(
 			prevCustom => {
 				// if same, then start updating timeline
@@ -220,7 +228,6 @@ const animationPanel = props => {
 												}
 											};
 											setAttributes({ animateCustom: newAnimateCustom });
-											currCustom.current = newAnimateCustom;
 										}}
 										min={c.minValue}
 										max={c.maxValue}
@@ -258,7 +265,6 @@ const animationPanel = props => {
 												}
 											};
 											setAttributes({ animateCustom: newAnimateCustom });
-											currCustom.current = newAnimateCustom;
 										}}
 										min={c.minValue}
 										max={c.maxValue}
@@ -350,7 +356,6 @@ const animationPanel = props => {
 						value={animateDelay}
 						onChange={animateDelay => {
 							setAttributes({ animateDelay });
-							currDelay.current = animateDelay;
 						}}
 						min={0}
 						max={5000}
@@ -360,7 +365,6 @@ const animationPanel = props => {
 						value={animateSpeed}
 						onChange={animateSpeed => {
 							setAttributes({ animateSpeed });
-							currSpeed.current = animateSpeed;
 						}}
 						min={500}
 						max={5000}
