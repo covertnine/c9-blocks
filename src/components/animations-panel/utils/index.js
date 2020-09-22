@@ -143,6 +143,7 @@ export const restartAnimate = ({
 };
 
 export const initDataAttributes = ({
+	enableAnimate,
 	animateVal,
 	animateDelay,
 	animateSpeed,
@@ -151,6 +152,10 @@ export const initDataAttributes = ({
 	animateEnd,
 	animateCustom
 }) => {
+	if (!enableAnimate) {
+		return {};
+	}
+
 	const config = pickBy(
 		{
 			"data-c9-animate": animateVal,
