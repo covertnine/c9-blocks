@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-
 const { __ } = wp.i18n;
 const {
 	PanelBody,
@@ -10,7 +8,7 @@ const {
 	BaseControl,
 	Disabled
 } = wp.components;
-const { Fragment } = wp.element;
+const { Fragment, useEffect, useRef, useState } = wp.element;
 
 import SettingsSpacer from "../settings-spacer";
 import KeyframeStepper from "./keyframe-stepper";

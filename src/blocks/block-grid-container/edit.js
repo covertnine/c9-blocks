@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import Container from "./components/container";
+import ResizableContainer from "./components/resizable-container";
 
 /**
  * WordPress dependencies
@@ -54,7 +54,7 @@ class Edit extends Component {
 				lockIcon: "editor-unlink"
 			});
 		});
-	}
+	};
 
 	/**
 	 * Generates the child (row) column container blocks.
@@ -85,13 +85,13 @@ class Edit extends Component {
 				<BlockControls key="controls" />
 				<Inspector {...this.props} />
 
-				<Container {...this.props}>
+				<ResizableContainer {...this.props} editMode={true}>
 					<InnerBlocks
 						template={template}
 						templateLock={this.state.templateLock || "all"}
 						allowedBlocks={ALLOWED_BLOCKS}
 					/>
-				</Container>
+				</ResizableContainer>
 				{isSelectedBlockInRoot && (
 					<div className="c9-add-remove-rows">
 						{lockMovement && (

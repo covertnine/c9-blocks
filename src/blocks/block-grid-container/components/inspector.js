@@ -5,12 +5,7 @@
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const {
-	InspectorControls,
-	MediaUpload,
-	ColorPalette,
-	__experimentalColorGradientControl: ColorGradientControl
-} = wp.blockEditor;
+const { InspectorControls, MediaUpload, ColorPalette } = wp.blockEditor;
 
 const {
 	RadioControl,

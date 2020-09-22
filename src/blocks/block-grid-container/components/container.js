@@ -7,8 +7,7 @@ import VideoBox from "./video-box";
 /**
  * WordPress dependencies
  */
-const { Component } = wp.element;
-const { applyFilters } = wp.hooks;
+const { Component, Fragment } = wp.element;
 
 const MOBILE_Y_SIZE = {
 	0.25: "top",
@@ -28,74 +27,6 @@ const MOBILE_X_SIZE = {
 export default class Container extends Component {
 	constructor() {
 		super(...arguments);
-	}
-
-	c9SpacingConfig(padding, margin) {
-		let classes = [];
-		// abstract side class assignment
-		function assignSideClasses(sideClass, level) {
-			if (-1 != level) {
-				classes.push(`${sideClass}-${level}`);
-			}
-		}
-
-		// padding
-		if (
-			padding.top === padding.left &&
-			padding.top === padding.bottom &&
-			padding.top === padding.right &&
-			-1 != padding.top
-		) {
-			classes.push(`p-${padding.top}`);
-		} else if (padding.top === padding.bottom && 0 <= padding.top) {
-			classes.push(`py-${padding.top}`);
-			assignSideClasses("pl", padding.left);
-			assignSideClasses("pr", padding.right);
-		} else if (padding.left === padding.right && 0 <= padding.left) {
-			classes.push(`px-${padding.left}`);
-			assignSideClasses("pt", padding.top);
-			assignSideClasses("pb", padding.bottom);
-		} else {
-			["top", "bottom", "left", "right"].map(s =>
-				assignSideClasses(`p${s[0]}`, padding[s])
-			);
-		}
-
-		// margin
-		if (margin.top === margin.bottom && -1 != margin.top) {
-			classes.push(`my-${margin.top}`);
-		} else {
-			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
-		}
-
-		return classes;
-	}
-
-	c9ContainerStyles(height, hue, opacity) {
-		const styles = {};
-
-		if (height) {
-			styles.minHeight = `${height}vh`;
-		}
-
-		if (hue) {
-			styles.backgroundColor = this.hexToRGBA(hue, opacity);
-		}
-
-		return styles;
-	}
-
-	c9ContainerStylesMobile(allowMobile, bgSize, bgX, bgY) {
-		const styles = {};
-
-		if (allowMobile && !bgSize) {
-			styles["--mobile-height"] =
-				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
-			styles["--mobile-width"] =
-				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
-		}
-
-		return styles;
 	}
 
 	c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint) {
@@ -155,58 +86,24 @@ export default class Container extends Component {
 			attributes: {
 				containerImgURL,
 				bgImgSize,
-				bgImgAttach,
 				bgImgRepeat,
 				bgCustomX,
 				bgCustomY,
 				overlayHue,
-				containerHue,
-				containerOpacity,
 				overlayOpacity,
 				blendMode,
-				containerPadding,
-				containerMargin,
-				minScreenHeight,
 				focalPoint,
 				containerVideoURL,
 				containerVideoID,
 				cannotEmbed,
-				anchor,
 				overrideMobile,
 				focalPointMobile,
-				bgImgSizeMobile,
-				bgCustomXMobile,
-				bgCustomYMobile
-			},
-			className = ""
+				bgImgSizeMobile
+			}
 		} = this.props;
 
 		return (
-			<div
-				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
-					this.c9SpacingConfig(containerPadding, containerMargin),
-					bgImgAttach ? "c9-fixed" : "c9-scroll",
-					containerImgURL ? "c9-grid-has-background" : null,
-					(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
-						? "c9-grid-has-video"
-						: null
-				)}
-				style={{
-					...this.c9ContainerStyles(
-						minScreenHeight,
-						containerHue,
-						containerOpacity
-					),
-					...this.c9ContainerStylesMobile(
-						overrideMobile,
-						bgImgSizeMobile,
-						bgCustomXMobile,
-						bgCustomYMobile
-					)
-				}}
-				id={anchor ? anchor : null}
-			>
+			<Fragment>
 				{this.props.children}
 				{!!overlayHue && (
 					<div
@@ -242,7 +139,7 @@ export default class Container extends Component {
 						)}
 					/>
 				)}
-			</div>
+			</Fragment>
 		);
 	}
 }

@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import Container from "./components/container";
+import ResizableContainer from "./components/resizable-container";
 
 /**
  * WordPress dependencies
@@ -16,9 +16,9 @@ export default class Save extends Component {
 
 	render() {
 		return (
-			<Container {...this.props}>
+			<ResizableContainer {...this.props}>
 				<InnerBlocks.Content />
-			</Container>
+			</ResizableContainer>
 		);
 	}
 }
