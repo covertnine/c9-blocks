@@ -85,7 +85,7 @@ export default class ResizableContainer extends Component {
 		const styles = {};
 
 		if (height && !this.props.editMode) {
-			styles.minHeight = height;
+			styles.minHeight = `${height}vh`;
 		}
 
 		if (hue) {
