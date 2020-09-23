@@ -5,7 +5,7 @@ const { Fragment, useEffect, useRef } = wp.element;
 import SettingsSpacer from "../settings-spacer";
 import { restartAnimate } from "./utils";
 import ScrollAnimatePanel from "./components/scroll-animate-panel";
-import TransitionAnimatePanel from "./components/scroll-animate-panel";
+import TransitionAnimatePanel from "./components/transition-animate-panel";
 
 const animationPanel = props => {
 	const {

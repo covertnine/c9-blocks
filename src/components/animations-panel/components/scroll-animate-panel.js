@@ -17,7 +17,6 @@ import { animateSettings } from "../utils/animate-settings";
 const ScrollAnimatePanel = props => {
 	const {
 		animateVal,
-
 		animateScrub,
 		setAttributes,
 		target,
