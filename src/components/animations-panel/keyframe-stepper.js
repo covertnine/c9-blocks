@@ -1,7 +1,7 @@
 const { __ } = wp.i18n;
 const { Button, ButtonGroup, BaseControl } = wp.components;
 
-const SIZE_PRESETS = ["0%", "25%", "50%", "75%", "100%"];
+const SIZE_PRESETS = [0, 25, 50, 75, 100];
 
 const KeyframeStepper = props => {
 	const { label, currentValue, offset, resetValue, disabled } = props;
@@ -11,17 +11,17 @@ const KeyframeStepper = props => {
 			<div className="block-editor-image-size-control__row">
 				<ButtonGroup aria-label={label}>
 					{SIZE_PRESETS.map(scale => {
-						const buttonValue = `${offset}px ${scale}`;
+						const buttonValue = `${offset}px ${scale}%`;
 						const isCurrent = buttonValue === currentValue;
 						return (
 							<Button
 								disabled={disabled}
-								key={`${label}-${scale}`}
+								key={`${label}-${100 - scale}%`}
 								isPrimary={isCurrent}
 								isPressed={isCurrent}
 								onClick={() => props.handleClick(buttonValue)}
 							>
-								{scale}
+								{100 - scale}%
 							</Button>
 						);
 					})}
