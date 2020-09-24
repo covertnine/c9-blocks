@@ -106,6 +106,10 @@
 	}
 }
 
+.wp-block[data-type="c9-blocks/grid"].components-resizable-box__side-handle.components-resizable-box__handle-bottom {
+	z-index: 12;
+}
+
 .c9-add-remove-rows {
 	position: absolute;
 	left: 50%;
