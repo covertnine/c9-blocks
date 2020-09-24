@@ -84,9 +84,7 @@ export default class ResizableContainer extends Component {
 	c9ContainerStyles = (height, hue, opacity) => {
 		const styles = {};
 
-		if (height && !this.props.editMode) {
-			styles.minHeight = `${height}vh`;
-		}
+		styles.minHeight = `${height}vh`;
 
 		if (hue) {
 			styles.backgroundColor = this.hexToRGBA(hue, opacity);
@@ -146,7 +144,11 @@ export default class ResizableContainer extends Component {
 					: null
 			),
 			style: {
-				...this.c9ContainerStyles(minScreenHeight ,containerHue, containerOpacity),
+				...this.c9ContainerStyles(
+					minScreenHeight,
+					containerHue,
+					containerOpacity
+				),
 				...this.c9ContainerStylesMobile(
 					overrideMobile,
 					bgImgSizeMobile,
@@ -158,7 +160,7 @@ export default class ResizableContainer extends Component {
 		};
 
 		const updateHeight = value => {
-			console.log(value);
+			// console.log(value);
 			setAttributes({
 				minScreenHeight: value
 			});
@@ -173,10 +175,10 @@ export default class ResizableContainer extends Component {
 
 		const handleOnResizeStop = (event, direction, elt, delta) => {
 			onResizeStop();
-			console.log(minScreenHeight, delta.height);
+			// console.log(minScreenHeight, delta.height);
 			const docHeight = document.documentElement.clientHeight;
 			let pixelHeight = (minScreenHeight / 100) * docHeight + delta.height;
-			console.log(pixelHeight);
+			// console.log(pixelHeight, direction, delta.height);
 			const spacerHeight = Math.min(
 				parseInt((pixelHeight / docHeight) * 100, 10),
 				MAX_GRID_HEIGHT
@@ -192,10 +194,13 @@ export default class ResizableContainer extends Component {
 				<ResizableBox
 					{...wrapperConfig}
 					size={{
-						height: `${minScreenHeight}vh`
+						height: "auto"
 					}}
-					minHeight={`${MIN_GRID_HEIGHT}vh`}
-					defaultSize={{ height: `20vh` }}
+					minHeight={
+						this.state.isResizing
+							? `${MIN_GRID_HEIGHT}vh`
+							: `${minScreenHeight}vh`
+					}
 					enable={{
 						top: false,
 						right: false,
