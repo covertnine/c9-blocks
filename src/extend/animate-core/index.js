@@ -178,6 +178,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 					<InspectorControls>
 						<AnimationPanel
 							{...attributes}
+							name={this.props.name}
 							target={`#block-${this.props.clientId}`}
 							setAttributes={setAttributes}
 						/>

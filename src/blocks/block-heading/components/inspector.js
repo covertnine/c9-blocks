@@ -180,7 +180,8 @@ class Inspector extends Component {
 
 				<AnimationPanel
 					{...attributes}
-					target={`#block-${this.props.clientId} > *`}
+					name={this.props.name}
+					target={`#block-${this.props.clientId}`}
 					setAttributes={setAttributes}
 				/>
 			</InspectorControls>

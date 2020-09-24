@@ -32,7 +32,8 @@ export const initAnimate = ({
 	animateScrub,
 	animateStart,
 	animateEnd,
-	animateCustom
+	animateCustom,
+	name
 }) => {
 	let customConfig = createCustomConfig(animateVal, animateDelay, animateSpeed);
 	customConfig = editorCustomConfigModify(
@@ -41,7 +42,8 @@ export const initAnimate = ({
 		animateScrub,
 		false,
 		animateStart,
-		animateEnd
+		animateEnd,
+		name
 	);
 
 	if (animateScrub) {
@@ -59,7 +61,8 @@ const editorCustomConfigModify = (
 	animateScrub,
 	useMarkers,
 	animateStart,
-	animateEnd
+	animateEnd,
+	name
 ) => {
 	const triggerPlacement = pickBy(
 		{
@@ -74,7 +77,7 @@ const editorCustomConfigModify = (
 		{
 			...config[1],
 			scrollTrigger: {
-				id: target,
+				id: `${name}-${target.slice(-4)}`,
 				trigger: target,
 				scroller: SCROLLER,
 				markers: useMarkers,
@@ -108,7 +111,8 @@ export const restartAnimate = ({
 	useMarkers = false,
 	animateStart,
 	animateEnd,
-	animateCustom
+	animateCustom,
+	name
 }) => {
 	let customConfig = createCustomConfig(
 		animateVal,
@@ -117,7 +121,7 @@ export const restartAnimate = ({
 		animateScrub
 	);
 	ScrollTrigger.getAll().forEach(st => {
-		if (st.vars.id === target) {
+		if (st.vars.trigger === target) {
 			st.kill();
 		}
 	});
@@ -134,7 +138,8 @@ export const restartAnimate = ({
 			animateScrub,
 			useMarkers,
 			animateStart,
-			animateEnd
+			animateEnd,
+			name
 		);
 		customConfig = userCustomConfigModify(customConfig, animateCustom);
 	}
