@@ -4,8 +4,7 @@ const {
 	RangeControl,
 	ToggleControl,
 	SelectControl,
-	BaseControl,
-	Disabled
+	BaseControl
 } = wp.components;
 const { Fragment } = wp.element;
 
@@ -32,6 +31,20 @@ const ScrollAnimatePanel = props => {
 
 	return (
 		<Fragment>
+            <BaseControl
+				help={__(
+					"Select beginning and ending trigger positions in the browser window to add a scrub animation effect as the user scrolls between those positions.",
+					"c9-blocks"
+				)}
+			/>
+
+			<ToggleControl
+				disabled={!animateScrub}
+				label={__("Show Keyframe Markers", "c9-blocks")}
+				checked={useMarkers}
+				onChange={useMarkers => setUseMarkers(useMarkers)}
+			/>
+
 			<SelectControl
 				disabled={!animateScrub}
 				label={__("Animation", "c9-blocks")}
@@ -129,30 +142,6 @@ const ScrollAnimatePanel = props => {
 
 			<SettingsSpacer />
 
-			{animateScrub ? (
-				<ToggleControl
-					disabled={!animateScrub}
-					label={__("Show Keyframe Markers", "c9-blocks")}
-					checked={useMarkers}
-					onChange={useMarkers => setUseMarkers(useMarkers)}
-				/>
-			) : (
-				<Disabled>
-					<ToggleControl
-						disabled={!animateScrub}
-						label={__("Show Keyframe Markers", "c9-blocks")}
-						checked={useMarkers}
-						onChange={useMarkers => setUseMarkers(useMarkers)}
-					/>
-				</Disabled>
-			)}
-
-			<BaseControl
-				help={__(
-					"Select beginning and ending trigger positions in the browser window to add a scrub animation effect as the user scrolls between those positions.",
-					"c9-blocks"
-				)}
-			/>
 			<KeyframeStepper
 				disabled={!animateScrub}
 				label={__("Starting Keyframe", "c9-blocks")}
