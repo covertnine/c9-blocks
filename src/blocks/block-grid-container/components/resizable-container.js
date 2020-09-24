@@ -20,9 +20,16 @@ export default class ResizableContainer extends Component {
 		super(...arguments);
 
 		this.state = {
-			isResizing: false
+			isResizing: false,
+			minHeightPx: this.calcVhToPx(MIN_GRID_HEIGHT),
+			maxHeightPx: this.calcVhToPx(MAX_GRID_HEIGHT)
 		};
 	}
+
+	calcVhToPx = value => {
+		const docHeight = document.documentElement.clientHeight;
+		return (value / 100) * docHeight;
+	};
 
 	c9SpacingConfig = (padding, margin) => {
 		let classes = [];
@@ -169,8 +176,14 @@ export default class ResizableContainer extends Component {
 		const handleOnResizeStart = (...args) => {
 			onResizeStart(...args);
 			this.setState({
-				isResizing: true
+				isResizing: true,
+				minResize: this.calcVhToPx(minScreenHeight) - 20
 			});
+			setTimeout(() => {
+				this.setState({
+					minResize: this.state.minHeightPx
+				});
+			}, 200);
 		};
 
 		const handleOnResizeStop = (event, direction, elt, delta) => {
@@ -185,7 +198,8 @@ export default class ResizableContainer extends Component {
 			);
 			updateHeight(spacerHeight);
 			this.setState({
-				isResizing: false
+				isResizing: false,
+				minResize: Math.min(pixelHeight, this.state.maxHeightPx)
 			});
 		};
 
@@ -198,7 +212,7 @@ export default class ResizableContainer extends Component {
 					}}
 					minHeight={
 						this.state.isResizing
-							? `${MIN_GRID_HEIGHT}vh`
+							? this.state.minResize
 							: `${minScreenHeight}vh`
 					}
 					enable={{
