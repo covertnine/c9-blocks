@@ -59,6 +59,14 @@ const attributes = {
 	},
 	verticalAlign: {
 		type: "string"
+	},
+	align: {
+		type: "string",
+		default: ""
+	},
+	containerWidth: {
+		type: "string",
+		default: "container"
 	}
 };
 

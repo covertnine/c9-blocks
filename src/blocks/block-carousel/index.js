@@ -141,6 +141,19 @@ registerBlockType("c9-blocks/carousel", {
 		]
 	},
 	attributes,
+
+	/* Add alignment to block wrapper. */
+	getEditWrapperProps({ align }) {
+		if (
+			"full" === align ||
+			"wide" === align ||
+			"narrow" === align ||
+			"" === align
+		) {
+			return { "data-align": align };
+		}
+	},
+
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {

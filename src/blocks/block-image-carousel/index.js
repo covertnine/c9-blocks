@@ -56,8 +56,21 @@ registerBlockType("c9-blocks/image-carousel", {
 			slideMaxHeight: 640,
 			slideEqualHeight: true
 		}
-	},	
+	},
 	attributes,
+
+	/* Add alignment to block wrapper. */
+	getEditWrapperProps({ align }) {
+		if (
+			"full" === align ||
+			"wide" === align ||
+			"narrow" === align ||
+			"" === align
+		) {
+			return { "data-align": align };
+		}
+	},
+
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
@@ -74,7 +87,9 @@ registerBlockType("c9-blocks/image-carousel", {
 			};
 		}),
 		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch("core/block-editor");
+			const { updateBlockAttributes, removeBlock } = dispatch(
+				"core/block-editor"
+			);
 
 			return {
 				updateBlockAttributes,

@@ -6,6 +6,7 @@
 import Inspector from "./components/inspector";
 import PauseToolBar from "../../components/pause-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
+import WidthToolbar from "../../components/width-toolbar";
 
 /**
  * WordPress dependencies
@@ -476,7 +477,9 @@ class Edit extends Component {
 			slideTime,
 			slideEqualHeight,
 			slideMaxHeight,
-			verticalAlign
+			verticalAlign,
+			align,
+			containerWidth
 		} = attributes;
 
 		if (instanceId != attributes.instanceId) {
@@ -492,9 +495,40 @@ class Edit extends Component {
 			? slideMaxHeight + 40
 			: slideMaxHeight;
 
+		let currWidth;
+		if (0 != align.length) {
+			if ("container" == containerWidth) {
+				currWidth = "wide";
+			} else if ("container-fluid" == containerWidth) {
+				currWidth = "full";
+			} else {
+				currWidth = "narrow";
+			}
+		}
+
 		return (
 			<Fragment>
 				<BlockControls>
+					<WidthToolbar
+						value={currWidth}
+						onChange={value => {
+							if ("wide" == value) {
+								setAttributes({ containerWidth: "container", align: "wide" });
+							} else if ("full" == value) {
+								setAttributes({
+									containerWidth: "container-fluid",
+									align: "full"
+								});
+							} else if ("narrow" == value) {
+								setAttributes({
+									containerWidth: "container-narrow",
+									align: "narrow"
+								});
+							} else {
+								setAttributes({ containerWidth: "container", align: "" });
+							}
+						}}
+					/>
 					<PauseToolBar
 						value={pause}
 						onChange={value => {

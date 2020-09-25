@@ -49,17 +49,32 @@ export default class Save extends Component {
 			slideTime,
 			slideMaxHeight,
 			slideEqualHeight,
-			verticalAlign
+			verticalAlign,
+			align,
+			containerWidth
 		} = this.props.attributes;
 
 		const { className = "" } = this.props;
+
+		let containerAlign;
+		if (0 != align.length) {
+			if ("container" == containerWidth) {
+				containerAlign = "alignwide";
+			} else if ("container-fluid" == containerWidth) {
+				containerAlign = "alignfull";
+			} else {
+				containerAlign = null;
+			}
+		}
 
 		return (
 			<div
 				id={`c9-carousel-indicator-${instanceId}`}
 				className={classnames(
 					applyFilters("c9-blocks.blocks.className", className),
-					"carousel slide"
+					"carousel slide",
+					containerAlign,
+					containerWidth
 				)}
 				data-ride="carousel"
 				data-interval={autoSlide ? slideTime : false}
