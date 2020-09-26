@@ -15,7 +15,8 @@ import "./styles/editor.scss";
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { withSelect } = wp.data;
+const { compose } = wp.compose;
+const { withSelect, withDispatch } = wp.data;
 const { registerBlockType } = wp.blocks;
 
 /**
@@ -50,18 +51,28 @@ registerBlockType("c9-blocks/column-container", {
 	},
 
 	// Render the block components
-	edit: withSelect((select, ownProps) => {
-		const { isBlockSelected, hasSelectedInnerBlock } = select(
-			"core/block-editor"
-		);
+	edit: compose([
+		withSelect((select, ownProps) => {
+			const { isBlockSelected, hasSelectedInnerBlock } = select(
+				"core/block-editor"
+			);
 
-		const { clientId } = ownProps;
+			const { clientId } = ownProps;
 
-		return {
-			isSelectedBlockInRoot:
-				isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
-		};
-	})(Edit),
+			return {
+				isSelectedBlockInRoot:
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+			};
+		}),
+		withDispatch(dispatch => {
+			const { toggleSelection } = dispatch("core/block-editor");
+
+			return {
+				onResizeStart: () => toggleSelection(false),
+				onResizeStop: () => toggleSelection(true)
+			};
+		})
+	])(Edit),
 
 	// Save the attributes and markup
 	save: props => {

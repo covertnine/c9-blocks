@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-const { Component } = wp.element;
+const { Component, Fragment } = wp.element;
 
 /**
  * External Dependencies.
@@ -26,70 +26,6 @@ const MOBILE_X_SIZE = {
 export default class Container extends Component {
 	constructor() {
 		super(...arguments);
-	}
-
-	c9SpacingConfig(padding, margin) {
-		let classes = [];
-		// abstract side class assignment
-		function assignSideClasses(sideClass, level) {
-			if (-1 != level) {
-				classes.push(`${sideClass}-${level}`);
-			}
-		}
-
-		// padding
-		if (
-			padding.top === padding.left &&
-			padding.top === padding.bottom &&
-			padding.top === padding.right &&
-			-1 != padding.top
-		) {
-			classes.push(`p-${padding.top}`);
-		} else if (padding.top === padding.bottom && 0 <= padding.top) {
-			classes.push(`py-${padding.top}`);
-			assignSideClasses("pl", padding.left);
-			assignSideClasses("pr", padding.right);
-		} else if (padding.left === padding.right && 0 <= padding.left) {
-			classes.push(`px-${padding.left}`);
-			assignSideClasses("pt", padding.top);
-			assignSideClasses("pb", padding.bottom);
-		} else {
-			["top", "bottom", "left", "right"].map(s =>
-				assignSideClasses(`p${s[0]}`, padding[s])
-			);
-		}
-
-		// margin
-		if (margin.top === margin.bottom && -1 != margin.top) {
-			classes.push(`my-${margin.top}`);
-		} else {
-			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
-		}
-
-		return classes;
-	}
-
-	c9ContainerStyles(height) {
-		const styles = {};
-
-		if (height) {
-			styles.minHeight = `${height}vh`;
-		}
-
-		return styles;
-	}
-
-	c9ContainerStylesMobile(allowMobile, bgSize, bgX, bgY) {
-		const styles = {};
-
-		if (allowMobile && !bgSize) {
-			styles["--mobile-height"] =
-				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
-			styles["--mobile-width"] =
-				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
-		}
-
-		return styles;
 	}
 
 	c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint, selected = true) {
@@ -151,81 +87,24 @@ export default class Container extends Component {
 	render() {
 		const {
 			attributes: {
-				verticalAlign,
 				containerImgURL,
-				containerWidth,
 				bgImgSize,
-				bgImgAttach,
 				bgImgRepeat,
 				bgCustomX,
 				bgCustomY,
 				overlayHue,
 				overlayOpacity,
 				blendMode,
-				containerPadding,
-				containerMargin,
-				minScreenHeight,
 				focalPoint,
-				containerVideoURL,
-				containerVideoID,
-				cannotEmbed,
-				columns,
-				layout,
-				columnMaxWidth,
-				centerColumns,
-				align,
-				anchor,
 				overrideMobile,
 				focalPointMobile,
-				bgImgSizeMobile,
-				bgCustomXMobile,
-				bgCustomYMobile
+				bgImgSizeMobile
 			},
-			isSelectedBlockInRoot,
-			save = false,
-			className = ""
+			isSelectedBlockInRoot
 		} = this.props;
 
-		let containerAlign;
-		if (save && 0 != align.length) {
-			if ("container" == containerWidth) {
-				containerAlign = "alignwide";
-			} else if ("container-fluid" == containerWidth) {
-				containerAlign = "alignfull";
-			} else {
-				containerAlign = null;
-			}
-		}
-
 		return (
-			<div
-				className={classnames(
-					className,
-					save ? containerWidth : null,
-					containerAlign,
-					"c9-column-container",
-					this.c9SpacingConfig(containerPadding, containerMargin),
-					bgImgAttach ? "c9-fixed" : "c9-scroll",
-					"c9-layout-columns-" + columns,
-					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null,
-					layout,
-					columnMaxWidth && centerColumns ? "c9-columns-center" : null,
-					containerImgURL ? "c9-columns-has-background" : null,
-					(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
-						? "c9-columns-has-video"
-						: null
-				)}
-				style={{
-					...this.c9ContainerStyles(minScreenHeight),
-					...this.c9ContainerStylesMobile(
-						overrideMobile,
-						bgImgSizeMobile,
-						bgCustomXMobile,
-						bgCustomYMobile
-					)
-				}}
-				id={anchor ? anchor : null}
-			>
+			<Fragment>
 				{!!containerImgURL && (
 					<div
 						className={classnames(
@@ -259,7 +138,7 @@ export default class Container extends Component {
 					/>
 				)}
 				{this.props.children}
-			</div>
+			</Fragment>
 		);
 	}
 }

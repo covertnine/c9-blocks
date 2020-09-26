@@ -2,7 +2,7 @@
 /**
  * Internal dependencies
  */
-import Container from "./components/container";
+import ResizableContainer from "./components/resizable-container";
 
 /**
  * WordPress dependencies
@@ -26,7 +26,7 @@ export default class Save extends Component {
 		} = this.props;
 
 		return (
-			<Container {...this.props} save={true}>
+			<ResizableContainer {...this.props}>
 				<div
 					className={classnames(
 						"c9-layout-column-wrap",
@@ -39,7 +39,7 @@ export default class Save extends Component {
 				>
 					<InnerBlocks.Content />
 				</div>
-			</Container>
+			</ResizableContainer>
 		);
 	}
 }

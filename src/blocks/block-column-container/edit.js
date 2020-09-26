@@ -10,7 +10,7 @@ import _times from "lodash/times";
  * Internal dependencies
  */
 import Inspector from "./components/inspector";
-import Container from "./components/container";
+import ResizableContainer from "./components/resizable-container";
 import WidthToolbar from "../../components/width-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import BlockSelector from "../../components/block-selector";
@@ -199,7 +199,7 @@ export default class Edit extends Component {
 				<Inspector {...this.props} />
 
 				<BlockSelector text="Select Column Container" />
-				<Container {...this.props}>
+				<ResizableContainer {...this.props} editMode={true}>
 					<div
 						className={classnames(
 							"c9-layout-column-wrap-admin",
@@ -216,7 +216,7 @@ export default class Edit extends Component {
 							allowedBlocks={ALLOWED_BLOCKS}
 						/>
 					</div>
-				</Container>
+				</ResizableContainer>
 			</Fragment>
 		);
 	}

@@ -164,7 +164,7 @@ registerBlockType("c9-blocks/grid", {
 		}),
 		withDispatch(dispatch => {
 			const { toggleSelection } = dispatch("core/block-editor");
-		
+
 			return {
 				onResizeStart: () => toggleSelection(false),
 				onResizeStop: () => toggleSelection(true)
