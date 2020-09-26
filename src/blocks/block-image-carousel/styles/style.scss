@@ -26,11 +26,31 @@
 	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
 
 	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
 	.c9-image-carousel.alignwide {
+		width: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
+	.c9-image-carousel.alignwide {
+		max-width: 100vw;
 		width: 120%;
+		margin-left: -10%;
+		margin-right: -10%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+
+	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
+	.c9-image-carousel.alignwide {
+		max-width: 1368px;
 	}
 }
 

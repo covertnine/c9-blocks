@@ -74,6 +74,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**1.1.4**
+Added alignwide adn alignfull alignments to Carousels and Image Carousels. Added draggable heights for containers in C9 Grids. Several bug fixes to jumpy navigations, preparing plugins for animation settings.
+
 **1.1.3**
 Fixed issues with new toggles and tabs not displaying appender buttons and some alignfull container issues on some browsers in WordPress 5.5.
 
