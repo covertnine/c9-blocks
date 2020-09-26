@@ -118,7 +118,37 @@
 	z-index: 14;
 
 	.components-button {
-		background-color: rgba(255, 255, 255, .95);
+		background-color: var(--wp-admin-theme-color);
+		color: #fff;
+		margin-left: 10px;
+		transition: background-color .3s ease-in-out;
+		padding-left: 25px;
+		padding-right: 25px;
+		white-space: nowrap;
+	}
+
+	.components-button.has-icon {
+		padding: 6px 20px;
+	}
+
+	.components-button:focus {
+		box-shadow: inset 0 0 0 1px #fff,
+			0 0 0 1.5px var(--wp-admin-theme-color);
+		outline: 1px solid transparent;
+		background-color: var(--wp-admin-theme-color-darker-20);
+	}
+
+	.components-button:first-child {
+		margin-left: 0;
+		background-color: var(--danger);
+	}
+
+	.components-button:nth-child(2) {
+		background-color: var(--teal);
+	}
+
+	.components-button:hover {
+		background-color: var(--wp-admin-theme-color-darker-20);
 	}
 
 	>.components-button.components-icon-button {

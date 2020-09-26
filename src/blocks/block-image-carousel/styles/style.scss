@@ -8,15 +8,33 @@
 	display: flex;
 }
 
+.c9-image-carousel.container-narrow,
+.c9-image-carousel.container,
+.c9-image-carousel.alignwide,
+.c9-image-carousel.alignfull {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
+	.c9-image-carousel.alignwide {
+		width: 120%;
+	}
+}
+
 .c9-image-carousel .carousel-inner {
 	&.c9-is-vertically-aligned-top {
 		-ms-grid-row-align: start;
 		align-self: flex-start;
 	}
+
 	&.c9-is-vertically-aligned-center {
 		-ms-grid-row-align: center;
 		align-self: center;
 	}
+
 	&.c9-is-vertically-aligned-bottom {
 		-ms-grid-row-align: end;
 		align-self: flex-end;
