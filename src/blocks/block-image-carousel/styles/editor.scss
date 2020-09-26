@@ -37,18 +37,70 @@
 }
 
 .carousel-control-next {
-	right: -10px;
+	right: 0px;
 }
 
 .is-hovered .carousel-control-prev,
 .is-hovered .carousel-control-next,
 .is-selected .carousel-control-prev,
 .is-selected .carousel-control-next {
-	border: 2px dashed #aaa;
-	background-color: rgba(12, 12, 12, .1);
+	border: 2px dashed var(--wp-admin-theme-color);
+	background-color: rgba(12, 12, 12, .4);
+}
 
+.is-selected .carousel-control-prev,
+.is-selected .carousel-control-next {
+	border: 2px dashed #fff;
 }
 
 .carousel-control-prev {
-	left: -10px;
+	left: 0px;
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="narrow"] [data-align="narrow"],
+	.editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="narrow"],
+	.editor-styles-wrapper .wp-block[data-align="narrow"] .c9-image-carousel {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"] [data-align="wide"],
+	.editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"],
+	.editor-styles-wrapper .wp-block[data-align="wide"] .c9-image-carousel {
+		max-width: calc(100vw - 260px);
+		width: 120%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.is-sidebar-opened .editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"] [data-align="wide"],
+	.is-sidebar-opened .editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"],
+	.is-sidebar-opened .editor-styles-wrapper .wp-block[data-align="wide"] .c9-image-carousel {
+		max-width: 100%;
+		width: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 1500px) {
+
+	.editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"] [data-align="wide"],
+	.editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"],
+	.editor-styles-wrapper .wp-block[data-align="wide"] .c9-image-carousel {
+		max-width: 1368px;
+	}
+
+}
+
+@media only screen and (min-width: 1628px) {
+
+	.is-sidebar-opened .editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"] [data-align="wide"],
+	.is-sidebar-opened .editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"],
+	.is-sidebar-opened .editor-styles-wrapper .wp-block[data-align="wide"] .c9-image-carousel {
+		max-width: 1368px;
+		width: 120%;
+	}
 }
