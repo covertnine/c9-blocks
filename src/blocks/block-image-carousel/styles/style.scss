@@ -16,6 +16,16 @@
 	padding-right: 0;
 }
 
+@media only screen and (min-width: 1px) {
+
+	.page-template-default .entry-content .c9-image-carousel.alignwide,
+	.c9-image-carousel.alignwide {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 @media only screen and (min-width: 768px) {
 
 	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
@@ -67,6 +77,7 @@
 .c9-image-carousel .carousel-control-next,
 .c9-image-carousel .carousel-control-prev {
 	width: 25px;
+	z-index: 22;
 }
 
 .carousel-item .carousel-caption {
