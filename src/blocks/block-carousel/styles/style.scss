@@ -63,3 +63,10 @@
 .c9-carousel .carousel-inner .c9-carousel-slide .wp-block:only-of-type {
 	margin-bottom: 0px;
 }
+
+@media only screen and (min-width: 1200px) {
+	.page-template-default .page .entry-content .c9-carousel .container {
+		width: 1140px;
+		max-width: 100%;
+	}
+}

@@ -6,10 +6,10 @@
  */
 
 .c9-equal-height-check {
-	> div {
-	position: absolute;
-	left: -10000em;
-	display: block;
+	>div {
+		position: absolute;
+		left: -10000em;
+		display: block;
 	}
 }
 
@@ -18,9 +18,14 @@
 		display: none;
 	}
 
+	.carousel-item {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
 	.carousel-inner {
-		padding-top: 8px;
-		padding-bottom: 8px;
+		padding-top: 0px;
+		padding-bottom: 0px;
 
 		>.editor-inner-blocks>.editor-block-list__layout {
 			display: flex;
@@ -53,17 +58,48 @@
 }
 
 .carousel-control-next {
-	right: -10px;
+	right: 0px;
 }
 
 .is-hovered .carousel-control-prev,
 .is-hovered .carousel-control-next,
 .is-selected .carousel-control-prev,
+.is-selected .carousel-control-next,
+.has-child-selected .carousel-control-prev,
+.has-child-selected .carousel-control-next {
+	border: 2px dashed var(--wp-admin-theme-color);
+	background-color: rgba(12, 12, 12, .4);
+	z-index: 22;
+}
+
+.is-selected .carousel-control-prev,
 .is-selected .carousel-control-next {
-	border: 2px dashed #aaa;
-	background-color: rgba(12, 12, 12, .1);
+	border: 2px dashed #fff;
 }
 
 .carousel-control-prev {
-	left: -10px;
+	left: 0px;
+}
+
+@media only screen and (min-width: 600px) {
+	.edit-post-layout .block-editor-block-list__layout.is-root-container .c9-carousel .wp-block[data-type="c9-blocks/grid"] {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	body .editor-styles-wrapper .is-root-container .c9-carousel .wp-block[data-type="c9-blocks/grid"] body.folded.post-type-page .is-sidebar-opened .editor-styles-wrapper .is-root-container .c9-carousel .wp-block[data-type="c9-blocks/grid"] {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+
+	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"],
+	body .editor-styles-wrapper .is-root-container .c9-carousel .wp-block[data-type="c9-blocks/grid"] body.folded.post-type-page .is-sidebar-opened .editor-styles-wrapper .is-root-container .c9-carousel .wp-block[data-type="c9-blocks/grid"] {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }

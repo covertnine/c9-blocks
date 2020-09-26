@@ -130,8 +130,8 @@ export default class Edit extends Component {
 								className="c9-column-selector-group"
 							>
 								{map(columnLayouts[selectedRows], ({ name, key, icon }) => (
-									<Tooltip text={name} key={key}>
-										<div className="c9-column-selector">
+									<div className="c9-column-selector">
+										<Tooltip text={name} key={key}>
 											<Button
 												key={key}
 												className="c9-column-selector-button"
@@ -145,8 +145,8 @@ export default class Edit extends Component {
 											>
 												{icon}
 											</Button>
-										</div>
-									</Tooltip>
+										</Tooltip>
+									</div>
 								))}
 								<Button
 									className="c9-column-selector-button-back"

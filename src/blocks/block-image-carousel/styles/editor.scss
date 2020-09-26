@@ -46,6 +46,7 @@
 .is-selected .carousel-control-next {
 	border: 2px dashed var(--wp-admin-theme-color);
 	background-color: rgba(12, 12, 12, .4);
+	z-index: 22;
 }
 
 .is-selected .carousel-control-prev,
