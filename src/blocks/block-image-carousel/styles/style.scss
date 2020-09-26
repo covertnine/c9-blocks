@@ -26,6 +26,20 @@
 	}
 }
 
+@media only screen and (min-width: 576px) {
+	.c9-image-carousel.container-narrow {
+		max-width: 540px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.c9-image-carousel.container-narrow {
+		max-width: 720px;
+	}
+}
+
 @media only screen and (min-width: 992px) {
 
 	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
@@ -33,6 +47,9 @@
 		width: 100%;
 	}
 
+	.c9-image-carousel.container-narrow {
+		max-width: 960px;
+	}
 }
 
 @media only screen and (min-width: 1200px) {
