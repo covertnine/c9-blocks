@@ -33,7 +33,7 @@ const ScrollAnimatePanel = props => {
 		<Fragment>
             <BaseControl
 				help={__(
-					"Select beginning and ending trigger positions in the browser window to add a scrub animation effect as the user scrolls between those positions.",
+					"Select the beginning and ending keyframe triggers to add a scrub animation effect as the user scrolls between those positions in the browser window. 0% is the bottom of the user's screen, and 100% is the very top.",
 					"c9-blocks"
 				)}
 			/>
@@ -43,6 +43,7 @@ const ScrollAnimatePanel = props => {
 				label={__("Show Keyframe Markers", "c9-blocks")}
 				checked={useMarkers}
 				onChange={useMarkers => setUseMarkers(useMarkers)}
+				className="c9-show-keyframe-markers"
 			/>
 
 			<SelectControl
@@ -144,7 +145,7 @@ const ScrollAnimatePanel = props => {
 
 			<KeyframeStepper
 				disabled={!animateScrub}
-				label={__("Starting Keyframe", "c9-blocks")}
+				label={__("Starting Keyframe Trigger Position", "c9-blocks")}
 				currentValue={animateStart}
 				handleClick={animateStart => setAttributes({ animateStart })}
 				offset={0}
@@ -152,7 +153,7 @@ const ScrollAnimatePanel = props => {
 			<SettingsSpacer />
 			<KeyframeStepper
 				disabled={!animateScrub}
-				label={__("Ending Keyframe", "c9-blocks")}
+				label={__("Ending Keyframe Trigger Position", "c9-blocks")}
 				currentValue={animateEnd}
 				handleClick={animateEnd => setAttributes({ animateEnd })}
 				offset={
