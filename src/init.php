@@ -325,20 +325,6 @@ function c9_check_bootstrap() {
 			array( 'jquery' ),
 			'4.3.1'
 		);
-
-		wp_enqueue_script(
-			'c9-gsap-js',
-			plugins_url( 'src/vendor/gsap/gsap.min.js', dirname( __FILE__ ) ),
-			array(),
-			'3.5.0'
-		);
-
-		wp_enqueue_script(
-			'c9-ScrollTrigger-js',
-			plugins_url( 'src/vendor/gsap/ScrollTrigger.min.js', dirname( __FILE__ ) ),
-			array(),
-			'3.5.0'
-		);
 	}
 }
 
@@ -351,6 +337,21 @@ add_action( 'wp_enqueue_scripts', 'c9_check_bootstrap', 100 );
  * Initialize the blocks frontend
  */
 function c9_blocks_front_assets() {
+	// gsap
+	wp_enqueue_script(
+		'c9-gsap-js',
+		plugins_url( 'src/vendor/gsap/gsap.min.js', dirname( __FILE__ ) ),
+		array(),
+		'3.5.0'
+	);
+
+	wp_enqueue_script(
+		'c9-ScrollTrigger-js',
+		plugins_url( 'src/vendor/gsap/ScrollTrigger.min.js', dirname( __FILE__ ) ),
+		array(),
+		'3.5.0'
+	);
+
 	// Youtube Player API.
 	wp_enqueue_script(
 		'youtube-api',

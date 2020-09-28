@@ -144,6 +144,7 @@ const ScrollAnimatePanel = props => {
 			<SettingsSpacer />
 
 			<KeyframeStepper
+				id="c9-start-keyframe-stepper"
 				disabled={!animateScrub}
 				label={__("Starting Keyframe Trigger Position", "c9-blocks")}
 				currentValue={animateStart}
@@ -152,6 +153,7 @@ const ScrollAnimatePanel = props => {
 			/>
 			<SettingsSpacer />
 			<KeyframeStepper
+				id="c9-end-keyframe-stepper"
 				disabled={!animateScrub}
 				label={__("Ending Keyframe Trigger Position", "c9-blocks")}
 				currentValue={animateEnd}

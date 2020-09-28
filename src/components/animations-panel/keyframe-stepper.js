@@ -1,18 +1,11 @@
 import styled from "styled-components";
 
-const {
-	__
-} = wp.i18n;
-const {
-	Button,
-	ButtonGroup,
-	BaseControl
-} = wp.components;
+const { __ } = wp.i18n;
+const { Button, ButtonGroup, BaseControl } = wp.components;
 
 const SIZE_PRESETS = [0, 25, 50, 75, 100];
 
-const StyledButtonGroup = styled(ButtonGroup)
-`
+const StyledButtonGroup = styled(ButtonGroup)`
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
@@ -20,22 +13,21 @@ const StyledButtonGroup = styled(ButtonGroup)
 	.is-pressed:after {
 		display: inline-block;
 		font-family: dashicons;
-		content: '\f342';
+		content: "\f342";
 		padding-left: 40px;
 	}
-	.components-button+.components-button {
+	.components-button + .components-button {
 		margin-left: 0;
 	}
 	.components-button:first-child {
 		border-radius: 0;
 	}
 	.components-button {
-		box-shadow:none;
+		box-shadow: none;
 	}
 `;
 
-const StyledButton = styled(Button)
-`
+const StyledButton = styled(Button)`
 	width: 100%;
 	height: 25px;
 	margin: 0px auto;
@@ -51,65 +43,44 @@ const StyledButton = styled(Button)
 `;
 
 const KeyframeStepper = props => {
-	const {
-		label,
-		currentValue,
-		offset,
-		resetValue,
-		disabled
-	} = props;
+	const { label, currentValue, offset, resetValue, disabled, id } = props;
 
-	return ( <
-		BaseControl label = {
-			label
-		} >
-		<
-		div className = "block-editor-image-size-control__row c9-key-stepper" >
-		<
-		StyledButtonGroup aria-label = {
-			label
-		} > {
-			SIZE_PRESETS.map(scale => {
-				const buttonValue = `${offset}px ${scale}%`;
-				const isCurrent = buttonValue === currentValue;
-				return ( <
-					StyledButton disabled = {
-						disabled
-					}
-					key = {
-						`${label}-${100 - scale}%`
-					}
-					isPrimary = {
-						isCurrent
-					}
-					isPressed = {
-						isCurrent
-					}
-					onClick = {
-						() => props.handleClick(buttonValue)
-					} > {
-						100 - scale
-					} %
-					<
-					/StyledButton>
-				);
-			})
-		} <
-		/StyledButtonGroup> <
-		Button disabled = {
-			disabled
-		}
-		key = {
-			`${label}-reset`
-		}
-		isSmall onClick = {
-			() => props.handleClick(resetValue)
-		} > {
-			__("Reset")
-		} <
-		/Button> < /
-		div > <
-		/BaseControl>
+	return (
+		<BaseControl label={label}>
+			<div
+				id={id}
+				className="block-editor-image-size-control__row c9-key-stepper"
+			>
+				<StyledButtonGroup aria-label={label}>
+					{" "}
+					{SIZE_PRESETS.map(scale => {
+						const buttonValue = `${offset}px ${scale}%`;
+						const isCurrent = buttonValue === currentValue;
+						return (
+							<StyledButton
+								disabled={disabled}
+								key={`${label}-${100 - scale}%`}
+								isPrimary={isCurrent}
+								isPressed={isCurrent}
+								onClick={() => props.handleClick(buttonValue)}
+							>
+								{" "}
+								{100 - scale} %
+							</StyledButton>
+						);
+					})}{" "}
+				</StyledButtonGroup>{" "}
+				<Button
+					disabled={disabled}
+					key={`${label}-reset`}
+					isSmall
+					onClick={() => props.handleClick(resetValue)}
+				>
+					{" "}
+					{__("Reset")}{" "}
+				</Button>{" "}
+			</div>{" "}
+		</BaseControl>
 	);
 };
 

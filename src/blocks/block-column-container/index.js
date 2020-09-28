@@ -77,7 +77,25 @@ registerBlockType("c9-blocks/column-container", {
 	// Save the attributes and markup
 	save: props => {
 		return <Save {...props} />;
-	}
+	},
+
+	deprecated: [
+		{
+			attributes: {
+				...attributes,
+				minScreenHeight: {
+					type: "number",
+					default: 0
+				}
+			},
+			save: Save,
+			supports: {
+				className: false,
+				anchor: true,
+				reusable: false
+			}
+		}
+	]
 });
 
 /* Add the vertical column alignment class to the column container block. */

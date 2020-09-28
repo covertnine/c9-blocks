@@ -73,7 +73,7 @@ export default class Inspector extends Component {
 							value={slideTime}
 							onChange={slideTime => setAttributes({ slideTime })}
 							min={0}
-							max={1000000}
+							max={100000}
 						/>
 					)}
 					<ToggleControl
