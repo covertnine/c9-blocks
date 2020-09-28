@@ -88,7 +88,9 @@ registerBlockType("c9-blocks/column-container", {
 					default: 0
 				}
 			},
-			save: Save,
+			save: props => {
+				return <Save {...props} />;
+			},
 			supports: {
 				className: false,
 				anchor: true,
