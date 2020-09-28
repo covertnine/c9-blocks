@@ -67,6 +67,7 @@ export default class Edit extends Component {
 		const {
 			setAttributes,
 			isCollapsed,
+			isSelectedBlockInRoot,
 			attributes: {
 				heading,
 				displayLevel,
@@ -90,13 +91,6 @@ export default class Edit extends Component {
 					<AlignmentToolbar
 						value={textAlign}
 						onChange={value => setAttributes({ textAlign: value })}
-					/>
-					<HeadingToolbar
-						minLevel={1}
-						maxLevel={7}
-						selectedLevel={tagLevel}
-						onChange={newLevel => setAttributes({ tagLevel: newLevel })}
-						isCollapsed={isCollapsed}
 					/>
 					<SubheadingToolbar
 						value={addSubheading}
@@ -152,6 +146,17 @@ export default class Edit extends Component {
 						</div>
 					)}
 				</CustomHeading>
+				{isSelectedBlockInRoot && (
+					<div className="c9-heading-size-selector">
+						<HeadingToolbar
+							minLevel={1}
+							maxLevel={7}
+							selectedLevel={tagLevel}
+							onChange={newLevel => setAttributes({ tagLevel: newLevel })}
+							isCollapsed={isCollapsed}
+						/>
+					</div>
+				)}
 			</Fragment>
 		);
 	}

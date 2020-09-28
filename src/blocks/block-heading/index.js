@@ -55,13 +55,20 @@ registerBlockType("c9-blocks/heading", {
 	edit: compose(
 		withViewportMatch({ isLargeViewport: "medium" }),
 		withSelect((select, { clientId, isLargeViewport, isCollapsed }) => {
-			const { getBlockRootClientId, getSettings } = select("core/block-editor");
+			const {
+				getBlockRootClientId,
+				getSettings,
+				isBlockSelected,
+				hasSelectedInnerBlock
+			} = select("core/block-editor");
 			const settings = getSettings();
 			return {
 				isCollapsed:
 					isCollapsed ||
 					!isLargeViewport ||
-					(!settings.hasFixedToolbar && !!getBlockRootClientId(clientId))
+					(!settings.hasFixedToolbar && !!getBlockRootClientId(clientId)),
+				isSelectedBlockInRoot:
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
 			};
 		})
 	)(Edit),
