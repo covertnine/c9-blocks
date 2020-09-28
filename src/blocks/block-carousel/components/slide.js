@@ -5,7 +5,7 @@ const { Component } = wp.element;
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
 const { InnerBlocks } = wp.blockEditor;
-const { registerBlockType } = wp.blocks;
+const { registerBlockType, getBlockTypes } = wp.blocks;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
@@ -69,6 +69,13 @@ class Slide extends Component {
 			updateBlockAttributes
 		} = this.props;
 
+		const ALLOWED_BLOCKS = getBlockTypes()
+			.map(block => block.name)
+			.filter(
+				name =>
+					"c9-blocks/carousel" != name && "c9-blocks/image-carousel" != name
+			);
+
 		const refCallback = async element => {
 			if (element) {
 				let config = element.getBoundingClientRect();
@@ -83,8 +90,8 @@ class Slide extends Component {
 						rootBlock.attributes.slideSizes,
 						config.height
 					);
-					
-					updateBlockAttributes(rootBlock.clientId, { slideSizes: result })
+
+					updateBlockAttributes(rootBlock.clientId, { slideSizes: result });
 					// console.log(result);
 				}
 			}
@@ -98,6 +105,7 @@ class Slide extends Component {
 				className={classnames(className, this.props.attributes.id)}
 			>
 				<InnerBlocks
+					allowedBlocks={ALLOWED_BLOCKS}
 					templateLock={false}
 					templateInsertUpdatesSelection={false}
 					renderAppender={
