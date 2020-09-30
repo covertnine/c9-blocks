@@ -28,7 +28,12 @@ registerBlockType("c9-blocks/column-container", {
 	title: __("C9 Column Container", "c9-blocks"),
 	icon: "columns",
 	category: "common",
-	parent: ["c9-blocks/grid-container", "c9-blocks/carousel-slide"],
+	parent: [
+		"c9-blocks/grid-container",
+		"c9-blocks/carousel-slide",
+		"c9-blocks/horizontal-tabs-tab",
+		"c9-blocks/toggles-toggle"
+	],
 	supports: {
 		// fill in features
 		className: false,
