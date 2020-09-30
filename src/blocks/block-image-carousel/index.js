@@ -88,13 +88,15 @@ registerBlockType("c9-blocks/image-carousel", {
 			};
 		}),
 		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch(
+			const { updateBlockAttributes, removeBlock, toggleSelection } = dispatch(
 				"core/block-editor"
 			);
 
 			return {
 				updateBlockAttributes,
-				removeBlock
+				removeBlock,
+				onResizeStart: () => toggleSelection(false),
+				onResizeStop: () => toggleSelection(true)
 			};
 		})
 	])(Edit),

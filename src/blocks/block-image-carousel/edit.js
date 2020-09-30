@@ -7,6 +7,7 @@ import Inspector from "./components/inspector";
 import PauseToolBar from "../../components/pause-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import WidthToolbar from "../../components/width-toolbar";
+import ResizableCarouselContainer from "./components/resizable-carousel-container";
 
 /**
  * WordPress dependencies
@@ -14,7 +15,6 @@ import WidthToolbar from "../../components/width-toolbar";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { BlockControls, RichText, MediaPlaceholder } = wp.blockEditor;
-const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
 const { Button } = wp.components;
@@ -49,6 +49,10 @@ class Edit extends Component {
 		this.createIndicators = this.createIndicators.bind(this);
 		this.createSlides = this.createSlides.bind(this);
 	}
+
+	setRef = input => {
+		this.carouselRef.current = input;
+	};
 
 	/**
 	 * Adds event handler to keep track of active slide.
@@ -287,14 +291,6 @@ class Edit extends Component {
 	}
 
 	/**
-	 * Clones the slides DOM component to measure sizes
-	 */
-	cloneAndSetSlideSizes = slides => {
-		// calls with the allActive config such that all slides are visible and can be measured
-		return this.createSlides(slides, true);
-	};
-
-	/**
 	 * Generates the slides using the given images.
 	 */
 	createSlides(slides, allActive = false) {
@@ -462,21 +458,16 @@ class Edit extends Component {
 		const {
 			attributes,
 			setAttributes,
-			className = "",
 			instanceId,
 			isSelectedBlockInRoot
 		} = this.props;
 
 		const {
-			autoSlide,
 			slides,
-			wrapAround,
 			showIndicators,
 			showControls,
 			url,
-			slideTime,
 			slideEqualHeight,
-			slideMaxHeight,
 			verticalAlign,
 			align,
 			containerWidth
@@ -486,14 +477,7 @@ class Edit extends Component {
 			setAttributes({ instanceId });
 		}
 
-		// search for largest slide and update attributes
-		const TempComponent = this.cloneAndSetSlideSizes(slides);
-
 		const SlidesComponent = this.createSlides(slides);
-
-		const setHeight = isSelectedBlockInRoot
-			? slideMaxHeight + 40
-			: slideMaxHeight;
 
 		let currWidth;
 		if (0 != align.length) {
@@ -550,19 +534,10 @@ class Edit extends Component {
 					carouselRef={this.carouselRef}
 					slideTarget={slideTarget}
 				/>
-				<div
-					id={`c9-image-carousel-indicator-${instanceId}`}
-					className={classnames(
-						applyFilters("c9-blocks.blocks.className", className),
-						"carousel slide"
-					)}
-					data-ride="carousel"
-					data-interval={autoSlide ? slideTime : false}
-					data-wrap={wrapAround}
-					ref={this.carouselRef}
-					style={
-						0 <= slideMaxHeight && slideEqualHeight ? { height: setHeight } : {}
-					}
+				<ResizableCarouselContainer
+					{...this.props}
+					setRef={this.setRef}
+					editMode={true}
 				>
 					<ol
 						className={classnames(
@@ -618,8 +593,7 @@ class Edit extends Component {
 							</a>
 						</Fragment>
 					)}
-				</div>
-				{slideEqualHeight ? TempComponent : null}
+				</ResizableCarouselContainer>
 			</Fragment>
 		);
 	}

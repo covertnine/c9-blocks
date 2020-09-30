@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 
+import ResizableCarouselContainer from "./components/resizable-carousel-container";
+
 /**
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
 const { RichText } = wp.blockEditor;
-const { applyFilters } = wp.hooks;
 
 /**
  * External Dependencies.
@@ -87,50 +88,14 @@ export default class Save extends Component {
 	render() {
 		const {
 			showIndicators,
-			autoSlide,
 			slides,
 			showControls,
 			instanceId,
-			wrapAround,
-			slideTime,
-			slideEqualHeight,
-			slideMaxHeight,
-			verticalAlign,
-			align,
-			containerWidth
+			verticalAlign
 		} = this.props.attributes;
 
-		const { className = "" } = this.props;
-
-		let containerAlign;
-		if (0 != align.length) {
-			if ("container" == containerWidth) {
-				containerAlign = "alignwide";
-			} else if ("container-fluid" == containerWidth) {
-				containerAlign = "alignfull";
-			} else {
-				containerAlign = null;
-			}
-		}
-
 		return (
-			<div
-				id={`c9-image-carousel-indicator-${instanceId}`}
-				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
-					"carousel slide",
-					containerAlign,
-					containerWidth
-				)}
-				data-ride="carousel"
-				data-interval={autoSlide ? slideTime : false}
-				data-wrap={wrapAround}
-				style={
-					0 <= slideMaxHeight && slideEqualHeight
-						? { height: slideMaxHeight }
-						: {}
-				}
-			>
+			<ResizableCarouselContainer {...this.props}>
 				{showIndicators && (
 					<ol className="carousel-indicators">
 						{this.createIndicators(slides, instanceId)}
@@ -166,7 +131,7 @@ export default class Save extends Component {
 						</a>
 					</Fragment>
 				)}
-			</div>
+			</ResizableCarouselContainer>
 		);
 	}
 }

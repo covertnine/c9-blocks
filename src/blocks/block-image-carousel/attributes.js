@@ -51,11 +51,7 @@ const attributes = {
 	},
 	slideMaxHeight: {
 		type: "number",
-		default: -1
-	},
-	slideEqualHeight: {
-		type: "boolean",
-		default: false
+		default: 250
 	},
 	verticalAlign: {
 		type: "string"
