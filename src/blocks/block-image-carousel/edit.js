@@ -467,7 +467,6 @@ class Edit extends Component {
 			showIndicators,
 			showControls,
 			url,
-			slideEqualHeight,
 			verticalAlign,
 			align,
 			containerWidth
@@ -519,14 +518,12 @@ class Edit extends Component {
 							this.setState({ pause: value });
 						}}
 					/>
-					{slideEqualHeight ? (
-						<VerticalAlignmentToolbar
-							value={verticalAlign}
-							onChange={value => {
-								setAttributes({ verticalAlign: value });
-							}}
-						/>
-					) : null}
+					<VerticalAlignmentToolbar
+						value={verticalAlign}
+						onChange={value => {
+							setAttributes({ verticalAlign: value });
+						}}
+					/>
 				</BlockControls>
 
 				<Inspector

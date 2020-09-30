@@ -1,3 +1,5 @@
+import ResizableCarouselContainer from "./components/resizable-carousel-container";
+
 /**
  * External Dependencies.
  */
@@ -8,7 +10,6 @@ import classnames from "classnames";
  */
 const { Component, Fragment } = wp.element;
 const { InnerBlocks } = wp.blockEditor;
-const { applyFilters } = wp.hooks;
 
 export default class Save extends Component {
 	constructor() {
@@ -41,50 +42,14 @@ export default class Save extends Component {
 	render() {
 		const {
 			showIndicators,
-			autoSlide,
 			slides,
 			showControls,
 			instanceId,
-			wrapAround,
-			slideTime,
-			slideMaxHeight,
-			slideEqualHeight,
 			verticalAlign,
-			align,
-			containerWidth
 		} = this.props.attributes;
 
-		const { className = "" } = this.props;
-
-		let containerAlign;
-		if (0 != align.length) {
-			if ("container" == containerWidth) {
-				containerAlign = "alignwide";
-			} else if ("container-fluid" == containerWidth) {
-				containerAlign = "alignfull";
-			} else {
-				containerAlign = null;
-			}
-		}
-
 		return (
-			<div
-				id={`c9-carousel-indicator-${instanceId}`}
-				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
-					"carousel slide",
-					containerAlign,
-					containerWidth
-				)}
-				data-ride="carousel"
-				data-interval={autoSlide ? slideTime : false}
-				data-wrap={wrapAround}
-				style={
-					0 <= slideMaxHeight && slideEqualHeight
-						? { height: slideMaxHeight }
-						: {}
-				}
-			>
+			<ResizableCarouselContainer {...this.props}>
 				{showIndicators && (
 					<ol className="carousel-indicators">
 						{this.createIndicators(slides, instanceId)}
@@ -120,7 +85,7 @@ export default class Save extends Component {
 						</a>
 					</Fragment>
 				)}
-			</div>
+			</ResizableCarouselContainer>
 		);
 	}
 }

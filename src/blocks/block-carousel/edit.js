@@ -5,13 +5,13 @@ import Inspector from "./components/inspector";
 import PauseToolBar from "../../components/pause-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import WidthToolbar from "../../components/width-toolbar";
+import ResizableCarouselContainer from "./components/resizable-carousel-container";
 
 /**
  * WordPress dependencies
  */
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
-const { applyFilters } = wp.hooks;
 const { withInstanceId } = wp.compose;
 
 /**
@@ -42,6 +42,10 @@ class Edit extends Component {
 
 		this.createIndicators = this.createIndicators.bind(this);
 	}
+
+	setRef = input => {
+		this.carouselRef.current = input;
+	};
 
 	/**
 	 * Adds event handler to keep track of active slide.
@@ -168,22 +172,15 @@ class Edit extends Component {
 	render() {
 		const {
 			attributes,
-			className = "",
 			instanceId,
 			isSelectedBlockInRoot,
 			setAttributes
 		} = this.props;
 
 		const {
-			autoSlide,
 			slides,
-			wrapAround,
 			showControls,
 			showIndicators,
-			slideTime,
-			slideSizes,
-			slideMaxHeight,
-			slideEqualHeight,
 			verticalAlign,
 			align,
 			containerWidth
@@ -194,18 +191,6 @@ class Edit extends Component {
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
 		}
-
-		if (
-			slideSizes.length === slides &&
-			Math.max(...slideSizes) !== slideMaxHeight
-		) {
-			const newHeight = Math.max(...slideSizes);
-			setAttributes({ slideMaxHeight: newHeight });
-		}
-
-		const setHeight = isSelectedBlockInRoot
-			? slideMaxHeight + 120
-			: slideMaxHeight + 80;
 
 		let currWidth;
 		if (0 != align.length) {
@@ -247,14 +232,13 @@ class Edit extends Component {
 							this.setState({ pause: value });
 						}}
 					/>
-					{slideEqualHeight ? (
-						<VerticalAlignmentToolbar
-							value={verticalAlign}
-							onChange={value => {
-								setAttributes({ verticalAlign: value });
-							}}
-						/>
-					) : null}
+
+					<VerticalAlignmentToolbar
+						value={verticalAlign}
+						onChange={value => {
+							setAttributes({ verticalAlign: value });
+						}}
+					/>
 				</BlockControls>
 
 				<Inspector
@@ -262,19 +246,11 @@ class Edit extends Component {
 					carouselRef={this.carouselRef}
 					slideTarget={this.state.active}
 				/>
-				<div
-					id={`c9-carousel-indicator-${instanceId}`}
-					className={classnames(
-						applyFilters("c9-blocks.blocks.className", className),
-						"carousel slide"
-					)}
-					data-ride="carousel"
-					data-interval={!pause && autoSlide ? slideTime : false}
-					data-wrap={wrapAround}
-					style={
-						0 <= slideMaxHeight && slideEqualHeight ? { height: setHeight } : {}
-					}
-					ref={this.carouselRef}
+				<ResizableCarouselContainer
+					{...this.props}
+					pause={pause}
+					setRef={this.setRef}
+					editMode={true}
 				>
 					<ol
 						className={classnames(
@@ -330,7 +306,7 @@ class Edit extends Component {
 							</a>
 						</Fragment>
 					)}
-				</div>
+				</ResizableCarouselContainer>
 			</Fragment>
 		);
 	}

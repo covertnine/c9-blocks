@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Component, Fragment } = wp.element;
+const { Component } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { BaseControl, PanelBody, RangeControl, ToggleControl } = wp.components;
 
@@ -26,8 +26,8 @@ export default class Inspector extends Component {
 			showIndicators,
 			wrapAround,
 			slideTime,
-			slideEqualHeight,
-			verticalAlign
+			verticalAlign,
+			slideMaxHeight
 		} = attributes;
 
 		return (
@@ -56,6 +56,26 @@ export default class Inspector extends Component {
 					/>
 
 					<hr />
+
+					<RangeControl
+						label={__("Height in pixels", "c9-blocks")}
+						value={slideMaxHeight}
+						onChange={slideMaxHeight => setAttributes({ slideMaxHeight })}
+						min={0}
+						max={1000}
+					/>
+
+					<hr />
+
+					<p className="components-base-control__label">
+						Vertical alignment for slides
+					</p>
+					<VerticalAlignmentToolbar
+						value={verticalAlign}
+						onChange={value => {
+							setAttributes({ verticalAlign: value });
+						}}
+					/>
 
 					<ToggleControl
 						label={__("Wrap Around", "c9-blocks")}
@@ -86,24 +106,6 @@ export default class Inspector extends Component {
 						checked={showIndicators}
 						onChange={showIndicators => setAttributes({ showIndicators })}
 					/>
-					<ToggleControl
-						label={__("Set slides to have equal height", "c9-blocks")}
-						checked={slideEqualHeight}
-						onChange={slideEqualHeight => setAttributes({ slideEqualHeight })}
-					/>
-					{slideEqualHeight ? (
-						<Fragment>
-							<p className="components-base-control__label">
-								Vertical alignment for slides
-							</p>
-							<VerticalAlignmentToolbar
-								value={verticalAlign}
-								onChange={value => {
-									setAttributes({ verticalAlign: value });
-								}}
-							/>
-						</Fragment>
-					) : null}
 				</PanelBody>
 			</InspectorControls>
 		);
