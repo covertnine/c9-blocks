@@ -279,7 +279,8 @@ export default class Inspector extends Component {
 				overrideMobile,
 				bgImgSizeMobile
 			},
-			setAttributes
+			setAttributes,
+			updateRows
 		} = this.props;
 
 		const cssUnits = [
@@ -378,7 +379,10 @@ export default class Inspector extends Component {
 						<RangeControl
 							label={__("Number of rows to produce", "c9-blocks")}
 							value={rows}
-							onChange={value => setAttributes({ rows: value })}
+							onChange={value => {
+								setAttributes({ rows: value });
+								updateRows(rows, value);
+							}}
 							min={1}
 							max={20}
 							help={__(

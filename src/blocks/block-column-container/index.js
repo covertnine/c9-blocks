@@ -95,7 +95,7 @@ registerBlockType("c9-blocks/column-container", {
 					innerBlocks = [
 						...innerBlocks,
 						..._times(newColumns - previousColumns, () => {
-							return createBlock("core/column");
+							return createBlock("c9-blocks/column");
 						})
 					];
 				} else {

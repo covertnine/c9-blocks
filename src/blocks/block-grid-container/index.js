@@ -20,7 +20,10 @@ import Icon from "../../../assets/icon-c9-grid.svg";
 const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
-const { registerBlockType } = wp.blocks;
+const { registerBlockType, createBlock } = wp.blocks;
+
+import _times from "lodash/times";
+import _dropRight from "lodash/dropRight";
 
 registerBlockType("c9-blocks/grid", {
 	title: __("C9 Grid", "c9-blocks"),
@@ -162,12 +165,45 @@ registerBlockType("c9-blocks/grid", {
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
 			};
 		}),
-		withDispatch(dispatch => {
+		withDispatch((dispatch, ownProps, registry) => {
 			const { toggleSelection } = dispatch("core/block-editor");
+
+			/**
+			 * Updates the row count, including necessary revisions to child row
+			 * blocks to grant required or redistribute available space.
+			 *
+			 * @param {number} previousRows Previous row count.
+			 * @param {number} newRows      New row count.
+			 */
+			const updateRows = (previousRows, newRows) => {
+				const { clientId } = ownProps;
+				const { replaceInnerBlocks } = dispatch("core/block-editor");
+				const { getBlocks } = registry.select("core/block-editor");
+
+				let innerBlocks = getBlocks(clientId);
+
+				// Redistribute available width for existing inner blocks.
+				const isAddingRow = newRows > previousRows;
+
+				if (isAddingRow) {
+					innerBlocks = [
+						...innerBlocks,
+						..._times(newRows - previousRows, () => {
+							return createBlock("c9-blocks/column-container");
+						})
+					];
+				} else {
+					// The removed row will be the last of the inner blocks.
+					innerBlocks = _dropRight(innerBlocks, previousRows - newRows);
+				}
+
+				replaceInnerBlocks(clientId, innerBlocks, false);
+			};
 
 			return {
 				onResizeStart: () => toggleSelection(false),
-				onResizeStop: () => toggleSelection(true)
+				onResizeStop: () => toggleSelection(true),
+				updateRows
 			};
 		})
 	])(Edit),

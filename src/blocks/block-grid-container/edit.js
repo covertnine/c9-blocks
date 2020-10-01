@@ -24,37 +24,7 @@ const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 class Edit extends Component {
 	constructor() {
 		super(...arguments);
-
-		this.state = {
-			templateLock: "all",
-			lockIcon: "editor-unlink",
-			getTemplate: this.dummyTemplate
-		};
 	}
-
-	componentDidMount() {
-		this.setState({ getTemplate: this.getRowsTemplate });
-	}
-
-	// eslint-disable-next-line no-unused-vars
-	dummyTemplate = rows => {
-		return this.getRowsTemplate(rows + 1);
-	};
-
-	// temp fix until template re-rendering upon insertion is fixed
-	setAndUnsetLock = () => {
-		this.setState({
-			templateLock: "insert",
-			lockIcon: "admin-links"
-		});
-		// re-render immediately after next event cycle
-		setTimeout(() => {
-			this.setState({
-				templateLock: "all",
-				lockIcon: "editor-unlink"
-			});
-		});
-	};
 
 	/**
 	 * Generates the child (row) column container blocks.
@@ -68,13 +38,11 @@ class Edit extends Component {
 			instanceId,
 			attributes,
 			setAttributes,
-			isSelectedBlockInRoot
+			isSelectedBlockInRoot,
+			updateRows
 		} = this.props;
 
-		const { rows, lockMovement } = attributes;
-		const { getTemplate } = this.state;
-
-		const template = getTemplate(rows);
+		const { rows } = attributes;
 
 		if (instanceId != attributes.instanceId) {
 			setAttributes({ instanceId });
@@ -87,64 +55,38 @@ class Edit extends Component {
 
 				<ResizableContainer {...this.props} editMode={true}>
 					<InnerBlocks
-						template={template}
-						templateLock={this.state.templateLock || "all"}
+						template={this.getRowsTemplate(rows)}
+						templateLock="insert"
 						allowedBlocks={ALLOWED_BLOCKS}
+						__experimentalTagName="div"
+						renderAppender={false}
 					/>
 				</ResizableContainer>
 				{isSelectedBlockInRoot && (
 					<div className="c9-add-remove-rows">
-						{lockMovement && (
-							<Fragment>
-								<Button
-									label={__("Remove Image", "c9-blocks")}
-									icon="dismiss"
-									onClick={() => {
-										if (1 < rows) {
-											setAttributes({ rows: rows - 1 });
-											this.setAndUnsetLock();
-										}
-									}}
-								>
-									{__("Remove Bottom Row", "c9-blocks")}
-								</Button>
-								<Button
-									label={__("Remove Image", "c9-blocks")}
-									icon="plus-alt"
-									onClick={() => {
-										if (20 > rows) {
-											setAttributes({ rows: rows + 1 });
-											this.setAndUnsetLock();
-										}
-									}}
-								>
-									{__("Add Row", "c9-blocks")}
-								</Button>
-							</Fragment>
-						)}
 						<Button
-							label={__("Swap Rows", "c9-blocks")}
-							icon={this.state.lockIcon}
+							label={__("Remove Bottom Row", "c9-blocks")}
+							icon="dismiss"
 							onClick={() => {
-								if (lockMovement) {
-									this.setState({
-										templateLock: "insert",
-										lockIcon: "admin-links"
-									});
-									setAttributes({ lockMovement: false });
-								} else {
-									this.setState({
-										templateLock: "all",
-										lockIcon: "editor-unlink"
-									});
-									setAttributes({ lockMovement: true });
+								if (1 < rows) {
+									setAttributes({ rows: rows - 1 });
+									updateRows(rows, rows - 1);
 								}
 							}}
 						>
-							{__(
-								lockMovement ? "Unlock Row Movement" : "Lock Row Movement",
-								"c9-blocks"
-							)}
+							{__("Remove Bottom Row", "c9-blocks")}
+						</Button>
+						<Button
+							label={__("Add Row", "c9-blocks")}
+							icon="plus-alt"
+							onClick={() => {
+								if (20 > rows) {
+									setAttributes({ rows: rows + 1 });
+									updateRows(rows, rows + 1);
+								}
+							}}
+						>
+							{__("Add Row", "c9-blocks")}
 						</Button>
 					</div>
 				)}
