@@ -40,6 +40,11 @@
 			display: flex;
 		}
 	}
+
+	.carousel-indicators {
+		/* fix for resizable being selectable */
+		z-index: -1 !important;
+	}
 }
 
 /*this should be overwritten by a carousel slide setting for how many slides are shown at once or how many columns in the slide are visible at once*/
