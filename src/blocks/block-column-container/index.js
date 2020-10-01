@@ -25,6 +25,7 @@ const { registerBlockType, createBlock } = wp.blocks;
 import classnames from "classnames";
 import _times from "lodash/times";
 import _dropRight from "lodash/dropRight";
+import _filter from "lodash/filter";
 
 registerBlockType("c9-blocks/column-container", {
 	title: __("C9 Column Container", "c9-blocks"),
@@ -60,15 +61,21 @@ registerBlockType("c9-blocks/column-container", {
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } = select(
-				"core/block-editor"
-			);
+			const {
+				isBlockSelected,
+				hasSelectedInnerBlock,
+				getBlockHierarchyRootClientId,
+				getBlock
+			} = select("core/block-editor");
 
 			const { clientId } = ownProps;
 
 			return {
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+				rootBlock: clientId
+					? getBlock(getBlockHierarchyRootClientId(clientId))
+					: null
 			};
 		}),
 		withDispatch((dispatch, ownProps, registry) => {
@@ -106,10 +113,43 @@ registerBlockType("c9-blocks/column-container", {
 				replaceInnerBlocks(clientId, innerBlocks, false);
 			};
 
+			/**
+			 * Removes self from innerBlocks
+			 *
+			 * @param {string} parentId parent block id
+			 */
+			const removeSelf = parentId => {
+				const { clientId } = ownProps;
+				const { replaceInnerBlocks, updateBlockAttributes } = dispatch(
+					"core/block-editor"
+				);
+				const { getBlock, getBlocks } = registry.select("core/block-editor");
+
+				const parentBlock = getBlock(parentId);
+
+				let innerBlocks = getBlocks(parentId);
+				innerBlocks = _filter(
+					innerBlocks,
+					value => value.clientId !== clientId
+				);
+
+				if ("c9-blocks/grid" === parentBlock.name) {
+					const rows = parentBlock.attributes.rows;
+					if (1 === rows) {
+						innerBlocks.push(createBlock("c9-blocks/column-container"));
+					} else {
+						updateBlockAttributes(parentId, { rows: rows - 1 });
+					}
+				}
+
+				replaceInnerBlocks(parentId, innerBlocks, false);
+			};
+
 			return {
 				onResizeStart: () => toggleSelection(false),
 				onResizeStop: () => toggleSelection(true),
-				updateColumns
+				updateColumns,
+				removeSelf
 			};
 		})
 	])(Edit),
