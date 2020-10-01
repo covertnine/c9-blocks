@@ -18,6 +18,10 @@
 	display: grid;
 }
 
+.c9-layout-column-wrap-admin>.block-editor-block-list__layout > div {
+	margin: 0;
+}
+
 .container .c9-layout-column-wrap-admin>.wp-block,
 .container-narrow .c9-layout-column-wrap-admin>.wp-block,
 .container-fluid .c9-layout-column-wrap-admin>.wp-block {
