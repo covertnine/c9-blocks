@@ -277,7 +277,8 @@ export default class Inspector extends Component {
 				overrideMobile,
 				bgImgSizeMobile
 			},
-			setAttributes
+			setAttributes,
+			updateColumns
 		} = this.props;
 
 		let selectedRows = 1;
@@ -363,6 +364,7 @@ export default class Inspector extends Component {
 								columns: nextColumns,
 								layout: `c9-${nextColumns}-col-equal`
 							});
+							updateColumns(columns, nextColumns);
 						}}
 						min={1}
 						max={6}

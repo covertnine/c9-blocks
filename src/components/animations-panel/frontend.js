@@ -12,6 +12,25 @@ document.addEventListener("DOMContentLoaded", function() {
 		// register plugin
 		gsap.registerPlugin(ScrollTrigger);
 
+		// parallax testing
+
+		// gsap.to(".c9-image-container", {
+		// 	scrollTrigger: {
+		// 		scrub: true
+		// 	},
+		// 	backgroundPosition: "50% 80%",
+		// 	ease: "none"
+		// });
+
+		// gsap.from(".c9-overlay-container", {
+		// 	scrollTrigger: {
+		// 		scrub: true
+		// 	},
+		// 	left: "-1420px",
+		// 	ease: "none"
+		// });
+
+
 		const animateTargets = document.querySelectorAll("[data-c9-animate]");
 		// console.log(animateTargets);
 

@@ -17,12 +17,14 @@ import "./styles/editor.scss";
 const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
-const { registerBlockType } = wp.blocks;
+const { registerBlockType, createBlock } = wp.blocks;
 
 /**
  * External Dependencies.
  */
 import classnames from "classnames";
+import _times from "lodash/times";
+import _dropRight from "lodash/dropRight";
 
 registerBlockType("c9-blocks/column-container", {
 	title: __("C9 Column Container", "c9-blocks"),
@@ -69,12 +71,45 @@ registerBlockType("c9-blocks/column-container", {
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
 			};
 		}),
-		withDispatch(dispatch => {
+		withDispatch((dispatch, ownProps, registry) => {
 			const { toggleSelection } = dispatch("core/block-editor");
+
+			/**
+			 * Updates the column count, including necessary revisions to child Column
+			 * blocks to grant required or redistribute available space.
+			 *
+			 * @param {number} previousColumns Previous column count.
+			 * @param {number} newColumns      New column count.
+			 */
+			const updateColumns = (previousColumns, newColumns) => {
+				const { clientId } = ownProps;
+				const { replaceInnerBlocks } = dispatch("core/block-editor");
+				const { getBlocks } = registry.select("core/block-editor");
+
+				let innerBlocks = getBlocks(clientId);
+
+				// Redistribute available width for existing inner blocks.
+				const isAddingColumn = newColumns > previousColumns;
+
+				if (isAddingColumn) {
+					innerBlocks = [
+						...innerBlocks,
+						..._times(newColumns - previousColumns, () => {
+							return createBlock("core/column");
+						})
+					];
+				} else {
+					// The removed column will be the last of the inner blocks.
+					innerBlocks = _dropRight(innerBlocks, previousColumns - newColumns);
+				}
+
+				replaceInnerBlocks(clientId, innerBlocks, false);
+			};
 
 			return {
 				onResizeStart: () => toggleSelection(false),
-				onResizeStop: () => toggleSelection(true)
+				onResizeStop: () => toggleSelection(true),
+				updateColumns
 			};
 		})
 	])(Edit),

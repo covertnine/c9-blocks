@@ -24,7 +24,7 @@ const { Component, Fragment } = wp.element;
 const { Tooltip, Placeholder, ButtonGroup, Button } = wp.components;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
 
-const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
+const ALLOWED_BLOCKS = ["c9-blocks/column"];
 
 export default class Edit extends Component {
 	constructor() {
@@ -211,9 +211,12 @@ export default class Edit extends Component {
 						}}
 					>
 						<InnerBlocks
+							orientation="horizontal"
 							template={this.getLayoutTemplate(columns)}
-							templateLock="all"
+							templateLock="insert"
 							allowedBlocks={ALLOWED_BLOCKS}
+							__experimentalTagName="div"
+							renderAppender={ false }
 						/>
 					</div>
 				</ResizableContainer>
