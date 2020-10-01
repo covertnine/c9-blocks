@@ -15,6 +15,7 @@ import WidthToolbar from "../../components/width-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import BlockSelector from "../../components/block-selector";
 import icons from "../../../assets/c9-col-layout-icons";
+import RemoveButton from "../../components/remove-button";
 
 /**
  * WordPress dependencies
@@ -42,6 +43,27 @@ export default class Edit extends Component {
 		return _times(columns, () => ["c9-blocks/column"]);
 	});
 
+	/**
+	 * Retrieves the parent block.
+	 */
+	getParentContainer = rootBlock => {
+		const { clientId } = this.props;
+
+		let result = false;
+
+		if (rootBlock.innerBlocks && rootBlock.innerBlocks.length) {
+			rootBlock.innerBlocks.forEach(item => {
+				if (!result && item.clientId === clientId) {
+					result = rootBlock;
+				} else if (!result) {
+					result = this.getParentContainer(item);
+				}
+			});
+		}
+
+		return result;
+	};
+
 	render() {
 		const {
 			attributes: {
@@ -54,7 +76,10 @@ export default class Edit extends Component {
 				columnMaxWidth,
 				align
 			},
-			setAttributes
+			setAttributes,
+			isSelectedBlockInRoot,
+			rootBlock,
+			removeSelf
 		} = this.props;
 
 		let selectedRows = 1;
@@ -73,6 +98,25 @@ export default class Edit extends Component {
 				currWidth = "narrow";
 			}
 		}
+
+		const RemoveSelfButton = (
+			<RemoveButton
+				show={isSelectedBlockInRoot}
+				tooltipText={__("Remove column container?")}
+				onRemove={() => {
+					const parentContainer = this.getParentContainer(rootBlock);
+					if (parentContainer && parentContainer.clientId) {
+						removeSelf(parentContainer.clientId);
+					}
+				}}
+				style={{
+					top: "20px",
+					right: "-40px",
+					height: "40px",
+					width: "40px"
+				}}
+			/>
+		);
 
 		// show placeholder when nothing is set
 		if (!layout && this.state.pickLayout) {
@@ -98,8 +142,8 @@ export default class Edit extends Component {
 							className="c9-column-selector-group"
 						>
 							{map(columnOptions, ({ name, key, icon, columns }) => (
-									<div className="c9-column-selector">
-										<Tooltip text={name} key={key}>
+								<div className="c9-column-selector">
+									<Tooltip text={name} key={key}>
 										<Button
 											className="c9-column-selector-button"
 											isSmall
@@ -122,6 +166,7 @@ export default class Edit extends Component {
 									</Tooltip>
 								</div>
 							))}
+							{RemoveSelfButton}
 						</ButtonGroup>
 					) : (
 						<Fragment>
@@ -159,6 +204,7 @@ export default class Edit extends Component {
 								>
 									{__("Return to Column Selection", "c9-blocks")}
 								</Button>
+								{RemoveSelfButton}
 							</ButtonGroup>
 						</Fragment>
 					)}
@@ -216,9 +262,10 @@ export default class Edit extends Component {
 							templateLock="insert"
 							allowedBlocks={ALLOWED_BLOCKS}
 							__experimentalTagName="div"
-							renderAppender={ false }
+							renderAppender={false}
 						/>
 					</div>
+					{RemoveSelfButton}
 				</ResizableContainer>
 			</Fragment>
 		);

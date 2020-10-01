@@ -55,7 +55,7 @@ class Toggle extends Component {
 	/**
 	 * Retrieves the parent block.
 	 */
-	getParentToggle(rootBlock) {
+	getParentToggle = rootBlock => {
 		const { block } = this.props;
 
 		let result = false;
@@ -71,7 +71,7 @@ class Toggle extends Component {
 		}
 
 		return result;
-	}
+	};
 
 	render() {
 		const {
