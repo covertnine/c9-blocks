@@ -11,18 +11,23 @@
 	}
 
 	.carousel-inner {
+		position: relative;
+
 		.c9-remove-image {
-			>.components-button.components-icon-button {
+			display: inline-block;
+			position: absolute;
+			top: 25px;
+			right: 25px;
+
+			>.components-button.has-icon {
 				margin: 0 auto;
+				background-color: #fff;
+				padding: 6px 12px;
+				box-shadow: inset 0 0 0 0.8px #E8E8E8;
+				border-radius: 2px;
 			}
 
-			margin-top: 25px;
-			padding-bottom: 20px;
 		}
-	}
-
-	.editor-selected-lift {
-		bottom: 80px !important;
 	}
 
 	.editor-selected-controls-lift {
@@ -59,7 +64,7 @@
 }
 
 .wp-block[data-type="c9-bocks/image-carousel"] .components-resizable-box__handle-bottom {
-	bottom: -5px;
+	bottom: 0px;
 }
 
 @media only screen and (min-width: 1200px) {
