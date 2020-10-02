@@ -58,6 +58,10 @@
 	left: 0px;
 }
 
+.wp-block[data-type="c9-bocks/image-carousel"] .components-resizable-box__handle-bottom {
+	bottom: -5px;
+}
+
 @media only screen and (min-width: 1200px) {
 
 	.editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="narrow"] [data-align="narrow"],

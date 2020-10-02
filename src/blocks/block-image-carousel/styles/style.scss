@@ -124,6 +124,14 @@
 	z-index: 22;
 }
 
+.c9-image-carousel .carousel-inner {
+	position: relative;
+}
+
+.carousel-item {
+	position: static;
+}
+
 .carousel-item .carousel-caption {
 	text-align: left;
 	left: 3%;
