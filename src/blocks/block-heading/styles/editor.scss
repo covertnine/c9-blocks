@@ -25,6 +25,15 @@
 	padding: 5px 0px;
 }
 
+.is-selected[data-type="c9-blocks/heading"] {
+	z-index: 21;
+}
+
+.c9-heading-size-selector {
+	height: 0px;
+	overflow: visible;
+}
+
 .editor-styles-wrapper .c9-heading h1,
 .editor-styles-wrapper .c9-heading h2,
 .editor-styles-wrapper .c9-heading h3,
