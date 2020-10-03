@@ -10,12 +10,13 @@ const { Fragment } = wp.element;
 
 import SettingsSpacer from "../../settings-spacer";
 import KeyframeStepper from "../keyframe-stepper";
-import { animateOptions } from "../utils";
+import { animateOptions, animateEaseOptions } from "../utils";
 import { animateSettings } from "../utils/animate-settings";
 
 const ScrollAnimatePanel = props => {
 	const {
 		animateVal,
+		animateEase,
 		animateScrub,
 		setAttributes,
 		target,
@@ -31,7 +32,7 @@ const ScrollAnimatePanel = props => {
 
 	return (
 		<Fragment>
-            <BaseControl
+			<BaseControl
 				help={__(
 					"Select the beginning and ending keyframe triggers to add a scrub animation effect as the user scrolls between those positions in the browser window. 0% is the bottom of the user's screen, and 100% is the very top.",
 					"c9-blocks"
@@ -52,6 +53,13 @@ const ScrollAnimatePanel = props => {
 				options={animateOptions}
 				value={animateVal}
 				onChange={animateVal => setAttributes({ animateVal })}
+			/>
+
+			<SelectControl
+				label={__("Ease", "c9-blocks")}
+				options={animateEaseOptions}
+				value={animateEase}
+				onChange={animateEase => setAttributes({ animateEase })}
 			/>
 
 			<Button

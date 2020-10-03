@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		//setup gsap
 		for (let element of animateTargets) {
 			const animateVal = element.dataset.c9Animate;
+			const animateEase = element.dataset.c9AnimateEase;
 			const animateDelay = element.dataset.c9AnimateDelay;
 			const animateSpeed = element.dataset.c9AnimateSpeed;
 			const animateStart = element.dataset.c9AnimateStart;
@@ -52,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
 			let customConfig = createCustomConfig(
 				animateVal,
 				animateDelay,
-				animateSpeed
+				animateSpeed,
+				animateEase
 			);
 			// string to boolean
 			animateScrub = "true" === animateScrub;

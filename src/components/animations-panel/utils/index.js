@@ -12,13 +12,19 @@ if (typeof window !== `undefined`) {
 	gsap.core.globals("ScrollTrigger", ScrollTrigger);
 }
 
-export const createCustomConfig = (animateVal, animateDelay, animateSpeed) => {
+export const createCustomConfig = (
+	animateVal,
+	animateDelay,
+	animateSpeed,
+	animateEase = "none"
+) => {
 	return [
 		animateConfigs[animateVal][0],
 		{
 			...animateConfigs[animateVal][1],
 			delay: animateDelay / 1000,
-			duration: animateSpeed / 1000
+			duration: animateSpeed / 1000,
+			ease: animateEase
 		}
 	];
 };
@@ -27,6 +33,7 @@ export const initAnimate = ({
 	target,
 	enableAnimate,
 	animateVal,
+	animateEase,
 	animateDelay,
 	animateSpeed,
 	animateScrub,
@@ -35,7 +42,12 @@ export const initAnimate = ({
 	animateCustom,
 	name
 }) => {
-	let customConfig = createCustomConfig(animateVal, animateDelay, animateSpeed);
+	let customConfig = createCustomConfig(
+		animateVal,
+		animateDelay,
+		animateSpeed,
+		animateEase
+	);
 	customConfig = editorCustomConfigModify(
 		customConfig,
 		target,
@@ -104,6 +116,7 @@ export const userCustomConfigModify = (customConfig, animateCustom) => {
 export const restartAnimate = ({
 	target,
 	animateVal,
+	animateEase,
 	animateDelay,
 	animateSpeed,
 	animateScrub,
@@ -118,7 +131,7 @@ export const restartAnimate = ({
 		animateVal,
 		animateDelay,
 		animateSpeed,
-		animateScrub
+		animateEase
 	);
 	ScrollTrigger.getAll().forEach(st => {
 		if (st.vars.trigger === target) {
@@ -150,6 +163,7 @@ export const restartAnimate = ({
 export const initDataAttributes = ({
 	enableAnimate,
 	animateVal,
+	animateEase,
 	animateDelay,
 	animateSpeed,
 	animateScrub,
@@ -161,9 +175,12 @@ export const initDataAttributes = ({
 		return {};
 	}
 
+	const ease = "none" !== animateEase ? animateEase : undefined;
+
 	const config = pickBy(
 		{
 			"data-c9-animate": animateVal,
+			"data-c9-animate-ease": ease,
 			"data-c9-animate-delay": animateDelay,
 			"data-c9-animate-speed": animateSpeed,
 			"data-c9-animate-scrub": animateScrub,
@@ -221,6 +238,67 @@ export const animateOptions = [
 	{
 		value: "slideRight",
 		label: "Slide Right"
+	}
+];
+
+export const animateEaseOptions = [
+	{ value: null, label: "Select ease", disabled: true },
+	{
+		value: "none",
+		label: "none"
+	},
+	{
+		value: "power1.out",
+		label: "power1"
+	},
+	{
+		value: "power2.out",
+		label: "power2"
+	},
+	{
+		value: "power3.out",
+		label: "power3"
+	},
+	{
+		value: "power4.out",
+		label: "power4"
+	},
+	{
+		value: "back.out(1.7)",
+		label: "back"
+	},
+	{
+		value: "elastic.out(1, 0.3)",
+		label: "elastic"
+	},
+	{
+		value: "bounce.out",
+		label: "bounce"
+	},
+	{
+		value:
+			"rough({ template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp:  false})",
+		label: "rough"
+	},
+	{
+		value: "slow(0.7, 0.7, false)",
+		label: "slow"
+	},
+	{
+		value: "steps(12)",
+		label: "steps"
+	},
+	{
+		value: "circ.out",
+		label: "circ"
+	},
+	{
+		value: "expo.out",
+		label: "expo"
+	},
+	{
+		value: "sine.out",
+		label: "sine"
 	}
 ];
 

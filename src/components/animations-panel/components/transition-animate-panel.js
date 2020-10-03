@@ -2,10 +2,16 @@ const { __ } = wp.i18n;
 const { RangeControl, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 
-import { animateOptions } from "../utils";
+import { animateOptions, animateEaseOptions } from "../utils";
 
 const TransitionAnimatePanel = props => {
-	const { animateVal, animateDelay, animateSpeed, setAttributes } = props;
+	const {
+		animateVal,
+		animateEase,
+		animateDelay,
+		animateSpeed,
+		setAttributes
+	} = props;
 
 	return (
 		<Fragment>
@@ -14,6 +20,13 @@ const TransitionAnimatePanel = props => {
 				options={animateOptions}
 				value={animateVal}
 				onChange={animateVal => setAttributes({ animateVal })}
+			/>
+
+			<SelectControl
+				label={__("Ease", "c9-blocks")}
+				options={animateEaseOptions}
+				value={animateEase}
+				onChange={animateEase => setAttributes({ animateEase })}
 			/>
 
 			<RangeControl

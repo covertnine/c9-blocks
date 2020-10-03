@@ -54,6 +54,10 @@ const defaultAttributes = {
 		type: "string",
 		default: "fade"
 	},
+	animateEase: {
+		type: "string",
+		default: "none"
+	},
 	animateDelay: {
 		type: "number",
 		default: 0

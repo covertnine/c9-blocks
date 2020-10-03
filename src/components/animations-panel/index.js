@@ -11,6 +11,7 @@ const animationPanel = props => {
 	const {
 		enableAnimate,
 		animateVal,
+		animateEase,
 		animateDelay,
 		animateSpeed,
 		animateScrub,
@@ -49,6 +50,7 @@ const animationPanel = props => {
 	}, [
 		enableAnimate,
 		animateVal,
+		animateEase,
 		animateScrub,
 		useMarkers,
 		animateStart,
