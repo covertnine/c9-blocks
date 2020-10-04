@@ -30,8 +30,29 @@
 	margin-bottom: 0 !important;
 }
 
+/* inspector sidebar adjustments*/
+.block-editor-block-styles__item-label {
+	font-size: 11px;
+	letter-spacing: .2px;
+}
+
 .block-editor-block-inspector .components-base-control {
 	margin-bottom: 0px;
+}
+
+.c9-grid-mobile-focal {
+	padding: 0px;
+}
+
+.components-base-control__field .components-focal-point-picker-wrapper,
+.c9-grid-mobile-focal .components-focal-point-picker-wrapper {
+	padding: 0px;
+	height: auto;
+}
+
+.components-panel__body.is-opened .components-panel__body.is-opened {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon {

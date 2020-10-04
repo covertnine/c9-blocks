@@ -59,6 +59,10 @@ div[data-type="c9-blocks/heading"] .block-editor-block-list__block>.block-editor
 	z-index: 24;
 }
 
+.editor-styles-wrapper .c9-heading .rich-text [data-rich-text-placeholder] {
+	font-size: inherit;
+}
+
 .editor-styles-wrapper .c9-heading .h1.c9-txl,
 .editor-styles-wrapper .c9-heading h1.c9-txl {
 	font-size: 8em;

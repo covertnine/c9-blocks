@@ -50,8 +50,32 @@
 }
 
 .entry-content .c9-cta-text p {
-	font-size: inherit;
 	line-height: 1.1;
+}
+
+.entry-content .c9-cta-text p,
+.entry-content .c9-cta-content {
+	font-size: 10px;
+}
+
+.entry-content .c9-cta-content .c9-cta-text.has-small-font-size p {
+	font-size: 13px;
+}
+
+.entry-content .c9-cta-content .c9-cta-text.has-normal-font-size p {
+	font-size: 16px;
+}
+
+.entry-content .c9-cta-content .c9-cta-text.has-medium-font-size p {
+	font-size: 20px;
+}
+
+.entry-content .c9-cta-content .c9-cta-text.has-large-font-size p {
+	font-size: 36px;
+}
+
+.entry-content .c9-cta-content .c9-cta-text.has-huge-font-size p {
+	font-size: 48px;
 }
 
 .c9-cta-text p:only-of-type,
@@ -114,13 +138,11 @@
 	padding: 8px 35px;
 	width: auto;
 	height: auto;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	border: none;
 	letter-spacing: .02em;
 	text-align: center;
 	text-transform: uppercase;
-	-webkit-transition: opacity .4s ease-in-out;
 	transition: opacity .4s ease-in-out;
 	white-space: normal;
 	color: #fff;
