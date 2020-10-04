@@ -28,7 +28,8 @@ export default class Inspector extends Component {
 			slideTime,
 			isResponsive,
 			verticalAlign,
-			slideMaxHeight
+			slideMaxHeight,
+			slideCustomHeight
 		} = attributes;
 
 		return (
@@ -81,13 +82,20 @@ export default class Inspector extends Component {
 
 					<hr />
 
-					<RangeControl
-						label={__("Height in pixels", "c9-blocks")}
-						value={slideMaxHeight}
-						onChange={slideMaxHeight => setAttributes({ slideMaxHeight })}
-						min={0}
-						max={1000}
+					<ToggleControl
+						label={__("Enable custom manual heights", "c9-blocks")}
+						checked={slideCustomHeight}
+						onChange={slideCustomHeight => setAttributes({ slideCustomHeight })}
 					/>
+					{slideCustomHeight && (
+						<RangeControl
+							label={__("Height in pixels", "c9-blocks")}
+							value={slideMaxHeight}
+							onChange={slideMaxHeight => setAttributes({ slideMaxHeight })}
+							min={0}
+							max={2000}
+						/>
+					)}
 
 					<hr />
 
@@ -117,7 +125,8 @@ export default class Inspector extends Component {
 							value={slideTime}
 							onChange={slideTime => setAttributes({ slideTime })}
 							min={0}
-							max={1000000}
+							step={100}
+							max={100000}
 						/>
 					)}
 					<ToggleControl

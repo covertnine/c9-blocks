@@ -53,6 +53,10 @@ const attributes = {
 		type: "number",
 		default: 250
 	},
+	slideCustomHeight: {
+		type: "boolean",
+		default: false
+	},
 	verticalAlign: {
 		type: "string"
 	},

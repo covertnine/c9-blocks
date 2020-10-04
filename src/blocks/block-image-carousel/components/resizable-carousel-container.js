@@ -30,7 +30,8 @@ export default class ResizableCarouselContainer extends Component {
 				wrapAround,
 				slideMaxHeight,
 				align,
-				containerWidth
+				containerWidth,
+				slideCustomHeight
 			},
 			className = "",
 			editMode = false,
@@ -59,10 +60,10 @@ export default class ResizableCarouselContainer extends Component {
 				"carousel slide",
 				!editMode ? [containerAlign, containerWidth] : null
 			),
-			dataRide: "carousel",
-			dataInterval: autoSlide ? slideTime : false,
-			dataWrap: wrapAround,
-			style: { height: slideMaxHeight }
+			"data-ride": "carousel",
+			"data-interval": autoSlide ? slideTime : false,
+			"data-wrap": wrapAround,
+			style: { height: slideCustomHeight ? slideMaxHeight : null }
 		};
 
 		const updateHeight = value => {
@@ -81,21 +82,21 @@ export default class ResizableCarouselContainer extends Component {
 		const handleOnResizeStop = (event, direction, elt, delta) => {
 			onResizeStop();
 			// const docHeight = document.documentElement.clientHeight;
-			const spacerHeight = parseInt(slideMaxHeight + delta.height, 10)
+			const spacerHeight = parseInt(slideMaxHeight + delta.height, 10);
 			updateHeight(spacerHeight);
 			this.setState({
 				isResizing: false
 			});
 		};
 
-		if (editMode) {
+		if (editMode && slideCustomHeight) {
 			return (
 				<ResizableBox
 					{...wrapperConfig}
 					refHandle={c => {
-                        if (null !== c) {
-                            this.props.setRef(c.resizable);
-                        }
+						if (null !== c) {
+							this.props.setRef(c.resizable);
+						}
 					}}
 					size={{
 						height: slideMaxHeight
@@ -125,7 +126,11 @@ export default class ResizableCarouselContainer extends Component {
 				</ResizableBox>
 			);
 		} else {
-			return <div {...wrapperConfig}>{this.props.children}</div>;
+			return (
+				<div {...wrapperConfig} ref={c => this.props.setRef(c)}>
+					{this.props.children}
+				</div>
+			);
 		}
 	}
 }

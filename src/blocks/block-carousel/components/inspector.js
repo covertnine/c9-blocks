@@ -93,6 +93,7 @@ export default class Inspector extends Component {
 							value={slideTime}
 							onChange={slideTime => setAttributes({ slideTime })}
 							min={0}
+							step={100}
 							max={100000}
 						/>
 					)}

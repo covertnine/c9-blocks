@@ -137,7 +137,14 @@ class Edit extends Component {
 	 * @return {Object} Processed image.
 	 */
 	pickRelevantMediaFiles = image => {
-		const imageProps = pick(image, ["alt", "id", "link", "caption"]);
+		const imageProps = pick(image, [
+			"alt",
+			"id",
+			"link",
+			"caption",
+			"height",
+			"width"
+		]);
 		imageProps.url =
 			get(image, ["sizes", "large", "url"]) ||
 			get(image, ["media_details", "sizes", "large", "source_url"]) ||
@@ -233,6 +240,8 @@ class Edit extends Component {
 			...mediaAttributes,
 			...additionalAttributes
 		});
+
+		this.calcAndSetSlideHeight(media.width, media.height);
 	}
 
 	/**
@@ -242,6 +251,16 @@ class Edit extends Component {
 	 * @param {number} i Location to assign new URL to.
 	 */
 	onSelectURL(newURL, i) {
+		// https://stackoverflow.com/questions/11442712/get-width-height-of-remote-image-from-url
+		function getMeta(url, callback) {
+			// eslint-disable-next-line no-undef
+			var img = new Image();
+			img.src = url;
+			img.onload = function() {
+				callback(this.width, this.height);
+			};
+		}
+
 		let { url, id } = this.props.attributes;
 		// clone to new array
 		url = [...url];
@@ -256,7 +275,23 @@ class Edit extends Component {
 				sizeSlug: DEFAULT_SIZE_SLUG
 			});
 		}
+
+		getMeta(newURL, this.calcAndSetSlideHeight);
 	}
+
+	calcAndSetSlideHeight = (width, height) => {
+		const targetWidth = document.querySelector(`#block-${this.props.clientId}`)
+			.clientWidth;
+
+		const ratio = width / height;
+		const newHeight = Math.round(targetWidth / ratio);
+
+		if (newHeight && newHeight > this.props.attributes.slideMaxHeight) {
+			this.props.setAttributes({
+				slideMaxHeight: newHeight
+			});
+		}
+	};
 
 	/**
 	 * Returns the indicators layout configuration for a given amount of tabs.
