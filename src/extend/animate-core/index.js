@@ -6,7 +6,11 @@ const supportedBlocks = [
 	"core/image",
 	"core/list",
 	"core/button",
-	"core/buttons"
+	"core/buttons",
+	"core/group",
+	"core/separator",
+	"c9-blocks/column-container",
+	"c9-blocks/column"
 ];
 
 /**
@@ -16,8 +20,12 @@ const supportedBlocks = [
  *
  * @return {Boolean} block supported.
  */
-export default function checkCoreBlock(name) {
-	return name && /^core/.test(name) && -1 !== supportedBlocks.indexOf(name);
+export default function checkTargetBlock(name) {
+	return (
+		name &&
+		(/^core/.test(name) || /^c9-blocks/.test(name)) &&
+		-1 !== supportedBlocks.indexOf(name)
+	);
 }
 
 /**
@@ -94,7 +102,7 @@ const defaultAttributes = {
  * @return {Object} Filtered block settings.
  */
 function addAttribute(settings, name) {
-	const allow = checkCoreBlock(name);
+	const allow = checkTargetBlock(name);
 
 	if (allow) {
 		const keys = Object.keys(defaultAttributes);
@@ -149,7 +157,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 		componentDidMount() {
 			const props = this.props;
 			const blockName = props.name;
-			const allow = checkCoreBlock(blockName);
+			const allow = checkTargetBlock(blockName);
 			if (!allow) {
 				return;
 			}
@@ -166,7 +174,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 		render() {
 			const props = this.props;
 			const blockName = props.name;
-			const allow = checkCoreBlock(blockName);
+			const allow = checkTargetBlock(blockName);
 
 			if (!allow) {
 				return <OriginalComponent {...props} />;
