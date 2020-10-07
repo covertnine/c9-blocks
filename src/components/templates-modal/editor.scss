@@ -1,7 +1,7 @@
 body .c9-templates-modal {
 	line-height: 1;
-	overflow: hidden;
-	min-width: 90vw;
+	overflow: visible;
+	min-width: calc(90vw - 300px);
 
 	.c9-modal-manage-reusable {
 		position: absolute;
@@ -17,8 +17,8 @@ body .c9-templates-modal {
 	}
 
 	.components-tab-panel__tab-content {
-		height: 65vh;
-		overflow: auto;
+		height: calc(65vh - 25px);
+		overflow: scroll;
 	}
 
 	a {

@@ -13,7 +13,8 @@ const LayoutButton = ({
 	resetBlocks,
 	insertBlocks,
 	open,
-	close
+	close,
+	onHover
 }) => {
 	const [hovered, setHovered] = useState(false);
 	const toggleHover = () => setHovered(!hovered);
@@ -27,11 +28,18 @@ const LayoutButton = ({
 					insertBlocks(layout);
 					close();
 				}, 0);
+				// onHover(null);
 			}}
+			onFocus={() => onHover(layout)}
+			onMouseEnter={() => onHover(layout)}
+			// onMouseLeave={() => onHover(null)}
+			// onBlur={() => onHover(null)}
 		>
 			<HoverIntent
 				onMouseOver={toggleHover}
 				onMouseOut={toggleHover}
+				onBlur={toggleHover}
+				onFocus={toggleHover}
 				sensitivity={10}
 				interval={200}
 				timeout={250}

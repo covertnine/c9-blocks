@@ -10,6 +10,7 @@ import PageTemplates from "./page-templates/page-templates";
 import PageTypes from "./page-templates/page-types";
 import LargeModal from "../large-modal";
 import icons from "../../../assets/sidebar-icons";
+import PreviewPanel from "../preview-panel";
 
 /**
  * Styles
@@ -24,7 +25,7 @@ const { Component, Fragment } = wp.element;
 const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
-const { rawHandler, getBlockType, createBlock, cloneBlock } = wp.blocks;
+const { rawHandler, getBlockType } = wp.blocks;
 const apiFetch = wp.apiFetch;
 const { BlockPreview } = wp.blockEditor;
 const { decodeEntities } = wp.htmlEntities;
@@ -182,18 +183,24 @@ class TemplatesModal extends Component {
 		const TutButton = ({ title, url, imgUrl }) => {
 			return (
 				<div className="c9-tut-wrapper">
-					<img src={imgUrl} />
-					<a href={url} target="_blank">
+					<img src={imgUrl} alt={`tutorial for ${title}`} />
+					<a href={url} target="_blank" rel="noopener noreferrer">
 						<h4>{decodeEntities(title)}</h4>
 					</a>
 				</div>
 			);
 		};
 
+		const onHover = item => {
+			console.log(item);
+			this.setState({ hoveredItem: item });
+		};
+
 		// convert above to React DOM elements
 		const sectionItems = Object.keys(sections).map(k => {
 			return (
 				<SectionButton
+					onHover={onHover}
 					open={() => {
 						this.setUpdateState("updating");
 					}}
@@ -229,6 +236,7 @@ class TemplatesModal extends Component {
 			const layoutItems = layoutsByType.map(name => {
 				return (
 					<LayoutButton
+						onHover={onHover}
 						open={() => {
 							this.setUpdateState("updating");
 						}}
@@ -338,6 +346,7 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updateBar}
+										{hoveredItem && <PreviewPanel item={hoveredItem} />}
 										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
@@ -345,7 +354,8 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updateBar}
-										{pageTypes}
+										{hoveredItem && <PreviewPanel item={hoveredItem} />}
+										<div className="c9-page-options">{pageTypes}</div>
 									</Fragment>
 								);
 							case "saved-blocks":
@@ -400,7 +410,7 @@ class TemplatesModal extends Component {
 												<div className="c9-reusable-preview">
 													<BlockPreview
 														blocks={hoveredItem}
-														viewportWidth={ Math.round(window.innerWidth * 0.8) }
+														viewportWidth={Math.round(window.innerWidth * 0.8)}
 													/>
 												</div>
 											)}

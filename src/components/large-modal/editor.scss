@@ -15,7 +15,7 @@
 
 		// fix for Ace editor tooltips
 		transform: translateX(-50%);
-		left: 50%;
+		left: calc(50% - 150px);
 
 		// position
 		top: 65px;
