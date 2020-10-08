@@ -24,13 +24,17 @@
 		left: calc(50% - 180px);
 	}
 
+	@media (min-width: 992px) {
+		left: calc(50% - 220px);
+	}
+
 	@media (max-width: 1199px) {
 		min-width: 50vw;
-		left: calc(50% - 213px);
 	}
 
 	@media (min-width: 1200px) {
 		min-width: calc(90vw - 314px);
+		max-width: calc(100vw - 486px);
 	}
 
 	// header

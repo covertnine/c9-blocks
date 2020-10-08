@@ -4,6 +4,8 @@ const StyledDiv = styled.div`
 	top: 0;
 	left: calc(100% + 16px);
 	width: 414px;
+	border: 1px solid #ddd;
+	border-radius: 0px;
 `;
 
 /**

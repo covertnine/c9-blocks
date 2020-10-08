@@ -300,7 +300,7 @@ body .c9-templates-modal {
 			margin-bottom: 50px;
 			grid-template-columns: repeat(2, 1fr);
 
-			@media (min-width: 1500px) {
+			@media (min-width: 1600px) {
 				grid-template-columns: repeat(3, 1fr);
 			}
 
@@ -582,18 +582,6 @@ body .c9-templates-modal {
 				color: #f0f0f0;
 			}
 		}
-	}
-}
-
-@media only screen and (min-width: 1400px) {
-
-	.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options,
-	.c9-templates-modal .c9-component-modal-tab-panel .c9-section-options {
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options {
-		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
