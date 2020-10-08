@@ -11,14 +11,26 @@
 	}
 
 	@media (min-width: 600px) {
-		min-width: 90vw;
-
-		// fix for Ace editor tooltips
+		min-width: 50vw;
+		max-width: calc(100vw - 496px); // fix for Ace editor tooltips
 		transform: translateX(-50%);
 		left: calc(50% - 150px);
 
 		// position
 		top: 65px;
+	}
+
+	@media (min-width: 768px) {
+		left: calc(50% - 180px);
+	}
+
+	@media (max-width: 1199px) {
+		min-width: 50vw;
+		left: calc(50% - 213px);
+	}
+
+	@media (min-width: 1200px) {
+		min-width: calc(90vw - 314px);
 	}
 
 	// header
