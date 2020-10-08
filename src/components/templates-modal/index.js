@@ -410,7 +410,7 @@ class TemplatesModal extends Component {
 												<div className="c9-reusable-preview">
 													<BlockPreview
 														blocks={hoveredItem}
-														viewportWidth={Math.round(window.innerWidth * 0.8)}
+														viewportWidth={900}
 													/>
 												</div>
 											)}
