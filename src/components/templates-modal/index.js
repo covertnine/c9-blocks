@@ -362,6 +362,7 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										{updateBar}
+										{hoveredItem && <PreviewPanel item={hoveredItem} />}
 										<div
 											className={
 												"c9-reusable-options " +
@@ -406,14 +407,6 @@ class TemplatesModal extends Component {
 													manage all reusable blocks
 												</a>
 											</div>
-											{hoveredItem && BlockPreview && (
-												<div className="c9-reusable-preview">
-													<BlockPreview
-														blocks={hoveredItem}
-														viewportWidth={900}
-													/>
-												</div>
-											)}
 										</div>
 									</Fragment>
 								);

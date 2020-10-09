@@ -13,7 +13,7 @@ const StyledDiv = styled.div`
  */
 const { BlockPreview } = wp.blockEditor;
 
-function InserterPreviewPanel({ item }) {
+function PreviewPanel({ item }) {
 	return (
 		<StyledDiv className="block-editor-inserter__preview-container">
 			<div className="block-editor-inserter__preview c9-modal-preview">
@@ -29,4 +29,4 @@ function InserterPreviewPanel({ item }) {
 	);
 }
 
-export default InserterPreviewPanel;
+export default PreviewPanel;
