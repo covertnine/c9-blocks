@@ -88,6 +88,10 @@
 	z-index: 10;
 }
 
+.wp-block.is-selected {
+	z-index: 12;
+}
+
 /* leaves just enough room for inbetween block inserter, more closely resembling frontend */
 .editor-styles-wrapper .c9-grid [data-block] {
 	margin-top: 5px;
