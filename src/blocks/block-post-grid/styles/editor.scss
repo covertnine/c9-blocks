@@ -68,7 +68,6 @@ div[data-type="c9-blocks/post-grid"] {
 	height: 100%;
 	opacity: 0;
 	background: #f3f3f4;
-	-webkit-transition: .2s ease;
 	transition: .2s ease;
 
 	svg {
@@ -84,7 +83,6 @@ div[data-type="c9-blocks/post-grid"] {
 	padding: 6px;
 	line-height: 1;
 	height: 32px;
-	-webkit-transition: .2s ease;
 	transition: .2s ease;
 	border-radius: 5px;
 	z-index: 1;
@@ -111,4 +109,30 @@ div[data-type="c9-blocks/post-grid"] {
 
 .c9-block-post-grid .is-list article {
 	grid-template-columns: 30% 1fr !important;
+}
+
+/* for WordPress 5.5 mobile and tablet previews in backend */
+.editor-styles-wrapper[style*="width: 360px;"] .c9-block-post-grid .is-grid.columns-2 {
+	grid-template-columns: 1fr;
+	grid-template-areas: "col1""col2";
+}
+
+.editor-styles-wrapper[style*="width: 360px;"] .c9-block-post-grid .is-grid.columns-3 {
+	grid-template-columns: 1fr;
+	grid-template-areas: "col1""col2""col3";
+}
+
+.editor-styles-wrapper[style*="width: 360px;"] .c9-block-post-grid .is-grid.columns-4 {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "col1 col2""col3 col4";
+}
+
+.editor-styles-wrapper[style*="width: 360px;"] .c9-block-post-grid .is-grid.columns-5 {
+	grid-template-columns: 1fr;
+	grid-template-areas: "col1""col2""col3""col4""col5";
+}
+
+.editor-styles-wrapper[style*="width: 360px;"] .c9-block-post-grid .is-grid.columns-6 {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "col1 col2""col3 col4""col5 col6";
 }

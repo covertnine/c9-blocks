@@ -524,3 +524,44 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 }
 
 /****************************************************************************************/
+.editor-styles-wrapper[style*="width: 360px;"] .is-root-container>* {
+	max-width: 360px !important;
+}
+
+body.folded.post-type-page .is-sidebar-opened .editor-styles-wrapper[style*="width: 360px;"] .is-root-container>.wp-block[data-type="c9-blocks/posts-grid"] {
+	max-width: 360px;
+}
+
+body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 360px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container,
+body .editor-styles-wrapper[style*="width: 360px;"] .is-root-container .container,
+body .editor-styles-wrapper[style*="width: 360px;"] .is-root-container .container-fluid,
+body .editor-styles-wrapper[style*="width: 360px;"] .is-root-container .container-narrow,
+body .editor-styles-wrapper[style*="width: 360px;"] .is-root-container .container.alignwide {
+	max-width: 360px;
+	width: 100%;
+}
+
+/* reset widths from Gutenberg Preview Dropdown that should use classnames but doesn't*/
+body .editor-styles-wrapper[style*="width: 780px;"] .is-root-container .c9-posts-grid,
+body .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .is-root-container .c9-posts-grid,
+body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .is-root-container>.wp-block[data-type="c9-blocks/posts-grid"],
+body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
+body:not(.folded) .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
+body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
+body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
+body:not(.folded) .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container,
+body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container {
+	max-width: 740px;
+	width: 740px;
+	min-width: 100%;
+}
+
+.editor-styles-wrapper[style*="width: 780px;"] .is-root-container>* {
+	max-width: 740px !important;
+}
+
+body .editor-styles-wrapper[style*="width: 780px;"] .is-root-container .container,
+body:not(.folded) .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container,
+body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px;"] .wp-block[data-type="c9-blocks/posts-grid"] .container {
+	max-width: 720px;
+}
