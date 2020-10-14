@@ -53,10 +53,14 @@
 	line-height: 1.1;
 }
 
-.entry-content .c9-cta-text p,
 .entry-content .c9-cta-content {
 	font-size: 10px;
 }
+
+.entry-content .c9-cta-content .c9-cta-text p {
+	font-size: 16px;
+}
+
 
 .entry-content .c9-cta-content .c9-cta-text.has-small-font-size p {
 	font-size: 13px;
