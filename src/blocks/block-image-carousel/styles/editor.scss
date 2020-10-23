@@ -109,7 +109,7 @@
 
 	.is-sidebar-opened .editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"] [data-align="wide"],
 	.is-sidebar-opened .editor-styles-wrapper [data-type="c9-blocks/image-carousel"][data-align="wide"],
-	.is-sidebar-opened .editor-styles-wrapper .wp-block[data-align="wide"] .c9-image-carousel {
+	.is-sidebar-opened .editor-styles-wrapper .wp-block[data-align="wide"]>.c9-image-carousel {
 		max-width: 1368px;
 		width: 120%;
 	}
