@@ -13,7 +13,6 @@
 	div[data-type="c9-blocks/toggles-toggle"] {
 		.c9-toggles-item-heading {
 			.block-editor-rich-text .components-autocomplete {
-				display: -webkit-box;
 				display: flex;
 			}
 		}
@@ -39,9 +38,7 @@
 
 .c9-component-remove-button {
 	position: absolute;
-	-webkit-box-align: center;
 	align-items: center;
-	-webkit-box-pack: center;
 	justify-content: center;
 	top: 0;
 	right: 0;
@@ -54,7 +51,6 @@
 	background-color: #4f5969;
 	border-radius: 50%;
 	opacity: 0.7;
-	-webkit-transition: 0.2s opacity, 0.2s background-color;
 	transition: 0.2s opacity, 0.2s background-color;
 
 	&:hover {
@@ -142,21 +138,17 @@
 
 .editor-styles-wrapper .c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
 .editor-styles-wrapper .c9-toggles .c9-toggles-item-heading[aria-expanded="false"] .c9-toggles-item-collapse .fa-angle-right {
-	-webkit-transform: rotate(0);
 	transform: rotate(0);
 	line-height: 1;
 }
 
 .editor-styles-wrapper .c9-toggles .is-selected .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right {
-	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
 	line-height: 1;
 }
 
 @media (min-width: 600px) {
 	.block-editor-block-list__layout .block-editor-block-list__block[data-type="c9-blocks/toggles"] {
-		padding-left: 63px;
-		padding-right: 63px;
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
