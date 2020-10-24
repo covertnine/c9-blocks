@@ -21,10 +21,10 @@ import leadGenFormOffer from "./templates/lead-gen-form-offer";
 import logoCarousel from "./templates/logo-carousel";
 import offerDetailsListImgGalShare from "./templates/offer-details-list-image-gallery-share";
 import profileImgCarousel from "./templates/profile-image-carousel";
-import quickHistory from "./templates/quick-history";
+import informAboutFocus from "./templates/inform-about-focus";
 import restStyleMenuV1 from "./templates/restaurant-style-menu-v-1";
 import restStyleMenuV2 from "./templates/restaurant-style-menu-v-2";
-import serviceOverviewTwoTestimonials from "./templates/service-overview-two-testimonials";
+import convinceTestimonialFocus from "./templates/convince-testimonial-focus";
 import singleProfile from "./templates/single-profile";
 import streamingAudioPreview from "./templates/streaming-audio-preview";
 import teamMemberBios from "./templates/team-member-bios";
@@ -41,36 +41,34 @@ const sectionTemplates = {
 	lgFeatVidCarousel,
 	lgPageTitleDescriptionBgImg,
 	widescreenVidSimpleBigHeading,
-    widescreenVideoWTitleDescription,
+	widescreenVideoWTitleDescription,
 	leadGenFormOffer,
 	offerDetailsListImgGalShare,
 	concertBillTicketsButton,
 	lgLineupGetTickBtn,
-    vidEmbedHeadingBtn,
+	vidEmbedHeadingBtn,
 	streamingAudioPreview,
 	lgAudioEmbedFullscreenPhoto,
 	lgSpotifyEmbedImgCarousel,
 	lgCaseStudyPortfolio,
 	lgGalCarousel,
 	eventDetails,
-   	restStyleMenuV1,
+	restStyleMenuV1,
 	restStyleMenuV2,
 	googMapAdd,
 	threeStepServiceOverview,
-	serviceOverviewTwoTestimonials,
-    classicHeaderStatementLogo,
+	convinceTestimonialFocus,
+	classicHeaderStatementLogo,
 	faqs2Col,
 	lgTestimonialFullscreenPhoto,
 	logoCarousel,
-	quickHistory,
+	informAboutFocus,
 	lgMissionStmntPhoto,
 	aboutPictureContactCard,
 	profileImgCarousel,
 	singleProfile,
 	teamMemberBios,
-	lgAboutResumeSocialLinks,
-	tellAFriendSocialShare,
-	testimonial
+	lgAboutResumeSocialLinks
 };
 
 export default sectionTemplates;

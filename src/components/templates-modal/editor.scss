@@ -242,13 +242,15 @@ body .c9-templates-modal {
 
 				span {
 					display: block;
-					color: #576d7b;
+					font-weight: bold;
+					color: #576D7B;
+					letter-spacing: -.01px;
+					text-transform: uppercase;
+					text-align:left;
 					padding-top: 1px;
-					font-size: 13px;
-					height: 40px;
+					font-size: 12px;
 					line-height: 1.1;
-					margin: 0px auto;
-					margin-top: 5px;
+					margin: 5px 5px 3px 8px;
 
 					&.c9-reusable-label {
 						height: 40px;
@@ -268,6 +270,15 @@ body .c9-templates-modal {
 							width: 20px;
 						}
 					}
+				}
+				p {
+					color: #7A7A7A;
+					font-size: 10px;
+					text-transform: none;
+					letter-spacing: .1px;
+					margin: 0px 5px 8px 8px;
+					text-align: left;
+
 				}
 
 				img {

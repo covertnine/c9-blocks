@@ -220,6 +220,7 @@ class TemplatesModal extends Component {
 						startCase(SectionTemplates[k].title).replace("Plus", "+"),
 						"c9-blocks"
 					)}
+					description={SectionTemplates[k].description}
 					section={sections[k]}
 				/>
 			);

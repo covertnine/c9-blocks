@@ -5,6 +5,7 @@ const { decodeEntities } = wp.htmlEntities;
 const SectionButton = ({
 	label,
 	icon,
+	description,
 	preview,
 	section,
 	insertBlocks,
@@ -35,6 +36,7 @@ const SectionButton = ({
 				<Icon icon={icon} />
 			)}
 			<span>{decodeEntities(label)}</span>
+			<p className="c9-template-description">{decodeEntities(description)}</p>
 		</button>
 	);
 };
