@@ -30,9 +30,9 @@ import streamingAudioPreview from "./templates/streaming-audio-preview";
 import teamMemberBios from "./templates/team-member-bios";
 import tellAFriendSocialShare from "./templates/tell-a-friend-social-share";
 import testimonial from "./templates/testimonial";
-import threeStepServiceOverview from "./templates/three-step-service-overview";
+import informServiceThreeSteps from "./templates/inform-service-three-steps";
 import vidEmbedHeadingBtn from "./templates/video-embed-heading-button";
-import widescreenVidSimpleBigHeading from "./templates/widescreen-video-simple-big-heading";
+import watchVideoInstructions from "./templates/watch-video-indstructions";
 import widescreenVideoWTitleDescription from "./templates/widescreen-video-with-title-description";
 
 const sectionTemplates = {
@@ -40,7 +40,7 @@ const sectionTemplates = {
 	eventCallToActionFullscreenVideo,
 	lgFeatVidCarousel,
 	lgPageTitleDescriptionBgImg,
-	widescreenVidSimpleBigHeading,
+	watchVideoInstructions,
 	widescreenVideoWTitleDescription,
 	leadGenFormOffer,
 	offerDetailsListImgGalShare,
@@ -56,7 +56,7 @@ const sectionTemplates = {
 	restStyleMenuV1,
 	restStyleMenuV2,
 	googMapAdd,
-	threeStepServiceOverview,
+	informServiceThreeSteps,
 	convinceTestimonialFocus,
 	classicHeaderStatementLogo,
 	faqs2Col,

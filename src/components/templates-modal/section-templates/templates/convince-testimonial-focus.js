@@ -3,6 +3,7 @@ import Icon from "../../../../../assets/section-template-icons/service-overview-
 export default {
 	icon: Icon,
 	title: "Convince Testimonial Focus",
+	description: "300 words • 3 Testimonials • Multiple Headings",
 	markup:
 		`<!-- wp:c9-blocks/grid {"instanceId":1,"rows":5,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 		<div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0} -->
