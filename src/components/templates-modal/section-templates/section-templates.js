@@ -15,7 +15,7 @@ import lgGalCarousel from "./templates/large-gallery-carousel";
 import lgLineupGetTickBtn from "./templates/large-lineup-get-tickets-button";
 import informMissionStatement from "./templates/inform-mission-statement";
 import lgPageTitleDescriptionBgImg from "./templates/large-page-title-description-background-image";
-import lgSpotifyEmbedImgCarousel from "./templates/large-spotify-embed-image-carousel";
+import streamAlbumListenFocus from "./templates/stream-album-listen-focus";
 import informProfilePhotoFocus from "./templates/inform-profile-photo-focus";
 import convinceSignUpForm from "./templates/convince-sign-up-form";
 import logoCarousel from "./templates/logo-carousel";
@@ -26,7 +26,7 @@ import restStyleMenuV1 from "./templates/restaurant-style-menu-v-1";
 import restStyleMenuV2 from "./templates/restaurant-style-menu-v-2";
 import convinceTestimonialFocus from "./templates/convince-testimonial-focus";
 import informBoxedProfileContact from "./templates/inform-boxed-profile-contact";
-import streamingAudioPreview from "./templates/streaming-audio-preview";
+import streamDiscographyListenFocus from "./templates/stream-discography-listen-focus";
 import introduceTeamFocus from "./templates/introduce-team-focus";
 import informServiceThreeSteps from "./templates/inform-service-three-steps";
 import watchEmbeddedVideo from "./templates/watch-embedded-video";
@@ -45,9 +45,9 @@ const sectionTemplates = {
 	concertBillTicketsButton,
 	lgLineupGetTickBtn,
 	watchEmbeddedVideo,
-	streamingAudioPreview,
+	streamDiscographyListenFocus,
 	lgAudioEmbedFullscreenPhoto,
-	lgSpotifyEmbedImgCarousel,
+	streamAlbumListenFocus,
 	caseStudyGalleryFocus,
 	lgGalCarousel,
 	eventDetails,
