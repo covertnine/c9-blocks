@@ -3,9 +3,9 @@ import Icon from "../../../../../assets/section-template-icons/large-case-study-
 export default {
 	icon: Icon,
 	title: "Case Study Gallery Focus",
-	description: "125 Words • Image Gallery • Multiple Headings",
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":4,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","bgImgAttach":true,"overlayHue":"#0a0a0a","overlayOpacity":9,"blendMode":"normal","focalPoint":{"x":"0.57","y":"1.00"}} -->
-<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	description: "125 Words • Image Gallery • Headlines",
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#0a0a0a","overlayOpacity":9,"blendMode":"normal","focalPoint":{"x":"0.57","y":"1.00"}} -->
+<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer -->
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -53,8 +53,8 @@ export default {
 
 <!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":677,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#737373","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column c9-columns-center" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(115,115,115,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:677px"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"\u0022Change the height of the vertical container, and keep the content vertically, and horizontally centered. Web design is cool again!\u0022","tagLevel":5,"displayLevel":"4","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h h4" style="color:#ffffff">"Change the height of the vertical container, and keep the content vertically, and horizontally centered. Web design is cool again!"</h5></div>
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Change the height of the vertical container, and keep the content vertically and horizontally centered. Web design is easy again!","tagLevel":3,"textColor":"#e7e7e7","textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h3 class="c9-h" style="color:#e7e7e7">Change the height of the vertical container, and keep the content vertically and horizontally centered. Web design is easy again!</h3></div>
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:c9-blocks/heading {"heading":"Dude McDudeface, Chief Officer of Cool","tagLevel":6,"displayLevel":"5","textColor":"#dadada","textAlign":"center","weight":"light","overrideStyle":true} -->

@@ -4,8 +4,8 @@ export default {
 	icon: Icon,
 	title: "Stream Discography Listen Focus",
 	description: "3 Spotify Links • 3 Images • Background Photo",
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#030303","bgImgAttach":true,"overlayHue":"#212121","overlayOpacity":8,"minScreenHeight":10,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"0.52","y":"1.00"}} -->
-<div class="c9-grid my-5 c9-fixed c9-grid-has-background" style="min-height:10vh;background-color:rgba(3,3,3,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","minScreenHeight":42} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#030303","overlayHue":"#212121","overlayOpacity":8,"minScreenHeight":10,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"0.51","y":"0.00"}} -->
+<div class="c9-grid my-5 c9-scroll c9-grid-has-background" style="min-height:10vh;background-color:rgba(3,3,3,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","minScreenHeight":42} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-wideleft" style="min-height:42vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Embed Spotify playlists with a simple link!","tagLevel":2,"displayLevel":"5","type":"c9-sh subhead-h","textColor":"#6d6d6d","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h2 class="c9-sh subhead-h5" style="color:#6d6d6d">Embed Spotify playlists with a simple link!</h2></div>
@@ -57,6 +57,6 @@ https://open.spotify.com/album/5baJxk2fGaLorySaf6173S?si=8-F5eOhyQ1ut_CkWnAUonQ
 </div></figure>
 <!-- /wp:core-embed/spotify --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(33,33,33,.8);mix-blend-mode:overlay"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:52% 100%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(33,33,33,.8);mix-blend-mode:overlay"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:51% 0%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 <!-- /wp:c9-blocks/grid -->`
 };

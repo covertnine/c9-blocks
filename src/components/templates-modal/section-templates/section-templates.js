@@ -1,72 +1,66 @@
 // New Sections
-import introduceProfileContact from "./templates/introduce-profile-contact";
-import introducePageTitle from "./templates/introduce-page-title";
-import concertBillTicketsButton from "./templates/concert-bill-tickets-button";
-import eventCallToActionFullscreenVideo from "./templates/event-call-to-action-fullscreen-video";
-import eventDetails from "./templates/event-details";
-import faqs2Col from "./templates/faqs-2-col-small-toggles";
-import watchFullscreenVideo from "./templates/watch-fullscreen-video";
-import informMapEmbedFocus from "./templates/inform-map-embed-focus";
-import convinceResumeCVFocus from "./templates/convince-resumecv-focus";
-import lgAudioEmbedFullscreenPhoto from "./templates/large-audio-embed-fullscreen-photo";
+import browseVideoMediaCarousel from "./templates/browse-video-media-carousel";
+import browseImageGalleryCarousel from "./templates/browse-image-gallery-carousel";
 import caseStudyGalleryFocus from "./templates/case-study-gallery-focus";
-import lgFeatVidCarousel from "./templates/large-featured-video-carousel";
-import lgGalCarousel from "./templates/large-gallery-carousel";
-import lgLineupGetTickBtn from "./templates/large-lineup-get-tickets-button";
-import informMissionStatement from "./templates/inform-mission-statement";
-import lgPageTitleDescriptionBgImg from "./templates/large-page-title-description-background-image";
-import streamAlbumListenFocus from "./templates/stream-album-listen-focus";
-import informProfilePhotoFocus from "./templates/inform-profile-photo-focus";
+import convinceResumeCVFocus from "./templates/convince-resumecv-focus";
 import convinceSignUpForm from "./templates/convince-sign-up-form";
-import logoCarousel from "./templates/logo-carousel";
-import offerDetailsListImgGalShare from "./templates/offer-details-list-image-gallery-share";
+import convinceTestimonialFocus from "./templates/convince-testimonial-focus";
+import getEventTicketsInformFocus from "./templates/get-event-tickets-inform-focus";
+import getEventTicketsPhotoFocus from "./templates/get-event-tickets-photo-focus";
+import getEventTicketsVideoFocus from "./templates/get-event-tickets-video-focus";
+import informMapEmbedFocus from "./templates/inform-map-embed-focus";
+import informMissionStatement from "./templates/inform-mission-statement";
+import informProfilePhotoFocus from "./templates/inform-profile-photo-focus";
 import informProfilePhotoCarousel from "./templates/inform-profile-photo-carousel";
 import informAboutFocus from "./templates/inform-about-focus";
-import restStyleMenuV1 from "./templates/restaurant-style-menu-v-1";
-import restStyleMenuV2 from "./templates/restaurant-style-menu-v-2";
-import convinceTestimonialFocus from "./templates/convince-testimonial-focus";
 import informBoxedProfileContact from "./templates/inform-boxed-profile-contact";
-import streamDiscographyListenFocus from "./templates/stream-discography-listen-focus";
-import introduceTeamFocus from "./templates/introduce-team-focus";
+import informDialogPageTitle from "./templates/inform-dialog-page-title";
+import informFAQFocus from "./templates/inform-faq-focus";
+import informRestaurantMenuFocus from "./templates/inform-restaurant-menu-focus";
 import informServiceThreeSteps from "./templates/inform-service-three-steps";
+import informServicePricingFocus from "./templates/inform-service-pricing-focus";
+import informShareDetails from "./templates/inform-share-details";
+import introduceProfileContact from "./templates/introduce-profile-contact";
+import introducePageTitle from "./templates/introduce-page-title";
+import introduceTeamFocus from "./templates/introduce-team-focus";
+import streamSingleListenFocus from "./templates/stream-single-listen-focus";
+import streamAlbumListenFocus from "./templates/stream-album-listen-focus";
+import streamDiscographyListenFocus from "./templates/stream-discography-listen-focus";
 import watchEmbeddedVideo from "./templates/watch-embedded-video";
 import watchVideoInstructions from "./templates/watch-video-indstructions";
-import widescreenVideoWTitleDescription from "./templates/widescreen-video-with-title-description";
+import watchFullscreenVideo from "./templates/watch-fullscreen-video";
 
 const sectionTemplates = {
-	watchFullscreenVideo,
-	eventCallToActionFullscreenVideo,
-	lgFeatVidCarousel,
-	lgPageTitleDescriptionBgImg,
-	watchVideoInstructions,
-	widescreenVideoWTitleDescription,
-	convinceSignUpForm,
-	offerDetailsListImgGalShare,
-	concertBillTicketsButton,
-	lgLineupGetTickBtn,
-	watchEmbeddedVideo,
-	streamDiscographyListenFocus,
-	lgAudioEmbedFullscreenPhoto,
-	streamAlbumListenFocus,
+	browseVideoMediaCarousel,
+	browseImageGalleryCarousel,
 	caseStudyGalleryFocus,
-	lgGalCarousel,
-	eventDetails,
-	restStyleMenuV1,
-	restStyleMenuV2,
-	informMapEmbedFocus,
-	informServiceThreeSteps,
+	convinceResumeCVFocus,
+	convinceSignUpForm,
 	convinceTestimonialFocus,
-	introducePageTitle,
-	faqs2Col,
+	getEventTicketsVideoFocus,
+	getEventTicketsPhotoFocus,
+	getEventTicketsInformFocus,
+	informDialogPageTitle,
+	informMapEmbedFocus,
+	informRestaurantMenuFocus,
+	informServicePricingFocus,
+	informServiceThreeSteps,
+	informShareDetails,
+	informFAQFocus,
 	informProfilePhotoFocus,
-	logoCarousel,
 	informAboutFocus,
 	informMissionStatement,
-	introduceProfileContact,
 	informProfilePhotoCarousel,
 	informBoxedProfileContact,
+	introducePageTitle,
+	introduceProfileContact,
 	introduceTeamFocus,
-	convinceResumeCVFocus
+	streamDiscographyListenFocus,
+	streamSingleListenFocus,
+	streamAlbumListenFocus,
+	watchFullscreenVideo,
+	watchEmbeddedVideo,
+	watchVideoInstructions
 };
 
 export default sectionTemplates;
