@@ -244,9 +244,9 @@ body .c9-templates-modal {
 					display: block;
 					font-weight: bold;
 					color: #576D7B;
-					letter-spacing: -.01px;
+					letter-spacing: .4px;
 					text-transform: uppercase;
-					text-align:left;
+					text-align: left;
 					padding-top: 1px;
 					font-size: 12px;
 					line-height: 1.1;
@@ -257,6 +257,7 @@ body .c9-templates-modal {
 						line-height: 18px;
 						margin: 0px auto;
 						margin-top: 7px;
+						font-size: 12px;
 					}
 
 					&.block-editor-block-icon {
@@ -271,6 +272,7 @@ body .c9-templates-modal {
 						}
 					}
 				}
+
 				p {
 					color: #7A7A7A;
 					font-size: 10px;
@@ -294,7 +296,7 @@ body .c9-templates-modal {
 				margin: 5px auto;
 
 				svg {
-					height: 100%;
+					margin-top: -5px;
 					width: 100%;
 				}
 			}
@@ -428,42 +430,33 @@ body .c9-templates-modal {
 			.c9-reusable-list-container {
 				width: 100%;
 				padding-top: 10px;
-				height: 125px;
-				overflow-x: scroll;
-				overflow-y: hidden;
-				position: relative;
 				padding-bottom: 25px;
 			}
 
 			.c9-reusable-list {
-				// grid-template-columns: repeat(7, 1fr);
-				// padding-right: 20px;
-				// padding-left: 10px;
-				// grid-column-gap: 7px;
-				// grid-row-gap: 7px;
-				display: block;
-				position: absolute;
-				margin-bottom: 20px;
-				height: 100%;
-				white-space: nowrap;
-				width: auto;
-				// overflow-x: scroll;
-				// overflow-y: hidden;
+				span.block-editor-block-icon {
+					margin: 10px auto;
+					width: 40px;
+					height: 40px;
+
+					svg {
+						width: 40px;
+						height: 40px;
+					}
+				}
+
+				.c9-reusable-label {
+					text-align: center;
+				}
 
 				button {
 					position: relative;
-					padding-left: 6px;
-					padding-right: 6px;
-					margin: 0px 3px;
-					width: 150px;
-					height: 90px;
-					display: inline-block;
-					white-space: normal;
 
 					span {
 						font-size: 11px;
-						line-height: 1.2;
 					}
+
+
 
 				}
 			}
