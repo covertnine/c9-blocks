@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/large-case-study-portfolio.svg";
+import Icon from "../../../../../assets/section-template-icons/convince-case-study-focus.svg";
 
 export default {
 	icon: Icon,

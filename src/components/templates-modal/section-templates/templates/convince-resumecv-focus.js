@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/large-about-resume-social-links.svg";
+import Icon from "../../../../../assets/section-template-icons/convince-resume-cv-focus.svg";
 
 export default {
 	icon: Icon,

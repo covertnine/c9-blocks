@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/lead-gen-form-offer.svg";
+import Icon from "../../../../../assets/section-template-icons/convince-sign-up-form.svg";
 
 export default {
 	icon: Icon,
