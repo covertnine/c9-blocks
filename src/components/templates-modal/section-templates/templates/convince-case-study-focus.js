@@ -2,7 +2,7 @@ import Icon from "../../../../../assets/section-template-icons/large-case-study-
 
 export default {
 	icon: Icon,
-	title: "Case Study Gallery Focus",
+	title: "Convince Case Study Focus",
 	description: "125 Words • Image Gallery • Headlines",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#0a0a0a","overlayOpacity":9,"blendMode":"normal","focalPoint":{"x":"0.57","y":"1.00"}} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->

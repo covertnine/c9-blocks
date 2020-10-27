@@ -1,7 +1,7 @@
 // New Sections
 import browseVideoMediaCarousel from "./templates/browse-video-media-carousel";
 import browseImageGalleryCarousel from "./templates/browse-image-gallery-carousel";
-import caseStudyGalleryFocus from "./templates/case-study-gallery-focus";
+import convinceCaseStudyFocus from "./templates/convince-case-study-focus";
 import convinceResumeCVFocus from "./templates/convince-resumecv-focus";
 import convinceSignUpForm from "./templates/convince-sign-up-form";
 import convinceTestimonialFocus from "./templates/convince-testimonial-focus";
@@ -34,18 +34,24 @@ import watchVideoInstructions from "./templates/watch-video-indstructions";
 import watchFullscreenVideo from "./templates/watch-fullscreen-video";
 
 const sectionTemplates = {
-	browseVideoMediaCarousel,
-	browseImageGalleryCarousel,
-	caseStudyGalleryFocus,
+	introducePageTitle,
+	introduceProfileContact,
+	introduceTeamFocus,
+	watchFullscreenVideo,
+	watchEmbeddedVideo,
+	watchVideoInstructions,
+	streamDiscographyListenFocus,
+	streamSingleListenFocus,
+	streamAlbumListenFocus,
+	convinceCaseStudyFocus,
 	convinceResumeCVFocus,
 	convinceSignUpForm,
 	convinceTestimonialFocus,
-	getEventTicketsVideoFocus,
-	getEventTicketsPhotoFocus,
-	getEventTicketsInformFocus,
 	informEditorialFocusv1,
 	informEditorialFocusv2,
 	informEditorialFocusv3,
+	browseVideoMediaCarousel,
+	browseImageGalleryCarousel,
 	informDialogPageTitle,
 	informMapEmbedFocus,
 	informRestaurantMenuFocus,
@@ -58,15 +64,9 @@ const sectionTemplates = {
 	informMissionStatement,
 	informProfilePhotoCarousel,
 	informBoxedProfileContact,
-	introducePageTitle,
-	introduceProfileContact,
-	introduceTeamFocus,
-	streamDiscographyListenFocus,
-	streamSingleListenFocus,
-	streamAlbumListenFocus,
-	watchFullscreenVideo,
-	watchEmbeddedVideo,
-	watchVideoInstructions
+	getEventTicketsVideoFocus,
+	getEventTicketsPhotoFocus,
+	getEventTicketsInformFocus
 };
 
 export default sectionTemplates;
