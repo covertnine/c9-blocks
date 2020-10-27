@@ -296,17 +296,14 @@ body .c9-templates-modal {
 
 		.c9-section-options {
 			button:not(.btn-clear) {
-				min-height: 52px;
-				width: 95%;
+				width: 98%;
 				margin: 5px auto;
 				position: relative;
 
 				svg {
 					margin-top: 0px;
 					width: 100%;
-					height: 100%;
-					position: absolute;
-					top: 0;
+					height: auto;
 				}
 			}
 
