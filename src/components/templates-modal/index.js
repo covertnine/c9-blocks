@@ -60,9 +60,7 @@ class TemplatesModal extends Component {
 		setTimeout(() => {
 			const { sections, layouts } = self.state;
 			if (0 < Object.keys(sections).length && 0 < Object.keys(layouts).length) {
-				self.setState({
-					loading: false
-				});
+				self.setState({ loading: false });
 			} else {
 				const { canUserUseUnfilteredHTML } = self.state;
 
@@ -72,9 +70,7 @@ class TemplatesModal extends Component {
 					...self.markupToBlock(SectionTemplates, canUserUseUnfilteredHTML)
 				};
 
-				self.setState({
-					sections
-				});
+				self.setState({ sections });
 				self.props.setSections(sections);
 
 				const layouts = {
@@ -82,10 +78,7 @@ class TemplatesModal extends Component {
 					...self.markupToBlock(PageTemplates, canUserUseUnfilteredHTML)
 				};
 
-				self.setState({
-					layouts,
-					loading: false
-				});
+				self.setState({ layouts, loading: false });
 				self.props.setLayouts(layouts);
 			}
 		}, 0);
@@ -97,9 +90,7 @@ class TemplatesModal extends Component {
 	async getReusableBlocks() {
 		const { canUserUseUnfilteredHTML } = this.props;
 
-		const postType = await apiFetch({
-			path: `/wp/v2/types/wp_block`
-		});
+		const postType = await apiFetch({ path: `/wp/v2/types/wp_block` });
 		const reusables = await apiFetch({
 			path: `/wp/v2/${postType.rest_base}/?per_page=-1`
 		});
@@ -163,9 +154,7 @@ class TemplatesModal extends Component {
 	 * Set the update state.
 	 */
 	setUpdateState(updateState) {
-		this.setState({
-			updateState
-		});
+		this.setState({ updateState });
 	}
 
 	render() {
@@ -178,14 +167,15 @@ class TemplatesModal extends Component {
 					"c9-notice components-notice is-success is-dismissible " + updateState
 				}
 			>
-				<div className="components-notice__content"> Updating </div>{" "}
+				<div className="components-notice__content">Updating</div>
 			</div>
 		);
 
 		const PageTypeHeading = ({ name, description }) => {
 			return (
 				<div className="c9-type-heading">
-					<h2> {name} </h2> <p> {description} </p>{" "}
+					<h2>{name}</h2>
+					<p>{description}</p>
 				</div>
 			);
 		};
@@ -193,19 +183,17 @@ class TemplatesModal extends Component {
 		const TutButton = ({ title, url, imgUrl }) => {
 			return (
 				<div className="c9-tut-wrapper">
-					<img src={imgUrl} alt={`tutorial for ${title}`} />{" "}
+					<img src={imgUrl} alt={`tutorial for ${title}`} />
 					<a href={url} target="_blank" rel="noopener noreferrer">
-						<h4> {decodeEntities(title)} </h4>{" "}
-					</a>{" "}
+						<h4>{decodeEntities(title)}</h4>
+					</a>
 				</div>
 			);
 		};
 
 		const onHover = item => {
 			console.log(item);
-			this.setState({
-				hoveredItem: item
-			});
+			this.setState({ hoveredItem: item });
 		};
 
 		// convert above to React DOM elements
@@ -223,9 +211,7 @@ class TemplatesModal extends Component {
 							mode: "BLOCKS",
 							canUserUseUnfilteredHTML
 						});
-						this.setState({
-							sections
-						});
+						this.setState({ sections });
 						this.setUpdateState("updated");
 					}}
 					icon={SectionTemplates[k].icon}
@@ -263,9 +249,7 @@ class TemplatesModal extends Component {
 								canUserUseUnfilteredHTML
 							});
 
-							this.setState({
-								layouts
-							});
+							this.setState({ layouts });
 							this.setUpdateState("updated");
 						}}
 						icon={PageTemplates[name].icon}
@@ -282,8 +266,8 @@ class TemplatesModal extends Component {
 			});
 			pageTypes.push(
 				<Fragment>
-					<PageTypeHeading name={type} description={PageTypes[type]} />{" "}
-					<div className="c9-layout-options"> {layoutItems} </div>{" "}
+					<PageTypeHeading name={type} description={PageTypes[type]} />
+					<div className="c9-layout-options">{layoutItems}</div>
 				</Fragment>
 			);
 		});
@@ -299,7 +283,7 @@ class TemplatesModal extends Component {
 								<Tooltip
 									text={__("Pre-designed ready to use pages.", "c9-blocks")}
 								>
-									<span> {__("Pages")} </span>{" "}
+									<span>{__("Pages")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -313,7 +297,7 @@ class TemplatesModal extends Component {
 										"c9-blocks"
 									)}
 								>
-									<span> {__("Sections")} </span>{" "}
+									<span>{__("Sections")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -322,7 +306,7 @@ class TemplatesModal extends Component {
 							name: "saved-blocks",
 							title: (
 								<Tooltip text={__("My Templates.", "c9-blocks")}>
-									<span> {__("Reusable Blocks")} </span>{" "}
+									<span>{__("Reusable Blocks")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -331,7 +315,7 @@ class TemplatesModal extends Component {
 							name: "tutorial",
 							title: (
 								<Tooltip text={__("How To's", "c9-blocks")}>
-									<span> {__("Tutorials")} </span>{" "}
+									<span>{__("Tutorials")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -340,8 +324,8 @@ class TemplatesModal extends Component {
 							name: "clear-page",
 							title: (
 								<Fragment className="btn btn-danger btn-clear">
-									<Icon icon={icons.close} />{" "}
-									<span> {__("Clear page", "c9-blocks")} </span>{" "}
+									<Icon icon={icons.close} />
+									<span>{__("Clear page", "c9-blocks")}</span>
 								</Fragment>
 							),
 							className: "c9-template-tabs-tab tab-clear"
@@ -362,36 +346,28 @@ class TemplatesModal extends Component {
 							case "section-templates":
 								return (
 									<Fragment>
-										{" "}
-										{updateBar}{" "}
-										{hoveredItem && <PreviewPanel item={hoveredItem} />}{" "}
+										{updateBar}
+										{hoveredItem && <PreviewPanel item={hoveredItem} />}
 										<div className="c9-type-heading">
-											<h2> {__("Section Templates")} </h2>{" "}
-											<p>
-												{" "}
-												{__(
-													"Build a page for a specific audience one section at a time. Start with each section's goal, whether to inform, convince, watch, or browse your content."
-												)}{" "}
-											</p>{" "}
-										</div>{" "}
-										<div className="c9-section-options"> {sectionItems} </div>{" "}
+											<h2>{__("Section Templates")}</h2>
+											<p>{__("Build a page for a specific audience one section at a time. Start with each section's goal, whether to inform, convince, watch, or simply browse your content.")}</p>
+										</div>
+										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
 							case "page-templates":
 								return (
 									<Fragment>
-										{" "}
-										{updateBar}{" "}
-										{hoveredItem && <PreviewPanel item={hoveredItem} />}{" "}
-										<div className="c9-page-options"> {pageTypes} </div>{" "}
+										{updateBar}
+										{hoveredItem && <PreviewPanel item={hoveredItem} />}
+										<div className="c9-page-options">{pageTypes}</div>
 									</Fragment>
 								);
 							case "saved-blocks":
 								return (
 									<Fragment>
-										{" "}
-										{updateBar}{" "}
-										{hoveredItem && <PreviewPanel item={hoveredItem} />}{" "}
+										{updateBar}
+										{hoveredItem && <PreviewPanel item={hoveredItem} />}
 										<div
 											className={
 												"c9-reusable-options " +
@@ -400,7 +376,6 @@ class TemplatesModal extends Component {
 										>
 											<div className="c9-reusable-list-container">
 												<div className="c9-reusable-list">
-													{" "}
 													{this.state.reusables.map((obj, index) => {
 														const blockType = getBlockType(obj.content[0].name);
 														return (
@@ -424,23 +399,22 @@ class TemplatesModal extends Component {
 																onHover={onHover}
 															/>
 														);
-													})}{" "}
-												</div>{" "}
+													})}
+												</div>
 												<a
 													className="c9-modal-manage-reusable"
 													href="edit.php?post_type=wp_block"
 												>
-													manage all reusable blocks{" "}
-												</a>{" "}
-											</div>{" "}
-										</div>{" "}
+													manage all reusable blocks
+												</a>
+											</div>
+										</div>
 									</Fragment>
 								);
 							case "tutorial":
 								return (
 									<Fragment>
 										<div className="c9-tutorials">
-											{" "}
 											{this.state.tuts.map(tut => {
 												return (
 													<TutButton
@@ -449,22 +423,21 @@ class TemplatesModal extends Component {
 														imgUrl={tut.c9_feat_img_url}
 													/>
 												);
-											})}{" "}
-										</div>{" "}
+											})}
+										</div>
 									</Fragment>
 								);
 							case "clear-page":
 								resetBlocks([]);
 								return (
 									<div className="c9-page-cleared">
-										The page has been cleared.{" "}
+										The page has been cleared.
 									</div>
 								);
 							default:
 								return (
 									<Fragment>
 										<div className="c9-tutorials">
-											{" "}
 											{this.state.tuts.map(tut => {
 												return (
 													<TutButton
@@ -473,13 +446,13 @@ class TemplatesModal extends Component {
 														imgUrl={tut.c9_feat_img_url}
 													/>
 												);
-											})}{" "}
-										</div>{" "}
+											})}
+										</div>
 									</Fragment>
 								);
 						}
-					}}{" "}
-				</TabPanel>{" "}
+					}}
+				</TabPanel>
 			</LargeModal>
 		);
 	}
