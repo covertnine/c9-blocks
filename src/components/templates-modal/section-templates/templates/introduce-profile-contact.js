@@ -3,7 +3,7 @@ import Icon from "../../../../../assets/section-template-icons/about-picture-con
 export default {
 	icon: Icon,
 	title: "Introduce Profile Contact",
-	description: "150 Words • 2 Button Links • 2 Headlines • 2 Photos",
+	description: "150 Words • Button Links • Headlines • Photos",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":2} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
