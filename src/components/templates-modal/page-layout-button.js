@@ -28,12 +28,12 @@ const LayoutButton = ({
 					insertBlocks(layout);
 					close();
 				}, 0);
-				// onHover(null);
+				onHover(null);
 			}}
 			onFocus={() => onHover(layout)}
 			onMouseEnter={() => onHover(layout)}
-			// onMouseLeave={() => onHover(null)}
-			// onBlur={() => onHover(null)}
+			onMouseLeave={() => onHover(null)}
+			onBlur={() => onHover(null)}
 		>
 			<HoverIntent
 				onMouseOver={toggleHover}

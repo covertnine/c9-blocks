@@ -21,12 +21,12 @@ const SectionButton = ({
 					insertBlocks(section);
 					close();
 				}, 0);
-				// onHover(null);
+				onHover(null);
 			}}
 			onFocus={() => onHover(section)}
 			onMouseEnter={() => onHover(section)}
-			// onMouseLeave={() => onHover(null)}
-			// onBlur={() => onHover(null)}
+			onMouseLeave={() => onHover(null)}
+			onBlur={() => onHover(null)}
 		>
 			{preview ? (
 				<div className="c9-section-preview">

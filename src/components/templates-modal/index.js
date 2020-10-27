@@ -382,7 +382,7 @@ class TemplatesModal extends Component {
 															<ReusableButton
 																icon={blockType.icon}
 																label={__(obj.name, "c9-blocks")}
-																section={obj.content}
+																reusable={obj.content}
 																open={() => {
 																	this.setUpdateState("updating");
 																}}
@@ -396,11 +396,7 @@ class TemplatesModal extends Component {
 																	this.setState({ reusables });
 																	this.setUpdateState("updated");
 																}}
-																mouseIn={() => {
-																	this.setState({
-																		hoveredItem: obj.content[0]
-																	});
-																}}
+																onHover={onHover}
 															/>
 														);
 													})}

@@ -4,25 +4,26 @@ const { withDispatch } = wp.data;
 const ReusableButton = ({
 	label,
 	icon,
-	preview,
-	section,
+	reusable,
 	insertBlocks,
 	open,
 	close,
-	mouseIn
+	onHover
 }) => {
 	return (
 		<button
 			onClick={() => {
 				open();
 				setTimeout(() => {
-					insertBlocks(section);
+					insertBlocks(reusable);
 					close();
 				}, 0);
+				onHover(null);
 			}}
-			onMouseEnter={() => {
-				mouseIn();
-			}}
+			onFocus={() => onHover(reusable)}
+			onMouseEnter={() => onHover(reusable)}
+			onMouseLeave={() => onHover(null)}
+			onBlur={() => onHover(null)}
 		>
 			<BlockIcon icon={icon} />
 			<span className="c9-reusable-label">{label}</span>

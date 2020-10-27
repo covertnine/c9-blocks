@@ -2,6 +2,7 @@
  * Internal dependencies
  */
 import classnames from "classnames";
+import { initDataAttributes } from "../../../components/animations-panel/utils";
 
 /**
  * WordPress dependencies
@@ -113,6 +114,7 @@ export default class ResizableContainer extends Component {
 
 	render() {
 		const {
+			attributes,
 			attributes: {
 				containerImgURL,
 				bgImgAttach,
@@ -256,8 +258,9 @@ export default class ResizableContainer extends Component {
 				</ResizableBox>
 			);
 		} else {
+			// fix for animation attributes bug
 			return (
-				<div {...wrapperConfig}>
+				<div {...wrapperConfig} {...initDataAttributes(attributes)}>
 					<Container {...this.props} />
 				</div>
 			);
