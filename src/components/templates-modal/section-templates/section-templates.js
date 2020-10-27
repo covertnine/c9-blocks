@@ -8,6 +8,9 @@ import convinceTestimonialFocus from "./templates/convince-testimonial-focus";
 import getEventTicketsInformFocus from "./templates/get-event-tickets-inform-focus";
 import getEventTicketsPhotoFocus from "./templates/get-event-tickets-photo-focus";
 import getEventTicketsVideoFocus from "./templates/get-event-tickets-video-focus";
+import informEditorialFocusv1 from "./templates/inform-editorial-focus-v1";
+import informEditorialFocusv2 from "./templates/inform-editorial-focus-v2";
+import informEditorialFocusv3 from "./templates/inform-editorial-focus-v3";
 import informMapEmbedFocus from "./templates/inform-map-embed-focus";
 import informMissionStatement from "./templates/inform-mission-statement";
 import informProfilePhotoFocus from "./templates/inform-profile-photo-focus";
@@ -40,6 +43,9 @@ const sectionTemplates = {
 	getEventTicketsVideoFocus,
 	getEventTicketsPhotoFocus,
 	getEventTicketsInformFocus,
+	informEditorialFocusv1,
+	informEditorialFocusv2,
+	informEditorialFocusv3,
 	informDialogPageTitle,
 	informMapEmbedFocus,
 	informRestaurantMenuFocus,

@@ -63,6 +63,10 @@ body .c9-templates-modal {
 		justify-content: flex-end;
 		margin: 40px 60px 40px 0px;
 
+		&.left {
+			justify-content: flex-start;
+		}
+
 		h2,
 		p {
 			margin: 0;
@@ -275,7 +279,7 @@ body .c9-templates-modal {
 
 				p {
 					color: #7A7A7A;
-					font-size: 10px;
+					font-size: 11px;
 					text-transform: none;
 					letter-spacing: .1px;
 					margin: 0px 5px 8px 8px;
@@ -296,7 +300,6 @@ body .c9-templates-modal {
 				margin: 5px auto;
 
 				svg {
-					margin-top: -5px;
 					width: 100%;
 				}
 			}
@@ -326,6 +329,7 @@ body .c9-templates-modal {
 				font-size: 10px;
 				margin-bottom: 0;
 				line-height: 1.3;
+				margin-left: 0px;
 			}
 
 			.c9-icon-and-about {
@@ -407,6 +411,7 @@ body .c9-templates-modal {
 				color: #819fb3;
 				line-height: 1.4;
 				font-size: 12px;
+				margin-left: 0px;
 			}
 
 			svg {

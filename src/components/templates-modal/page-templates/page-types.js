@@ -1,8 +1,5 @@
 export default {
-	awareness:
-		"For Customers learning about your product, service, event for the first time. Give them the most information they need right upfront.",
-	consideration:
-		"Second touchpoint, Customers are familiar with you, but need some information.",
-	conversion:
-		"For customers familiar with your product doing research before purchase or informed users ready to convert to customers."
+	awareness: "Page templates for potential fans learning about your product, service, event for the first time. Give them the most information they need right upfront.",
+	consideration: "Page templates for likely fans that are somewhat familiar with you, but need some information or convincing.",
+	conversion: "Page templates for fans familiar with your product doing research before purchase or informed users ready to convert to customers."
 };
