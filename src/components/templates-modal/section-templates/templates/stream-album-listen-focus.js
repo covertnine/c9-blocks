@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/large-spotify-embed-image-carousel.svg";
+import Icon from "../../../../../assets/section-template-icons/stream-discography-listen-focus.svg";
 
 export default {
 	icon: Icon,

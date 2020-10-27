@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/large-audio-embed-fullscreen-photo.svg";
+import Icon from "../../../../../assets/section-template-icons/stream-single-listen-focus.svg";
 
 export default {
 	icon: Icon,
