@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/large-mission-statement-photo.svg";
+import Icon from "../../../../../assets/section-template-icons/inform-mission-statement.svg";
 
 export default {
 	icon: Icon,

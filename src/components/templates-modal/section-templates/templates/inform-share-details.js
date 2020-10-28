@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/event-details.svg";
+import Icon from "../../../../../assets/section-template-icons/inform-share-details.svg";
 
 export default {
 	icon: Icon,
