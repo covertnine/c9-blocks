@@ -1,8 +1,8 @@
-import Icon from "../../../../../assets/section-template-icons/large-mission-statement-photo.svg";
+import Icon from "../../../../../assets/section-template-icons/inform-editorial-focus-1.svg";
 
 export default {
 	icon: Icon,
-	title: "Inform Editorial Focus v1",
+	title: "Inform Editorial Focus 1",
 	description: "1,000+ Words • Headlines • Quotes • Photos",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":4,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="c9-grid c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->

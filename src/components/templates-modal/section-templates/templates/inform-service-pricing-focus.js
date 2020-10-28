@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/restaurant-style-menu-v-2.svg";
+import Icon from "../../../../../assets/section-template-icons/inform-service-pricing-focus.svg";
 
 export default {
 	icon: Icon,
@@ -143,8 +143,8 @@ export default {
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:c9-blocks/heading {"heading":"FREELANCER","subheading":"Get Started","tagLevel":4,"overrideStyle":true} -->
-<div class="section-heading c9-heading text-left"><h4 class="c9-h h4">FREELANCER</h4></div>
+<!-- wp:c9-blocks/heading {"heading":"FREELANCE","subheading":"Get Started","tagLevel":4,"overrideStyle":true} -->
+<div class="section-heading c9-heading text-left"><h4 class="c9-h h4">FREELANCE</h4></div>
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:c9-blocks/heading {"heading":"You need extra hands","subheading":"Get Started","tagLevel":5,"type":"c9-sh subhead-h","overrideStyle":true} -->

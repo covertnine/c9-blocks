@@ -350,7 +350,7 @@ class TemplatesModal extends Component {
 										{hoveredItem && <PreviewPanel item={hoveredItem} />}
 										<div className="c9-type-heading">
 											<h2>{__("Section Templates")}</h2>
-											<p>{__("Build a page for a specific audience one section at a time. Start with each section's goal, whether to inform, convince, watch, or simply browse your content.")}</p>
+											<p>{__("Build a page for a specific audience one section at a time. Start with each section's goal, whether to inform, convince, watch, or browse your content.")}</p>
 										</div>
 										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>

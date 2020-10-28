@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/restaurant-style-menu-v-1.svg";
+import Icon from "../../../../../assets/section-template-icons/inform-restaurant-menu-focus.svg";
 
 export default {
 	icon: Icon,
