@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/section-template-icons/inform-profile-photo-focus.svg";
+import Icon from "../../../../../assets/section-template-icons/inform-profile-photo-carousel.svg";
 
 export default {
 	icon: Icon,
