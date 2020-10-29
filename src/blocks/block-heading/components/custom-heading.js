@@ -10,11 +10,6 @@ const { applyFilters } = wp.hooks;
 import classnames from "classnames";
 
 /**
- * Internal Dependencies.
- */
-import { initDataAttributes } from "../../../components/animations-panel/utils";
-
-/**
  * Create a C9CustomHeading wrapper Component
  */
 export default class C9CustomHeading extends Component {
@@ -24,7 +19,6 @@ export default class C9CustomHeading extends Component {
 
 	render() {
 		const {
-			attributes,
 			attributes: { textAlign, anchor },
 			className = ""
 		} = this.props;
@@ -38,7 +32,6 @@ export default class C9CustomHeading extends Component {
 				)}
 				style={{ backgroundColor: this.props.attributes.backgroundColor }}
 				id={anchor ? anchor : null}
-				{...initDataAttributes(attributes)}
 			>
 				{this.props.children}
 			</div>

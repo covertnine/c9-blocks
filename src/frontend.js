@@ -10,4 +10,3 @@
  */
 
 import "./blocks/block-grid-container/frontend.js";
-import "./components/animations-panel/frontend.js";

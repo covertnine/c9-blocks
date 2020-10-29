@@ -5,7 +5,6 @@ import CustomHeading from "./components/custom-heading";
 import Inspector from "./components/inspector";
 import HeadingToolbar from "./components/heading-toolbar";
 import SubheadingToolbar from "./components/subheading-toolbar";
-import { initAnimate } from "../../components/animations-panel/utils";
 
 /**
  * WordPress dependencies
@@ -50,16 +49,6 @@ export default class Edit extends Component {
 		} else {
 			return `${type}${displayLevel}`;
 		}
-	}
-
-	componentDidMount() {
-		const { attributes } = this.props;
-
-		const target = `#block-${this.props.clientId} > *`;
-		initAnimate({
-			...attributes,
-			target
-		});
 	}
 
 	render() {

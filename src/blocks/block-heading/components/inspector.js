@@ -2,7 +2,6 @@
  * Internal dependencies
  */
 import HeadingToolbar from "./heading-toolbar";
-import AnimationPanel from "../../../components/animations-panel";
 
 /**
  * WordPress dependencies
@@ -25,7 +24,6 @@ class Inspector extends Component {
 		// Setup the attributes
 		const {
 			setAttributes,
-			attributes,
 			attributes: {
 				displayLevel,
 				textAlign,
@@ -177,13 +175,6 @@ class Inspector extends Component {
 						}}
 					/>
 				</PanelColorSettings>
-
-				<AnimationPanel
-					{...attributes}
-					name={this.props.name}
-					target={`#block-${this.props.clientId}`}
-					setAttributes={setAttributes}
-				/>
 			</InspectorControls>
 		);
 	}
