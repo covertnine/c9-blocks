@@ -14,6 +14,9 @@ import leadGen1 from "./templates/lead-generation-1";
 import leadGen2 from "./templates/lead-generation-2";
 import leadGen3 from "./templates/lead-generation-3";
 import lpVideos from "./templates/videos";
+import lpStory1200 from "./templates/story-article-1200";
+import lpStory1600 from "./templates/story-article-1600";
+import lpStory2000 from "./templates/story-article-2000";
 
 const pageTemplates = {
 	lpAboutCorporate,
@@ -22,8 +25,8 @@ const pageTemplates = {
 	lpContact,
 	lpEvent,
 	lpLaunchRelease,
-    lpMedia,
-    lpVideos,
+	lpMedia,
+	lpVideos,
 	lpPortfolio,
 	lpPriceMenu,
 	lpResources,
@@ -31,7 +34,10 @@ const pageTemplates = {
 	lpStyle,
 	leadGen1,
 	leadGen2,
-	leadGen3
+	leadGen3,
+	lpStory1200,
+	lpStory1600,
+	lpStory2000
 };
 
 export default pageTemplates;
