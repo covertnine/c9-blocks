@@ -3,7 +3,7 @@ import Icon from "../../../../../assets/page-template-icons/about-corporate.svg"
 export default {
 	icon: Icon,
 	type: "awareness",
-	title: "About Page: Corporate",
+	title: "About Corporate",
 	description: `An About page with all the essential elements to jumpstart the process of “know, like, and trust.” Complete with a hero header, testimonials, individual profiles, history, services overview, FAQ, and a “call-to-action.” Simply add and subtract the blocks most useful to you.`,
 	recommended: `company name, slogan, short mission statement, logo image, history copywriting, 3 photo images, testimonials with photos (2), service list, testimonials with copy only (2), FAQ, map embed, call-to-action link`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#109ef1","minScreenHeight":50} -->

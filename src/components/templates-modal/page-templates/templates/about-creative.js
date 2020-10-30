@@ -3,7 +3,7 @@ import Icon from "../../../../../assets/page-template-icons/about-creative.svg";
 export default {
 	icon: Icon,
 	type: "awareness",
-	title: "About Page: Creative",
+	title: "About Creative",
 	description: `Our second About page puts your creative side on display with photography or artwork. This landing page template works for an individual, or a small group with a short about section, testimonials, a simple photo gallery, mission statement,  profile photo, map embed, and a call-to-action video with a button at the bottom.`,
 	recommended: `“Hero” image, logo, title, short history, service listing, testimonials (2), two paragraph interlude, photo gallery, mission statement, button, vertical profile photo, map embed code, short video clip, button and call-to-action`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://cortex.covertnine.com/wp-content/uploads/2019/08/about-page-bg.jpg","containerHue":"#313131","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":80,"focalPointMobile":{"x":0.25,"y":0.5},"overrideMobile":true} -->

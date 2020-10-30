@@ -3,7 +3,7 @@ import Icon from "../../../../../assets/page-template-icons/price-menu.svg";
 export default {
 	icon: Icon,
 	type: "consideration",
-	title: "Restaurant-style Menu",
+	title: "Restaurant Menu",
 	description: `Showcase your latest and tastiest with the Restaurant-style Menu page. Easily add pricing, imagery, and tantalizing descriptions to each option. The template also includes image carousels and a toggle for daily specials.`,
 	recommended: `Video clip or YouTube video, page title, page subheading, menu name (2 options), menu copywriting with pricing (2 options), 3-6 horizontal photos, 3 vertical photos, mission statement, vertical profile photo`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov"} -->
