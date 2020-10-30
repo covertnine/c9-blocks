@@ -9,8 +9,8 @@ export default {
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#000000","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":71,"containerVideoURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:71vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Live Event Rally Coverage","displayLevel":"2","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","overrideStyle":true} -->
-<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-2 font-weight-bold" style="color:#ffffff">Live Event Rally Coverage</h1></div>
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Live Event Coverage","displayLevel":"2","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","overrideStyle":true} -->
+<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-2 font-weight-bold" style="color:#ffffff">Live Event Coverage</h1></div>
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:c9-blocks/heading {"heading":"By Author McNameNamey","tagLevel":2,"displayLevel":"5","type":"c9-sh subhead-h","textColor":"#979797","weight":"light","overrideStyle":true} -->

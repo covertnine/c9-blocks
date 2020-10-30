@@ -3,7 +3,7 @@ import Icon from "../../../../../assets/page-template-icons/resources.svg";
 export default {
 	icon: Icon,
 	type: "consideration",
-	title: "Landing Page Content Resources",
+	title: "Resources",
 	description: `A page to organize resources in one location with a Search Block, posts or articles of any post type or category, a hero header image with a few paragraphs or headings of instructions to direct your users to your well-documented knowledgebase. Cap it off with a call-to-action to subscribe to your newsletter for updates.`,
 	recommended: `Articles or blog posts (6), hero image, 2-3 paragraphs or headings, FAQ, call-to-action bar + button`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/10/kewal-W0qAERMnJYg-unsplash.jpg","bgCustomX":{"size":200,"unit":"%"},"minScreenHeight":85,"focalPoint":{"x":0.17511520737327188,"y":0.1231737012987013},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
