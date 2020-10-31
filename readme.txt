@@ -62,7 +62,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 == Changelog ==
 
 = 1.2 =
-Added alignwide adn alignfull alignments to Carousels and Image Carousels. Added draggable heights for containers in C9 Grids. Several bug fixes to jumpy navigations, preparing plugins for animation settings.
+Added alignwide and alignfull alignments to Carousels and Image Carousels. Added draggable heights for containers in C9 Grids. Several bug fixes to jumpy navigations, preparing plugins for animation settings. Bug fixes to alignments on some blocks. New page templates and section templates!
 
 = 1.1.3 =
 Fixed issues with new toggles and tabs not displaying appender buttons and some alignfull container issues on some browsers in WordPress 5.5.
@@ -160,6 +160,10 @@ Compatibility updates for WP 5.4 release to deprecated code. Fixed video backgro
 == Demo Videos ==
 
 We're constantly updating videos on the [C9 Docs](https://c9.covertnine.com) site, as well as on our [YouTube Channel](https://www.youtube.com/covertnine).
+
+**What's it like editing content with C9 Blocks & C9 Themes?**
+
+https://www.youtube.com/watch?v=zu3JyJr5eeM
 
 **How to Create a Homepage for the Twenty Twenty WordPress Theme**
 
