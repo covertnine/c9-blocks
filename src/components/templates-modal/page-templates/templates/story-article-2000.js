@@ -1,11 +1,11 @@
-import Icon from "../../../../../assets/page-template-icons/about-creative.svg";
+import Icon from "../../../../../assets/page-template-icons/c9-editorial-2000.svg";
 
 export default {
 	icon: Icon,
 	type: "awareness",
 	title: "Story Article 2000",
 	description: `A long form template for a long story, tutorial, or opinion about a topic that starts at 2,000 words in length.`,
-	recommended: `“Hero” image, logo, title, short history, service listing, testimonials (2), two paragraph interlude, photo gallery, mission statement, button, vertical profile photo, map embed code, short video clip, button and call-to-action`,
+	recommended: `Potrait Photo • Multiple Hero Images • Photo Gallery • Quotes • Testimonials • Button and Call to Action`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg","bgImgSize":"","bgCustomX":{"size":50,"unit":"%"},"bgCustomY":{"size":"auto","unit":"%"},"overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"1.00","y":"0.61"},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:75vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->

@@ -1,11 +1,11 @@
-import Icon from "../../../../../assets/page-template-icons/about-creative.svg";
+import Icon from "../../../../../assets/page-template-icons/c9-editorial-1200.svg";
 
 export default {
 	icon: Icon,
 	type: "awareness",
 	title: "Story Article 1200",
-	description: `A long form template for a long story, tutorial, or opinion about a topic that starts at 1,200 words in length.`,
-	recommended: `“Hero” image, logo, title, short history, service listing, testimonials (2), two paragraph interlude, photo gallery, mission statement, button, vertical profile photo, map embed code, short video clip, button and call-to-action`,
+	description: `A beginning of a very long story, article, tutorial, or in-depth opinion about a topic that starts at 1,200 words in length. Add more tables, charts, videos, or even e-commerce products to this template, so people don't get bored with filler.`,
+	recommended: `1200+ Words • Hero Image • Video • Spotify Embed Link • Testimonials • Button and Call to Action`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#000000","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":71,"containerVideoURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-video" style="min-height:71vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->

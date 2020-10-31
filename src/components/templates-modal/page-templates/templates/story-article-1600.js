@@ -1,11 +1,11 @@
-import Icon from "../../../../../assets/page-template-icons/about-creative.svg";
+import Icon from "../../../../../assets/page-template-icons/c9-editorial-1600.svg";
 
 export default {
 	icon: Icon,
 	type: "awareness",
 	title: "Story Article 1600",
-	description: `A long form template for a long story, tutorial, or opinion about a topic that starts at 1,600 words in length.`,
-	recommended: `“Hero” image, logo, title, short history, service listing, testimonials (2), two paragraph interlude, photo gallery, mission statement, button, vertical profile photo, map embed code, short video clip, button and call-to-action`,
+	description: `This template has room for more words and has more slots for photos to weave an interesting brand story or background for someone new to you.`,
+	recommended: `“1600+ Words • Multiple Hero Images • Photo Gallery • Quotes • Testimonials • Multiple Headings`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171.jpg","containerHue":"#313131","overlayHue":"#313131","blendMode":"multiply","minScreenHeight":87,"focalPoint":{"x":"0.52","y":"1.00"},"focalPointMobile":{"x":0.25,"y":0.5},"overrideMobile":true} -->
 <div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:87vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":3,"layout":"c9-2-col-equal","containerWidth":"container-narrow","verticalAlign":"bottom","minScreenHeight":0} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-3 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
