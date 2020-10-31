@@ -9,6 +9,7 @@ import lpPortfolio from "./templates/portfolio";
 import lpPriceMenu from "./templates/price-menu";
 import lpResources from "./templates/resources";
 import lpService from "./templates/service";
+import lpPricing from "./templates/pricing";
 import lpStyle from "./templates/style-guide";
 import leadGen1 from "./templates/lead-generation-1";
 import leadGen2 from "./templates/lead-generation-2";
@@ -31,6 +32,7 @@ const pageTemplates = {
 	lpPriceMenu,
 	lpResources,
 	lpService,
+	lpPricing,
 	lpStyle,
 	leadGen1,
 	leadGen2,
