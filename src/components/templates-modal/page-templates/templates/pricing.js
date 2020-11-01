@@ -1,4 +1,4 @@
-import Icon from "../../../../../assets/page-template-icons/service.svg";
+import Icon from "../../../../../assets/page-template-icons/c9-pricing.svg";
 
 export default {
 	icon: Icon,
