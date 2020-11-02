@@ -3,6 +3,7 @@
  */
 const { Component } = wp.element;
 const { applyFilters } = wp.hooks;
+const { useBlockProps } = wp.blockEditor;
 
 /**
  * External Dependencies.
@@ -25,6 +26,7 @@ export default class C9CustomHeading extends Component {
 
 		return (
 			<div
+				{...useBlockProps.save()}
 				className={classnames(
 					"section-heading",
 					applyFilters("c9-blocks.blocks.className", className),

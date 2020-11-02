@@ -2,8 +2,6 @@
  * Internal dependencies
  */
 import classnames from "classnames";
-import isUndefined from "lodash/isUndefined";
-import pickBy from "lodash/pickBy";
 
 /**
  * WordPress dependencies
@@ -11,46 +9,12 @@ import pickBy from "lodash/pickBy";
 const { applyFilters } = wp.hooks;
 const { ResizableBox } = wp.components;
 const { Component } = wp.element;
+const { useBlockProps } = wp.blockEditor;
 
 import Container from "./container";
 
 const MIN_GRID_HEIGHT = 10;
 const MAX_GRID_HEIGHT = 100;
-
-// Animations Data Attrib Fix
-const initDataAttributes = ({
-	enableAnimate,
-	animateVal,
-	animateEase,
-	animateDelay,
-	animateSpeed,
-	animateScrub,
-	animateStart,
-	animateEnd,
-	animateCustom
-}) => {
-	if (!enableAnimate) {
-		return {};
-	}
-
-	const ease = "none" !== animateEase ? animateEase : undefined;
-
-	const config = pickBy(
-		{
-			"data-c9-animate": animateVal,
-			"data-c9-animate-ease": ease,
-			"data-c9-animate-delay": animateDelay,
-			"data-c9-animate-speed": animateSpeed,
-			"data-c9-animate-scrub": animateScrub,
-			"data-c9-animate-start": animateStart,
-			"data-c9-animate-end": animateEnd,
-			"data-c9-animate-custom": JSON.stringify(animateCustom)
-		},
-		value => !isUndefined(value)
-	);
-
-	return config;
-};
 
 export default class ResizableContainer extends Component {
 	constructor() {
@@ -150,7 +114,6 @@ export default class ResizableContainer extends Component {
 
 	render() {
 		const {
-			attributes,
 			attributes: {
 				containerImgURL,
 				bgImgAttach,
@@ -296,7 +259,7 @@ export default class ResizableContainer extends Component {
 		} else {
 			// fix for animation attributes bug
 			return (
-				<div {...wrapperConfig} {...initDataAttributes(attributes)}>
+				<div {...useBlockProps.save()} {...wrapperConfig}>
 					<Container {...this.props} />
 				</div>
 			);

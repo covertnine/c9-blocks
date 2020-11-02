@@ -11,7 +11,7 @@ import classnames from "classnames";
  */
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
-const { InnerBlocks, BlockControls } = wp.blockEditor;
+const { InnerBlocks, BlockControls, useBlockProps } = wp.blockEditor;
 const { registerBlockType, getBlockTypes } = wp.blocks;
 const { AlignmentToolbar } = wp.editor;
 const { Fragment } = wp.element;
@@ -164,6 +164,7 @@ registerBlockType("c9-blocks/column", {
 
 		return (
 			<div
+				{...useBlockProps.save()}
 				className={classnames(
 					"c9-block-layout-column",
 					"c9-column",
