@@ -10,6 +10,7 @@ const { applyFilters } = wp.hooks;
 const { ResizableBox } = wp.components;
 const { Component } = wp.element;
 const { useBlockProps } = wp.blockEditor;
+const { getBlockType } = wp.blocks;
 
 import Container from "./container";
 
@@ -259,7 +260,17 @@ export default class ResizableContainer extends Component {
 		} else {
 			// fix for animation attributes bug
 			return (
-				<div {...useBlockProps.save()} {...wrapperConfig}>
+				<div
+					{...(useBlockProps
+						? useBlockProps.save()
+						: applyFilters(
+								"blocks.getSaveContent.extraProps",
+								this.props,
+								getBlockType("c9-blocks/column-container"),
+								this.props.attributes
+						  ))}
+					{...wrapperConfig}
+				>
 					<Container {...this.props} />
 				</div>
 			);
