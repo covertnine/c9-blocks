@@ -168,7 +168,7 @@ registerBlockType("c9-blocks/column", {
 			: applyFilters(
 					"blocks.getSaveContent.extraProps",
 					this.props,
-					getBlockType("c9-blocks/heading"),
+					getBlockType("c9-blocks/column"),
 					this.props.attributes
 			  );
 
