@@ -11,12 +11,13 @@ import classnames from "classnames";
  */
 const { Path, SVG } = wp.components;
 const { __ } = wp.i18n;
-const { InnerBlocks, BlockControls } = wp.blockEditor;
-const { registerBlockType, getBlockTypes } = wp.blocks;
+const { InnerBlocks, BlockControls, useBlockProps } = wp.blockEditor;
+const { registerBlockType, getBlockType, getBlockTypes } = wp.blocks;
 const { AlignmentToolbar } = wp.editor;
 const { Fragment } = wp.element;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
+const { applyFilters } = wp.hooks;
 
 /**
  * Create a Column wrapper Component
@@ -162,8 +163,18 @@ registerBlockType("c9-blocks/column", {
 			attributes: { textAlign, verticalAlign }
 		} = props;
 
+		const extraProps = useBlockProps
+			? useBlockProps.save()
+			: applyFilters(
+					"blocks.getSaveContent.extraProps",
+					props,
+					getBlockType("c9-blocks/column"),
+					props.attributes
+			  );
+
 		return (
 			<div
+				{...extraProps}
 				className={classnames(
 					"c9-block-layout-column",
 					"c9-column",
