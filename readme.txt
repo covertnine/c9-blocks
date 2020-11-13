@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
 Tested up to: 5.5
-Stable tag: 1.2
+Stable tag: 1.2.1
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper  right corner after installing the WordPress plugin.
 
-Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 WordPress Theme](https://www.covertnien.com/forms/c9-beta) with the C9 Blocks plugin, but it also works with the Twenty Twenty and Twenty Nineteen WordPress themes.
+Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 WordPress Theme](https://www.covertnine.com/forms/c9-beta) with the C9 Blocks plugin, but it also works with the Twenty Twenty and Twenty Nineteen WordPress themes.
 
 For an overview of each of the blocks, and more up to date documentation, head over to our [documentation  site](https://c9.covertnine.com).
 
@@ -60,6 +60,10 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.2.1 =
+
+Optimized SVG Icons.
 
 = 1.2 =
 Added alignwide and alignfull alignments to Carousels and Image Carousels. Added draggable heights for containers in C9 Grids. Several bug fixes to jumpy navigations, preparing plugins for animation settings. Bug fixes to alignments on some blocks. New page templates and section templates!
@@ -205,7 +209,7 @@ If you're working on behalf of a client or customer and want to build your own s
 
 Please visit our support forum: [Here](https://www.covertnine.com/community/support/)
 
-Get premium paid support: [Here](https://www.covertnien.com/get-support)
+Get premium paid support: [Here](https://www.covertnine.com/get-support)
 
 Main documentation can be found [Here](https://c9.covertnine.com/documentation/)
 
