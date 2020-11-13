@@ -26,6 +26,9 @@ const externals = require("./externals");
 const autoprefixer = require("autoprefixer");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const babelPreset = require("./babel-preset");
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+	.BundleAnalyzerPlugin;
 
 // Extract style.css for both editor and frontend styles.
 const blocksCSSPlugin = new ExtractTextPlugin({
@@ -189,10 +192,12 @@ module.exports = {
 		blocksCSSPlugin,
 		editBlocksCSSPlugin,
 		bootstrapBlocksCSSPlugin,
-		new webpack.SourceMapDevToolPlugin({})
+		new webpack.SourceMapDevToolPlugin({}),
+		new LodashModuleReplacementPlugin,
+		new BundleAnalyzerPlugin()
 	],
 	stats: "minimal",
 	// stats: 'errors-only',
 	// Add externals.
-	externals: externals
+	externals: externals,
 };

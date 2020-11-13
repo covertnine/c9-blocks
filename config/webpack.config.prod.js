@@ -27,6 +27,7 @@ const externals = require("./externals");
 const autoprefixer = require("autoprefixer");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const babelPreset = require("./babel-preset");
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = "true" === process.env.GENERATE_SOURCEMAP;
@@ -188,6 +189,7 @@ module.exports = {
 		blocksCSSPlugin,
 		editBlocksCSSPlugin,
 		bootstrapBlocksCSSPlugin,
+		new LodashModuleReplacementPlugin,
 		// Minify the code.
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
