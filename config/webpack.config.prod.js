@@ -20,79 +20,52 @@
  *
  * @since 1.0.0
  */
-
 const paths = require("./paths");
-const webpack = require("webpack");
 const externals = require("./externals");
 const autoprefixer = require("autoprefixer");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const babelPreset = require("./babel-preset");
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-// Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = "true" === process.env.GENERATE_SOURCEMAP;
-
-// Extract style.css for both editor and frontend styles.
-const blocksCSSPlugin = new ExtractTextPlugin({
-	filename: "./dist/blocks.style.build.css"
-});
-
-// Extract editor.css for editor styles.
-const editBlocksCSSPlugin = new ExtractTextPlugin({
-	filename: "./dist/blocks.editor.build.css"
-});
-
-// Extract editor.css for bootstrap styles.
-const bootstrapBlocksCSSPlugin = new ExtractTextPlugin({
-	filename: "./dist/blocks.bootstrap.build.css"
-});
-
-// Configuration for the ExtractTextPlugin — DRY rule.
-const extractConfig = {
-	use: [
-		// "postcss" loader applies autoprefixer to our CSS.
-		{
-			loader: "css-loader"
-		},
-		{
-			loader: "postcss-loader",
-			options: {
-				ident: "postcss",
-				plugins: [
-					autoprefixer({
-						flexbox: "no-2009"
-					})
-				]
+// utils
+const endsWith = require("lodash/endsWith");
+// cleanup empty css-js files
+class MiniCssExtractPluginCleanup {
+	constructor(deleteWhere = /\.css.build.js$/) {
+		this.shouldDelete = new RegExp(deleteWhere);
+	}
+	apply(compiler) {
+		compiler.hooks.emit.tapAsync(
+			"MiniCssExtractPluginCleanup",
+			(compilation, callback) => {
+				Object.keys(compilation.assets).forEach(asset => {
+					if (this.shouldDelete.test(asset)) {
+						delete compilation.assets[asset];
+					}
+				});
+				callback();
 			}
-		},
-		// "sass" loader converts SCSS to CSS.
-		{
-			loader: "sass-loader",
-			options: {
-				// Add common CSS file for variables and mixins.
-				data: '@import "./src/block-colors.scss";\n',
-				outputStyle: "nested"
-			}
-		}
-	]
-};
+		);
+	}
+}
 
 // Export configuration.
 module.exports = {
 	entry: {
-		"./dist/blocks.build": paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
-		"./dist/blocks.frontend.build": paths.pluginBlocksFrontendJs,
-		"./dist/blocks.update-category.build": paths.pluginBlocksUpdateCategoryJs
+		"/dist/blocks": paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
+		"/dist/blocks.frontend": paths.pluginBlocksFrontendJs,
+		"/dist/blocks.update-category": paths.pluginBlocksUpdateCategoryJs
 	},
 	output: {
 		// Add /* filename */ comments to generated require()s in the output.
 		pathinfo: true,
 		// The dist folder.
 		path: paths.pluginDist,
-		filename: "[name].js" // [name] = './dist/blocks.build' as defined above.
+		filename: "[name].build.js" // [name] = './dist/blocks.build' as defined above.
 	},
 	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
-	devtool: shouldUseSourceMap ? "source-map" : false,
+	devtool: false,
 	module: {
 		rules: [
 			{
@@ -113,34 +86,33 @@ module.exports = {
 				}
 			},
 			{
-				test: /style\.s?css$/,
-				exclude: /(node_modules|bower_components|src\/components)/,
-				use: blocksCSSPlugin.extract(extractConfig)
-			},
-			{
-				test: /editor\.s?css$/,
-				exclude: /(node_modules|bower_components|src\/components)/,
-				use: editBlocksCSSPlugin.extract(extractConfig)
-			},
-			{
-				test: /bootstrap\.s?css$/,
-				exclude: /(node_modules|bower_components|src\/components)/,
-				use: bootstrapBlocksCSSPlugin.extract(extractConfig)
-			},
-			{
-				test: /src\/components\/.+\/editor\.s?css$/,
+				test: /\.s?css$/,
+				exclude: /(node_modules|bower_components)/,
 				use: [
+					MiniCssExtractPlugin.loader, // "postcss" loader applies autoprefixer to our CSS.
+					// "postcss" loader applies autoprefixer to our CSS.
 					{
-						loader: "style-loader" // creates style nodes from JS strings
+						loader: "css-loader"
 					},
 					{
-						loader: "css-loader", // translates CSS into CommonJS
+						loader: "postcss-loader",
 						options: {
-							url: false
+							ident: "postcss",
+							plugins: [
+								autoprefixer({
+									flexbox: "no-2009"
+								})
+							]
 						}
 					},
+					// "sass" loader converts SCSS to CSS.
 					{
-						loader: "sass-loader" // compiles Sass to CSS
+						loader: "sass-loader",
+						options: {
+							// Add common CSS file for variables and mixins.
+							data: '@import "./src/block-colors.scss";\n',
+							outputStyle: "nested"
+						}
 					}
 				]
 			},
@@ -160,7 +132,6 @@ module.exports = {
 								}
 							]
 						},
-						sourceMap: true
 					}
 				}
 			},
@@ -172,49 +143,61 @@ module.exports = {
 				},
 				use: {
 					loader: "svg-url-loader",
-					options: { sourceMap: true }
 				}
 			},
 			{
 				test: /\.(png|jpg|gif)$/i,
 				use: {
 					loader: "url-loader",
-					options: { sourceMap: true }
 				}
 			}
 		]
 	},
 	// Add plugins.
 	plugins: [
-		blocksCSSPlugin,
-		editBlocksCSSPlugin,
-		bootstrapBlocksCSSPlugin,
-		new LodashModuleReplacementPlugin,
-		// Minify the code.
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false,
-				// Disabled because of an issue with Uglify breaking seemingly valid code:
-				// https://github.com/facebookincubator/create-react-app/issues/2376
-				// Pending further investigation:
-				// https://github.com/mishoo/UglifyJS2/issues/2011
-				comparisons: false
-			},
-			mangle: {
-				safari10: true,
-				except: ["__", "_n", "_x", "_nx"]
-			},
-			output: {
-				comments: false,
-				// Turned on because emoji and regex is not minified properly using default
-				// https://github.com/facebookincubator/create-react-app/issues/2488
-				ascii_only: true
-			},
-			sourceMap: shouldUseSourceMap
-		})
+		new MiniCssExtractPlugin({
+			filename: "[name].style.build.css",
+			chunkFilename: "[name]"
+		}),
+		new MiniCssExtractPluginCleanup(),
+		new LodashModuleReplacementPlugin(),
+		new BundleAnalyzerPlugin()
 	],
 	stats: "minimal",
 	// stats: 'errors-only',
 	// Add externals.
-	externals: externals
+	externals: externals,
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				commons: {
+					test: /[\\/]node_modules[\\/]/,
+					name: "/dist/blocks.vendors",
+					chunks: "all"
+				},
+				editorCSS: {
+					name: "/dist/blocks.editor.build.css",
+					test(module) {
+						return (
+							"css/mini-extract" === module.type &&
+							endsWith(module._identifier, "editor.scss")
+						);
+					},
+					chunks: "all",
+					enforce: true
+				},
+				bootstrapCSS: {
+					name: "/dist/blocks.bootstrap.build.css",
+					test(module) {
+						return (
+							"css/mini-extract" === module.type &&
+							endsWith(module._identifier, "bootstrap.css")
+						);
+					},
+					chunks: "all",
+					enforce: true
+				}
+			}
+		}
+	}
 };

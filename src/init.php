@@ -247,6 +247,13 @@ function c9_blocks_cgb_editor_assets()
 		false
 	);
 
+	// vendor deps
+	wp_enqueue_script(
+		'c9_blocks-vendor',
+		plugins_url('dist/blocks.vendors.build.js', dirname(__FILE__)),
+		array()
+	);
+
 	// update category, e.g. add icon and dequeue core blocks we don't want users using.
 	wp_enqueue_script(
 		'c9_blocks-update-category',
