@@ -12,7 +12,6 @@ import Icon from "../../../assets/icon-c9-post-grid.svg";
  * Styles
  */
 import "./styles/style.scss";
-import "./styles/editor.scss";
 
 /**
  * WordPress dependencies

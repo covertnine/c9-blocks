@@ -9,7 +9,6 @@ import attributes from "./attributes";
  * Styles
  */
 import "./styles/style.scss";
-import "./styles/editor.scss";
 
 import Icon from "../../../assets/icon-c9-tabs-horizontal.svg";
 

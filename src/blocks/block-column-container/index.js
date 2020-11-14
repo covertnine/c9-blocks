@@ -9,7 +9,6 @@ import attributes from "./attributes";
  * Styles
  */
 import "./styles/style.scss";
-import "./styles/editor.scss";
 
 /**
  * WordPress dependencies

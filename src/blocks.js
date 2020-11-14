@@ -10,19 +10,14 @@
  */
 
 /**
+ * Register block category + side menu.
+ */
+import "./update-category";
+
+/**
  * Block extensions.
  */
 import "./extend";
-
-/**
- * Import global styles.
- */
-import "./block-globals.editor.scss";
-
-/**
- * Import vendor styles.
- */
-import "./vendor.js";
 
 // set locale
 import "./blocks/i18n.js";

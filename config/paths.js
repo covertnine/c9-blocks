@@ -29,8 +29,9 @@ module.exports = {
 	pluginSrc: resolvePlugin( 'src' ),
 	pluginBlocksJs: resolvePlugin( 'src/blocks.js' ),
 	pluginBlocksFrontendJs: resolvePlugin( 'src/frontend.js' ),
-	pluginBlocksUpdateCategoryJs: resolvePlugin( 'src/update-category.js'),
-	pluginDist: resolvePlugin( '.' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
+	pluginBlocksBootstrapJs: resolvePlugin( 'src/vendor.js'),
+	pluginBlocksEditorJs: resolvePlugin( 'src/editor.js'),
+	pluginDist: resolvePlugin( 'dist/' ), // We are in ./dist folder already so the path '.' resolves to ./dist/.
 	yarnLockFile: resolvePlugin( 'yarn.lock' ),
 	appPath: resolvePlugin( '.' ),
 	// These properties only exist before ejecting:
