@@ -3,6 +3,8 @@ const externals = require("./externals");
 const autoprefixer = require("autoprefixer");
 const babelPreset = require("./babel-preset");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -39,11 +41,12 @@ module.exports = {
 		path: paths.pluginDist,
 		filename: "[name].build.js"
 	},
-	devtool: "inline-source-map",
+	devtool: false,
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: "[name].build.css"
 		}),
+		new CssMinimizerPlugin(),
 		new MiniCssExtractPluginCleanup(),
 		new LodashModuleReplacementPlugin()
 		// new BundleAnalyzerPlugin(),
@@ -130,6 +133,15 @@ module.exports = {
 	stats: "minimal",
 	externals: externals,
 	optimization: {
+		minimizer: [
+			new TerserPlugin({
+				terserOptions: {
+					output: {
+						comments: false
+					}
+				}
+			})
+		],
 		splitChunks: {
 			cacheGroups: {
 				vendor: {
