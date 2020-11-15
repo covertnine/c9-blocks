@@ -3,10 +3,11 @@ const externals = require("./externals");
 const autoprefixer = require("autoprefixer");
 const babelPreset = require("./babel-preset");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // cleanup empty css-js files
 class MiniCssExtractPluginCleanup {
@@ -48,8 +49,31 @@ module.exports = {
 		}),
 		new CssMinimizerPlugin(),
 		new MiniCssExtractPluginCleanup(),
-		new LodashModuleReplacementPlugin()
-		// new BundleAnalyzerPlugin(),
+		new ImageMinimizerPlugin({
+			minimizerOptions: {
+				// Lossless optimization with custom option
+				plugins: [
+					["gifsicle", { interlaced: true }],
+					["jpegtran", { progressive: true }],
+					["optipng", { optimizationLevel: 5 }],
+					[
+						"svgo",
+						{
+							plugins: [
+								{
+									removeViewBox: false
+								}
+							]
+						}
+					]
+				]
+			}
+		}),
+		new LodashModuleReplacementPlugin({
+			collections: true,
+			paths: true
+		}),
+		new BundleAnalyzerPlugin(),
 	],
 	module: {
 		rules: [
@@ -106,6 +130,8 @@ module.exports = {
 				use: {
 					loader: "@svgr/webpack",
 					options: {
+						memo: true,
+						prettier: false,
 						svgoConfig: {
 							plugins: [
 								{
