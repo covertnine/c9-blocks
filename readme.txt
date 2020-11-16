@@ -63,7 +63,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 = 1.2.1 =
 
-Optimized SVG Icons.
+Optimized SVG icons, optimizing frontend file size, modal style updates.
 
 = 1.2 =
 Added alignwide and alignfull alignments to Carousels and Image Carousels. Added draggable heights for containers in C9 Grids. Several bug fixes to jumpy navigations, preparing plugins for animation settings. Bug fixes to alignments on some blocks. New page templates and section templates!
@@ -132,7 +132,10 @@ Compatibility updates for WP 5.4 release to deprecated code. Fixed video backgro
 
 == Upgrade Notice ==
 
-= 1.1.1
+= 1.2.1 =
+* This version is compatible with C9 Blocks Animation v1.0.1
+
+= 1.1.1 =
 * Some blocks have different markup and may require using "Attempt Block Recovery" settings for blocks with changed markup. Most blocks should be recovered after doing block recovery and saving posts again. IE11 support includes changed markup for C9 Grid backgrounds that should just work with PHP rendering.
 
 = 1.0.5 =
