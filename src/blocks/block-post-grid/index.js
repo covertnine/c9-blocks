@@ -7,7 +7,6 @@ import Edit from "./edit";
  * Styles
  */
 import "./styles/style.scss";
-import "./styles/editor.scss";
 
 import Icon from "../../../assets/icon-c9-post-grid.svg";
 
@@ -55,9 +54,15 @@ registerBlockType("c9-blocks/post-grid", {
 
 	edit: compose([
 		withSelect((select, props) => {
-			const { order, categories, tags, filterByCategory, filterByTag } = props.attributes;
+			const {
+				order,
+				categories,
+				tags,
+				filterByCategory,
+				filterByTag
+			} = props.attributes;
 
-			const { getEntityRecords } = select("core", "c9-blocks");
+			const { getEntityRecords, getMedia } = select("core", "c9-blocks");
 
 			const setCategories = filterByCategory ? categories : undefined;
 			const setTags = filterByTag ? tags : undefined;
@@ -80,7 +85,8 @@ registerBlockType("c9-blocks/post-grid", {
 					"postType",
 					props.attributes.postType,
 					latestPostsQuery
-				)
+				),
+				getMedia
 			};
 		})
 	])(Edit),

@@ -8,7 +8,7 @@ const { Toolbar } = wp.components;
 /**
  * External dependencies
  */
-import { range } from "lodash";
+import range from "lodash/range";
 
 /**
  * Create a HeadingToolbar wrapper Component

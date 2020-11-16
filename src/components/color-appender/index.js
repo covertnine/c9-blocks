@@ -7,11 +7,6 @@
 import CustomPalette from "../custom-palette";
 
 /**
- * Styles
- */
-import "./editor.scss";
-
-/**
  * WordPress dependencies
  */
 const { __, sprintf } = wp.i18n;

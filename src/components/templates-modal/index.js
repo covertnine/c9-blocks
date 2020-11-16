@@ -13,11 +13,6 @@ import icons from "../../../assets/sidebar-icons";
 import PreviewPanel from "../preview-panel";
 
 /**
- * Styles
- */
-import "./editor.scss";
-
-/**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
@@ -192,7 +187,7 @@ class TemplatesModal extends Component {
 		};
 
 		const onHover = item => {
-			console.log(item);
+			// console.log(item);
 			this.setState({ hoveredItem: item });
 		};
 

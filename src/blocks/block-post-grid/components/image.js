@@ -59,7 +59,7 @@ export default class PostGridImage extends Component {
 	getImageUrl() {
 		return get(
 			/* getMedia accepts an image id and returns an object with all the image data. */
-			wp.data.select("core").getMedia(this.props.imgID),
+			this.props.getMedia(this.props.imgID),
 			[
 				"media_details",
 				"sizes",
@@ -74,7 +74,7 @@ export default class PostGridImage extends Component {
 	getFullImageSize() {
 		return get(
 			/* getMedia accepts an image id and returns an object with all the image data. */
-			wp.data.select("core").getMedia(this.props.imgID),
+			this.props.getMedia(this.props.imgID),
 			[
 				"media_details",
 				"sizes",

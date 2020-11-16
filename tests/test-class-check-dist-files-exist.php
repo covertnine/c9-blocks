@@ -14,7 +14,7 @@ class Dist_File_Exist_Test extends WP_UnitTestCase {
 	 * Tests if dist contains all files
 	 */
 	function test_vendor_script_filename() {
-		$cases = array( 'blocks.build.js', 'blocks.editor.build.css', 'blocks.frontend.build.js', 'blocks.style.build.css', 'blocks.update-category.build.js' );
+		$cases = array( 'blocks.build.js', 'blocks.editor.build.css', 'blocks.frontend.build.js', 'blocks.build.css', 'blocks.vendors.build.js' );
 
 		$path  = dirname( __DIR__ ) . '/dist';
 		$files = scandir( $path );

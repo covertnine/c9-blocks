@@ -23,7 +23,8 @@ const { Button } = wp.components;
  * External Dependencies.
  */
 import classnames from "classnames";
-import { get, pick } from "lodash";
+import get from "lodash/get";
+import pick from "lodash/pick";
 import React from "react";
 
 const ALLOWED_MEDIA_TYPES = ["image"];

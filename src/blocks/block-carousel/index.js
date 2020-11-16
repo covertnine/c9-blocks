@@ -10,7 +10,6 @@ import Deprecated from "./deprecated";
  * Styles
  */
 import "./styles/style.scss";
-import "./styles/editor.scss";
 
 import Icon from "../../../assets/icon-c9-anything-carousel.svg";
 

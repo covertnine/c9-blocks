@@ -7,7 +7,6 @@ import Edit from "./edit";
  * Styles
  */
 import "./styles/style.scss";
-import "./styles/editor.scss";
 
 import Icon from "../../../assets/icon-c9-social-share.svg";
 

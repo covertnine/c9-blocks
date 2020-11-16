@@ -220,9 +220,9 @@ function c9_blocks_cgb_block_assets()
 	// Styles.
 	wp_enqueue_style(
 		'c9-blocks-style', // Handle.
-		plugins_url('/dist/blocks.style.build.css', dirname(__FILE__)), // Block style CSS.
+		plugins_url('dist/blocks.build.css', dirname(__FILE__)), // Block style CSS.
 		array(), // Dependency to include the CSS after it.
-		filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.style.build.css') // Version: filemtime — Gets file modification time.
+		filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.css') // Version: filemtime — Gets file modification time.
 	);
 } // End function c9_blocks_cgb_block_assets().
 
@@ -247,18 +247,18 @@ function c9_blocks_cgb_editor_assets()
 		false
 	);
 
-	// update category, e.g. add icon and dequeue core blocks we don't want users using.
+	// vendor deps
 	wp_enqueue_script(
-		'c9_blocks-update-category',
-		plugins_url('dist/blocks.update-category.build.js', dirname(__FILE__)),
-		array('wp-hooks', 'wp-blocks', 'wp-components', 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-api')
+		'c9_blocks-vendor',
+		plugins_url('dist/blocks.vendors.build.js', dirname(__FILE__)),
+		array()
 	);
 
 	// Scripts.
 	wp_enqueue_script(
 		'c9_blocks-cgb-block-js', // Handle.
-		plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
-		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-api', 'youtube-api'), // Dependencies, defined above.
+		plugins_url('dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
+		array('c9_blocks-vendor', 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-api', 'youtube-api'), // Dependencies, defined above.
 		filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.js'), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
@@ -342,7 +342,7 @@ function c9_check_bootstrap()
 
 // Check bootstrap - frontend.
 add_action('enqueue_block_editor_assets', 'c9_check_bootstrap', 130);
-add_action('wp_enqueue_scripts', 'c9_check_bootstrap', 100);
+add_action('wp_enqueue_scripts', 'c9_check_bootstrap', 90);
 
 
 /**
@@ -366,7 +366,7 @@ function c9_blocks_front_assets()
 }
 
 // Hook: c9 Blocks Frontend.
-add_action('wp_enqueue_scripts', 'c9_blocks_front_assets', 110);
+add_action('wp_enqueue_scripts', 'c9_blocks_front_assets', 100);
 
 /**
  * Create Link to Manage Reusable Blocks in Appearance Menu

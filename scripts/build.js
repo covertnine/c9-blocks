@@ -27,17 +27,14 @@ const formatWebpackMessages = require(cgbDevUtilsPath +
 
 // Build file paths.
 const theCWD = process.cwd();
+const fileBuildVendorsJs = path.resolve(theCWD, "./dist/blocks.vendors.build.js");
 const fileBuildJS = path.resolve(theCWD, "./dist/blocks.build.js");
 const fileBuildFrontendJs = path.resolve(
 	theCWD,
 	"./dist/blocks.frontend.build.js"
 );
-const fileBuildUpdateCategoryJs = path.resolve(
-	theCWD,
-	"./dist/blocks.update-category.build.js"
-);
 const fileEditorCSS = path.resolve(theCWD, "./dist/blocks.editor.build.css");
-const fileStyleCSS = path.resolve(theCWD, "./dist/blocks.style.build.css");
+const fileStyleCSS = path.resolve(theCWD, "./dist/blocks.build.css");
 
 /**
  * Get File Size
@@ -115,6 +112,10 @@ async function build(webpackConfig) {
 			"\n\n",
 			"File sizes after gzip:",
 			"\n\n",
+			getFileSize(fileBuildVendorsJs),
+			`${chalk.dim("— ./dist/")}`,
+			`${chalk.green("blocks.vendors.build.js")}`,
+			"\n",
 			getFileSize(fileBuildJS),
 			`${chalk.dim("— ./dist/")}`,
 			`${chalk.green("blocks.build.js")}`,
@@ -123,17 +124,13 @@ async function build(webpackConfig) {
 			`${chalk.dim("— ./dist/")}`,
 			`${chalk.green("blocks.frontend.build.js")}`,
 			"\n",
-			getFileSize(fileBuildUpdateCategoryJs),
-			`${chalk.dim("— ./dist/")}`,
-			`${chalk.green("blocks.update-category.build.js")}`,
-			"\n",
 			getFileSize(fileEditorCSS),
 			`${chalk.dim("— ./dist/")}`,
 			`${chalk.green("blocks.editor.build.css")}`,
 			"\n",
 			getFileSize(fileStyleCSS),
 			`${chalk.dim("— ./dist/")}`,
-			`${chalk.green("blocks.style.build.css")}`,
+			`${chalk.green("blocks.build.css")}`,
 			"\n\n"
 		);
 

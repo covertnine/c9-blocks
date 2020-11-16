@@ -21,8 +21,10 @@ const { applyFilters } = wp.hooks;
 /**
  * External dependencies
  */
-import moment from "moment";
 import classnames from "classnames";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
 
 export default class Edit extends Component {
 	constructor() {
@@ -333,14 +335,14 @@ export default class Edit extends Component {
 
 												{attributes.displayPostDate && post.date_gmt && (
 													<time
-														dateTime={moment(post.date_gmt)
+														dateTime={dayjs(post.date_gmt)
 															.utc()
 															.format()}
 														className={"c9-block-post-grid-date"}
 													>
-														{moment(post.date_gmt)
+														{dayjs(post.date_gmt)
 															.local()
-															.format("MMMM DD, Y", "c9-blocks")}
+															.format("MMMM DD, YYYY", "c9-blocks")}
 													</time>
 												)}
 											</div>

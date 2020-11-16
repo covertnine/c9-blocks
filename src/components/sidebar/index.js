@@ -7,11 +7,6 @@ import { TemplatesModal } from "../templates-modal";
 import icons from "../../../assets/sidebar-icons";
 
 /**
- * Styles
- */
-import "./editor.scss";
-
-/**
  * WordPress dependencies
  */
 const { registerPlugin } = wp.plugins;
@@ -19,7 +14,7 @@ const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { Button, PanelBody, Dashicon, Icon } = wp.components;
+const { Button, PanelBody, Icon } = wp.components;
 const { withDispatch } = wp.data;
 
 const ICON_SIZE = 80;
