@@ -3,8 +3,8 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
-Tested up to: 5.5
-Stable tag: 1.2.1
+Tested up to: 5.5.3
+Stable tag: 1.2.2
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,8 +61,10 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
-= 1.2.1 =
+= 1.2.2 =
+Bug fix for C9 Blocks Animations with video background C9 Grids.
 
+= 1.2.1 =
 Optimized SVG icons, optimizing frontend file size, modal style updates.
 
 = 1.2 =
