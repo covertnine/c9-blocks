@@ -62,9 +62,9 @@ class Sidebar extends Component {
 				>
 					<PanelBody className="plugin-c9-panel">
 						<Button
-							className="plugin-c9-panel-button"
+							className="plugin-c9-panel-button is-large"
 							isSecondary
-							isLarge
+							key="page-panel-button"
 							onClick={() => {
 								this.setState({ isModalOpen: "page-templates" });
 							}}
@@ -73,9 +73,9 @@ class Sidebar extends Component {
 							{__("Page Templates", "c9-blocks")}
 						</Button>
 						<Button
-							className="plugin-c9-panel-button"
+							className="plugin-c9-panel-button is-large"
 							isSecondary
-							isLarge
+							key="section-panel-button"
 							onClick={() => {
 								this.setState({ loading: true });
 								this.setState({ isModalOpen: "section-templates" });
@@ -86,9 +86,9 @@ class Sidebar extends Component {
 							{__("Section Templates", "c9-blocks")}
 						</Button>
 						<Button
-							className="plugin-c9-panel-button"
+							className="plugin-c9-panel-button is-large"
 							isSecondary
-							isLarge
+							key="saved-panel-button"
 							onClick={() => {
 								this.setState({ isModalOpen: "saved-blocks" });
 							}}
@@ -97,9 +97,9 @@ class Sidebar extends Component {
 							{__("Reusable Blocks", "c9-blocks")}
 						</Button>
 						<Button
-							className="plugin-c9-panel-button"
+							className="plugin-c9-panel-button is-large"
 							isSecondary
-							isLarge
+							key="reset-panel-button"
 							onClick={() => {
 								resetBlocks([]);
 							}}
