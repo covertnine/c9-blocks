@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
 Tested up to: 5.5.3
-Stable tag: 1.2.2
+Stable tag: 1.2.4
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.2.4 =
+Fixing C9 Grid blocks causing horizontal scrollbar in Chrome on Windows, alignment fixes for C9 Posts Grid container, modal grid icon size adjustments.
 
 = 1.2.3 =
 Adjustments to templates modal on smaller screens, fixes for some JS errors showing up for some users.

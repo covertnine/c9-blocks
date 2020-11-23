@@ -432,7 +432,7 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container,
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container {
 		width: 1140px;
-		max-width: calc(100vw - 280px - 116px - 6%);
+		max-width: 1140px;
 		margin-left: 0;
 		margin-right: 0;
 	}
