@@ -61,6 +61,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
+= 1.2.3 =
+Adjustments to templates modal on smaller screens, fixes for some JS errors showing up for some users.
+
 = 1.2.2 =
 Bug fix for C9 Blocks Animations with video background C9 Grids.
 
