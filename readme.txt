@@ -61,6 +61,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
+= 1.2.4 =
+Fixing C9 Grid blocks causing horizontal scrollbar in Chrome on Windows, alignment fixes for C9 Posts Grid container, modal grid icon size adjustments.
+
 = 1.2.3 =
 Adjustments to templates modal on smaller screens, fixes for some JS errors showing up for some users.
 

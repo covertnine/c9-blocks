@@ -24,6 +24,10 @@
 	background-attachment: scroll;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 .c9-grid {
 	display: -ms-grid;
 	display: grid;

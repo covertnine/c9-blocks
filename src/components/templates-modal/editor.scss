@@ -219,7 +219,7 @@ body .c9-templates-modal {
 			grid-auto-rows: minmax(min-content, max-content);
 
 			@media (min-width:1500px) {
-				grid-template-columns: repeat(4, 1fr);
+				grid-template-columns: repeat(3, 1fr);
 			}
 
 			button {
@@ -293,6 +293,19 @@ body .c9-templates-modal {
 				}
 			}
 		}
+
+		.c9-reusable-list {
+			@media (min-width:1500px) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+
+		.c9-section-options {
+			@media (min-width:1600px) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+
 
 		.c9-section-options {
 			button:not(.btn-clear) {
