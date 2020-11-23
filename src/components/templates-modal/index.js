@@ -178,8 +178,8 @@ class TemplatesModal extends Component {
 		const TutButton = ({ title, url, imgUrl }) => {
 			return (
 				<div className="c9-tut-wrapper">
-					<img src={imgUrl} alt={`tutorial for ${title}`} />
 					<a href={url} target="_blank" rel="noopener noreferrer">
+						<img src={imgUrl} alt={`tutorial for ${title}`} />
 						<h4>{decodeEntities(title)}</h4>
 					</a>
 				</div>
@@ -300,8 +300,8 @@ class TemplatesModal extends Component {
 						{
 							name: "saved-blocks",
 							title: (
-								<Tooltip text={__("My Templates.", "c9-blocks")}>
-									<span>{__("Reusable Blocks")}</span>
+								<Tooltip text={__("Reusable Block Templates Saved By User.", "c9-blocks")}>
+									<span>{__("Reusable")}</span>
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
@@ -314,16 +314,6 @@ class TemplatesModal extends Component {
 								</Tooltip>
 							),
 							className: "c9-template-tabs-tab"
-						},
-						{
-							name: "clear-page",
-							title: (
-								<Fragment className="btn btn-danger btn-clear">
-									<Icon icon={icons.close} />
-									<span>{__("Clear page", "c9-blocks")}</span>
-								</Fragment>
-							),
-							className: "c9-template-tabs-tab tab-clear"
 						}
 					]}
 					initialTabName={this.props.initial}

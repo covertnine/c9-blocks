@@ -516,14 +516,16 @@ body .c9-templates-modal {
 			}
 
 			h4 {
+				display: block;
+				font-weight: bold;
+				color: #576D7B;
+				letter-spacing: .4px;
 				text-transform: uppercase;
-				margin-bottom: 0;
-				font-size: 13px;
-				letter-spacing: .5px;
+				text-align: left;
+				padding-top: 1px;
+				font-size: 12px;
 				line-height: 1.1;
-				text-decoration: none;
-				color: #576d7b;
-				font-weight: 400;
+				margin: 0px 0px 5px 0px;
 			}
 
 			a {
@@ -599,6 +601,40 @@ body .c9-templates-modal {
 			}
 		}
 	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+	body .c9-templates-modal {
+		min-width: 50vw;
+		max-width: 50vw;
+	}
+
+	body .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {
+		font-size: 12px;
+		padding: 10px 14px;
+		margin-right: 4px;
+	}
+
+	body .c9-templates-modal .c9-type-heading {
+		display: block;
+		text-align: left;
+		margin: 10px 0px 20px 0px;
+	}
+
+	body .c9-templates-modal .c9-type-heading p {
+		margin-left: 0px;
+	}
+
+	body .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options,
+	body .c9-templates-modal .c9-component-modal-tab-panel .c9-section-options,
+	body .c9-templates-modal .c9-component-modal-tab-panel .c9-tutorials {
+		grid-template-columns: 1fr;
+	}
+
+	body .c9-templates-modal .c9-component-modal-tab-panel .c9-reusable-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
 }
 
 @-webkit-keyframes scaleIn {
