@@ -26,7 +26,8 @@ function readyYoutube(playerID, videoID) {
 			},
 			videoId: videoID,
 			events: {
-				onReady: onPlayerReady
+				onReady: onPlayerReady,
+				onError: onPlayerError,
 			}
 		});
 	} else {
@@ -44,6 +45,16 @@ function onPlayerReady(event) {
 	// this .c9-video element -> .c9-embed-container -> .c9-video-container
 	// console.log(event.target)
 	event.target.f.parentNode.parentNode.style.opacity = 1;
+}
+
+// API will call this function if the video player has an error.
+function onPlayerError(data) {
+	console.log('The YouTube IFrame Player API fired an onError event with error code: ' + data.data);
+	data.target.f.parentNode.parentNode.style.opacity = 0;
+	// The error still flashes for a split second, can't stop it but let's atleast make it less jarring:
+	data.target.f.parentNode.parentNode.style.transition = '300ms';
+	// In case you want to target it with css:
+	data.target.f.parentNode.parentNode.dataset.c9VideoContainerError = data.data;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
