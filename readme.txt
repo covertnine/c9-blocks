@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
 Tested up to: 5.5.3
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,7 +43,7 @@ For an overview of each of the blocks, and more up to date documentation, head o
 
 The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well as the C9 Starter Theme. We're working to make the plugin work with other themes too. If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
-[Get the C9 Theme](https://www.covertnine.com/forms/c9-beta)
+[Get the C9 Theme](https://www.covertnine.com/form/c9-beta)
 
 
 = Do I need the new block editor to use C9 Blocks? =
@@ -60,6 +60,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.2.5 =
+Updates to style guide landing page template, hiding post and page blocks from root insertion, maintenance update.
 
 = 1.2.4 =
 Fixing C9 Grid blocks causing horizontal scrollbar in Chrome on Windows, alignment fixes for C9 Posts Grid container, modal grid icon size adjustments.
@@ -179,6 +182,10 @@ We're constantly updating videos on the [C9 Docs](https://c9.covertnine.com) sit
 **What's it like editing content with C9 Blocks & C9 Themes?**
 
 https://www.youtube.com/watch?v=zu3JyJr5eeM
+
+**Creating marketing-focused landing pages with C9 Blocks + C9 Starter Theme**
+
+https://www.youtube.com/watch?v=8qyP5abkoe4
 
 **How to Create a Homepage for the Twenty Twenty WordPress Theme**
 
