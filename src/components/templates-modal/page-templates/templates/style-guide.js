@@ -60,7 +60,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(38,38,38,.8);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:51.61290322580645% 17.6056338028169%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":1} -->
+<!-- wp:c9-blocks/grid {"instanceId":1,"rows":3} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Paragraphs","tagLevel":3} -->
@@ -119,7 +119,43 @@ export default {
 <!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link" href="#">Button Link</a></div>
 <!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
+<!-- /wp:buttons -->
+
+<!-- wp:spacer {"height":30} -->
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link">Single Button</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"borderRadius":21} -->
+<div class="wp-block-button"><a class="wp-block-button__link" style="border-radius:21px">Round Button</a></div>
+<!-- /wp:button -->
+
+<!-- wp:spacer {"height":30} -->
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:c9-blocks/heading {"heading":"Seperators + Horizontal Rules","tagLevel":3} -->
+<div class="section-heading c9-heading text-left"><h3 class="c9-h">Seperators + Horizontal Rules</h3></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:separator {"customColor":"#bcbcbc"} -->
+<hr class="wp-block-separator has-text-color has-background" style="background-color:#bcbcbc;color:#bcbcbc"/>
+<!-- /wp:separator -->
+
+<!-- wp:separator {"customColor":"#bcbcbc","className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#bcbcbc;color:#bcbcbc"/>
+<!-- /wp:separator -->
+
+<!-- wp:separator {"customColor":"#d05050","className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#d05050;color:#d05050"/>
+<!-- /wp:separator --></div></div>
 <!-- /wp:c9-blocks/column -->
 
 <!-- wp:c9-blocks/column -->
@@ -145,7 +181,49 @@ export default {
 
 <!-- wp:paragraph {"fontSize":"huge"} -->
 <p class="has-huge-font-size">Nunc scelerisque odio ut ipsum convallis fermentum. Mauris eu.</p>
-<!-- /wp:paragraph --></div></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:spacer {"height":30} -->
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:c9-blocks/heading {"heading":"Code + Pre","tagLevel":3} -->
+<div class="section-heading c9-heading text-left"><h3 class="c9-h">Code + Pre</h3></div>
+<!-- /wp:c9-blocks/heading -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>.the-best-styles {
+  font-family: 'Oswald', sans-serif;
+  color: black;
+/* like your soul */
+}</code></pre>
+<!-- /wp:code --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container -->
+
+<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","containerMargin":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1"}} -->
+<div class="container c9-column-container mt-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:c9-blocks/heading {"heading":"C9 Pullquotes + Blockquotes","type":"c9-txl display-","textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1">C9 Pullquotes + Blockquotes</h1></div>
+<!-- /wp:c9-blocks/heading --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container -->
+
+<!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal"} -->
+<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:pullquote -->
+<figure class="wp-block-pullquote"><blockquote><p><strong>Pullquote. </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><cite>Guy Fawkes.</cite></blockquote></figure>
+<!-- /wp:pullquote --></div></div>
+<!-- /wp:c9-blocks/column -->
+
+<!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:quote -->
+<blockquote class="wp-block-quote"><p><strong>Quote Block. </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><cite>Guy Fawkes.</cite></blockquote>
+<!-- /wp:quote --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
@@ -344,6 +422,38 @@ export default {
 <!-- /wp:paragraph -->
 <!-- /wp:c9-blocks/vertical-tabs-tab --></div></div></div>
 <!-- /wp:c9-blocks/vertical-tabs --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container --></div>
+<!-- /wp:c9-blocks/grid -->
+
+<!-- wp:c9-blocks/grid {"instanceId":5,"rows":2} -->
+<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
+<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"C9 Tables","type":"c9-txl display-","textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1">C9 Tables</h1></div>
+<!-- /wp:c9-blocks/heading --></div></div>
+<!-- /wp:c9-blocks/column --></div></div>
+<!-- /wp:c9-blocks/column-container -->
+
+<!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal"} -->
+<div class="container alignwide c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
+<p><strong>Default Table Style</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table -->
+<figure class="wp-block-table"><table><thead><tr><th>Label</th><th>Title</th><th>Price</th></tr></thead><tbody><tr><td>First Row</td><td>Title of First Row</td><td>$4.20</td></tr><tr><td>Second Row</td><td>Second Row Title</td><td>$104.12</td></tr><tr><td>Third Row</td><td>Third Row Title</td><td>$0.99</td></tr><tr><td>Fourth Row</td><td>Fourth Row Title</td><td>$1.35</td></tr><tr><td>Fifth Row</td><td>Title of 5th Row</td><td>$2.31</td></tr></tbody><tfoot><tr><td>Total</td><td></td><td>$232.04</td></tr></tfoot></table><figcaption>Table Caption</figcaption></figure>
+<!-- /wp:table --></div></div>
+<!-- /wp:c9-blocks/column -->
+
+<!-- wp:c9-blocks/column -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
+<p><strong>Stripes Table Style</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table {"className":"is-style-stripes"} -->
+<figure class="wp-block-table is-style-stripes"><table><thead><tr><th>Label</th><th>Title</th><th>Price</th></tr></thead><tbody><tr><td>First Row</td><td>Title of First Row</td><td>$99.99</td></tr><tr><td>Second Row</td><td>Second Row Title</td><td>$104.12</td></tr><tr><td>Third Row</td><td>Third Row Title</td><td>$0.99</td></tr><tr><td>Fourth Row</td><td>Fourth Row Title</td><td>$1.35</td></tr><tr><td>Fifth Row</td><td>Title of 5th Row</td><td>$4.20</td></tr></tbody><tfoot><tr><td>Total</td><td></td><td>$232.04</td></tr></tfoot></table><figcaption>Table Caption</figcaption></figure>
+<!-- /wp:table --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
