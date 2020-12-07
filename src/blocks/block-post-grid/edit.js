@@ -14,8 +14,8 @@ import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolba
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { decodeEntities } = wp.htmlEntities;
-const { Placeholder, Spinner, Toolbar } = wp.components;
-const { BlockControls } = wp.editor;
+const { Placeholder, Spinner, ToolbarGroup } = wp.components;
+const { BlockControls } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 
 /**
@@ -255,7 +255,7 @@ export default class Edit extends Component {
 							setAttributes({ verticalAlign: value });
 						}}
 					/>
-					<Toolbar controls={layoutControls} />
+					<ToolbarGroup controls={layoutControls} />
 				</BlockControls>
 				<SectionTag
 					style={this.c9BgStyles(bgColor, bgOpacity)}

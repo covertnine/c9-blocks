@@ -54,7 +54,7 @@ export default class RemoveButton extends Component {
 								confirmed: -1
 							});
 						}}
-						onClickOutside={() => {
+						onFocusOutside={() => {
 							this.setState({
 								confirmed: -1
 							});

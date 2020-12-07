@@ -9,7 +9,7 @@ import toggleOpenIcon from "../../../../assets/toggle-open";
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { Toolbar } = wp.components;
+const { ToolbarGroup } = wp.components;
 const { registerBlockType } = wp.blocks;
 const { BlockControls, RichText, InnerBlocks } = wp.blockEditor;
 const { compose } = wp.compose;
@@ -97,7 +97,7 @@ class Toggle extends Component {
 		return (
 			<Fragment>
 				<BlockControls>
-					<Toolbar
+					<ToolbarGroup
 						controls={[
 							{
 								icon: toggleOpenIcon,
