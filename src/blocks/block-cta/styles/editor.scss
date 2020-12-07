@@ -1,6 +1,16 @@
 /**
  * Editor styles for the admin
  */
+.is-sidebar-opened .is-root-container>.container-fluid[data-type="c9-blocks/cta"][data-align="full"] {
+	max-width: calc(100vw - 280px);
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.is-root-container>.container-fluid[data-type="c9-blocks/cta"][data-align="full"] {
+	padding-left: 0px;
+	padding-right: 0px;
+}
 
 .c9-block-cta .row {
 	display: flex;
