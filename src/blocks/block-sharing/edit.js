@@ -9,7 +9,7 @@ import ShareLinks from "./components/sharing";
 /**
  * WordPress dependencies
  */
-const { BlockControls } = wp.editor;
+const { BlockControls } = wp.blockEditor;
 const { AlignmentToolbar } = wp.blockEditor;
 const { Component } = wp.element;
 const { __ } = wp.i18n;

@@ -3,7 +3,7 @@
  */
 const { __, sprintf } = wp.i18n;
 const { Component } = wp.element;
-const { Toolbar } = wp.components;
+const { ToolbarGroup } = wp.components;
 
 /**
  * External dependencies
@@ -35,7 +35,7 @@ class HeadingToolbar extends Component {
 		} = this.props;
 
 		return (
-			<Toolbar
+			<ToolbarGroup
 				isCollapsed={isCollapsed}
 				icon="heading"
 				controls={range(minLevel, maxLevel).map(index =>
