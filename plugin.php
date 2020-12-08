@@ -7,9 +7,9 @@
  * Author: COVERT NINE
  * Author URI: https://www.covertnine.com
  * Version: 1.2.6
- * License: GPL2+
+ * License: GPLv3
  * Text Domain: c9-blocks
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package C9 Blocks
  */
