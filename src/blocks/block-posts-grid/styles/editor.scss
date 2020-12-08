@@ -156,9 +156,9 @@
 	display: flex;
 }
 
-.container .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout .block-editor-block-list__block,
-.container-narrow .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout .block-editor-block-list__block,
-.container-fluid .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout .block-editor-block-list__block {
+.c9-posts-grid .container .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout .block-editor-block-list__block,
+.c9-posts-grid .container-narrow .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout .block-editor-block-list__block,
+.c9-posts-grid .container-fluid .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout .block-editor-block-list__block {
 	flex-grow: 1;
 	flex-basis: 0px;
 }
