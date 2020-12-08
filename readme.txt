@@ -6,8 +6,8 @@ Requires at least: 5.3
 Tested up to: 5.6
 Stable tag: 1.2.6
 Requires PHP: 7.1
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 10 new Gutenberg blocks with 50+ beautiful block templates, hand-crafted by a digital agency for speed, story-telling, and SEO.
 
