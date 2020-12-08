@@ -9,7 +9,7 @@ Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-10 new Gutenberg blocks with 50+ beautiful block templates, hand-crafted by a digital agency for speed, story-telling, and SEO.
+10 new Gutenberg blocks with section templates and page templates. With C9 Blocks + Themes, the digital agency is built right into the code.
 
 == Jump To ==
 
