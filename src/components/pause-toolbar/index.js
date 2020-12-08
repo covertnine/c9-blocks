@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Toolbar } = wp.components;
+const { ToolbarGroup, ToolbarButton } = wp.components;
 
 /**
  * Control Settings
@@ -28,19 +28,18 @@ export function PauseToolbar({
 	}
 
 	return (
-		<Toolbar
+		<ToolbarGroup
 			label={__("Pause?", "c9-blocks")}
-			controls={PauseControls.map(control => {
+		>
+			{PauseControls.map(control => {
 				const { pause } = control;
-				const isActive = value === pause;
-
-				return {
-					...control,
-					isActive,
-					onClick: applyOrUnset(pause)
-				};
+				return <ToolbarButton
+					{...control}
+					isActive={value === pause}
+					onClick={applyOrUnset(pause)}
+				/>
 			})}
-		/>
+		</ToolbarGroup>
 	);
 }
 

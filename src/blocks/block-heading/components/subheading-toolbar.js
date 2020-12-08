@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Toolbar } = wp.components;
+const { ToolbarGroup, ToolbarButton } = wp.components;
 
 import Icon from "../../../../assets/icon-c9-subheading-enable-toolbar-icon";
 
@@ -30,19 +30,18 @@ export function SubheadingToolbar({
 	}
 
 	return (
-		<Toolbar
-			label={__("Change Vertical Alignment", "c9-blocks")}
-			controls={enableControls.map(control => {
+		<ToolbarGroup
+			label={__("Subheading", "c9-blocks")}
+		>
+			{enableControls.map(control => {
 				const { enabled } = control;
-				const isActive = value === enabled;
-
-				return {
-					...control,
-					isActive,
-					onClick: applyOrUnset(enabled)
-				};
+				return <ToolbarButton
+					{...control}
+					isActive={value === enabled}
+					onClick={applyOrUnset(enabled)}
+				/>
 			})}
-		/>
+		</ToolbarGroup>
 	);
 }
 

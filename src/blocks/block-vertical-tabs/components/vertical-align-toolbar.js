@@ -7,7 +7,7 @@ import icons from "../../../../assets/c9-vertical-alignment-icons";
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Toolbar } = wp.components;
+const { ToolbarGroup, ToolbarButton } = wp.components;
 
 /**
  * Control Settings
@@ -43,19 +43,18 @@ export function VerticalAlignmentToolbar({
 	}
 
 	return (
-		<Toolbar
+		<ToolbarGroup
 			label={__("Change Vertical Alignment", "c9-blocks")}
-			controls={alignControls.map(control => {
+		>
+			{alignControls.map(control => {
 				const { align } = control;
-				const isActive = value === align;
-
-				return {
-					...control,
-					isActive,
-					onClick: applyOrUnset(align)
-				};
+				return <ToolbarButton
+					{...control}
+					isActive={value === align}
+					onClick={applyOrUnset(align)}
+				/>
 			})}
-		/>
+		</ToolbarGroup>
 	);
 }
 

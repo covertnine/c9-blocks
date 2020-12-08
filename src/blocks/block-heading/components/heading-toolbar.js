@@ -3,7 +3,7 @@
  */
 const { __, sprintf } = wp.i18n;
 const { Component } = wp.element;
-const { ToolbarGroup } = wp.components;
+const { ToolbarGroup, ToolbarButton } = wp.components;
 
 /**
  * External dependencies
@@ -15,14 +15,14 @@ import range from "lodash/range";
  */
 class HeadingToolbar extends Component {
 	createLevelControl(targetLevel, selectedLevel, onChange) {
-		return {
-			icon: "heading",
+		return <ToolbarButton
+			icon={"heading"}
 			// translators: %s: heading level e.g: "1", "2", "3"
-			title: sprintf(__("Heading %d"), targetLevel),
-			isActive: targetLevel === selectedLevel,
-			onClick: () => onChange(targetLevel),
-			subscript: String(targetLevel)
-		};
+			title={sprintf(__("Heading %d"), targetLevel)}
+			isActive={targetLevel === selectedLevel}
+			onClick={() => onChange(targetLevel)}
+			subscript={String(targetLevel)}
+		/>;
 	}
 
 	render() {
@@ -38,10 +38,11 @@ class HeadingToolbar extends Component {
 			<ToolbarGroup
 				isCollapsed={isCollapsed}
 				icon="heading"
-				controls={range(minLevel, maxLevel).map(index =>
+			>
+				{range(minLevel, maxLevel).map(index =>
 					this.createLevelControl(index, selectedLevel, onChange)
 				)}
-			/>
+			</ToolbarGroup>
 		);
 	}
 }

@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Toolbar } = wp.components;
+const { ToolbarGroup, ToolbarButton } = wp.components;
 
 /**
  * Control Settings
@@ -38,19 +38,18 @@ export function WidthToolbar({
 	}
 
 	return (
-		<Toolbar
+		<ToolbarGroup
 			label={__("Change Widths", "c9-blocks")}
-			controls={widthControls.map(control => {
+		>
+			{widthControls.map(control => {
 				const { width } = control;
-				const isActive = value === width;
-
-				return {
-					...control,
-					isActive,
-					onClick: applyOrUnset(width)
-				};
+				return <ToolbarButton
+					{...control}
+					isActive={value === width}
+					onClick={applyOrUnset(width)}
+				/>
 			})}
-		/>
+		</ToolbarGroup>
 	);
 }
 
