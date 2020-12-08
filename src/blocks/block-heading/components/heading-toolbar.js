@@ -36,7 +36,7 @@ class HeadingToolbar extends Component {
 
 		return (
 			<ToolbarGroup
-				isCollapsed={isCollapsed}
+				isCollapsed={false}
 				icon="heading"
 			>
 				{range(minLevel, maxLevel).map(index =>
