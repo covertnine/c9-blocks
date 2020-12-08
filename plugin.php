@@ -3,10 +3,10 @@
 /**
  * Plugin Name: C9 Blocks
  * Plugin URI: https://www.c9blocks.com
- * Description: 10 new Gutenberg blocks with section templates and page templates that use Bootstrap + CSS Grid to make responsive page building with the native Blocks API a breeze. Compatible with the C9 Starter, C9 Work, C9 Togo, Twenty Nineteen, and Twenty Twenty WordPress themes.
+ * Description: 10 new Gutenberg blocks with section templates and page templates. With C9 Blocks + Themes, the digital agency is in the code.
  * Author: COVERT NINE
  * Author URI: https://www.covertnine.com
- * Version: 1.2.5
+ * Version: 1.2.6
  * License: GPL2+
  * Text Domain: c9-blocks
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt

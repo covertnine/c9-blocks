@@ -3,8 +3,8 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
-Tested up to: 5.5.3
-Stable tag: 1.2.5
+Tested up to: 5.6
+Stable tag: 1.2.6
 Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.2.6 =
+Backend style updates to keep compliance with WordPress 5.6. Updates to full width alignment on some blocks. React.js updates for some block api components. Toolbar button updates.
 
 = 1.2.5 =
 Updates to style guide landing page template, hiding post and page blocks from root insertion, maintenance update.
