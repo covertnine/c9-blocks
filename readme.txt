@@ -11,21 +11,17 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 10 new Gutenberg blocks with section templates and page templates. With C9 Blocks + Themes, the digital agency is built right into the code.
 
-== Jump To ==
-
-[Description](#description) | [Installation](#installation) | [Frequently Asked Questions](#frequently-asked-questions)
-[Screenshots](#screenshots) | [Changelog](#changelog) | [Upgrade Notice](#upgrade-notice)
-[C9 Blocks Includes the Following Blocks](#c9-blocks-includes-the-following-blocks) | [Demo Videos](#demo-videos) | [C9 Wordpress Theme](#c9-wordpress-theme)
-
-[Follow Along](#follow-along) | [Online Documentation](#online-documentation) | [Support](#support)
-
 == Description ==
+
+**What's it like editing content with C9 Blocks & C9 Themes?**
+
+https://www.youtube.com/watch?v=zu3JyJr5eeM
 
 [COVERT NINE](https://www.covertnine.com)'s C9 Blocks plugin provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages with specific purposes for their audience.
 
 The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper  right corner after installing the WordPress plugin.
 
-Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 WordPress Theme](https://www.covertnine.com/forms/c9-beta) with the C9 Blocks plugin, but it also works with the Twenty Twenty and Twenty Nineteen WordPress themes.
+Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 WordPress Theme](https://www.covertnine.com/forms/c9-beta) with the C9 Blocks plugin, but it also works with the Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter) or [C9 Work](https://wordpress.org/themes/c9-work) to see C9 Blocks in action, or signup for the [C9 beta early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free. We currently have four blocks-based themes and four child themes available for early access list subscribers.
 
 For an overview of each of the blocks, and more up to date documentation, head over to our [documentation  site](https://c9.covertnine.com).
 
@@ -193,10 +189,6 @@ Compatibility updates for WP 5.4 release to deprecated code. Fixed video backgro
 == Demo Videos ==
 
 We're constantly updating videos on the [C9 Docs](https://c9.covertnine.com) site, as well as on our [YouTube Channel](https://www.youtube.com/covertnine).
-
-**What's it like editing content with C9 Blocks & C9 Themes?**
-
-https://www.youtube.com/watch?v=zu3JyJr5eeM
 
 **Creating marketing-focused landing pages with C9 Blocks + C9 Starter Theme**
 
