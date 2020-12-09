@@ -104,6 +104,12 @@
 		height: 100%;
 		justify-content: center;
 	}
+
+	>.block-editor-inner-blocks>.block-editor-block-list__layout {
+		display: -ms-grid;
+		display: grid;
+		height: 100%;
+	}
 }
 
 .wp-block[data-type="c9-blocks/grid"].components-resizable-box__side-handle.components-resizable-box__handle-bottom {
@@ -226,15 +232,22 @@
 	margin-right: auto;
 }
 
-.c9-grid .container .c9-layout-column-wrap-admin .block-editor-inner-blocks,
-.c9-grid .container-fluid .c9-layout-column-wrap-admin .block-editor-inner-blocks,
-.c9-grid .container-narrow .rc9-layout-column-wrap-admin .block-editor-inner-blocks {
+.container .c9-layout-column-wrap-admin .block-editor-inner-blocks,
+.container-fluid .c9-layout-column-wrap-admin .block-editor-inner-blocks,
+.container-narrow .rc9-layout-column-wrap-admin .block-editor-inner-blocks {
 	width: 100%;
 }
 
-.container>.c9-column-container>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout,
-.container-narrow>.c9-column-container>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout,
-.container-fluid>.c9-column-container>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
+.container .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout,
+.container-narrow .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout,
+.container-fluid .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
+	width: 100%;
+	display: flex;
+}
+
+.container .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout .block-editor-block-list__block:not(.wp-block-button),
+.container-narrow .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout:not(.wp-block-button) .block-editor-block-list__block:not(.wp-block-button),
+.container-fluid .c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout:not(.wp-block-button) .block-editor-block-list__block:not(.wp-block-button) {
 	flex-grow: 1;
 	flex-basis: 0px;
 }
@@ -244,6 +257,7 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
 
 /*c9 column container innerblocks set to full width + innerblock full width */
 
@@ -258,10 +272,6 @@
 .c9-column-container,
 .c9-grid.components-resizable-box__container {
 	grid-template-rows: 100% 0;
-}
-
-.c9-grid.components-resizable-box__container.has-show-handle .components-resizable-box__handle {
-	z-index: 36;
 }
 
 .wp-block.container .components-resizable-box__container>span,
