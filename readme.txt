@@ -62,7 +62,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 == Changelog ==
 
 = 1.3.0 =
-Updating markup for vertical alignment of C9 Grid column container blocks for WordPress 5.6.
+Updating markup for vertical alignment of C9 Grid column container blocks for WordPress 5.6. Fixed markup interfering with core Social Icons Block.
 
 = 1.2.9 =
 Fixing backend previews for tablet, updating markup to account for social icon core blocks and WordPress 5.6 markup.
