@@ -43,7 +43,7 @@ function onPlayerReady(event) {
 	event.target.playVideo();
 
 	// this .c9-video element -> .c9-embed-container -> .c9-video-container
-	console.log(event.target)
+	// console.log(event.target)
 	event.target.getIframe().parentNode.parentNode.style.opacity = 1;
 }
 
