@@ -294,6 +294,10 @@
 	bottom: 0px;
 }
 
+.wp-block.is-selected .components-resizable-box__container div:last-child {
+	z-index: 28;
+}
+
 /* reset widths from Gutenberg Preview Dropdown that should use classnames but doesn't*/
 body .editor-styles-wrapper[style*="width: 360px"] .is-root-container .container,
 body .editor-styles-wrapper[style*="width: 360px"] .is-root-container .container-narrow,
