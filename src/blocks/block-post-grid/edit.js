@@ -176,7 +176,7 @@ export default class Edit extends Component {
 					<Inspector {...{ setAttributes, ...this.props }} />
 					<Placeholder
 						icon="admin-post"
-						label={__("Cortex Blocks Post and Page Grid", "c9-blocks")}
+						label={__("C9 Blocks Post Grid", "c9-blocks")}
 					>
 						{!Array.isArray(latestPosts) ? (
 							<Spinner />

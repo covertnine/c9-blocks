@@ -44,9 +44,14 @@
 	margin-bottom: 0;
 }
 
+
 .entry-content .c9-cta-content .c9-cta-text:not(.c9-p),
 .entry-content .c9-cta-content .c9-p {
 	font-size: 16px;
+}
+
+.entry-content .c9-cta-content .c9-cta-text[style] p {
+	font-size: inherit;
 }
 
 .entry-content .c9-cta-text p {

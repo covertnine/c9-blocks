@@ -650,6 +650,10 @@ body .c9-templates-modal {
 
 }
 
+body .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button p {
+	margin-left: 0px;
+}
+
 @-webkit-keyframes scaleIn {
 	from {
 		transform: scale(0.5);
