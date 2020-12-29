@@ -294,6 +294,10 @@
 		margin-right: calc((-100vw + 100%) / 2);
 	}
 
+	.entry-content>.c9-posts-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
+		max-width: 100vw;
+	}
+
 	.c9-posts-grid .container-narrow,
 	.container-narrow {
 		max-width: 960px;

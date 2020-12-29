@@ -28,6 +28,17 @@ html {
 	overflow-x: hidden;
 }
 
+/* overrides default paragraph margin that isn't added in Twenty Twenty One theme */
+.c9-grid p {
+	margin-bottom: 20px;
+}
+
+/* adds spacing to separators in c9-grid */
+.c9-grid .wp-block-separator {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
 .c9-grid {
 	display: -ms-grid;
 	display: grid;

@@ -230,7 +230,6 @@
 	.c9-block-post-grid-excerpt .c9-block-post-grid-more-link {
 		display: inline-block;
 		box-shadow: none;
-		-webkit-transition: 0.3s ease;
 		transition: 0.3s ease;
 		font-weight: bold;
 		color: black;
@@ -246,6 +245,10 @@
 		margin-bottom: 3em;
 	}
 
+	.c9-block-post-grid-excerpt:empty {
+		margin: 0px;
+	}
+
 	.c9-block-post-grid-excerpt div+p {
 		margin-top: 1em;
 	}
@@ -259,7 +262,6 @@
 			-ms-grid-rows: 1fr;
 			grid-template-rows: 1fr;
 			grid-gap: 0 2em;
-			-webkit-box-align: center;
 			align-items: center;
 
 			@media all and (-ms-high-contrast: none) {
