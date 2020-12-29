@@ -323,7 +323,7 @@ function c9_check_bootstrap()
 	// if any of them matches, then array length of $check > 0.
 	if (sizeof($checks) === 0) {
 		// Styles.
-		wp_enqueue_style('c9-fontawesome', plugins_url('src/vendor/font-awesome.min.css'), array('c9-blocks-style'), '4.7.1');
+		wp_enqueue_style('c9-fontawesome', plugins_url('src/vendor/font-awesome.min.css', dirname(__FILE__)), array('c9-blocks-style'), '4.7.1');
 		wp_enqueue_style(
 			'c9-bootstrap',
 			plugins_url('dist/blocks.bootstrap.build.css', dirname(__FILE__)),
