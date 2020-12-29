@@ -36,6 +36,11 @@
 	letter-spacing: .2px;
 }
 
+/* prevents width of content from pushing the sidebar off screen for full alignment items*/
+.interface-interface-skeleton__content {
+	width: 0px;
+}
+
 .block-editor-block-inspector .components-base-control {
 	margin-bottom: 0px;
 }
