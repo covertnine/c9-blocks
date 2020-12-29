@@ -30,7 +30,8 @@ export default class ResizableCarouselContainer extends Component {
 				wrapAround,
 				slideMaxHeight,
 				align,
-				containerWidth
+				containerWidth,
+				transitionType,
 			},
 			className = "",
 			editMode = false,
@@ -52,12 +53,19 @@ export default class ResizableCarouselContainer extends Component {
 				containerAlign = null;
 			}
 		}
+		
+		let transitionClass = ''; // No transition
+		if ( transitionType === 'slide') { // Default
+			transitionClass = 'slide';
+		} else if ( transitionType === 'fade') {
+			transitionClass = 'slide carousel-fade';
+		}
 
 		const wrapperConfig = {
 			id: `c9-carousel-indicator-${instanceId}`,
 			className: classnames(
 				applyFilters("c9-blocks.blocks.className", className),
-				"carousel slide",
+				`carousel ${transitionClass}`,
 				!editMode ? [containerAlign, containerWidth] : null
 			),
 			dataRide: "carousel",
