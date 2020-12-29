@@ -58,7 +58,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 == Changelog ==
 
 = 1.3.3 =
-Adding more carousel transitions. Better full width alignments for carousels.
+Adding more carousel transitions. Better full width alignments for carousels. Button color fix on C9 Grid rows.
 
 = 1.3.2 =
 Fixing bug for carousel arrows being below scalable drag bar.
