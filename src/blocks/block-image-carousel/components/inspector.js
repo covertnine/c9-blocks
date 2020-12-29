@@ -6,7 +6,7 @@ import VerticalAlignmentToolbar from "../../../components/vertical-alignment-too
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { BaseControl, PanelBody, RangeControl, ToggleControl } = wp.components;
+const { BaseControl, PanelBody, RangeControl, ToggleControl, SelectControl } = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -29,7 +29,8 @@ export default class Inspector extends Component {
 			isResponsive,
 			verticalAlign,
 			slideMaxHeight,
-			slideCustomHeight
+			slideCustomHeight,
+			transitionType,
 		} = attributes;
 
 		return (
@@ -143,6 +144,16 @@ export default class Inspector extends Component {
 						label={__("Responsive image loading", "c9-blocks")}
 						checked={isResponsive}
 						onChange={isResponsive => setAttributes({ isResponsive })}
+						/>
+					<SelectControl
+						label={__("Transition type", "c9-blocks")}
+						value={transitionType}
+						options={ [
+							{ label: __("Slide", "c9-blocks"), value: "slide" },
+							{ label: __("Fade", "c9-blocks"), value: "fade" },
+							{ label: __("None", "c9-blocks"), value: "none" },
+						] }
+						onChange={transitionType => setAttributes({ transitionType })}
 					/>
 				</PanelBody>
 			</InspectorControls>

@@ -67,7 +67,11 @@ const attributes = {
 	containerWidth: {
 		type: "string",
 		default: "container"
-	}
+	},
+	transitionType: {
+		type: "string",
+		default: "slide"
+	},
 };
 
 export default attributes;
