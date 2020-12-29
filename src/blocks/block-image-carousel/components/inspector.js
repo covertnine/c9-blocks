@@ -83,6 +83,19 @@ export default class Inspector extends Component {
 
 					<hr />
 
+					<SelectControl
+						label={__("Transition type", "c9-blocks")}
+						value={transitionType}
+						options={ [
+							{ label: __("Slide", "c9-blocks"), value: "slide" },
+							{ label: __("Fade", "c9-blocks"), value: "fade" },
+							{ label: __("None", "c9-blocks"), value: "none" },
+						] }
+						onChange={transitionType => setAttributes({ transitionType })}
+					/>
+
+					<hr />
+
 					<ToggleControl
 						label={__("Enable custom manual heights", "c9-blocks")}
 						checked={slideCustomHeight}
@@ -111,12 +124,12 @@ export default class Inspector extends Component {
 					/>
 
 					<ToggleControl
-						label={__("Wrap Around", "c9-blocks")}
+						label={__("Wrap around", "c9-blocks")}
 						checked={wrapAround}
 						onChange={wrapAround => setAttributes({ wrapAround })}
 					/>
 					<ToggleControl
-						label={__("Enable Auto Slide", "c9-blocks")}
+						label={__("Enable auto slide", "c9-blocks")}
 						checked={autoSlide}
 						onChange={autoSlide => setAttributes({ autoSlide })}
 					/>
@@ -131,7 +144,7 @@ export default class Inspector extends Component {
 						/>
 					)}
 					<ToggleControl
-						label={__("Show Controls", "c9-blocks")}
+						label={__("Show controls", "c9-blocks")}
 						checked={showControls}
 						onChange={showControls => setAttributes({ showControls })}
 					/>
@@ -145,16 +158,6 @@ export default class Inspector extends Component {
 						checked={isResponsive}
 						onChange={isResponsive => setAttributes({ isResponsive })}
 						/>
-					<SelectControl
-						label={__("Transition type", "c9-blocks")}
-						value={transitionType}
-						options={ [
-							{ label: __("Slide", "c9-blocks"), value: "slide" },
-							{ label: __("Fade", "c9-blocks"), value: "fade" },
-							{ label: __("None", "c9-blocks"), value: "none" },
-						] }
-						onChange={transitionType => setAttributes({ transitionType })}
-					/>
 				</PanelBody>
 			</InspectorControls>
 		);
