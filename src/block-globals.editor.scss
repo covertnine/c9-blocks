@@ -332,36 +332,3 @@
 .right-sidebarpage .wp-block[data-type="core/image"] {
 	max-width: 925px;
 }
-
-/* GSAP labels for animations */
-.gsap-marker-end[style],
-.gsap-marker-start[style],
-.gsap-marker-scroller-end[style],
-.gsap-marker-scroller-start[style] {
-	font-size: 11px !important;
-	text-transform: uppercase !important;
-	letter-spacing: 1px !important;
-	border: 1px dashed var(--red) !important;
-	color: var(--red) !important;
-	background-color: #fff !important;
-}
-
-.gsap-marker-start[style],
-.gsap-marker-scroller-start[style] {
-	border: 1px dashed var(--teal) !important;
-	color: var(--teal) !important;
-}
-
-/* GSAP custom control field edits */
-.components-base-control:last-child .c9-key-stepper .is-pressed:after {
-	content: '\f346';
-}
-
-.c9-key-stepper .components-button-group .components-button.is-primary {
-	box-shadow: none;
-}
-
-.components-base-control:last-child .c9-key-stepper .is-pressed {
-	background-color: var(--red);
-	border-bottom: 2px solid var(--red);
-}
