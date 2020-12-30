@@ -18,7 +18,8 @@ export default class Save extends Component {
 	render() {
 		const {
 			attributes: { reverseToggle },
-			className = ""
+			className = "",
+			...otherProps
 		} = this.props;
 		return (
 			<div
@@ -28,6 +29,7 @@ export default class Save extends Component {
 					reverseToggle ? "c9-toggles-reverse" : null
 				)}
 				id={`accordion-${this.props.attributes.instanceId}`}
+				{...otherProps}
 			>
 				<InnerBlocks.Content />
 			</div>

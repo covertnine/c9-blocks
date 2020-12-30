@@ -27,7 +27,10 @@ export default class Save extends Component {
 			instanceId
 		} = this.props.attributes;
 
-		const { className = "" } = this.props;
+		const {
+			className = "",
+			...otherProps
+		} = this.props;
 
 		return [
 			<div
@@ -36,6 +39,7 @@ export default class Save extends Component {
 				style={{
 					backgroundColor: blockBackgroundColor
 				}}
+				{...otherProps}
 			>
 				<ul
 					className={classnames(

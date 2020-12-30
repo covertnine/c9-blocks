@@ -39,7 +39,8 @@ export default class ResizableCarouselContainer extends Component {
 			setAttributes,
 			onResizeStart,
 			onResizeStop,
-			pause
+			pause,
+			...otherProps
 		} = this.props;
 		const instanceId = editMode ? this.props.instanceId : attributes.instanceId;
 
@@ -71,7 +72,8 @@ export default class ResizableCarouselContainer extends Component {
 			dataRide: "carousel",
 			dataInterval: !pause && autoSlide ? slideTime : false,
 			dataWrap: wrapAround,
-			style: { height: slideMaxHeight }
+			style: { height: slideMaxHeight },
+			...otherProps,
 		};
 
 		const updateHeight = value => {

@@ -39,7 +39,8 @@ export default class ResizableCarouselContainer extends Component {
 			isSelected,
 			setAttributes,
 			onResizeStart,
-			onResizeStop
+			onResizeStop,
+			...otherProps
 		} = this.props;
 		const instanceId = editMode ? this.props.instanceId : attributes.instanceId;
 
@@ -55,9 +56,9 @@ export default class ResizableCarouselContainer extends Component {
 		}
 		
 		let transitionClass = ''; // No transition
-		if ( transitionType === 'slide') { // Default
+		if ( 'slide' === transitionType ) { // Default
 			transitionClass = 'slide';
-		} else if ( transitionType === 'fade') {
+		} else if ( 'fade' === transitionType ) {
 			transitionClass = 'slide carousel-fade';
 		}
 
@@ -71,7 +72,8 @@ export default class ResizableCarouselContainer extends Component {
 			"data-ride": "carousel",
 			"data-interval": autoSlide ? slideTime : false,
 			"data-wrap": wrapAround,
-			style: { height: slideCustomHeight ? slideMaxHeight : null }
+			style: { height: slideCustomHeight ? slideMaxHeight : null },
+			...otherProps,
 		};
 
 		const updateHeight = value => {

@@ -133,7 +133,8 @@ export default class CallToAction extends Component {
 			},
 			className = "",
 			isSelectedBlockInRoot,
-			save = false
+			save = false,
+			...otherProps
 		} = this.props;
 
 		let ctaAlign;
@@ -168,6 +169,7 @@ export default class CallToAction extends Component {
 					// eslint-disable-next-line no-extra-boolean-cast
 					!!imgURL ? "c9-cta-has-background" : null
 				)}
+				{...otherProps}
 			>
 				<div className="row">{this.props.children}</div>
 			</div>

@@ -28,7 +28,10 @@ export default class Save extends Component {
 			instanceId
 		} = this.props.attributes;
 
-		const { className = "" } = this.props;
+		const {
+			className = "",
+			...otherProps
+		} = this.props;
 
 		return [
 			<div
@@ -40,6 +43,7 @@ export default class Save extends Component {
 					backgroundColor: blockBackgroundColor
 				}}
 				data-tab-active={tabActive}
+				{...otherProps}
 			>
 				<div className="col-xs-12 col-sm-3">
 					<div
