@@ -292,7 +292,8 @@ body .edit-post-layout .editor-styles-wrapper .c9-posts-grid .container-narrow:n
 	body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
 	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
-	body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow {
+	body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow,
+	body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .wp-block[data-type="c9-blocks/posts-grid"] .container-narrow>.wp-block[data-align="narrow"] {
 		width: 100%;
 		max-width: 960px;
 		min-width: 960px;
