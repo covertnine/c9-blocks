@@ -40,19 +40,13 @@
 	margin-bottom: 0px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 812px) {
 	.c9-horizontal-tabs>.nav.nav-tabs {
 		flex-wrap: wrap;
 	}
 
 	.c9-horizontal-tabs>.nav.nav-tabs .nav-link {
 		font-size: 12px;
-
-	}
-}
-
-@media only screen and (max-width: 667px) {
-	.c9-horizontal-tabs .nav-tabs .nav-link {
 		padding: 10px 15px;
 	}
 }

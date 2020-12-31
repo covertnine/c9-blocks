@@ -58,7 +58,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 == Changelog ==
 
 = 1.3.5 =
-Adjustments for styles to account for Twenty Twenty One WordPress theme to posts grid and some block elements inside of C9 Grid blocks.
+Adjustments for styles to account for Twenty Twenty One WordPress theme to posts grid and some block elements inside of C9 Grid blocks. Updates to wide container alignments in grids on some screen sizes. Horizontal tabs style adjustment for slightly larger mobile devices. New markup for some blocks for new C9 Animations.
 
 = 1.3.4 =
 Fix bug with buttons on image carousels being behind images on some layouts, fixed 404 error from fonawesome for non C9 theme inclusion.
