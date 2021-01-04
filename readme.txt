@@ -17,6 +17,10 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 https://www.youtube.com/watch?v=zu3JyJr5eeM
 
+https://www.youtube.com/watch?v=fKneUaQic08
+
+https://www.youtube.com/watch?v=jHqOO_MP8nE
+
 [COVERT NINE](https://www.covertnine.com)'s C9 Blocks plugin provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages with specific purposes for their audience.
 
 The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper  right corner after installing the WordPress plugin.
@@ -39,7 +43,7 @@ For an overview of each of the blocks, and more up to date documentation, head o
 
 The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well as the C9 Starter Theme. We're working to make the plugin work with other themes too. If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
-[Get the C9 Theme](https://www.covertnine.com/form/c9-beta)
+[Get the C9 Starter Theme](https://www.covertnine.com/form/c9-beta)
 
 
 = Do I need the new block editor to use C9 Blocks? =
@@ -209,6 +213,17 @@ We're constantly updating videos on the [C9 Docs](https://c9.covertnine.com) sit
 
 https://www.youtube.com/watch?v=8qyP5abkoe4
 
+
+**How to Create a mobile-friendly and animated Homepage for the Twenty Twenty One WordPress Theme**
+
+https://www.youtube.com/watch?v=fKneUaQic08
+
+
+**Designing a new page header using C9 Grid blocks and the Twenty Twenty One WordPress Theme**
+
+https://www.youtube.com/watch?v=jHqOO_MP8nE
+
+
 **How to Create a Homepage for the Twenty Twenty WordPress Theme**
 
 https://www.youtube.com/watch?v=urLN4C3YFaM
@@ -224,7 +239,7 @@ https://www.youtube.com/watch?v=ekwe_CaDlP0
 Get an overview of each of the blocks and the latest documentation by heading over to our [documentation site](https://c9.covertnine.com).
 
 
-== C9 WordPress Theme ==
+== C9 Starter WordPress Theme ==
 The [C9 Starter Theme](https://c9.covertnine.com) is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with the new custom editor style from WordPress 5. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system and a more minimal minimal theme skin to start with.
 
 If you're working on behalf of a client or customer and want to build your own style guide and/or themes on top of the [C9 Starter Theme](https://c9.covertnine.com), included is a client boilerplate folder and full child theme support. Join the [C9 Beta](https://www.covertnine.com/forms/c9-beta) with a simple email signup to get four example themes along with all of our other WordPress tools emailed to you with updates, tutorials, and tips on how to build your own Gutenberg-powered block-based WordPress websites.
@@ -239,10 +254,10 @@ If you're working on behalf of a client or customer and want to build your own s
 
 == Online Documentation ==
 
-* [C9 Plugin Homepage](https://c9.covertnine.com)
+* [C9 Homepage](https://c9.covertnine.com)
 * [C9 Blocks Documentation](https://c9.covertnine.com/documentation/)
-* [C9 Theme Documentation](https://c9.covertnine.com/c9-theme/)
-* [C9 Admin Theme Documentation](https://c9.covertnine.com/c9-admin-plugin/)
+* [C9 Starter Theme Documentation](https://c9.covertnine.com/c9-theme/)
+* [C9 Admin Dashboard Documentation](https://c9.covertnine.com/c9-admin-plugin/)
 * [Sample Content](https://c9.covertnine.com/sample-content/)
 
 == Support ==
@@ -256,3 +271,5 @@ Main documentation can be found [Here](https://c9.covertnine.com/documentation/)
 The Blocks Development Guide lives [Here](https://c9.covertnine.com/c9-blocks-development/)
 
 Tutorials and demo content can be found [Here](https://c9.covertnine.com/)
+
+Additional tutorials, C9 Themes, and WordPress content from COVERT NINE [Here](https://www.covertnine.com)
