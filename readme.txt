@@ -23,11 +23,11 @@ https://www.youtube.com/watch?v=jHqOO_MP8nE
 
 [COVERT NINE](https://www.covertnine.com)'s C9 Blocks plugin provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages with specific purposes for their audience.
 
-The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper  right corner after installing the WordPress plugin.
+The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper right corner after installing the WordPress plugin.
 
-Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 WordPress Theme](https://www.covertnine.com/forms/c9-beta) with the C9 Blocks plugin, but it also works with the Twenty Twenty One, Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter) or [C9 Work](https://wordpress.org/themes/c9-work) to see C9 Blocks in action, or signup for the [C9 beta early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free. We currently have four blocks-based themes and four child themes available for early access list subscribers.
+Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 supported theme](https://www.covertnine.com/c9-blocks-plugin) with the C9 Blocks plugin, but it also works with the [Twenty Twenty One](https://2021.covertnine.com), Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter) or [C9 Work](https://wordpress.org/themes/c9-work) theme to see C9 Blocks in action, or signup for the [C9 early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free. We currently have four blocks-based themes and four child themes available for early access list subscribers and an exclusive [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/) to animate any core WordPress blocks or C9 Blocks.
 
-For an overview of each of the blocks, and more up to date documentation, head over to our [documentation  site](https://c9.covertnine.com).
+For an overview of each of the blocks, and more up to date documentation, head over to our [documentation site](https://c9.covertnine.com).
 
 == Installation ==
 
@@ -41,7 +41,7 @@ For an overview of each of the blocks, and more up to date documentation, head o
 
 = Can C9 Blocks be used with any theme? =
 
-The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well as the C9 Starter Theme. We're working to make the plugin work with other themes too. If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
+The current blocks plugin supports the WordPress Twenty Nineteen, WordPress Twenty Twenty, WordPress Twenty Twenty One, as well as any C9 theme. (C9 Music, C9 Work, C9 Starter, C9 Togo) If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
 [Get the C9 Starter Theme](https://www.covertnine.com/form/c9-beta)
 
@@ -173,6 +173,9 @@ Compatibility updates for WP 5.4 release to deprecated code. Fixed video backgro
 
 == Upgrade Notice ==
 
+= 1.3.5 =
+* This version includes updates to markup for some blocks to allow for C9 Block Animations, so some layouts may require block recovery if you're upgrading. Block recovery, save, and reload pages to fix any potential markup errors from the block editor.
+
 = 1.2.1 =
 * This version is compatible with C9 Blocks Animation v1.0.1
 
@@ -240,11 +243,17 @@ Get an overview of each of the blocks and the latest documentation by heading ov
 
 
 == C9 Starter WordPress Theme ==
-The [C9 Starter Theme](https://c9.covertnine.com) is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with the new custom editor style from WordPress 5. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system and a more minimal minimal theme skin to start with.
+The [C9 Starter Theme](https://wordpress.org/themes/c9-starter) is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with C9 Blocks and the Gutenberg block editor. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system.
 
-If you're working on behalf of a client or customer and want to build your own style guide and/or themes on top of the [C9 Starter Theme](https://c9.covertnine.com), included is a client boilerplate folder and full child theme support. Join the [C9 Beta](https://www.covertnine.com/forms/c9-beta) with a simple email signup to get four example themes along with all of our other WordPress tools emailed to you with updates, tutorials, and tips on how to build your own Gutenberg-powered block-based WordPress websites.
+If you're an agency working on behalf of a client and want to build your own style guide and/or themes on top of the [C9 Starter Theme](https://c9.covertnine.com), included is a client boilerplate folder and full child theme support. Join the [C9 Early Access List](https://www.covertnine.com/forms/c9-beta) with a simple email signup to get four example themes along with all of our other WordPress tools emailed to you with tips on how to build your own block-based WordPress websites.
 
+== Blocks-powered WordPress Themes ==
 
+* [C9 Starter](https://c9.covertnine.com)
+* [C9 Work](https://work.covertnine.com)
+* [C9 Togo](https://togo.covertnine.com)
+* [C9 Music](https://music.covertnine.com)
+* [Twenty Twenty One](https://2021.covertnine.com)
 
 == Follow Along ==
 
@@ -259,6 +268,8 @@ If you're working on behalf of a client or customer and want to build your own s
 * [C9 Starter Theme Documentation](https://c9.covertnine.com/c9-theme/)
 * [C9 Admin Dashboard Documentation](https://c9.covertnine.com/c9-admin-plugin/)
 * [Sample Content](https://c9.covertnine.com/sample-content/)
+
+
 
 == Support ==
 
