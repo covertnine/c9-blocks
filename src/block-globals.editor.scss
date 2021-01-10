@@ -297,6 +297,12 @@
 	}
 }
 
+@media only screen and (min-width: 1200px) {
+	.editor-styles-wrapper .wp-block.is-reusable {
+		max-width: 100vw;
+	}
+}
+
 @media only screen and (min-width: 1500px) {
 
 	.editor-styles-wrapper .editor-default-block-appender,
