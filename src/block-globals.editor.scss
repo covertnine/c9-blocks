@@ -30,6 +30,11 @@
 	margin-bottom: 0 !important;
 }
 
+/* adjustment to image replacement drop down that has overflow issues from hidden label */
+.block-editor-link-control .components-external-link>.components-visually-hidden {
+	display: none;
+}
+
 /* inspector sidebar adjustments*/
 .block-editor-block-styles__item-label {
 	font-size: 11px;
