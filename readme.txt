@@ -62,7 +62,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 == Changelog ==
 
 = 1.3.6 =
-Bug fix to overflow issues from some drop down menus on toolbar dropdowns like image replacement. Adding icons and more templates to library. Saved blocks issue.
+Bug fix to overflow issues from some drop down menus on toolbar dropdowns like image replacement. Adding icons and more templates to library. Saved blocks width issues. Better mobile previews with grid layouts in admin.
 
 = 1.3.5 =
 Adjustments for styles to account for Twenty Twenty One WordPress theme to posts grid and some block elements inside of C9 Grid blocks. Updates to wide container alignments in grids on some screen sizes. Horizontal tabs style adjustment for slightly larger mobile devices. New markup for some blocks for new C9 Animations.
@@ -287,3 +287,7 @@ The Blocks Development Guide lives [Here](https://c9.covertnine.com/c9-blocks-de
 Tutorials and demo content can be found [Here](https://c9.covertnine.com/)
 
 Additional tutorials, C9 Themes, and WordPress content from COVERT NINE [Here](https://www.covertnine.com)
+
+== Licenses ==
+Resource Licenses:
+C9 Images, Icons, + Logos: https://www.covertnine.com/c9-blocks-plugin | GNU GPL v3

@@ -79,27 +79,37 @@
 }
 
 /* for WordPress 5.5 mobile and tablet previews in backend */
-.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-2>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout {
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-2>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-2>.c9-layout-column-wrap-admin>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-2>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
 	grid-template-columns: 1fr;
 	grid-template-areas: "col1""col2";
 }
 
-.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-3>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout {
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-3>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-3>.c9-layout-column-wrap-admin>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-3>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
 	grid-template-columns: 1fr;
 	grid-template-areas: "col1""col2""col3";
 }
 
-.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-4>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout {
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-4>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-4>.c9-layout-column-wrap-admin>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-4>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: "col1 col2""col3 col4";
 }
 
-.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-5>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout {
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-5>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-5>.c9-layout-column-wrap-admin>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-5>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
 	grid-template-columns: 1fr;
 	grid-template-areas: "col1""col2""col3""col4""col5";
 }
 
-.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-6>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout {
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-6>.c9-layout-column-wrap-admin.c9-is-responsive-column>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-6>.c9-layout-column-wrap-admin>.block-editor-block-list__layout,
+.editor-styles-wrapper[style*="width: 360px;"] .c9-layout-columns-6>.c9-layout-column-wrap-admin>.block-editor-inner-blocks>.block-editor-block-list__layout {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: "col1 col2""col3 col4""col5 col6";
 }
