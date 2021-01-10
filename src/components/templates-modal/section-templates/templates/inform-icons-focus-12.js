@@ -2,8 +2,8 @@ import Icon from "../../../../../assets/section-template-icons/inform-icons-focu
 
 export default {
 	icon: Icon,
-	title: "Inform Icon Focus 6",
-	description: "6 Labels • 6 Icons • 6 Links",
+	title: "Inform Icon Focus 12",
+	description: "1 Carousel • 12 Labels • 12 Icons",
 	markup: `<!-- wp:c9-blocks/carousel {"instanceId":0,"showIndicators":false,"autoSlide":false,"slideMaxHeight":300,"slideSizes":[113,130,113],"verticalAlign":"center"} -->
 <div id="c9-carousel-indicator-0" class="c9-carousel carousel slide container" dataride="carousel" style="height:300px"><div class="carousel-inner c9-is-vertically-aligned-center"><!-- wp:c9-blocks/carousel-slide {"id":0,"slideActive":2,"slides":3} -->
 <div class="c9-carousel-slide carousel-item active"><!-- wp:c9-blocks/column-container {"columns":4,"layout":"c9-4-col-equal"} -->
