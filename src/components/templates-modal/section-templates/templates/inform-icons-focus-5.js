@@ -11,8 +11,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-community.svg" alt="" class="wp-image-3927" width="56" height="56"/></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Fan \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eSpotlight\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Fan <span class="has-inline-color has-color-success-color">Spotlight</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Fan Spotlight","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Fan Spotlight</h5></div>
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column -->
 
@@ -21,8 +21,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-share.svg" alt="" class="wp-image-3934" width="53" height="55"/></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Feature \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eHighlight\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Feature <span class="has-inline-color has-color-success-color">Highlight</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Feature Highlight","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Feature Highlight</h5></div>
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column -->
 
@@ -31,8 +31,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-buy-album.svg" alt="" class="wp-image-3925" width="62" height="57"/></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Buy \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eAlbum\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Buy <span class="has-inline-color has-color-success-color">Album</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Buy Album","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Buy Album</h5></div>
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column -->
 
@@ -41,8 +41,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-share-screen.svg" alt="" class="wp-image-3933" width="56" height="56"/></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Share \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eScreen\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Share <span class="has-inline-color has-color-success-color">Screen</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Share Screen","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Share Screen</h5></div>
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column -->
 
@@ -51,8 +51,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-buy-tickets.svg" alt="" class="wp-image-3926" width="60" height="57"/></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Buy \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eTickets\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Buy <span class="has-inline-color has-color-success-color">Tickets</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Buy Tickets","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Buy Tickets</h5></div>
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>

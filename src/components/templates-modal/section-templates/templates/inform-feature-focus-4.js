@@ -4,7 +4,7 @@ export default {
 	icon: Icon,
 	title: "Inform Feature Focus 4",
 	description: "100 Words • 4 Icons • Button Link",
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#eeeeee"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#eeeeee"} -->
 <div class="c9-grid p-5 c9-scroll" style="min-height:20vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":10,"layout":"c9-3-col-wideleft"} -->
 <div class="container alignwide c9-column-container c9-scroll c9-layout-columns-3 c9-3-col-wideleft" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:group {"backgroundColor":"color-light"} -->
@@ -37,8 +37,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-share.svg" alt="" class="wp-image-3934" width="53" height="55"/><figcaption><strong>Fans Share Stuff</strong></figcaption></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Feature \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eHighlight\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Feature <span class="has-inline-color has-color-success-color">Highlight</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Feature Highlight","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Feature Highlight</h5></div>
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:spacer {"height":40} -->
@@ -49,8 +49,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-food.svg" alt="" class="wp-image-3929" width="56" height="56"/><figcaption><strong>Eat Food</strong></figcaption></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Eat \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eFood\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Eat <span class="has-inline-color has-color-success-color">Food</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Eat Food","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Eat Food</h5></div>
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column -->
 
@@ -59,8 +59,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-community.svg" alt="" class="wp-image-3927" width="56" height="56"/><figcaption><strong>Community First</strong></figcaption></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Fan \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eSpotlight\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Fan <span class="has-inline-color has-color-success-color">Spotlight</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Fan Spotlight","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Fan Spotlight</h5></div>
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:spacer {"height":40} -->
@@ -71,8 +71,8 @@ export default {
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-add-user.svg" alt="" class="wp-image-3924" width="62" height="56"/><figcaption><strong>Add Users</strong></figcaption></figure></div>
 <!-- /wp:image -->
 
-<!-- wp:c9-blocks/heading {"heading":"Add \u003cspan class=\u0022has-inline-color has-color-success-color\u0022\u003eFans\u003c/span\u003e","tagLevel":5,"textAlign":"center"} -->
-<div class="section-heading c9-heading text-center"><h5 class="c9-h">Add <span class="has-inline-color has-color-success-color">Fans</span></h5></div>
+<!-- wp:c9-blocks/heading {"heading":"Add Fans","tagLevel":5,"textAlign":"center"} -->
+<div class="section-heading c9-heading text-center"><h5 class="c9-h">Add Fans</h5></div>
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>

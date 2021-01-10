@@ -23,6 +23,12 @@ import informRestaurantMenuFocus from "./templates/inform-restaurant-menu-focus"
 import informServiceThreeSteps from "./templates/inform-service-three-steps";
 import informServicePricingFocus from "./templates/inform-service-pricing-focus";
 import informShareDetails from "./templates/inform-share-details";
+import informFeatureFocus3 from "./templates/inform-feature-focus-3";
+import informFeatureFocus4 from "./templates/inform-feature-focus-4";
+import informFeatureFocus6 from "./templates/inform-feature-focus-6";
+import informIconsFocus5 from "./templates/inform-icons-focus-5";
+import informIconsFocus6 from "./templates/inform-icons-focus-6";
+import informIconsFocus12 from "./templates/inform-icons-focus-12";
 import introduceProfileContact from "./templates/introduce-profile-contact";
 import introducePageTitle from "./templates/introduce-page-title";
 import introduceTeamFocus from "./templates/introduce-team-focus";
@@ -58,6 +64,12 @@ const sectionTemplates = {
 	informServicePricingFocus,
 	informServiceThreeSteps,
 	informShareDetails,
+	informFeatureFocus3,
+	informFeatureFocus4,
+	informFeatureFocus6,
+	informIconsFocus5,
+	informIconsFocus6,
+	informIconsFocus12,
 	informFAQFocus,
 	informProfilePhotoFocus,
 	informAboutFocus,
