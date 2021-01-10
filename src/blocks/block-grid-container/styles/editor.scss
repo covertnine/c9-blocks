@@ -298,7 +298,7 @@
 	z-index: 28;
 }
 
-/* reset widths from Gutenberg Preview Dropdown that should use classnames but doesn't*/
+/* reset widths from Gutenberg Preview Dropdown that should use classnames but doesnt */
 body .editor-styles-wrapper[style*="width: 360px"] .is-root-container .container,
 body .editor-styles-wrapper[style*="width: 360px"] .is-root-container .container-narrow,
 body .editor-styles-wrapper[style*="width: 360px"] .is-root-container .container.alignwide,
@@ -309,7 +309,10 @@ body:not(.folded) .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapp
 body:not(.folded) .is-sidebar-opened .editor-styles-wrapper[style*="width: 360px"] .wp-block[data-type="c9-blocks/grid"] .container-narrow,
 body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 360px"] .wp-block[data-type="c9-blocks/grid"] .container-narrow,
 body.folded .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper[style*="width: 360px"] .wp-block[data-type="c9-blocks/grid"] .container-narrow,
-.editor-styles-wrapper[style*="width: 360px"] .c9-grid [data-type="c9-blocks/column-container"].container-narrow .wp-block {
+.editor-styles-wrapper[style*="width: 360px"] .c9-grid [data-type="c9-blocks/column-container"].container-narrow .wp-block,
+body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 360px"] .wp-block[data-type="c9-blocks/grid"] .block-editor-block-list__layout>.container[data-align="wide"],
+body .is-sidebar-opened .editor-styles-wrapper[style*="width: 360px"] .wp-block[data-type="c9-blocks/grid"] .block-editor-block-list__layout>.container[data-align="wide"],
+body .edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper[style*="width: 360px"] .wp-block[data-type="c9-blocks/grid"] .block-editor-block-list__layout>.container[data-align="wide"] {
 	max-width: 360px;
 	width: 100%;
 }
@@ -865,8 +868,8 @@ body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px"] .wp
 
 	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"],
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container[data-align="wide"] {
-		width: 120%;
-		max-width: calc(100vw - 280px - 116px - 6%);
+		width: 1368px;
+		max-width: 1368px;
 	}
 
 	// Admin open. Inspector open.
