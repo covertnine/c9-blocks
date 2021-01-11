@@ -54,7 +54,7 @@ const icons = {
    .st3{fill:none;stroke:#231F20;stroke-width:0.5;stroke-miterlimit:10;}`}
 			</style>
 			<G id="Layer_1">
-				<Rect class="st0" width="20" heiGht="20" />
+				<Rect class="st0" width="20" height="20" />
 				<Path class="st1" d="M0,20h20V0H0V20z" />
 				<G>
 					<Path d="M19.1,13.4V6.1H0.9v7.3H19.1z" />
