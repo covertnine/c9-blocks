@@ -5,7 +5,7 @@ const babelPreset = require("./babel-preset");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 // cleanup empty css-js files
 class MiniCssExtractPluginCleanup {

@@ -12,6 +12,8 @@ import "./styles/style.scss";
 
 import Icon from "../../../assets/icon-c9-toggles.svg";
 
+import cryptoRandomString from "crypto-random-string";
+
 /**
  * WordPress dependencies
  */
@@ -29,7 +31,11 @@ registerBlockType("c9-blocks/toggles", {
 	},
 	styles: [
 		{ name: "default", label: __("Default", "c9-blocks") },
-		{ name: "toggles-small", label: __("Small", "c9-blocks"), isSecondary: true }
+		{
+			name: "toggles-small",
+			label: __("Small", "c9-blocks"),
+			isSecondary: true
+		}
 	],
 	keywords: [__("responsive", "c9-blocks")],
 	description: __(
@@ -125,11 +131,14 @@ registerBlockType("c9-blocks/toggles", {
 			return {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+				instanceId: parseInt(cryptoRandomString({ length: 4, type: "numeric" }))
 			};
 		}),
 		withDispatch((dispatch, ownProps) => {
-			const { insertBlock, updateBlockAttributes } = dispatch("core/block-editor");
+			const { insertBlock, updateBlockAttributes } = dispatch(
+				"core/block-editor"
+			);
 
 			const { clientId } = ownProps;
 

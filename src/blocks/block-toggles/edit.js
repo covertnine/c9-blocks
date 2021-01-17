@@ -12,12 +12,12 @@ const { Component, Fragment, createElement } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { Button } = wp.components;
-const { withInstanceId } = wp.compose;
 
 /**
  * External Dependencies.
  */
 import classnames from "classnames";
+import cryptoRandomString from "crypto-random-string";
 
 const ALLOWED_BLOCKS = ["c9-blocks/toggles-toggle"];
 
@@ -26,13 +26,16 @@ class Edit extends Component {
 		super(...arguments);
 
 		this.checkToggleCountAndUpdate = this.checkToggleCountAndUpdate.bind(this);
+		this.checkBlockIdAndUpdate = this.checkBlockIdAndUpdate.bind(this);
 	}
 
 	componentDidMount() {
 		this.checkToggleCountAndUpdate();
+		this.checkBlockIdAndUpdate();
 	}
 	componentDidUpdate() {
 		this.checkToggleCountAndUpdate();
+		this.checkBlockIdAndUpdate();
 	}
 
 	/**
@@ -129,31 +132,59 @@ class Edit extends Component {
 		}, 350);
 	}
 
-	render() {
+	checkBlockIdAndUpdate() {
 		const {
 			attributes,
-			isSelectedBlockInRoot,
 			setAttributes,
-			addToggle,
 			block,
-			updateBlockAttributes,
-			className = "",
-			instanceId
+			updateBlockAttributes
 		} = this.props;
 
-		const { toggleCount } = attributes;
+		const { instanceId } = attributes;
 
-		if (instanceId != attributes.instanceId) {
-			setAttributes({ instanceId, anchor: `accordion-${instanceId}` });
+		// check for possible id collision
+		if (
+			instanceId !== undefined &&
+			1 <
+				document.querySelectorAll(`#accordion-${attributes.instanceId}`).length
+		) {
+			const newInstanceId = parseInt(
+				cryptoRandomString({ length: 4, type: "numeric" })
+			);
+
+			setAttributes({
+				instanceId: newInstanceId,
+				anchor: `accordion-${newInstanceId}`
+			});
 
 			if (block) {
 				// eslint-disable-next-line no-unused-vars
 				for (let child of block.innerBlocks) {
-					if (instanceId != child.attributes.id) {
-						updateBlockAttributes(child.clientId, { id: instanceId });
+					if (newInstanceId != child.attributes.id) {
+						updateBlockAttributes(child.clientId, { id: newInstanceId });
 					}
 				}
 			}
+		}
+	}
+
+	render() {
+		const {
+			attributes,
+			isSelectedBlockInRoot,
+			addToggle,
+			className = "",
+			setAttributes
+		} = this.props;
+
+		const { toggleCount } = attributes;
+
+		let instanceId = attributes.instanceId;
+
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
+			setAttributes({ instanceId });
 		}
 
 		return (
@@ -199,4 +230,4 @@ class Edit extends Component {
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;
