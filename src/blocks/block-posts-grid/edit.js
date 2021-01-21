@@ -23,10 +23,6 @@ class Edit extends Component {
 		super(...arguments);
 	}
 
-	componentDidMount() {
-		this.checkBlockIdAndUpdate();
-	}
-
 	componentDidUpdate() {
 		this.checkBlockIdAndUpdate();
 	}

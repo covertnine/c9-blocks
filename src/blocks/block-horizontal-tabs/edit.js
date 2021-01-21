@@ -37,9 +37,6 @@ class Edit extends Component {
 		this.getUniqueSlug = this.getUniqueSlug.bind(this);
 	}
 
-	componentDidMount() {
-		this.checkBlockIdAndUpdate();
-	}
 	componentDidUpdate() {
 		this.checkBlockIdAndUpdate();
 	}

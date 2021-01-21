@@ -31,7 +31,6 @@ class Edit extends Component {
 
 	componentDidMount() {
 		this.checkToggleCountAndUpdate();
-		this.checkBlockIdAndUpdate();
 	}
 	componentDidUpdate() {
 		this.checkToggleCountAndUpdate();
