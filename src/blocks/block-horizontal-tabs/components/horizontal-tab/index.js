@@ -71,7 +71,8 @@ registerBlockType("c9-blocks/horizontal-tabs-tab", {
 
 	supports: {
 		inserter: false,
-		className: false
+		className: false,
+		reusable: false
 	},
 
 	attributes: {
