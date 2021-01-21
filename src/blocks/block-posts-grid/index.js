@@ -21,6 +21,8 @@ const { compose } = wp.compose;
 const { withSelect } = wp.data;
 const { registerBlockType } = wp.blocks;
 
+import cryptoRandomString from "crypto-random-string";
+
 registerBlockType("c9-blocks/posts-grid", {
 	title: __("C9 Posts Grid", "c9-blocks"),
 	icon: Icon,
@@ -64,7 +66,8 @@ registerBlockType("c9-blocks/posts-grid", {
 
 			return {
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+				instanceId: parseInt(cryptoRandomString({ length: 4, type: "numeric" }))
 			};
 		})
 	])(Edit),
