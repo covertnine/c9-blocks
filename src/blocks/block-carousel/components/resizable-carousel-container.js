@@ -31,7 +31,7 @@ export default class ResizableCarouselContainer extends Component {
 				slideMaxHeight,
 				align,
 				containerWidth,
-				transitionType,
+				transitionType
 			},
 			className = "",
 			editMode = false,
@@ -54,12 +54,13 @@ export default class ResizableCarouselContainer extends Component {
 				containerAlign = null;
 			}
 		}
-		
-		let transitionClass = ''; // No transition
-		if ( transitionType === 'slide') { // Default
-			transitionClass = 'slide';
-		} else if ( transitionType === 'fade') {
-			transitionClass = 'slide carousel-fade';
+
+		let transitionClass = ""; // No transition
+		if (transitionType === "slide") {
+			// Default
+			transitionClass = "slide";
+		} else if (transitionType === "fade") {
+			transitionClass = "slide carousel-fade";
 		}
 
 		const wrapperConfig = {
@@ -73,7 +74,7 @@ export default class ResizableCarouselContainer extends Component {
 			dataInterval: !pause && autoSlide ? slideTime : false,
 			dataWrap: wrapAround,
 			style: { height: slideMaxHeight },
-			...otherProps,
+			...otherProps
 		};
 
 		const updateHeight = value => {
@@ -92,7 +93,7 @@ export default class ResizableCarouselContainer extends Component {
 		const handleOnResizeStop = (event, direction, elt, delta) => {
 			onResizeStop();
 			// const docHeight = document.documentElement.clientHeight;
-			const spacerHeight = parseInt(slideMaxHeight + delta.height, 10)
+			const spacerHeight = parseInt(slideMaxHeight + delta.height, 10);
 			updateHeight(spacerHeight);
 			this.setState({
 				isResizing: false
@@ -104,9 +105,9 @@ export default class ResizableCarouselContainer extends Component {
 				<ResizableBox
 					{...wrapperConfig}
 					refHandle={c => {
-                        if (null !== c) {
-                            this.props.setRef(c.resizable);
-                        }
+						if (null !== c) {
+							this.props.setRef(c.resizable);
+						}
 					}}
 					size={{
 						height: slideMaxHeight
@@ -136,7 +137,11 @@ export default class ResizableCarouselContainer extends Component {
 				</ResizableBox>
 			);
 		} else {
-			return <div {...wrapperConfig}>{this.props.children}</div>;
+			return (
+				<div {...wrapperConfig} style={{ minHeight: slideMaxHeight }}>
+					{this.props.children}
+				</div>
+			);
 		}
 	}
 }
