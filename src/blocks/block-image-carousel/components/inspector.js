@@ -6,7 +6,13 @@ import VerticalAlignmentToolbar from "../../../components/vertical-alignment-too
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { BaseControl, PanelBody, RangeControl, ToggleControl, SelectControl } = wp.components;
+const {
+	BaseControl,
+	PanelBody,
+	RangeControl,
+	ToggleControl,
+	SelectControl
+} = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -30,7 +36,7 @@ export default class Inspector extends Component {
 			verticalAlign,
 			slideMaxHeight,
 			slideCustomHeight,
-			transitionType,
+			transitionType
 		} = attributes;
 
 		return (
@@ -45,26 +51,34 @@ export default class Inspector extends Component {
 							let {
 								url,
 								id,
+								link,
 								captionTitle,
 								captionContent
 							} = this.props.attributes;
 
 							const $ = window.jQuery;
 
+							// clone to new array
+							url = [...url];
+							id = [...id];
+							link = [...link];
+
 							if (value > url.length) {
 								url.push(null);
 								id.push(null);
+								link.push(null);
 								captionTitle.push(null);
 								captionContent.push(null);
 
-								setAttributes({ id, url, captionTitle, captionContent });
+								setAttributes({ id, url, link, captionTitle, captionContent });
 							} else {
 								url.pop();
 								id.pop();
+								link.pop();
 								captionTitle.pop();
 								captionContent.pop();
 
-								setAttributes({ id, url, captionTitle, captionContent });
+								setAttributes({ id, url, link, captionTitle, captionContent });
 
 								if (carouselRef.current && 0 < slideTarget) {
 									$(carouselRef.current).carousel("prev");
@@ -86,11 +100,11 @@ export default class Inspector extends Component {
 					<SelectControl
 						label={__("Transition type", "c9-blocks")}
 						value={transitionType}
-						options={ [
+						options={[
 							{ label: __("Slide", "c9-blocks"), value: "slide" },
 							{ label: __("Fade", "c9-blocks"), value: "fade" },
-							{ label: __("None", "c9-blocks"), value: "none" },
-						] }
+							{ label: __("None", "c9-blocks"), value: "none" }
+						]}
 						onChange={transitionType => setAttributes({ transitionType })}
 					/>
 
@@ -157,7 +171,7 @@ export default class Inspector extends Component {
 						label={__("Responsive image loading", "c9-blocks")}
 						checked={isResponsive}
 						onChange={isResponsive => setAttributes({ isResponsive })}
-						/>
+					/>
 				</PanelBody>
 			</InspectorControls>
 		);

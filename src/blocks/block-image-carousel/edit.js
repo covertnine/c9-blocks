@@ -8,6 +8,7 @@ import PauseToolBar from "../../components/pause-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import WidthToolbar from "../../components/width-toolbar";
 import ResizableCarouselContainer from "./components/resizable-carousel-container";
+import URLPicker from "./components/url-picker";
 
 /**
  * WordPress dependencies
@@ -15,7 +16,6 @@ import ResizableCarouselContainer from "./components/resizable-carousel-containe
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { BlockControls, RichText, MediaPlaceholder } = wp.blockEditor;
-const { withInstanceId } = wp.compose;
 const { isBlobURL } = wp.blob;
 const { Button } = wp.components;
 
@@ -29,6 +29,7 @@ import React from "react";
 
 const ALLOWED_MEDIA_TYPES = ["image"];
 const DEFAULT_SIZE_SLUG = "large";
+const NEW_TAB_REL = "noreferrer noopener";
 
 class Edit extends Component {
 	constructor({ autoSlide, wrapAround, slideTime }) {
@@ -170,20 +171,23 @@ class Edit extends Component {
 	 * @param {number} i Location of slide image was to be added.
 	 */
 	onUploadError(message, i) {
-		let { noticeOperations, url, id } = this.props;
+		let { noticeOperations, url, id, link } = this.props;
 		noticeOperations.removeAllNotices();
 		noticeOperations.createErrorNotice(message);
 
 		// clone to new array
 		url = [...url];
 		id = [...id];
+		link = [...link];
 
 		url[i] = null;
 		id[i] = null;
+		link[i] = null;
 
 		this.props.setAttributes({
 			url,
-			id
+			id,
+			link
 		});
 	}
 
@@ -195,25 +199,29 @@ class Edit extends Component {
 	 */
 	onSelectImage(media, i) {
 		if (!media || !media.url) {
-			let { url, id } = this.props.attributes;
+			let { url, id, link } = this.props.attributes;
 			// clone to new array
 			url = [...url];
 			id = [...id];
+			link = [...link];
 
 			url[i] = undefined;
 			id[i] = undefined;
+			link[i] = "";
 
 			this.props.setAttributes({
 				url,
-				id
+				id,
+				link
 			});
 			return;
 		}
 
-		let { id, url } = this.props.attributes;
+		let { id, url, link } = this.props.attributes;
 		// clone to new array
 		url = [...url];
 		id = [...id];
+		link = [...link];
 
 		let mediaAttributes = this.pickRelevantMediaFiles(media);
 
@@ -232,6 +240,7 @@ class Edit extends Component {
 
 		id[i] = mediaAttributes.id;
 		url[i] = mediaAttributes.url;
+		link[i] = "";
 
 		// update id, url attributes from mediaAttributes
 		mediaAttributes.id = id;
@@ -239,7 +248,8 @@ class Edit extends Component {
 
 		this.props.setAttributes({
 			...mediaAttributes,
-			...additionalAttributes
+			...additionalAttributes,
+			link
 		});
 
 		this.calcAndSetSlideHeight(media.width, media.height);
@@ -262,17 +272,20 @@ class Edit extends Component {
 			};
 		}
 
-		let { url, id } = this.props.attributes;
+		let { url, id, link } = this.props.attributes;
 		// clone to new array
 		url = [...url];
 		id = [...id];
+		link = [...link];
 
 		if (newURL !== url[i]) {
 			url[i] = newURL;
 			id[i] = undefined;
+			link[i] = "";
 			this.props.setAttributes({
 				url,
 				id,
+				link,
 				sizeSlug: DEFAULT_SIZE_SLUG
 			});
 		}
@@ -331,7 +344,13 @@ class Edit extends Component {
 	 */
 	createSlides(slides, allActive = false) {
 		const { isSelectedBlockInRoot, setAttributes } = this.props;
-		const { id, url, captionTitle, captionContent } = this.props.attributes;
+		const {
+			id,
+			url,
+			link,
+			captionTitle,
+			captionContent
+		} = this.props.attributes;
 
 		let template = [];
 		let sizes = [];
@@ -459,17 +478,20 @@ class Edit extends Component {
 											// clone to new array
 											let newUrl = [...url];
 											let newId = [...id];
+											let newLink = [...link];
 											let newCaptionTitle = [...captionTitle];
 											let newCaptionContent = [...captionContent];
 
 											newUrl[i] = null;
 											newId[i] = null;
+											newLink[i] = null;
 											newCaptionTitle[i] = null;
 											newCaptionContent[i] = null;
 
 											setAttributes({
 												url: newUrl,
 												id: newId,
+												link: newLink,
 												captionTitle: newCaptionTitle,
 												captionContent: newCaptionContent
 											});
@@ -495,6 +517,7 @@ class Edit extends Component {
 			attributes,
 			setAttributes,
 			instanceId,
+			isSelected,
 			isSelectedBlockInRoot
 		} = this.props;
 
@@ -503,9 +526,12 @@ class Edit extends Component {
 			showIndicators,
 			showControls,
 			url,
+			link,
 			verticalAlign,
 			align,
-			containerWidth
+			containerWidth,
+			linkTarget,
+			rel
 		} = attributes;
 
 		if (instanceId != attributes.instanceId) {
@@ -524,6 +550,8 @@ class Edit extends Component {
 				currWidth = "narrow";
 			}
 		}
+
+		console.log(url, link);
 
 		return (
 			<Fragment>
@@ -627,9 +655,31 @@ class Edit extends Component {
 						</Fragment>
 					)}
 				</ResizableCarouselContainer>
+				<URLPicker
+					url={link}
+					slideActive={this.state.slideActive}
+					setAttributes={setAttributes}
+					isSelected={isSelected}
+					opensInNewTab={"_blank" === linkTarget}
+					onToggleOpenInNewTab={value => {
+						const newLinkTarget = value ? "_blank" : undefined;
+
+						let updatedRel = rel;
+						if (newLinkTarget && !rel) {
+							updatedRel = NEW_TAB_REL;
+						} else if (!newLinkTarget && rel === NEW_TAB_REL) {
+							updatedRel = undefined;
+						}
+
+						setAttributes({
+							linkTarget: newLinkTarget,
+							rel: updatedRel
+						});
+					}}
+				/>
 			</Fragment>
 		);
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;

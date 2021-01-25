@@ -13,6 +13,7 @@
 	},
 	"dependencies": {
 		"@wordpress/i18n": "^1.1.0",
+		"@wordpress/icons": "^2.9.0",
 		"classnames": "^2.2.5",
 		"dayjs": "^1.9.6",
 		"lodash": "^4.17.20",
