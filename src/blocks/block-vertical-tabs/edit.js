@@ -19,7 +19,6 @@ const {
 	AlignmentToolbar
 } = wp.blockEditor;
 const { applyFilters } = wp.hooks;
-const { withInstanceId } = wp.compose;
 const { select, dispatch } = wp.data;
 
 /**
@@ -27,6 +26,7 @@ const { select, dispatch } = wp.data;
  */
 import classnames from "classnames";
 import slugify from "slugify";
+import cryptoRandomString from "crypto-random-string";
 
 class Edit extends Component {
 	constructor() {
@@ -36,6 +36,10 @@ class Edit extends Component {
 		this.getTabs = this.getTabs.bind(this);
 		this.isUniqueSlug = this.isUniqueSlug.bind(this);
 		this.getUniqueSlug = this.getUniqueSlug.bind(this);
+	}
+
+	componentDidUpdate() {
+		this.checkBlockIdAndUpdate();
 	}
 
 	/**
@@ -117,6 +121,47 @@ class Edit extends Component {
 		return newSlug;
 	}
 
+	checkBlockIdAndUpdate = () => {
+		const {
+			attributes,
+			setAttributes,
+			block,
+			updateBlockAttributes
+		} = this.props;
+
+		const { instanceId, tabsData } = attributes;
+
+		// check for possible id collision
+		if (
+			instanceId !== undefined &&
+			tabsData.some(tabData => {
+				return (
+					1 <
+					document.querySelectorAll(
+						`[href='#vtab-${tabData.slug}-${attributes.instanceId}']`
+					).length
+				);
+			})
+		) {
+			const newInstanceId = parseInt(
+				cryptoRandomString({ length: 4, type: "numeric" })
+			);
+
+			setAttributes({
+				instanceId: newInstanceId
+			});
+
+			if (block) {
+				// eslint-disable-next-line no-unused-vars
+				for (let child of block.innerBlocks) {
+					if (newInstanceId != child.attributes.id) {
+						updateBlockAttributes(child.clientId, { id: newInstanceId });
+					}
+				}
+			}
+		}
+	};
+
 	render() {
 		const {
 			attributes,
@@ -125,8 +170,7 @@ class Edit extends Component {
 			isSelectedBlockInRoot,
 			block,
 			className = "",
-			clientId,
-			instanceId
+			clientId
 		} = this.props;
 
 		const {
@@ -140,15 +184,12 @@ class Edit extends Component {
 			textAlign
 		} = attributes;
 
-		if (instanceId != attributes.instanceId) {
-			setAttributes({ instanceId });
+		let instanceId = attributes.instanceId;
 
-			// eslint-disable-next-line no-unused-vars
-			for (let child of block.innerBlocks) {
-				if (instanceId != child.attributes.id) {
-					updateBlockAttributes(child.clientId, { id: instanceId });
-				}
-			}
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
+			setAttributes({ instanceId });
 		}
 
 		const tabs = this.getTabs();
@@ -159,9 +200,11 @@ class Edit extends Component {
 
 		if (targetedBlock) {
 			targetedBlock.innerBlocks.forEach(function(block) {
-				dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
-					tabActive
-				});
+				if (block.attributes.tabActive !== tabActive) {
+					dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
+						tabActive
+					});
+				}
 			});
 		}
 
@@ -334,4 +377,4 @@ class Edit extends Component {
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;
