@@ -37,6 +37,8 @@ class Edit extends Component {
 
 		this.carouselRef = React.createRef();
 
+		this.currentSlide = 0;
+
 		this.state = {
 			auto: autoSlide,
 			wrap: wrapAround,
@@ -64,6 +66,7 @@ class Edit extends Component {
 		let self = this;
 
 		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
+			self.currentSlide = to;
 			self.setState({ slideTarget: to, slideActive: to });
 		});
 	}
@@ -516,7 +519,6 @@ class Edit extends Component {
 		const {
 			attributes,
 			setAttributes,
-			instanceId,
 			isSelected,
 			isSelectedBlockInRoot
 		} = this.props;
@@ -534,7 +536,11 @@ class Edit extends Component {
 			rel
 		} = attributes;
 
-		if (instanceId != attributes.instanceId) {
+		let instanceId = attributes.instanceId;
+
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
 			setAttributes({ instanceId });
 		}
 
@@ -551,7 +557,7 @@ class Edit extends Component {
 			}
 		}
 
-		console.log(url, link);
+		console.log(url, link, this.currentSlide);
 
 		return (
 			<Fragment>
@@ -657,7 +663,7 @@ class Edit extends Component {
 				</ResizableCarouselContainer>
 				<URLPicker
 					url={link}
-					slideActive={this.state.slideActive}
+					slideActive={this.currentSlide}
 					setAttributes={setAttributes}
 					isSelected={isSelected}
 					opensInNewTab={"_blank" === linkTarget}

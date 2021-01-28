@@ -42,7 +42,7 @@ export default class ResizableCarouselContainer extends Component {
 			onResizeStop,
 			...otherProps
 		} = this.props;
-		const instanceId = editMode ? this.props.instanceId : attributes.instanceId;
+		const instanceId = attributes.instanceId;
 
 		let containerAlign;
 		if (0 != align.length) {

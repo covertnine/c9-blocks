@@ -12,7 +12,6 @@ import ResizableCarouselContainer from "./components/resizable-carousel-containe
  */
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
-const { withInstanceId } = wp.compose;
 
 /**
  * External Dependencies.
@@ -87,7 +86,11 @@ class Edit extends Component {
 
 		// eslint-disable-next-line no-unused-vars
 		for (let child of block.innerBlocks) {
-			updateBlockAttributes(child.clientId, { slideActive: this.state.active });
+			if (child.attributes.slideActive !== this.state.active) {
+				updateBlockAttributes(child.clientId, {
+					slideActive: this.state.active
+				});
+			}
 		}
 
 		const { auto, wrap, time, pause } = this.state;
@@ -170,12 +173,7 @@ class Edit extends Component {
 	});
 
 	render() {
-		const {
-			attributes,
-			instanceId,
-			isSelectedBlockInRoot,
-			setAttributes
-		} = this.props;
+		const { attributes, isSelectedBlockInRoot, setAttributes } = this.props;
 
 		const {
 			slides,
@@ -188,7 +186,11 @@ class Edit extends Component {
 
 		const { pause } = this.state;
 
-		if (instanceId != attributes.instanceId) {
+		let instanceId = attributes.instanceId;
+
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
 			setAttributes({ instanceId });
 		}
 
@@ -312,4 +314,4 @@ class Edit extends Component {
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;

@@ -42,6 +42,9 @@ function URLPicker({
 			position="bottom center"
 			onClose={() => setIsURLPickerOpen(false)}
 		>
+			<p className="components-base-control__label">
+				Custom Link Setting for Slide {slideActive}
+			</p>
 			<LinkControl
 				className="wp-block-navigation-link__inline-link-input"
 				value={{ url: url[slideActive], opensInNewTab }}
