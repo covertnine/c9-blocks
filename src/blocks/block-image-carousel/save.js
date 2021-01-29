@@ -12,6 +12,7 @@ const { RichText } = wp.blockEditor;
  * External Dependencies.
  */
 import classnames from "classnames";
+import isEmpty from "lodash/isEmpty";
 
 export default class Save extends Component {
 	constructor() {
@@ -48,16 +49,29 @@ export default class Save extends Component {
 		const {
 			url,
 			id,
+			link,
+			linkTarget,
+			rel,
 			captionTitle,
 			captionContent,
 			isResponsive
 		} = this.props.attributes;
 
+		const newRel = isEmpty(rel) ? undefined : rel;
+
 		let template = [];
 		for (let i = 0; i < slides; i++) {
+			const Wrapper = link[i]
+				? ({ children }) => (
+						<a href={link[i]} target={linkTarget} rel={newRel}>
+							{children}
+						</a>
+				  )
+				: Fragment;
+
 			template.push(
 				<div className={classnames("carousel-item", 0 == i ? "active" : null)}>
-					<Fragment>
+					<Wrapper>
 						{url[i] && (
 							<img
 								src={url[i]}
@@ -77,7 +91,7 @@ export default class Save extends Component {
 								)}
 							</div>
 						)}
-					</Fragment>
+					</Wrapper>
 				</div>
 			);
 		}

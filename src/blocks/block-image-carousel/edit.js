@@ -37,8 +37,6 @@ class Edit extends Component {
 
 		this.carouselRef = React.createRef();
 
-		this.currentSlide = 0;
-
 		this.state = {
 			auto: autoSlide,
 			wrap: wrapAround,
@@ -66,7 +64,6 @@ class Edit extends Component {
 		let self = this;
 
 		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
-			self.currentSlide = to;
 			self.setState({ slideTarget: to, slideActive: to });
 		});
 	}
@@ -556,8 +553,6 @@ class Edit extends Component {
 				currWidth = "narrow";
 			}
 		}
-
-		console.log(url, link, this.currentSlide);
 
 		return (
 			<Fragment>
