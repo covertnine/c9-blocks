@@ -1,5 +1,5 @@
 const { __ } = wp.i18n;
-const { useState, Fragment } = wp.element;
+const { useState, useEffect, Fragment } = wp.element;
 const {
 	Popover,
 	ToolbarButton,
@@ -16,15 +16,33 @@ import { link, linkOff } from "@wordpress/icons";
 function URLPicker({
 	isSelected,
 	url,
-	slideActive,
+	id,
+	startPause,
 	setAttributes,
 	opensInNewTab,
 	onToggleOpenInNewTab
 }) {
 	const [isURLPickerOpen, setIsURLPickerOpen] = useState(false);
+	const [slideActive, setSlideActive] = useState(0);
+
+	useEffect(() => {
+		const intervalID = setInterval(() => {
+			const $ = window.jQuery;
+			const currSlide = $(
+				`#c9-image-carousel-indicator-${id} div.active`
+			).index();
+			setSlideActive(currSlide);
+		}, 300);
+		return () => {
+			// Stop the interval when the component unmounts.
+			clearInterval(intervalID);
+		};
+	}, []);
+
 	const urlIsSet = !!url[slideActive];
 	const urlIsSetandSelected = urlIsSet && isSelected;
 	const openLinkControl = () => {
+		startPause();
 		setIsURLPickerOpen(true);
 		return false; // prevents default behaviour for event
 	};
@@ -42,8 +60,11 @@ function URLPicker({
 			position="bottom center"
 			onClose={() => setIsURLPickerOpen(false)}
 		>
-			<p className="components-base-control__label">
-				Custom Link Setting for Slide {slideActive}
+			<p
+				className="components-base-control__label"
+				style={{ textAlign: "center" }}
+			>
+				Custom Link Setting for Slide {slideActive + 1}
 			</p>
 			<LinkControl
 				className="wp-block-navigation-link__inline-link-input"

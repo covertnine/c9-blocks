@@ -662,8 +662,9 @@ class Edit extends Component {
 					)}
 				</ResizableCarouselContainer>
 				<URLPicker
+					id={instanceId}
+					startPause={() => this.setState({ pause: true })}
 					url={link}
-					slideActive={this.currentSlide}
 					setAttributes={setAttributes}
 					isSelected={isSelected}
 					opensInNewTab={"_blank" === linkTarget}
