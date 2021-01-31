@@ -135,7 +135,8 @@ registerBlockType("c9-blocks/carousel-slide", {
 
 	supports: {
 		inserter: false,
-		className: false
+		className: false,
+		reusable: false
 	},
 
 	attributes: {

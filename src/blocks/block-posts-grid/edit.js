@@ -9,7 +9,6 @@ import Container from "./components/container";
  */
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
-const { withInstanceId } = wp.compose;
 
 /**
  * External Dependencies.
@@ -76,4 +75,4 @@ class Edit extends Component {
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;
