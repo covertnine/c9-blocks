@@ -8,7 +8,7 @@ import classnames from "classnames";
  */
 const { applyFilters } = wp.hooks;
 const { Component } = wp.element;
-import ResizableBox from "../../../components/resizable-box";
+import ResizableBox from "../../../../components/resizable-box";
 
 const MIN_SLIDE_HEIGHT = 1;
 
@@ -42,7 +42,7 @@ export default class ResizableCarouselContainer extends Component {
 			pause,
 			...otherProps
 		} = this.props;
-		const instanceId = attributes.instanceId;
+		const instanceId = editMode ? this.props.instanceId : attributes.instanceId;
 
 		let containerAlign;
 		if (0 != align.length) {
@@ -137,11 +137,7 @@ export default class ResizableCarouselContainer extends Component {
 				</ResizableBox>
 			);
 		} else {
-			return (
-				<div {...wrapperConfig} style={{ minHeight: slideMaxHeight }}>
-					{this.props.children}
-				</div>
-			);
+			return <div {...wrapperConfig}>{this.props.children}</div>;
 		}
 	}
 }

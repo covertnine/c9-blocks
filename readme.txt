@@ -3,8 +3,8 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
-Tested up to: 5.6
-Stable tag: 1.3.6
+Tested up to: 5.6.1
+Stable tag: 1.3.7
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -60,6 +60,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.3.7 =
+Fixed broken "covert to blocks" buttons from saved blocks. Fixed layout bug for WooCommerce checkout conflicts. Updated package for icons in WP. Image carousels slides can now be linked. Min-height CSS fix for carousel slide heights.
 
 = 1.3.6 =
 Bug fix to overflow issues from some drop down menus on toolbar dropdowns like image replacement. Adding icons and more templates to library. Saved blocks width issues. Better mobile previews with grid layouts in admin.

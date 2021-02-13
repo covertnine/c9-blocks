@@ -9,7 +9,11 @@ import Container from "./components/container";
  */
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
-const { withInstanceId } = wp.compose;
+
+/**
+ * External Dependencies.
+ */
+import cryptoRandomString from "crypto-random-string";
 
 const ALLOWED_BLOCKS = ["c9-blocks/post-grid"];
 
@@ -18,10 +22,39 @@ class Edit extends Component {
 		super(...arguments);
 	}
 
-	render() {
-		const { instanceId, attributes, setAttributes } = this.props;
+	componentDidUpdate() {
+		this.checkBlockIdAndUpdate();
+	}
 
-		if (instanceId != attributes.instanceId) {
+	checkBlockIdAndUpdate = () => {
+		const { attributes, setAttributes } = this.props;
+
+		const { instanceId, containerVideoID } = attributes;
+
+		// check for possible id collision
+		if (
+			instanceId !== undefined &&
+			1 <
+				document.querySelectorAll(`#player-${containerVideoID}-${instanceId}`)
+					.length
+		) {
+			const newInstanceId = parseInt(
+				cryptoRandomString({ length: 4, type: "numeric" })
+			);
+
+			setAttributes({
+				instanceId: newInstanceId
+			});
+		}
+	};
+
+	render() {
+		const { attributes, setAttributes } = this.props;
+		let instanceId = attributes.instanceId;
+
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
 			setAttributes({ instanceId });
 		}
 
@@ -42,4 +75,4 @@ class Edit extends Component {
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;

@@ -20,6 +20,8 @@ const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 const { registerBlockType } = wp.blocks;
 
+import cryptoRandomString from "crypto-random-string";
+
 registerBlockType("c9-blocks/horizontal-tabs", {
 	title: __("C9 Horizontal Tabs", "c9-blocks"),
 	icon: Icon,
@@ -89,7 +91,8 @@ registerBlockType("c9-blocks/horizontal-tabs", {
 			return {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+				instanceId: parseInt(cryptoRandomString({ length: 4, type: "numeric" }))
 			};
 		}),
 		withDispatch(dispatch => {

@@ -61,43 +61,6 @@ const attributes = {
 	overrideStyle: {
 		type: "boolean",
 		default: false
-	},
-	enableAnimate: {
-		type: "boolean",
-		default: false
-	},
-	animateVal: {
-		type: "string",
-		default: "fade"
-	},
-	animateEase: {
-		type: "string",
-		default: "none"
-	},
-	animateDelay: {
-		type: "number",
-		default: 0
-	},
-	animateSpeed: {
-		type: "number",
-		default: 2000
-	},
-	animateScrub: {
-		type: "boolean",
-		default: false
-	},
-	animateStart: {
-		type: "string"
-	},
-	animateEnd: {
-		type: "string"
-	},
-	animateCustom: {
-		type: "object",
-		default: {
-			before: {},
-			after: {}
-		}
 	}
 };
 

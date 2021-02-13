@@ -1,4 +1,5 @@
-import SaveDeprecated from "./save.deprecated";
+import SaveDeprecatedV1 from "./1.0/save.deprecated";
+import SaveDeprecatedV2 from "./2.0/save.deprecated";
 import attributes from "../attributes";
 
 const Deprecated = [
@@ -15,7 +16,13 @@ const Deprecated = [
 			}
 		},
 		save: props => {
-			return <SaveDeprecated {...props} />;
+			return <SaveDeprecatedV1 {...props} />;
+		}
+	},
+	{
+		attributes,
+		save: props => {
+			return <SaveDeprecatedV2 {...props} />;
 		}
 	}
 ];

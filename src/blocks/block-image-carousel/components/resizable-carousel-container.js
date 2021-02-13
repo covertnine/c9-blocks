@@ -32,7 +32,7 @@ export default class ResizableCarouselContainer extends Component {
 				align,
 				containerWidth,
 				slideCustomHeight,
-				transitionType,
+				transitionType
 			},
 			className = "",
 			editMode = false,
@@ -42,7 +42,7 @@ export default class ResizableCarouselContainer extends Component {
 			onResizeStop,
 			...otherProps
 		} = this.props;
-		const instanceId = editMode ? this.props.instanceId : attributes.instanceId;
+		const instanceId = attributes.instanceId;
 
 		let containerAlign;
 		if (0 != align.length) {
@@ -54,12 +54,13 @@ export default class ResizableCarouselContainer extends Component {
 				containerAlign = null;
 			}
 		}
-		
-		let transitionClass = ''; // No transition
-		if ( 'slide' === transitionType ) { // Default
-			transitionClass = 'slide';
-		} else if ( 'fade' === transitionType ) {
-			transitionClass = 'slide carousel-fade';
+
+		let transitionClass = ""; // No transition
+		if ("slide" === transitionType) {
+			// Default
+			transitionClass = "slide";
+		} else if ("fade" === transitionType) {
+			transitionClass = "slide carousel-fade";
 		}
 
 		const wrapperConfig = {
@@ -73,7 +74,7 @@ export default class ResizableCarouselContainer extends Component {
 			"data-interval": autoSlide ? slideTime : false,
 			"data-wrap": wrapAround,
 			style: { height: slideCustomHeight ? slideMaxHeight : null },
-			...otherProps,
+			...otherProps
 		};
 
 		const updateHeight = value => {
@@ -137,7 +138,11 @@ export default class ResizableCarouselContainer extends Component {
 			);
 		} else {
 			return (
-				<div {...wrapperConfig} ref={c => this.props.setRef(c)}>
+				<div
+					{...wrapperConfig}
+					style={{ minHeight: slideMaxHeight }}
+					ref={c => this.props.setRef(c)}
+				>
 					{this.props.children}
 				</div>
 			);

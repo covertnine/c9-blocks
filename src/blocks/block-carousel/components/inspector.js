@@ -76,7 +76,7 @@ export default class Inspector extends Component {
 						value={slideMaxHeight}
 						onChange={slideMaxHeight => setAttributes({ slideMaxHeight })}
 						min={0}
-						max={1000}
+						max={5000}
 					/>
 
 					<hr />

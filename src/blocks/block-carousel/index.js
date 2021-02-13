@@ -13,6 +13,8 @@ import "./styles/style.scss";
 
 import Icon from "../../../assets/icon-c9-anything-carousel.svg";
 
+import cryptoRandomString from "crypto-random-string";
+
 /**
  * WordPress dependencies
  */
@@ -166,7 +168,8 @@ registerBlockType("c9-blocks/carousel", {
 			return {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+				instanceId: parseInt(cryptoRandomString({ length: 4, type: "numeric" }))
 			};
 		}),
 		withDispatch(dispatch => {

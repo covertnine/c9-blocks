@@ -29,6 +29,14 @@ class Toggle extends Component {
 		this.toggleDisplayRef = React.createRef();
 	}
 
+	componentDidMount() {
+		this.updateActiveStatus();
+	}
+
+	componentDidUpdate() {
+		this.updateActiveStatus();
+	}
+
 	/**
 	 * If this is last remaining toggle, remove the parent block as well.
 	 */
@@ -73,6 +81,21 @@ class Toggle extends Component {
 		return result;
 	};
 
+	/**
+	 * Check if toggle is active or not.
+	 */
+	updateActiveStatus = () => {
+		const { setAttributes, isSelectedBlockInRoot } = this.props;
+
+		if (
+			!isSelectedBlockInRoot &&
+			null != this.toggleDisplayRef.current &&
+			!this.toggleDisplayRef.current.className.includes("show")
+		) {
+			setAttributes({ active: false });
+		}
+	};
+
 	render() {
 		const {
 			attributes,
@@ -83,16 +106,6 @@ class Toggle extends Component {
 		} = this.props;
 
 		const { heading, active, anchor } = attributes;
-
-		if (
-			!isSelectedBlockInRoot &&
-			null != this.toggleDisplayRef.current &&
-			!this.toggleDisplayRef.current.className.includes("show")
-		) {
-			setAttributes({
-				active: false
-			});
-		}
 
 		return (
 			<Fragment>
@@ -202,7 +215,8 @@ registerBlockType("c9-blocks/toggles-toggle", {
 	supports: {
 		inserter: false,
 		className: false,
-		anchor: true
+		anchor: true,
+		reusable: false
 	},
 	attributes: {
 		heading: {

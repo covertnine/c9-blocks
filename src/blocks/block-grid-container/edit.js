@@ -10,7 +10,6 @@ import ResizableContainer from "./components/resizable-container";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
-const { withInstanceId } = wp.compose;
 const { Button } = wp.components;
 
 /**
@@ -18,6 +17,7 @@ const { Button } = wp.components;
  */
 import memoize from "memize";
 import times from "lodash/times";
+import cryptoRandomString from "crypto-random-string";
 
 const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
 
@@ -25,6 +25,32 @@ class Edit extends Component {
 	constructor() {
 		super(...arguments);
 	}
+
+	componentDidUpdate() {
+		this.checkBlockIdAndUpdate();
+	}
+
+	checkBlockIdAndUpdate = () => {
+		const { attributes, setAttributes } = this.props;
+
+		const { instanceId, containerVideoID } = attributes;
+
+		// check for possible id collision
+		if (
+			instanceId !== undefined &&
+			1 <
+				document.querySelectorAll(`#player-${containerVideoID}-${instanceId}`)
+					.length
+		) {
+			const newInstanceId = parseInt(
+				cryptoRandomString({ length: 4, type: "numeric" })
+			);
+
+			setAttributes({
+				instanceId: newInstanceId
+			});
+		}
+	};
 
 	/**
 	 * Generates the child (row) column container blocks.
@@ -35,7 +61,6 @@ class Edit extends Component {
 
 	render() {
 		const {
-			instanceId,
 			attributes,
 			setAttributes,
 			isSelectedBlockInRoot,
@@ -44,7 +69,11 @@ class Edit extends Component {
 
 		const { rows } = attributes;
 
-		if (instanceId != attributes.instanceId) {
+		let instanceId = attributes.instanceId;
+
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
 			setAttributes({ instanceId });
 		}
 
@@ -95,4 +124,4 @@ class Edit extends Component {
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;

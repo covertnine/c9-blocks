@@ -11,16 +11,21 @@ import RemoveButton from "../../components/remove-button";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Button, Tooltip } = wp.components;
-const { BlockControls, RichText, InnerBlocks, AlignmentToolbar } = wp.blockEditor;
+const {
+	BlockControls,
+	RichText,
+	InnerBlocks,
+	AlignmentToolbar
+} = wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { select, dispatch } = wp.data;
-const { withInstanceId } = wp.compose;
 
 /**
  * External Dependencies.
  */
 import classnames from "classnames";
 import slugify from "slugify";
+import cryptoRandomString from "crypto-random-string";
 
 class Edit extends Component {
 	constructor() {
@@ -30,6 +35,10 @@ class Edit extends Component {
 		this.getTabs = this.getTabs.bind(this);
 		this.isUniqueSlug = this.isUniqueSlug.bind(this);
 		this.getUniqueSlug = this.getUniqueSlug.bind(this);
+	}
+
+	componentDidUpdate() {
+		this.checkBlockIdAndUpdate();
 	}
 
 	/**
@@ -111,6 +120,47 @@ class Edit extends Component {
 		return newSlug;
 	}
 
+	checkBlockIdAndUpdate = () => {
+		const {
+			attributes,
+			setAttributes,
+			block,
+			updateBlockAttributes
+		} = this.props;
+
+		const { instanceId, tabsData } = attributes;
+
+		// check for possible id collision
+		if (
+			instanceId !== undefined &&
+			tabsData.some(tabData => {
+				return (
+					1 <
+					document.querySelectorAll(
+						`[href='#htab-${tabData.slug}-${attributes.instanceId}']`
+					).length
+				);
+			})
+		) {
+			const newInstanceId = parseInt(
+				cryptoRandomString({ length: 4, type: "numeric" })
+			);
+
+			setAttributes({
+				instanceId: newInstanceId
+			});
+
+			if (block) {
+				// eslint-disable-next-line no-unused-vars
+				for (let child of block.innerBlocks) {
+					if (newInstanceId != child.attributes.id) {
+						updateBlockAttributes(child.clientId, { id: newInstanceId });
+					}
+				}
+			}
+		}
+	};
+
 	render() {
 		const {
 			attributes,
@@ -119,8 +169,7 @@ class Edit extends Component {
 			isSelectedBlockInRoot,
 			block,
 			className = "",
-			clientId,
-			instanceId
+			clientId
 		} = this.props;
 
 		const {
@@ -133,15 +182,12 @@ class Edit extends Component {
 			blockBackgroundColor
 		} = attributes;
 
-		if (instanceId != attributes.instanceId) {
-			setAttributes({ instanceId });
+		let instanceId = attributes.instanceId;
 
-			// eslint-disable-next-line no-unused-vars
-			for (let child of block.innerBlocks) {
-				if (instanceId != child.attributes.id) {
-					updateBlockAttributes(child.clientId, { id: instanceId });
-				}
-			}
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
+			setAttributes({ instanceId });
 		}
 
 		const tabs = this.getTabs();
@@ -155,15 +201,18 @@ class Edit extends Component {
 			align = buttonsAlign;
 		}
 
-		const targetBlock = select("core/block-editor").getBlocksByClientId(clientId)[0];
+		const targetBlock = select("core/block-editor").getBlocksByClientId(
+			clientId
+		)[0];
 
 		if (null !== targetBlock) {
-			targetBlock
-				.innerBlocks.forEach(function(block) {
+			targetBlock.innerBlocks.forEach(function(block) {
+				if (block.attributes.tabActive !== tabActive) {
 					dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
 						tabActive
 					});
-				});
+				}
+			});
 		}
 
 		return (
@@ -325,4 +374,4 @@ class Edit extends Component {
 	}
 }
 
-export default withInstanceId(Edit);
+export default Edit;

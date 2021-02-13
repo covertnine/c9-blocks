@@ -29,6 +29,10 @@ const attributes = {
 		type: "array",
 		default: [null, null, null]
 	},
+	link: {
+		type: "array",
+		default: [null, null, null]
+	},
 	id: {
 		type: "array",
 		default: [null, null, null]
@@ -72,6 +76,18 @@ const attributes = {
 		type: "string",
 		default: "slide"
 	},
+	linkTarget: {
+		type: "string",
+		source: "attribute",
+		selector: "a",
+		attribute: "target"
+	},
+	rel: {
+		type: "string",
+		source: "attribute",
+		selector: "a",
+		attribute: "rel"
+	}
 };
 
 export default attributes;

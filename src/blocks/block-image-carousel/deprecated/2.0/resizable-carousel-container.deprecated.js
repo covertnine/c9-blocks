@@ -8,7 +8,7 @@ import classnames from "classnames";
  */
 const { applyFilters } = wp.hooks;
 const { Component } = wp.element;
-import ResizableBox from "../../../components/resizable-box";
+import ResizableBox from "../../../../components/resizable-box";
 
 const MIN_SLIDE_HEIGHT = 1;
 
@@ -31,6 +31,7 @@ export default class ResizableCarouselContainer extends Component {
 				slideMaxHeight,
 				align,
 				containerWidth,
+				slideCustomHeight,
 				transitionType
 			},
 			className = "",
@@ -39,10 +40,9 @@ export default class ResizableCarouselContainer extends Component {
 			setAttributes,
 			onResizeStart,
 			onResizeStop,
-			pause,
 			...otherProps
 		} = this.props;
-		const instanceId = attributes.instanceId;
+		const instanceId = editMode ? this.props.instanceId : attributes.instanceId;
 
 		let containerAlign;
 		if (0 != align.length) {
@@ -56,24 +56,24 @@ export default class ResizableCarouselContainer extends Component {
 		}
 
 		let transitionClass = ""; // No transition
-		if (transitionType === "slide") {
+		if ("slide" === transitionType) {
 			// Default
 			transitionClass = "slide";
-		} else if (transitionType === "fade") {
+		} else if ("fade" === transitionType) {
 			transitionClass = "slide carousel-fade";
 		}
 
 		const wrapperConfig = {
-			id: `c9-carousel-indicator-${instanceId}`,
+			id: `c9-image-carousel-indicator-${instanceId}`,
 			className: classnames(
 				applyFilters("c9-blocks.blocks.className", className),
 				`carousel ${transitionClass}`,
 				!editMode ? [containerAlign, containerWidth] : null
 			),
-			dataRide: "carousel",
-			dataInterval: !pause && autoSlide ? slideTime : false,
-			dataWrap: wrapAround,
-			style: { height: slideMaxHeight },
+			"data-ride": "carousel",
+			"data-interval": autoSlide ? slideTime : false,
+			"data-wrap": wrapAround,
+			style: { height: slideCustomHeight ? slideMaxHeight : null },
 			...otherProps
 		};
 
@@ -100,7 +100,7 @@ export default class ResizableCarouselContainer extends Component {
 			});
 		};
 
-		if (editMode) {
+		if (editMode && slideCustomHeight) {
 			return (
 				<ResizableBox
 					{...wrapperConfig}
@@ -138,7 +138,7 @@ export default class ResizableCarouselContainer extends Component {
 			);
 		} else {
 			return (
-				<div {...wrapperConfig} style={{ minHeight: slideMaxHeight }}>
+				<div {...wrapperConfig} ref={c => this.props.setRef(c)}>
 					{this.props.children}
 				</div>
 			);
