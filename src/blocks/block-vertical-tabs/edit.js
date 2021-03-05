@@ -50,9 +50,14 @@ class Edit extends Component {
 	 * @return {Object[]} Tabs layout configuration.
 	 */
 	getTabsTemplate() {
-		const { instanceId } = this.props;
 		const { tabsData = [], tabActive } = this.props.attributes;
+		let instanceId = this.props.attributes.instanceId;
 		const result = [];
+
+		if (instanceId === undefined) {
+			// fallback if not defined yet
+			instanceId = this.props.instanceId;
+		}
 
 		tabsData.forEach(tabData => {
 			result.push([
