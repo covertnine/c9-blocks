@@ -209,7 +209,7 @@ class Edit extends Component {
 
 		if (instanceId === undefined) {
 			// set default random id if not set
-			instanceId = cryptoRandomString({ length: 4, type: "numeric" });
+			instanceId = parseInt(cryptoRandomString({ length: 4, type: "numeric" }));
 			setAttributes({ instanceId });
 		}
 
