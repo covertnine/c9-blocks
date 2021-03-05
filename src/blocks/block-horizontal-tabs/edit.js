@@ -37,6 +37,28 @@ class Edit extends Component {
 		this.getUniqueSlug = this.getUniqueSlug.bind(this);
 	}
 
+	componentDidMount() {
+		const { attributes, block, updateBlockAttributes } = this.props;
+		// check if child ids are synced with parent
+		let instanceId = attributes.instanceId;
+		if (instanceId === undefined) {
+			// fallback id if not set
+			instanceId = this.props.instanceId;
+		}
+
+		if (block) {
+			// eslint-disable-next-line no-unused-vars
+			for (let child of block.innerBlocks) {
+				if (instanceId != child.attributes.id) {
+					console.log(
+						`Syncing horizontal tab child ${child.clientId} with parent ${block.clientId}...`
+					);
+					updateBlockAttributes(child.clientId, { id: instanceId });
+				}
+			}
+		}
+	}
+
 	componentDidUpdate() {
 		this.checkBlockIdAndUpdate();
 	}
