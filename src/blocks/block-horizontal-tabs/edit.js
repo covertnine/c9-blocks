@@ -42,8 +42,7 @@ class Edit extends Component {
 		// check if child ids are synced with parent
 		let instanceId = attributes.instanceId;
 		if (instanceId === undefined) {
-			// fallback id if not set
-			instanceId = this.props.instanceId;
+			return;
 		}
 
 		if (block) {
@@ -70,15 +69,9 @@ class Edit extends Component {
 	 *
 	 * @return {Object[]} Tabs layout configuration.
 	 */
-	getTabsTemplate() {
+	getTabsTemplate(instanceId) {
 		const { tabsData = [], tabActive } = this.props.attributes;
-		let instanceId = this.props.attributes.instanceId;
 		const result = [];
-
-		if (instanceId === undefined) {
-			// fallback if not defined yet
-			instanceId = this.props.instanceId;
-		}
 
 		tabsData.forEach(tabData => {
 			result.push([
@@ -213,7 +206,7 @@ class Edit extends Component {
 
 		if (instanceId === undefined) {
 			// set default random id if not set
-			instanceId = this.props.instanceId;
+			instanceId = cryptoRandomString({ length: 4, type: "numeric" });
 			setAttributes({ instanceId });
 		}
 
@@ -383,7 +376,7 @@ class Edit extends Component {
 						}}
 					>
 						<InnerBlocks
-							template={this.getTabsTemplate()}
+							template={this.getTabsTemplate(instanceId)}
 							templateLock="all"
 							allowedBlocks={["c9-blocks/horizontal-tabs-tab"]}
 						/>

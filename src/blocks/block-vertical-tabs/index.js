@@ -12,8 +12,6 @@ import "./styles/style.scss";
 
 import Icon from "../../../assets/icon-c9-tabs-vertical-tabs.svg";
 
-import cryptoRandomString from "crypto-random-string";
-
 /**
  * WordPress dependencies
  */
@@ -99,8 +97,7 @@ registerBlockType("c9-blocks/vertical-tabs", {
 			return {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
-				instanceId: parseInt(cryptoRandomString({ length: 4, type: "numeric" }))
+					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true)
 			};
 		}),
 		withDispatch(dispatch => {
