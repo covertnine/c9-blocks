@@ -45,6 +45,11 @@
 	color: #fff;
 }
 
+.carousel-caption h5 span,
+.carousel-caption p span {
+	font-size: inherit;
+}
+
 .carousel-control-next {
 	right: 0px;
 }
