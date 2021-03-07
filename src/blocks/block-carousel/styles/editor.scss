@@ -92,7 +92,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-	.edit-post-layout .block-editor-block-list__layout.is-root-container .c9-carousel .wp-block {
+	.edit-post-layout .block-editor-block-list__layout.is-root-container .c9-carousel .wp-block:not(.wp-block-button) {
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
