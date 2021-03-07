@@ -37,6 +37,27 @@ class Edit extends Component {
 		this.getUniqueSlug = this.getUniqueSlug.bind(this);
 	}
 
+	componentDidMount() {
+		const { attributes, block, updateBlockAttributes } = this.props;
+		// check if child ids are synced with parent
+		let instanceId = attributes.instanceId;
+		if (instanceId === undefined) {
+			return;
+		}
+
+		if (block) {
+			// eslint-disable-next-line no-unused-vars
+			for (let child of block.innerBlocks) {
+				if (instanceId != child.attributes.id) {
+					console.log(
+						`Syncing horizontal tab child ${child.clientId} with parent ${block.clientId}...`
+					);
+					updateBlockAttributes(child.clientId, { id: instanceId });
+				}
+			}
+		}
+	}
+
 	componentDidUpdate() {
 		this.checkBlockIdAndUpdate();
 	}
@@ -48,8 +69,8 @@ class Edit extends Component {
 	 *
 	 * @return {Object[]} Tabs layout configuration.
 	 */
-	getTabsTemplate() {
-		const { instanceId } = this.props;
+	getTabsTemplate(instanceId) {
+		console.log(instanceId);
 		const { tabsData = [], tabActive } = this.props.attributes;
 		const result = [];
 
@@ -186,7 +207,7 @@ class Edit extends Component {
 
 		if (instanceId === undefined) {
 			// set default random id if not set
-			instanceId = this.props.instanceId;
+			instanceId = parseInt(cryptoRandomString({ length: 4, type: "numeric" }));
 			setAttributes({ instanceId });
 		}
 
@@ -356,7 +377,7 @@ class Edit extends Component {
 						}}
 					>
 						<InnerBlocks
-							template={this.getTabsTemplate()}
+							template={this.getTabsTemplate(instanceId)}
 							templateLock="all"
 							allowedBlocks={["c9-blocks/horizontal-tabs-tab"]}
 						/>

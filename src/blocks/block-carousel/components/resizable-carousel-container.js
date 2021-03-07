@@ -56,10 +56,10 @@ export default class ResizableCarouselContainer extends Component {
 		}
 
 		let transitionClass = ""; // No transition
-		if (transitionType === "slide") {
+		if ("slide" === transitionType) {
 			// Default
 			transitionClass = "slide";
-		} else if (transitionType === "fade") {
+		} else if ("fade" === transitionType) {
 			transitionClass = "slide carousel-fade";
 		}
 
@@ -70,9 +70,9 @@ export default class ResizableCarouselContainer extends Component {
 				`carousel ${transitionClass}`,
 				!editMode ? [containerAlign, containerWidth] : null
 			),
-			dataRide: "carousel",
-			dataInterval: !pause && autoSlide ? slideTime : false,
-			dataWrap: wrapAround,
+			"data-ride": "carousel",
+			"data-interval": !pause && autoSlide ? slideTime : false,
+			"data-wrap": wrapAround,
 			style: { height: slideMaxHeight },
 			...otherProps
 		};

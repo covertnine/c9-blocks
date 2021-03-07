@@ -3,8 +3,8 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
-Tested up to: 5.6.1
-Stable tag: 1.3.7
+Tested up to: 5.7
+Stable tag: 1.3.8
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -13,21 +13,21 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-**What's it like editing content with C9 Blocks & C9 Themes?**
+[COVERT NINE](https://www.covertnine.com)'s C9 Blocks plugin provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages with specific purposes for their audience.
 
 https://www.youtube.com/watch?v=zu3JyJr5eeM
+
+The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper right corner after installing the WordPress plugin.
+
+Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 supported theme](https://www.covertnine.com/c9-blocks-plugin) with the C9 Blocks plugin, but it also works with the [Twenty Twenty One](https://2021.covertnine.com), Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter), [C9 Work](https://wordpress.org/themes/c9-work) theme, or [C9 Togo](https://wordpress.org/themes/c9-togo) theme to see C9 Blocks in action, or signup for the [C9 early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free! We currently have four blocks-based themes and four child themes available for early access list subscribers and an exclusive [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/) to animate any core WordPress blocks or C9 Blocks.
+
+For an overview of each of the blocks, and more up to date documentation, head over to our [documentation site](https://c9.covertnine.com)
+
+**What's it like editing content with C9?**
 
 https://www.youtube.com/watch?v=fKneUaQic08
 
 https://www.youtube.com/watch?v=jHqOO_MP8nE
-
-[COVERT NINE](https://www.covertnine.com)'s C9 Blocks plugin provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages with specific purposes for their audience.
-
-The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper right corner after installing the WordPress plugin.
-
-Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 supported theme](https://www.covertnine.com/c9-blocks-plugin) with the C9 Blocks plugin, but it also works with the [Twenty Twenty One](https://2021.covertnine.com), Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter) or [C9 Work](https://wordpress.org/themes/c9-work) theme to see C9 Blocks in action, or signup for the [C9 early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free. We currently have four blocks-based themes and four child themes available for early access list subscribers and an exclusive [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/) to animate any core WordPress blocks or C9 Blocks.
-
-For an overview of each of the blocks, and more up to date documentation, head over to our [documentation site](https://c9.covertnine.com).
 
 == Installation ==
 
@@ -60,6 +60,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.3.8 =
+Big update for WordPress 5.7 compatibility. Updates to carousels, image carousels, tabs, and bug fixes on mobile for some carousel settings.
 
 = 1.3.7 =
 Fixed broken "covert to blocks" buttons from saved blocks. Fixed layout bug for WooCommerce checkout conflicts. Updated package for icons in WP. Image carousels slides can now be linked. Min-height CSS fix for carousel slide heights.
@@ -178,6 +181,9 @@ Compatibility updates for WP 5.4 release to deprecated code. Fixed video backgro
 * C9 Starter Theme Support
 
 == Upgrade Notice ==
+
+= 1.3.8 =
+* This version includes update to tab blocks that should be re-saved so the tabs continue working in some instances. Image carousels, and carousels may need to be reviewed as well as some minor formatting updates have been made to markup and style!
 
 = 1.3.5 =
 * This version includes updates to markup for some blocks to allow for C9 Block Animations, so some layouts may require block recovery if you're upgrading. Block recovery, save, and reload pages to fix any potential markup errors from the block editor.
