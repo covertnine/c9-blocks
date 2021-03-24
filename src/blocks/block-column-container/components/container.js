@@ -37,11 +37,7 @@ export default class Container extends Component {
 		}
 
 		if (url) {
-			if (selected) {
-				styles.backgroundImage = `url(${url})`;
-			} else {
-				styles.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${url})`;
-			}
+			styles.backgroundImage = `url(${url})`;
 			styles.backgroundRepeat = repeat;
 		}
 		if (0 < size.length) {

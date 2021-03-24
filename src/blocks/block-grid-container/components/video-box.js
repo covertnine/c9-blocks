@@ -35,7 +35,12 @@ export default class VideoBox extends Component {
 	}
 
 	setYoutube() {
-		const { instanceId } = this.props;
+		let { instanceId } = this.props.attributes;
+
+		if (instanceId === undefined) {
+			// set default random id if not set
+			instanceId = this.props.instanceId;
+		}
 
 		if (!this.containerVideoID) {
 			return;

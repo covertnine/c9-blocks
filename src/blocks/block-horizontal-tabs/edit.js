@@ -70,7 +70,6 @@ class Edit extends Component {
 	 * @return {Object[]} Tabs layout configuration.
 	 */
 	getTabsTemplate(instanceId) {
-		console.log(instanceId);
 		const { tabsData = [], tabActive } = this.props.attributes;
 		const result = [];
 
