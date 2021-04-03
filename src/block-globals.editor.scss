@@ -200,6 +200,11 @@
 	right: 8px;
 }
 
+/* toolbar adjustment for 5.7 */
+.block-editor-block-toolbar .components-button.has-icon>.dashicon {
+	margin-right: 2px;
+}
+
 @media only screen and (min-width: 600px) {
 
 	.edit-post-visual-editor .wp-block>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,

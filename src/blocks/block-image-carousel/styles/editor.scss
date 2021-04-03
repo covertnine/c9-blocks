@@ -9,6 +9,13 @@
 	margin-bottom: 50px;
 }
 
+.components-popover__content .components-toolbar-group .components-button.has-icon svg,
+.components-accessible-toolbar .components-toolbar-group>.components-button.components-button.has-icon svg,
+.components-toolbar div>.components-button.components-button.has-icon svg {
+	height: 24px;
+	width: 24px;
+}
+
 .c9-image-carousel {
 	.hide-indicator {
 		display: none;
