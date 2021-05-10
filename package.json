@@ -16,7 +16,7 @@
 		"@wordpress/icons": "^2.9.0",
 		"classnames": "^2.2.5",
 		"dayjs": "^1.9.6",
-		"lodash": "^4.17.20",
+		"lodash": "^4.17.21",
 		"memize": "^1.1.0",
 		"node-fetch": "^2.6.1",
 		"qs": "^6.9.4",
