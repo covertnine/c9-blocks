@@ -22,7 +22,7 @@ export default class Save extends Component {
 
 	render() {
 		const {
-			attributes: { columnsGap, responsiveToggle, columnMaxWidth }
+			attributes: { columnsGap, responsiveToggle, flipColumnsMobile, columnMaxWidth }
 		} = this.props;
 
 		return (
@@ -31,7 +31,8 @@ export default class Save extends Component {
 					className={classnames(
 						"c9-layout-column-wrap",
 						"c9-block-layout-column-gap-" + columnsGap,
-						responsiveToggle ? "c9-is-responsive-column" : null
+						responsiveToggle ? "c9-is-responsive-column" : null,
+						flipColumnsMobile ? "c9-mobile-flip" : null
 					)}
 					style={{
 						maxWidth: columnMaxWidth ? columnMaxWidth : null

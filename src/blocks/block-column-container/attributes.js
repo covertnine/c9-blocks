@@ -147,7 +147,11 @@ const attributes = {
 			size: "auto",
 			unit: "px"
 		}
-	}
+	},
+	flipColumnsMobile: {
+		type: "boolean",
+		default: false
+	},
 };
 
 export default attributes;

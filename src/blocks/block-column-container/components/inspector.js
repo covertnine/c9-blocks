@@ -276,7 +276,8 @@ export default class Inspector extends Component {
 				centerColumns,
 				responsiveToggle,
 				overrideMobile,
-				bgImgSizeMobile
+				bgImgSizeMobile,
+				flipColumnsMobile
 			},
 			setAttributes,
 			updateColumns
@@ -458,6 +459,22 @@ export default class Inspector extends Component {
 						onChange={() =>
 							setAttributes({
 								responsiveToggle: !responsiveToggle
+							})
+						}
+					/>
+
+					<hr />
+
+					<ToggleControl
+						label={__("Column Order", "c9-blocks")}
+						help={__(
+							"Columns will be in reversed order on tablets and mobile devices.",
+							"c9-blocks"
+						)}
+						checked={flipColumnsMobile}
+						onChange={() =>
+							setAttributes({
+								flipColumnsMobile: !flipColumnsMobile
 							})
 						}
 					/>
@@ -791,7 +808,6 @@ export default class Inspector extends Component {
 														this.setState({ focalPointMobile: value });
 
 														debounce(value => {
-															console.log('clearing', this.timer);
 															clearTimeout(this.timer);
 															if (1 <= value.x || 0 >= value.x) {
 																return;

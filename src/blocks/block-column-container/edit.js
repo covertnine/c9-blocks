@@ -73,6 +73,7 @@ export default class Edit extends Component {
 				columns,
 				columnsGap,
 				responsiveToggle,
+				flipColumnsMobile,
 				columnMaxWidth,
 				align
 			},
@@ -250,7 +251,8 @@ export default class Edit extends Component {
 						className={classnames(
 							"c9-layout-column-wrap-admin",
 							"c9-block-layout-column-gap-" + columnsGap,
-							responsiveToggle ? "c9-is-responsive-column" : null
+							responsiveToggle ? "c9-is-responsive-column" : null,
+							flipColumnsMobile ? "c9-mobile-flip" : null
 						)}
 						style={{
 							maxWidth: columnMaxWidth ? columnMaxWidth : null

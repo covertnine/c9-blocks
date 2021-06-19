@@ -725,7 +725,6 @@ export default class Inspector extends Component {
 														this.setState({ focalPointMobile: value });
 
 														debounce(value => {
-															console.log('clearing', this.timer);
 															clearTimeout(this.timer);
 															if (1 <= value.x || 0 >= value.x) {
 																return;
