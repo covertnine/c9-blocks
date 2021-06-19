@@ -28,6 +28,7 @@ const {
  */
 import React from "react";
 import map from "lodash/map";
+import debounce from "lodash/debounce";
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -786,8 +787,19 @@ export default class Inspector extends Component {
 													url={containerImgURL}
 													value={this.state.focalPointMobile}
 													onChange={value => {
-														const self = this;
-														setTimeout(function() {
+														setAttributes({ focalPointMobile: value });
+														this.setState({ focalPointMobile: value });
+
+														debounce(value => {
+															console.log('clearing', this.timer);
+															clearTimeout(this.timer);
+															if (1 <= value.x || 0 >= value.x) {
+																return;
+															}
+															if (1 <= value.y || 0 >= value.y) {
+																return;
+															}
+
 															let x, y;
 															if (0.33 >= value.x) {
 																x = 0.25;
@@ -805,13 +817,13 @@ export default class Inspector extends Component {
 																y = 0.75;
 															}
 
-															setAttributes({ focalPointMobile: { x, y } });
-															self.setState({ focalPointMobile: { x, y } });
-														}, 10);
-
-														// console.log(value);
-
-														// setAttributes({ focalPointMobile: value });
+															// delay until last invoke
+															let self = this;
+															this.timer = setTimeout(() => {
+																setAttributes({ focalPointMobile: { x, y } });
+																self.setState({ focalPointMobile: { x, y } });
+															}, 750);
+														}, 250)(value);
 													}}
 												/>
 
