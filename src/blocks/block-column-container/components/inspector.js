@@ -466,9 +466,9 @@ export default class Inspector extends Component {
 					<hr />
 
 					<ToggleControl
-						label={__("Column Order", "c9-blocks")}
+						label={__("Reverse Mobile Column Order", "c9-blocks")}
 						help={__(
-							"Columns will be in reversed order on tablets and mobile devices.",
+							"Columns will be in reversed order on mobile devices allowing you to show the right columns first when grid columns stack on top of each other on smaller browsers.",
 							"c9-blocks"
 						)}
 						checked={flipColumnsMobile}

@@ -11,12 +11,26 @@ import ShowHideToolbar from "../../components/show-hide-toolbar";
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
-const { addFilter } = wp.hooks;
-const { Component, Fragment } = wp.element;
-const { createHigherOrderComponent } = wp.compose;
-const { InspectorControls } = wp.blockEditor;
-const { PanelBody, BaseControl } = wp.components;
+const {
+	__
+} = wp.i18n;
+const {
+	addFilter
+} = wp.hooks;
+const {
+	Component,
+	Fragment
+} = wp.element;
+const {
+	createHigherOrderComponent
+} = wp.compose;
+const {
+	InspectorControls
+} = wp.blockEditor;
+const {
+	PanelBody,
+	BaseControl
+} = wp.components;
 
 /**
  * External dependencies
@@ -106,13 +120,14 @@ function addSaveProps(extraProps, blockType, attributes) {
 			if (attributes.c9ShowHideSettings[i]) {
 				if ((i + 1) < DISPLAY_CLASSES.length && attributes.c9ShowHideSettings[i + 1]) {
 					result += ` ${DISPLAY_CLASSES[i].split(" ")[0]}`;
-				}
-				else {
+				} else {
 					result += ` ${DISPLAY_CLASSES[i]}`;
 				}
 			}
 		}
-		assign(extraProps, { className: classnames(extraProps.className, result) });
+		assign(extraProps, {
+			className: classnames(extraProps.className, result)
+		});
 	}
 
 	return extraProps;
@@ -135,7 +150,10 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 			const allow = checkTargetBlock(blockName);
 
 			if (!allow) {
-				return <OriginalComponent {...props} />;
+				return <OriginalComponent {
+					...props
+				}
+				/>;
 			}
 
 			const {
@@ -144,39 +162,58 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 			} = this.props;
 
 			// add new Show/Hide controls.
-			return (
-				<Fragment>
-					<OriginalComponent {...props} />
+			return ( <
+				Fragment >
+				<
+				OriginalComponent {
+					...props
+				}
+				/>
 
-					<InspectorControls>
-						<PanelBody
-							title={
-								<Fragment>
-									<span>{__("Show/Hide Settings")}</span>
-									<span className="c9-ext-badge">ext</span>
-								</Fragment>
-							}
-							initialOpen={initialOpenPanel}
-							onToggle={() => {
-								initialOpenPanel = !initialOpenPanel;
-							}}
-						>
-							<ShowHideToolbar
-								value={attributes.c9ShowHideSettings}
-								onChange={value => {
-									let newSettings = [...attributes.c9ShowHideSettings];
-									newSettings[value[1]] = value[0];
-									setAttributes({ c9ShowHideSettings: newSettings });
-								}}
-							/>
-							<BaseControl
-								help={__(
-									"Show/Hide settings will only take effect once you are on the preview or live page, and not while you're in editing mode."
-								)}
-							/>
-						</PanelBody>
-					</InspectorControls>
-				</Fragment>
+				<
+				InspectorControls >
+				<
+				PanelBody title = {
+					<
+					Fragment >
+					<
+					span > {
+						__("Device Visibility Settings")
+					} < /span> <
+					span className = "c9-ext-badge" > ext < /span> < /
+					Fragment >
+				}
+				initialOpen = {
+					initialOpenPanel
+				}
+				onToggle = {
+					() => {
+						initialOpenPanel = !initialOpenPanel;
+					}
+				} >
+				<
+				ShowHideToolbar value = {
+					attributes.c9ShowHideSettings
+				}
+				onChange = {
+					value => {
+						let newSettings = [...attributes.c9ShowHideSettings];
+						newSettings[value[1]] = value[0];
+						setAttributes({
+							c9ShowHideSettings: newSettings
+						});
+					}
+				}
+				/> <
+				BaseControl help = {
+					__(
+						"Select the buttons above to hide the block on specific devices. Device visibility settings will only take effect once you are on the preview or live page, and not while you're in editing mode."
+					)
+				}
+				/> < /
+				PanelBody > <
+				/InspectorControls> < /
+				Fragment >
 			);
 		}
 	}

@@ -10,3 +10,7 @@
 	border-radius: 2px;
 	transition: 0.15s background-color, 0.15s color;
 }
+
+.components-toolbar>div>.components-toolbar__control.components-button.has-icon .dashicon {
+	margin-right: 2px;
+}
