@@ -61,6 +61,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 == Changelog ==
 
+= 1.4.2 =
+Added visibility settings for core blocks and c9-blocks for specific devices.
+
 = 1.4.1 =
 Optimized file output.
 
