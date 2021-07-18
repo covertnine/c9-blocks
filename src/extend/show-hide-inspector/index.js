@@ -42,7 +42,7 @@ let initialOpenPanel = false;
 /**
  * Display classes
  */
-const DISPLAY_CLASSES = ["d-sm-none d-md-block", "d-md-none d-lg-block", "d-lg-none"]
+const DISPLAY_CLASSES = ["d-none d-md-block", "d-md-none d-lg-block", "d-lg-none"]
 
 /**
  * Selected Core Blocks to extend
