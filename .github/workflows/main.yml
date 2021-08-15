@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Build # Remove or modify this step as needed
+      - name: Build
       run: |
         npm install
         npm run build
