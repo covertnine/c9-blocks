@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.3
 Tested up to: 5.8
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -60,6 +60,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.4.3 =
+Updated styles for C9 Grid layouts with mobile column flip enabled so spacing is even on columns stacked.
 
 = 1.4.2 =
 Added visibility settings for core blocks and c9-blocks for specific devices. Added column reversal toggle for mobile column order sort. Compatible with WordPress 5.8. Working on widget block updates.
