@@ -550,6 +550,9 @@ div[data-type="c9-blocks/c9-column"],
 	.c9-is-responsive-column .c9-column:last-child {
 		padding-bottom: 0px;
 	}
+	.c9-is-responsive-column.c9-mobile-flip .c9-column:last-child {
+		padding-bottom: 25px;
+	}
 }
 
 @media only screen and (min-width: 992px) {
