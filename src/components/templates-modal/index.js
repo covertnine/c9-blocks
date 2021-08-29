@@ -385,7 +385,7 @@ class TemplatesModal extends Component {
 																	onHover={onHover}
 																/>
 															);
-														} catch {
+														} catch (error) {
 															console.warn(`Invalid reusable block detected: ${obj} at index ${index}`);
 															return null;
 														}
