@@ -26,6 +26,22 @@ function c9_blocks_register_sharing() {
 					'type'    => 'boolean',
 					'default' => true,
 				),
+				'instagram'         => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
+				'instagramLink'         => array(
+					'type'    => 'string',
+					'default' => '',
+				),
+				'tiktok'         => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
+				'tiktokLink'         => array(
+					'type'    => 'string',
+					'default' => '',
+				),
 				'twitter'          => array(
 					'type'    => 'boolean',
 					'default' => true,
@@ -156,6 +172,40 @@ function c9_blocks_render_sharing( $attributes ) {
 			</li>',
 			esc_url( $facebook_url ),
 			esc_html__( 'Share on Facebook', 'c9-blocks' )
+		);
+	}
+
+	if ( isset( $attributes['instagram'] ) && $attributes['instagram'] ) {
+		$share_url .= sprintf(
+			'<li>
+				<a
+					href="javascript:void(0)"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-instagram"
+					title="%2$s">
+					<i class="fab fa-instagram"></i> <span class="c9-social-text">%2$s</span>
+					<span class="sr-only">(Link opens in new window)</span>
+				</a>
+			</li>',
+			esc_url( $attributes['instagramLink'] ),
+			esc_html__( 'Share on Instagram', 'c9-blocks' )
+		);
+	}
+
+	if ( isset( $attributes['tiktok'] ) && $attributes['tiktok'] ) {
+		$share_url .= sprintf(
+			'<li>
+				<a
+					href="javascript:void(0)"
+					onClick="javascript:c9BlocksShare(\'%1$s\', \'%2$s\', \'600\', \'600\')"
+					class="c9-share-tiktok"
+					title="%2$s">
+					<i class="fab fa-tiktok"></i> <span class="c9-social-text">%2$s</span>
+					<span class="sr-only">(Link opens in new window)</span>
+				</a>
+			</li>',
+			esc_url( $attributes['tiktokLink'] ),
+			esc_html__( 'Share on Tiktok', 'c9-blocks' )
 		);
 	}
 

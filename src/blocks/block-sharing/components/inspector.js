@@ -4,7 +4,7 @@
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { PanelBody, SelectControl, ToggleControl } = wp.components;
+const { PanelBody, SelectControl, ToggleControl, TextControl } = wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -19,6 +19,10 @@ export default class Inspector extends Component {
 		const {
 			twitter,
 			facebook,
+			instagram,
+			instagramLink,
+			tiktok,
+			tiktokLink,
 			linkedin,
 			pinterest,
 			email,
@@ -71,6 +75,34 @@ export default class Inspector extends Component {
 						checked={!!facebook}
 						onChange={() => this.props.setAttributes({ facebook: !facebook })}
 					/>
+					<ToggleControl
+						label={__("Instagram")}
+						checked={!!instagram}
+						onChange={() => this.props.setAttributes({ instagram: !instagram })}
+					/>
+					{
+						instagram && (
+							<TextControl
+								label="Instagram Share Link"
+								value={instagramLink}
+								onChange={value => this.props.setAttributes({ instagramLink: value })}
+							/>
+						)
+					}
+					<ToggleControl
+						label={__("Tiktok")}
+						checked={!!tiktok}
+						onChange={() => this.props.setAttributes({ tiktok: !tiktok })}
+					/>
+					{
+						tiktok && (
+							<TextControl
+								label="Tiktok Share Link"
+								value={tiktokLink}
+								onChange={value => this.props.setAttributes({ tiktokLink: value })}
+							/>
+						)
+					}
 					<ToggleControl
 						label={__("Pinterest")}
 						checked={!!pinterest}
