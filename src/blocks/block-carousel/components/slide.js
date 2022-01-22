@@ -60,6 +60,17 @@ class Slide extends Component {
 		}
 	}
 
+	isSizeChanged(sizes, height) {
+		const { id } = this.props.attributes;
+		if (Array.isArray(sizes) && sizes.length > id) {
+			if (Math.round(sizes[id]) === Math.round(height)) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	render() {
 		// eslint-disable-next-line no-unused-vars
 		let {
@@ -77,15 +88,23 @@ class Slide extends Component {
 			);
 
 		const refCallback = async element => {
+			const limit = 20;
+			let currCount = 0;
 			if (element) {
 				let config = element.getBoundingClientRect();
-				while (0 === config.height) {
+				while (0 === config.height && currCount < limit) {
+					currCount++;
 					// wait and check again
 					await new Promise(r => setTimeout(r, 500));
 					config = element.getBoundingClientRect();
 				}
 
 				if (rootBlock) {
+					if (!this.isSizeChanged(rootBlock.attributes.slideSizes,
+						config.height)) {
+						return;
+					}
+
 					const result = this.processRootBlockData(
 						rootBlock.attributes.slideSizes,
 						config.height
@@ -181,7 +200,7 @@ registerBlockType("c9-blocks/carousel-slide", {
 		})
 	])(Slide),
 
-	save: function(props) {
+	save: function (props) {
 		const { id } = props.attributes;
 		let { className = "" } = props;
 
