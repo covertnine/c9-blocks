@@ -5,6 +5,7 @@ import Inspector from "./components/inspector";
 import PauseToolBar from "../../components/pause-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import WidthToolbar from "../../components/width-toolbar";
+import SwapSlideToolbar from "./components/swap-slide-toolbar";
 import ResizableCarouselContainer from "./components/resizable-carousel-container";
 
 /**
@@ -186,7 +187,7 @@ class Edit extends Component {
 			containerWidth
 		} = attributes;
 
-		const { pause } = this.state;
+		const { pause, active } = this.state;
 
 		let instanceId = attributes.instanceId;
 
@@ -210,6 +211,12 @@ class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls>
+					<SwapSlideToolbar
+						swapSlide={swapSlide}
+						activeSlide={active}
+						slides={slides}
+						carouselRef={this.carouselRef}
+					/>
 					<WidthToolbar
 						value={currWidth}
 						onChange={value => {
@@ -314,11 +321,14 @@ class Edit extends Component {
 				{isSelectedBlockInRoot && 1 < slides && (
 					<div className="c9-add-remove-rows">
 						<Button
-							label={__(`Remove Current Slide (#${this.state.active + 1})`, "c9-blocks")}
+							label={__(
+								`Remove Current Slide (#${this.state.active + 1})`,
+								"c9-blocks"
+							)}
 							icon="dismiss"
 							onClick={() => {
 								const { active } = this.state;
-								swapSlide(active);
+								swapSlide(active, slides - 1);
 								setAttributes({ slides: slides - 1 });
 								if (this.carouselRef.current && 0 < active) {
 									const $ = window.jQuery;
@@ -326,7 +336,10 @@ class Edit extends Component {
 								}
 							}}
 						>
-							{__(`Remove Current Slide (#${this.state.active + 1})`, "c9-blocks")}
+							{__(
+								`Remove Current Slide (#${this.state.active + 1})`,
+								"c9-blocks"
+							)}
 						</Button>
 					</div>
 				)}
