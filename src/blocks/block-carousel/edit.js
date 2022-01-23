@@ -314,7 +314,7 @@ class Edit extends Component {
 				{isSelectedBlockInRoot && 1 < slides && (
 					<div className="c9-add-remove-rows">
 						<Button
-							label={__("Remove Current Slide", "c9-blocks")}
+							label={__(`Remove Current Slide (#${this.state.active + 1})`, "c9-blocks")}
 							icon="dismiss"
 							onClick={() => {
 								const { active } = this.state;
@@ -326,7 +326,7 @@ class Edit extends Component {
 								}
 							}}
 						>
-							{__("Remove Current Slide", "c9-blocks")}
+							{__(`Remove Current Slide (#${this.state.active + 1})`, "c9-blocks")}
 						</Button>
 					</div>
 				)}

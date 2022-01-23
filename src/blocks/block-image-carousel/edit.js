@@ -65,6 +65,13 @@ class Edit extends Component {
 
 		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
 			self.setState({ slideTarget: to, slideActive: to });
+			$("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).attr(
+				"aria-label",
+				`Remove Current Slide (#${to + 1})`
+			);
+			$("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).get(
+				0
+			).lastChild.nodeValue = `Remove Current Slide (#${to + 1})`;
 		});
 	}
 
@@ -682,7 +689,7 @@ class Edit extends Component {
 				{isSelectedBlockInRoot && 1 < slides && (
 					<div className="c9-add-remove-rows">
 						<Button
-							label={__("Remove Current Slide", "c9-blocks")}
+							label={__(`Remove Current Slide (#${this.state.slideActive + 1})`, "c9-blocks")}
 							icon="dismiss"
 							onClick={() => {
 								let {
@@ -713,7 +720,7 @@ class Edit extends Component {
 								}
 							}}
 						>
-							{__("Remove Current Slide", "c9-blocks")}
+							{__(`Remove Current Slide (#${this.state.slideActive + 1})`, "c9-blocks")}
 						</Button>
 					</div>
 				)}
