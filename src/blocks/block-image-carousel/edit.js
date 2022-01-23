@@ -679,6 +679,44 @@ class Edit extends Component {
 						});
 					}}
 				/>
+				{isSelectedBlockInRoot && slides > 1 && (
+					<div className="c9-add-remove-rows">
+						<Button
+							label={__("Remove Current Slide", "c9-blocks")}
+							icon="dismiss"
+							onClick={() => {
+								let {
+									url,
+									id,
+									link,
+									captionTitle,
+									captionContent
+								} = this.props.attributes;
+								const { slideActive } = this.state;
+								if (slideActive > -1 && slideActive < slides && slides > 1) {
+									const $ = window.jQuery;
+									url = [...url];
+									id = [...id];
+									link = [...link];
+
+									url.splice(slideActive, 1);
+									id.splice(slideActive, 1);
+									link.splice(slideActive, 1);
+									captionTitle.splice(slideActive, 1);
+									captionContent.splice(slideActive, 1);
+
+									setAttributes({ id, url, link, captionTitle, captionContent, slides: slides - 1 });
+
+									if (this.carouselRef.current && 0 < slideTarget) {
+										$(this.carouselRef.current).carousel("prev");
+									}
+								}
+							}}
+						>
+							{__("Remove Current Slide", "c9-blocks")}
+						</Button>
+					</div>
+				)}
 			</Fragment>
 		);
 	}
