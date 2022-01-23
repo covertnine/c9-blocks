@@ -10,8 +10,10 @@ import ResizableCarouselContainer from "./components/resizable-carousel-containe
 /**
  * WordPress dependencies
  */
+const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
+const { Button } = wp.components;
 
 /**
  * External Dependencies.
@@ -173,7 +175,7 @@ class Edit extends Component {
 	});
 
 	render() {
-		const { attributes, isSelectedBlockInRoot, setAttributes } = this.props;
+		const { attributes, isSelectedBlockInRoot, setAttributes, swapSlide } = this.props;
 
 		const {
 			slides,
@@ -309,6 +311,25 @@ class Edit extends Component {
 						</Fragment>
 					)}
 				</ResizableCarouselContainer>
+				{isSelectedBlockInRoot && 1 < slides && (
+					<div className="c9-add-remove-rows">
+						<Button
+							label={__("Remove Current Slide", "c9-blocks")}
+							icon="dismiss"
+							onClick={() => {
+								const { active } = this.state;
+								swapSlide(active);
+								setAttributes({ slides: slides - 1 });
+								if (this.carouselRef.current && 0 < active) {
+									const $ = window.jQuery;
+									$(this.carouselRef.current).carousel("prev");
+								}
+							}}
+						>
+							{__("Remove Current Slide", "c9-blocks")}
+						</Button>
+					</div>
+				)}
 			</Fragment>
 		);
 	}

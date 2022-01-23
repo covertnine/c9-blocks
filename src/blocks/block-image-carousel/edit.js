@@ -679,7 +679,7 @@ class Edit extends Component {
 						});
 					}}
 				/>
-				{isSelectedBlockInRoot && slides > 1 && (
+				{isSelectedBlockInRoot && 1 < slides && (
 					<div className="c9-add-remove-rows">
 						<Button
 							label={__("Remove Current Slide", "c9-blocks")}
@@ -693,7 +693,7 @@ class Edit extends Component {
 									captionContent
 								} = this.props.attributes;
 								const { slideActive } = this.state;
-								if (slideActive > -1 && slideActive < slides && slides > 1) {
+								if (-1 < slideActive && slideActive < slides && 1 < slides) {
 									const $ = window.jQuery;
 									url = [...url];
 									id = [...id];

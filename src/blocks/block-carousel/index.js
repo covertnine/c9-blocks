@@ -172,14 +172,42 @@ registerBlockType("c9-blocks/carousel", {
 				instanceId: parseInt(cryptoRandomString({ length: 4, type: "numeric" }))
 			};
 		}),
-		withDispatch(dispatch => {
+		withDispatch((dispatch, ownProps, registry) => {
 			const { updateBlockAttributes, removeBlock, toggleSelection } = dispatch(
 				"core/block-editor"
 			);
 
+			/**
+			 * Swaps the slide to the end given a specific index, including necessary revisions to child slide
+			 * blocks to grant required or redistribute available space.
+			 *
+			 * @param {number} index Slide to remove.
+			 */
+			const swapSlide = (index) => {
+				const { clientId } = ownProps;
+				const { replaceInnerBlocks } = dispatch("core/block-editor");
+				const { getBlocks } = registry.select("core/block-editor");
+
+				let innerBlocks = getBlocks(clientId);
+				let newInnerBlocks = [...innerBlocks];
+
+				if (-1 < index && index < innerBlocks.length && 1 < innerBlocks.length) {
+					const targetSlide = newInnerBlocks[index];
+
+					newInnerBlocks[index] = newInnerBlocks[newInnerBlocks.length - 1];
+					newInnerBlocks[index].attributes.id = index;
+
+					newInnerBlocks[newInnerBlocks.length - 1] = targetSlide;
+					newInnerBlocks[newInnerBlocks.length - 1].attributes.id = newInnerBlocks.length - 1;
+				}
+
+				replaceInnerBlocks(clientId, newInnerBlocks, false);
+			};
+
 			return {
 				updateBlockAttributes,
 				removeBlock,
+				swapSlide,
 				onResizeStart: () => toggleSelection(false),
 				onResizeStop: () => toggleSelection(true)
 			};
