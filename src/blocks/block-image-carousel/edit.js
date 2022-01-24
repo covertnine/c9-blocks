@@ -7,6 +7,7 @@ import Inspector from "./components/inspector";
 import PauseToolBar from "../../components/pause-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import WidthToolbar from "../../components/width-toolbar";
+import SwapSlideToolbar from "./components/swap-slide-toolbar";
 import ResizableCarouselContainer from "./components/resizable-carousel-container";
 import URLPicker from "./components/url-picker";
 
@@ -69,9 +70,10 @@ class Edit extends Component {
 				"aria-label",
 				`Remove Current Slide (#${to + 1})`
 			);
-			$("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).get(
-				0
-			).lastChild.nodeValue = `Remove Current Slide (#${to + 1})`;
+			if ($("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).get(0)) {
+				$("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).get(0)
+					.lastChild.nodeValue = `Remove Current Slide (#${to + 1})`;
+			}
 		});
 	}
 
@@ -517,8 +519,33 @@ class Edit extends Component {
 		return template;
 	}
 
+	/**
+	 * Swaps slide contents given two indexes
+	 */
+	swapSlide = (index, targetIdx) => {
+		// swap the index locations of two elements of an array using es6 destructuring assignment
+		const swapArrayLocs = (arr, index1, index2) => {
+			[arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+		};
+
+		const { setAttributes } = this.props;
+		let { url, id, link, captionTitle, captionContent } = this.props.attributes;
+
+		url = [...url];
+		id = [...id];
+		link = [...link];
+
+		swapArrayLocs(url, index, targetIdx);
+		swapArrayLocs(id, index, targetIdx);
+		swapArrayLocs(link, index, targetIdx);
+		swapArrayLocs(captionTitle, index, targetIdx);
+		swapArrayLocs(captionContent, index, targetIdx);
+
+		setAttributes({ id, url, link, captionTitle, captionContent });
+	};
+
 	render() {
-		const { slideTarget, pause } = this.state;
+		const { slideTarget, slideActive, pause } = this.state;
 
 		const {
 			attributes,
@@ -564,6 +591,11 @@ class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls>
+					<SwapSlideToolbar
+						swapSlide={this.swapSlide}
+						slides={slides}
+						carouselRef={this.carouselRef}
+					/>
 					<WidthToolbar
 						value={currWidth}
 						onChange={value => {
@@ -689,7 +721,10 @@ class Edit extends Component {
 				{isSelectedBlockInRoot && 1 < slides && (
 					<div className="c9-add-remove-rows">
 						<Button
-							label={__(`Remove Current Slide (#${this.state.slideActive + 1})`, "c9-blocks")}
+							label={__(
+								`Remove Current Slide (#${slideActive + 1})`,
+								"c9-blocks"
+							)}
 							icon="dismiss"
 							onClick={() => {
 								let {
@@ -712,7 +747,14 @@ class Edit extends Component {
 									captionTitle.splice(slideActive, 1);
 									captionContent.splice(slideActive, 1);
 
-									setAttributes({ id, url, link, captionTitle, captionContent, slides: slides - 1 });
+									setAttributes({
+										id,
+										url,
+										link,
+										captionTitle,
+										captionContent,
+										slides: slides - 1
+									});
 
 									if (this.carouselRef.current && 0 < slideTarget) {
 										$(this.carouselRef.current).carousel("prev");
@@ -720,7 +762,7 @@ class Edit extends Component {
 								}
 							}}
 						>
-							{__(`Remove Current Slide (#${this.state.slideActive + 1})`, "c9-blocks")}
+							{__(`Remove Current Slide (#${slideActive + 1})`, "c9-blocks")}
 						</Button>
 					</div>
 				)}
