@@ -22,6 +22,20 @@ const MOBILE_X_SIZE = {
 	0.75: "right"
 };
 
+const postProcessMobileSize = value => {
+	let z = value;
+
+	if (0.33 >= value) {
+		z = 0.25;
+	} else if (0.66 >= value) {
+		z = 0.5;
+	} else {
+		z = 0.75;
+	}
+
+	return z;
+};
+
 /**
  * Create a Container wrapper Component
  */
@@ -220,9 +234,9 @@ export default class Container extends Component {
 						className={classnames(
 							"c9-image-container",
 							overrideMobile
-								? `c9-image-mobile-${MOBILE_Y_SIZE[focalPointMobile.y]}-${
-										MOBILE_X_SIZE[focalPointMobile.x]
-								  }`
+								? `c9-image-mobile-${
+										MOBILE_Y_SIZE[postProcessMobileSize(focalPointMobile.y)]
+								  }-${MOBILE_X_SIZE[postProcessMobileSize(focalPointMobile.x)]}`
 								: null,
 							"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
 							"contain" == bgImgSizeMobile
