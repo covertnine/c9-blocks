@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 
 // Add custom block category.
 add_filter(
-	'block_categories',
+	'block_categories_all',
 	function ($categories, $post) {
 		return array_merge(
 			array(
