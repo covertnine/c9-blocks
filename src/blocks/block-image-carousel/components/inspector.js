@@ -63,6 +63,10 @@ export default class Inspector extends Component {
 							id = [...id];
 							link = [...link];
 
+							if (value === url.length) {
+								return;
+							}
+
 							if (value > url.length) {
 								url.push(null);
 								id.push(null);

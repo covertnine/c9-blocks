@@ -5,13 +5,16 @@ import Inspector from "./components/inspector";
 import PauseToolBar from "../../components/pause-toolbar";
 import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
 import WidthToolbar from "../../components/width-toolbar";
+import SwapSlideToolbar from "./components/swap-slide-toolbar";
 import ResizableCarouselContainer from "./components/resizable-carousel-container";
 
 /**
  * WordPress dependencies
  */
+const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { InnerBlocks, BlockControls } = wp.blockEditor;
+const { Button } = wp.components;
 
 /**
  * External Dependencies.
@@ -173,7 +176,7 @@ class Edit extends Component {
 	});
 
 	render() {
-		const { attributes, isSelectedBlockInRoot, setAttributes } = this.props;
+		const { attributes, isSelectedBlockInRoot, setAttributes, swapSlide } = this.props;
 
 		const {
 			slides,
@@ -184,7 +187,7 @@ class Edit extends Component {
 			containerWidth
 		} = attributes;
 
-		const { pause } = this.state;
+		const { pause, active } = this.state;
 
 		let instanceId = attributes.instanceId;
 
@@ -208,6 +211,12 @@ class Edit extends Component {
 		return (
 			<Fragment>
 				<BlockControls>
+					<SwapSlideToolbar
+						swapSlide={swapSlide}
+						activeSlide={active}
+						slides={slides}
+						carouselRef={this.carouselRef}
+					/>
 					<WidthToolbar
 						value={currWidth}
 						onChange={value => {
@@ -309,6 +318,31 @@ class Edit extends Component {
 						</Fragment>
 					)}
 				</ResizableCarouselContainer>
+				{isSelectedBlockInRoot && 1 < slides && (
+					<div className="c9-add-remove-rows">
+						<Button
+							label={__(
+								`Remove Current Slide (#${this.state.active + 1})`,
+								"c9-blocks"
+							)}
+							icon="dismiss"
+							onClick={() => {
+								const { active } = this.state;
+								swapSlide(active, slides - 1);
+								setAttributes({ slides: slides - 1 });
+								if (this.carouselRef.current && 0 < active) {
+									const $ = window.jQuery;
+									$(this.carouselRef.current).carousel("prev");
+								}
+							}}
+						>
+							{__(
+								`Remove Current Slide (#${this.state.active + 1})`,
+								"c9-blocks"
+							)}
+						</Button>
+					</div>
+				)}
 			</Fragment>
 		);
 	}

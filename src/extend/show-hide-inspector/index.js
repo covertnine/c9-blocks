@@ -53,7 +53,10 @@ const supportedBlocks = [
 	"core/list",
 	"core/group",
 	"core/heading",
-	"core/media-text"
+	"core/media-text",
+	"core/buttons",
+	"core/button",
+	"core/spacer"
 ];
 
 /**
