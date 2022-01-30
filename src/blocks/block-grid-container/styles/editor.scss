@@ -18,6 +18,13 @@
 	margin-bottom: 0;
 }
 
+.padding-top-wrapper, .padding-bottom-wrapper, .margin-top-wrapper, .margin-bottom-wrapper {
+	> .components-base-control {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+}
+
 .padding-top-wrapper,
 .margin-top-wrapper {
 	justify-content: center;
@@ -44,7 +51,7 @@
 .padding-sides-wrapper,
 .margin-sides-wrapper {
 	justify-content: space-around;
-	align-items: flex-end;
+	align-items: center;
 }
 
 .padding-sides-wrapper .padding,
