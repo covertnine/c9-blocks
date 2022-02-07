@@ -4,7 +4,10 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-body .editor-styles-wrapper {padding:0px;}
+body .editor-styles-wrapper {
+	padding: 0px;
+}
+
 /*for adjusting for post/page container grids for some themes*/
 @media only screen and (min-width: 768px) {
 
@@ -298,7 +301,7 @@ body .editor-styles-wrapper {padding:0px;}
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/spacer"] {
-		max-width: 100%;
+		max-width: 1140px;
 	}
 }
 
