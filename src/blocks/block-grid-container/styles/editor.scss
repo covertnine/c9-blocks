@@ -695,6 +695,12 @@ body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px"] .wp
 		min-width: 1000px;
 	}
 
+	//for some instances where containers live inside other containers like image carousels
+	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-narrow .container,
+	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-narrow .container {
+		min-width: auto;
+	}
+
 	body.folded.post-type-post .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
 		width: 1140px;
 		max-width: calc(100vw - 280px);
