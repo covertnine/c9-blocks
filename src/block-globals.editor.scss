@@ -12,6 +12,12 @@ body .editor-styles-wrapper {
 	padding: 12px;
 }
 
+.is-tablet-preview .dashicons-heading:before,
+.is-mobile-preview .dashicons-heading:before {
+	content: 'H' !important;
+	color: #fff;
+}
+
 /*for adjusting for post/page container grids for some themes*/
 @media only screen and (min-width: 768px) {
 
