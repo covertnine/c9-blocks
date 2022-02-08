@@ -3,6 +3,10 @@
  *
  * CSS for both Frontend+Backend.
  */
+.c9-toggles .fab,
+.c9-toggles .fas {
+	font-family: fontawesome, sans-serif;
+}
 
 .c9-toggles {
 	.c9-toggles-item-collapse {
@@ -14,17 +18,11 @@
 		background: none;
 		border: none;
 		outline: none;
-		-webkit-transition: 0.15s -webkit-transform;
-		transition: 0.15s -webkit-transform;
 		transition: 0.15s transform;
-		transition: 0.15s transform, 0.15s -webkit-transform;
 		will-change: transform;
 		height: 100%;
-		display: -webkit-box;
 		display: flex;
-		-webkit-box-align: center;
 		align-items: center;
-		-webkit-box-pack: center;
 		justify-content: center;
 
 		>svg {
@@ -38,7 +36,6 @@
 
 	.c9-toggles-item-heading {
 		position: relative;
-		-webkit-transition: opacity .4s;
 		transition: opacity .4s;
 		cursor: pointer;
 		font-size: 10px;
@@ -56,7 +53,6 @@
 
 .c9-toggles .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
 .c9-toggles .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
-	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
 
@@ -112,25 +108,20 @@
 	position: absolute;
 	left: -50px;
 	top: 50%;
-	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	right: auto;
-	line-height: 1.1;
+	line-height: 1;
 }
 
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-collapse .fas,
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-heading:not([data-toggle="collapse"]) .c9-toggles-item-collapse .fa-angle-right,
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-heading[aria-expanded="true"] .c9-toggles-item-collapse .fa-angle-right {
-	-webkit-transform: none;
 	transform: none;
 }
 
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .c9-toggles-item-collapse {
-	display: -webkit-box;
 	display: flex;
-	-webkit-box-align: center;
 	align-items: center;
-	-webkit-box-pack: center;
 	justify-content: center;
 	border: 2.8px solid #000000;
 	padding: 3px;
