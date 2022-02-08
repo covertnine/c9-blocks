@@ -4,6 +4,11 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
+.editor-styles-wrapper .is-root-container [data-type="c9-blocks/toggles-toggle"],
+.editor-styles-wrapper .c9-grid [data-type="c9-blocks/toggles-toggle"] {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 
 .c9-toggles {
 	.c9-toggles-item-collapse {
@@ -124,6 +129,16 @@
 		color: #7e8993;
 		text-align: center;
 	}
+}
+
+.c9-toggles .wp-block:last-child .c9-toggles-toggle,
+.c9-toggles .c9-toggles-toggle:last-child {
+	border-bottom: none;
+	// border-bottom: 1px solid #979797;
+}
+
+.c9-toggles:not(.is-style-toggles-small) .wp-block:last-child .c9-toggles-toggle:last-child {
+	border-bottom: 1px solid #979797;
 }
 
 .c9-toggles.is-style-toggles-small .c9-toggles-toggle .fa-angle-right:before {
