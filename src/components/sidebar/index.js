@@ -67,12 +67,12 @@ class Sidebar extends Component {
 					target="c9-blocks"
 				>
 					{" "}
-					{__("C9 Blocks Settings", "c9-blocks")}{" "}
+					{__("C9 Blocks", "c9-blocks")}{" "}
 				</PluginSidebarMoreMenuItem>{" "}
 				<PluginSidebar
 					name="c9-blocks"
 					id="c9-blocks"
-					title={__("C9 Blocks", "c9-blocks")}
+					title={__("C9 Blocks Sidebar", "c9-blocks")}
 				>
 					<PanelBody className="plugin-c9-panel">
 						<Button
