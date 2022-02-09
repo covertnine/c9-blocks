@@ -67,7 +67,7 @@ class Sidebar extends Component {
 					target="c9-blocks"
 				>
 					{" "}
-					{__("C9 Blocks", "c9-blocks")}{" "}
+					{__("C9 Blocks Settings", "c9-blocks")}{" "}
 				</PluginSidebarMoreMenuItem>{" "}
 				<PluginSidebar
 					name="c9-blocks"
@@ -152,9 +152,9 @@ class Sidebar extends Component {
 						</Button>{" "}
 					</PanelBody>{" "}
 					<PanelBody>
-						<h5 className="components-base-control__label">
-							<b> Color Palette </b>{" "}
-						</h5>{" "}
+						<h4 className="components-base-control__label">
+							{__("Customize Theme Colors", "c9-blocks")}{" "}
+						</h4>{" "}
 						<ColorAppender />
 					</PanelBody>{" "}
 				</PluginSidebar>{" "}
