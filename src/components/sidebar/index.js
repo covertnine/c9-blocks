@@ -123,6 +123,25 @@ class Sidebar extends Component {
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
+							key="saved-panel-button"
+							onClick={() => {
+								this.setState({
+									loading: true
+								});
+								this.setState({
+									isModalOpen: "tutorial"
+								});
+								this.setState({
+									loading: false
+								});
+							}}
+						>
+							<Icon icon={icons.tutorials} size={ICON_SIZE} />{" "}
+							{__("Video Tutorials", "c9-blocks")}{" "}
+						</Button>{" "}
+						<Button
+							className="plugin-c9-panel-button is-large"
+							isSecondary
 							key="reset-panel-button"
 							onClick={() => {
 								resetBlocks([]);
