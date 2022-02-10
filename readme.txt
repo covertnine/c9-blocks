@@ -2,7 +2,7 @@
 Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
-Requires at least: 5.3
+Requires at least: 5.7
 Tested up to: 5.9
 Stable tag: 1.4.4
 Requires PHP: 7.1
@@ -41,14 +41,21 @@ https://www.youtube.com/watch?v=jHqOO_MP8nE
 
 = Can C9 Blocks be used with any theme? =
 
-The current blocks plugin supports the WordPress Twenty Nineteen, WordPress Twenty Twenty, WordPress Twenty Twenty One, as well as any C9 theme. (C9 Music, C9 Work, C9 Starter, C9 Togo) If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
+
+The current blocks plugin supports the WordPress Twenty Nineteen, WordPress Twenty Twenty, WordPress Twenty Twenty One, C9 Starter, C9 Music, C9 Work, and the C9 Togo WordPress themes.
+
+We're working to make the plugin work with other themes as well. If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
 [Get the C9 Starter Theme](https://www.covertnine.com/form/c9-beta)
+[C9 Starter Demo](https://c9.covertnine.com)
+[C9 Work Demo](https://work.covertnine.com)
+[C9 Music Demo](https://music.covertnine.com)
+[C9 Togo Demo](https://togo.covertnine.com)
 
 
 = Do I need the new block editor to use C9 Blocks? =
 
-Yes, you will need to have WordPress 5.0 or later installed to take advantage of C9 Blocks, and if you have the latest versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
+Yes, you will need to have WordPress 5.7 or later installed to take advantage of C9 Blocks, and if you have the latest versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
 
 == Screenshots ==
 
@@ -62,7 +69,7 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 == Changelog ==
 
 = 1.4.4 =
-Updates for WordPress 5.9. Enhancements to carousel blocks for removing items and changing slide order.
+Updates for WordPress 5.9. Enhancements to carousel blocks for removing carousel slide items and changing slide order. Updated FAQs and readme.
 
 = 1.4.3 =
 Updated styles for C9 Grid layouts with mobile column flip enabled so spacing is even on columns stacked.

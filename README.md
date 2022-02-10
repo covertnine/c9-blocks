@@ -25,10 +25,10 @@ This plugin is compatible with the Twenty Nineteen and Twenty Twenty themes but 
 For an overview of each of the blocks, and more up to date documentation, head over to our documentation and demo site.
 https://c9.covertnine.com
 
-## C9 WordPress Theme
-The C9 Theme is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with the new custom editor style from WordPress 5. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system and a more minimal minimal theme skin to start with.
+## C9 Starter WordPress Theme
+The C9 Starter is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with the new custom editor style from WordPress 5. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system and a more minimal minimal theme skin to start with.
 
-If you're working on behalf of a client or customer and want to build your own style guide and/or themes on top of the C9 theme, included is a client boilerplate folder and full child theme support.
+If you're working on behalf of a client or customer and want to build your own style guide and/or themes on top of the C9 Starter theme, included is a client boilerplate folder and full child theme support.
 
 ## Follow Along:
 
@@ -62,12 +62,16 @@ https://www.youtube.com/watch?v=ekwe_CaDlP0
 
 **Can C9 Blocks be used with any theme?**
 
-The current blocks plugin supports the WordPress Twenty Nineteen, upcoming WordPress Twenty Twenty Beta Theme, as well as the C9 Starter Theme. 
+The current blocks plugin supports the WordPress Twenty Nineteen, WordPress Twenty Twenty, WordPress Twenty Twenty One, C9 Starter, C9 Music, C9 Work, and the C9 Togo WordPress themes. 
 
 We're working to make the plugin work with other themes as well. If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
-[Get the C9 Theme](https://c9.covertnine.com)
+[Get the C9 Starter Theme](https://www.covertnine.com/form/c9-beta)
+[C9 Starter Demo](https://c9.covertnine.com)
+[C9 Work Demo](https://work.covertnine.com)
+[C9 Music Demo](https://music.covertnine.com)
+[C9 Togo Demo](https://togo.covertnine.com)
 
 **Do I need the new block editor to use C9 Blocks?**
 
-Yes, you will need to have WordPress 5.0 or later installed to take advantage of C9 Blocks. If you have the latest version of the Gutenberg plugin installed, you can use the BlockPreview support that is built into the saved templates modal. *If you experience any conflicts, please let us know so we can make the necessary updates.
+Yes, you will need to have WordPress 5.9 or later installed to take advantage of C9 Blocks' most recent version. If you have the latest version of the Gutenberg plugin installed, you can use the BlockPreview support that is built into the saved templates modal. *If you experience any conflicts, please let us know so we can make the necessary updates.
