@@ -428,8 +428,8 @@ html {
 		margin-right: calc((-100vw + 100%)/2);
 	}
 
-	.c9-grid .container-narrow,
-	.container-narrow {
+	.c9-grid .container-narrow:not(.block-editor-block-list__block),
+	.container-narrow:not(.block-editor-block-list__block) {
 		max-width: 960px;
 		padding-left: 30px;
 		padding-right: 30px;

@@ -32,15 +32,21 @@ class Sidebar extends Component {
 	}
 
 	setSections = sections => {
-		this.setState({ sections });
+		this.setState({
+			sections
+		});
 	};
 
 	setLayouts = layouts => {
-		this.setState({ layouts });
+		this.setState({
+			layouts
+		});
 	};
 
 	closeMenu = () => {
-		this.setState({ isModalOpen: false });
+		this.setState({
+			isModalOpen: false
+		});
 	};
 
 	render() {
@@ -50,15 +56,23 @@ class Sidebar extends Component {
 		return (
 			<Fragment>
 				<PluginSidebarMoreMenuItem
-					icon={<Logo style={{ width: "20px", margin: "0 10px 0 6px" }} />}
+					icon={
+						<Logo
+							style={{
+								width: "20px",
+								margin: "0 10px 0 6px"
+							}}
+						/>
+					}
 					target="c9-blocks"
 				>
-					{__("COVERT NINE Blocks", "c9-blocks")}
-				</PluginSidebarMoreMenuItem>
+					{" "}
+					{__("C9 Blocks", "c9-blocks")}{" "}
+				</PluginSidebarMoreMenuItem>{" "}
 				<PluginSidebar
 					name="c9-blocks"
 					id="c9-blocks"
-					title={__("COVERT NINE Blocks", "c9-blocks")}
+					title={__("C9 Blocks Sidebar", "c9-blocks")}
 				>
 					<PanelBody className="plugin-c9-panel">
 						<Button
@@ -66,36 +80,65 @@ class Sidebar extends Component {
 							isSecondary
 							key="page-panel-button"
 							onClick={() => {
-								this.setState({ isModalOpen: "page-templates" });
+								this.setState({
+									isModalOpen: "page-templates"
+								});
 							}}
 						>
-							<Icon icon={icons.page} size={ICON_SIZE} />
-							{__("Page Templates", "c9-blocks")}
-						</Button>
+							<Icon icon={icons.page} size={ICON_SIZE} />{" "}
+							{__("Page Templates", "c9-blocks")}{" "}
+						</Button>{" "}
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
 							key="section-panel-button"
 							onClick={() => {
-								this.setState({ loading: true });
-								this.setState({ isModalOpen: "section-templates" });
-								this.setState({ loading: false });
+								this.setState({
+									loading: true
+								});
+								this.setState({
+									isModalOpen: "section-templates"
+								});
+								this.setState({
+									loading: false
+								});
 							}}
 						>
-							<Icon icon={icons.section} size={ICON_SIZE} />
-							{__("Section Templates", "c9-blocks")}
-						</Button>
+							<Icon icon={icons.section} size={ICON_SIZE} />{" "}
+							{__("Section Templates", "c9-blocks")}{" "}
+						</Button>{" "}
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
 							key="saved-panel-button"
 							onClick={() => {
-								this.setState({ isModalOpen: "saved-blocks" });
+								this.setState({
+									isModalOpen: "saved-blocks"
+								});
 							}}
 						>
-							<Icon icon={icons.saved} size={ICON_SIZE} />
-							{__("Reusable Blocks", "c9-blocks")}
-						</Button>
+							<Icon icon={icons.saved} size={ICON_SIZE} />{" "}
+							{__("Reusable Blocks", "c9-blocks")}{" "}
+						</Button>{" "}
+						<Button
+							className="plugin-c9-panel-button is-large"
+							isSecondary
+							key="saved-panel-button"
+							onClick={() => {
+								this.setState({
+									loading: true
+								});
+								this.setState({
+									isModalOpen: "tutorial"
+								});
+								this.setState({
+									loading: false
+								});
+							}}
+						>
+							<Icon icon={icons.tutorials} size={ICON_SIZE} />{" "}
+							{__("Video Tutorials", "c9-blocks")}{" "}
+						</Button>{" "}
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
@@ -104,17 +147,17 @@ class Sidebar extends Component {
 								resetBlocks([]);
 							}}
 						>
-							<Icon icon={icons.close} size={ICON_SIZE} />
-							{__("Clear Page", "c9-blocks")}
-						</Button>
-					</PanelBody>
+							<Icon icon={icons.close} size={ICON_SIZE} />{" "}
+							{__("Clear Page", "c9-blocks")}{" "}
+						</Button>{" "}
+					</PanelBody>{" "}
 					<PanelBody>
-						<h5 className="components-base-control__label">
-							<b>Color Palette</b>
-						</h5>
+						<h4 className="components-base-control__label">
+							{__("Customize Theme Colors", "c9-blocks")}{" "}
+						</h4>{" "}
 						<ColorAppender />
-					</PanelBody>
-				</PluginSidebar>
+					</PanelBody>{" "}
+				</PluginSidebar>{" "}
 				{isModalOpen ? (
 					<TemplatesModal
 						close={this.closeMenu}
@@ -123,13 +166,24 @@ class Sidebar extends Component {
 						setSections={this.setSections}
 						setLayouts={this.setLayouts}
 						title="Templates"
-						icon={<Logo style={{ width: "20px", margin: "0 10px 0 6px" }} />}
-						onRequestClose={() => this.setState({ isModalOpen: false })}
+						icon={
+							<Logo
+								style={{
+									width: "20px",
+									margin: "0 10px 0 6px"
+								}}
+							/>
+						}
+						onRequestClose={() =>
+							this.setState({
+								isModalOpen: false
+							})
+						}
 						initial={isModalOpen}
 					/>
 				) : (
 					""
-				)}
+				)}{" "}
 			</Fragment>
 		);
 	}

@@ -4,7 +4,27 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-body .editor-styles-wrapper {padding:0px;}
+body .editor-styles-wrapper {
+	padding: 0px;
+}
+
+.editor-styles-wrapper .editor-post-title {
+	padding: 12px;
+}
+
+.components-toolbar>div>.components-toolbar__control.components-button.has-icon.is-pressed .dashicons-heading:before,
+.is-tablet-preview .dashicons-heading:before,
+.is-mobile-preview .dashicons-heading:before {
+	color: #fff;
+}
+
+.components-toolbar>div>.components-toolbar__control.components-button.has-icon .dashicons-heading:before {
+	color: #1e1e1e;
+	font-family: dashicons,
+		sans-serif;
+	content: "\f10e" !important;
+}
+
 /*for adjusting for post/page container grids for some themes*/
 @media only screen and (min-width: 768px) {
 
@@ -19,6 +39,23 @@ body .editor-styles-wrapper {padding:0px;}
 /*adjustment to tooltip font size */
 .components-tooltip.components-popover .components-popover__content {
 	font-size: 11px;
+}
+
+/* adjustment to backend social icons from conflict with core social icons */
+.is-root-container .wp-block-social-links:not(.has-small-icon-size):not(.has-large-icon-size):not(.has-huge-icon-size) .wp-social-link button {
+	font-size: 24px;
+}
+
+.is-root-container .wp-block-social-links.has-small-icon-size .wp-social-link button {
+	font-size: 16px;
+}
+
+.is-root-container .wp-block-social-links.has-large-icon-size .wp-social-link button {
+	font-size: 36px;
+}
+
+.is-root-container .wp-block-social-links.has-huge-icon-size .wp-social-link button {
+	font-size: 48px;
 }
 
 /* adjustment to toolbar position to align with containers and move off edge of screen*/
@@ -166,27 +203,9 @@ body .editor-styles-wrapper {padding:0px;}
 }
 
 /* adding position relative so fonts will display in heading dashicons */
-.components-toolbar__control.components-button {
-	position: relative;
-}
-
-.block-editor-block-inspector .components-toolbar[icon="heading"] div .components-button.has-icon {
-	min-width: 30px;
-	padding-left: 6px;
-	padding-right: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
 .block-editor-block-inspector .components-toolbar[icon="heading"] .components-toolbar div:first-child .components-button.has-icon:before {
 	left: 2px;
 	right: 2px;
-}
-
-.components-toolbar__control.components-button[data-subscript]:after {
-	font-size: 9px;
-	right: 6px;
-	bottom: 8px;
 }
 
 .components-toolbar__control.components-button[data-subscript] svg {
@@ -298,7 +317,15 @@ body .editor-styles-wrapper {padding:0px;}
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/columns"],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/image"],
 	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/spacer"] {
-		max-width: 100%;
+		max-width: 100vw;
+	}
+
+	body .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
+	body .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"][data-empty="true"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"][data-empty="true"],
+	body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type="core/paragraph"],
+	body .is-root-container>.block-list-appender.wp-block {
+		max-width: 1140px;
 	}
 }
 

@@ -2,9 +2,9 @@
 Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
-Requires at least: 5.3
-Tested up to: 5.8
-Stable tag: 1.4.3
+Requires at least: 5.7
+Tested up to: 5.9
+Stable tag: 1.4.4
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -41,14 +41,21 @@ https://www.youtube.com/watch?v=jHqOO_MP8nE
 
 = Can C9 Blocks be used with any theme? =
 
-The current blocks plugin supports the WordPress Twenty Nineteen, WordPress Twenty Twenty, WordPress Twenty Twenty One, as well as any C9 theme. (C9 Music, C9 Work, C9 Starter, C9 Togo) If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
+
+The current blocks plugin supports the WordPress Twenty Nineteen, WordPress Twenty Twenty, WordPress Twenty Twenty One, C9 Starter, C9 Music, C9 Work, and the C9 Togo WordPress themes.
+
+We're working to make the plugin work with other themes as well. If you have a page template that supports full-width layouts, then the C9 Blocks plugin should work with most Bootstrap and some non-Bootstrap themes.
 
 [Get the C9 Starter Theme](https://www.covertnine.com/form/c9-beta)
+[C9 Starter Demo](https://c9.covertnine.com)
+[C9 Work Demo](https://work.covertnine.com)
+[C9 Music Demo](https://music.covertnine.com)
+[C9 Togo Demo](https://togo.covertnine.com)
 
 
 = Do I need the new block editor to use C9 Blocks? =
 
-Yes, you will need to have WordPress 5.0 or later installed to take advantage of C9 Blocks, and if you have the latest versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
+Yes, you will need to have WordPress 5.7 or later installed to take advantage of C9 Blocks, and if you have the latest versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
 
 == Screenshots ==
 
@@ -60,6 +67,9 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.4.4 =
+Updates for WordPress 5.9. Enhancements to carousel blocks for removing carousel slide items and changing slide order. Updated FAQs and readme.
 
 = 1.4.3 =
 Updated styles for C9 Grid layouts with mobile column flip enabled so spacing is even on columns stacked.
@@ -273,6 +283,13 @@ Get an overview of each of the blocks and the latest documentation by heading ov
 The [C9 Starter Theme](https://wordpress.org/themes/c9-starter) is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with C9 Blocks and the Gutenberg block editor. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system.
 
 If you're an agency working on behalf of a client and want to build your own style guide and/or themes on top of the [C9 Starter Theme](https://c9.covertnine.com), included is a client boilerplate folder and full child theme support. Join the [C9 Early Access List](https://www.covertnine.com/forms/c9-beta) with a simple email signup to get four example themes along with all of our other WordPress tools emailed to you with tips on how to build your own block-based WordPress websites.
+
+== C9 Blocks Animation with Greensock (GSAP) ==
+C9 Blocks has an addon called C9 Animation that comes with our [C9 Early Access List](https://www.covertnine.com/forms/c9-beta) when you sign up. Unlock the power of buttery-smooth animations that run cross-browser and cross-device, all from within the visual block editor.
+
+[C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/)
+
+
 
 == Blocks-powered WordPress Themes ==
 

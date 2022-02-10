@@ -26,6 +26,8 @@ export default class Edit extends Component {
 		const {
 			twitter,
 			facebook,
+			instagram,
+			tiktok,
 			google,
 			linkedin,
 			pinterest,
@@ -78,6 +80,30 @@ export default class Edit extends Component {
 								<i className="fab fa-facebook-f" />
 								<span className={"c9-social-text"}>
 									{__("Share on Facebook", "c9-blocks")}
+								</span>
+								<span className="sr-only">(Link opens in new window)</span>
+							</a>
+						</li>
+					)}
+
+					{instagram && (
+						<li>
+							<a className="c9-share-instagram">
+								<i className="fab fa-instagram" />
+								<span className={"c9-social-text"}>
+									{__("Share on Instagram", "c9-blocks")}
+								</span>
+								<span className="sr-only">(Link opens in new window)</span>
+							</a>
+						</li>
+					)}
+
+					{tiktok && (
+						<li>
+							<a className="c9-share-tiktok">
+								<i className="fab fa-tiktok" />
+								<span className={"c9-social-text"}>
+									{__("Share on Tiktok", "c9-blocks")}
 								</span>
 								<span className="sr-only">(Link opens in new window)</span>
 							</a>

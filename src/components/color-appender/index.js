@@ -119,7 +119,7 @@ class ColorAppender extends Component {
 			<div className="c9-block-default-palette">
 				{colors && (
 					<div className="components-color-palette">
-						<p className="components-base-control__label">Theme Colors.</p>
+						<p className="components-base-control__label">Theme Colors</p>
 						{nonEditables.map(curr => (
 							<div
 								key={curr.slug}
@@ -146,7 +146,7 @@ class ColorAppender extends Component {
 				<hr />
 				{colors && (
 					<div className="components-color-palette">
-						<p className="components-base-control__label">C9 Block Colors.</p>
+						<p className="components-base-control__label">C9 Block Colors</p>
 						{editables.map((curr, index) => (
 							<div
 								key={curr.slug}

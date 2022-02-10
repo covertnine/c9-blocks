@@ -362,28 +362,33 @@ class TemplatesModal extends Component {
 											<div className="c9-reusable-list-container">
 												<div className="c9-reusable-list">
 													{this.state.reusables.map((obj, index) => {
-														const blockType = getBlockType(obj.content[0].name);
-														return (
-															<ReusableButton
-																icon={blockType.icon}
-																label={__(obj.name, "c9-blocks")}
-																reusable={obj.content}
-																open={() => {
-																	this.setUpdateState("updating");
-																}}
-																close={() => {
-																	const { reusables } = this.state;
-																	reusables[index].content = rawHandler({
-																		HTML: this.state.reusableTemplates[index],
-																		mode: "BLOCKS",
-																		canUserUseUnfilteredHTML
-																	});
-																	this.setState({ reusables });
-																	this.setUpdateState("updated");
-																}}
-																onHover={onHover}
-															/>
-														);
+														try {
+															const blockType = getBlockType(obj.content[0].name);
+															return (
+																<ReusableButton
+																	icon={blockType.icon}
+																	label={__(obj.name, "c9-blocks")}
+																	reusable={obj.content}
+																	open={() => {
+																		this.setUpdateState("updating");
+																	}}
+																	close={() => {
+																		const { reusables } = this.state;
+																		reusables[index].content = rawHandler({
+																			HTML: this.state.reusableTemplates[index],
+																			mode: "BLOCKS",
+																			canUserUseUnfilteredHTML
+																		});
+																		this.setState({ reusables });
+																		this.setUpdateState("updated");
+																	}}
+																	onHover={onHover}
+																/>
+															);
+														} catch (error) {
+															console.warn(`Invalid reusable block detected: ${obj} at index ${index}`);
+															return null;
+														}
 													})}
 												</div>
 												<a

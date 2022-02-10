@@ -18,6 +18,13 @@
 	margin-bottom: 0;
 }
 
+.padding-top-wrapper, .padding-bottom-wrapper, .margin-top-wrapper, .margin-bottom-wrapper {
+	> .components-base-control {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+}
+
 .padding-top-wrapper,
 .margin-top-wrapper {
 	justify-content: center;
@@ -44,7 +51,7 @@
 .padding-sides-wrapper,
 .margin-sides-wrapper {
 	justify-content: space-around;
-	align-items: flex-end;
+	align-items: center;
 }
 
 .padding-sides-wrapper .padding,
@@ -693,6 +700,12 @@ body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px"] .wp
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
 		max-width: 100%;
 		min-width: 1000px;
+	}
+
+	//for some instances where containers live inside other containers like image carousels
+	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-narrow .container,
+	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container-narrow .container {
+		min-width: auto;
 	}
 
 	body.folded.post-type-post .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
