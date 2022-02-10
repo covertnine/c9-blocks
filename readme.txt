@@ -284,6 +284,13 @@ The [C9 Starter Theme](https://wordpress.org/themes/c9-starter) is a responsive 
 
 If you're an agency working on behalf of a client and want to build your own style guide and/or themes on top of the [C9 Starter Theme](https://c9.covertnine.com), included is a client boilerplate folder and full child theme support. Join the [C9 Early Access List](https://www.covertnine.com/forms/c9-beta) with a simple email signup to get four example themes along with all of our other WordPress tools emailed to you with tips on how to build your own block-based WordPress websites.
 
+== C9 Blocks Animation with Greensock (GSAP) ==
+C9 Blocks has an addon called C9 Animation that comes with our [C9 Early Access List](https://www.covertnine.com/forms/c9-beta) when you sign up. Unlock the power of buttery-smooth animations that run cross-browser and cross-device, all from within the visual block editor.
+
+[C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/)
+
+
+
 == Blocks-powered WordPress Themes ==
 
 * [C9 Starter](https://c9.covertnine.com)
