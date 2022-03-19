@@ -34,7 +34,12 @@
 
 	@media (min-width: 1200px) {
 		min-width: calc(90vw - 314px);
-		max-width: calc(100vw - 486px);
+		max-width: calc(100vw - 520px);
+	}
+
+	@media (min-width: 1400px) {
+		min-width: calc(90vw - 314px);
+		max-width: 900px;
 	}
 
 	// header
@@ -52,4 +57,9 @@
 			letter-spacing: 0.5px;
 		}
 	}
+}
+
+/* block preview updates */
+.c9-modal-preview .block-editor-inserter__preview-content {
+	width: 412px;
 }

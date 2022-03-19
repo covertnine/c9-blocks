@@ -19,7 +19,7 @@ function PreviewPanel({ item }) {
 			<div className="block-editor-inserter__preview c9-modal-preview">
 				<div className="block-editor-inserter__preview-content">
 					<BlockPreview
-						__experimentalPadding={16}
+						__experimentalPadding={0}
 						viewportWidth={1024}
 						blocks={item}
 					/>
