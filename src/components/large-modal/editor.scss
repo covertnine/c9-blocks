@@ -25,7 +25,8 @@
 	}
 
 	@media (min-width: 992px) {
-		left: calc(50% - 220px);
+		left: 40px;
+		position: absolute;
 	}
 
 	@media (max-width: 1199px) {
@@ -33,8 +34,8 @@
 	}
 
 	@media (min-width: 1200px) {
-		min-width: calc(90vw - 314px);
-		max-width: calc(100vw - 486px);
+		min-width: calc(100vw - 520px);
+		max-width: calc(100vw - 520px);
 	}
 
 	// header
@@ -52,4 +53,10 @@
 			letter-spacing: 0.5px;
 		}
 	}
+}
+
+/* block preview updates */
+.block-editor-block-preview__container .block-editor-block-preview__content {
+	width: 100vw;
+	min-width: 100vw;
 }

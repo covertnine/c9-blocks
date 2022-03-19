@@ -18,8 +18,11 @@
 	margin-bottom: 0;
 }
 
-.padding-top-wrapper, .padding-bottom-wrapper, .margin-top-wrapper, .margin-bottom-wrapper {
-	> .components-base-control {
+.padding-top-wrapper,
+.padding-bottom-wrapper,
+.margin-top-wrapper,
+.margin-bottom-wrapper {
+	>.components-base-control {
 		margin: 0 !important;
 		padding: 0 !important;
 	}
@@ -793,8 +796,8 @@ body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px"] .wp
 	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] {
 		max-width: calc(100vw - 280px - 116px - 12px);
 		width: calc(100vw - 280px - 116px - 12px);
-		margin-left: calc((-100vw + 280px + 100% + 12px + 116px) / 2);
-		margin-right: calc((-100vw + 280px + 100% + 12px + 116px) / 2);
+		margin-left: calc((-100vw + 280px + 100%) / 2);
+		margin-right: calc((-100vw + 280px + 100%) / 2);
 	}
 
 	/* WP 5.5 updates */
