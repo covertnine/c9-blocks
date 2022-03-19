@@ -377,7 +377,7 @@ function c9_add_reusable_link()
 {
 	global $submenu;
 	$permalink               = admin_url() . 'edit.php?post_type=wp_block';
-	$submenu['themes.php'][] = array('C9 Reusable Blocks', 'manage_options', $permalink);
+	$submenu['themes.php'][] = array('C9 Saved Templates', 'manage_options', $permalink);
 }
 add_action('admin_menu', 'c9_add_reusable_link');
 
