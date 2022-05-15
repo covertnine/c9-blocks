@@ -365,12 +365,14 @@ add_action('wp_enqueue_scripts', 'c9_check_bootstrap', 90);
  */
 function c9_blocks_front_assets()
 {
-	// Youtube Player API.
-	wp_enqueue_script(
-		'youtube-api',
-		'https://www.youtube.com/player_api',
-		false
-	);
+	if (get_option('c9_blocks_disable_youtube_api') !== 'true') {
+		// Youtube Player API.
+		wp_enqueue_script(
+			'youtube-api',
+			'https://www.youtube.com/player_api',
+			false
+		);
+	}
 
 	// blocks frontend.
 	wp_enqueue_script(
@@ -384,8 +386,6 @@ function c9_blocks_front_assets()
 		'c9_blocks-frontend',
 		'c9_blocks_params',
 		array(
-			'colors'      => get_option('c9_blocks_colors'),
-			'orig_colors' => get_option('c9_orig_colors'),
 			'disable_youtube_api' => get_option('c9_blocks_disable_youtube_api'),
 		)
 	);
