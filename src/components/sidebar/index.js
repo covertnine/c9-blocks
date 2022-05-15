@@ -2,6 +2,7 @@
  * Internal dependencies
  */
 import ColorAppender from "../color-appender";
+import YoutubeApiToggle from "../youtube-api-toggle";
 import Logo from "../../../assets/c9-feather-logo-gradient.svg";
 import { TemplatesModal } from "../templates-modal";
 import icons from "../../../assets/sidebar-icons";
@@ -66,9 +67,8 @@ class Sidebar extends Component {
 					}
 					target="c9-blocks"
 				>
-					{" "}
-					{__("C9 Blocks", "c9-blocks")}{" "}
-				</PluginSidebarMoreMenuItem>{" "}
+					{__("C9 Blocks", "c9-blocks")}
+				</PluginSidebarMoreMenuItem>
 				<PluginSidebar
 					name="c9-blocks"
 					id="c9-blocks"
@@ -85,9 +85,9 @@ class Sidebar extends Component {
 								});
 							}}
 						>
-							<Icon icon={icons.page} size={ICON_SIZE} />{" "}
-							{__("Page Templates", "c9-blocks")}{" "}
-						</Button>{" "}
+							<Icon icon={icons.page} size={ICON_SIZE} />
+							{__("Page Templates", "c9-blocks")}
+						</Button>
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
@@ -104,9 +104,9 @@ class Sidebar extends Component {
 								});
 							}}
 						>
-							<Icon icon={icons.section} size={ICON_SIZE} />{" "}
-							{__("Section Templates", "c9-blocks")}{" "}
-						</Button>{" "}
+							<Icon icon={icons.section} size={ICON_SIZE} />
+							{__("Section Templates", "c9-blocks")}
+						</Button>
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
@@ -117,9 +117,9 @@ class Sidebar extends Component {
 								});
 							}}
 						>
-							<Icon icon={icons.saved} size={ICON_SIZE} />{" "}
-							{__("Saved Templates", "c9-blocks")}{" "}
-						</Button>{" "}
+							<Icon icon={icons.saved} size={ICON_SIZE} />
+							{__("Saved Templates", "c9-blocks")}
+						</Button>
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
@@ -136,9 +136,9 @@ class Sidebar extends Component {
 								});
 							}}
 						>
-							<Icon icon={icons.tutorials} size={ICON_SIZE} />{" "}
-							{__("Video Tutorials", "c9-blocks")}{" "}
-						</Button>{" "}
+							<Icon icon={icons.tutorials} size={ICON_SIZE} />
+							{__("Video Tutorials", "c9-blocks")}
+						</Button>
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
@@ -147,18 +147,22 @@ class Sidebar extends Component {
 								resetBlocks([]);
 							}}
 						>
-							<Icon icon={icons.close} size={ICON_SIZE} />{" "}
-							{__("Clear Page", "c9-blocks")}{" "}
-						</Button>{" "}
-					</PanelBody>{" "}
+							<Icon icon={icons.close} size={ICON_SIZE} />
+							{__("Clear Page", "c9-blocks")}
+						</Button>
+					</PanelBody>
 					<PanelBody>
 						<h4 className="components-base-control__label">
-							{__("Customize Theme Colors", "c9-blocks")}{" "}
-						</h4>{" "}
+							{__("Disable YouTube API Usage for C9 Blocks?", "c9-blocks")}
+						</h4>
+						<YoutubeApiToggle />
+						<h4 className="components-base-control__label">
+							{__("Customize Theme Colors", "c9-blocks")}
+						</h4>
 						<ColorAppender />
-					</PanelBody>{" "}
-				</PluginSidebar>{" "}
-				{isModalOpen ? (
+					</PanelBody>
+				</PluginSidebar>
+				{isModalOpen && (
 					<TemplatesModal
 						close={this.closeMenu}
 						sections={sections}
@@ -181,9 +185,7 @@ class Sidebar extends Component {
 						}
 						initial={isModalOpen}
 					/>
-				) : (
-					""
-				)}{" "}
+				)}
 			</Fragment>
 		);
 	}
