@@ -22,6 +22,7 @@ const { applyFilters } = wp.hooks;
  * External dependencies
  */
 import classnames from "classnames";
+import { Markup } from "interweave";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
@@ -267,7 +268,7 @@ export default class Edit extends Component {
 				>
 					{attributes.displaySectionTitle && attributes.sectionTitle && (
 						<SectionTitleTag className="c9-post-grid-section-title">
-							{attributes.sectionTitle}
+							<Markup content={attributes.sectionTitle} />
 						</SectionTitleTag>
 					)}
 
@@ -312,8 +313,12 @@ export default class Edit extends Component {
 										{attributes.displayPostTitle && (
 											<PostTag className="c9-block-post-grid-title">
 												<a href={post.link} target="_blank" rel="bookmark">
-													{decodeEntities(post.title.rendered.trim()) ||
-														__("(Untitled)", "c9-blocks")}
+													<Markup
+														content={
+															decodeEntities(post.title.rendered.trim()) ||
+															__("(Untitled)", "c9-blocks")
+														}
+													/>
 												</a>
 											</PostTag>
 										)}

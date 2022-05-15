@@ -111,7 +111,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 				$post_grid_markup .= sprintf(
 					'<%3$s class="c9-block-post-grid-title"><a href="%1$s" class="c9-smooth" rel="bookmark">%2$s</a></%3$s>',
 					esc_url( get_permalink( $post_id ) ),
-					esc_html( $title ),
+					wp_kses_post( $title ),
 					esc_attr( $post_title_tag )
 				);
 			}
@@ -264,7 +264,7 @@ function covertnine_blocks_render_block_core_latest_posts( $attributes ) {
 				$section_title_tag = 'h2';
 			}
 
-			$section_title = '<' . esc_attr( $section_title_tag ) . '>' . esc_html( $attributes['sectionTitle'] ) . '</' . esc_attr( $section_title_tag ) . '>';
+			$section_title = '<' . esc_attr( $section_title_tag ) . '>' . wp_kses_post( $attributes['sectionTitle'] ) . '</' . esc_attr( $section_title_tag ) . '>';
 		} else {
 			$section_title = null;
 		}
