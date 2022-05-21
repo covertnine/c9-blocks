@@ -151,9 +151,9 @@ class Sidebar extends Component {
 							{__("Clear Page", "c9-blocks")}
 						</Button>
 					</PanelBody>
-					<PanelBody>
+					<PanelBody className="c9-youtube-disable">
 						<h4 className="components-base-control__label">
-							{__("Disable YouTube API Usage for C9 Blocks?", "c9-blocks")}
+							{__("Disable YouTube API Usage?", "c9-blocks")}
 						</h4>
 						<YoutubeApiToggle />
 						<h4 className="components-base-control__label">
