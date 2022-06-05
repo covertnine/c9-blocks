@@ -80,7 +80,6 @@
 	display: none;
 }
 
-
 /* overrides default paragraph margin added to editor styles */
 .editor-styles-wrapper .c9-grid p[data-block] {
 	margin-top: 0px;
@@ -643,8 +642,10 @@ body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px"] .wp
 
 	// post single has narrower container
 	body.folded.post-type-post .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] {
-		width: 100%;
+		width: 100vw;
 		max-width: calc(100vw - 280px);
+		margin-left: calc(((-100vw + 280px) + 100%) / 2);
+		margin-left: calc(((-100vw + 280px) + 100%) / 2);
 	}
 
 	/* c9 grid on blog post with wide container width unsetting additional align wide class*/
