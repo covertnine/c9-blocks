@@ -3,8 +3,8 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.7
-Tested up to: 5.9.2
-Stable tag: 1.4.5
+Tested up to: 6.0
+Stable tag: 1.5.0
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -67,6 +67,9 @@ Yes, you will need to have WordPress 5.7 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.5.0 =
+Updates to Grid blocks for width issues in backend. Added toggle to disable YouTube API from C9 Blocks Side Panel in the editor for GDPR compliance. Better compatibility with core button blocks updates. WordPress 6 compatibility updates. Support added for html in post titles for Post Grid block.
 
 = 1.4.5 =
 Adjustments to backend editor on saved block layouts, updates to labels for more clarification between reusable vs templates that are not locked. An attempt was made at fixing the BlockPreviews.
