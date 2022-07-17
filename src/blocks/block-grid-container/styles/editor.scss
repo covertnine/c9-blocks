@@ -853,8 +853,8 @@ body.folded .is-sidebar-opened .editor-styles-wrapper[style*="width: 780px"] .wp
 		margin-right: auto;
 	}
 
-	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container,
-	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container {
+	body:not(.folded) .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container:not(.carousel.slide),
+	body.folded .is-sidebar-opened .editor-styles-wrapper .wp-block[data-type="c9-blocks/grid"] .container:not(.carousel.slide) {
 		width: 1140px;
 		max-width: 1140px;
 		margin-left: 0;
