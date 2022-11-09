@@ -2,9 +2,9 @@
 Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
-Requires at least: 5.7
-Tested up to: 5.9.2
-Stable tag: 1.4.5
+Requires at least: 5.9
+Tested up to: 6.1
+Stable tag: 1.5.2
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -55,7 +55,7 @@ We're working to make the plugin work with other themes as well. If you have a p
 
 = Do I need the new block editor to use C9 Blocks? =
 
-Yes, you will need to have WordPress 5.7 or later installed to take advantage of C9 Blocks, and if you have the latest versin of the Gutenberg plugin installed, you can use the BlockPreview support we have built into our saved templates modal, but there may be some conflicts that exist as we haven't fully tested the latest Gutenberg plugin editor with our theme/plugin.
+Yes, you will need to have WordPress 5.9 or later installed to take advantage of C9 Blocks.
 
 == Screenshots ==
 
@@ -67,6 +67,15 @@ Yes, you will need to have WordPress 5.7 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.5.2 =
+Fixes to horizontal tabs. Updates for WordPress 6.1. Updates to build tools for webpack5.
+
+= 1.5.1 =
+Fix to some width issues with carousels in backend on some screens.
+
+= 1.5.0 =
+Updates to Grid blocks for width issues in backend. Added toggle to disable YouTube API from C9 Blocks Side Panel in the editor for GDPR compliance. Better compatibility with core button blocks updates. WordPress 6 compatibility updates. Support added for html in post titles for Post Grid block.
 
 = 1.4.5 =
 Adjustments to backend editor on saved block layouts, updates to labels for more clarification between reusable vs templates that are not locked. An attempt was made at fixing the BlockPreviews.

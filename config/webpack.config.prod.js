@@ -8,6 +8,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 // cleanup empty css-js files
 class MiniCssExtractPluginCleanup {
@@ -31,6 +32,20 @@ class MiniCssExtractPluginCleanup {
 
 module.exports = {
 	mode: "production",
+	resolve: {
+		fallback: {
+		  "fs": false,
+		  "tls": false,
+		  "net": false,
+		  "path": false,
+		  "zlib": false,
+		  "http": false,
+		  "https": false,
+		  "stream": false,
+		  "crypto": false,
+		  "crypto-browserify": require.resolve('crypto-browserify'), //if you want to use this module also don't forget npm i crypto-browserify 
+		} 
+	  },
 	entry: {
 		blocks: paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
 		"blocks.frontend": paths.pluginBlocksFrontendJs,
@@ -49,6 +64,7 @@ module.exports = {
 		}),
 		new CssMinimizerPlugin(),
 		new MiniCssExtractPluginCleanup(),
+		new NodePolyfillPlugin(),
 		new ImageMinimizerPlugin({
 			minimizerOptions: {
 				// Lossless optimization with custom option
@@ -115,7 +131,7 @@ module.exports = {
 						loader: "sass-loader",
 						options: {
 							// Add common CSS file for variables and mixins.
-							data: '@import "./src/block-colors.scss";\n',
+							additionalData: '@import "./src/block-colors.scss";\n',
 							sassOptions: {
 								outputStyle: "compressed"
 							}

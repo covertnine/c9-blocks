@@ -26,13 +26,13 @@ import "./blocks/i18n.js";
 import "./blocks/block-sharing";
 import "./blocks/block-cta";
 import "./blocks/block-heading";
+import "./blocks/block-image-carousel";
 import "./blocks/block-grid-container";
 import "./blocks/block-horizontal-tabs";
 import "./blocks/block-vertical-tabs";
 import "./blocks/block-toggles";
 import "./blocks/block-posts-grid";
 import "./blocks/block-carousel";
-import "./blocks/block-image-carousel";
 
 // child blocks
 import "./blocks/block-column-container";
