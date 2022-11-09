@@ -2,7 +2,7 @@ module.exports = {
 	presets: [
 		[
 			// 'env',
-			require.resolve("babel-preset-env"),
+			'@babel/preset-env',
 			{
 				// Do not transform modules to CJS.
 				modules: false,
@@ -43,13 +43,6 @@ module.exports = {
 		// Async/Await awesomeness https://babeljs.io/docs/en/babel-plugin-syntax-async-functions/.
 		[require.resolve("babel-plugin-syntax-async-functions")],
 		// Polyfills the runtime needed for async/await and generators.
-		[
-			require.resolve("babel-plugin-transform-runtime"),
-			{
-				helpers: false,
-				polyfill: false,
-				regenerator: true
-			}
-		]
+		['@babel/plugin-transform-runtime']
 	]
 };

@@ -119,9 +119,13 @@ module.exports = {
 					{
 						loader: "sass-loader",
 						options: {
+							implementation: require("sass"),
+							sassOptions: {
+								fiber: false,
+								outputStyle: "compressed",
+							},
 							// Add common CSS file for variables and mixins.
-							data: '@import "./src/block-colors.scss";\n',
-							outputStyle: "nested",
+							additionalData: '@import "./src/block-colors.scss";\n',
 							sourceMap: true
 						}
 					}
@@ -130,9 +134,7 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				exclude: /(node_modules|bower_components)/,
-				issuer: {
-					test: /\.(js|jsx|mjs)$/
-				},
+				issuer: /\.(js|jsx|mjs)$/,
 				use: {
 					loader: "@svgr/webpack",
 					options: {
@@ -152,9 +154,7 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				exclude: /(node_modules|bower_components)/,
-				issuer: {
-					test: /\.(scss|css|less)$/
-				},
+				issuer:  /\.(scss|css|less)$/,
 				use: {
 					loader: "svg-url-loader",
 					options: { sourceMap: true }
@@ -168,6 +168,9 @@ module.exports = {
 				}
 			}
 		]
+	},
+	resolve: {
+		fallback: { crypto: false },
 	},
 	// stats: "minimal",
 	externals: externals,

@@ -116,7 +116,9 @@ module.exports = {
 						options: {
 							// Add common CSS file for variables and mixins.
 							data: '@import "./src/block-colors.scss";\n',
-							outputStyle: "nested"
+							sassOptions: {
+								outputStyle: "compressed"
+							}
 						}
 					}
 				]
@@ -124,9 +126,7 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				exclude: /(node_modules|bower_components)/,
-				issuer: {
-					test: /\.(js|jsx|mjs)$/
-				},
+				issuer: /\.(js|jsx|mjs)$/,
 				use: {
 					loader: "@svgr/webpack",
 					options: {
@@ -145,9 +145,7 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				exclude: /(node_modules|bower_components)/,
-				issuer: {
-					test: /\.(scss|css|less)$/
-				},
+				issuer:  /\.(scss|css|less)$/,
 				use: "svg-url-loader"
 			},
 			{
