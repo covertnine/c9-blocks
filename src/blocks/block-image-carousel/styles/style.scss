@@ -5,153 +5,158 @@
  */
 
 .c9-image-carousel {
-	display: flex;
-	overflow: hidden;
+    display: flex;
+    overflow: hidden;
 }
 
 .c9-image-carousel.container-narrow,
 .c9-image-carousel.container,
 .c9-image-carousel.alignwide,
 .c9-image-carousel.alignfull {
-	padding-left: 0;
-	padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 @media only screen and (min-width: 1px) {
 
-	.page-template-default .entry-content .c9-image-carousel.alignwide,
-	.c9-image-carousel.alignwide {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-	}
+    .page-template-default .entry-content .c9-image-carousel.alignwide,
+    .c9-image-carousel.alignwide {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 @media only screen and (min-width: 576px) {
-	.c9-image-carousel.container-narrow {
-		max-width: 540px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+    .c9-image-carousel.container-narrow {
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media only screen and (min-width: 1px) and (max-width: 667px) {
 
-	/* sets height to auto on mobile for manual height setting*/
-	.c9-image-carousel[style] {
-		min-height: auto !important;
-	}
+    /* sets height to auto on mobile for manual height setting*/
+    .c9-image-carousel[style] {
+        min-height: auto !important;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-	.c9-image-carousel.container-narrow {
-		max-width: 720px;
-	}
+    .c9-image-carousel.container-narrow {
+        max-width: 720px;
+    }
 
-	.page-template-default .entry-content>.c9-grid .container.c9-image-carousel,
-	.c9-image-carousel.container {
-		padding-left: 0px;
-		padding-right: 0px;
-	}
+    .page-template-default .entry-content>.c9-grid .container.c9-image-carousel,
+    .c9-image-carousel.container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
 
-	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
-	.c9-image-carousel.alignwide {
-		width: 100%;
-	}
+    .page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
+    .c9-image-carousel.alignwide {
+        width: 100%;
+    }
 
-	.c9-image-carousel.container-narrow {
-		max-width: 960px;
-	}
+    .c9-image-carousel.container-narrow {
+        max-width: 960px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
 
-	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
-	.c9-image-carousel.alignwide {
-		max-width: 100vw;
-		width: 120%;
-		margin-left: -10%;
-		margin-right: -10%;
-	}
+    .page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
+    .c9-image-carousel.alignwide {
+        max-width: 100vw;
+        width: 120%;
+        margin-left: -10%;
+        margin-right: -10%;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
 
-	.page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
-	.c9-image-carousel.alignwide {
-		max-width: 1368px;
-	}
+    .page-template-default .page .entry-content .c9-image-carousel.alignwide.container,
+    .c9-image-carousel.alignwide {
+        max-width: 1368px;
+    }
 }
 
 .c9-image-carousel .carousel-inner {
-	&.c9-is-vertically-aligned-top {
-		-ms-grid-row-align: start;
-		align-self: flex-start;
-	}
+    &.c9-is-vertically-aligned-top {
+        -ms-grid-row-align: start;
+        align-self: flex-start;
+    }
 
-	&.c9-is-vertically-aligned-center {
-		-ms-grid-row-align: center;
-		align-self: center;
-	}
+    &.c9-is-vertically-aligned-center {
+        -ms-grid-row-align: center;
+        align-self: center;
+    }
 
-	&.c9-is-vertically-aligned-bottom {
-		-ms-grid-row-align: end;
-		align-self: flex-end;
-	}
+    &.c9-is-vertically-aligned-bottom {
+        -ms-grid-row-align: end;
+        align-self: flex-end;
+    }
+}
+
+.c9-image-carousel .carousel-indicators {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .c9-image-carousel .carousel-indicators li:after,
 .c9-image-carousel .carousel-indicators li:before {
-	display: none;
+    display: none;
 }
 
 .c9-image-carousel .carousel-indicators {
-	margin-bottom: 0px;
-	margin-left: 0px;
-	bottom: 3px;
-	padding: 0px 10px;
-	z-index: 24;
-	list-style-type: none;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    bottom: 3px;
+    padding: 0px 10px;
+    z-index: 24;
+    list-style-type: none;
 }
 
 .c9-image-carousel .carousel-indicators li {
-	background-color: #333333;
-	z-index: 26;
+    background-color: #333333;
+    z-index: 26;
 }
 
 .c9-image-carousel .carousel-indicators .active {
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .c9-image-carousel .carousel-control-next,
 .c9-image-carousel .carousel-control-prev {
-	width: 25px;
-	z-index: 32;
+    width: 25px;
+    z-index: 32;
 }
 
 .c9-image-carousel .carousel-inner {
-	position: relative;
+    position: relative;
 }
 
 .carousel-item .carousel-caption {
-	text-align: left;
-	left: 3%;
-	right: 3%;
-	bottom: 0px;
-	font-size: 10px;
+    text-align: left;
+    left: 3%;
+    right: 3%;
+    bottom: 0px;
+    font-size: 10px;
 }
 
 .carousel-item .carousel-caption h5 {
-	font-size: 1.4em;
-	margin-bottom: 0px;
-	margin-top: 0px;
+    font-size: 1.4em;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .carousel-item .carousel-caption p {
-	font-size: 1.2em;
-	margin-top: 0px;
-	margin-bottom: 0px;
+    font-size: 1.2em;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
