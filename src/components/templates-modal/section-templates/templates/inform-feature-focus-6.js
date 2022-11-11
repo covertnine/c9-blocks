@@ -5,7 +5,7 @@ export default {
 	title: "Inform Feature Focus 6",
 	description: "60 Words • 6 Icons • Button Link",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#eeeeee"} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":4,"columnsGap":0,"layout":"c9-4-col-wideleft"} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":4,"columnsGap":0,"layout":"c9-4-col-wideleft"} -->
 <div class="container alignwide c9-column-container c9-scroll c9-layout-columns-4 c9-4-col-wideleft" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-0 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:group {"backgroundColor":"color-light"} -->
 <div class="wp-block-group has-color-light-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:c9-blocks/heading {"heading":"Section Title","tagLevel":5} -->

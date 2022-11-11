@@ -5,7 +5,7 @@ export default {
 	title: "Inform Icon Focus 6",
 	description: "6 Labels • 6 Icons • 6 Links",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":4,"containerHue":"#eeeeee"} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":6,"layout":"c9-6-col-equal"} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":6,"layout":"c9-6-col-equal"} -->
 <div class="container alignwide c9-column-container c9-scroll c9-layout-columns-6 c9-6-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","id":3927,"width":56,"height":56,"sizeSlug":"large","linkDestination":"none"} -->
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2021/01/c9-icon-community.svg" alt="" class="wp-image-3927" width="56" height="56"/></figure></div>
