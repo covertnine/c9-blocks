@@ -7,27 +7,8 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
-
-// cleanup empty css-js files
-class MiniCssExtractPluginCleanup {
-	constructor(deleteWhere = /blocks\.(bootstrap|editor)\.build\.js$/) {
-		this.shouldDelete = new RegExp(deleteWhere);
-	}
-	apply(compiler) {
-		compiler.hooks.emit.tapAsync(
-			"MiniCssExtractPluginCleanup",
-			(compilation, callback) => {
-				Object.keys(compilation.assets).forEach(asset => {
-					if (this.shouldDelete.test(asset)) {
-						delete compilation.assets[asset];
-					}
-				});
-				callback();
-			}
-		);
-	}
-}
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
 	mode: "production",
@@ -62,7 +43,10 @@ module.exports = {
 			filename: "[name].build.css"
 		}),
 		new CssMinimizerPlugin(),
-		new MiniCssExtractPluginCleanup(),
+		new CleanWebpackPlugin({
+			protectWebpackAssets: false,
+			cleanAfterEveryBuildPatterns: ["*.LICENSE.txt", "blocks.bootstrap.build.js", "blocks.editor.build.js"],
+		}),
 		new NodePolyfillPlugin(),
 		new ImageMinimizerPlugin({
 			minimizer: {
@@ -121,12 +105,14 @@ module.exports = {
 					{
 						loader: "postcss-loader",
 						options: {
-							ident: "postcss",
-							plugins: [
-								autoprefixer({
-									flexbox: "no-2009"
-								})
-							]
+							postcssOptions: {
+								plugins: [
+									autoprefixer({
+										flexbox: "no-2009"
+									})
+								]
+							},
+							sourceMap: true
 						}
 					},
 					// "sass" loader converts SCSS to CSS.
@@ -154,11 +140,10 @@ module.exports = {
 						svgoConfig: {
 							plugins: [
 								{
-									name: "removeViewBox",
-									active: false,
-								},
+									removeViewBox: false
+								}
 							]
-						}
+						},
 					}
 				}
 			},
@@ -166,7 +151,8 @@ module.exports = {
 				test: /\.svg$/,
 				exclude: /(node_modules|bower_components)/,
 				issuer:  /\.(scss|css|less)$/,
-				use: "svg-url-loader"
+				use: "svg-url-loader",
+				type: 'javascript/auto'
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
