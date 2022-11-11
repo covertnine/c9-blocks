@@ -7,7 +7,7 @@ export default {
 	description: `Inform and entice potential customers or clients with a widescreen video that helps tell a broader story. There’s plenty of room to break up longer-form text with an image carousel. Include vertical photos, a short FAQ, and a place to tell a friend or click a call-to-action button.`,
 	recommended: `Two video clips or YouTube videos, 3-5 vertical photos, FAQ, about copy, heading, subheading, and short description text for header`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#141414","overlayOpacity":9,"blendMode":"normal","minScreenHeight":84,"containerVideoURL":"//c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:84vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"bottom","minScreenHeight":-4} -->
+<div class="c9-grid p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:84vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"bottom","minScreenHeight":-4} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-equal" style="min-height:-4vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Page Heading","displayLevel":"4","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","overrideStyle":true,"animateScrub":true,"animateStart":"0px 100%","animateEnd":"85px 25%"} -->
 <div class="section-heading c9-heading text-left"><h1 class="c9-txl display-4 font-weight-bold" style="color:#ffffff">Page Heading</h1></div>
@@ -53,8 +53,8 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":1} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-equal","overlayHue":"#e4e9ea","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container alignwide c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-overlay-container" style="background-color:rgba(228,233,234,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-equal","overlayHue":"#e4e9ea","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="container alignwide c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-overlay-container" style="background-color:rgba(228,233,234,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Watch the Video","tagLevel":3,"displayLevel":"1","textAlign":"center","weight":"bold","overrideStyle":true} -->
 <div class="section-heading c9-heading text-center"><h3 class="c9-h h1 font-weight-bold">Watch the Video</h3></div>
 <!-- /wp:c9-blocks/heading -->
@@ -89,7 +89,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/male-portrait-vertical.jpg","bgImgSize":"","bgCustomX":{"size":50,"unit":"%"},"overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"1.00","y":"0.92"},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:75vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0} -->
+<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:75vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Person Name","tagLevel":4,"type":"c9-sh subhead-h","weight":"light","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h4 class="c9-sh subhead-h4 font-weight-light">Person Name</h4></div>
@@ -115,7 +115,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":3,"containerHue":"#f4f4f4","minScreenHeight":64} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center"} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","id":3066,"sizeSlug":"large"} -->
 <div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/portrait-dark-vert-683x1024.jpg" alt="" class="wp-image-3066"/><figcaption>Merch store open 10am-6pm daily</figcaption></figure></div>
@@ -163,7 +163,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":4} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Tell a friend","subheading":"or our boss will yell at us","addSubheading":true,"textAlign":"center"} -->
 <div class="section-heading c9-heading text-center"><h1 class="c9-h">Tell a friend</h1><div class="c9-h h1"><small class="text-muted">&nbsp;or our boss will yell at us</small></div></div>
@@ -175,7 +175,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":5,"containerHue":"#000000"} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"buttonText":"SUbscribe","buttonBackgroundColor":"#21a77a","buttonSize":"c9-button-size-extralarge","ctaPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":19} -->
 <div style="text-align:left" class="c9-cta c9-block-cta container"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text" style="color:#ffffff;font-size:19px"><p><strong>Subscribe to our emails and we'll send you $50 in the mail. Don't believe us? Try me.</strong></p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff;background-color:#21a77a">SUbscribe</a></div></div></div>

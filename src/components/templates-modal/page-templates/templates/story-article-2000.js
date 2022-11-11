@@ -7,7 +7,7 @@ export default {
 	description: `A long form template for a long story, tutorial, or opinion about a topic that starts at 2,000 words in length.`,
 	recommended: `Potrait Photo • Multiple Hero Images • Photo Gallery • Quotes • Testimonials • Button and Call to Action`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg","bgImgSize":"","bgCustomX":{"size":50,"unit":"%"},"bgCustomY":{"size":"auto","unit":"%"},"overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"1.00","y":"0.61"},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:75vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
+<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:75vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"1800 Words Goal: 14 minute read","tagLevel":4,"displayLevel":"5","type":"c9-sh subhead-h","weight":"light","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h4 class="c9-sh subhead-h5 font-weight-light">1800 Words Goal: 14 minute read</h4></div>
@@ -36,7 +36,7 @@ export default {
 <div class="c9-grid p-1 c9-scroll" style="min-height:15vh;background-color:rgba(242,242,242,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center","minScreenHeight":7} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column" style="min-height:7vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Donate now","buttonSize":"c9-button-size-large","buttonShape":"round","disableToolbar":true,"fontSize":"medium"} -->
-<div style="text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h has-medium-font-size"><p>Donate to the black sand beaches fund. All proceeds go to this imaginary charity we actually totally don't think is real.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-round c9-button-size-large" style="color:#ffffff">Donate now</a></div></div></div>
+<div style="text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h has-medium-font-size"><p>Donate to the black sand beaches fund. All proceeds go to this imaginary charity we actually totally don't think is real.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-round c9-button-size-large" style="color:#ffffff">Donate now</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
@@ -44,7 +44,7 @@ export default {
 
 <!-- wp:c9-blocks/grid {"instanceId":2,"rows":4,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="c9-grid c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container alignwide c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container alignwide c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":2793,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-177-2.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-177-2-1024x683.jpg" alt="" class="wp-image-2793"/></a></figure>
 <!-- /wp:image --></div></div>
@@ -114,7 +114,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"columns":3,"columnsGap":4,"layout":"c9-3-col-wideright","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container c9-column-container p-5 my-5 c9-scroll c9-layout-columns-3 c9-3-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-3-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3069,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-683x1024.jpg" alt="" class="wp-image-3069"/></a></figure>
 <!-- /wp:image --></div></div>
@@ -134,7 +134,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container alignwide c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container alignwide c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
 <p>Nunc vel risus commodo viverra maecenas accumsan lacus vel. Amet mauris commodo quis imperdiet massa tincidunt nunc. Enim eu turpis egestas pretium aenean. </p>
 <!-- /wp:paragraph -->
@@ -217,7 +217,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171.jpg","bgImgAttach":true,"overlayHue":"#333333","overlayOpacity":7,"blendMode":"normal","minScreenHeight":90} -->
-<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:90vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center"} -->
+<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:90vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"PHOTO BREAK","type":"c9-txl display-","textColor":"#f7f7f9","textAlign":"center"} -->
 <div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1" style="color:#f7f7f9">PHOTO BREAK</h1></div>
@@ -227,8 +227,8 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":4} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideright","containerWidth":"container-narrow","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideright","containerWidth":"container-narrow","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="container-narrow c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3067,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large" id="img-fluid"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/tree-vee-vertical.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/tree-vee-vertical-683x1024.jpg" alt="" class="wp-image-3067"/></a></figure>
 <!-- /wp:image -->
@@ -281,7 +281,7 @@ export default {
 <!-- /wp:image -->
 
 <!-- wp:c9-blocks/grid {"instanceId":5} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":690,"layout":"one-column","containerWidth":"container-narrow"} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":690,"layout":"one-column","containerWidth":"container-narrow"} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column c9-columns-center" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:690px"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph {"dropCap":true,"fontSize":"medium"} -->
 <p class="has-drop-cap has-medium-font-size">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor id eu nisl nunc mi ipsum. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Faucibus turpis in eu mi bibendum neque egestas. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Etiam dignissim diam quis enim lobortis scelerisque fermentum. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Quis eleifend quam adipiscing vitae proin. Et netus et malesuada fames ac turpis egestas. A diam maecenas sed enim ut. Dolor sit amet consectetur adipiscing elit. Tempor id eu nisl nunc mi ipsum faucibus vitae. Suspendisse faucibus interdum posuere lorem ipsum. Ut ornare lectus sit amet est placerat.</p>
@@ -330,14 +330,14 @@ export default {
 <div class="c9-grid p-1 c9-scroll" style="min-height:15vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center","minScreenHeight":7} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column" style="min-height:7vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Donate now","buttonSize":"c9-button-size-large","buttonShape":"outline","ctaTextColor":"#f7f7f9","disableToolbar":true,"fontSize":"medium"} -->
-<div style="text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h has-medium-font-size" style="color:#f7f7f9"><p>Donate to the black sand beaches fund. All proceeds go to this imaginary charity we actually totally don't think is real.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-large" style="color:#ffffff">Donate now</a></div></div></div>
+<div style="text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h has-medium-font-size" style="color:#f7f7f9"><p>Donate to the black sand beaches fund. All proceeds go to this imaginary charity we actually totally don't think is real.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-large" style="color:#ffffff">Donate now</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":7,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#f4f4f4","bgImgAttach":true,"overlayHue":"#232323","overlayOpacity":1,"blendMode":"normal","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
-<div class="c9-grid p-5 c9-fixed c9-grid-has-background" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"top","minScreenHeight":41,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"top","minScreenHeight":41,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-top one-column" style="min-height:41vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"THE END.","subheading":"subheading","tagLevel":3,"type":"c9-txl display-","textAlign":"center","weight":"bold"} -->
 <div class="section-heading c9-heading text-center"><h3 class="c9-txl display-3 font-weight-bold">THE END.</h3></div>
@@ -346,7 +346,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"align":"full","columns":3,"columnsGap":10,"layout":"c9-3-col-equal","containerWidth":"container-fluid","verticalAlign":"top","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container-fluid alignfull c9-column-container p-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-top c9-3-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container-fluid alignfull c9-column-container p-3 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-top c9-3-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Author Name","tagLevel":5,"textColor":"#ffffff","textAlign":"right"} -->
 <div class="section-heading c9-heading text-right"><h5 class="c9-h" style="color:#ffffff">Author Name</h5></div>
 <!-- /wp:c9-blocks/heading -->
