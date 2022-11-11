@@ -5,7 +5,7 @@ export default {
 	title: "Get Event Tickets Photo Focus",
 	description: "Headlines • Background Photo • Button Link",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":7,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","overlayHue":"#121212","overlayOpacity":7,"blendMode":"normal","minScreenHeight":70,"focalPoint":{"x":"0.53","y":"1.00"}} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:70vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:70vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Talent Name","displayLevel":"3","type":"c9-txl display-","textColor":"#ffffff","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h1 class="c9-txl display-3" style="color:#ffffff">Talent Name</h1></div>

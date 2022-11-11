@@ -5,8 +5,8 @@ export default {
 	title: "Introduce Profile Contact",
 	description: "150 Words • Button Links • Headlines • Photos",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":2} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="container c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Name","tagLevel":3,"displayLevel":"4","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h3 class="c9-h h4">Name</h3></div>
 <!-- /wp:c9-blocks/heading -->
@@ -36,7 +36,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideright","containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3063,"sizeSlug":"large","animateVal":"slideUp","animateScrub":true,"animateCustom":{"before":{"y":134},"after":{"y":-210}}} -->
 <figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/male-portrait-vertical-683x1024.jpg" alt="" class="wp-image-3063"/></figure>
 <!-- /wp:image --></div></div>

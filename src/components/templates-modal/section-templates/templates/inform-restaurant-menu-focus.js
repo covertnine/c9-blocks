@@ -5,7 +5,7 @@ export default {
 	title: "Inform Restaurant Menu Focus",
 	description: "625+ Words • Headlines • Photos",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":4,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/shawn-ang-nmpW_WwwVSc-unsplash.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":80,"focalPoint":{"x":0.5345622119815668,"y":1}} -->
-<div class="c9-grid p-5 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":56} -->
+<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":56} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft" style="min-height:56vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Restaurant Menu","subheading":"Available on weekends and holidays","displayLevel":"2","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 <div class="section-heading c9-heading text-center"><h1 class="c9-txl display-2" style="color:#ffffff">Restaurant Menu</h1></div>
@@ -26,7 +26,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":4,"layout":"c9-3-col-wideright","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container alignwide c9-column-container p-5 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-bottom c9-3-col-wideright"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container alignwide c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-bottom c9-3-col-wideright"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Small Plates","subheading":"served all day","addSubheading":true,"tagLevel":5,"overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h5 class="c9-h h5">Small Plates</h5><div class="c9-h h5"><small class="text-muted">&nbsp;served all day</small></div></div>
 <!-- /wp:c9-blocks/heading -->
@@ -228,7 +228,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/toggles {"toggleCount":5,"instanceId":0} -->
 <div class="c9-toggles accordion" id="accordion-0"><!-- wp:c9-blocks/toggles-toggle {"toggleNumber":1,"id":0} -->
 <div class="c9-toggles-toggle"><div class="c9-toggles-item-heading" id="c9-toggles-heading1-0" data-toggle="collapse" data-target="#c9-toggles-collapse1-0"><div class="mb-0"><span class="c9-toggles-toggle-label"><strong>1. </strong>How long is the dinner service?</span><span class="c9-toggles-item-collapse"><span class="fas fa-angle-right"></span></span></div></div><div class="c9-toggles-item-content collapse" id="c9-toggles-collapse1-0" data-parent="#accordion-0"><div><!-- wp:paragraph -->

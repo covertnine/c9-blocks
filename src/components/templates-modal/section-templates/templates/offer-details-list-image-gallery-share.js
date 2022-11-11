@@ -5,7 +5,7 @@ export default {
 	title: "Offer Details List + Image Gallery + Share",
 	markup:
 		`<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerPadding":{"linked":true,"icon":"admin-links","top":"5","bottom":"5","left":"5","right":"5"}} -->
-		<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":8,"layout":"c9-2-col-equal"} -->
+		<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":8,"layout":"c9-2-col-equal"} -->
 		<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-8 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 		<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Offer","subheading":"Details","addSubheading":true,"tagLevel":3} -->
 		<div class="section-heading c9-heading text-left"><h3 class="c9-h">Offer</h3><div class="c9-h h3"><small class="text-muted">&nbsp;Details</small></div></div>

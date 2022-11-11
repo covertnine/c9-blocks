@@ -5,7 +5,7 @@ export default {
 	title: "Inform Mission Statement",
 	description: "50 Words • 2 Links • 4 Stats • Photo",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":5,"rows":2,"containerHue":"#eeeeee","minScreenHeight":67} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:67vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","containerMargin":{"linked":false,"top":"5","bottom":"-1","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":false,"top":"5","bottom":"-1","left":"5","right":"5","icon":"editor-unlink"}} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:67vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","containerMargin":{"linked":false,"top":"5","bottom":"-1","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":false,"top":"5","bottom":"-1","left":"5","right":"5","icon":"editor-unlink"}} -->
 <div class="container alignwide c9-column-container px-5 pt-5 mt-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:separator -->
 <hr class="wp-block-separator"/>

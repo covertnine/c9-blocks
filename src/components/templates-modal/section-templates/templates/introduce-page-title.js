@@ -5,7 +5,7 @@ export default {
 	title: "Introduce Page Title",
 	description: "50 Words • Page Title • Logo",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":4,"containerHue":"#171717","minScreenHeight":50} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:50vh;background-color:rgba(23,23,23,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"bottom","minScreenHeight":0} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:50vh;background-color:rgba(23,23,23,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"bottom","minScreenHeight":0} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Company Name","type":"c9-txl display-","textColor":"#ffffff","weight":"normal"} -->
 <div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-normal" style="color:#ffffff">Company Name</h1></div>

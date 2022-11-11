@@ -5,7 +5,7 @@ export default {
 	title: "Inform Editorial Focus 3",
 	description: "1,200+ Words • Headlines • Quotes • Photos",
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":3} -->
-<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":690,"layout":"one-column","containerWidth":"container-narrow"} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":690,"layout":"one-column","containerWidth":"container-narrow"} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column c9-columns-center" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:690px"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3052,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o-1024x683.jpg" alt="" class="wp-image-3052"/></a><figcaption>Photo by <strong>the person who made the theme yo</strong>, it's okay to use.</figcaption></figure>
@@ -128,7 +128,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"align":"full","columns":3,"columnsGap":10,"layout":"c9-3-col-wideright","containerWidth":"container-fluid","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-<div class="container-fluid alignfull c9-column-container p-5 my-5 c9-scroll c9-layout-columns-3 c9-3-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container-fluid alignfull c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-3-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3055,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large" id="img-fluid"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/guitar-band-solo-vertical-portrait.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/guitar-band-solo-vertical-portrait-683x1024.jpg" alt="" class="wp-image-3055"/></a></figure>
 <!-- /wp:image --></div></div>
