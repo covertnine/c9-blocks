@@ -103,32 +103,27 @@
     }
 }
 
-.c9-image-carousel .carousel-indicators {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .c9-image-carousel .carousel-indicators li:after,
 .c9-image-carousel .carousel-indicators li:before {
     display: none;
 }
 
 .c9-image-carousel .carousel-indicators {
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin: 0px;
     bottom: 3px;
     padding: 0px 10px;
     z-index: 24;
     list-style-type: none;
 }
 
+.editor-styles-wrapper .c9-image-carousel .carousel-indicators li,
 .c9-image-carousel .carousel-indicators li {
-    background-color: #333333;
-    z-index: 26;
+    background-color: #333333;    z-index: 26;
+    padding: 0px 8px;
 }
 
 .c9-image-carousel .carousel-indicators .active {
-    background-color: #fff;
+    background-color: #ccc;
 }
 
 .c9-image-carousel .carousel-control-next,

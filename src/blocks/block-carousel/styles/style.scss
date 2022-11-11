@@ -97,11 +97,6 @@
     }
 }
 
-.c9-carousel .carousel-indicators {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .c9-carousel .carousel-indicators li:after,
 .c9-carousel .carousel-indicators li:before {
     display: none;
@@ -109,21 +104,21 @@
 
 .c9-carousel .carousel-indicators {
     margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: auto;
     bottom: -20px;
     padding: 0px 10px;
     z-index: 24;
     list-style-type: none;
 }
 
+.editor-styles-wrapper .c9-carousel .carousel-indicators li,
 .c9-carousel .carousel-indicators li {
     z-index: 26;
-    background-color: #cccccc;
+    background-color: #333333;
+    padding: 0px 8px;
 }
 
 .c9-carousel .carousel-indicators .active {
-    background-color: #000000;
+    background-color: #ccc;
 }
 
 .c9-carousel .carousel-control-next,

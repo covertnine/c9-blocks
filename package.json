@@ -60,6 +60,7 @@
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-react": "^7.28.0",
 		"filesize": "^4.2.1",
+		"fs-promise": "^2.0.3",
 		"gzip-size": "^5.1.1",
 		"image-minimizer-webpack-plugin": "^1.0.0",
 		"imagemin-gifsicle": "^7.0.0",
