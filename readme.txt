@@ -69,7 +69,7 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 == Changelog ==
 
 = 1.5.2 =
-Fixes to horizontal tabs. Updates for WordPress 6.1. Updates to build tools for webpack5.
+Updates for WordPress 6.1. Fixes to horizontal tabs, carousels, lists. Updates to build tools for webpack5. Updating templates and sections.
 
 = 1.5.1 =
 Fix to some width issues with carousels in backend on some screens.
