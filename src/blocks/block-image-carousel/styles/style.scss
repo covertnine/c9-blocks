@@ -118,10 +118,13 @@
 
 .editor-styles-wrapper .c9-image-carousel .carousel-indicators li,
 .c9-image-carousel .carousel-indicators li {
-    background-color: #333333;    z-index: 26;
+    background-color: #333333;
+    z-index: 26;
     padding: 0px 8px;
+    margin: 0px 3px;
 }
 
+.editor-styles-wrapper .c9-image-carousel .carousel-indicators .active,
 .c9-image-carousel .carousel-indicators .active {
     background-color: #ccc;
 }
