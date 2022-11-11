@@ -4,7 +4,6 @@ const autoprefixer = require("autoprefixer");
 const babelPreset = require("./babel-preset");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
@@ -63,28 +62,32 @@ module.exports = {
 		new MiniCssExtractPluginCleanup(),
 		new NodePolyfillPlugin(),
 		new ImageMinimizerPlugin({
-			minimizerOptions: {
-				// Lossless optimization with custom option
-				plugins: [
-					["gifsicle", { interlaced: true }],
-					["jpegtran", { progressive: true }],
-					["optipng", { optimizationLevel: 5 }],
-					[
-						"svgo",
-						{
-							plugins: [
-								{
-									removeViewBox: false
-								}
-							]
-						}
-					]
-				]
-			}
-		}),
-		new LodashModuleReplacementPlugin({
-			collections: true,
-			paths: true
+			minimizer: {
+				implementation: ImageMinimizerPlugin.imageminMinify,
+				options: {
+					// Lossless optimization with custom option
+					plugins: [
+						["gifsicle", { interlaced: true }],
+						["jpegtran", { progressive: true }],
+						["optipng", { optimizationLevel: 5 }],
+						[
+							"svgo",
+							{
+								plugins: [
+									{
+										name: "preset-default",
+										params: {
+											overrides: {
+												removeViewBox: false,
+											},
+										},
+									},
+								],
+							},
+						],
+					],
+				},
+			},
 		}),
 		// new BundleAnalyzerPlugin()
 	],
@@ -158,7 +161,8 @@ module.exports = {
 						svgoConfig: {
 							plugins: [
 								{
-									removeViewBox: false
+									name: "removeViewBox",
+									active: false,
 								}
 							]
 						},

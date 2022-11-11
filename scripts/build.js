@@ -7,7 +7,7 @@ process.env.NODE_ENV = "production";
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on("unhandledRejection", err => {
+process.on("unhandledRejection", (err) => {
 	throw err;
 });
 
@@ -18,16 +18,15 @@ const chalk = require("chalk");
 const webpack = require("webpack");
 const fileSize = require("filesize");
 const gzipSize = require("gzip-size");
-const resolvePkg = require("resolve-pkg");
 const config = require("../config/webpack.config.prod");
-const cgbDevUtilsPath = resolvePkg("cgb-dev-utils", { cwd: __dirname });
-const clearConsole = require(cgbDevUtilsPath + "/clearConsole");
-const formatWebpackMessages = require(cgbDevUtilsPath +
-	"/formatWebpackMessages");
+const formatWebpackMessages = require("../config/formatWebpackMessage");
 
 // Build file paths.
 const theCWD = process.cwd();
-const fileBuildVendorsJs = path.resolve(theCWD, "./dist/blocks.vendors.build.js");
+const fileBuildVendorsJs = path.resolve(
+	theCWD,
+	"./dist/blocks.vendors.build.js"
+);
 const fileBuildJS = path.resolve(theCWD, "./dist/blocks.build.js");
 const fileBuildFrontendJs = path.resolve(
 	theCWD,
@@ -44,11 +43,9 @@ const fileStyleCSS = path.resolve(theCWD, "./dist/blocks.build.css");
  * @param {string} filePath path.
  * @returns {string} then size result.
  */
-const getFileSize = filePath => {
+const getFileSize = (filePath) => {
 	return fileSize(gzipSize.sync(fs.readFileSync(filePath)));
 };
-
-clearConsole();
 
 /**
  * Build function
@@ -63,8 +60,6 @@ async function build(webpackConfig) {
 
 	// Run the compiler.
 	compiler.run((err, stats) => {
-		clearConsole();
-
 		if (err) {
 			return console.log(err);
 		}
@@ -80,7 +75,6 @@ async function build(webpackConfig) {
 				messages.errors.length = 1;
 			}
 			// Formatted errors.
-			clearConsole();
 			console.log("\n❌ ", chalk.black.bgRed(" Failed to compile build. \n"));
 			console.log("\n👉 ", messages.errors.join("\n\n"));
 

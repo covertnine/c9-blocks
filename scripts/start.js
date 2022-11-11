@@ -16,7 +16,7 @@ process.env.NODE_ENV = "development";
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on("unhandledRejection", err => {
+process.on("unhandledRejection", (err) => {
 	throw err;
 });
 
@@ -24,11 +24,7 @@ const ora = require("ora");
 const chalk = require("chalk");
 const webpack = require("webpack");
 const config = require("../config/webpack.config.dev");
-const resolvePkg = require("resolve-pkg");
-const cgbDevUtilsPath = resolvePkg("cgb-dev-utils", { cwd: __dirname });
-const clearConsole = require(cgbDevUtilsPath + "/clearConsole");
-const formatWebpackMessages = require(cgbDevUtilsPath +
-	"/formatWebpackMessages");
+const formatWebpackMessages = require("../config/formatWebpackMessage");
 
 // Don't run below node 8.
 const currentNodeVersion = process.versions.node;
@@ -49,8 +45,6 @@ if (8 > major) {
 	process.exit(1);
 }
 
-clearConsole();
-
 // Init the spinner.
 const spinner = new ora({ text: "" });
 
@@ -61,8 +55,6 @@ async function build(webpackConfig) {
 
 	// Run the compiler.
 	compiler.watch({}, (err, stats) => {
-		clearConsole();
-
 		if (err) {
 			return console.log(err);
 		}
@@ -77,9 +69,6 @@ async function build(webpackConfig) {
 			if (1 < messages.errors.length) {
 				messages.errors.length = 1;
 			}
-
-			// Clear success messages.
-			clearConsole();
 
 			// Formatted errors.
 			console.log("\n❌ ", chalk.black.bgRed(" Failed to compile. \n"));

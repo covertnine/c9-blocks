@@ -1,6 +1,7 @@
 {
 	"env": {
 		"browser": true,
+		"node": true,
 		"es6": true
 	},
 	"extends": [
@@ -12,16 +13,16 @@
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
 	},
+	"parser": "@babel/eslint-parser",
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true
 		},
 		"ecmaVersion": 2018,
-		"sourceType": "module"
+		"sourceType": "module",
+		"requireConfigFile": false
 	},
-	"plugins": [
-		"react"
-	],
+	"plugins": ["react"],
 	"rules": {
 		"react/react-in-jsx-scope": "off"
 	}
