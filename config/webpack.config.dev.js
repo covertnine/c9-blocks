@@ -4,29 +4,9 @@ const autoprefixer = require("autoprefixer");
 const babelPreset = require("./babel-preset");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
-
-// cleanup empty css-js files
-class MiniCssExtractPluginCleanup {
-	constructor(deleteWhere = /blocks\.(bootstrap|editor)\.build\.js$/) {
-		this.shouldDelete = new RegExp(deleteWhere);
-	}
-	apply(compiler) {
-		compiler.hooks.emit.tapAsync(
-			"MiniCssExtractPluginCleanup",
-			(compilation, callback) => {
-				Object.keys(compilation.assets).forEach(asset => {
-					if (this.shouldDelete.test(asset)) {
-						delete compilation.assets[asset];
-					}
-				});
-				callback();
-			}
-		);
-	}
-}
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
 	mode: "development",
@@ -60,31 +40,38 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: "[name].build.css"
 		}),
-		new MiniCssExtractPluginCleanup(),
+		new CleanWebpackPlugin({
+			protectWebpackAssets: false,
+			cleanAfterEveryBuildPatterns: ["blocks.bootstrap.build.js", "blocks.editor.build.js"],
+		}),
 		new NodePolyfillPlugin(),
 		new ImageMinimizerPlugin({
-			minimizerOptions: {
-				// Lossless optimization with custom option
-				plugins: [
-					["gifsicle", { interlaced: true }],
-					["jpegtran", { progressive: true }],
-					["optipng", { optimizationLevel: 5 }],
-					[
-						"svgo",
-						{
-							plugins: [
-								{
-									removeViewBox: false
-								}
-							]
-						}
-					]
-				]
-			}
-		}),
-		new LodashModuleReplacementPlugin({
-			collections: true,
-			paths: true
+			minimizer: {
+				implementation: ImageMinimizerPlugin.imageminMinify,
+				options: {
+					// Lossless optimization with custom option
+					plugins: [
+						["gifsicle", { interlaced: true }],
+						["jpegtran", { progressive: true }],
+						["optipng", { optimizationLevel: 5 }],
+						[
+							"svgo",
+							{
+								plugins: [
+									{
+										name: "preset-default",
+										params: {
+											overrides: {
+												removeViewBox: false,
+											},
+										},
+									},
+								],
+							},
+						],
+					],
+				},
+			},
 		}),
 		// new BundleAnalyzerPlugin()
 	],
@@ -121,12 +108,13 @@ module.exports = {
 					{
 						loader: "postcss-loader",
 						options: {
-							ident: "postcss",
-							plugins: [
-								autoprefixer({
-									flexbox: "no-2009"
-								})
-							],
+							postcssOptions: {
+								plugins: [
+									autoprefixer({
+										flexbox: "no-2009"
+									})
+								]
+							},
 							sourceMap: true
 						}
 					},
@@ -173,7 +161,8 @@ module.exports = {
 				use: {
 					loader: "svg-url-loader",
 					options: { sourceMap: true }
-				}
+				},
+				type: 'javascript/auto'
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
