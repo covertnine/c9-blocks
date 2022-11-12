@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/c9-editorial-1200.svg";
+import Icon from '../../../../../assets/page-template-icons/c9-editorial-1200.svg';
 
 export default {
 	icon: Icon,
-	type: "awareness",
-	title: "Story Article 1200",
+	type: 'awareness',
+	title: 'Story Article 1200',
 	description: `A beginning of a very long story, article, tutorial, or in-depth opinion about a topic that starts at 1,200 words in length. Add more tables, charts, videos, or even e-commerce products to this template, so people don't get bored with filler.`,
 	recommended: `1200+ Words • Hero Image • Video • Spotify Embed Link • Testimonials • Button and Call to Action`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#000000","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":71,"containerVideoURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
@@ -173,10 +173,10 @@ https://open.spotify.com/playlist/37i9dQZF1DX0GDEVNHvE3h?si=7XD2Oi87S0Gg-O6qGJSE
 <!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#000000","minScreenHeight":15,"containerPadding":{"linked":true,"top":"1","bottom":"1","left":"1","right":"1","icon":"admin-links"}} -->
 <div class="c9-grid p-1 c9-scroll" style="min-height:15vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center","minScreenHeight":7} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column" style="min-height:7vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Donate now","buttonSize":"c9-button-size-large","buttonShape":"outline","ctaTextColor":"#f7f7f9","disableToolbar":true,"fontSize":"medium"} -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"type":"c9-h","buttonText":"Donate now","buttonSize":"c9-button-size-large","buttonShape":"outline","ctaTextColor":"#f7f7f9","disableToolbar":true,"fontSize":"medium"} -->
 <div style="text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h has-medium-font-size" style="color:#f7f7f9"><p>Your donations keep our stories alive. Donate today.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-large" style="color:#ffffff">Donate now</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

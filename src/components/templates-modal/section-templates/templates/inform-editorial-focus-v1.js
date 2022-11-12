@@ -1,11 +1,11 @@
-import Icon from "../../../../../assets/section-template-icons/inform-editorial-focus-1.svg";
+import Icon from '../../../../../assets/section-template-icons/inform-editorial-focus-1.svg';
 
 export default {
 	icon: Icon,
-	title: "Inform Editorial Focus 1",
-	description: "1,000+ Words • Headlines • Quotes • Photos",
+	title: 'Inform Editorial Focus 1',
+	description: '1,000+ Words • Headlines • Quotes • Photos',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":4,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
-<div class="c9-grid c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container alignwide c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":2793,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-177-2.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-177-2-1024x683.jpg" alt="" class="wp-image-2793"/></a></figure>
@@ -79,7 +79,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"columns":3,"columnsGap":4,"layout":"c9-3-col-wideright","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"columns":3,"columnsGap":4,"layout":"c9-3-col-wideright","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-3-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3069,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-683x1024.jpg" alt="" class="wp-image-3069"/></a></figure>
@@ -99,7 +99,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container alignwide c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph -->
 <p>Nunc vel risus commodo viverra maecenas accumsan lacus vel. Amet mauris commodo quis imperdiet massa tincidunt nunc. Enim eu turpis egestas pretium aenean. </p>
@@ -180,5 +180,5 @@ export default {
 <!-- /wp:columns --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

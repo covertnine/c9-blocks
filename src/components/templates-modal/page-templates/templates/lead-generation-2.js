@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/lead-gen-2.svg";
+import Icon from '../../../../../assets/page-template-icons/lead-gen-2.svg';
 
 export default {
 	icon: Icon,
-	type: "conversion",
-	title: "Lead Generation 2",
+	type: 'conversion',
+	title: 'Lead Generation 2',
 	description: `Inform and entice potential customers or clients with a widescreen video that helps tell a broader story. There’s plenty of room to break up longer-form text with an image carousel. Include vertical photos, a short FAQ, and a place to tell a friend or click a call-to-action button.`,
 	recommended: `Two video clips or YouTube videos, 3-5 vertical photos, FAQ, about copy, heading, subheading, and short description text for header`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#141414","overlayOpacity":9,"blendMode":"normal","minScreenHeight":84,"containerVideoURL":"//c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
@@ -53,7 +53,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":1} -->
-<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-equal","overlayHue":"#e4e9ea","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-equal","overlayHue":"#e4e9ea","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container alignwide c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-overlay-container" style="background-color:rgba(228,233,234,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Watch the Video","tagLevel":3,"displayLevel":"1","textAlign":"center","weight":"bold","overrideStyle":true} -->
 <div class="section-heading c9-heading text-center"><h3 class="c9-h h1 font-weight-bold">Watch the Video</h3></div>
@@ -182,5 +182,5 @@ export default {
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

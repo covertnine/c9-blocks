@@ -1,13 +1,13 @@
-import Icon from "../../../../../assets/page-template-icons/c9-pricing.svg";
+import Icon from '../../../../../assets/page-template-icons/c9-pricing.svg';
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Pricing",
+	type: 'consideration',
+	title: 'Pricing',
 	description: `Tabs full of different pricing structures. Hourly, unlimited, or per project layouts will all work well with this template.`,
 	recommended: `Multiple headings • Background Image • Details with pricing information in bullet form. Optional forms for a special offer or email list signup. `,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":49,"rows":2,"containerImgURL":"https://c9starter-v218.local/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#070707","overlayOpacity":9,"blendMode":"normal","minScreenHeight":80,"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"focalPoint":{"x":"0.48","y":"0.83"}} -->
-<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":43,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":43,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column c9-columns-center" style="min-height:43vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:605px"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Pricing","subheading":"Rates","addSubheading":true,"displayLevel":"1","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 <div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1" style="color:#ffffff">Pricing</h1><div class="c9-txl display-1"><small class="text-muted">&nbsp;Rates</small></div></div>
@@ -471,7 +471,7 @@ export default {
 <!-- wp:c9-blocks/grid {"instanceId":50,"containerHue":"#000000"} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"columnsGap":0,"layout":"one-column"} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-0 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Signup Now","buttonBackgroundColor":"#21a77a","buttonTextColor":"#000000","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","ctaTextColor":"#ffffff","disableToolbar":true} -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"type":"c9-h","buttonText":"Signup Now","buttonBackgroundColor":"#21a77a","buttonTextColor":"#000000","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","ctaTextColor":"#ffffff","disableToolbar":true} -->
 <div style="text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-h" style="color:#ffffff"><p>If pay as you go isn't your thing, call about our flexible spend retainers. Available for select clients only.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#000000;background-color:#21a77a">Signup Now</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
@@ -520,5 +520,5 @@ export default {
 <!-- /wp:group --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(40,40,40,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:28.110599078341014% 57.638888888888886%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

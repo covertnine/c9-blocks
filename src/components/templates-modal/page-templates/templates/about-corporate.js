@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/about-corporate.svg";
+import Icon from '../../../../../assets/page-template-icons/about-corporate.svg';
 
 export default {
 	icon: Icon,
-	type: "awareness",
-	title: "About Corporate",
+	type: 'awareness',
+	title: 'About Corporate',
 	description: `An About page with all the essential elements to jumpstart the process of “know, like, and trust.” Complete with a hero header, testimonials, individual profiles, history, services overview, FAQ, and a “call-to-action.” Simply add and subtract the blocks most useful to you.`,
 	recommended: `company name, slogan, short mission statement, logo image, history copywriting, 3 photo images, testimonials with photos (2), service list, testimonials with copy only (2), FAQ, map embed, call-to-action link`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#171717","minScreenHeight":50} -->
@@ -39,7 +39,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-equal","containerWidth":"container-narrow","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-equal","containerWidth":"container-narrow","minScreenHeight":0,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Development","subheading":"$99/hour","addSubheading":true,"tagLevel":3,"type":"c9-sh subhead-h","weight":"light","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h3 class="c9-sh subhead-h3 font-weight-light">Development</h3><div class="c9-sh subhead-h3"><small class="text-muted">&nbsp;$99/hour</small></div></div>
@@ -85,7 +85,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideright"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"A Testimonial","tagLevel":4,"displayLevel":"3","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h4 class="c9-h h3">A Testimonial</h4></div>
@@ -113,7 +113,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#e2e2e2","minScreenHeight":15,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#e2e2e2","minScreenHeight":15,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:15vh"><div class="c9-overlay-container" style="background-color:rgba(226,226,226,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Duplicating content, and adding new rows only takes a few clicks with the C9 Grid block, and designs will automatically scale to fit inside of smaller device screens.","tagLevel":5,"displayLevel":"4","textColor":"#313131","textAlign":"center"} -->
 <div class="section-heading c9-heading text-center"><h5 class="c9-h" style="color:#313131">Duplicating content, and adding new rows only takes a few clicks with the C9 Grid block, and designs will automatically scale to fit inside of smaller device screens.</h5></div>
@@ -151,7 +151,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"columns":3,"layout":"c9-3-col-equal","verticalAlign":"center","overlayHue":"#eeeeee","overlayOpacity":10,"blendMode":"normal","minScreenHeight":1,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"columnsGap":2,"columns":3,"layout":"c9-3-col-equal","verticalAlign":"center","overlayHue":"#eeeeee","overlayOpacity":10,"blendMode":"normal","minScreenHeight":1,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-center c9-3-col-equal" style="min-height:1vh"><div class="c9-overlay-container" style="background-color:rgba(238,238,238,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading {"level":3} -->
 <h3>Step 1</h3>
@@ -185,7 +185,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":3} -->
-<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#ebebeb","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#ebebeb","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(235,235,235,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.","tagLevel":5,"displayLevel":"4","textColor":"#313131","textAlign":"center","overrideStyle":true} -->
 <div class="section-heading c9-heading text-center"><h5 class="c9-h h4" style="color:#313131">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</h5></div>
@@ -201,7 +201,7 @@ export default {
 <!-- wp:c9-blocks/grid {"instanceId":4,"rows":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="c9-grid p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayHue":"#f8f8f8","minScreenHeight":0,"animateVal":"fadeLeft","animateDelay":686,"animateScrub":true,"animateStart":"0px 100%","animateEnd":"138px 50%","animateCustom":{"before":{"x":-300},"after":{}}} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(248,248,248,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","disableToolbar":true,"fontSize":"medium"} -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"type":"c9-sh","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","disableToolbar":true,"fontSize":"medium"} -->
 <div style="text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh has-medium-font-size"><p>Sign up today for a 30% off annual discount and waiving all fees, today!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Sign up</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
@@ -307,7 +307,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"full","columns":3,"columnsGap":10,"layout":"c9-3-col-equal","containerWidth":"container-fluid","verticalAlign":"top","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"full","columns":3,"columnsGap":10,"layout":"c9-3-col-equal","containerWidth":"container-fluid","verticalAlign":"top","minScreenHeight":0,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-fluid alignfull c9-column-container p-3 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-top c9-3-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Author Name","tagLevel":5,"textColor":"#ffffff","textAlign":"right"} -->
 <div class="section-heading c9-heading text-right"><h5 class="c9-h" style="color:#ffffff">Author Name</h5></div>
@@ -394,5 +394,5 @@ export default {
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/service.svg";
+import Icon from '../../../../../assets/page-template-icons/service.svg';
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Service Tour",
+	type: 'consideration',
+	title: 'Service Tour',
 	description: `Take your future customers and clients through your process and give them all the information they need to keep you in mind when they make decisions. Do you have testimonials ready to go? Drop those in and get users clicking on your call-to-action button which is all ready to go. Starter content includes a video clip or YouTube video, call-to-action heading, subheading/button, FAQ, brand logo carousel, 3-5 vertical images, detailed service descriptions, service lists, photo and text testimonials(2-3 options), horizontal images with headings (3), blog posts or links to additional content (3), hero image and call-to-action subheading/button`,
 	recommended: `All the text you need to persuade your customers (and rank you in the search engines)`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":75,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"focalPoint":{"x":0.06451612903225806,"y":0}} -->
@@ -23,7 +23,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"narrow","columns":3,"columnsGap":4,"layout":"c9-3-col-equal","containerWidth":"container-narrow","verticalAlign":"center","overlayHue":"#eeeeee","overlayOpacity":10,"blendMode":"normal","minScreenHeight":1,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"narrow","columns":3,"columnsGap":4,"layout":"c9-3-col-equal","containerWidth":"container-narrow","verticalAlign":"center","overlayHue":"#eeeeee","overlayOpacity":10,"blendMode":"normal","minScreenHeight":1,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-center c9-3-col-equal" style="min-height:1vh"><div class="c9-overlay-container" style="background-color:rgba(238,238,238,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading {"level":3} -->
 <h3>Step 1</h3>
@@ -249,7 +249,7 @@ export default {
 <!-- wp:c9-blocks/grid {"instanceId":82,"containerHue":"#363636","minScreenHeight":10,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="c9-grid c9-scroll" style="min-height:10vh;background-color:rgba(54,54,54,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Watch Video","buttonAlignment":"center","buttonTextColor":"#00d084","buttonSize":"c9-button-size-large","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"ctaTextColor":"#eeeeee","disableToolbar":true} -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Watch Video","buttonAlignment":"center","buttonTextColor":"#00d084","buttonSize":"c9-button-size-large","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"ctaTextColor":"#eeeeee","disableToolbar":true} -->
 <div style="text-align:center" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh" style="color:#eeeeee"><p>Watch our video walk through to get a guided tour.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="https://www.youtube.com/watch?v=Hls3Tp7JS8E" target="_blank" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-large" style="color:#00d084">Watch Video<span class="sr-only">(Link opens in new window)</span></a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
@@ -496,5 +496,5 @@ export default {
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,1);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-center-left c9-image-mobile-size-cover" style="background-position:23.502304147465438% 43.75%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

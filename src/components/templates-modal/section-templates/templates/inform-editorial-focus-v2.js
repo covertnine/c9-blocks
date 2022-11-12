@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/section-template-icons/inform-editorial-focus-2.svg";
+import Icon from '../../../../../assets/section-template-icons/inform-editorial-focus-2.svg';
 
 export default {
 	icon: Icon,
-	title: "Inform Editorial Focus 2",
-	description: "800+ Words • Headlines • Quotes • Photos",
+	title: 'Inform Editorial Focus 2',
+	description: '800+ Words • Headlines • Quotes • Photos',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":3} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-wideright","containerMargin":{"linked":false,"icon":"editor-unlink","top":"-1","bottom":"5"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="container alignwide c9-column-container mb-5 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
@@ -63,7 +63,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":4,"layout":"c9-2-col-wideleft","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":4,"layout":"c9-2-col-wideleft","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":2801,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2-1024x657.jpg" alt="" class="wp-image-2801"/></a><figcaption><strong>Photo by Tim</strong></figcaption></figure>
@@ -123,7 +123,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":680,"layout":"one-column","containerWidth":"container-narrow","containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":680,"layout":"one-column","containerWidth":"container-narrow","containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 one-column c9-columns-center" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:680px"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":2805,"sizeSlug":"large","linkDestination":"media"} -->
 <figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2-1024x683.jpg" alt="" class="wp-image-2805"/></a></figure>
@@ -180,5 +180,5 @@ export default {
 <!-- /wp:gallery --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/price-menu.svg";
+import Icon from '../../../../../assets/page-template-icons/price-menu.svg';
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Restaurant Menu",
+	type: 'consideration',
+	title: 'Restaurant Menu',
 	description: `Showcase your latest and tastiest with the Restaurant-style Menu page. Easily add pricing, imagery, and tantalizing descriptions to each option. The template also includes image carousels and a toggle for daily specials.`,
 	recommended: `Video clip or YouTube video, page title, page subheading, menu name (2 options), menu copywriting with pricing (2 options), 3-6 horizontal photos, 3 vertical photos, mission statement, vertical profile photo`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":50,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov"} -->
@@ -20,7 +20,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov" type="video/mp4"/></video></div></div></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"get started","buttonAlignment":"center","buttonTextColor":"#313131","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"align":"wide"} -->
+<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"get started","buttonAlignment":"center","buttonTextColor":"#313131","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"align":"wide"} -->
 <div style="text-align:center" class="c9-cta c9-block-cta container alignwide p-3"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh"><p>Make a reservation, buy a ring, get engaged, high five.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="#" target="_blank" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-medium" style="color:#313131">get started<span class="sr-only">(Link opens in new window)</span></a></div></div></div>
 <!-- /wp:c9-blocks/cta -->
 
@@ -47,7 +47,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":4,"layout":"c9-3-col-wideright","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":4,"layout":"c9-3-col-wideright","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container alignwide c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-bottom c9-3-col-wideright"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Small Plates","subheading":"served all day","addSubheading":true,"tagLevel":5,"overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h5 class="c9-h h5">Small Plates</h5><div class="c9-h h5"><small class="text-muted">&nbsp;served all day</small></div></div>
@@ -247,7 +247,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":4,"layout":"c9-3-col-equal","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":4,"layout":"c9-3-col-equal","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container alignwide c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-bottom c9-3-col-equal"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:multiply"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Small Plates","subheading":"served all day","addSubheading":true,"tagLevel":5,"overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h5 class="c9-h h5">Small Plates</h5><div class="c9-h h5"><small class="text-muted">&nbsp;served all day</small></div></div>
@@ -398,5 +398,5 @@ export default {
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.8);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:47.004608294930875% 86.41975308641975%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

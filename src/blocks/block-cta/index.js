@@ -82,6 +82,28 @@ registerBlockType('c9-blocks/cta', {
 
 	// Save the attributes and markup
 	save: Save,
+
+	deprecated: [
+		{
+			attributes: {
+				...attributes,
+				ctaPadding: {
+					type: 'object',
+					default: {
+						linked: true,
+						icon: 'admin-links',
+						top: '3',
+						bottom: '3',
+						left: '3',
+						right: '3',
+					},
+				},
+			},
+			save: (props) => {
+				return <Save {...props} />;
+			},
+		},
+	],
 });
 
 /* Add the container class to the cta block. */

@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/lead-gen-3.svg";
+import Icon from '../../../../../assets/page-template-icons/lead-gen-3.svg';
 
 export default {
 	icon: Icon,
-	type: "conversion",
-	title: "Lead Generation 3",
+	type: 'conversion',
+	title: 'Lead Generation 3',
 	description: `Close the deal after a user has hit one of the other lead generation landing page templates. There’s a placeholder for your form, a short and concise headline, short features list, and vertical image carousel gallery for a final point of interest.`,
 	recommended: `Email contact or sign up form, heading, large hero image, tell a friend headline, bulleted feature list, 3-5 vertical photos, button`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#070707","overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":100,"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
@@ -51,7 +51,7 @@ export default {
 <!-- /wp:c9-blocks/grid -->
 
 <!-- wp:c9-blocks/grid {"instanceId":1,"rows":3} -->
-<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","overlayHue":"#efefef","overlayOpacity":7,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","overlayHue":"#efefef","overlayOpacity":7,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-overlay-container" style="background-color:rgba(239,239,239,.7);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading -->
 <h2>Offer Details</h2>
@@ -149,7 +149,7 @@ export default {
 
 <!-- wp:c9-blocks/column-container {"align":"full","columns":1,"layout":"one-column","containerWidth":"container-fluid","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="container-fluid alignfull c9-column-container my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Enter Now","buttonSize":"c9-button-size-extralarge","ctaBackgroundColor":"#e7e7e7","disableToolbar":true} -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"type":"c9-h","buttonText":"Enter Now","buttonSize":"c9-button-size-extralarge","ctaBackgroundColor":"#e7e7e7","disableToolbar":true} -->
 <div style="background-color:rgba(231,231,231,1);text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h"><p>Enter as many times as you want, tell a friend for more entries!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Enter Now</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
@@ -158,5 +158,5 @@ export default {
 
 <!-- wp:paragraph -->
 <p></p>
-<!-- /wp:paragraph -->`
+<!-- /wp:paragraph -->`,
 };

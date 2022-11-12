@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/resources.svg";
+import Icon from '../../../../../assets/page-template-icons/resources.svg';
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Resources",
+	type: 'consideration',
+	title: 'Resources',
 	description: `A page to organize resources in one location with a Search Block, posts or articles of any post type or category, a hero header image with a few paragraphs or headings of instructions to direct your users to your well-documented knowledgebase. Cap it off with a call-to-action to subscribe to your newsletter for updates.`,
 	recommended: `Articles or blog posts (6), hero image, 2-3 paragraphs or headings, FAQ, call-to-action bar + button`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":53,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg","bgCustomX":{"size":200,"unit":"%"},"minScreenHeight":85,"focalPoint":{"x":0.17511520737327188,"y":0.1231737012987013},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
@@ -137,10 +137,10 @@ export default {
 <!-- wp:c9-blocks/grid {"instanceId":56,"containerHue":"#eaeaea"} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(234,234,234,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","disableToolbar":true} -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"type":"c9-h","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","disableToolbar":true} -->
 <div style="text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-h"><p>Get the insiders list for all of our best content in your inbox. Each week.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Sign up</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

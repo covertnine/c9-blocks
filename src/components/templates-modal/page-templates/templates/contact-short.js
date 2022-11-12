@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/contact-short.svg";
+import Icon from '../../../../../assets/page-template-icons/contact-short.svg';
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Contact Short Page",
+	type: 'consideration',
+	title: 'Contact Short Page',
 	description: `Lead people to the right person, the right way. If you only have a single location or minimal contact information, then this is the landing page that gets messages into your inbox.`,
 	recommended: `Large heading, address, contact phone, placeholder for contact form, contact button for live-chat, embedded map with an address`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-207-2.jpg","containerHue":"#3f3f3f","overlayHue":"#0b0b0b","overlayOpacity":8,"blendMode":"color-burn","minScreenHeight":27,"focalPoint":{"x":"0.58","y":"0.67"}} -->
@@ -89,7 +89,7 @@ export default {
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/grid -->
 
-<!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#f4f4f4","minScreenHeight":30,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#f4f4f4","minScreenHeight":30,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:30vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:html -->
@@ -103,5 +103,5 @@ export default {
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

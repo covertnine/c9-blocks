@@ -1,12 +1,12 @@
 // Does exist yet
-import Icon from "../../../../../assets/section-template-icons/inform-boxed-profile-contact.svg";
+import Icon from '../../../../../assets/section-template-icons/inform-boxed-profile-contact.svg';
 
 export default {
 	icon: Icon,
-	title: "Inform Boxed Profile Contact",
-	description: "50 Words • Photo • Headline • Button Link",
+	title: 'Inform Boxed Profile Contact',
+	description: '50 Words • Photo • Headline • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":3,"containerHue":"#ededed","minScreenHeight":80} -->
-<div class="c9-grid p-3 c9-scroll" style="min-height:80vh;background-color:rgba(237,237,237,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":4,"layout":"c9-2-col-wideleft","verticalAlign":"center","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:80vh;background-color:rgba(237,237,237,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":4,"layout":"c9-2-col-wideleft","verticalAlign":"center","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Person Name","tagLevel":2,"displayLevel":"3","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h2 class="c9-h h3">Person Name</h2></div>
@@ -31,5 +31,5 @@ export default {
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

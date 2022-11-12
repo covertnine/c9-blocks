@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/section-template-icons/inform-service-three-steps.svg";
+import Icon from '../../../../../assets/section-template-icons/inform-service-three-steps.svg';
 
 export default {
 	icon: Icon,
-	title: "Inform Service Three Steps",
-	description: "175 Words • 2 Testimonials • Photo Background",
+	title: 'Inform Service Three Steps',
+	description: '175 Words • 2 Testimonials • Photo Background',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#313131","bgImgSize":"","overlayHue":"#1c1c1c","overlayOpacity":6,"blendMode":"normal","minScreenHeight":90,"focalPoint":{"x":"0.50","y":"0.00"},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"}} -->
 <div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
@@ -29,7 +29,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"columns":3,"layout":"c9-3-col-equal","verticalAlign":"center","overlayHue":"#eeeeee","overlayOpacity":10,"blendMode":"normal","minScreenHeight":1,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"columns":3,"layout":"c9-3-col-equal","verticalAlign":"center","overlayHue":"#eeeeee","overlayOpacity":10,"blendMode":"normal","minScreenHeight":1,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-center c9-3-col-equal" style="min-height:1vh"><div class="c9-overlay-container" style="background-color:rgba(238,238,238,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading {"level":3} -->
 <h3>Step 1</h3>
@@ -96,5 +96,5 @@ export default {
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(28,28,28,.6);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:50% 0%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg);background-repeat:no-repeat;background-size:auto auto"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

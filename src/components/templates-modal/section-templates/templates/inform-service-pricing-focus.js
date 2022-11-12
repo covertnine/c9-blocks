@@ -1,11 +1,11 @@
-import Icon from "../../../../../assets/section-template-icons/inform-service-pricing-focus.svg";
+import Icon from '../../../../../assets/section-template-icons/inform-service-pricing-focus.svg';
 
 export default {
 	icon: Icon,
-	title: "Inform Service Pricing Focus",
-	description: "500+ Words • Headlines • Tabs • Background Image",
+	title: 'Inform Service Pricing Focus',
+	description: '500+ Words • Headlines • Tabs • Background Image',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg","containerHue":"#000000","overlayHue":"#070707","overlayOpacity":9,"blendMode":"normal","minScreenHeight":80,"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"focalPoint":{"x":"0.52","y":"0.18"}} -->
-<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":43,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":43,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column c9-columns-center" style="min-height:43vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:605px"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Pricing","subheading":"Rates","addSubheading":true,"displayLevel":"1","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 <div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1" style="color:#ffffff">Pricing</h1><div class="c9-txl display-1"><small class="text-muted">&nbsp;Rates</small></div></div>
@@ -464,5 +464,5 @@ export default {
 <!-- /wp:c9-blocks/horizontal-tabs --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(7,7,7,.9);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:52% 18%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

@@ -1,11 +1,11 @@
-import Icon from "../../../../../assets/section-template-icons/browse-video-media-carousel.svg";
+import Icon from '../../../../../assets/section-template-icons/browse-video-media-carousel.svg';
 
 export default {
 	icon: Icon,
-	title: "Browse Video Media Carousel",
-	description: "75 Words • Video Links • Button Link",
+	title: 'Browse Video Media Carousel',
+	description: '75 Words • Video Links • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":4} -->
-<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerWidth":"container-fluid","containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":58,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":"0.80","y":"0.11"}} -->
+<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerWidth":"container-fluid","containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":58,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"focalPoint":{"x":"0.80","y":"0.11"}} -->
 <div class="container-fluid alignfull c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal c9-columns-has-background" style="min-height:58vh"><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:80% 11%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.8);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/carousel {"instanceId":0,"verticalAlign":"center"} -->
 <div id="c9-carousel-indicator-0" class="c9-carousel carousel slide container" dataride="carousel" datainterval="5000" style="height:250px"><ol class="carousel-indicators"><li data-target="#c9-carousel-indicator-0" data-slide-to="0" class="active"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="1"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="2"></li></ol><div class="carousel-inner c9-is-vertically-aligned-center"><!-- wp:c9-blocks/carousel-slide {"id":0,"slideActive":0,"slides":3} -->
@@ -54,5 +54,5 @@ https://www.youtube.com/watch?v=64O8xiQ81B4
 <!-- /wp:group --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

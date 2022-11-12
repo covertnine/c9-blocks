@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/launch-release.svg";
+import Icon from '../../../../../assets/page-template-icons/launch-release.svg';
 
 export default {
 	icon: Icon,
-	type: "awareness",
-	title: "Project Launch",
+	type: 'awareness',
+	title: 'Project Launch',
 	recommended: `Video clip, YouTube video, purchase link, audio embeds (3), about copywriting, 3-5 “hero” images, blog posts (3)`,
 	description: `Tell the story of your upcoming project with a media-rich experience. The Project Launch landing page gives your fans a download button over a video background at the top. Support your project with an image carousel and photo gallery below, ‘finished’ with a space to link over to blog posts to share your latest updates.`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#181818","overlayHue":"#313131","overlayOpacity":8,"blendMode":"multiply","minScreenHeight":84,"containerVideoURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4","focalPointMobile":{"x":0.25,"y":0.5},"overrideMobile":true} -->
@@ -51,7 +51,7 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"columns":3,"columnsGap":5,"layout":"c9-3-col-equal","overlayHue":"#0b0b0b","overlayOpacity":9,"minScreenHeight":0,"containerMargin":{"linked":false,"top":"5","bottom":"5","left":"-1","right":"-1","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"columns":3,"columnsGap":3,"layout":"c9-3-col-equal","overlayHue":"#0b0b0b","overlayOpacity":9,"minScreenHeight":0,"containerMargin":{"linked":false,"top":"5","bottom":"5","left":"-1","right":"-1","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-3-col-equal"><div class="c9-overlay-container" style="background-color:rgba(11,11,11,.9);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-3 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:image {"id":3157,"sizeSlug":"large","className":"img-fluid"} -->
 <figure class="wp-block-image size-large img-fluid"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-a-1024x1024.jpg" alt="" class="wp-image-3157"/></figure>
@@ -99,7 +99,7 @@ https://open.spotify.com/album/5baJxk2fGaLorySaf6173S?si=8-F5eOhyQ1ut_CkWnAUonQ
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container -->
 
-<!-- wp:c9-blocks/column-container {"align":"full","columns":3,"columnsGap":10,"layout":"c9-3-col-equal","containerWidth":"container-fluid","verticalAlign":"top","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<!-- wp:c9-blocks/column-container {"align":"full","columns":3,"columnsGap":10,"layout":"c9-3-col-equal","containerWidth":"container-fluid","verticalAlign":"top","minScreenHeight":0,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container-fluid alignfull c9-column-container p-3 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-top c9-3-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Author Name","tagLevel":5,"textColor":"#ffffff","textAlign":"right"} -->
 <div class="section-heading c9-heading text-right"><h5 class="c9-h" style="color:#ffffff">Author Name</h5></div>
@@ -143,7 +143,7 @@ https://open.spotify.com/album/5baJxk2fGaLorySaf6173S?si=8-F5eOhyQ1ut_CkWnAUonQ
 <!-- /wp:c9-blocks/heading -->
 
 <!-- wp:c9-blocks/grid {"instanceId":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/16177948123_7edf80819c_o.jpg","overlayHue":"#0a0a0a","overlayOpacity":8,"blendMode":"multiply","minScreenHeight":85,"containerMargin":{"linked":false,"unit":"px","top":"5","bottom":"-1","left":"5","right":"5","icon":"editor-unlink"},"focalPoint":{"x":0.4700460829493088,"y":0.3541666666666667},"focalPointMobile":{"x":0.5,"y":0.25},"overrideMobile":true} -->
-<div class="c9-grid p-3 mt-5 c9-scroll c9-grid-has-background" style="min-height:85vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":5,"containerMargin":{"linked":false,"top":"-1","bottom":"5","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+<div class="c9-grid p-3 mt-5 c9-scroll c9-grid-has-background" style="min-height:85vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":5,"containerMargin":{"linked":false,"top":"-1","bottom":"5","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 <div class="container c9-column-container p-3 mb-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft" style="min-height:5vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Talent Name","displayLevel":"3","type":"c9-txl display-","textColor":"#313131","overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h1 class="c9-txl display-3" style="color:#313131">Talent Name</h1></div>
@@ -207,10 +207,10 @@ https://open.spotify.com/album/5baJxk2fGaLorySaf6173S?si=8-F5eOhyQ1ut_CkWnAUonQ
 <!-- wp:c9-blocks/grid {"instanceId":6,"containerHue":"#000000"} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Buy Tickets","buttonAlignment":"center","buttonBackgroundColor":"#ea1818","buttonSize":"c9-button-size-extralarge","ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":29} -->
+<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"type":"c9-sh","buttonText":"Buy Tickets","buttonAlignment":"center","buttonBackgroundColor":"#ea1818","buttonSize":"c9-button-size-extralarge","ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":29} -->
 <div style="text-align:center" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="color:#ffffff;font-size:29px"><p>Purchase tickets now.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff;background-color:#ea1818">Buy Tickets</a></div></div></div>
 <!-- /wp:c9-blocks/cta --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

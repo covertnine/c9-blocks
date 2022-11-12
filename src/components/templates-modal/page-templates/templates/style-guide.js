@@ -1,9 +1,9 @@
-import Icon from "../../../../../assets/page-template-icons/style-guide.svg";
+import Icon from '../../../../../assets/page-template-icons/style-guide.svg';
 
 export default {
 	icon: Icon,
-	type: "consideration",
-	title: "Style Guide",
+	type: 'consideration',
+	title: 'Style Guide',
 	description: `Create a style guide of nearly all of the C9 Blocks to test out layouts, typography, buttons, or to view the full web style guide for the site.`,
 	recommended: `Typography, buttons, and all elements needed to build out all of the style guide components needed for a website.`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#000000","overlayHue":"#262626","overlayOpacity":8,"blendMode":"normal","minScreenHeight":90,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"focalPoint":{"x":0.5161290322580645,"y":0.176056338028169}} -->
@@ -235,7 +235,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":2,"rows":3,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<!-- wp:c9-blocks/grid {"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"instanceId":2,"rows":3,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:separator {"opacity":"css"} -->
@@ -437,7 +437,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":4,"rows":2} -->
+	<!-- wp:c9-blocks/grid {"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"instanceId":4,"rows":2} -->
 	<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"C9 Tables","type":"c9-txl display-","textAlign":"center"} -->
@@ -757,5 +757,5 @@ export default {
 	
 	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonBackgroundColor":"#000000","buttonSize":"c9-button-size-small","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full"} -->
 	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh"><p>Full orientation with background setting options are available from WordPress Inspector in backend. Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-small" style="color:#ffffff;background-color:#000000">Sign Up</a></div></div></div>
-	<!-- /wp:c9-blocks/cta -->`
+	<!-- /wp:c9-blocks/cta -->`,
 };
