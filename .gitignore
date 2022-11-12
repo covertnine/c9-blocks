@@ -49,6 +49,9 @@ Thumbs.db
 *.tar
 *.zip
 
+# jest
+/coverage
+
 # -------------------------
 # BEGIN Whitelisted Files
 # -------------------------

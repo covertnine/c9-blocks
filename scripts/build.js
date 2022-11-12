@@ -1,39 +1,39 @@
-"use strict";
+'use strict';
 
 // Do this as the first thing so that any code reading it knows the right env.
-process.env.BABEL_ENV = "production";
-process.env.NODE_ENV = "production";
+process.env.BABEL_ENV = 'production';
+process.env.NODE_ENV = 'production';
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on("unhandledRejection", (err) => {
+process.on('unhandledRejection', (err) => {
 	throw err;
 });
 
 // Modules.
-const fs = require("fs");
-const path = require("path");
-const chalk = require("chalk");
-const webpack = require("webpack");
-const fileSize = require("filesize");
-const gzipSize = require("gzip-size");
-const config = require("../config/webpack.config.prod");
-const formatWebpackMessages = require("../config/formatWebpackMessage");
+const fs = require('fs');
+const path = require('path');
+const chalk = require('chalk');
+const webpack = require('webpack');
+const fileSize = require('filesize');
+const gzipSize = require('gzip-size');
+const config = require('../config/webpack.config.prod');
+const formatWebpackMessages = require('../config/formatWebpackMessage');
 
 // Build file paths.
 const theCWD = process.cwd();
 const fileBuildVendorsJs = path.resolve(
 	theCWD,
-	"./dist/blocks.vendors.build.js"
+	'./dist/blocks.vendors.build.js'
 );
-const fileBuildJS = path.resolve(theCWD, "./dist/blocks.build.js");
+const fileBuildJS = path.resolve(theCWD, './dist/blocks.build.js');
 const fileBuildFrontendJs = path.resolve(
 	theCWD,
-	"./dist/blocks.frontend.build.js"
+	'./dist/blocks.frontend.build.js'
 );
-const fileEditorCSS = path.resolve(theCWD, "./dist/blocks.editor.build.css");
-const fileStyleCSS = path.resolve(theCWD, "./dist/blocks.build.css");
+const fileEditorCSS = path.resolve(theCWD, './dist/blocks.editor.build.css');
+const fileStyleCSS = path.resolve(theCWD, './dist/blocks.build.css');
 
 /**
  * Get File Size
@@ -75,8 +75,8 @@ async function build(webpackConfig) {
 				messages.errors.length = 1;
 			}
 			// Formatted errors.
-			console.log("\n❌ ", chalk.black.bgRed(" Failed to compile build. \n"));
-			console.log("\n👉 ", messages.errors.join("\n\n"));
+			console.log('\n❌ ', chalk.black.bgRed(' Failed to compile build. \n'));
+			console.log('\n👉 ', messages.errors.join('\n\n'));
 
 			// Don't go beyond this point at this time.
 			return;
@@ -85,47 +85,47 @@ async function build(webpackConfig) {
 		// CI.
 		if (
 			process.env.CI &&
-			("string" !== typeof process.env.CI ||
-				"false" !== process.env.CI.toLowerCase()) &&
+			('string' !== typeof process.env.CI ||
+				'false' !== process.env.CI.toLowerCase()) &&
 			messages.warnings.length
 		) {
 			console.log(
 				chalk.yellow(
-					"\nTreating warnings as errors because process.env.CI = true.\n" +
-						"Most CI servers set it automatically.\n"
+					'\nTreating warnings as errors because process.env.CI = true.\n' +
+						'Most CI servers set it automatically.\n'
 				)
 			);
-			console.log(messages.warnings.join("\n\n"));
+			console.log(messages.warnings.join('\n\n'));
 		}
 
 		// Start the build.
 		console.log(`\n ${chalk.dim("Let's build and compile the files...")}`);
-		console.log("\n✅ ", chalk.black.bgGreen(" Built successfully! \n"));
+		console.log('\n✅ ', chalk.black.bgGreen(' Built successfully! \n'));
 
 		console.log(
-			"\n\n",
-			"File sizes after gzip:",
-			"\n\n",
+			'\n\n',
+			'File sizes after gzip:',
+			'\n\n',
 			getFileSize(fileBuildVendorsJs),
-			`${chalk.dim("— ./dist/")}`,
-			`${chalk.green("blocks.vendors.build.js")}`,
-			"\n",
+			`${chalk.dim('— ./dist/')}`,
+			`${chalk.green('blocks.vendors.build.js')}`,
+			'\n',
 			getFileSize(fileBuildJS),
-			`${chalk.dim("— ./dist/")}`,
-			`${chalk.green("blocks.build.js")}`,
-			"\n",
+			`${chalk.dim('— ./dist/')}`,
+			`${chalk.green('blocks.build.js')}`,
+			'\n',
 			getFileSize(fileBuildFrontendJs),
-			`${chalk.dim("— ./dist/")}`,
-			`${chalk.green("blocks.frontend.build.js")}`,
-			"\n",
+			`${chalk.dim('— ./dist/')}`,
+			`${chalk.green('blocks.frontend.build.js')}`,
+			'\n',
 			getFileSize(fileEditorCSS),
-			`${chalk.dim("— ./dist/")}`,
-			`${chalk.green("blocks.editor.build.css")}`,
-			"\n",
+			`${chalk.dim('— ./dist/')}`,
+			`${chalk.green('blocks.editor.build.css')}`,
+			'\n',
 			getFileSize(fileStyleCSS),
-			`${chalk.dim("— ./dist/")}`,
-			`${chalk.green("blocks.build.css")}`,
-			"\n\n"
+			`${chalk.dim('— ./dist/')}`,
+			`${chalk.green('blocks.build.css')}`,
+			'\n\n'
 		);
 
 		return true;

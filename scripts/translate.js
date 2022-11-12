@@ -34,7 +34,7 @@
  * External dependencies
  */
 
-const { po } = require( 'gettext-parser' );
+const { po } = require('gettext-parser');
 const {
 	pick,
 	reduce,
@@ -44,9 +44,9 @@ const {
 	isEqual,
 	merge,
 	isEmpty,
-} = require( 'lodash' );
-const { relative, sep } = require( 'path' );
-const { writeFileSync } = require( 'fs' );
+} = require('lodash');
+const { relative, sep } = require('path');
+const { writeFileSync } = require('fs');
 
 /**
  * Default output headers if none specified in plugin options.
@@ -66,10 +66,10 @@ const DEFAULT_HEADERS = {
  * @type {Object}
  */
 const DEFAULT_FUNCTIONS = {
-	__: [ 'msgid' ],
-	_n: [ 'msgid', 'msgid_plural' ],
-	_x: [ 'msgid', 'msgctxt' ],
-	_nx: [ 'msgid', 'msgctxt', 'msgid_plural' ],
+	__: ['msgid'],
+	_n: ['msgid', 'msgid_plural'],
+	_x: ['msgid', 'msgctxt'],
+	_nx: ['msgid', 'msgctxt', 'msgid_plural'],
 };
 
 /**
@@ -84,7 +84,7 @@ const DEFAULT_OUTPUT = 'gettext.pot';
  *
  * @type {string[]}
  */
-const VALID_TRANSLATION_KEYS = [ 'msgid', 'msgid_plural', 'msgctxt' ];
+const VALID_TRANSLATION_KEYS = ['msgid', 'msgid_plural', 'msgctxt'];
 
 /**
  * Regular expression matching translator comment value.
@@ -101,10 +101,10 @@ const REGEXP_TRANSLATOR_COMMENT = /^\s*translators:\s*([\s\S]+)/im;
  *
  * @returns {string} String value.
  */
-function getNodeAsString( node ) {
-	switch ( node.type ) {
+function getNodeAsString(node) {
+	switch (node.type) {
 		case 'BinaryExpression':
-			return getNodeAsString( node.left ) + getNodeAsString( node.right );
+			return getNodeAsString(node.left) + getNodeAsString(node.right);
 
 		case 'StringLiteral':
 			return node.value;
@@ -123,47 +123,47 @@ function getNodeAsString( node ) {
  *
  * @returns {?string} Translator comment.
  */
-function getTranslatorComment( path, _originalNodeLine ) {
+function getTranslatorComment(path, _originalNodeLine) {
 	const { node, parent, parentPath } = path;
 
 	// Assign original node line so we can keep track in recursion whether a
 	// matched comment or parent occurs on the same or previous line
-	if ( ! _originalNodeLine ) {
+	if (!_originalNodeLine) {
 		_originalNodeLine = node.loc.start.line;
 	}
 
 	let comment;
-	forEach( node.leadingComments, commentNode => {
+	forEach(node.leadingComments, (commentNode) => {
 		const { line } = commentNode.loc.end;
-		if ( line < _originalNodeLine - 1 || line > _originalNodeLine ) {
+		if (line < _originalNodeLine - 1 || line > _originalNodeLine) {
 			return;
 		}
 
-		const match = commentNode.value.match( REGEXP_TRANSLATOR_COMMENT );
-		if ( match ) {
+		const match = commentNode.value.match(REGEXP_TRANSLATOR_COMMENT);
+		if (match) {
 			// Extract text from matched translator prefix
-			comment = match[ 1 ]
-				.split( '\n' )
-				.map( text => text.trim() )
-				.join( ' ' );
+			comment = match[1]
+				.split('\n')
+				.map((text) => text.trim())
+				.join(' ');
 
 			// False return indicates to Lodash to break iteration
 			return false;
 		}
-	} );
+	});
 
-	if ( comment ) {
+	if (comment) {
 		return comment;
 	}
 
-	if ( ! parent || ! parent.loc || ! parentPath ) {
+	if (!parent || !parent.loc || !parentPath) {
 		return;
 	}
 
 	// Only recurse as long as parent node is on the same or previous line
 	const { line } = parent.loc.start;
-	if ( line >= _originalNodeLine - 1 && line <= _originalNodeLine ) {
-		return getTranslatorComment( parentPath, _originalNodeLine );
+	if (line >= _originalNodeLine - 1 && line <= _originalNodeLine) {
+		return getTranslatorComment(parentPath, _originalNodeLine);
 	}
 }
 
@@ -175,8 +175,8 @@ function getTranslatorComment( path, _originalNodeLine ) {
  *
  * @returns {boolean} Whether key is valid for assignment.
  */
-function isValidTranslationKey( key ) {
-	return -1 !== VALID_TRANSLATION_KEYS.indexOf( key );
+function isValidTranslationKey(key) {
+	return -1 !== VALID_TRANSLATION_KEYS.indexOf(key);
 }
 
 /**
@@ -188,55 +188,55 @@ function isValidTranslationKey( key ) {
  *
  * @returns {boolean} Whether valid translation keys match.
  */
-function isSameTranslation( a, b ) {
+function isSameTranslation(a, b) {
 	return isEqual(
-		pick( a, VALID_TRANSLATION_KEYS ),
-		pick( b, VALID_TRANSLATION_KEYS )
+		pick(a, VALID_TRANSLATION_KEYS),
+		pick(b, VALID_TRANSLATION_KEYS)
 	);
 }
 
-module.exports = function() {
+module.exports = function () {
 	const strings = {};
 	let nplurals = 2,
 		baseData;
 
 	return {
 		visitor: {
-			CallExpression( path, state ) {
+			CallExpression(path, state) {
 				const { callee } = path.node;
 
 				// Determine function name by direct invocation or property name
 				let name;
-				if ( 'MemberExpression' === callee.type ) {
+				if ('MemberExpression' === callee.type) {
 					name = callee.property.name;
 				} else {
 					name = callee.name;
 				}
 
 				// Skip unhandled functions
-				const functionKeys = ( state.opts.functions || DEFAULT_FUNCTIONS )[ name ];
-				if ( ! functionKeys ) {
+				const functionKeys = (state.opts.functions || DEFAULT_FUNCTIONS)[name];
+				if (!functionKeys) {
 					return;
 				}
 
 				// Assign translation keys by argument position
-				const translation = path.node.arguments.reduce( ( memo, arg, i ) => {
-					const key = functionKeys[ i ];
-					if ( isValidTranslationKey( key ) ) {
-						memo[ key ] = getNodeAsString( arg );
+				const translation = path.node.arguments.reduce((memo, arg, i) => {
+					const key = functionKeys[i];
+					if (isValidTranslationKey(key)) {
+						memo[key] = getNodeAsString(arg);
 					}
 
 					return memo;
-				}, {} );
+				}, {});
 
 				// Can only assign translation with usable msgid
-				if ( ! translation.msgid ) {
+				if (!translation.msgid) {
 					return;
 				}
 
 				// At this point we assume we'll save data, so initialize if
 				// we haven't already
-				if ( ! baseData ) {
+				if (!baseData) {
 					baseData = {
 						charset: 'utf-8',
 						headers: state.opts.headers || DEFAULT_HEADERS,
@@ -250,24 +250,24 @@ module.exports = function() {
 						},
 					};
 
-					for ( const key in baseData.headers ) {
-						baseData.translations[ '' ][ '' ].msgstr.push(
-							`${ key }: ${ baseData.headers[ key ] };\n`
+					for (const key in baseData.headers) {
+						baseData.translations[''][''].msgstr.push(
+							`${key}: ${baseData.headers[key]};\n`
 						);
 					}
 
 					// Attempt to exract nplurals from header
-					const pluralsMatch = ( baseData.headers[ 'plural-forms' ] || '' ).match(
+					const pluralsMatch = (baseData.headers['plural-forms'] || '').match(
 						/nplurals\s*=\s*(\d+);/
 					);
-					if ( pluralsMatch ) {
-						nplurals = pluralsMatch[ 1 ];
+					if (pluralsMatch) {
+						nplurals = pluralsMatch[1];
 					}
 				}
 
 				// Create empty msgstr or array of empty msgstr by nplurals
-				if ( translation.msgid_plural ) {
-					translation.msgstr = Array.from( Array( nplurals ) ).map( () => '' );
+				if (translation.msgid_plural) {
+					translation.msgstr = Array.from(Array(nplurals)).map(() => '');
 				} else {
 					translation.msgstr = '';
 				}
@@ -275,72 +275,70 @@ module.exports = function() {
 				// Assign file reference comment, ensuring consistent pathname
 				// reference between Win32 and POSIX
 				const { filename } = this.file.opts;
-				const pathname = relative( '.', filename )
-					.split( sep )
-					.join( '/' );
+				const pathname = relative('.', filename).split(sep).join('/');
 				translation.comments = {
 					reference: pathname + ':' + path.node.loc.start.line,
 				};
 
 				// If exists, also assign translator comment
-				const translator = getTranslatorComment( path );
-				if ( translator ) {
+				const translator = getTranslatorComment(path);
+				if (translator) {
 					translation.comments.translator = translator;
 				}
 
 				// Create context grouping for translation if not yet exists
 				const { msgctxt = '', msgid } = translation;
-				if ( ! strings[ filename ].hasOwnProperty( msgctxt ) ) {
-					strings[ filename ][ msgctxt ] = {};
+				if (!strings[filename].hasOwnProperty(msgctxt)) {
+					strings[filename][msgctxt] = {};
 				}
 
-				strings[ filename ][ msgctxt ][ msgid ] = translation;
+				strings[filename][msgctxt][msgid] = translation;
 			},
 			Program: {
 				enter() {
-					strings[ this.file.opts.filename ] = {};
+					strings[this.file.opts.filename] = {};
 				},
-				exit( path, state ) {
+				exit(path, state) {
 					const { filename } = this.file.opts;
-					if ( isEmpty( strings[ filename ] ) ) {
-						delete strings[ filename ];
+					if (isEmpty(strings[filename])) {
+						delete strings[filename];
 						return;
 					}
 
 					// Sort translations by filename for deterministic output
-					const files = Object.keys( strings ).sort();
+					const files = Object.keys(strings).sort();
 
 					// Combine translations from each file grouped by context
 					const translations = reduce(
 						files,
-						( memo, file ) => {
-							for ( const context in strings[ file ] ) {
+						(memo, file) => {
+							for (const context in strings[file]) {
 								// Within the same file, sort translations by line
 								const sortedTranslations = sortBy(
-									strings[ file ][ context ],
+									strings[file][context],
 									'comments.reference'
 								);
 
-								forEach( sortedTranslations, translation => {
+								forEach(sortedTranslations, (translation) => {
 									const { msgctxt = '', msgid } = translation;
-									if ( ! memo.hasOwnProperty( msgctxt ) ) {
-										memo[ msgctxt ] = {};
+									if (!memo.hasOwnProperty(msgctxt)) {
+										memo[msgctxt] = {};
 									}
 
 									// Merge references if translation already exists
-									if ( isSameTranslation( translation, memo[ msgctxt ][ msgid ] ) ) {
+									if (isSameTranslation(translation, memo[msgctxt][msgid])) {
 										translation.comments.reference = uniq(
 											[
-												memo[ msgctxt ][ msgid ].comments.reference,
+												memo[msgctxt][msgid].comments.reference,
 												translation.comments.reference,
 											]
-												.join( '\n' )
-												.split( '\n' )
-										).join( '\n' );
+												.join('\n')
+												.split('\n')
+										).join('\n');
 									}
 
-									memo[ msgctxt ][ msgid ] = translation;
-								} );
+									memo[msgctxt][msgid] = translation;
+								});
 							}
 
 							return memo;
@@ -349,14 +347,14 @@ module.exports = function() {
 					);
 
 					// Merge translations from individual files into headers
-					const data = merge( {}, baseData, { translations } );
+					const data = merge({}, baseData, { translations });
 
 					// Ideally we could wait until Babel has finished parsing
 					// all files or at least asynchronously write, but the
 					// Babel loader doesn't expose these entry points and async
 					// write may hit file lock (need queue).
-					const compiled = po.compile( data );
-					writeFileSync( state.opts.output || DEFAULT_OUTPUT, compiled );
+					const compiled = po.compile(data);
+					writeFileSync(state.opts.output || DEFAULT_OUTPUT, compiled);
 					this.hasPendingWrite = false;
 				},
 			},

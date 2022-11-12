@@ -7,7 +7,8 @@
  *
  * @return {string} Camel-cased string.
  */
-const camelCaseDash = string => string.replace( /-([a-z])/g, ( match, letter ) => letter.toUpperCase() );
+const camelCaseDash = (string) =>
+	string.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
 
 /**
  * Define externals to load components through the wp global.
@@ -25,10 +26,10 @@ const externals = [
 	'data',
 	'i18n',
 ].reduce(
-	( externals, name ) => ( {
+	(externals, name) => ({
 		...externals,
-		[ `@wordpress/${ name }` ]: `wp.${ camelCaseDash( name ) }`,
-	} ),
+		[`@wordpress/${name}`]: `wp.${camelCaseDash(name)}`,
+	}),
 	{
 		wp: 'wp',
 		ga: 'ga', // Old Google Analytics.

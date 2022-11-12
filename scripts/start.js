@@ -7,46 +7,46 @@
  *  - checkRequiredFiles
  *  - printBuildError
  */
-"use strict";
+'use strict';
 
 // Do this as the first thing so that any code reading it knows the right env.
-process.env.BABEL_ENV = "development";
-process.env.NODE_ENV = "development";
+process.env.BABEL_ENV = 'development';
+process.env.NODE_ENV = 'development';
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on("unhandledRejection", (err) => {
+process.on('unhandledRejection', (err) => {
 	throw err;
 });
 
-const ora = require("ora");
-const chalk = require("chalk");
-const webpack = require("webpack");
-const config = require("../config/webpack.config.dev");
-const formatWebpackMessages = require("../config/formatWebpackMessage");
+const ora = require('ora');
+const chalk = require('chalk');
+const webpack = require('webpack');
+const config = require('../config/webpack.config.dev');
+const formatWebpackMessages = require('../config/formatWebpackMessage');
 
 // Don't run below node 8.
 const currentNodeVersion = process.versions.node;
-const semver = currentNodeVersion.split(".");
+const semver = currentNodeVersion.split('.');
 const major = semver[0];
 
 // If below Node 8.
 if (8 > major) {
 	console.error(
 		chalk.red(
-			"You are running Node " +
+			'You are running Node ' +
 				currentNodeVersion +
-				".\n" +
-				"Create Guten Block requires Node 8 or higher. \n" +
-				"Kindly, update your version of Node."
+				'.\n' +
+				'Create Guten Block requires Node 8 or higher. \n' +
+				'Kindly, update your version of Node.'
 		)
 	);
 	process.exit(1);
 }
 
 // Init the spinner.
-const spinner = new ora({ text: "" });
+const spinner = new ora({ text: '' });
 
 // Create the production build and print the deployment instructions.
 async function build(webpackConfig) {
@@ -71,9 +71,9 @@ async function build(webpackConfig) {
 			}
 
 			// Formatted errors.
-			console.log("\n❌ ", chalk.black.bgRed(" Failed to compile. \n"));
-			const logErrors = console.log("\n👉 ", messages.errors.join("\n\n"));
-			console.log("\n");
+			console.log('\n❌ ', chalk.black.bgRed(' Failed to compile. \n'));
+			const logErrors = console.log('\n👉 ', messages.errors.join('\n\n'));
+			console.log('\n');
 			spinner.start(
 				chalk.dim(
 					"Watching for changes... let's fix this... (Press CTRL + C to stop)."
@@ -85,30 +85,30 @@ async function build(webpackConfig) {
 		// CI.
 		if (
 			process.env.CI &&
-			("string" !== typeof process.env.CI ||
-				"false" !== process.env.CI.toLowerCase()) &&
+			('string' !== typeof process.env.CI ||
+				'false' !== process.env.CI.toLowerCase()) &&
 			messages.warnings.length
 		) {
 			console.log(
 				chalk.yellow(
-					"\nTreating warnings as errors because process.env.CI = true.\n" +
-						"Most CI servers set it automatically.\n"
+					'\nTreating warnings as errors because process.env.CI = true.\n' +
+						'Most CI servers set it automatically.\n'
 				)
 			);
-			return console.log(messages.warnings.join("\n\n"));
+			return console.log(messages.warnings.join('\n\n'));
 		}
 
 		// Start the build.
 		console.log(`\n${chalk.dim("Let's build and compile the files...")}`);
-		console.log("\n✅ ", chalk.black.bgGreen(" Compiled successfully! \n"));
+		console.log('\n✅ ', chalk.black.bgGreen(' Compiled successfully! \n'));
 		console.log(
-			chalk.dim("   Note that the development build is not optimized. \n"),
-			chalk.dim("  To create a production build, use"),
-			chalk.green("npm"),
-			chalk.white("run build\n\n")
+			chalk.dim('   Note that the development build is not optimized. \n'),
+			chalk.dim('  To create a production build, use'),
+			chalk.green('npm'),
+			chalk.white('run build\n\n')
 		);
 		return spinner.start(
-			`${chalk.dim("Watching for changes... (Press CTRL + C to stop).")}`
+			`${chalk.dim('Watching for changes... (Press CTRL + C to stop).')}`
 		);
 	});
 }
