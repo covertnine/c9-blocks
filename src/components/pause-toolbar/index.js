@@ -9,9 +9,9 @@ const { ToolbarGroup, ToolbarButton } = wp.components;
  */
 const DEFAULT_PAUSE_CONTROLS = [
 	{
-		icon: "controls-pause",
-		title: __("Pause", "c9-blocks"),
-		pause: true
+		icon: 'controls-pause',
+		title: __('Pause', 'c9-blocks'),
+		pause: true,
 	},
 ];
 
@@ -21,23 +21,24 @@ const DEFAULT_PAUSE_CONTROLS = [
 export function PauseToolbar({
 	value,
 	onChange,
-	PauseControls = DEFAULT_PAUSE_CONTROLS
+	PauseControls = DEFAULT_PAUSE_CONTROLS,
 }) {
 	function applyOrUnset(pause) {
 		return () => onChange(value === pause ? false : pause);
 	}
 
 	return (
-		<ToolbarGroup
-			label={__("Pause?", "c9-blocks")}
-		>
-			{PauseControls.map(control => {
+		<ToolbarGroup label={__('Pause?', 'c9-blocks')}>
+			{PauseControls.map((control) => {
 				const { pause } = control;
-				return <ToolbarButton
-					{...control}
-					isActive={value === pause}
-					onClick={applyOrUnset(pause)}
-				/>
+				return (
+					<ToolbarButton
+						key={control.title}
+						{...control}
+						isActive={value === pause}
+						onClick={applyOrUnset(pause)}
+					/>
+				);
 			})}
 		</ToolbarGroup>
 	);

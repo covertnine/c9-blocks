@@ -3,13 +3,13 @@
 /**
  * Internal dependencies
  */
-import Inspector from "./components/inspector";
-import PauseToolBar from "../../components/pause-toolbar";
-import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
-import WidthToolbar from "../../components/width-toolbar";
-import SwapSlideToolbar from "./components/swap-slide-toolbar";
-import ResizableCarouselContainer from "./components/resizable-carousel-container";
-import URLPicker from "./components/url-picker";
+import Inspector from './components/inspector';
+import PauseToolBar from '../../components/pause-toolbar';
+import VerticalAlignmentToolbar from '../../components/vertical-alignment-toolbar';
+import WidthToolbar from '../../components/width-toolbar';
+import SwapSlideToolbar from './components/swap-slide-toolbar';
+import ResizableCarouselContainer from './components/resizable-carousel-container';
+import URLPicker from './components/url-picker';
 
 /**
  * WordPress dependencies
@@ -23,14 +23,14 @@ const { Button } = wp.components;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
-import get from "lodash/get";
-import pick from "lodash/pick";
-import React from "react";
+import classnames from 'classnames';
+import get from 'lodash/get';
+import pick from 'lodash/pick';
+import React from 'react';
 
-const ALLOWED_MEDIA_TYPES = ["image"];
-const DEFAULT_SIZE_SLUG = "large";
-const NEW_TAB_REL = "noreferrer noopener";
+const ALLOWED_MEDIA_TYPES = ['image'];
+const DEFAULT_SIZE_SLUG = 'large';
+const NEW_TAB_REL = 'noreferrer noopener';
 
 class Edit extends Component {
 	constructor({ autoSlide, wrapAround, slideTime }) {
@@ -44,7 +44,7 @@ class Edit extends Component {
 			time: slideTime,
 			slideActive: 0,
 			slideTarget: 0,
-			pause: false
+			pause: false,
 		};
 
 		this.onSelectImage = this.onSelectImage.bind(this);
@@ -53,7 +53,7 @@ class Edit extends Component {
 		this.createSlides = this.createSlides.bind(this);
 	}
 
-	setRef = input => {
+	setRef = (input) => {
 		this.carouselRef.current = input;
 	};
 
@@ -64,15 +64,20 @@ class Edit extends Component {
 		const $ = window.jQuery;
 		let self = this;
 
-		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
+		$(this.carouselRef.current).on('slide.bs.carousel', function ({ to }) {
 			self.setState({ slideTarget: to, slideActive: to });
-			$("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).attr(
-				"aria-label",
+			$('> .c9-add-remove-rows button', `#block-${self.props.clientId}`).attr(
+				'aria-label',
 				`Remove Current Slide (#${to + 1})`
 			);
-			if ($("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).get(0)) {
-				$("> .c9-add-remove-rows button", `#block-${self.props.clientId}`).get(0)
-					.lastChild.nodeValue = `Remove Current Slide (#${to + 1})`;
+			if (
+				$('> .c9-add-remove-rows button', `#block-${self.props.clientId}`).get(
+					0
+				)
+			) {
+				$('> .c9-add-remove-rows button', `#block-${self.props.clientId}`).get(
+					0
+				).lastChild.nodeValue = `Remove Current Slide (#${to + 1})`;
 			}
 		});
 	}
@@ -83,7 +88,7 @@ class Edit extends Component {
 	componentWillUnmount() {
 		const $ = window.jQuery;
 
-		$(this.carouselRef.current).off("slide.bs.carousel", "**");
+		$(this.carouselRef.current).off('slide.bs.carousel', '**');
 	}
 
 	/**
@@ -114,8 +119,8 @@ class Edit extends Component {
 			this.setState({ slideTarget: 0, slideActive: 0 });
 		}
 
-		if ($(this.carouselRef.current).data()["bs.carousel"]) {
-			let options = $(this.carouselRef.current).data()["bs.carousel"]._config;
+		if ($(this.carouselRef.current).data()['bs.carousel']) {
+			let options = $(this.carouselRef.current).data()['bs.carousel']._config;
 
 			if (pause && false != auto) {
 				options.interval = false;
@@ -147,18 +152,18 @@ class Edit extends Component {
 	 *
 	 * @return {Object} Processed image.
 	 */
-	pickRelevantMediaFiles = image => {
+	pickRelevantMediaFiles = (image) => {
 		const imageProps = pick(image, [
-			"alt",
-			"id",
-			"link",
-			"caption",
-			"height",
-			"width"
+			'alt',
+			'id',
+			'link',
+			'caption',
+			'height',
+			'width',
 		]);
 		imageProps.url =
-			get(image, ["sizes", "large", "url"]) ||
-			get(image, ["media_details", "sizes", "large", "source_url"]) ||
+			get(image, ['sizes', 'large', 'url']) ||
+			get(image, ['media_details', 'sizes', 'large', 'source_url']) ||
 			image.url;
 		return imageProps;
 	};
@@ -196,7 +201,7 @@ class Edit extends Component {
 		this.props.setAttributes({
 			url,
 			id,
-			link
+			link,
 		});
 	}
 
@@ -216,12 +221,12 @@ class Edit extends Component {
 
 			url[i] = undefined;
 			id[i] = undefined;
-			link[i] = "";
+			link[i] = '';
 
 			this.props.setAttributes({
 				url,
 				id,
-				link
+				link,
 			});
 			return;
 		}
@@ -240,7 +245,7 @@ class Edit extends Component {
 			additionalAttributes = {
 				width: undefined,
 				height: undefined,
-				sizeSlug: DEFAULT_SIZE_SLUG
+				sizeSlug: DEFAULT_SIZE_SLUG,
 			};
 		} else {
 			// Keep the same url when selecting the same file, so "Image Size" option is not changed.
@@ -249,7 +254,7 @@ class Edit extends Component {
 
 		id[i] = mediaAttributes.id;
 		url[i] = mediaAttributes.url;
-		link[i] = "";
+		link[i] = '';
 
 		// update id, url attributes from mediaAttributes
 		mediaAttributes.id = id;
@@ -258,7 +263,7 @@ class Edit extends Component {
 		this.props.setAttributes({
 			...mediaAttributes,
 			...additionalAttributes,
-			link
+			link,
 		});
 
 		this.calcAndSetSlideHeight(media.width, media.height);
@@ -276,7 +281,7 @@ class Edit extends Component {
 			// eslint-disable-next-line no-undef
 			var img = new Image();
 			img.src = url;
-			img.onload = function() {
+			img.onload = function () {
 				callback(this.width, this.height);
 			};
 		}
@@ -290,12 +295,12 @@ class Edit extends Component {
 		if (newURL !== url[i]) {
 			url[i] = newURL;
 			id[i] = undefined;
-			link[i] = "";
+			link[i] = '';
 			this.props.setAttributes({
 				url,
 				id,
 				link,
-				sizeSlug: DEFAULT_SIZE_SLUG
+				sizeSlug: DEFAULT_SIZE_SLUG,
 			});
 		}
 
@@ -303,15 +308,16 @@ class Edit extends Component {
 	}
 
 	calcAndSetSlideHeight = (width, height) => {
-		const targetWidth = document.querySelector(`#block-${this.props.clientId}`)
-			.clientWidth;
+		const targetWidth = document.querySelector(
+			`#block-${this.props.clientId}`
+		).clientWidth;
 
 		const ratio = width / height;
 		const newHeight = Math.round(targetWidth / ratio);
 
 		if (newHeight && newHeight > this.props.attributes.slideMaxHeight) {
 			this.props.setAttributes({
-				slideMaxHeight: newHeight
+				slideMaxHeight: newHeight,
 			});
 		}
 	};
@@ -336,9 +342,9 @@ class Edit extends Component {
 					data-target={`#c9-image-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={classnames(
-						i == slideActive ? "active" : null,
+						i == slideActive ? 'active' : null,
 						url[slideTarget] && isSelectedBlockInRoot
-							? "editor-selected-controls-lift"
+							? 'editor-selected-controls-lift'
 							: null
 					)}
 				/>
@@ -353,23 +359,18 @@ class Edit extends Component {
 	 */
 	createSlides(slides, allActive = false) {
 		const { isSelectedBlockInRoot, setAttributes } = this.props;
-		const {
-			id,
-			url,
-			link,
-			captionTitle,
-			captionContent
-		} = this.props.attributes;
+		const { id, url, link, captionTitle, captionContent } =
+			this.props.attributes;
 
 		let template = [];
 		let sizes = [];
 
-		const refCallback = async element => {
+		const refCallback = async (element) => {
 			if (element && allActive) {
 				let config = element.getBoundingClientRect();
 				while (0 === config.height) {
 					// wait and check again
-					await new Promise(r => setTimeout(r, 500));
+					await new Promise((r) => setTimeout(r, 500));
 					config = element.getBoundingClientRect();
 				}
 				// console.log(config);
@@ -379,7 +380,7 @@ class Edit extends Component {
 					allActive = false;
 					// set largest height to be attribute
 					setAttributes({
-						slideMaxHeight: Math.ceil(Math.max(...sizes) / 10) * 10
+						slideMaxHeight: Math.ceil(Math.max(...sizes) / 10) * 10,
 					});
 				}
 			}
@@ -387,17 +388,17 @@ class Edit extends Component {
 
 		for (let i = 0; i < slides; i++) {
 			const labels = {
-				title: !url[i] ? __("Image") : __("Edit image"),
+				title: !url[i] ? __('Image') : __('Edit image'),
 				instructions: __(
-					"Upload an image file, pick one from your media library, or add one with a URL."
-				)
+					'Upload an image file, pick one from your media library, or add one with a URL.'
+				),
 			};
 
 			const mediaPreview = !!url[i] && (
 				<img
-					alt={__("Edit image")}
-					title={__("Edit image")}
-					className={"edit-image-preview"}
+					alt={__('Edit image')}
+					title={__('Edit image')}
+					className={'edit-image-preview'}
 					src={url[i]}
 				/>
 			);
@@ -410,14 +411,14 @@ class Edit extends Component {
 				<div
 					ref={refCallback}
 					className={classnames(
-						"carousel-item",
-						i == this.state.slideActive || allActive ? "active" : null
+						'carousel-item',
+						i == this.state.slideActive || allActive ? 'active' : null
 					)}
 					style={
 						allActive
 							? {
-									position: "absolute",
-									left: "-10000em"
+									position: 'absolute',
+									left: '-10000em',
 							  }
 							: {}
 					}
@@ -426,9 +427,9 @@ class Edit extends Component {
 						<MediaPlaceholder
 							icon="format-gallery"
 							labels={labels}
-							onSelect={media => this.onSelectImage(media, i)}
-							onSelectURL={newURL => this.onSelectURL(newURL, i)}
-							onError={message => this.onUploadError(message, i)}
+							onSelect={(media) => this.onSelectImage(media, i)}
+							onSelectURL={(newURL) => this.onSelectURL(newURL, i)}
+							onError={(message) => this.onUploadError(message, i)}
 							accept="image/*"
 							allowedTypes={ALLOWED_MEDIA_TYPES}
 							value={{ id: id[i], src }}
@@ -440,48 +441,48 @@ class Edit extends Component {
 							<img src={url[i]} className="d-block w-100" />
 							<div
 								className={classnames(
-									"carousel-caption d-none d-md-block",
-									isSelectedBlockInRoot ? "editor-selected-lift" : null
+									'carousel-caption d-none d-md-block',
+									isSelectedBlockInRoot ? 'editor-selected-lift' : null
 								)}
 							>
 								<RichText
 									tagName="h5"
-									placeholder={__("Slide label", "c9-blocks")}
+									placeholder={__('Slide label', 'c9-blocks')}
 									value={captionTitle[i]}
-									onChange={value => {
+									onChange={(value) => {
 										let newCaptionTitle = [...captionTitle];
 										newCaptionTitle[i] = value;
 
 										setAttributes({
-											captionTitle: newCaptionTitle
+											captionTitle: newCaptionTitle,
 										});
 									}}
-									allowedFormats={["bold", "italic", "strikethrough"]}
+									allowedFormats={['bold', 'italic', 'strikethrough']}
 									keepPlaceholderOnFocus
 								/>
 								<RichText
 									tagName="p"
 									placeholder={__(
-										"Nulla vitae elit libero, a pharetra augue mollis interdum.",
-										"c9-blocks"
+										'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+										'c9-blocks'
 									)}
 									value={captionContent[i]}
-									onChange={value => {
+									onChange={(value) => {
 										let newCaptionContent = [...captionContent];
 										newCaptionContent[i] = value;
 
 										setAttributes({
-											captionContent: newCaptionContent
+											captionContent: newCaptionContent,
 										});
 									}}
-									allowedFormats={["bold", "italic", "strikethrough"]}
+									allowedFormats={['bold', 'italic', 'strikethrough']}
 									keepPlaceholderOnFocus
 								/>
 							</div>
 							{isSelectedBlockInRoot && (
 								<div className="c9-remove-image">
 									<Button
-										label={__("Remove Image", "c9-blocks")}
+										label={__('Remove Image', 'c9-blocks')}
 										icon="dismiss"
 										onClick={() => {
 											// clone to new array
@@ -502,11 +503,11 @@ class Edit extends Component {
 												id: newId,
 												link: newLink,
 												captionTitle: newCaptionTitle,
-												captionContent: newCaptionContent
+												captionContent: newCaptionContent,
 											});
 										}}
 									>
-										{__("Remove", "c9-blocks")}
+										{__('Remove', 'c9-blocks')}
 									</Button>
 								</div>
 							)}
@@ -547,12 +548,8 @@ class Edit extends Component {
 	render() {
 		const { slideTarget, slideActive, pause } = this.state;
 
-		const {
-			attributes,
-			setAttributes,
-			isSelected,
-			isSelectedBlockInRoot
-		} = this.props;
+		const { attributes, setAttributes, isSelected, isSelectedBlockInRoot } =
+			this.props;
 
 		const {
 			slides,
@@ -564,7 +561,7 @@ class Edit extends Component {
 			align,
 			containerWidth,
 			linkTarget,
-			rel
+			rel,
 		} = attributes;
 
 		let instanceId = attributes.instanceId;
@@ -579,12 +576,12 @@ class Edit extends Component {
 
 		let currWidth;
 		if (0 != align.length) {
-			if ("container" == containerWidth) {
-				currWidth = "wide";
-			} else if ("container-fluid" == containerWidth) {
-				currWidth = "full";
+			if ('container' == containerWidth) {
+				currWidth = 'wide';
+			} else if ('container-fluid' == containerWidth) {
+				currWidth = 'full';
 			} else {
-				currWidth = "narrow";
+				currWidth = 'narrow';
 			}
 		}
 
@@ -598,33 +595,33 @@ class Edit extends Component {
 					/>
 					<WidthToolbar
 						value={currWidth}
-						onChange={value => {
-							if ("wide" == value) {
-								setAttributes({ containerWidth: "container", align: "wide" });
-							} else if ("full" == value) {
+						onChange={(value) => {
+							if ('wide' == value) {
+								setAttributes({ containerWidth: 'container', align: 'wide' });
+							} else if ('full' == value) {
 								setAttributes({
-									containerWidth: "container-fluid",
-									align: "full"
+									containerWidth: 'container-fluid',
+									align: 'full',
 								});
-							} else if ("narrow" == value) {
+							} else if ('narrow' == value) {
 								setAttributes({
-									containerWidth: "container-narrow",
-									align: "narrow"
+									containerWidth: 'container-narrow',
+									align: 'narrow',
 								});
 							} else {
-								setAttributes({ containerWidth: "container", align: "" });
+								setAttributes({ containerWidth: 'container', align: '' });
 							}
 						}}
 					/>
 					<PauseToolBar
 						value={pause}
-						onChange={value => {
+						onChange={(value) => {
 							this.setState({ pause: value });
 						}}
 					/>
 					<VerticalAlignmentToolbar
 						value={verticalAlign}
-						onChange={value => {
+						onChange={(value) => {
 							setAttributes({ verticalAlign: value });
 						}}
 					/>
@@ -642,16 +639,16 @@ class Edit extends Component {
 				>
 					<ol
 						className={classnames(
-							"carousel-indicators",
-							!showIndicators ? "hide-indicator" : null
+							'carousel-indicators',
+							!showIndicators ? 'hide-indicator' : null
 						)}
 					>
 						{this.createIndicators(slides, instanceId)}
 					</ol>
 					<div
 						className={classnames(
-							"carousel-inner",
-							verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+							'carousel-inner',
+							verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
 						)}
 					>
 						{SlidesComponent}
@@ -660,9 +657,9 @@ class Edit extends Component {
 						<Fragment>
 							<a
 								className={classnames(
-									"carousel-control-prev",
+									'carousel-control-prev',
 									url[slideTarget] && isSelectedBlockInRoot
-										? "editor-selected-controls-lift"
+										? 'editor-selected-controls-lift'
 										: null
 								)}
 								href={`#c9-image-carousel-indicator-${instanceId}`}
@@ -677,9 +674,9 @@ class Edit extends Component {
 							</a>
 							<a
 								className={classnames(
-									"carousel-control-next",
+									'carousel-control-next',
 									url[slideTarget] && isSelectedBlockInRoot
-										? "editor-selected-controls-lift"
+										? 'editor-selected-controls-lift'
 										: null
 								)}
 								href={`#c9-image-carousel-indicator-${instanceId}`}
@@ -701,9 +698,9 @@ class Edit extends Component {
 					url={link}
 					setAttributes={setAttributes}
 					isSelected={isSelected}
-					opensInNewTab={"_blank" === linkTarget}
-					onToggleOpenInNewTab={value => {
-						const newLinkTarget = value ? "_blank" : undefined;
+					opensInNewTab={'_blank' === linkTarget}
+					onToggleOpenInNewTab={(value) => {
+						const newLinkTarget = value ? '_blank' : undefined;
 
 						let updatedRel = rel;
 						if (newLinkTarget && !rel) {
@@ -714,7 +711,7 @@ class Edit extends Component {
 
 						setAttributes({
 							linkTarget: newLinkTarget,
-							rel: updatedRel
+							rel: updatedRel,
 						});
 					}}
 				/>
@@ -723,17 +720,12 @@ class Edit extends Component {
 						<Button
 							label={__(
 								`Remove Current Slide (#${slideActive + 1})`,
-								"c9-blocks"
+								'c9-blocks'
 							)}
 							icon="dismiss"
 							onClick={() => {
-								let {
-									url,
-									id,
-									link,
-									captionTitle,
-									captionContent
-								} = this.props.attributes;
+								let { url, id, link, captionTitle, captionContent } =
+									this.props.attributes;
 								const { slideActive } = this.state;
 								if (-1 < slideActive && slideActive < slides && 1 < slides) {
 									const $ = window.jQuery;
@@ -753,16 +745,16 @@ class Edit extends Component {
 										link,
 										captionTitle,
 										captionContent,
-										slides: slides - 1
+										slides: slides - 1,
 									});
 
 									if (this.carouselRef.current && 0 < slideTarget) {
-										$(this.carouselRef.current).carousel("prev");
+										$(this.carouselRef.current).carousel('prev');
 									}
 								}
 							}}
 						>
-							{__(`Remove Current Slide (#${slideActive + 1})`, "c9-blocks")}
+							{__(`Remove Current Slide (#${slideActive + 1})`, 'c9-blocks')}
 						</Button>
 					</div>
 				)}

@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import Inspector from "./components/inspector";
-import Container from "./components/container";
+import Inspector from './components/inspector';
+import Container from './components/container';
 
 /**
  * WordPress dependencies
@@ -13,9 +13,9 @@ const { InnerBlocks, BlockControls } = wp.blockEditor;
 /**
  * External Dependencies.
  */
-import cryptoRandomString from "crypto-random-string";
+import cryptoRandomString from 'crypto-random-string';
 
-const ALLOWED_BLOCKS = ["c9-blocks/post-grid"];
+const ALLOWED_BLOCKS = ['c9-blocks/post-grid'];
 
 class Edit extends Component {
 	constructor() {
@@ -39,11 +39,11 @@ class Edit extends Component {
 					.length
 		) {
 			const newInstanceId = parseInt(
-				cryptoRandomString({ length: 4, type: "numeric" })
+				cryptoRandomString({ length: 4, type: 'numeric' })
 			);
 
 			setAttributes({
-				instanceId: newInstanceId
+				instanceId: newInstanceId,
 			});
 		}
 	};
@@ -65,7 +65,7 @@ class Edit extends Component {
 
 				<Container {...this.props}>
 					<InnerBlocks
-						template={[["c9-blocks/post-grid"]]}
+						template={[['c9-blocks/post-grid']]}
 						templateLock="all"
 						allowedBlocks={ALLOWED_BLOCKS}
 					/>

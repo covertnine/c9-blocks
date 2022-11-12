@@ -1,9 +1,9 @@
 import SaveDeprecated from './save.deprecated';
 import attributes from '../attributes';
 
-export const BlockPostsGridDeprecated = ( props ) => (
-    <SaveDeprecated { ...props } />
-)
+export const BlockPostsGridDeprecated = (props) => (
+	<SaveDeprecated {...props} />
+);
 
 const Deprecated = [
 	{

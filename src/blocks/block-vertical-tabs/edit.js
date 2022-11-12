@@ -2,9 +2,9 @@
 /**
  * Internal dependencies
  */
-import Inspector from "./components/inspector";
-import RemoveButton from "../../components/remove-button";
-import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
+import Inspector from './components/inspector';
+import RemoveButton from '../../components/remove-button';
+import VerticalAlignmentToolbar from './components/vertical-align-toolbar';
 
 /**
  * WordPress dependencies
@@ -12,21 +12,17 @@ import VerticalAlignmentToolbar from "./components/vertical-align-toolbar";
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
 const { Button, Tooltip } = wp.components;
-const {
-	RichText,
-	BlockControls,
-	InnerBlocks,
-	AlignmentToolbar
-} = wp.blockEditor;
+const { RichText, BlockControls, InnerBlocks, AlignmentToolbar } =
+	wp.blockEditor;
 const { applyFilters } = wp.hooks;
 const { select, dispatch } = wp.data;
 
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
-import slugify from "slugify";
-import cryptoRandomString from "crypto-random-string";
+import classnames from 'classnames';
+import slugify from 'slugify';
+import cryptoRandomString from 'crypto-random-string';
 
 class Edit extends Component {
 	constructor() {
@@ -75,10 +71,10 @@ class Edit extends Component {
 		const { tabsData = [], tabActive } = this.props.attributes;
 		const result = [];
 
-		tabsData.forEach(tabData => {
+		tabsData.forEach((tabData) => {
 			result.push([
-				"c9-blocks/vertical-tabs-tab",
-				{ ...tabData, tabActive, id: instanceId }
+				'c9-blocks/vertical-tabs-tab',
+				{ ...tabData, tabActive, id: instanceId },
 			]);
 		});
 
@@ -104,7 +100,7 @@ class Edit extends Component {
 		const tabs = this.getTabs();
 		let isUnique = true;
 
-		tabs.forEach(tabProps => {
+		tabs.forEach((tabProps) => {
 			if (
 				tabProps.clientId !== ignoreClientId &&
 				tabProps.attributes.slug === slug
@@ -125,17 +121,17 @@ class Edit extends Component {
 	 * @return {string} Unique slug.
 	 */
 	getUniqueSlug(newTitle, tabData) {
-		let newSlug = "";
+		let newSlug = '';
 		let i = 0;
 
 		while (!newSlug || !this.isUniqueSlug(newSlug, tabData.clientId)) {
 			if (newSlug) {
 				i += 1;
 			}
-			newSlug = slugify(`tab-${newTitle}${i ? `-${i}` : ""}`, {
-				replacement: "-",
+			newSlug = slugify(`tab-${newTitle}${i ? `-${i}` : ''}`, {
+				replacement: '-',
 				lower: true,
-				remove: /[\/#$%^&*+=~.,<>{}\\|`[\]()'"?!:;@]/g
+				remove: /[\/#$%^&*+=~.,<>{}\\|`[\]()'"?!:;@]/g,
 			});
 		}
 
@@ -143,19 +139,15 @@ class Edit extends Component {
 	}
 
 	checkBlockIdAndUpdate = () => {
-		const {
-			attributes,
-			setAttributes,
-			block,
-			updateBlockAttributes
-		} = this.props;
+		const { attributes, setAttributes, block, updateBlockAttributes } =
+			this.props;
 
 		const { instanceId, tabsData } = attributes;
 
 		// check for possible id collision
 		if (
 			instanceId !== undefined &&
-			tabsData.some(tabData => {
+			tabsData.some((tabData) => {
 				return (
 					1 <
 					document.querySelectorAll(
@@ -165,11 +157,11 @@ class Edit extends Component {
 			})
 		) {
 			const newInstanceId = parseInt(
-				cryptoRandomString({ length: 4, type: "numeric" })
+				cryptoRandomString({ length: 4, type: 'numeric' })
 			);
 
 			setAttributes({
-				instanceId: newInstanceId
+				instanceId: newInstanceId,
 			});
 
 			if (block) {
@@ -190,8 +182,8 @@ class Edit extends Component {
 			updateBlockAttributes,
 			isSelectedBlockInRoot,
 			block,
-			className = "",
-			clientId
+			className = '',
+			clientId,
 		} = this.props;
 
 		const {
@@ -202,28 +194,27 @@ class Edit extends Component {
 			tabContentBackgroundColor,
 			blockBackgroundColor,
 			verticalAlign,
-			textAlign
+			textAlign,
 		} = attributes;
 
 		let instanceId = attributes.instanceId;
 
 		if (instanceId === undefined) {
 			// set default random id if not set
-			instanceId = parseInt(cryptoRandomString({ length: 4, type: "numeric" }));
+			instanceId = parseInt(cryptoRandomString({ length: 4, type: 'numeric' }));
 			setAttributes({ instanceId });
 		}
 
 		const tabs = this.getTabs();
 
-		const targetedBlock = select("core/block-editor").getBlocksByClientId(
-			clientId
-		)[0];
+		const targetedBlock =
+			select('core/block-editor').getBlocksByClientId(clientId)[0];
 
 		if (targetedBlock) {
-			targetedBlock.innerBlocks.forEach(function(block) {
+			targetedBlock.innerBlocks.forEach(function (block) {
 				if (block.attributes.tabActive !== tabActive) {
-					dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
-						tabActive
+					dispatch('core/block-editor').updateBlockAttributes(block.clientId, {
+						tabActive,
 					});
 				}
 			});
@@ -234,11 +225,11 @@ class Edit extends Component {
 				<BlockControls>
 					<AlignmentToolbar
 						value={textAlign}
-						onChange={value => setAttributes({ textAlign: value })}
+						onChange={(value) => setAttributes({ textAlign: value })}
 					/>
 					<VerticalAlignmentToolbar
 						value={verticalAlign}
-						onChange={value => {
+						onChange={(value) => {
 							setAttributes({ verticalAlign: value });
 						}}
 					/>
@@ -247,18 +238,18 @@ class Edit extends Component {
 				<Inspector {...this.props} />
 				<div
 					className={classnames(
-						applyFilters("c9-blocks.blocks.className", className),
-						"row"
+						applyFilters('c9-blocks.blocks.className', className),
+						'row'
 					)}
 					style={{
-						backgroundColor: blockBackgroundColor
+						backgroundColor: blockBackgroundColor,
 					}}
 					data-tab-active={tabActive}
 				>
 					<div className="col-xs-12 col-sm-3">
 						<div
 							className={classnames(
-								"nav flex-column nav-pills",
+								'nav flex-column nav-pills',
 								textAlign ? `text-${textAlign}` : null
 							)}
 							role="tablist"
@@ -268,25 +259,25 @@ class Edit extends Component {
 								const selected = tabActive === slug;
 
 								return (
-									<div className="c9-tab-admin-wrapper">
+									<div className="c9-tab-admin-wrapper" key={slug}>
 										<RichText
 											style={{
 												backgroundColor: tabBackgroundColor,
-												color: tabTextColor
+												color: tabTextColor,
 											}}
 											tagName="a"
 											data-toggle="pill"
 											role="tab"
 											href={`#vtab-${slug}-${instanceId}`}
 											className={classnames(
-												"nav-link",
-												selected ? "active" : ""
+												'nav-link',
+												selected ? 'active' : ''
 											)}
 											id={`tab-button-${slug}`}
-											placeholder={__("Tab label", "c9-blocks")}
+											placeholder={__('Tab label', 'c9-blocks')}
 											value={title}
 											unstableOnFocus={() => setAttributes({ tabActive: slug })}
-											onChange={value => {
+											onChange={(value) => {
 												if (tabs[i]) {
 													const newSlug = this.getUniqueSlug(value, tabs[i]);
 													const newTabsData = tabsData.map(
@@ -296,8 +287,8 @@ class Edit extends Component {
 																	...oldTabData,
 																	...{
 																		title: value,
-																		slug: newSlug
-																	}
+																		slug: newSlug,
+																	},
 																};
 															}
 
@@ -307,19 +298,19 @@ class Edit extends Component {
 
 													setAttributes({
 														tabActive: newSlug,
-														tabsData: newTabsData
+														tabsData: newTabsData,
 													});
 													updateBlockAttributes(tabs[i].clientId, {
-														slug: newSlug
+														slug: newSlug,
 													});
 												}
 											}}
-											allowedFormats={["bold", "italic", "strikethrough"]}
+											allowedFormats={['bold', 'italic', 'strikethrough']}
 											keepPlaceholderOnFocus
 										/>
 										<RemoveButton
 											show={isSelectedBlockInRoot}
-											tooltipText={__("Remove tab?", "c9-blocks")}
+											tooltipText={__('Remove tab?', 'c9-blocks')}
 											onRemove={() => {
 												if (1 >= block.innerBlocks.length) {
 													this.props.removeBlock(block.clientId);
@@ -331,7 +322,7 @@ class Edit extends Component {
 														newTabsData.splice(i, 1);
 
 														setAttributes({
-															tabsData: newTabsData
+															tabsData: newTabsData,
 														});
 													}
 												}
@@ -341,9 +332,9 @@ class Edit extends Component {
 								);
 							})}
 							{isSelectedBlockInRoot ? (
-								<Tooltip text={__("Add Tab", "c9-blocks")}>
+								<Tooltip text={__('Add Tab', 'c9-blocks')}>
 									<Button
-										icon={"insert"}
+										icon={'insert'}
 										onClick={() => {
 											const newTabsData = [];
 											const newDataLength = tabsData.length + 1;
@@ -354,7 +345,7 @@ class Edit extends Component {
 												} else {
 													newTabsData.push({
 														slug: `tab-${k + 1}`,
-														title: `Tab ${k + 1}`
+														title: `Tab ${k + 1}`,
 													});
 												}
 											}
@@ -364,24 +355,24 @@ class Edit extends Component {
 									/>
 								</Tooltip>
 							) : (
-								""
+								''
 							)}
 						</div>
 					</div>
 					<div className="col-xs-12 col-sm-9 c9-tabs-content-wrapper">
 						<div
 							className={classnames(
-								"c9-tabs-content tab-content",
+								'c9-tabs-content tab-content',
 								verticalAlign ? `align-self-${verticalAlign}` : null
 							)}
 							style={{
-								backgroundColor: tabContentBackgroundColor
+								backgroundColor: tabContentBackgroundColor,
 							}}
 						>
 							<InnerBlocks
 								template={this.getTabsTemplate(instanceId)}
 								templateLock="all"
-								allowedBlocks={["c9-blocks/vertical-tabs-tab"]}
+								allowedBlocks={['c9-blocks/vertical-tabs-tab']}
 							/>
 						</div>
 					</div>

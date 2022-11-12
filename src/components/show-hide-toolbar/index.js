@@ -9,17 +9,17 @@ const { ToolbarGroup, ToolbarButton } = wp.components;
  */
 const DEFAULT_DISPLAY_CONTROLS = [
 	{
-		icon: "smartphone",
-		title: __("Mobile", "c9-blocks")
+		icon: 'smartphone',
+		title: __('Mobile', 'c9-blocks'),
 	},
 	{
-		icon: "tablet",
-		title: __("Tablet", "c9-blocks")
+		icon: 'tablet',
+		title: __('Tablet', 'c9-blocks'),
 	},
 	{
-		icon: "desktop",
-		title: __("Desktop", "c9-blocks")
-	}
+		icon: 'desktop',
+		title: __('Desktop', 'c9-blocks'),
+	},
 ];
 
 /**
@@ -28,22 +28,23 @@ const DEFAULT_DISPLAY_CONTROLS = [
 export function ShowHideToolbar({
 	value,
 	onChange,
-	displayControls = DEFAULT_DISPLAY_CONTROLS
+	displayControls = DEFAULT_DISPLAY_CONTROLS,
 }) {
 	function applyOrUnset(display, i) {
 		return () => onChange(value[i] === display ? [false, i] : [display, i]);
 	}
 
 	return (
-		<ToolbarGroup
-			label={__("Change Show/Hide Settings", "c9-blocks")}
-		>
+		<ToolbarGroup label={__('Change Show/Hide Settings', 'c9-blocks')}>
 			{displayControls.map((control, i) => {
-				return <ToolbarButton
-					{...control}
-					isActive={value[i]}
-					onClick={applyOrUnset(true, i)}
-				/>
+				return (
+					<ToolbarButton
+						key={control.title}
+						{...control}
+						isActive={value[i]}
+						onClick={applyOrUnset(true, i)}
+					/>
+				);
 			})}
 		</ToolbarGroup>
 	);

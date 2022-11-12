@@ -1,4 +1,4 @@
-import VerticalAlignmentToolbar from "../../../components/vertical-alignment-toolbar";
+import VerticalAlignmentToolbar from '../../../components/vertical-alignment-toolbar';
 
 /**
  * WordPress dependencies
@@ -6,13 +6,8 @@ import VerticalAlignmentToolbar from "../../../components/vertical-alignment-too
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const {
-	BaseControl,
-	PanelBody,
-	RangeControl,
-	ToggleControl,
-	SelectControl
-} = wp.components;
+const { BaseControl, PanelBody, RangeControl, ToggleControl, SelectControl } =
+	wp.components;
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -36,7 +31,7 @@ export default class Inspector extends Component {
 			verticalAlign,
 			slideMaxHeight,
 			slideCustomHeight,
-			transitionType
+			transitionType,
 		} = attributes;
 
 		return (
@@ -44,17 +39,12 @@ export default class Inspector extends Component {
 				<BaseControl />
 				<PanelBody>
 					<RangeControl
-						label={__("Number of slides to produce", "c9-blocks")}
+						label={__('Number of slides to produce', 'c9-blocks')}
 						value={slides}
-						onChange={value => {
+						onChange={(value) => {
 							const { carouselRef, slideTarget } = this.props;
-							let {
-								url,
-								id,
-								link,
-								captionTitle,
-								captionContent
-							} = this.props.attributes;
+							let { url, id, link, captionTitle, captionContent } =
+								this.props.attributes;
 
 							const $ = window.jQuery;
 
@@ -85,7 +75,7 @@ export default class Inspector extends Component {
 								setAttributes({ id, url, link, captionTitle, captionContent });
 
 								if (carouselRef.current && 0 < slideTarget) {
-									$(carouselRef.current).carousel("prev");
+									$(carouselRef.current).carousel('prev');
 								}
 							}
 
@@ -94,36 +84,38 @@ export default class Inspector extends Component {
 						min={1}
 						max={20}
 						help={__(
-							"Note: Changing the slide count can cause loss of content.",
-							"c9-blocks"
+							'Note: Changing the slide count can cause loss of content.',
+							'c9-blocks'
 						)}
 					/>
 
 					<hr />
 
 					<SelectControl
-						label={__("Transition type", "c9-blocks")}
+						label={__('Transition type', 'c9-blocks')}
 						value={transitionType}
 						options={[
-							{ label: __("Slide", "c9-blocks"), value: "slide" },
-							{ label: __("Fade", "c9-blocks"), value: "fade" },
-							{ label: __("None", "c9-blocks"), value: "none" }
+							{ label: __('Slide', 'c9-blocks'), value: 'slide' },
+							{ label: __('Fade', 'c9-blocks'), value: 'fade' },
+							{ label: __('None', 'c9-blocks'), value: 'none' },
 						]}
-						onChange={transitionType => setAttributes({ transitionType })}
+						onChange={(transitionType) => setAttributes({ transitionType })}
 					/>
 
 					<hr />
 
 					<ToggleControl
-						label={__("Enable custom manual heights", "c9-blocks")}
+						label={__('Enable custom manual heights', 'c9-blocks')}
 						checked={slideCustomHeight}
-						onChange={slideCustomHeight => setAttributes({ slideCustomHeight })}
+						onChange={(slideCustomHeight) =>
+							setAttributes({ slideCustomHeight })
+						}
 					/>
 					{slideCustomHeight && (
 						<RangeControl
-							label={__("Height in pixels", "c9-blocks")}
+							label={__('Height in pixels', 'c9-blocks')}
 							value={slideMaxHeight}
-							onChange={slideMaxHeight => setAttributes({ slideMaxHeight })}
+							onChange={(slideMaxHeight) => setAttributes({ slideMaxHeight })}
 							min={0}
 							max={5000}
 						/>
@@ -136,45 +128,45 @@ export default class Inspector extends Component {
 					</p>
 					<VerticalAlignmentToolbar
 						value={verticalAlign}
-						onChange={value => {
+						onChange={(value) => {
 							setAttributes({ verticalAlign: value });
 						}}
 					/>
 
 					<ToggleControl
-						label={__("Wrap around", "c9-blocks")}
+						label={__('Wrap around', 'c9-blocks')}
 						checked={wrapAround}
-						onChange={wrapAround => setAttributes({ wrapAround })}
+						onChange={(wrapAround) => setAttributes({ wrapAround })}
 					/>
 					<ToggleControl
-						label={__("Enable auto slide", "c9-blocks")}
+						label={__('Enable auto slide', 'c9-blocks')}
 						checked={autoSlide}
-						onChange={autoSlide => setAttributes({ autoSlide })}
+						onChange={(autoSlide) => setAttributes({ autoSlide })}
 					/>
 					{autoSlide && (
 						<RangeControl
-							label={__("Time in between slides (ms)", "c9-blocks")}
+							label={__('Time in between slides (ms)', 'c9-blocks')}
 							value={slideTime}
-							onChange={slideTime => setAttributes({ slideTime })}
+							onChange={(slideTime) => setAttributes({ slideTime })}
 							min={0}
 							step={100}
 							max={100000}
 						/>
 					)}
 					<ToggleControl
-						label={__("Show controls", "c9-blocks")}
+						label={__('Show controls', 'c9-blocks')}
 						checked={showControls}
-						onChange={showControls => setAttributes({ showControls })}
+						onChange={(showControls) => setAttributes({ showControls })}
 					/>
 					<ToggleControl
-						label={__("Show indicators", "c9-blocks")}
+						label={__('Show indicators', 'c9-blocks')}
 						checked={showIndicators}
-						onChange={showIndicators => setAttributes({ showIndicators })}
+						onChange={(showIndicators) => setAttributes({ showIndicators })}
 					/>
 					<ToggleControl
-						label={__("Responsive image loading", "c9-blocks")}
+						label={__('Responsive image loading', 'c9-blocks')}
 						checked={isResponsive}
-						onChange={isResponsive => setAttributes({ isResponsive })}
+						onChange={(isResponsive) => setAttributes({ isResponsive })}
 					/>
 				</PanelBody>
 			</InspectorControls>

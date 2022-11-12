@@ -1,8 +1,7 @@
-
 /**
  * Internal dependencies
  */
-import ResizableContainer from "./components/resizable-container";
+import ResizableContainer from './components/resizable-container';
 
 /**
  * WordPress dependencies
@@ -13,7 +12,7 @@ const { InnerBlocks } = wp.blockEditor;
 /**
  * External dependencies
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export default class Save extends Component {
 	constructor() {
@@ -22,20 +21,25 @@ export default class Save extends Component {
 
 	render() {
 		const {
-			attributes: { columnsGap, responsiveToggle, flipColumnsMobile, columnMaxWidth }
+			attributes: {
+				columnsGap,
+				responsiveToggle,
+				flipColumnsMobile,
+				columnMaxWidth,
+			},
 		} = this.props;
 
 		return (
 			<ResizableContainer {...this.props}>
 				<div
 					className={classnames(
-						"c9-layout-column-wrap",
-						"c9-block-layout-column-gap-" + columnsGap,
-						responsiveToggle ? "c9-is-responsive-column" : null,
-						flipColumnsMobile ? "c9-mobile-flip" : null
+						'c9-layout-column-wrap',
+						'c9-block-layout-column-gap-' + columnsGap,
+						responsiveToggle ? 'c9-is-responsive-column' : null,
+						flipColumnsMobile ? 'c9-mobile-flip' : null
 					)}
 					style={{
-						maxWidth: columnMaxWidth ? columnMaxWidth : null
+						maxWidth: columnMaxWidth ? columnMaxWidth : null,
 					}}
 				>
 					<InnerBlocks.Content />

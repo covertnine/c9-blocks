@@ -3,12 +3,12 @@
  */
 const attributes = {
 	toggleCount: {
-		type: "number",
-		default: 2
+		type: 'number',
+		default: 2,
 	},
 	instanceId: {
-		type: "number"
-	}
+		type: 'number',
+	},
 };
 
 export default attributes;

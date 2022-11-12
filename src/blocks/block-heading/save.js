@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import CustomHeading from "./components/custom-heading";
+import CustomHeading from './components/custom-heading';
 
 /**
  * WordPress dependencies
@@ -12,7 +12,7 @@ const { RichText } = wp.blockEditor;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export default class Save extends Component {
 	constructor() {
@@ -30,8 +30,8 @@ export default class Save extends Component {
 	 * @return {string} Appropriate css class based on configuration.
 	 */
 	c9TextStyleConfig(type, display, tag, override) {
-		if (!override && "c9-txl display-" != type) {
-			return type.split(" ")[0];
+		if (!override && 'c9-txl display-' != type) {
+			return type.split(' ')[0];
 		} else if (0 == display) {
 			return `${type}${tag}`;
 		} else {
@@ -52,8 +52,8 @@ export default class Save extends Component {
 				displayLevel,
 				weight,
 				overrideStyle,
-				addSubheading
-			}
+				addSubheading,
+			},
 		} = this.props;
 
 		// Save the block markup for the front end
@@ -63,10 +63,10 @@ export default class Save extends Component {
 					tagName={`h${tagLevel}`}
 					className={classnames([
 						this.c9TextStyleConfig(type, displayLevel, tagLevel, overrideStyle),
-						weight ? `font-weight-${weight}` : null
+						weight ? `font-weight-${weight}` : null,
 					])}
 					style={{
-						color: textColor
+						color: textColor,
 					}}
 					value={heading}
 				/>
@@ -82,9 +82,9 @@ export default class Save extends Component {
 						})(type, displayLevel, tagLevel)}
 					>
 						<small className="text-muted" style={{ color: subTextColor }}>
-							{subheading.startsWith("&nbsp;")
+							{subheading.startsWith('&nbsp;')
 								? subheading
-								: "&nbsp;" + subheading}
+								: '&nbsp;' + subheading}
 						</small>
 					</div>
 				)}

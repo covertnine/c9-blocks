@@ -3,10 +3,10 @@
 /**
  * Internal dependencies
  */
-import Inspector from "./components/inspector";
-import PostGridImage from "./components/image";
-import WidthToolbar from "../../components/width-toolbar";
-import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
+import Inspector from './components/inspector';
+import PostGridImage from './components/image';
+import WidthToolbar from '../../components/width-toolbar';
+import VerticalAlignmentToolbar from '../../components/vertical-alignment-toolbar';
 
 /**
  * WordPress dependencies
@@ -21,10 +21,10 @@ const { applyFilters } = wp.hooks;
 /**
  * External dependencies
  */
-import classnames from "classnames";
-import { Markup } from "interweave";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
+import classnames from 'classnames';
+import { Markup } from 'interweave';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
 export default class Edit extends Component {
@@ -68,7 +68,7 @@ export default class Edit extends Component {
 		if (10 === alpha) {
 			opacity = 1;
 		} else {
-			opacity = "." + alpha;
+			opacity = '.' + alpha;
 		}
 
 		return `rgba(${r},${g},${b},${opacity})`;
@@ -101,14 +101,14 @@ export default class Edit extends Component {
 			classes.push(`p-${padding.top}`);
 		} else if (padding.top === padding.bottom && 0 <= padding.top) {
 			classes.push(`py-${padding.top}`);
-			assignSideClasses("pl", padding.left);
-			assignSideClasses("pr", padding.right);
+			assignSideClasses('pl', padding.left);
+			assignSideClasses('pr', padding.right);
 		} else if (padding.left === padding.right && 0 <= padding.left) {
 			classes.push(`px-${padding.left}`);
-			assignSideClasses("pt", padding.top);
-			assignSideClasses("pb", padding.bottom);
+			assignSideClasses('pt', padding.top);
+			assignSideClasses('pb', padding.bottom);
 		} else {
-			["top", "bottom", "left", "right"].map(s =>
+			['top', 'bottom', 'left', 'right'].map((s) =>
 				assignSideClasses(`p${s[0]}`, padding[s])
 			);
 		}
@@ -117,7 +117,7 @@ export default class Edit extends Component {
 		if (margin.top === margin.bottom && -1 != margin.top) {
 			classes.push(`my-${margin.top}`);
 		} else {
-			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+			['top', 'bottom'].map((s) => assignSideClasses(`m${s[0]}`, margin[s]));
 		}
 
 		return classes;
@@ -132,10 +132,7 @@ export default class Edit extends Component {
 	 * @return {string} Truncated version of post excerpt.
 	 */
 	truncate(str, noWords) {
-		return str
-			.split(" ")
-			.splice(0, noWords)
-			.join(" ");
+		return str.split(' ').splice(0, noWords).join(' ');
 	}
 
 	render() {
@@ -143,31 +140,26 @@ export default class Edit extends Component {
 			attributes,
 			setAttributes,
 			latestPosts,
-			className = ""
+			className = '',
 		} = this.props;
 
-		const {
-			bgColor,
-			bgOpacity,
-			bgMargin,
-			bgPadding,
-			disableToolbar
-		} = attributes;
+		const { bgColor, bgOpacity, bgMargin, bgPadding, disableToolbar } =
+			attributes;
 
 		// Check if there are posts
 		const hasPosts = Array.isArray(latestPosts) && latestPosts.length;
 
 		// Check the post type
-		const isPost = "post" === attributes.postType;
+		const isPost = 'post' === attributes.postType;
 
 		let currWidth;
 		if (0 != attributes.align.length) {
-			if ("container" == attributes.containerWidth) {
-				currWidth = "wide";
-			} else if ("container-fluid" == attributes.containerWidth) {
-				currWidth = "full";
+			if ('container' == attributes.containerWidth) {
+				currWidth = 'wide';
+			} else if ('container-fluid' == attributes.containerWidth) {
+				currWidth = 'full';
 			} else {
-				currWidth = "narrow";
+				currWidth = 'narrow';
 			}
 		}
 
@@ -177,12 +169,12 @@ export default class Edit extends Component {
 					<Inspector {...{ setAttributes, ...this.props }} />
 					<Placeholder
 						icon="admin-post"
-						label={__("C9 Blocks Post Grid", "c9-blocks")}
+						label={__('C9 Blocks Post Grid', 'c9-blocks')}
 					>
 						{!Array.isArray(latestPosts) ? (
 							<Spinner />
 						) : (
-							__("No posts found.", "c9-blocks")
+							__('No posts found.', 'c9-blocks')
 						)}
 					</Placeholder>
 				</Fragment>
@@ -198,31 +190,31 @@ export default class Edit extends Component {
 		// Add toolbar controls to change layout
 		const layoutControls = [
 			{
-				icon: "grid-view",
-				title: __("Grid View", "c9-blocks"),
-				onClick: () => setAttributes({ postLayout: "grid" }),
-				isActive: "grid" === attributes.postLayout
+				icon: 'grid-view',
+				title: __('Grid View', 'c9-blocks'),
+				onClick: () => setAttributes({ postLayout: 'grid' }),
+				isActive: 'grid' === attributes.postLayout,
 			},
 			{
-				icon: "list-view",
-				title: __("List View", "c9-blocks"),
-				onClick: () => setAttributes({ postLayout: "list" }),
-				isActive: "list" === attributes.postLayout
-			}
+				icon: 'list-view',
+				title: __('List View', 'c9-blocks'),
+				onClick: () => setAttributes({ postLayout: 'list' }),
+				isActive: 'list' === attributes.postLayout,
+			},
 		];
 
 		// Get the section tag
 		const SectionTag = attributes.sectionTag
 			? attributes.sectionTag
-			: "section";
+			: 'section';
 
 		// Get the section title tag
 		const SectionTitleTag = attributes.sectionTitleTag
 			? attributes.sectionTitleTag
-			: "h2";
+			: 'h2';
 
 		// Get the post title tag
-		const PostTag = attributes.postTitleTag ? attributes.postTitleTag : "h3";
+		const PostTag = attributes.postTitleTag ? attributes.postTitleTag : 'h3';
 
 		return (
 			<Fragment>
@@ -231,28 +223,28 @@ export default class Edit extends Component {
 					{!disableToolbar && (
 						<WidthToolbar
 							value={currWidth}
-							onChange={value => {
-								if ("wide" == value) {
-									setAttributes({ containerWidth: "container", align: "wide" });
-								} else if ("full" == value) {
+							onChange={(value) => {
+								if ('wide' == value) {
+									setAttributes({ containerWidth: 'container', align: 'wide' });
+								} else if ('full' == value) {
 									setAttributes({
-										containerWidth: "container-fluid",
-										align: "full"
+										containerWidth: 'container-fluid',
+										align: 'full',
 									});
-								} else if ("narrow" == value) {
+								} else if ('narrow' == value) {
 									setAttributes({
-										containerWidth: "container-narrow",
-										align: "narrow"
+										containerWidth: 'container-narrow',
+										align: 'narrow',
 									});
 								} else {
-									setAttributes({ containerWidth: "container", align: "" });
+									setAttributes({ containerWidth: 'container', align: '' });
 								}
 							}}
 						/>
 					)}
 					<VerticalAlignmentToolbar
 						value={attributes.verticalAlign}
-						onChange={value => {
+						onChange={(value) => {
 							setAttributes({ verticalAlign: value });
 						}}
 					/>
@@ -261,8 +253,8 @@ export default class Edit extends Component {
 				<SectionTag
 					style={this.c9BgStyles(bgColor, bgOpacity)}
 					className={classnames(
-						applyFilters("c9-blocks.blocks.className", className),
-						"c9-block-post-grid",
+						applyFilters('c9-blocks.blocks.className', className),
+						'c9-block-post-grid',
 						this.c9SpacingConfig(bgPadding, bgMargin)
 					)}
 				>
@@ -274,21 +266,21 @@ export default class Edit extends Component {
 
 					<div
 						className={classnames({
-							"is-grid": "grid" === attributes.postLayout,
-							"is-list": "list" === attributes.postLayout,
+							'is-grid': 'grid' === attributes.postLayout,
+							'is-list': 'list' === attributes.postLayout,
 							[`columns-${attributes.columns}`]:
-								"grid" === attributes.postLayout,
-							"c9-post-grid-items": "c9-post-grid-items"
+								'grid' === attributes.postLayout,
+							'c9-post-grid-items': 'c9-post-grid-items',
 						})}
 					>
 						{displayPosts.map((post, i) => (
 							<article
 								key={i}
-								id={"post-" + post.id}
+								id={'post-' + post.id}
 								className={classnames(
-									"post-" + post.id,
+									'post-' + post.id,
 									post.featured_image_src && attributes.displayPostImage
-										? "has-post-thumbnail"
+										? 'has-post-thumbnail'
 										: null
 								)}
 							>
@@ -297,7 +289,7 @@ export default class Edit extends Component {
 										{...this.props}
 										imgAlt={
 											decodeEntities(post.title.rendered.trim()) ||
-											__("(Untitled)", "c9-blocks")
+											__('(Untitled)', 'c9-blocks')
 										}
 										imgClass={`wp-image-${post.featured_media.toString()}`}
 										imgID={post.featured_media.toString()}
@@ -316,7 +308,7 @@ export default class Edit extends Component {
 													<Markup
 														content={
 															decodeEntities(post.title.rendered.trim()) ||
-															__("(Untitled)", "c9-blocks")
+															__('(Untitled)', 'c9-blocks')
 														}
 													/>
 												</a>
@@ -340,14 +332,12 @@ export default class Edit extends Component {
 
 												{attributes.displayPostDate && post.date_gmt && (
 													<time
-														dateTime={dayjs(post.date_gmt)
-															.utc()
-															.format()}
-														className={"c9-block-post-grid-date"}
+														dateTime={dayjs(post.date_gmt).utc().format()}
+														className={'c9-block-post-grid-date'}
 													>
 														{dayjs(post.date_gmt)
 															.local()
-															.format("MMMM DD, YYYY", "c9-blocks")}
+															.format('MMMM DD, YYYY', 'c9-blocks')}
 													</time>
 												)}
 											</div>
@@ -361,7 +351,7 @@ export default class Edit extends Component {
 													__html: this.truncate(
 														post.excerpt.rendered,
 														attributes.excerptLength
-													)
+													),
 												}}
 											/>
 										)}

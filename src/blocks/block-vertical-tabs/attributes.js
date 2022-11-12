@@ -3,43 +3,43 @@
  */
 const attributes = {
 	tabActive: {
-		type: "string",
-		default: "tab-1"
+		type: 'string',
+		default: 'tab-1',
 	},
 	tabsData: {
-		type: "array",
+		type: 'array',
 		default: [
 			{
-				slug: "tab-1",
-				title: "Tab 1"
+				slug: 'tab-1',
+				title: 'Tab 1',
 			},
 			{
-				slug: "tab-2",
-				title: "Tab 2"
-			}
-		]
+				slug: 'tab-2',
+				title: 'Tab 2',
+			},
+		],
 	},
 	instanceId: {
-		type: "number"
+		type: 'number',
 	},
 	tabBackgroundColor: {
-		type: "string"
+		type: 'string',
 	},
 	tabTextColor: {
-		type: "string"
+		type: 'string',
 	},
 	tabContentBackgroundColor: {
-		type: "string"
+		type: 'string',
 	},
 	blockBackgroundColor: {
-		type: "string"
+		type: 'string',
 	},
 	verticalAlign: {
-		type: "string"
+		type: 'string',
 	},
 	textAlign: {
-		type: "string"
-	}
+		type: 'string',
+	},
 };
 
 export default attributes;

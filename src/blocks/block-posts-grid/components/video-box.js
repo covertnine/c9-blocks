@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable jsx-a11y/media-has-caption */
 
 /**
@@ -8,7 +9,7 @@ const { Component } = wp.element;
 /**
  * External Dependencies.
  */
-import React from "react";
+import React from 'react';
 
 /**
  * Create an VideoBox Controls wrapper Component
@@ -21,7 +22,7 @@ export default class VideoBox extends Component {
 
 		const {
 			attributes: { containerVideoURL, preview, containerVideoID },
-			setAttributes
+			setAttributes,
 		} = this.props;
 
 		this.containerVideoURL = containerVideoURL;
@@ -51,21 +52,21 @@ export default class VideoBox extends Component {
 		let loadYT = window.YT;
 
 		if (!loadYT) {
-			loadYT = new Promise(resolve => {
-				const tag = document.createElement("script");
-				tag.src = "https://www.youtube.com/player_api";
-				const firstScriptTag = document.getElementsByTagName("script")[0];
+			loadYT = new Promise((resolve) => {
+				const tag = document.createElement('script');
+				tag.src = 'https://www.youtube.com/player_api';
+				const firstScriptTag = document.getElementsByTagName('script')[0];
 				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 				window.onYouTubeIframeAPIReady = () => resolve(window.YT);
 			});
-			loadYT.then(YT => {
+			loadYT.then((YT) => {
 				let player = new YT.Player(`player-${videoID}-${instanceId}`, {
 					playerVars: {
 						autoplay: 1,
 						controls: 0,
 						disablekb: 0,
 						autohide: 1,
-						wmode: "opaque",
+						wmode: 'opaque',
 						hd: 1,
 						enablejsapi: 1,
 						loop: 1,
@@ -74,12 +75,12 @@ export default class VideoBox extends Component {
 						iv_load_policy: 3,
 						rel: 0,
 						modestbranding: 1,
-						playlist: videoID
+						playlist: videoID,
 					},
 					videoId: videoID,
 					events: {
-						onReady: this.onPlayerReady
-					}
+						onReady: this.onPlayerReady,
+					},
 				});
 				this.setAttributes({ preview: player });
 				this.preview = player;
@@ -91,7 +92,7 @@ export default class VideoBox extends Component {
 					controls: 0,
 					disablekb: 0,
 					autohide: 1,
-					wmode: "opaque",
+					wmode: 'opaque',
 					hd: 1,
 					enablejsapi: 1,
 					loop: 1,
@@ -100,12 +101,12 @@ export default class VideoBox extends Component {
 					iv_load_policy: 3,
 					rel: 0,
 					modestbranding: 1,
-					playlist: videoID
+					playlist: videoID,
 				},
 				videoId: videoID,
 				events: {
-					onReady: this.onPlayerReady
-				}
+					onReady: this.onPlayerReady,
+				},
 			});
 
 			this.setAttributes({ preview: player });
@@ -139,8 +140,8 @@ export default class VideoBox extends Component {
 				videoType,
 				containerVideoURL,
 				containerVideoID,
-				instanceId
-			}
+				instanceId,
+			},
 		} = this.props;
 
 		const c9VideoStyles = (videoType, containerVideoURL, minScreenHeight) => {
@@ -150,7 +151,7 @@ export default class VideoBox extends Component {
 			return styles;
 		};
 
-		if (containerVideoURL && "upload" == videoType) {
+		if (containerVideoURL && 'upload' == videoType) {
 			return (
 				<div
 					className="c9-video-container d-none d-sm-block"

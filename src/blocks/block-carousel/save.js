@@ -1,9 +1,9 @@
-import ResizableCarouselContainer from "./components/resizable-carousel-container";
+import ResizableCarouselContainer from './components/resizable-carousel-container';
 
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 /**
  * WordPress dependencies
@@ -31,7 +31,7 @@ export default class Save extends Component {
 				<li
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
-					className={0 === i ? "active" : null}
+					className={0 === i ? 'active' : null}
 				/>
 			);
 		}
@@ -40,13 +40,8 @@ export default class Save extends Component {
 	}
 
 	render() {
-		const {
-			showIndicators,
-			slides,
-			showControls,
-			instanceId,
-			verticalAlign,
-		} = this.props.attributes;
+		const { showIndicators, slides, showControls, instanceId, verticalAlign } =
+			this.props.attributes;
 
 		return (
 			<ResizableCarouselContainer {...this.props}>
@@ -57,8 +52,8 @@ export default class Save extends Component {
 				)}
 				<div
 					className={classnames(
-						"carousel-inner",
-						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+						'carousel-inner',
+						verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
 					)}
 				>
 					<InnerBlocks.Content />

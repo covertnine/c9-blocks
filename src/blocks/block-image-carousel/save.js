@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 
-import ResizableCarouselContainer from "./components/resizable-carousel-container";
+import ResizableCarouselContainer from './components/resizable-carousel-container';
 
 /**
  * WordPress dependencies
@@ -11,8 +11,8 @@ const { RichText } = wp.blockEditor;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
-import isEmpty from "lodash/isEmpty";
+import classnames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
 
 export default class Save extends Component {
 	constructor() {
@@ -34,7 +34,7 @@ export default class Save extends Component {
 				<li
 					data-target={`#c9-image-carousel-indicator-${id}`}
 					data-slide-to={i}
-					className={0 == i ? "active" : null}
+					className={0 == i ? 'active' : null}
 				/>
 			);
 		}
@@ -54,7 +54,7 @@ export default class Save extends Component {
 			rel,
 			captionTitle,
 			captionContent,
-			isResponsive
+			isResponsive,
 		} = this.props.attributes;
 
 		const newRel = isEmpty(rel) ? undefined : rel;
@@ -70,19 +70,19 @@ export default class Save extends Component {
 				: Fragment;
 
 			template.push(
-				<div className={classnames("carousel-item", 0 == i ? "active" : null)}>
+				<div className={classnames('carousel-item', 0 == i ? 'active' : null)}>
 					<Wrapper>
 						{url[i] && (
 							<img
 								src={url[i]}
 								className={classnames(
-									"d-block w-100",
+									'd-block w-100',
 									isResponsive && id[i] ? `wp-image-${id[i]}` : null
 								)}
 							/>
 						)}
 						{(captionTitle[i] || captionContent[i]) && (
-							<div className={classnames("carousel-caption d-none d-md-block")}>
+							<div className={classnames('carousel-caption d-none d-md-block')}>
 								{captionTitle[i] && (
 									<RichText.Content tagName="h5" value={captionTitle[i]} />
 								)}
@@ -100,13 +100,8 @@ export default class Save extends Component {
 	}
 
 	render() {
-		const {
-			showIndicators,
-			slides,
-			showControls,
-			instanceId,
-			verticalAlign
-		} = this.props.attributes;
+		const { showIndicators, slides, showControls, instanceId, verticalAlign } =
+			this.props.attributes;
 
 		return (
 			<ResizableCarouselContainer {...this.props}>
@@ -117,8 +112,8 @@ export default class Save extends Component {
 				)}
 				<div
 					className={classnames(
-						"carousel-inner",
-						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+						'carousel-inner',
+						verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
 					)}
 				>
 					{this.createSlides(slides)}

@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import icons from "../../../../assets/c9-vertical-alignment-icons";
+import icons from '../../../../assets/c9-vertical-alignment-icons';
 
 /**
  * WordPress dependencies
@@ -15,19 +15,19 @@ const { ToolbarGroup, ToolbarButton } = wp.components;
 const DEFAULT_ALIGN_CONTROLS = [
 	{
 		icon: icons.top,
-		title: __("Vertical Align Top", "c9-blocks"),
-		align: "start"
+		title: __('Vertical Align Top', 'c9-blocks'),
+		align: 'start',
 	},
 	{
 		icon: icons.center,
-		title: __("Vertical Align Middle", "c9-blocks"),
-		align: "center"
+		title: __('Vertical Align Middle', 'c9-blocks'),
+		align: 'center',
 	},
 	{
 		icon: icons.bottom,
-		title: __("Vertical Align Bottom", "c9-blocks"),
-		align: "end"
-	}
+		title: __('Vertical Align Bottom', 'c9-blocks'),
+		align: 'end',
+	},
 ];
 
 /**
@@ -36,23 +36,24 @@ const DEFAULT_ALIGN_CONTROLS = [
 export function VerticalAlignmentToolbar({
 	value,
 	onChange,
-	alignControls = DEFAULT_ALIGN_CONTROLS
+	alignControls = DEFAULT_ALIGN_CONTROLS,
 }) {
 	function applyOrUnset(align) {
 		return () => onChange(value === align ? undefined : align);
 	}
 
 	return (
-		<ToolbarGroup
-			label={__("Change Vertical Alignment", "c9-blocks")}
-		>
-			{alignControls.map(control => {
+		<ToolbarGroup label={__('Change Vertical Alignment', 'c9-blocks')}>
+			{alignControls.map((control) => {
 				const { align } = control;
-				return <ToolbarButton
-					{...control}
-					isActive={value === align}
-					onClick={applyOrUnset(align)}
-				/>
+				return (
+					<ToolbarButton
+						key={control.title}
+						{...control}
+						isActive={value === align}
+						onClick={applyOrUnset(align)}
+					/>
+				);
 			})}
 		</ToolbarGroup>
 	);

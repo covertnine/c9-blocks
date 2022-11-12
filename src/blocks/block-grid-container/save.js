@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import ResizableContainer from "./components/resizable-container";
+import ResizableContainer from './components/resizable-container';
 
 /**
  * WordPress dependencies

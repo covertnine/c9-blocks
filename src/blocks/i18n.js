@@ -1,1 +1,1 @@
-wp.i18n.setLocaleData({ "": {} }, "c9-blocks");
+wp.i18n.setLocaleData({ '': {} }, 'c9-blocks');

@@ -1,30 +1,30 @@
-import SaveDeprecatedV1 from "./1.0/save.deprecated";
-import SaveDeprecatedV2 from "./2.0/save.deprecated";
-import attributes from "../attributes";
+import SaveDeprecatedV1 from './1.0/save.deprecated';
+import SaveDeprecatedV2 from './2.0/save.deprecated';
+import attributes from '../attributes';
 
 const Deprecated = [
 	{
 		attributes: {
 			...attributes,
 			slideMaxHeight: {
-				type: "number",
-				default: -1
+				type: 'number',
+				default: -1,
 			},
 			slideEqualHeight: {
-				type: "boolean",
-				default: false
-			}
+				type: 'boolean',
+				default: false,
+			},
 		},
-		save: props => {
+		save: (props) => {
 			return <SaveDeprecatedV1 {...props} />;
-		}
+		},
 	},
 	{
 		attributes,
-		save: props => {
+		save: (props) => {
 			return <SaveDeprecatedV2 {...props} />;
-		}
-	}
+		},
+	},
 ];
 
 export default Deprecated;

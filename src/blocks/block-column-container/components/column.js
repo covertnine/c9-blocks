@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import VerticalAlignmentToolbar from "../../../components/vertical-alignment-toolbar";
-import classnames from "classnames";
+import VerticalAlignmentToolbar from '../../../components/vertical-alignment-toolbar';
+import classnames from 'classnames';
 // import HideWhenChildBlocks from './hide-when-child-blocks';
 // InnerBlocks.HideWhenChildBlocks = HideWhenChildBlocks;
 
@@ -22,28 +22,28 @@ const { applyFilters } = wp.hooks;
 /**
  * Create a Column wrapper Component
  */
-const Column = props => {
+const Column = (props) => {
 	const {
 		attributes: { textAlign, verticalAlign },
 		setAttributes,
 		className,
 		block,
 		hasChildBlocks,
-		updateBlockAttributes
+		updateBlockAttributes,
 	} = props;
 
 	const ALLOWED_BLOCKS = getBlockTypes()
-		.map(block => block.name)
+		.map((block) => block.name)
 		.filter(
-			name => "c9-blocks/grid" != name && "c9-blocks/column-container" != name
+			(name) => 'c9-blocks/grid' != name && 'c9-blocks/column-container' != name
 		);
 
 	// Disable width toolbars for children when inside this block.
-	const disableToolbarTraversal = root => {
+	const disableToolbarTraversal = (root) => {
 		if (root) {
 			if (
-				("c9-blocks/cta" === root.name ||
-					"c9-blocks/post-grid" === root.name) &&
+				('c9-blocks/cta' === root.name ||
+					'c9-blocks/post-grid' === root.name) &&
 				!root.attributes.disableToolbar
 			) {
 				updateBlockAttributes(root.clientId, { disableToolbar: true });
@@ -64,11 +64,11 @@ const Column = props => {
 			<BlockControls>
 				<AlignmentToolbar
 					value={textAlign}
-					onChange={value => setAttributes({ textAlign: value })}
+					onChange={(value) => setAttributes({ textAlign: value })}
 				/>
 				<VerticalAlignmentToolbar
 					value={verticalAlign}
-					onChange={value => {
+					onChange={(value) => {
 						setAttributes({ verticalAlign: value });
 					}}
 				/>
@@ -76,10 +76,10 @@ const Column = props => {
 			<div
 				className={classnames(
 					className,
-					"c9-block-layout-column",
-					"c9-column",
+					'c9-block-layout-column',
+					'c9-column',
 					textAlign ? `text-${textAlign}` : null,
-					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+					verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
 				)}
 			>
 				<div className="c9-column-innner">
@@ -98,12 +98,12 @@ const Column = props => {
 	);
 };
 
-registerBlockType("c9-blocks/column", {
-	title: __("Column", "c9-blocks"),
+registerBlockType('c9-blocks/column', {
+	title: __('Column', 'c9-blocks'),
 
-	category: "common",
+	category: 'common',
 
-	parent: ["c9-blocks/column-container"],
+	parent: ['c9-blocks/column-container'],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -115,17 +115,17 @@ registerBlockType("c9-blocks/column", {
 	supports: {
 		inserter: false,
 		className: false,
-		reusable: false
+		reusable: false,
 	},
 
 	attributes: {
 		textAlign: {
-			type: "string",
-			default: "left"
+			type: 'string',
+			default: 'left',
 		},
 		verticalAlign: {
-			type: "string"
-		}
+			type: 'string',
+		},
 	},
 
 	edit: compose([
@@ -134,8 +134,8 @@ registerBlockType("c9-blocks/column", {
 				getBlock,
 				isBlockSelected,
 				hasSelectedInnerBlock,
-				getBlockOrder
-			} = select("core/block-editor");
+				getBlockOrder,
+			} = select('core/block-editor');
 
 			const { clientId } = ownProps;
 
@@ -143,32 +143,31 @@ registerBlockType("c9-blocks/column", {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
-				hasChildBlocks: 0 < getBlockOrder(clientId).length
+				hasChildBlocks: 0 < getBlockOrder(clientId).length,
 			};
 		}),
-		withDispatch(dispatch => {
-			const { updateBlockAttributes, removeBlock } = dispatch(
-				"core/block-editor"
-			);
+		withDispatch((dispatch) => {
+			const { updateBlockAttributes, removeBlock } =
+				dispatch('core/block-editor');
 
 			return {
 				updateBlockAttributes,
-				removeBlock
+				removeBlock,
 			};
-		})
+		}),
 	])(Column),
 
-	save: props => {
+	save: (props) => {
 		const {
-			attributes: { textAlign, verticalAlign }
+			attributes: { textAlign, verticalAlign },
 		} = props;
 
 		const extraProps = useBlockProps
 			? useBlockProps.save()
 			: applyFilters(
-					"blocks.getSaveContent.extraProps",
+					'blocks.getSaveContent.extraProps',
 					props,
-					getBlockType("c9-blocks/column"),
+					getBlockType('c9-blocks/column'),
 					props.attributes
 			  );
 
@@ -176,10 +175,10 @@ registerBlockType("c9-blocks/column", {
 			<div
 				{...extraProps}
 				className={classnames(
-					"c9-block-layout-column",
-					"c9-column",
+					'c9-block-layout-column',
+					'c9-column',
 					textAlign ? `text-${textAlign}` : null,
-					verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+					verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
 				)}
 			>
 				<div className="c9-column-innner">
@@ -187,23 +186,23 @@ registerBlockType("c9-blocks/column", {
 				</div>
 			</div>
 		);
-	}
+	},
 });
 
 /* Add the vertical column alignment class to the block wrapper. */
 const withClientIdClassName = wp.compose.createHigherOrderComponent(
-	BlockListBlock => {
-		return props => {
+	(BlockListBlock) => {
+		const VerticalAlignHOC = (props) => {
 			const blockName = props.block.name;
 
-			if ("c9-blocks/column" === blockName) {
+			if ('c9-blocks/column' === blockName) {
 				return (
 					<BlockListBlock
 						{...props}
 						className={
 							props.attributes.verticalAlign
-								? "c9-is-vertically-aligned-" + props.attributes.verticalAlign
-								: "c9-is-vertically-aligned-top"
+								? 'c9-is-vertically-aligned-' + props.attributes.verticalAlign
+								: 'c9-is-vertically-aligned-top'
 						}
 					/>
 				);
@@ -211,12 +210,14 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 				return <BlockListBlock {...props} />;
 			}
 		};
+
+		return VerticalAlignHOC;
 	},
-	"withClientIdClassName"
+	'withClientIdClassName'
 );
 
 wp.hooks.addFilter(
-	"editor.BlockListBlock",
-	"c9-blocks/add-vertical-align-class",
+	'editor.BlockListBlock',
+	'c9-blocks/add-vertical-align-class',
 	withClientIdClassName
 );

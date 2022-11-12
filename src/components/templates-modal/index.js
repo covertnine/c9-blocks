@@ -1,23 +1,22 @@
 /**
  * Internal dependencies
  */
-import startCase from "lodash/startCase";
-import LayoutButton from "./page-layout-button";
-import SectionButton from "./section-button";
-import ReusableButton from "./reusable-button";
-import SectionTemplates from "./section-templates/section-templates";
-import PageTemplates from "./page-templates/page-templates";
-import PageTypes from "./page-templates/page-types";
-import LargeModal from "../large-modal";
-import icons from "../../../assets/sidebar-icons";
-import PreviewPanel from "../preview-panel";
+import startCase from 'lodash/startCase';
+import LayoutButton from './page-layout-button';
+import SectionButton from './section-button';
+import ReusableButton from './reusable-button';
+import SectionTemplates from './section-templates/section-templates';
+import PageTemplates from './page-templates/page-templates';
+import PageTypes from './page-templates/page-types';
+import LargeModal from '../large-modal';
+import PreviewPanel from '../preview-panel';
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { TabPanel, Tooltip, Icon, Spinner } = wp.components;
+const { TabPanel, Tooltip, Spinner } = wp.components;
 const { compose } = wp.compose;
 const { withDispatch, withSelect } = wp.data;
 const { rawHandler, getBlockType } = wp.blocks;
@@ -40,9 +39,9 @@ class TemplatesModal extends Component {
 			hoveredItem: null,
 			PageTypes,
 			loading: true,
-			updateState: "",
+			updateState: '',
 			tuts: [],
-			reusableTemplates: null
+			reusableTemplates: null,
 		};
 
 		this.getTuts();
@@ -62,7 +61,7 @@ class TemplatesModal extends Component {
 				// define section and layout templates
 				const sections = {
 					// convert markup to actual blocks
-					...self.markupToBlock(SectionTemplates, canUserUseUnfilteredHTML)
+					...self.markupToBlock(SectionTemplates, canUserUseUnfilteredHTML),
 				};
 
 				self.setState({ sections });
@@ -70,7 +69,7 @@ class TemplatesModal extends Component {
 
 				const layouts = {
 					// convert markup to actual blocks
-					...self.markupToBlock(PageTemplates, canUserUseUnfilteredHTML)
+					...self.markupToBlock(PageTemplates, canUserUseUnfilteredHTML),
 				};
 
 				self.setState({ layouts, loading: false });
@@ -87,39 +86,39 @@ class TemplatesModal extends Component {
 
 		const postType = await apiFetch({ path: `/wp/v2/types/wp_block` });
 		const reusables = await apiFetch({
-			path: `/wp/v2/${postType.rest_base}/?per_page=-1`
+			path: `/wp/v2/${postType.rest_base}/?per_page=-1`,
 		});
 
 		// Add Reusable Markup to Templates array to add block
-		const reusableTemplates = reusables.map(item => {
+		const reusableTemplates = reusables.map((item) => {
 			return item.content.raw;
 		});
 
-		const blocks = reusables.map(item => {
+		const blocks = reusables.map((item) => {
 			return {
 				name: item.title.raw,
 				content: rawHandler({
 					HTML: item.content.raw,
-					mode: "BLOCKS",
-					canUserUseUnfilteredHTML
-				})
+					mode: 'BLOCKS',
+					canUserUseUnfilteredHTML,
+				}),
 			};
 		});
 
 		this.setState({
 			reusables: blocks,
-			reusableTemplates
+			reusableTemplates,
 		});
 	}
 
 	async getTuts() {
 		// tuts endpoint created in init.php
 		const tuts = await apiFetch({
-			path: "c9-blocks/v1/tuts"
+			path: 'c9-blocks/v1/tuts',
 		});
 
 		this.setState({
-			tuts
+			tuts,
 		});
 	}
 
@@ -137,8 +136,8 @@ class TemplatesModal extends Component {
 		for (let key of Object.keys(blockObj)) {
 			blockObj[key] = rawHandler({
 				HTML: blockObj[key].markup,
-				mode: "BLOCKS",
-				canUserUseUnfilteredHTML
+				mode: 'BLOCKS',
+				canUserUseUnfilteredHTML,
 			});
 		}
 
@@ -159,7 +158,7 @@ class TemplatesModal extends Component {
 		const updateBar = (
 			<div
 				className={
-					"c9-notice components-notice is-success is-dismissible " + updateState
+					'c9-notice components-notice is-success is-dismissible ' + updateState
 				}
 			>
 				<div className="components-notice__content">Updating</div>
@@ -186,34 +185,35 @@ class TemplatesModal extends Component {
 			);
 		};
 
-		const onHover = item => {
+		const onHover = (item) => {
 			// console.log(item);
 			this.setState({ hoveredItem: item });
 		};
 
 		// convert above to React DOM elements
-		const sectionItems = Object.keys(sections).map(k => {
+		const sectionItems = Object.keys(sections).map((k) => {
 			return (
 				<SectionButton
+					key={SectionTemplates[k].title}
 					onHover={onHover}
 					open={() => {
-						this.setUpdateState("updating");
+						this.setUpdateState('updating');
 					}}
 					close={() => {
 						const { sections } = this.state;
 						sections[k] = rawHandler({
 							HTML: SectionTemplates[k].markup,
-							mode: "BLOCKS",
-							canUserUseUnfilteredHTML
+							mode: 'BLOCKS',
+							canUserUseUnfilteredHTML,
 						});
 						this.setState({ sections });
-						this.setUpdateState("updated");
+						this.setUpdateState('updated');
 					}}
 					icon={SectionTemplates[k].icon}
 					preview={SectionTemplates[k].preview}
 					label={__(
-						startCase(SectionTemplates[k].title).replace("Plus", "+"),
-						"c9-blocks"
+						startCase(SectionTemplates[k].title).replace('Plus', '+'),
+						'c9-blocks'
 					)}
 					description={SectionTemplates[k].description}
 					section={sections[k]}
@@ -224,34 +224,35 @@ class TemplatesModal extends Component {
 		const pageTypes = [];
 
 		// Build out the whole pagetypes thing with headings mixed in
-		Object.keys(PageTypes).forEach(type => {
-			const layoutsByType = Object.keys(PageTemplates).filter(k => {
+		Object.keys(PageTypes).forEach((type) => {
+			const layoutsByType = Object.keys(PageTemplates).filter((k) => {
 				return PageTemplates[k].type === type;
 			});
 
-			const layoutItems = layoutsByType.map(name => {
+			const layoutItems = layoutsByType.map((name) => {
 				return (
 					<LayoutButton
+						key={name}
 						onHover={onHover}
 						open={() => {
-							this.setUpdateState("updating");
+							this.setUpdateState('updating');
 						}}
 						close={() => {
 							const { layouts } = this.state;
 							layouts[name] = rawHandler({
 								HTML: PageTemplates[name].markup,
-								mode: "BLOCKS",
-								canUserUseUnfilteredHTML
+								mode: 'BLOCKS',
+								canUserUseUnfilteredHTML,
 							});
 
 							this.setState({ layouts });
-							this.setUpdateState("updated");
+							this.setUpdateState('updated');
 						}}
 						icon={PageTemplates[name].icon}
 						preview={PageTemplates[name].preview}
 						label={__(
-							startCase(PageTemplates[name].title).replace("Plus", "+"),
-							"c9-blocks"
+							startCase(PageTemplates[name].title).replace('Plus', '+'),
+							'c9-blocks'
 						)}
 						layout={layouts[name]}
 						description={PageTemplates[name].description}
@@ -273,52 +274,54 @@ class TemplatesModal extends Component {
 					className="c9-template-tabs c9-component-modal-tab-panel"
 					tabs={[
 						{
-							name: "page-templates",
+							name: 'page-templates',
 							title: (
 								<Tooltip
-									text={__("Pre-designed ready to use pages.", "c9-blocks")}
+									text={__('Pre-designed ready to use pages.', 'c9-blocks')}
 								>
-									<span>{__("Pages")}</span>
+									<span>{__('Pages')}</span>
 								</Tooltip>
 							),
-							className: "c9-template-tabs-tab"
+							className: 'c9-template-tabs-tab',
 						},
 						{
-							name: "section-templates",
+							name: 'section-templates',
 							title: (
 								<Tooltip
 									text={__(
-										"Simple sections to construct your page.",
-										"c9-blocks"
+										'Simple sections to construct your page.',
+										'c9-blocks'
 									)}
 								>
-									<span>{__("Sections")}</span>
+									<span>{__('Sections')}</span>
 								</Tooltip>
 							),
-							className: "c9-template-tabs-tab"
+							className: 'c9-template-tabs-tab',
 						},
 						{
-							name: "saved-blocks",
+							name: 'saved-blocks',
 							title: (
-								<Tooltip text={__("Saved Block Templates By User.", "c9-blocks")}>
-									<span>{__("Saved")}</span>
+								<Tooltip
+									text={__('Saved Block Templates By User.', 'c9-blocks')}
+								>
+									<span>{__('Saved')}</span>
 								</Tooltip>
 							),
-							className: "c9-template-tabs-tab"
+							className: 'c9-template-tabs-tab',
 						},
 						{
-							name: "tutorial",
+							name: 'tutorial',
 							title: (
-								<Tooltip text={__("How To's", "c9-blocks")}>
-									<span>{__("Tutorials")}</span>
+								<Tooltip text={__("How To's", 'c9-blocks')}>
+									<span>{__('Tutorials')}</span>
 								</Tooltip>
 							),
-							className: "c9-template-tabs-tab"
-						}
+							className: 'c9-template-tabs-tab',
+						},
 					]}
 					initialTabName={this.props.initial}
 				>
-					{tab => {
+					{(tab) => {
 						if (loading) {
 							return (
 								<div className="c9-loading-wrapper">
@@ -328,19 +331,23 @@ class TemplatesModal extends Component {
 						}
 
 						switch (tab.name) {
-							case "section-templates":
+							case 'section-templates':
 								return (
 									<Fragment>
 										{updateBar}
 										{hoveredItem && <PreviewPanel item={hoveredItem} />}
 										<div className="c9-type-heading">
-											<h2>{__("Section Templates")}</h2>
-											<p>{__("Build a page for a specific audience one section at a time. Start with each section's goal, whether to inform, convince, watch, or browse your content.")}</p>
+											<h2>{__('Section Templates')}</h2>
+											<p>
+												{__(
+													"Build a page for a specific audience one section at a time. Start with each section's goal, whether to inform, convince, watch, or browse your content."
+												)}
+											</p>
 										</div>
 										<div className="c9-section-options">{sectionItems}</div>
 									</Fragment>
 								);
-							case "page-templates":
+							case 'page-templates':
 								return (
 									<Fragment>
 										{updateBar}
@@ -348,45 +355,49 @@ class TemplatesModal extends Component {
 										<div className="c9-page-options">{pageTypes}</div>
 									</Fragment>
 								);
-							case "saved-blocks":
+							case 'saved-blocks':
 								return (
 									<Fragment>
 										{updateBar}
 										{hoveredItem && <PreviewPanel item={hoveredItem} />}
 										<div
 											className={
-												"c9-reusable-options " +
-												(BlockPreview ? "c9-preview-enabled" : "")
+												'c9-reusable-options ' +
+												(BlockPreview ? 'c9-preview-enabled' : '')
 											}
 										>
 											<div className="c9-reusable-list-container">
 												<div className="c9-reusable-list">
 													{this.state.reusables.map((obj, index) => {
 														try {
-															const blockType = getBlockType(obj.content[0].name);
+															const blockType = getBlockType(
+																obj.content[0].name
+															);
 															return (
 																<ReusableButton
 																	icon={blockType.icon}
-																	label={__(obj.name, "c9-blocks")}
+																	label={__(obj.name, 'c9-blocks')}
 																	reusable={obj.content}
 																	open={() => {
-																		this.setUpdateState("updating");
+																		this.setUpdateState('updating');
 																	}}
 																	close={() => {
 																		const { reusables } = this.state;
 																		reusables[index].content = rawHandler({
 																			HTML: this.state.reusableTemplates[index],
-																			mode: "BLOCKS",
-																			canUserUseUnfilteredHTML
+																			mode: 'BLOCKS',
+																			canUserUseUnfilteredHTML,
 																		});
 																		this.setState({ reusables });
-																		this.setUpdateState("updated");
+																		this.setUpdateState('updated');
 																	}}
 																	onHover={onHover}
 																/>
 															);
 														} catch (error) {
-															console.warn(`Invalid reusable block detected: ${obj} at index ${index}`);
+															console.warn(
+																`Invalid reusable block detected: ${obj} at index ${index}`
+															);
 															return null;
 														}
 													})}
@@ -401,13 +412,14 @@ class TemplatesModal extends Component {
 										</div>
 									</Fragment>
 								);
-							case "tutorial":
+							case 'tutorial':
 								return (
 									<Fragment>
 										<div className="c9-tutorials">
-											{this.state.tuts.map(tut => {
+											{this.state.tuts.map((tut) => {
 												return (
 													<TutButton
+														key={tut.link}
 														title={tut.title.rendered}
 														url={tut.link}
 														imgUrl={tut.c9_feat_img_url}
@@ -417,7 +429,7 @@ class TemplatesModal extends Component {
 										</div>
 									</Fragment>
 								);
-							case "clear-page":
+							case 'clear-page':
 								resetBlocks([]);
 								return (
 									<div className="c9-page-cleared">
@@ -428,9 +440,10 @@ class TemplatesModal extends Component {
 								return (
 									<Fragment>
 										<div className="c9-tutorials">
-											{this.state.tuts.map(tut => {
+											{this.state.tuts.map((tut) => {
 												return (
 													<TutButton
+														key={tut.link}
 														title={tut.title.rendered}
 														url={tut.link}
 														imgUrl={tut.c9_feat_img_url}
@@ -450,20 +463,20 @@ class TemplatesModal extends Component {
 
 const TemplatesModalWithSelect = compose([
 	withSelect((select, { clientId }) => {
-		const { canUserUseUnfilteredHTML } = select("core/editor");
-		const { getBlock } = select("core/block-editor");
+		const { canUserUseUnfilteredHTML } = select('core/editor');
+		const { getBlock } = select('core/block-editor');
 		const block = getBlock(clientId);
 		return {
 			block,
-			canUserUseUnfilteredHTML: canUserUseUnfilteredHTML()
+			canUserUseUnfilteredHTML: canUserUseUnfilteredHTML(),
 		};
 	}),
-	withDispatch(dispatch => {
-		const { resetBlocks } = dispatch("core/block-editor");
+	withDispatch((dispatch) => {
+		const { resetBlocks } = dispatch('core/block-editor');
 		return {
-			resetBlocks
+			resetBlocks,
 		};
-	})
+	}),
 ])(TemplatesModal);
 
 export { TemplatesModalWithSelect as TemplatesModal };

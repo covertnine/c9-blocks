@@ -4,7 +4,6 @@
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
 const { Component } = wp.element;
 const { ToggleControl } = wp.components;
 const { withDispatch } = wp.data;
@@ -15,7 +14,7 @@ class YoutubeAPIToggle extends Component {
 		this.saveConfig = this.saveConfig.bind(this);
 		this.state = {
 			isSaving: false,
-			youtubeAPIDisabled: c9_blocks_params.disable_youtube_api === "true"
+			youtubeAPIDisabled: c9_blocks_params.disable_youtube_api === 'true',
 		};
 	}
 
@@ -26,10 +25,10 @@ class YoutubeAPIToggle extends Component {
 		if (false === this.state.isSaving) {
 			this.setState({ isSaving: true });
 			const settingModel = new wp.api.models.Settings({
-				c9_blocks_disable_youtube_api: JSON.stringify(value)
+				c9_blocks_disable_youtube_api: JSON.stringify(value),
 			});
 			// eslint-disable-next-line no-unused-vars
-			settingModel.save().then(response => {
+			settingModel.save().then((response) => {
 				this.setState({ isSaving: false, youtubeAPIDisabled: value });
 				c9_blocks_params.c9_blocks_disable_youtube_api = JSON.stringify(value);
 			});
@@ -42,7 +41,7 @@ class YoutubeAPIToggle extends Component {
 		return (
 			<ToggleControl
 				checked={youtubeAPIDisabled}
-				onChange={value => {
+				onChange={(value) => {
 					this.saveConfig(value);
 				}}
 			/>
@@ -50,9 +49,9 @@ class YoutubeAPIToggle extends Component {
 	}
 }
 
-export default withDispatch(dispatch => {
-	const { updateSettings } = dispatch("core/block-editor");
+export default withDispatch((dispatch) => {
+	const { updateSettings } = dispatch('core/block-editor');
 	return {
-		updateSettings
+		updateSettings,
 	};
 })(YoutubeAPIToggle);

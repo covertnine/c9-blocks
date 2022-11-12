@@ -8,7 +8,7 @@ const ReusableButton = ({
 	insertBlocks,
 	open,
 	close,
-	onHover
+	onHover,
 }) => {
 	return (
 		<button
@@ -31,10 +31,10 @@ const ReusableButton = ({
 	);
 };
 
-export default withDispatch(dispatch => {
-	const { insertBlocks } = dispatch("core/block-editor");
+export default withDispatch((dispatch) => {
+	const { insertBlocks } = dispatch('core/block-editor');
 
 	return {
-		insertBlocks
+		insertBlocks,
 	};
 })(ReusableButton);

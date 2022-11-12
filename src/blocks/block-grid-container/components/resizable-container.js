@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 /**
  * WordPress dependencies
@@ -10,7 +10,7 @@ const { applyFilters } = wp.hooks;
 const { ResizableBox } = wp.components;
 const { Component } = wp.element;
 
-import Container from "./container";
+import Container from './container';
 
 const MIN_GRID_HEIGHT = 10;
 const MAX_GRID_HEIGHT = 100;
@@ -22,11 +22,11 @@ export default class ResizableContainer extends Component {
 		this.state = {
 			isResizing: false,
 			minHeightPx: this.calcVhToPx(MIN_GRID_HEIGHT),
-			maxHeightPx: this.calcVhToPx(MAX_GRID_HEIGHT)
+			maxHeightPx: this.calcVhToPx(MAX_GRID_HEIGHT),
 		};
 	}
 
-	calcVhToPx = value => {
+	calcVhToPx = (value) => {
 		const docHeight = document.documentElement.clientHeight;
 		return (value / 100) * docHeight;
 	};
@@ -50,14 +50,14 @@ export default class ResizableContainer extends Component {
 			classes.push(`p-${padding.top}`);
 		} else if (padding.top === padding.bottom && 0 <= padding.top) {
 			classes.push(`py-${padding.top}`);
-			assignSideClasses("pl", padding.left);
-			assignSideClasses("pr", padding.right);
+			assignSideClasses('pl', padding.left);
+			assignSideClasses('pr', padding.right);
 		} else if (padding.left === padding.right && 0 <= padding.left) {
 			classes.push(`px-${padding.left}`);
-			assignSideClasses("pt", padding.top);
-			assignSideClasses("pb", padding.bottom);
+			assignSideClasses('pt', padding.top);
+			assignSideClasses('pb', padding.bottom);
 		} else {
-			["top", "bottom", "left", "right"].map(s =>
+			['top', 'bottom', 'left', 'right'].map((s) =>
 				assignSideClasses(`p${s[0]}`, padding[s])
 			);
 		}
@@ -66,7 +66,7 @@ export default class ResizableContainer extends Component {
 		if (margin.top === margin.bottom && -1 != margin.top) {
 			classes.push(`my-${margin.top}`);
 		} else {
-			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+			['top', 'bottom'].map((s) => assignSideClasses(`m${s[0]}`, margin[s]));
 		}
 
 		return classes;
@@ -82,7 +82,7 @@ export default class ResizableContainer extends Component {
 		if (10 === alpha) {
 			opacity = 1;
 		} else {
-			opacity = "." + alpha;
+			opacity = '.' + alpha;
 		}
 
 		return `rgba(${r},${g},${b},${opacity})`;
@@ -104,10 +104,10 @@ export default class ResizableContainer extends Component {
 		const styles = {};
 
 		if (allowMobile && !bgSize) {
-			styles["--mobile-height"] =
-				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
-			styles["--mobile-width"] =
-				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+			styles['--mobile-height'] =
+				'auto' != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+			styles['--mobile-width'] =
+				'auto' != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 		}
 
 		return styles;
@@ -130,24 +130,24 @@ export default class ResizableContainer extends Component {
 				bgImgSizeMobile,
 				bgCustomXMobile,
 				bgCustomYMobile,
-				minScreenHeight
+				minScreenHeight,
 			},
-			className = "",
+			className = '',
 			editMode = false,
 			isSelected,
 			setAttributes,
 			onResizeStart,
-			onResizeStop
+			onResizeStop,
 		} = this.props;
 
 		const wrapperConfig = {
 			className: classnames(
-				applyFilters("c9-blocks.blocks.className", className),
+				applyFilters('c9-blocks.blocks.className', className),
 				this.c9SpacingConfig(containerPadding, containerMargin),
-				bgImgAttach ? "c9-fixed" : "c9-scroll",
-				containerImgURL ? "c9-grid-has-background" : null,
+				bgImgAttach ? 'c9-fixed' : 'c9-scroll',
+				containerImgURL ? 'c9-grid-has-background' : null,
 				(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
-					? "c9-grid-has-video"
+					? 'c9-grid-has-video'
 					: null
 			),
 			style: {
@@ -161,15 +161,15 @@ export default class ResizableContainer extends Component {
 					bgImgSizeMobile,
 					bgCustomXMobile,
 					bgCustomYMobile
-				)
+				),
 			},
-			id: anchor ? anchor : null
+			id: anchor ? anchor : null,
 		};
 
-		const updateHeight = value => {
+		const updateHeight = (value) => {
 			// console.log(value);
 			setAttributes({
-				minScreenHeight: value
+				minScreenHeight: value,
 			});
 		};
 
@@ -177,11 +177,11 @@ export default class ResizableContainer extends Component {
 			onResizeStart(...args);
 			this.setState({
 				isResizing: true,
-				minResize: this.calcVhToPx(minScreenHeight) - 20
+				minResize: this.calcVhToPx(minScreenHeight) - 20,
 			});
 			setTimeout(() => {
 				this.setState({
-					minResize: this.state.minHeightPx
+					minResize: this.state.minHeightPx,
 				});
 			}, 200);
 		};
@@ -199,7 +199,7 @@ export default class ResizableContainer extends Component {
 			updateHeight(spacerHeight);
 			this.setState({
 				isResizing: false,
-				minResize: Math.min(pixelHeight, this.state.maxHeightPx)
+				minResize: Math.min(pixelHeight, this.state.maxHeightPx),
 			});
 		};
 
@@ -208,7 +208,7 @@ export default class ResizableContainer extends Component {
 				<ResizableBox
 					{...wrapperConfig}
 					size={{
-						height: "auto"
+						height: 'auto',
 					}}
 					minHeight={
 						this.state.isResizing
@@ -223,16 +223,16 @@ export default class ResizableContainer extends Component {
 						topRight: false,
 						bottomRight: false,
 						bottomLeft: false,
-						topLeft: false
+						topLeft: false,
 					}}
 					onResizeStart={handleOnResizeStart}
 					onResizeStop={handleOnResizeStop}
 					showHandle={isSelected}
 					__experimentalShowTooltip={true}
 					__experimentalTooltipProps={{
-						axis: "y",
-						position: "bottom",
-						isVisible: this.state.isResizing
+						axis: 'y',
+						position: 'bottom',
+						isVisible: this.state.isResizing,
 					}}
 				>
 					<Container {...this.props} />

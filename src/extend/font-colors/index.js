@@ -1,12 +1,12 @@
 /**
  * Import CSS
  */
-import "./editor.scss";
+import './editor.scss';
 
 /**
  * Internal dependencies
  */
-import checkCoreBlock from "../check-core-block";
+import checkCoreBlock from '../check-core-block';
 
 /**
  * WordPress dependencies
@@ -21,7 +21,7 @@ const { PanelBody, BaseControl } = wp.components;
 /**
  * External dependencies
  */
-import assign from "lodash/assign";
+import assign from 'lodash/assign';
 let initialOpenPanel = false;
 
 /**
@@ -38,8 +38,8 @@ function addAttribute(settings, name) {
 	if (allow) {
 		if (!settings.attributes.c9FC) {
 			settings.attributes.c9FC = {
-				type: "string",
-				default: ""
+				type: 'string',
+				default: '',
 			};
 
 			// add to deprecated items.
@@ -82,15 +82,15 @@ function addSaveProps(extraProps, blockType, attributes) {
  *
  * @return {string} Wrapped component.
  */
-const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
+const withInspectorControl = createHigherOrderComponent((OriginalComponent) => {
 	class C9FCWrapper extends Component {
 		constructor() {
 			super(...arguments);
 
-			const { c9FC = "" } = this.props.attributes;
+			const { c9FC = '' } = this.props.attributes;
 
 			this.state = {
-				fontColor: c9FC
+				fontColor: c9FC,
 			};
 
 			this.updateData = this.updateData.bind(this);
@@ -103,7 +103,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 
 			const newState = { ...this.state, ...newData };
 
-			let newAttribute = "";
+			let newAttribute = '';
 
 			if (newState.fontColor) {
 				newAttribute = newState.fontColor;
@@ -134,7 +134,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 						<PanelBody
 							title={
 								<Fragment>
-									<span>{__("Font Colors")}</span>
+									<span>{__('Font Colors')}</span>
 									<span className="c9-ext-badge">ext</span>
 								</Fragment>
 							}
@@ -144,9 +144,9 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 							}}
 						>
 							<ColorPalette
-								label={__("Font Color", "c9-blocks")}
+								label={__('Font Color', 'c9-blocks')}
 								value={this.state.fontColor}
-								onChange={fontColor => this.updateData({ fontColor })}
+								onChange={(fontColor) => this.updateData({ fontColor })}
 							/>
 							<BaseControl
 								help={__(
@@ -161,21 +161,21 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 	}
 
 	return C9FCWrapper;
-}, "withInspectorControl");
+}, 'withInspectorControl');
 
 // Init filters.
 addFilter(
-	"blocks.registerBlockType",
-	"c9-blocks/fc/additional-attributes",
+	'blocks.registerBlockType',
+	'c9-blocks/fc/additional-attributes',
 	addAttribute
 );
 addFilter(
-	"editor.BlockEdit",
-	"c9-blocks/fc/additional-attributes",
+	'editor.BlockEdit',
+	'c9-blocks/fc/additional-attributes',
 	withInspectorControl
 );
 addFilter(
-	"blocks.getSaveContent.extraProps",
-	"c9-blocks/fc/save-props",
+	'blocks.getSaveContent.extraProps',
+	'c9-blocks/fc/save-props',
 	addSaveProps
 );

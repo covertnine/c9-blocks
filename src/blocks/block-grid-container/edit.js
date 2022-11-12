@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import Inspector from "./components/inspector";
-import ResizableContainer from "./components/resizable-container";
+import Inspector from './components/inspector';
+import ResizableContainer from './components/resizable-container';
 
 /**
  * WordPress dependencies
@@ -15,11 +15,11 @@ const { Button } = wp.components;
 /**
  * External Dependencies.
  */
-import memoize from "memize";
-import times from "lodash/times";
-import cryptoRandomString from "crypto-random-string";
+import memoize from 'memize';
+import times from 'lodash/times';
+import cryptoRandomString from 'crypto-random-string';
 
-const ALLOWED_BLOCKS = ["c9-blocks/column-container"];
+const ALLOWED_BLOCKS = ['c9-blocks/column-container'];
 
 class Edit extends Component {
 	constructor() {
@@ -43,11 +43,11 @@ class Edit extends Component {
 					.length
 		) {
 			const newInstanceId = parseInt(
-				cryptoRandomString({ length: 4, type: "numeric" })
+				cryptoRandomString({ length: 4, type: 'numeric' })
 			);
 
 			setAttributes({
-				instanceId: newInstanceId
+				instanceId: newInstanceId,
 			});
 		}
 	};
@@ -55,17 +55,13 @@ class Edit extends Component {
 	/**
 	 * Generates the child (row) column container blocks.
 	 */
-	getRowsTemplate = memoize(rows => {
-		return times(rows, () => ["c9-blocks/column-container"]);
+	getRowsTemplate = memoize((rows) => {
+		return times(rows, () => ['c9-blocks/column-container']);
 	});
 
 	render() {
-		const {
-			attributes,
-			setAttributes,
-			isSelectedBlockInRoot,
-			updateRows
-		} = this.props;
+		const { attributes, setAttributes, isSelectedBlockInRoot, updateRows } =
+			this.props;
 
 		const { rows } = attributes;
 
@@ -94,7 +90,7 @@ class Edit extends Component {
 				{isSelectedBlockInRoot && (
 					<div className="c9-add-remove-rows">
 						<Button
-							label={__("Remove Bottom Row", "c9-blocks")}
+							label={__('Remove Bottom Row', 'c9-blocks')}
 							icon="dismiss"
 							onClick={() => {
 								if (1 < rows) {
@@ -103,10 +99,10 @@ class Edit extends Component {
 								}
 							}}
 						>
-							{__("Remove Bottom Row", "c9-blocks")}
+							{__('Remove Bottom Row', 'c9-blocks')}
 						</Button>
 						<Button
-							label={__("Add Row", "c9-blocks")}
+							label={__('Add Row', 'c9-blocks')}
 							icon="plus-alt"
 							onClick={() => {
 								if (20 > rows) {
@@ -115,7 +111,7 @@ class Edit extends Component {
 								}
 							}}
 						>
-							{__("Add Row", "c9-blocks")}
+							{__('Add Row', 'c9-blocks')}
 						</Button>
 					</div>
 				)}

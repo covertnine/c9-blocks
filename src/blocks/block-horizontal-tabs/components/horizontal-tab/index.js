@@ -11,7 +11,7 @@ const { withSelect } = wp.data;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 /**
  * Create a Tab wrapper Component
@@ -24,13 +24,13 @@ export default class Tab extends Component {
 	render() {
 		const { tabActive, slug, id } = this.props.attributes;
 		// eslint-disable-next-line no-unused-vars
-		let { className = "", hasChildBlocks } = this.props;
+		let { className = '', hasChildBlocks } = this.props;
 
 		className = classnames(
 			className,
-			"c9-horizontal-tabs-tab",
-			"tab-pane fade",
-			tabActive === slug ? "show active" : null
+			'c9-horizontal-tabs-tab',
+			'tab-pane fade',
+			tabActive === slug ? 'show active' : null
 		);
 
 		return (
@@ -55,12 +55,12 @@ export default class Tab extends Component {
 	}
 }
 
-registerBlockType("c9-blocks/horizontal-tabs-tab", {
-	title: __("C9 Horizontal Tab", "c9-blocks"),
+registerBlockType('c9-blocks/horizontal-tabs-tab', {
+	title: __('C9 Horizontal Tab', 'c9-blocks'),
 
-	category: "common",
+	category: 'common',
 
-	parent: ["c9-blocks/horizontal-tabs"],
+	parent: ['c9-blocks/horizontal-tabs'],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -72,33 +72,33 @@ registerBlockType("c9-blocks/horizontal-tabs-tab", {
 	supports: {
 		inserter: false,
 		className: false,
-		reusable: false
+		reusable: false,
 	},
 
 	attributes: {
 		slug: {
-			type: "string"
+			type: 'string',
 		},
 		tabActive: {
-			type: "string"
+			type: 'string',
 		},
 		id: {
-			type: "number"
-		}
+			type: 'number',
+		},
 	},
 
 	edit: withSelect((select, ownProps) => {
-		const { getBlockOrder } = select("core/block-editor");
+		const { getBlockOrder } = select('core/block-editor');
 
 		const { clientId } = ownProps;
 
 		return {
-			hasChildBlocks: 0 < getBlockOrder(clientId).length
+			hasChildBlocks: 0 < getBlockOrder(clientId).length,
 		};
 	})(Tab),
 
 	getEditWrapperProps(attributes) {
-		return { "data-tab": attributes.slug };
+		return { 'data-tab': attributes.slug };
 	},
 
 	// Render via PHP
@@ -110,27 +110,27 @@ registerBlockType("c9-blocks/horizontal-tabs-tab", {
 		{
 			supports: {
 				inserter: false,
-				className: false
+				className: false,
 			},
 			attributes: {
 				slug: {
-					type: "string"
+					type: 'string',
 				},
 				tabActive: {
-					type: "string"
+					type: 'string',
 				},
 				id: {
-					type: "number"
-				}
+					type: 'number',
+				},
 			},
-			save: function(props) {
+			save: function (props) {
 				const { slug, tabActive, id } = props.attributes;
-				let { className = "" } = props;
+				let { className = '' } = props;
 
 				className = classnames(
-					"c9-horizontal-tabs-tab",
-					"tab-pane fade",
-					tabActive === slug ? "show active" : null
+					'c9-horizontal-tabs-tab',
+					'tab-pane fade',
+					tabActive === slug ? 'show active' : null
 				);
 
 				return (
@@ -143,32 +143,32 @@ registerBlockType("c9-blocks/horizontal-tabs-tab", {
 						<InnerBlocks.Content />
 					</div>
 				);
-			}
+			},
 		},
 		{
 			supports: {
 				inserter: false,
-				className: false
+				className: false,
 			},
 			attributes: {
 				slug: {
-					type: "string"
+					type: 'string',
 				},
 				tabActive: {
-					type: "string"
+					type: 'string',
 				},
 				id: {
-					type: "number"
-				}
+					type: 'number',
+				},
 			},
-			save: function(props) {
+			save: function (props) {
 				const { slug, tabActive, id } = props.attributes;
-				let { className = "" } = props;
+				let { className = '' } = props;
 
 				className = classnames(
-					"c9-horizontal-tabs-tab",
-					"tab-pane fade",
-					tabActive === slug ? "show active" : null
+					'c9-horizontal-tabs-tab',
+					'tab-pane fade',
+					tabActive === slug ? 'show active' : null
 				);
 
 				return (
@@ -181,7 +181,7 @@ registerBlockType("c9-blocks/horizontal-tabs-tab", {
 						<InnerBlocks.Content />
 					</div>
 				);
-			}
-		}
-	]
+			},
+		},
+	],
 });

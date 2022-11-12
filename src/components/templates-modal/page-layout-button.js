@@ -1,7 +1,7 @@
 const { Icon } = wp.components;
 const { withDispatch } = wp.data;
 const { useState } = wp.element;
-import HoverIntent from "react-hoverintent";
+import HoverIntent from 'react-hoverintent';
 
 const LayoutButton = ({
 	label,
@@ -14,13 +14,13 @@ const LayoutButton = ({
 	insertBlocks,
 	open,
 	close,
-	onHover
+	onHover,
 }) => {
 	const [hovered, setHovered] = useState(false);
 	const toggleHover = () => setHovered(!hovered);
 	return (
 		<button
-			className={hovered ? "c9-layout-button c9-hovered" : "c9-layout-button"}
+			className={hovered ? 'c9-layout-button c9-hovered' : 'c9-layout-button'}
 			onClick={() => {
 				open();
 				resetBlocks([]);
@@ -68,11 +68,11 @@ const LayoutButton = ({
 	);
 };
 
-export default withDispatch(dispatch => {
-	const { resetBlocks, insertBlocks } = dispatch("core/block-editor");
+export default withDispatch((dispatch) => {
+	const { resetBlocks, insertBlocks } = dispatch('core/block-editor');
 
 	return {
 		resetBlocks,
-		insertBlocks
+		insertBlocks,
 	};
 })(LayoutButton);

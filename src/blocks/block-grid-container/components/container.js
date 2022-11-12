@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import classnames from "classnames";
-import VideoBox from "./video-box";
+import classnames from 'classnames';
+import VideoBox from './video-box';
 
 /**
  * WordPress dependencies
@@ -10,18 +10,18 @@ import VideoBox from "./video-box";
 const { Component, Fragment } = wp.element;
 
 const MOBILE_Y_SIZE = {
-	0.25: "top",
-	0.5: "center",
-	0.75: "bottom"
+	0.25: 'top',
+	0.5: 'center',
+	0.75: 'bottom',
 };
 
 const MOBILE_X_SIZE = {
-	0.25: "left",
-	0.5: "center",
-	0.75: "right"
+	0.25: 'left',
+	0.5: 'center',
+	0.75: 'right',
 };
 
-const postProcessMobileSize = value => {
+const postProcessMobileSize = (value) => {
 	let z = value;
 
 	if (0.33 >= value) {
@@ -47,8 +47,9 @@ export default class Container extends Component {
 		const styles = {};
 
 		if (focalPoint) {
-			styles.backgroundPosition = `${focalPoint.x * 100}% ${focalPoint.y *
-				100}%`;
+			styles.backgroundPosition = `${focalPoint.x * 100}% ${
+				focalPoint.y * 100
+			}%`;
 		}
 
 		if (url) {
@@ -59,9 +60,9 @@ export default class Container extends Component {
 			styles.backgroundSize = size;
 		} else {
 			let horizontal =
-				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+				'auto' != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
 			let vertical =
-				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+				'auto' != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 			styles.backgroundSize = `${horizontal} ${vertical}`;
 		}
 
@@ -89,7 +90,7 @@ export default class Container extends Component {
 		if (10 === alpha) {
 			opacity = 1;
 		} else {
-			opacity = "." + alpha;
+			opacity = '.' + alpha;
 		}
 
 		return `rgba(${r},${g},${b},${opacity})`;
@@ -112,8 +113,8 @@ export default class Container extends Component {
 				cannotEmbed,
 				overrideMobile,
 				focalPointMobile,
-				bgImgSizeMobile
-			}
+				bgImgSizeMobile,
+			},
 		} = this.props;
 
 		return (
@@ -131,17 +132,17 @@ export default class Container extends Component {
 				{!!containerImgURL && (
 					<div
 						className={classnames(
-							"c9-image-container",
+							'c9-image-container',
 							overrideMobile
 								? `c9-image-mobile-${
 										MOBILE_Y_SIZE[postProcessMobileSize(focalPointMobile.y)]
 								  }-${MOBILE_X_SIZE[postProcessMobileSize(focalPointMobile.x)]}`
 								: null,
-							"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
-							"contain" == bgImgSizeMobile
-								? "c9-image-mobile-size-contain"
+							'cover' == bgImgSizeMobile ? 'c9-image-mobile-size-cover' : null,
+							'contain' == bgImgSizeMobile
+								? 'c9-image-mobile-size-contain'
 								: null,
-							!bgImgSizeMobile ? "c9-image-mobile-size-custom" : null
+							!bgImgSizeMobile ? 'c9-image-mobile-size-custom' : null
 						)}
 						style={this.c9BackgroundStyles(
 							containerImgURL,

@@ -3,54 +3,54 @@
  */
 const attributes = {
 	instanceId: {
-		type: "number"
+		type: 'number',
 	},
 	slides: {
-		type: "number",
-		default: 3
+		type: 'number',
+		default: 3,
 	},
 	showControls: {
-		type: "boolean",
-		default: true
+		type: 'boolean',
+		default: true,
 	},
 	showIndicators: {
-		type: "boolean",
-		default: true
+		type: 'boolean',
+		default: true,
 	},
 	autoSlide: {
-		type: "boolean",
-		default: true
+		type: 'boolean',
+		default: true,
 	},
 	wrapAround: {
-		type: "boolean",
-		default: true
+		type: 'boolean',
+		default: true,
 	},
 	slideTime: {
-		type: "number",
-		default: 5000
+		type: 'number',
+		default: 5000,
 	},
 	slideMaxHeight: {
-		type: "number",
-		default: 250
+		type: 'number',
+		default: 250,
 	},
 	slideSizes: {
-		type: "array",
-		default: []
+		type: 'array',
+		default: [],
 	},
 	verticalAlign: {
-		type: "string"
+		type: 'string',
 	},
 	align: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	containerWidth: {
-		type: "string",
-		default: "container"
+		type: 'string',
+		default: 'container',
 	},
 	transitionType: {
-		type: "string",
-		default: "slide"
+		type: 'string',
+		default: 'slide',
 	},
 };
 

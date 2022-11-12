@@ -10,8 +10,8 @@ const { Placeholder, Dashicon } = wp.components;
 /**
  * External Dependencies.
  */
-import get from "lodash/get";
-import classnames from "classnames";
+import get from 'lodash/get';
+import classnames from 'classnames';
 
 /**
  * Create a PostGridImage wrapper Component
@@ -21,8 +21,8 @@ export default class PostGridImage extends Component {
 		super(...arguments);
 
 		this.state = {
-			imageUrl: "",
-			imageLoaded: false
+			imageUrl: '',
+			imageLoaded: false,
 		};
 	}
 
@@ -51,7 +51,7 @@ export default class PostGridImage extends Component {
 		if (imageUrl) {
 			this.setState({
 				imageUrl,
-				imageLoaded: true
+				imageLoaded: true,
 			});
 		}
 	}
@@ -61,10 +61,10 @@ export default class PostGridImage extends Component {
 			/* getMedia accepts an image id and returns an object with all the image data. */
 			this.props.getMedia(this.props.imgID),
 			[
-				"media_details",
-				"sizes",
+				'media_details',
+				'sizes',
 				this.props.imgSize /* Get the image slug from the inspector. */,
-				"source_url" /* Return the url of the image size. */
+				'source_url' /* Return the url of the image size. */,
 			]
 			/* A default image url can be passed here. */
 		);
@@ -76,10 +76,10 @@ export default class PostGridImage extends Component {
 			/* getMedia accepts an image id and returns an object with all the image data. */
 			this.props.getMedia(this.props.imgID),
 			[
-				"media_details",
-				"sizes",
-				"full" /* Get the full image size. */,
-				"source_url" /* Return the url of the full image size. */
+				'media_details',
+				'sizes',
+				'full' /* Get the full image size. */,
+				'source_url' /* Return the url of the full image size. */,
 			]
 		);
 	}
@@ -87,7 +87,7 @@ export default class PostGridImage extends Component {
 	render() {
 		return (
 			<Fragment>
-				<div className={classnames("c9-block-post-grid-image")}>
+				<div className={classnames('c9-block-post-grid-image')}>
 					<a href={this.props.imgLink} target="_blank" rel="bookmark">
 						<img
 							src={
@@ -100,40 +100,42 @@ export default class PostGridImage extends Component {
 						/>
 					</a>
 
-					{/* If we don't have the selected image size, show a warning */
-					!this.getImageUrl() &&
-						this.state.imageLoaded &&
-						"selectimage" !== this.props.imgSize && (
-							<Fragment>
-								<div className={"c9-post-grid-no-image-icon"}>
-									<Dashicon icon={"warning"} />
-								</div>
+					{
+						/* If we don't have the selected image size, show a warning */
+						!this.getImageUrl() &&
+							this.state.imageLoaded &&
+							'selectimage' !== this.props.imgSize && (
+								<Fragment>
+									<div className={'c9-post-grid-no-image-icon'}>
+										<Dashicon icon={'warning'} />
+									</div>
 
-								<Placeholder className={"c9-post-grid-no-image-placeholder"}>
-									<Dashicon icon={"info"} />
-									<div className="components-placeholder__label">
-										{__(
-											"There is no image generated for the selected image size, so a fallback image size is being used.",
-											"c9-blocks"
-										)}
-									</div>
-									<div className="c9-post-grid-image-help">
-										<a
-											target="_blank"
-											rel="noreferrer noopener"
-											aria-label={__(
-												"Learn more about image sizes (opens in a new tab)",
-												"c9-blocks"
+									<Placeholder className={'c9-post-grid-no-image-placeholder'}>
+										<Dashicon icon={'info'} />
+										<div className="components-placeholder__label">
+											{__(
+												'There is no image generated for the selected image size, so a fallback image size is being used.',
+												'c9-blocks'
 											)}
-											href="https://github.com"
-										>
-											{__("Learn more ", "c9-blocks")}
-											<span>&rarr;</span>
-										</a>
-									</div>
-								</Placeholder>
-							</Fragment>
-						)}
+										</div>
+										<div className="c9-post-grid-image-help">
+											<a
+												target="_blank"
+												rel="noreferrer noopener"
+												aria-label={__(
+													'Learn more about image sizes (opens in a new tab)',
+													'c9-blocks'
+												)}
+												href="https://github.com"
+											>
+												{__('Learn more ', 'c9-blocks')}
+												<span>&rarr;</span>
+											</a>
+										</div>
+									</Placeholder>
+								</Fragment>
+							)
+					}
 				</div>
 			</Fragment>
 		);

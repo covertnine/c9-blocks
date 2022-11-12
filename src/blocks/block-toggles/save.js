@@ -8,7 +8,7 @@ const { InnerBlocks } = wp.blockEditor;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export default class Save extends Component {
 	constructor() {
@@ -18,7 +18,7 @@ export default class Save extends Component {
 	render() {
 		const {
 			attributes: { reverseToggle },
-			className = "",
+			className = '',
 			...otherProps
 		} = this.props;
 
@@ -26,9 +26,9 @@ export default class Save extends Component {
 			<div
 				{...otherProps}
 				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
-					"accordion",
-					reverseToggle ? "c9-toggles-reverse" : null
+					applyFilters('c9-blocks.blocks.className', className),
+					'accordion',
+					reverseToggle ? 'c9-toggles-reverse' : null
 				)}
 				id={`accordion-${this.props.attributes.instanceId}`}
 			>

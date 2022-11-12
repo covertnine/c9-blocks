@@ -35,6 +35,7 @@
 	"plugins": ["react", "jsx-a11y"],
 	"rules": {
 		"react/react-in-jsx-scope": "off",
+		"react/display-name": "off",
 		"react/prop-types": "off",
 		"prettier/prettier": ["error", { "singleQuote": true }]
 	},

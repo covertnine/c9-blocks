@@ -1,8 +1,8 @@
 const supportedBlocks = [
-	"core/heading",
-	"core/quote",
-	"core/list",
-	"core/table"
+	'core/heading',
+	'core/quote',
+	'core/list',
+	'core/table',
 ];
 
 /**

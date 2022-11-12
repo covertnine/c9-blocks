@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import classnames from "classnames";
-import VideoBox from "../components/video-box";
+import classnames from 'classnames';
+import VideoBox from '../components/video-box';
 
 /**
  * WordPress dependencies
@@ -11,15 +11,15 @@ const { Component } = wp.element;
 const { applyFilters } = wp.hooks;
 
 const MOBILE_Y_SIZE = {
-	0.25: "top",
-	0.5: "center",
-	0.75: "bottom"
+	0.25: 'top',
+	0.5: 'center',
+	0.75: 'bottom',
 };
 
 const MOBILE_X_SIZE = {
-	0.25: "left",
-	0.5: "center",
-	0.75: "right"
+	0.25: 'left',
+	0.5: 'center',
+	0.75: 'right',
 };
 
 /**
@@ -49,14 +49,14 @@ export default class Container extends Component {
 			classes.push(`p-${padding.top}`);
 		} else if (padding.top === padding.bottom && 0 <= padding.top) {
 			classes.push(`py-${padding.top}`);
-			assignSideClasses("pl", padding.left);
-			assignSideClasses("pr", padding.right);
+			assignSideClasses('pl', padding.left);
+			assignSideClasses('pr', padding.right);
 		} else if (padding.left === padding.right && 0 <= padding.left) {
 			classes.push(`px-${padding.left}`);
-			assignSideClasses("pt", padding.top);
-			assignSideClasses("pb", padding.bottom);
+			assignSideClasses('pt', padding.top);
+			assignSideClasses('pb', padding.bottom);
 		} else {
-			["top", "bottom", "left", "right"].map(s =>
+			['top', 'bottom', 'left', 'right'].map((s) =>
 				assignSideClasses(`p${s[0]}`, padding[s])
 			);
 		}
@@ -65,7 +65,7 @@ export default class Container extends Component {
 		if (margin.top === margin.bottom && -1 != margin.top) {
 			classes.push(`my-${margin.top}`);
 		} else {
-			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+			['top', 'bottom'].map((s) => assignSideClasses(`m${s[0]}`, margin[s]));
 		}
 
 		return classes;
@@ -89,10 +89,10 @@ export default class Container extends Component {
 		const styles = {};
 
 		if (allowMobile && !bgSize) {
-			styles["--mobile-height"] =
-				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
-			styles["--mobile-width"] =
-				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+			styles['--mobile-height'] =
+				'auto' != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+			styles['--mobile-width'] =
+				'auto' != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 		}
 
 		return styles;
@@ -102,8 +102,9 @@ export default class Container extends Component {
 		const styles = {};
 
 		if (focalPoint) {
-			styles.backgroundPosition = `${focalPoint.x * 100}% ${focalPoint.y *
-				100}%`;
+			styles.backgroundPosition = `${focalPoint.x * 100}% ${
+				focalPoint.y * 100
+			}%`;
 		}
 
 		if (url) {
@@ -114,9 +115,9 @@ export default class Container extends Component {
 			styles.backgroundSize = size;
 		} else {
 			let horizontal =
-				"auto" != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+				'auto' != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
 			let vertical =
-				"auto" != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+				'auto' != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
 			styles.backgroundSize = `${horizontal} ${vertical}`;
 		}
 
@@ -144,7 +145,7 @@ export default class Container extends Component {
 		if (10 === alpha) {
 			opacity = 1;
 		} else {
-			opacity = "." + alpha;
+			opacity = '.' + alpha;
 		}
 
 		return `rgba(${r},${g},${b},${opacity})`;
@@ -176,20 +177,20 @@ export default class Container extends Component {
 				focalPointMobile,
 				bgImgSizeMobile,
 				bgCustomXMobile,
-				bgCustomYMobile
+				bgCustomYMobile,
 			},
-			className = ""
+			className = '',
 		} = this.props;
 
 		return (
 			<div
 				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
+					applyFilters('c9-blocks.blocks.className', className),
 					this.c9SpacingConfig(containerPadding, containerMargin),
-					bgImgAttach ? "c9-fixed" : "c9-scroll",
-					containerImgURL ? "c9-grid-has-background" : null,
+					bgImgAttach ? 'c9-fixed' : 'c9-scroll',
+					containerImgURL ? 'c9-grid-has-background' : null,
 					(!!containerVideoURL || !!containerVideoID) && !cannotEmbed
-						? "c9-grid-has-video"
+						? 'c9-grid-has-video'
 						: null
 				)}
 				style={{
@@ -203,7 +204,7 @@ export default class Container extends Component {
 						bgImgSizeMobile,
 						bgCustomXMobile,
 						bgCustomYMobile
-					)
+					),
 				}}
 				id={anchor ? anchor : null}
 			>
@@ -213,17 +214,17 @@ export default class Container extends Component {
 				{!!containerImgURL && (
 					<div
 						className={classnames(
-							"c9-image-container",
+							'c9-image-container',
 							overrideMobile
 								? `c9-image-mobile-${MOBILE_Y_SIZE[focalPointMobile.y]}-${
 										MOBILE_X_SIZE[focalPointMobile.x]
 								  }`
 								: null,
-							"cover" == bgImgSizeMobile ? "c9-image-mobile-size-cover" : null,
-							"contain" == bgImgSizeMobile
-								? "c9-image-mobile-size-contain"
+							'cover' == bgImgSizeMobile ? 'c9-image-mobile-size-cover' : null,
+							'contain' == bgImgSizeMobile
+								? 'c9-image-mobile-size-contain'
 								: null,
-							!bgImgSizeMobile ? "c9-image-mobile-size-custom" : null
+							!bgImgSizeMobile ? 'c9-image-mobile-size-custom' : null
 						)}
 						style={this.c9BackgroundStyles(
 							containerImgURL,

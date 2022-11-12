@@ -4,7 +4,7 @@
 /**
  * Internal dependencies
  */
-import CustomPalette from "../custom-palette";
+import CustomPalette from '../custom-palette';
 
 /**
  * WordPress dependencies
@@ -18,7 +18,7 @@ const { compose } = wp.compose;
 /**
  * External Dependencies.
  */
-import get from "lodash/get";
+import get from 'lodash/get';
 
 class ColorAppender extends Component {
 	constructor() {
@@ -35,7 +35,7 @@ class ColorAppender extends Component {
 			origColors: c9_blocks_params.orig_colors
 				? c9_blocks_params.orig_colors[0]
 				: [],
-			colors: ""
+			colors: '',
 		};
 	}
 
@@ -60,10 +60,10 @@ class ColorAppender extends Component {
 			this.setState({ isSaving: true });
 			const config = this.state.c9Colors;
 			const settingModel = new wp.api.models.Settings({
-				c9_blocks_colors: JSON.stringify(config)
+				c9_blocks_colors: JSON.stringify(config),
 			});
 			// eslint-disable-next-line no-unused-vars
-			settingModel.save().then(response => {
+			settingModel.save().then((response) => {
 				this.setState({ isSaving: false, c9Colors: config });
 				c9_blocks_params.colors = JSON.stringify(config);
 				this.props.updateSettings({ colors: this.state.colors });
@@ -81,7 +81,7 @@ class ColorAppender extends Component {
 		const { c9Colors } = this.state;
 		c9Colors.palette[index] = { ...c9Colors[index], ...value };
 		this.setState({
-			c9Colors
+			c9Colors,
 		});
 	}
 
@@ -104,10 +104,10 @@ class ColorAppender extends Component {
 		const nonEditables = [];
 		const editables = [];
 
-		Array.from(this.state.colors).map(curr => {
+		Array.from(this.state.colors).map((curr) => {
 			if (
 				undefined !== curr.slug &&
-				"covertnine-palette" === curr.slug.substr(0, 18)
+				'covertnine-palette' === curr.slug.substr(0, 18)
 			) {
 				editables.push(curr);
 			} else {
@@ -120,7 +120,7 @@ class ColorAppender extends Component {
 				{colors && (
 					<div className="components-color-palette">
 						<p className="components-base-control__label">Theme Colors</p>
-						{nonEditables.map(curr => (
+						{nonEditables.map((curr) => (
 							<div
 								key={curr.slug}
 								className="components-color-palette__item-wrapper"
@@ -129,7 +129,7 @@ class ColorAppender extends Component {
 									text={
 										curr.name ||
 										// translators: %s: color hex code e.g: "#f00".
-										sprintf(__("Color code: %s"), curr.color)
+										sprintf(__('Color code: %s'), curr.color)
 									}
 								>
 									<div
@@ -154,9 +154,9 @@ class ColorAppender extends Component {
 							>
 								<CustomPalette
 									nameValue={
-										curr.name ? curr.name : __("Color") + " " + index + 1
+										curr.name ? curr.name : __('Color') + ' ' + index + 1
 									}
-									colorValue={curr.color ? curr.color : "#ffffff"}
+									colorValue={curr.color ? curr.color : '#ffffff'}
 									onSave={(value, title) => {
 										this.saveC9Colors(
 											{ color: value, name: title, slug: curr.slug },
@@ -173,7 +173,7 @@ class ColorAppender extends Component {
 						))}
 						{0 < c9Colors.palette.length && (
 							<div className="c9-colors-remove-last">
-								<Tooltip text={__("Remove Last Color")}>
+								<Tooltip text={__('Remove Last Color')}>
 									<Button
 										type="button"
 										isDestructive
@@ -185,7 +185,7 @@ class ColorAppender extends Component {
 											this.setState({ colors: colors });
 											this.saveConfig();
 										}}
-										aria-label={__("Remove Last Color")}
+										aria-label={__('Remove Last Color')}
 									>
 										<Dashicon icon="editor-removeformatting" />
 									</Button>
@@ -208,33 +208,33 @@ class ColorAppender extends Component {
 							}
 							let id = this.c9ColorUniqueID;
 							c9Colors.palette.push({
-								color: "#888888",
-								name: __("Color") + " " + id,
-								slug: "covertnine-palette-" + id
+								color: '#888888',
+								name: __('Color') + ' ' + id,
+								slug: 'covertnine-palette-' + id,
 							});
 							colors.push({
-								color: "#888888",
-								name: __("Color") + " " + id,
-								slug: "covertnine-palette-" + id
+								color: '#888888',
+								name: __('Color') + ' ' + id,
+								slug: 'covertnine-palette-' + id,
 							});
 							this.c9ColorUniqueID += 1;
 							this.setState({ c9Colors: c9Colors });
 							this.setState({ colors: colors });
 							this.saveConfig();
 						}}
-						aria-label={__("Add Color")}
+						aria-label={__('Add Color')}
 					>
-						{__("Add Color")}
+						{__('Add Color')}
 					</Button>
 				</div>
 				{undefined !== c9Colors.palette && undefined !== c9Colors.palette[0] && (
 					<Fragment>
 						<ToggleControl
-							label={__("Use only C9 Blocks Colors?")}
+							label={__('Use only C9 Blocks Colors?')}
 							checked={
 								undefined !== c9Colors.override ? c9Colors.override : false
 							}
-							onChange={value => {
+							onChange={(value) => {
 								let newColors;
 								const newC9Colors = this.state.c9Colors;
 								if (true === value) {
@@ -256,17 +256,17 @@ class ColorAppender extends Component {
 	}
 }
 export default compose([
-	withSelect(select => {
-		const { getSettings } = select("core/block-editor");
+	withSelect((select) => {
+		const { getSettings } = select('core/block-editor');
 		const settings = getSettings();
 		return {
-			baseColors: get(settings, ["colors"], [])
+			baseColors: get(settings, ['colors'], []),
 		};
 	}),
-	withDispatch(dispatch => {
-		const { updateSettings } = dispatch("core/block-editor");
+	withDispatch((dispatch) => {
+		const { updateSettings } = dispatch('core/block-editor');
 		return {
-			updateSettings
+			updateSettings,
 		};
-	})
+	}),
 ])(ColorAppender);

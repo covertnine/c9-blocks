@@ -7,7 +7,7 @@ const { applyFilters } = wp.hooks;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 /**
  * Create a CallToAction wrapper Component
@@ -36,14 +36,14 @@ export default class CallToAction extends Component {
 			classes.push(`p-${padding.top}`);
 		} else if (padding.top === padding.bottom && 0 <= padding.top) {
 			classes.push(`py-${padding.top}`);
-			assignSideClasses("pl", padding.left);
-			assignSideClasses("pr", padding.right);
+			assignSideClasses('pl', padding.left);
+			assignSideClasses('pr', padding.right);
 		} else if (padding.left === padding.right && 0 <= padding.left) {
 			classes.push(`px-${padding.left}`);
-			assignSideClasses("pt", padding.top);
-			assignSideClasses("pb", padding.bottom);
+			assignSideClasses('pt', padding.top);
+			assignSideClasses('pb', padding.bottom);
 		} else {
-			["top", "bottom", "left", "right"].map(s =>
+			['top', 'bottom', 'left', 'right'].map((s) =>
 				assignSideClasses(`p${s[0]}`, padding[s])
 			);
 		}
@@ -52,7 +52,7 @@ export default class CallToAction extends Component {
 		if (margin.top === margin.bottom && -1 != margin.top) {
 			classes.push(`my-${margin.top}`);
 		} else {
-			["top", "bottom"].map(s => assignSideClasses(`m${s[0]}`, margin[s]));
+			['top', 'bottom'].map((s) => assignSideClasses(`m${s[0]}`, margin[s]));
 		}
 
 		return classes;
@@ -87,8 +87,9 @@ export default class CallToAction extends Component {
 			styles.backgroundBlendMode = `${blend}`;
 
 			if (focalPoint) {
-				styles.backgroundPosition = `${focalPoint.x * 100}% ${focalPoint.y *
-					100}%`;
+				styles.backgroundPosition = `${focalPoint.x * 100}% ${
+					focalPoint.y * 100
+				}%`;
 			}
 
 			if (0 < size.length) {
@@ -109,7 +110,7 @@ export default class CallToAction extends Component {
 		if (10 === alpha) {
 			opacity = 1;
 		} else {
-			opacity = "." + alpha;
+			opacity = '.' + alpha;
 		}
 
 		return `rgba(${r},${g},${b},${opacity})`;
@@ -129,9 +130,9 @@ export default class CallToAction extends Component {
 				focalPoint,
 				ctaPadding,
 				ctaMargin,
-				align
+				align,
 			},
-			className = "",
+			className = '',
 			isSelectedBlockInRoot,
 			save = false,
 			...otherProps
@@ -139,10 +140,10 @@ export default class CallToAction extends Component {
 
 		let ctaAlign;
 		if (save && 0 != align.length) {
-			if ("container" == ctaWidth) {
-				ctaAlign = "alignwide";
-			} else if ("container-fluid" == ctaWidth) {
-				ctaAlign = "alignfull";
+			if ('container' == ctaWidth) {
+				ctaAlign = 'alignwide';
+			} else if ('container-fluid' == ctaWidth) {
+				ctaAlign = 'alignfull';
 			} else {
 				ctaAlign = null;
 			}
@@ -161,13 +162,13 @@ export default class CallToAction extends Component {
 					isSelectedBlockInRoot
 				)}
 				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
-					"c9-block-cta",
+					applyFilters('c9-blocks.blocks.className', className),
+					'c9-block-cta',
 					save ? ctaWidth : null,
 					ctaAlign,
 					this.c9SpacingConfig(ctaPadding, ctaMargin),
 					// eslint-disable-next-line no-extra-boolean-cast
-					!!imgURL ? "c9-cta-has-background" : null
+					!!imgURL ? 'c9-cta-has-background' : null
 				)}
 				{...otherProps}
 			>

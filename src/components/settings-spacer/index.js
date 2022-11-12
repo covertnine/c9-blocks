@@ -1,7 +1,7 @@
 /**
  * Styles
  */
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledSpacer = styled.div`
 	height: 15px;

@@ -1,7 +1,7 @@
 /**
  * Styles
  */
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledSelector = styled.div`
 	visibility: hidden;

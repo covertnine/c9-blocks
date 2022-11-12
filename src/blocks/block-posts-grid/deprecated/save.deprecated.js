@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import Container from "./container.deprecated";
+import Container from './container.deprecated';
 
 /**
  * WordPress dependencies

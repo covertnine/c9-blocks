@@ -3,7 +3,7 @@
 /**
  * Internal dependencies
  */
-import icons from "../../../../assets/c9-col-layout-icons";
+import icons from '../../../../assets/c9-col-layout-icons';
 
 /**
  * WordPress dependencies
@@ -20,15 +20,15 @@ const {
 	FocalPointPicker,
 	BaseControl,
 	ButtonGroup,
-	Tooltip
+	Tooltip,
 } = wp.components;
 
 /**
  * External Dependencies.
  */
-import React from "react";
-import map from "lodash/map";
-import debounce from "lodash/debounce";
+import React from 'react';
+import map from 'lodash/map';
+import debounce from 'lodash/debounce';
 
 /**
  * Create an Inspector Controls wrapper Component
@@ -44,9 +44,9 @@ export default class Inspector extends Component {
 				bgCustomY,
 				bgCustomXMobile,
 				bgCustomYMobile,
-				focalPointMobile
+				focalPointMobile,
 			},
-			setAttributes
+			setAttributes,
 		} = this.props;
 
 		this.setAttributes = setAttributes;
@@ -60,21 +60,21 @@ export default class Inspector extends Component {
 			containerPadding: containerPadding,
 			containerMargin: containerMargin,
 			setAttributes: setAttributes,
-			customX: "auto" != bgCustomX.size,
-			customY: "auto" != bgCustomY.size,
-			customXMobile: "auto" != bgCustomXMobile.size,
-			customYMobile: "auto" != bgCustomYMobile.size,
+			customX: 'auto' != bgCustomX.size,
+			customY: 'auto' != bgCustomY.size,
+			customXMobile: 'auto' != bgCustomXMobile.size,
+			customYMobile: 'auto' != bgCustomYMobile.size,
 			bgCustomX: bgCustomX,
 			bgCustomY: bgCustomY,
 			bgCustomXMobile: bgCustomXMobile,
 			bgCustomYMobile: bgCustomYMobile,
-			focalPointMobile: focalPointMobile
+			focalPointMobile: focalPointMobile,
 		};
 	}
 
 	componentDidUpdate() {
 		const {
-			attributes: { preview }
+			attributes: { preview },
 		} = this.props;
 
 		this.preview = preview;
@@ -124,21 +124,21 @@ export default class Inspector extends Component {
 
 	togglePaddingLinkage = () => {
 		let {
-			attributes: { containerPadding }
+			attributes: { containerPadding },
 		} = this.props;
 
 		containerPadding = Object.assign({}, containerPadding);
 		containerPadding.linked = !containerPadding.linked;
 		containerPadding.icon = containerPadding.linked
-			? "admin-links"
-			: "editor-unlink";
+			? 'admin-links'
+			: 'editor-unlink';
 		this.setState({ containerPadding });
 		this.setAttributes({ containerPadding });
 	};
 
-	setPaddingUnit = value => {
+	setPaddingUnit = (value) => {
 		const {
-			attributes: { containerPadding }
+			attributes: { containerPadding },
 		} = this.props;
 
 		let spacingObject = Object.assign({}, containerPadding);
@@ -156,7 +156,7 @@ export default class Inspector extends Component {
 				bottom: value,
 				left: value,
 				right: value,
-				icon: this.state.containerPadding.icon
+				icon: this.state.containerPadding.icon,
 			};
 			this.setState({ containerPadding: spacingObject });
 			this.setAttributes({ containerPadding: spacingObject });
@@ -170,21 +170,21 @@ export default class Inspector extends Component {
 
 	toggleMarginLinkage = () => {
 		let {
-			attributes: { containerMargin }
+			attributes: { containerMargin },
 		} = this.props;
 
 		containerMargin = Object.assign({}, containerMargin);
 		containerMargin.linked = !containerMargin.linked;
 		containerMargin.icon = containerMargin.linked
-			? "admin-links"
-			: "editor-unlink";
+			? 'admin-links'
+			: 'editor-unlink';
 		this.setState({ containerMargin });
 		this.setAttributes({ containerMargin });
 	};
 
-	setMarginUnit = value => {
+	setMarginUnit = (value) => {
 		const {
-			attributes: { containerMargin }
+			attributes: { containerMargin },
 		} = this.props;
 
 		let spacingObject = Object.assign({}, containerMargin);
@@ -202,7 +202,7 @@ export default class Inspector extends Component {
 				bottom: value,
 				left: value,
 				right: value,
-				icon: this.state.containerMargin.icon
+				icon: this.state.containerMargin.icon,
 			};
 			this.setState({ containerMargin: spacingObject });
 			this.setAttributes({ containerMargin: spacingObject });
@@ -214,13 +214,14 @@ export default class Inspector extends Component {
 		}
 	};
 
-	updateID = value => {
+	updateID = (value) => {
 		this.setState({ ID: value });
 	};
 
 	submitID = () => {
 		// parse submitted item, check if valid id
-		let checkURL = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|&v(?:i)?=))([^#&?]*).*/;
+		let checkURL =
+			/^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|&v(?:i)?=))([^#&?]*).*/;
 		let checkAlphaNumeric = /^[a-zA-Z0-9-_]+$/;
 		let result;
 
@@ -244,13 +245,13 @@ export default class Inspector extends Component {
 	};
 
 	resetID = () => {
-		this.setState({ ID: "" });
+		this.setState({ ID: '' });
 		if (this.preview && this.preview.i) {
 			this.preview.destroy();
 			this.setAttributes({
-				containerVideoID: "",
+				containerVideoID: '',
 				cannotEmbed: false,
-				preview: this.preview
+				preview: this.preview,
 			});
 		}
 	};
@@ -277,69 +278,69 @@ export default class Inspector extends Component {
 				responsiveToggle,
 				overrideMobile,
 				bgImgSizeMobile,
-				flipColumnsMobile
+				flipColumnsMobile,
 			},
 			setAttributes,
-			updateColumns
+			updateColumns,
 		} = this.props;
 
 		let selectedRows = 1;
 
 		if (columns) {
-			selectedRows = parseInt(columns.toString().split("-"));
+			selectedRows = parseInt(columns.toString().split('-'));
 		}
 
 		const cssUnits = [
-			{ value: "px", label: __("Pixel (px)", "c9-blocks") },
-			{ value: "%", label: __("Percent (%)", "c9-blocks") },
-			{ value: "em", label: __("Em (em)", "c9-blocks") }
+			{ value: 'px', label: __('Pixel (px)', 'c9-blocks') },
+			{ value: '%', label: __('Percent (%)', 'c9-blocks') },
+			{ value: 'em', label: __('Em (em)', 'c9-blocks') },
 		];
 
 		const paddingOptions = [
-			{ value: "-1", label: __("None", "c9-blocks") },
-			{ value: "0", label: __("Padding 0", "c9-blocks") },
-			{ value: "1", label: __("Padding 1", "c9-blocks") },
-			{ value: "2", label: __("Padding 2", "c9-blocks") },
-			{ value: "3", label: __("Padding 3", "c9-blocks") },
-			{ value: "4", label: __("Padding 4", "c9-blocks") },
-			{ value: "5", label: __("Padding 5", "c9-blocks") },
-			{ value: "auto", label: __("Auto", "c9-blocks") }
+			{ value: '-1', label: __('None', 'c9-blocks') },
+			{ value: '0', label: __('Padding 0', 'c9-blocks') },
+			{ value: '1', label: __('Padding 1', 'c9-blocks') },
+			{ value: '2', label: __('Padding 2', 'c9-blocks') },
+			{ value: '3', label: __('Padding 3', 'c9-blocks') },
+			{ value: '4', label: __('Padding 4', 'c9-blocks') },
+			{ value: '5', label: __('Padding 5', 'c9-blocks') },
+			{ value: 'auto', label: __('Auto', 'c9-blocks') },
 		];
 
 		const marginOptions = [
-			{ value: "-1", label: __("None", "c9-blocks") },
-			{ value: "0", label: __("Margin 0", "c9-blocks") },
-			{ value: "1", label: __("Margin 1", "c9-blocks") },
-			{ value: "2", label: __("Margin 2", "c9-blocks") },
-			{ value: "3", label: __("Margin 3", "c9-blocks") },
-			{ value: "4", label: __("Margin 4", "c9-blocks") },
-			{ value: "5", label: __("Margin 5", "c9-blocks") },
-			{ value: "auto", label: __("Auto", "c9-blocks") }
+			{ value: '-1', label: __('None', 'c9-blocks') },
+			{ value: '0', label: __('Margin 0', 'c9-blocks') },
+			{ value: '1', label: __('Margin 1', 'c9-blocks') },
+			{ value: '2', label: __('Margin 2', 'c9-blocks') },
+			{ value: '3', label: __('Margin 3', 'c9-blocks') },
+			{ value: '4', label: __('Margin 4', 'c9-blocks') },
+			{ value: '5', label: __('Margin 5', 'c9-blocks') },
+			{ value: 'auto', label: __('Auto', 'c9-blocks') },
 		];
 
 		const sizeTypes = [
-			{ value: "cover", label: __("Cover", "c9-blocks") },
-			{ value: "contain", label: __("Contain", "c9-blocks") },
-			{ value: "", label: __("Custom", "c9-blocks") }
+			{ value: 'cover', label: __('Cover', 'c9-blocks') },
+			{ value: 'contain', label: __('Contain', 'c9-blocks') },
+			{ value: '', label: __('Custom', 'c9-blocks') },
 		];
 
 		const repeatTypes = [
-			{ value: "no-repeat", label: __("no-repeat", "c9-blocks") },
-			{ value: "repeat", label: __("repeat", "c9-blocks") },
-			{ value: "round", label: __("round", "c9-blocks") },
-			{ value: "space", label: __("space", "c9-blocks") }
+			{ value: 'no-repeat', label: __('no-repeat', 'c9-blocks') },
+			{ value: 'repeat', label: __('repeat', 'c9-blocks') },
+			{ value: 'round', label: __('round', 'c9-blocks') },
+			{ value: 'space', label: __('space', 'c9-blocks') },
 		];
 
-		const onSelectImage = img => {
+		const onSelectImage = (img) => {
 			setAttributes({
-				containerImgURL: img.url
+				containerImgURL: img.url,
 			});
 		};
 
 		const onRemoveImage = () => {
 			setAttributes({
 				containerImgURL: null,
-				bgImgSize: "cover"
+				bgImgSize: 'cover',
 			});
 		};
 
@@ -350,29 +351,29 @@ export default class Inspector extends Component {
 						className="c9-height-range-control"
 						beforeIcon="arrow-left-alt2"
 						afterIcon="arrow-right-alt2"
-						label={__("Window Height (vh)", "c9-blocks")}
+						label={__('Window Height (vh)', 'c9-blocks')}
 						value={minScreenHeight}
-						onChange={minScreenHeight => setAttributes({ minScreenHeight })}
+						onChange={(minScreenHeight) => setAttributes({ minScreenHeight })}
 						min={0}
 						max={100}
 					/>
 				</BaseControl>
 				<PanelBody>
 					<RangeControl
-						label={__("Columns", "c9-blocks")}
+						label={__('Columns', 'c9-blocks')}
 						value={columns}
-						onChange={nextColumns => {
+						onChange={(nextColumns) => {
 							setAttributes({
 								columns: nextColumns,
-								layout: `c9-${nextColumns}-col-equal`
+								layout: `c9-${nextColumns}-col-equal`,
 							});
 							updateColumns(columns, nextColumns);
 						}}
 						min={1}
 						max={6}
 						help={__(
-							"Note: Changing the column count can cause loss of content.",
-							"c9-blocks"
+							'Note: Changing the column count can cause loss of content.',
+							'c9-blocks'
 						)}
 					/>
 
@@ -380,8 +381,8 @@ export default class Inspector extends Component {
 
 					{(2 == columns || 3 == columns || 4 == columns) && (
 						<Fragment>
-							<p>{__("Column Layout", "c9-blocks")}</p>
-							<ButtonGroup aria-label={__("Column Layout", "c9-blocks")}>
+							<p>{__('Column Layout', 'c9-blocks')}</p>
+							<ButtonGroup aria-label={__('Column Layout', 'c9-blocks')}>
 								{map(columnLayouts[selectedRows], ({ name, key, icon }) => (
 									<Tooltip text={name} key={key}>
 										<Button
@@ -390,7 +391,7 @@ export default class Inspector extends Component {
 											isSmall
 											onClick={() => {
 												setAttributes({
-													layout: key
+													layout: key,
 												});
 												this.setState({ selectLayout: false });
 											}}
@@ -401,16 +402,16 @@ export default class Inspector extends Component {
 								))}
 							</ButtonGroup>
 							<p>
-								<i>{__("Change the layout of your columns.", "c9-blocks")}</i>
+								<i>{__('Change the layout of your columns.', 'c9-blocks')}</i>
 							</p>
 							<hr />
 						</Fragment>
 					)}
 					<RangeControl
-						label={__("Column Gap", "c9-blocks")}
-						help={__("Adjust the spacing between columns.", "c9-blocks")}
+						label={__('Column Gap', 'c9-blocks')}
+						help={__('Adjust the spacing between columns.', 'c9-blocks')}
 						value={columnsGap}
-						onChange={value => setAttributes({ columnsGap: value })}
+						onChange={(value) => setAttributes({ columnsGap: value })}
 						min={0}
 						max={10}
 						step={1}
@@ -419,13 +420,13 @@ export default class Inspector extends Component {
 					<hr />
 
 					<RangeControl
-						label={__("Column Inner Max Width (px)")}
+						label={__('Column Inner Max Width (px)')}
 						help={__(
-							"Adjust the width of the content inside the container wrapper.",
-							"c9-blocks"
+							'Adjust the width of the content inside the container wrapper.',
+							'c9-blocks'
 						)}
 						value={columnMaxWidth}
-						onChange={value => setAttributes({ columnMaxWidth: value })}
+						onChange={(value) => setAttributes({ columnMaxWidth: value })}
 						min={0}
 						max={2000}
 						step={1}
@@ -433,15 +434,15 @@ export default class Inspector extends Component {
 
 					{0 < columnMaxWidth && (
 						<ToggleControl
-							label={__("Center Columns In Container", "c9-blocks")}
+							label={__('Center Columns In Container', 'c9-blocks')}
 							help={__(
-								"Center the columns in the container when max-width is used.",
-								"c9-blocks"
+								'Center the columns in the container when max-width is used.',
+								'c9-blocks'
 							)}
 							checked={centerColumns}
 							onChange={() =>
 								setAttributes({
-									centerColumns: !centerColumns
+									centerColumns: !centerColumns,
 								})
 							}
 						/>
@@ -450,15 +451,15 @@ export default class Inspector extends Component {
 					<hr />
 
 					<ToggleControl
-						label={__("Responsive Columns", "c9-blocks")}
+						label={__('Responsive Columns', 'c9-blocks')}
 						help={__(
-							"Columns will be adjusted to fit on tablets and mobile devices.",
-							"c9-blocks"
+							'Columns will be adjusted to fit on tablets and mobile devices.',
+							'c9-blocks'
 						)}
 						checked={responsiveToggle}
 						onChange={() =>
 							setAttributes({
-								responsiveToggle: !responsiveToggle
+								responsiveToggle: !responsiveToggle,
 							})
 						}
 					/>
@@ -466,21 +467,21 @@ export default class Inspector extends Component {
 					<hr />
 
 					<ToggleControl
-						label={__("Reverse Mobile Column Order", "c9-blocks")}
+						label={__('Reverse Mobile Column Order', 'c9-blocks')}
 						help={__(
-							"Columns will be in reversed order on mobile devices allowing you to show the right columns first when grid columns stack on top of each other on smaller browsers.",
-							"c9-blocks"
+							'Columns will be in reversed order on mobile devices allowing you to show the right columns first when grid columns stack on top of each other on smaller browsers.',
+							'c9-blocks'
 						)}
 						checked={flipColumnsMobile}
 						onChange={() =>
 							setAttributes({
-								flipColumnsMobile: !flipColumnsMobile
+								flipColumnsMobile: !flipColumnsMobile,
 							})
 						}
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__("Spacing Options", "c9-blocks")}
+					title={__('Spacing Options', 'c9-blocks')}
 					initialOpen={false}
 				>
 					<h5 className="padding-label">Padding</h5>
@@ -493,17 +494,17 @@ export default class Inspector extends Component {
 						<SelectControl
 							options={paddingOptions}
 							value={containerPadding.top}
-							onChange={value => this.updatePadding("top", value)}
+							onChange={(value) => this.updatePadding('top', value)}
 						/>
 					</div>
 					<div className="padding-sides-wrapper">
 						<SelectControl
 							options={paddingOptions}
 							value={containerPadding.left}
-							onChange={value => this.updatePadding("left", value)}
+							onChange={(value) => this.updatePadding('left', value)}
 						/>
 						<Button
-							label={__("Linked Padding Toggle", "c9-blocks")}
+							label={__('Linked Padding Toggle', 'c9-blocks')}
 							icon={this.state.containerPadding.icon}
 							onClick={this.togglePaddingLinkage}
 							ref={this.state.linkedPaddingRef}
@@ -511,14 +512,14 @@ export default class Inspector extends Component {
 						<SelectControl
 							options={paddingOptions}
 							value={containerPadding.right}
-							onChange={value => this.updatePadding("right", value)}
+							onChange={(value) => this.updatePadding('right', value)}
 						/>
 					</div>
 					<div className="padding-bottom-wrapper">
 						<SelectControl
 							options={paddingOptions}
 							value={containerPadding.bottom}
-							onChange={value => this.updatePadding("bottom", value)}
+							onChange={(value) => this.updatePadding('bottom', value)}
 						/>
 					</div>
 
@@ -535,12 +536,12 @@ export default class Inspector extends Component {
 						<SelectControl
 							options={marginOptions}
 							value={containerMargin.top}
-							onChange={value => this.updateMargin("top", value)}
+							onChange={(value) => this.updateMargin('top', value)}
 						/>
 					</div>
 					<div className="margin-sides-wrapper">
 						<Button
-							label={__("Linked Padding Toggle", "c9-blocks")}
+							label={__('Linked Padding Toggle', 'c9-blocks')}
 							icon={this.state.containerMargin.icon}
 							onClick={this.toggleMarginLinkage}
 							ref={this.state.linkedMarginRef}
@@ -550,46 +551,46 @@ export default class Inspector extends Component {
 						<SelectControl
 							options={marginOptions}
 							value={containerMargin.bottom}
-							onChange={value => this.updateMargin("bottom", value)}
+							onChange={(value) => this.updateMargin('bottom', value)}
 						/>
 					</div>
 				</PanelBody>
 				<PanelBody
-					title={__("Background Settings", "c9-blocks")}
+					title={__('Background Settings', 'c9-blocks')}
 					initialOpen={false}
 				>
 					<MediaUpload
 						id="bg-image-select"
-						label={__("Background Image", "c9-blocks")}
+						label={__('Background Image', 'c9-blocks')}
 						onSelect={onSelectImage}
 						type="image"
 						value={containerImgID}
 						render={({ open }) => (
 							<div>
 								<Button
-									label={__("Edit image", "c9-blocks")}
+									label={__('Edit image', 'c9-blocks')}
 									icon="format-image"
 									onClick={open}
 								>
-									{__("Background Image", "c9-blocks")}
+									{__('Background Image', 'c9-blocks')}
 								</Button>
 
 								{containerImgURL && !!containerImgURL.length && (
 									<div>
 										<Button
-											label={__("Remove Image", "c9-blocks")}
+											label={__('Remove Image', 'c9-blocks')}
 											icon="dismiss"
 											onClick={onRemoveImage}
 										>
-											{__("Remove", "c9-blocks")}
+											{__('Remove', 'c9-blocks')}
 										</Button>
 
 										<h5>Position</h5>
 										<FocalPointPicker
-											label={__("Focal Point Picker", "c9-blocks")}
+											label={__('Focal Point Picker', 'c9-blocks')}
 											url={containerImgURL}
 											value={focalPoint}
-											onChange={value => setAttributes({ focalPoint: value })}
+											onChange={(value) => setAttributes({ focalPoint: value })}
 										/>
 									</div>
 								)}
@@ -597,18 +598,18 @@ export default class Inspector extends Component {
 								<h5>Color Overlay</h5>
 								<span>Color Palette</span>
 								<ColorPalette
-									label={__("Overlay Color", "c9-blocks")}
+									label={__('Overlay Color', 'c9-blocks')}
 									value={overlayHue}
-									onChange={overlayHue => setAttributes({ overlayHue })}
+									onChange={(overlayHue) => setAttributes({ overlayHue })}
 								/>
 
 								{overlayHue && !!overlayHue.length && (
 									<RangeControl
 										beforeIcon="arrow-left-alt2"
 										afterIcon="arrow-right-alt2"
-										label={__("Opacity", "c9-blocks")}
+										label={__('Opacity', 'c9-blocks')}
 										value={overlayOpacity}
-										onChange={overlayOpacity =>
+										onChange={(overlayOpacity) =>
 											setAttributes({ overlayOpacity })
 										}
 										min={1}
@@ -617,54 +618,54 @@ export default class Inspector extends Component {
 								)}
 								{overlayHue && (
 									<SelectControl
-										label={__("Blend Mode", "c9-blocks")}
+										label={__('Blend Mode', 'c9-blocks')}
 										value={blendMode}
 										options={[
-											{ value: "overlay", label: __("Overlay", "c9-blocks") },
-											{ value: "normal", label: __("Normal", "c9-blocks") },
+											{ value: 'overlay', label: __('Overlay', 'c9-blocks') },
+											{ value: 'normal', label: __('Normal', 'c9-blocks') },
 											{
-												value: "multiply",
-												label: __("Multiply", "c9-blocks")
+												value: 'multiply',
+												label: __('Multiply', 'c9-blocks'),
 											},
-											{ value: "screen", label: __("Screen", "c9-blocks") },
-											{ value: "darken", label: __("Darken", "c9-blocks") },
-											{ value: "lighten", label: __("Lighten", "c9-blocks") },
+											{ value: 'screen', label: __('Screen', 'c9-blocks') },
+											{ value: 'darken', label: __('Darken', 'c9-blocks') },
+											{ value: 'lighten', label: __('Lighten', 'c9-blocks') },
 											{
-												value: "color-dodge",
-												label: __("Color Dodge", "c9-blocks")
-											},
-											{
-												value: "color-burn",
-												label: __("Color Burn", "c9-blocks")
+												value: 'color-dodge',
+												label: __('Color Dodge', 'c9-blocks'),
 											},
 											{
-												value: "hard-light",
-												label: __("Hard Light", "c9-blocks")
+												value: 'color-burn',
+												label: __('Color Burn', 'c9-blocks'),
 											},
 											{
-												value: "soft-light",
-												label: __("Soft Light", "c9-blocks")
+												value: 'hard-light',
+												label: __('Hard Light', 'c9-blocks'),
 											},
 											{
-												value: "difference",
-												label: __("Difference", "c9-blocks")
+												value: 'soft-light',
+												label: __('Soft Light', 'c9-blocks'),
 											},
 											{
-												value: "exclusion",
-												label: __("Exclusion", "c9-blocks")
+												value: 'difference',
+												label: __('Difference', 'c9-blocks'),
 											},
-											{ value: "hue", label: __("Hue", "c9-blocks") },
 											{
-												value: "saturation",
-												label: __("Saturation", "c9-blocks")
+												value: 'exclusion',
+												label: __('Exclusion', 'c9-blocks'),
 											},
-											{ value: "color", label: __("Color", "c9-blocks") },
+											{ value: 'hue', label: __('Hue', 'c9-blocks') },
 											{
-												value: "luminosity",
-												label: __("Luminosity", "c9-blocks")
-											}
+												value: 'saturation',
+												label: __('Saturation', 'c9-blocks'),
+											},
+											{ value: 'color', label: __('Color', 'c9-blocks') },
+											{
+												value: 'luminosity',
+												label: __('Luminosity', 'c9-blocks'),
+											},
 										]}
-										onChange={blendMode => setAttributes({ blendMode })}
+										onChange={(blendMode) => setAttributes({ blendMode })}
 									/>
 								)}
 
@@ -674,9 +675,9 @@ export default class Inspector extends Component {
 									<div>
 										<h5>Attachment</h5>
 										<ToggleControl
-											label={__("Scroll | Fixed", "c9-blocks")}
+											label={__('Scroll | Fixed', 'c9-blocks')}
 											checked={bgImgAttach}
-											onChange={bgImgAttach => setAttributes({ bgImgAttach })}
+											onChange={(bgImgAttach) => setAttributes({ bgImgAttach })}
 										/>
 
 										<hr />
@@ -685,36 +686,38 @@ export default class Inspector extends Component {
 											<h5>Size</h5>
 											<SelectControl
 												help={__(
-													"Choose between cover, contain, or custom.",
-													"c9-blocks"
+													'Choose between cover, contain, or custom.',
+													'c9-blocks'
 												)}
 												options={sizeTypes}
 												value={bgImgSize}
-												onChange={value => setAttributes({ bgImgSize: value })}
+												onChange={(value) =>
+													setAttributes({ bgImgSize: value })
+												}
 											/>
 											{!bgImgSize && (
 												<div>
 													<h5>Horizontal</h5>
 													<ToggleControl
-														label={__("Auto | Manual", "c9-blocks")}
+														label={__('Auto | Manual', 'c9-blocks')}
 														checked={this.state.customX}
-														onChange={value => {
+														onChange={(value) => {
 															this.setState({ customX: value });
 
 															if (value) {
-																this.updateBgX("unit", "%");
-																this.updateBgX("size", 100);
+																this.updateBgX('unit', '%');
+																this.updateBgX('size', 100);
 															} else {
-																this.updateBgX("size", "auto");
+																this.updateBgX('size', 'auto');
 															}
 														}}
 													/>
 													{this.state.customX && (
-														<div style={{ display: "flex" }}>
+														<div style={{ display: 'flex' }}>
 															<RangeControl
 																value={this.state.bgCustomX.size}
-																onChange={value =>
-																	this.updateBgX("size", value)
+																onChange={(value) =>
+																	this.updateBgX('size', value)
 																}
 																className="bgSize"
 																min={0}
@@ -723,8 +726,8 @@ export default class Inspector extends Component {
 															<SelectControl
 																options={cssUnits}
 																value={this.state.bgCustomX.unit}
-																onChange={value =>
-																	this.updateBgX("unit", value)
+																onChange={(value) =>
+																	this.updateBgX('unit', value)
 																}
 																className="bgSize"
 															/>
@@ -732,25 +735,25 @@ export default class Inspector extends Component {
 													)}
 													<h5>Vertical</h5>
 													<ToggleControl
-														label={__("Auto | Manual", "c9-blocks")}
+														label={__('Auto | Manual', 'c9-blocks')}
 														checked={this.state.customY}
-														onChange={value => {
+														onChange={(value) => {
 															this.setState({ customY: value });
 
 															if (value) {
-																this.updateBgY("unit", "%");
-																this.updateBgY("size", 100);
+																this.updateBgY('unit', '%');
+																this.updateBgY('size', 100);
 															} else {
-																this.updateBgY("size", "auto");
+																this.updateBgY('size', 'auto');
 															}
 														}}
 													/>
 													{this.state.customY && (
-														<div style={{ display: "flex" }}>
+														<div style={{ display: 'flex' }}>
 															<RangeControl
 																value={this.state.bgCustomY.size}
-																onChange={value =>
-																	this.updateBgY("size", value)
+																onChange={(value) =>
+																	this.updateBgY('size', value)
 																}
 																className="bgSize"
 																min={0}
@@ -759,8 +762,8 @@ export default class Inspector extends Component {
 															<SelectControl
 																options={cssUnits}
 																value={this.state.bgCustomY.unit}
-																onChange={value =>
-																	this.updateBgY("unit", value)
+																onChange={(value) =>
+																	this.updateBgY('unit', value)
 																}
 																className="bgSize"
 															/>
@@ -773,41 +776,41 @@ export default class Inspector extends Component {
 											<h5>Repeat</h5>
 											<SelectControl
 												help={__(
-													"Choose between no-repeat, repeat, round or space.",
-													"c9-blocks"
+													'Choose between no-repeat, repeat, round or space.',
+													'c9-blocks'
 												)}
 												options={repeatTypes}
 												value={bgImgRepeat}
-												onChange={value =>
+												onChange={(value) =>
 													setAttributes({ bgImgRepeat: value })
 												}
 											/>
 										</div>
-										<h5>{__("Mobile Background", "c9-blocks")}</h5>
+										<h5>{__('Mobile Background', 'c9-blocks')}</h5>
 										<ToggleControl
-											label={__("Same as Desktop | Change", "c9-blocks")}
+											label={__('Same as Desktop | Change', 'c9-blocks')}
 											checked={overrideMobile}
-											onChange={overrideMobile =>
+											onChange={(overrideMobile) =>
 												setAttributes({ overrideMobile })
 											}
 										/>
 
 										{overrideMobile && (
 											<PanelBody
-												title={__("Mobile Background Settings", "c9-blocks")}
+												title={__('Mobile Background Settings', 'c9-blocks')}
 												initialOpen={true}
 											>
 												<h5>Position</h5>
 												<FocalPointPicker
 													className="c9-grid-mobile-focal"
-													label={__("Focal Point Picker", "c9-blocks")}
+													label={__('Focal Point Picker', 'c9-blocks')}
 													url={containerImgURL}
 													value={this.state.focalPointMobile}
-													onChange={value => {
+													onChange={(value) => {
 														setAttributes({ focalPointMobile: value });
 														this.setState({ focalPointMobile: value });
 
-														debounce(value => {
+														debounce((value) => {
 															clearTimeout(this.timer);
 															if (1 <= value.x || 0 >= value.x) {
 																return;
@@ -845,42 +848,42 @@ export default class Inspector extends Component {
 
 												<hr />
 
-												<h5>{__("Size", "c9-blocks")}</h5>
+												<h5>{__('Size', 'c9-blocks')}</h5>
 												<SelectControl
 													help={__(
-														"Choose between cover, contain, or custom.",
-														"c9-blocks"
+														'Choose between cover, contain, or custom.',
+														'c9-blocks'
 													)}
 													options={sizeTypes}
 													value={bgImgSizeMobile}
-													onChange={value =>
+													onChange={(value) =>
 														setAttributes({ bgImgSizeMobile: value })
 													}
 												/>
 
 												{!bgImgSizeMobile && (
 													<div>
-														<h5>{__("Horizontal", "c9-blocks")}</h5>
+														<h5>{__('Horizontal', 'c9-blocks')}</h5>
 														<ToggleControl
-															label={__("Auto | Manual", "c9-blocks")}
+															label={__('Auto | Manual', 'c9-blocks')}
 															checked={this.state.customXMobile}
-															onChange={value => {
+															onChange={(value) => {
 																this.setState({ customXMobile: value });
 
 																if (value) {
-																	this.updateBgX("unit", "%", true);
-																	this.updateBgX("size", 100, true);
+																	this.updateBgX('unit', '%', true);
+																	this.updateBgX('size', 100, true);
 																} else {
-																	this.updateBgX("size", "auto", true);
+																	this.updateBgX('size', 'auto', true);
 																}
 															}}
 														/>
 														{this.state.customXMobile && (
-															<div style={{ display: "flex" }}>
+															<div style={{ display: 'flex' }}>
 																<RangeControl
 																	value={this.state.bgCustomXMobile.size}
-																	onChange={value =>
-																		this.updateBgX("size", value, true)
+																	onChange={(value) =>
+																		this.updateBgX('size', value, true)
 																	}
 																	className="bgSize"
 																	min={0}
@@ -889,34 +892,34 @@ export default class Inspector extends Component {
 																<SelectControl
 																	options={cssUnits}
 																	value={this.state.bgCustomXMobile.unit}
-																	onChange={value =>
-																		this.updateBgX("unit", value, true)
+																	onChange={(value) =>
+																		this.updateBgX('unit', value, true)
 																	}
 																	className="bgSize"
 																/>
 															</div>
 														)}
-														<h5>{__("Vertical", "c9-blocks")}</h5>
+														<h5>{__('Vertical', 'c9-blocks')}</h5>
 														<ToggleControl
-															label={__("Auto | Manual", "c9-blocks")}
+															label={__('Auto | Manual', 'c9-blocks')}
 															checked={this.state.customYMobile}
-															onChange={value => {
+															onChange={(value) => {
 																this.setState({ customYMobile: value });
 
 																if (value) {
-																	this.updateBgY("unit", "%", true);
-																	this.updateBgY("size", 100, true);
+																	this.updateBgY('unit', '%', true);
+																	this.updateBgY('size', 100, true);
 																} else {
-																	this.updateBgY("size", "auto", true);
+																	this.updateBgY('size', 'auto', true);
 																}
 															}}
 														/>
 														{this.state.customYMobile && (
-															<div style={{ display: "flex" }}>
+															<div style={{ display: 'flex' }}>
 																<RangeControl
 																	value={this.state.bgCustomYMobile.size}
-																	onChange={value =>
-																		this.updateBgY("size", value, true)
+																	onChange={(value) =>
+																		this.updateBgY('size', value, true)
 																	}
 																	className="bgSize"
 																	min={0}
@@ -925,8 +928,8 @@ export default class Inspector extends Component {
 																<SelectControl
 																	options={cssUnits}
 																	value={this.state.bgCustomYMobile.unit}
-																	onChange={value =>
-																		this.updateBgY("unit", value, true)
+																	onChange={(value) =>
+																		this.updateBgY('unit', value, true)
 																	}
 																	className="bgSize"
 																/>
@@ -950,92 +953,92 @@ export default class Inspector extends Component {
 const columnLayouts = {
 	1: [
 		{
-			name: __("1 Column", "c9-blocks"),
-			key: "c9-1-col-equal",
+			name: __('1 Column', 'c9-blocks'),
+			key: 'c9-1-col-equal',
 			col: 1,
-			icon: icons.oneEqual
-		}
+			icon: icons.oneEqual,
+		},
 	],
 	2: [
 		{
-			name: __("2 Columns - 50/50", "c9-blocks"),
-			key: "c9-2-col-equal",
+			name: __('2 Columns - 50/50', 'c9-blocks'),
+			key: 'c9-2-col-equal',
 			col: 2,
-			icon: icons.twoEqual
+			icon: icons.twoEqual,
 		},
 		{
-			name: __("2 Columns - 75/25", "c9-blocks"),
-			key: "c9-2-col-wideleft",
+			name: __('2 Columns - 75/25', 'c9-blocks'),
+			key: 'c9-2-col-wideleft',
 			col: 2,
-			icon: icons.twoLeftWide
+			icon: icons.twoLeftWide,
 		},
 		{
-			name: __("2 Columns - 25/75", "c9-blocks"),
-			key: "c9-2-col-wideright",
+			name: __('2 Columns - 25/75', 'c9-blocks'),
+			key: 'c9-2-col-wideright',
 			col: 2,
-			icon: icons.twoRightWide
-		}
+			icon: icons.twoRightWide,
+		},
 	],
 	3: [
 		{
-			name: __("3 Columns - 33/33/33", "c9-blocks"),
-			key: "c9-3-col-equal",
+			name: __('3 Columns - 33/33/33', 'c9-blocks'),
+			key: 'c9-3-col-equal',
 			col: 3,
-			icon: icons.threeEqual
+			icon: icons.threeEqual,
 		},
 		{
-			name: __("3 Columns - 25/50/25", "c9-blocks"),
-			key: "c9-3-col-widecenter",
+			name: __('3 Columns - 25/50/25', 'c9-blocks'),
+			key: 'c9-3-col-widecenter',
 			col: 3,
-			icon: icons.threeWideCenter
+			icon: icons.threeWideCenter,
 		},
 		{
-			name: __("3 Columns - 50/25/25", "c9-blocks"),
-			key: "c9-3-col-wideleft",
+			name: __('3 Columns - 50/25/25', 'c9-blocks'),
+			key: 'c9-3-col-wideleft',
 			col: 3,
-			icon: icons.threeWideLeft
+			icon: icons.threeWideLeft,
 		},
 		{
-			name: __("3 Columns - 25/25/50", "c9-blocks"),
-			key: "c9-3-col-wideright",
+			name: __('3 Columns - 25/25/50', 'c9-blocks'),
+			key: 'c9-3-col-wideright',
 			col: 3,
-			icon: icons.threeWideRight
-		}
+			icon: icons.threeWideRight,
+		},
 	],
 	4: [
 		{
-			name: __("4 Columns - 25/25/25/25", "c9-blocks"),
-			key: "c9-4-col-equal",
+			name: __('4 Columns - 25/25/25/25', 'c9-blocks'),
+			key: 'c9-4-col-equal',
 			col: 4,
-			icon: icons.fourEqual
+			icon: icons.fourEqual,
 		},
 		{
-			name: __("4 Columns - 40/20/20/20", "c9-blocks"),
-			key: "c9-4-col-wideleft",
+			name: __('4 Columns - 40/20/20/20', 'c9-blocks'),
+			key: 'c9-4-col-wideleft',
 			col: 4,
-			icon: icons.fourLeft
+			icon: icons.fourLeft,
 		},
 		{
-			name: __("4 Columns - 20/20/20/40", "c9-blocks"),
-			key: "c9-4-col-wideright",
+			name: __('4 Columns - 20/20/20/40', 'c9-blocks'),
+			key: 'c9-4-col-wideright',
 			col: 4,
-			icon: icons.fourRight
-		}
+			icon: icons.fourRight,
+		},
 	],
 	5: [
 		{
-			name: __("5 Columns", "c9-blocks"),
-			key: "c9-5-col-equal",
+			name: __('5 Columns', 'c9-blocks'),
+			key: 'c9-5-col-equal',
 			col: 5,
-			icon: icons.fiveEqual
-		}
+			icon: icons.fiveEqual,
+		},
 	],
 	6: [
 		{
-			name: __("6 Columns", "c9-blocks"),
-			key: "c9-6-col-equal",
+			name: __('6 Columns', 'c9-blocks'),
+			key: 'c9-6-col-equal',
 			col: 6,
-			icon: icons.sixEqual
-		}
-	]
+			icon: icons.sixEqual,
+		},
+	],
 };

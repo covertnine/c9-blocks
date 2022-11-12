@@ -1,12 +1,12 @@
 /**
  * Internal dependencies
  */
-import Inspector from "./components/inspector";
-import PauseToolBar from "../../components/pause-toolbar";
-import VerticalAlignmentToolbar from "../../components/vertical-alignment-toolbar";
-import WidthToolbar from "../../components/width-toolbar";
-import SwapSlideToolbar from "./components/swap-slide-toolbar";
-import ResizableCarouselContainer from "./components/resizable-carousel-container";
+import Inspector from './components/inspector';
+import PauseToolBar from '../../components/pause-toolbar';
+import VerticalAlignmentToolbar from '../../components/vertical-alignment-toolbar';
+import WidthToolbar from '../../components/width-toolbar';
+import SwapSlideToolbar from './components/swap-slide-toolbar';
+import ResizableCarouselContainer from './components/resizable-carousel-container';
 
 /**
  * WordPress dependencies
@@ -19,13 +19,13 @@ const { Button } = wp.components;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
-import React from "react";
-import memoize from "memize";
-import times from "lodash/times";
-import constant from "lodash/constant";
+import classnames from 'classnames';
+import React from 'react';
+import memoize from 'memize';
+import times from 'lodash/times';
+import constant from 'lodash/constant';
 
-const ALLOWED_BLOCKS = ["c9-blocks/carousel-slide"];
+const ALLOWED_BLOCKS = ['c9-blocks/carousel-slide'];
 
 class Edit extends Component {
 	constructor() {
@@ -39,13 +39,13 @@ class Edit extends Component {
 			wrap: wrapAround,
 			time: slideTime,
 			active: 0,
-			pause: false
+			pause: false,
 		};
 
 		this.createIndicators = this.createIndicators.bind(this);
 	}
 
-	setRef = input => {
+	setRef = (input) => {
 		this.carouselRef.current = input;
 	};
 
@@ -56,7 +56,7 @@ class Edit extends Component {
 		const $ = window.jQuery;
 		let self = this;
 
-		$(this.carouselRef.current).on("slide.bs.carousel", function({ to }) {
+		$(this.carouselRef.current).on('slide.bs.carousel', function ({ to }) {
 			self.setState({ active: to });
 		});
 	}
@@ -67,7 +67,7 @@ class Edit extends Component {
 	componentWillUnmount() {
 		const $ = window.jQuery;
 
-		$(this.carouselRef.current).off("slide.bs.carousel", "**");
+		$(this.carouselRef.current).off('slide.bs.carousel', '**');
 	}
 
 	/**
@@ -91,7 +91,7 @@ class Edit extends Component {
 		for (let child of block.innerBlocks) {
 			if (child.attributes.slideActive !== this.state.active) {
 				updateBlockAttributes(child.clientId, {
-					slideActive: this.state.active
+					slideActive: this.state.active,
 				});
 			}
 		}
@@ -100,8 +100,8 @@ class Edit extends Component {
 		const { autoSlide, wrapAround, slideTime } = this.props.attributes;
 		const $ = window.jQuery;
 
-		if ($(this.carouselRef.current).data()["bs.carousel"]) {
-			let options = $(this.carouselRef.current).data()["bs.carousel"]._config;
+		if ($(this.carouselRef.current).data()['bs.carousel']) {
+			let options = $(this.carouselRef.current).data()['bs.carousel']._config;
 
 			if (pause && false != auto) {
 				options.interval = false;
@@ -145,8 +145,8 @@ class Edit extends Component {
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={classnames(
-						i == active ? "active" : null,
-						isSelectedBlockInRoot ? "editor-selected-controls-lift" : null
+						i == active ? 'active' : null,
+						isSelectedBlockInRoot ? 'editor-selected-controls-lift' : null
 					)}
 				/>
 			);
@@ -158,7 +158,7 @@ class Edit extends Component {
 	/**
 	 * Generates the child slide blocks.
 	 */
-	getSlidesTemplate = memoize(slides => {
+	getSlidesTemplate = memoize((slides) => {
 		let sizes = times(slides, constant(-1));
 		// console.log(sizes);
 		const slideHeightCallback = (id, height) => {
@@ -167,16 +167,17 @@ class Edit extends Component {
 			// console.log(sizes);
 		};
 
-		let templates = times(slides, id => [
-			"c9-blocks/carousel-slide",
-			{ id, slideActive: this.state.active, slides, slideHeightCallback }
+		let templates = times(slides, (id) => [
+			'c9-blocks/carousel-slide',
+			{ id, slideActive: this.state.active, slides, slideHeightCallback },
 		]);
 
 		return templates;
 	});
 
 	render() {
-		const { attributes, isSelectedBlockInRoot, setAttributes, swapSlide } = this.props;
+		const { attributes, isSelectedBlockInRoot, setAttributes, swapSlide } =
+			this.props;
 
 		const {
 			slides,
@@ -184,7 +185,7 @@ class Edit extends Component {
 			showIndicators,
 			verticalAlign,
 			align,
-			containerWidth
+			containerWidth,
 		} = attributes;
 
 		const { pause, active } = this.state;
@@ -199,12 +200,12 @@ class Edit extends Component {
 
 		let currWidth;
 		if (0 != align.length) {
-			if ("container" == containerWidth) {
-				currWidth = "wide";
-			} else if ("container-fluid" == containerWidth) {
-				currWidth = "full";
+			if ('container' == containerWidth) {
+				currWidth = 'wide';
+			} else if ('container-fluid' == containerWidth) {
+				currWidth = 'full';
 			} else {
-				currWidth = "narrow";
+				currWidth = 'narrow';
 			}
 		}
 
@@ -219,34 +220,34 @@ class Edit extends Component {
 					/>
 					<WidthToolbar
 						value={currWidth}
-						onChange={value => {
-							if ("wide" == value) {
-								setAttributes({ containerWidth: "container", align: "wide" });
-							} else if ("full" == value) {
+						onChange={(value) => {
+							if ('wide' == value) {
+								setAttributes({ containerWidth: 'container', align: 'wide' });
+							} else if ('full' == value) {
 								setAttributes({
-									containerWidth: "container-fluid",
-									align: "full"
+									containerWidth: 'container-fluid',
+									align: 'full',
 								});
-							} else if ("narrow" == value) {
+							} else if ('narrow' == value) {
 								setAttributes({
-									containerWidth: "container-narrow",
-									align: "narrow"
+									containerWidth: 'container-narrow',
+									align: 'narrow',
 								});
 							} else {
-								setAttributes({ containerWidth: "container", align: "" });
+								setAttributes({ containerWidth: 'container', align: '' });
 							}
 						}}
 					/>
 					<PauseToolBar
 						value={pause}
-						onChange={value => {
+						onChange={(value) => {
 							this.setState({ pause: value });
 						}}
 					/>
 
 					<VerticalAlignmentToolbar
 						value={verticalAlign}
-						onChange={value => {
+						onChange={(value) => {
 							setAttributes({ verticalAlign: value });
 						}}
 					/>
@@ -265,16 +266,16 @@ class Edit extends Component {
 				>
 					<ol
 						className={classnames(
-							"carousel-indicators",
-							!showIndicators ? "hide-indicator" : null
+							'carousel-indicators',
+							!showIndicators ? 'hide-indicator' : null
 						)}
 					>
 						{this.createIndicators(slides, instanceId)}
 					</ol>
 					<div
 						className={classnames(
-							"carousel-inner",
-							verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+							'carousel-inner',
+							verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
 						)}
 					>
 						<InnerBlocks
@@ -287,8 +288,8 @@ class Edit extends Component {
 						<Fragment>
 							<a
 								className={classnames(
-									"carousel-control-prev",
-									isSelectedBlockInRoot ? "editor-selected-controls-lift" : null
+									'carousel-control-prev',
+									isSelectedBlockInRoot ? 'editor-selected-controls-lift' : null
 								)}
 								href={`#c9-carousel-indicator-${instanceId}`}
 								role="button"
@@ -302,8 +303,8 @@ class Edit extends Component {
 							</a>
 							<a
 								className={classnames(
-									"carousel-control-next",
-									isSelectedBlockInRoot ? "editor-selected-controls-lift" : null
+									'carousel-control-next',
+									isSelectedBlockInRoot ? 'editor-selected-controls-lift' : null
 								)}
 								href={`#c9-carousel-indicator-${instanceId}`}
 								role="button"
@@ -323,7 +324,7 @@ class Edit extends Component {
 						<Button
 							label={__(
 								`Remove Current Slide (#${this.state.active + 1})`,
-								"c9-blocks"
+								'c9-blocks'
 							)}
 							icon="dismiss"
 							onClick={() => {
@@ -332,13 +333,13 @@ class Edit extends Component {
 								setAttributes({ slides: slides - 1 });
 								if (this.carouselRef.current && 0 < active) {
 									const $ = window.jQuery;
-									$(this.carouselRef.current).carousel("prev");
+									$(this.carouselRef.current).carousel('prev');
 								}
 							}}
 						>
 							{__(
 								`Remove Current Slide (#${this.state.active + 1})`,
-								"c9-blocks"
+								'c9-blocks'
 							)}
 						</Button>
 					</div>

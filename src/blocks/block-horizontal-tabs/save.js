@@ -8,7 +8,7 @@ const { applyFilters } = wp.hooks;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export default class Save extends Component {
 	constructor() {
@@ -24,45 +24,42 @@ export default class Save extends Component {
 			tabTextColor,
 			tabContentBackgroundColor,
 			blockBackgroundColor,
-			instanceId
+			instanceId,
 		} = this.props.attributes;
 
-		const {
-			className = "",
-			...otherProps
-		} = this.props;
+		const { className = '', ...otherProps } = this.props;
 
-		return [
+		return (
 			<div
-				className={applyFilters("c9-blocks.blocks.className", className)}
+				className={applyFilters('c9-blocks.blocks.className', className)}
 				data-tab-active={tabActive}
 				style={{
-					backgroundColor: blockBackgroundColor
+					backgroundColor: blockBackgroundColor,
 				}}
 				{...otherProps}
 			>
 				<ul
 					className={classnames(
-						"nav nav-tabs d-flex",
-						buttonsAlign ? `justify-content-${buttonsAlign}` : "nav-justified"
+						'nav nav-tabs d-flex',
+						buttonsAlign ? `justify-content-${buttonsAlign}` : 'nav-justified'
 					)}
 					role="tablist"
 				>
-					{tabsData.map(tabData => {
+					{tabsData.map((tabData) => {
 						const { slug, title } = tabData;
 						const selected = tabActive === slug;
 						return (
-							<li className="nav-item">
+							<li className="nav-item" key={slug}>
 								<RichText.Content
 									style={{
 										backgroundColor: tabBackgroundColor,
-										color: tabTextColor
+										color: tabTextColor,
 									}}
 									tagName="a"
 									data-toggle="tab"
 									role="tab"
 									href={`#htab-${slug}-${instanceId}`}
-									className={classnames("nav-link", selected ? "active" : "")}
+									className={classnames('nav-link', selected ? 'active' : '')}
 									id={`tab-button-${slug}`}
 									value={title}
 								/>
@@ -73,12 +70,12 @@ export default class Save extends Component {
 				<div
 					className="c9-tabs-content tab-content"
 					style={{
-						backgroundColor: tabContentBackgroundColor
+						backgroundColor: tabContentBackgroundColor,
 					}}
 				>
 					<InnerBlocks.Content />
 				</div>
 			</div>
-		];
+		);
 	}
 }

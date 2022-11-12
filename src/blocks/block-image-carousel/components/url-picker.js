@@ -1,17 +1,11 @@
 const { __ } = wp.i18n;
 const { useState, useEffect, Fragment } = wp.element;
-const {
-	Popover,
-	ToolbarButton,
-	ToolbarGroup,
-	KeyboardShortcuts
-} = wp.components;
-const {
-	BlockControls,
-	__experimentalLinkControl: LinkControl
-} = wp.blockEditor;
+const { Popover, ToolbarButton, ToolbarGroup, KeyboardShortcuts } =
+	wp.components;
+const { BlockControls, __experimentalLinkControl: LinkControl } =
+	wp.blockEditor;
 const { rawShortcut, displayShortcut } = wp.keycodes;
-import { link, linkOff } from "@wordpress/icons";
+import { link, linkOff } from '@wordpress/icons';
 
 function URLPicker({
 	isSelected,
@@ -20,7 +14,7 @@ function URLPicker({
 	startPause,
 	setAttributes,
 	opensInNewTab,
-	onToggleOpenInNewTab
+	onToggleOpenInNewTab,
 }) {
 	const [isURLPickerOpen, setIsURLPickerOpen] = useState(false);
 	const [slideActive, setSlideActive] = useState(0);
@@ -50,7 +44,7 @@ function URLPicker({
 		let link = [...url];
 		link[slideActive] = null;
 		setAttributes({
-			link
+			link,
 		});
 		setIsURLPickerOpen(false);
 	};
@@ -62,14 +56,14 @@ function URLPicker({
 		>
 			<p
 				className="components-base-control__label"
-				style={{ textAlign: "center" }}
+				style={{ textAlign: 'center' }}
 			>
 				Custom Link Setting for Slide {slideActive + 1}
 			</p>
 			<LinkControl
 				className="wp-block-navigation-link__inline-link-input"
 				value={{ url: url[slideActive], opensInNewTab }}
-				onChange={({ url: newURL = "", opensInNewTab: newOpensInNewTab }) => {
+				onChange={({ url: newURL = '', opensInNewTab: newOpensInNewTab }) => {
 					let link = [...url];
 					link[slideActive] = newURL;
 					setAttributes({ link });
@@ -89,8 +83,8 @@ function URLPicker({
 						<ToolbarButton
 							name="link"
 							icon={link}
-							title={__("Link")}
-							shortcut={displayShortcut.primary("k")}
+							title={__('Link')}
+							shortcut={displayShortcut.primary('k')}
 							onClick={openLinkControl}
 						/>
 					)}
@@ -98,8 +92,8 @@ function URLPicker({
 						<ToolbarButton
 							name="link"
 							icon={linkOff}
-							title={__("Unlink")}
-							shortcut={displayShortcut.primaryShift("k")}
+							title={__('Unlink')}
+							shortcut={displayShortcut.primaryShift('k')}
 							onClick={unlinkButton}
 							isActive={true}
 						/>
@@ -110,8 +104,8 @@ function URLPicker({
 				<KeyboardShortcuts
 					bindGlobal
 					shortcuts={{
-						[rawShortcut.primary("k")]: openLinkControl,
-						[rawShortcut.primaryShift("k")]: unlinkButton
+						[rawShortcut.primary('k')]: openLinkControl,
+						[rawShortcut.primaryShift('k')]: unlinkButton,
 					}}
 				/>
 			)}

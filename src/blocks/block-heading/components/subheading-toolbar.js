@@ -4,7 +4,7 @@
 const { __ } = wp.i18n;
 const { ToolbarGroup, ToolbarButton } = wp.components;
 
-import Icon from "../../../../assets/icon-c9-subheading-enable-toolbar-icon";
+import Icon from '../../../../assets/icon-c9-subheading-enable-toolbar-icon';
 
 /**
  * Control Settings
@@ -12,9 +12,9 @@ import Icon from "../../../../assets/icon-c9-subheading-enable-toolbar-icon";
 const DEFAULT_ENABLE_CONTROLS = [
 	{
 		icon: Icon,
-		title: __("Enable Subheading", "c9-blocks"),
-		enabled: true
-	}
+		title: __('Enable Subheading', 'c9-blocks'),
+		enabled: true,
+	},
 ];
 
 /**
@@ -23,23 +23,24 @@ const DEFAULT_ENABLE_CONTROLS = [
 export function SubheadingToolbar({
 	value,
 	onChange,
-	enableControls = DEFAULT_ENABLE_CONTROLS
+	enableControls = DEFAULT_ENABLE_CONTROLS,
 }) {
 	function applyOrUnset(enabled) {
 		return () => onChange(value === enabled ? false : enabled);
 	}
 
 	return (
-		<ToolbarGroup
-			label={__("Subheading", "c9-blocks")}
-		>
-			{enableControls.map(control => {
+		<ToolbarGroup label={__('Subheading', 'c9-blocks')}>
+			{enableControls.map((control) => {
 				const { enabled } = control;
-				return <ToolbarButton
-					{...control}
-					isActive={value === enabled}
-					onClick={applyOrUnset(enabled)}
-				/>
+				return (
+					<ToolbarButton
+						key={control.title}
+						{...control}
+						isActive={value === enabled}
+						onClick={applyOrUnset(enabled)}
+					/>
+				);
 			})}
 		</ToolbarGroup>
 	);

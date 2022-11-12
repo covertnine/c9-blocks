@@ -30,96 +30,96 @@ export default class Inspector extends Component {
 			shareButtonStyle,
 			shareButtonShape,
 			shareButtonSize,
-			shareButtonColor
+			shareButtonColor,
 		} = this.props.attributes;
 
 		// Button style values
 		const buttonStyleOptions = [
-			{ value: "c9-share-icon-text", label: __("Icon and Text") },
-			{ value: "c9-share-icon-only", label: __("Icon Only") },
-			{ value: "c9-share-text-only", label: __("Text Only") }
+			{ value: 'c9-share-icon-text', label: __('Icon and Text') },
+			{ value: 'c9-share-icon-only', label: __('Icon Only') },
+			{ value: 'c9-share-text-only', label: __('Text Only') },
 		];
 
 		// Button shape values
 		const buttonShapeOptions = [
-			{ value: "c9-share-shape-square", label: __("Square") },
-			{ value: "c9-share-shape-rounded", label: __("Rounded Square") },
-			{ value: "c9-share-shape-circular", label: __("Circular") }
+			{ value: 'c9-share-shape-square', label: __('Square') },
+			{ value: 'c9-share-shape-rounded', label: __('Rounded Square') },
+			{ value: 'c9-share-shape-circular', label: __('Circular') },
 		];
 
 		// Button size values
 		const shareButtonSizeOptions = [
-			{ value: "c9-share-size-small", label: __("Small") },
-			{ value: "c9-share-size-medium", label: __("Medium") },
-			{ value: "c9-share-size-large", label: __("Large") }
+			{ value: 'c9-share-size-small', label: __('Small') },
+			{ value: 'c9-share-size-medium', label: __('Medium') },
+			{ value: 'c9-share-size-large', label: __('Large') },
 		];
 
 		// Button color values
 		const shareButtonColorOptions = [
-			{ value: "c9-share-color-standard", label: __("Standard") },
-			{ value: "c9-share-color-social", label: __("Social Colors") }
+			{ value: 'c9-share-color-standard', label: __('Standard') },
+			{ value: 'c9-share-color-social', label: __('Social Colors') },
 		];
 
 		return (
 			<InspectorControls key="inspector">
 				<PanelBody>
-					<p>{__("Enable or disable the sharing links you want to output.")}</p>
+					<p>{__('Enable or disable the sharing links you want to output.')}</p>
 
 					<ToggleControl
-						label={__("Twitter")}
+						label={__('Twitter')}
 						checked={!!twitter}
 						onChange={() => this.props.setAttributes({ twitter: !twitter })}
 					/>
 					<ToggleControl
-						label={__("Facebook")}
+						label={__('Facebook')}
 						checked={!!facebook}
 						onChange={() => this.props.setAttributes({ facebook: !facebook })}
 					/>
 					<ToggleControl
-						label={__("Instagram")}
+						label={__('Instagram')}
 						checked={!!instagram}
 						onChange={() => this.props.setAttributes({ instagram: !instagram })}
 					/>
-					{
-						instagram && (
-							<TextControl
-								label="Instagram Share Link"
-								value={instagramLink}
-								onChange={value => this.props.setAttributes({ instagramLink: value })}
-							/>
-						)
-					}
+					{instagram && (
+						<TextControl
+							label="Instagram Share Link"
+							value={instagramLink}
+							onChange={(value) =>
+								this.props.setAttributes({ instagramLink: value })
+							}
+						/>
+					)}
 					<ToggleControl
-						label={__("Tiktok")}
+						label={__('Tiktok')}
 						checked={!!tiktok}
 						onChange={() => this.props.setAttributes({ tiktok: !tiktok })}
 					/>
-					{
-						tiktok && (
-							<TextControl
-								label="Tiktok Share Link"
-								value={tiktokLink}
-								onChange={value => this.props.setAttributes({ tiktokLink: value })}
-							/>
-						)
-					}
+					{tiktok && (
+						<TextControl
+							label="Tiktok Share Link"
+							value={tiktokLink}
+							onChange={(value) =>
+								this.props.setAttributes({ tiktokLink: value })
+							}
+						/>
+					)}
 					<ToggleControl
-						label={__("Pinterest")}
+						label={__('Pinterest')}
 						checked={!!pinterest}
 						onChange={() => this.props.setAttributes({ pinterest: !pinterest })}
 					/>
 					<ToggleControl
-						label={__("LinkedIn")}
+						label={__('LinkedIn')}
 						checked={!!linkedin}
 						onChange={() => this.props.setAttributes({ linkedin: !linkedin })}
 					/>
 					<ToggleControl
-						label={__("Reddit")}
+						label={__('Reddit')}
 						checked={!!reddit}
 						onChange={() => this.props.setAttributes({ reddit: !reddit })}
 					/>
 					<ToggleControl
-						label={__("Email")}
+						label={__('Email')}
 						checked={!!email}
 						onChange={() => this.props.setAttributes({ email: !email })}
 					/>
@@ -127,52 +127,52 @@ export default class Inspector extends Component {
 
 				<PanelBody>
 					<p className="components-base-control__label">
-						{__("Sharing Button Options", "c9-blocks")}
+						{__('Sharing Button Options', 'c9-blocks')}
 					</p>
 					<SelectControl
-						label={__("Button Style")}
+						label={__('Button Style')}
 						value={shareButtonStyle}
 						options={buttonStyleOptions.map(({ value, label }) => ({
 							value: value,
-							label: label
+							label: label,
 						}))}
-						onChange={value => {
+						onChange={(value) => {
 							this.props.setAttributes({ shareButtonStyle: value });
 						}}
 					/>
 
 					<SelectControl
-						label={__("Button Shape")}
+						label={__('Button Shape')}
 						value={shareButtonShape}
 						options={buttonShapeOptions.map(({ value, label }) => ({
 							value: value,
-							label: label
+							label: label,
 						}))}
-						onChange={value => {
+						onChange={(value) => {
 							this.props.setAttributes({ shareButtonShape: value });
 						}}
 					/>
 
 					<SelectControl
-						label={__("Button Size")}
+						label={__('Button Size')}
 						value={shareButtonSize}
 						options={shareButtonSizeOptions.map(({ value, label }) => ({
 							value: value,
-							label: label
+							label: label,
 						}))}
-						onChange={value => {
+						onChange={(value) => {
 							this.props.setAttributes({ shareButtonSize: value });
 						}}
 					/>
 
 					<SelectControl
-						label={__("Button Color")}
+						label={__('Button Color')}
 						value={shareButtonColor}
 						options={shareButtonColorOptions.map(({ value, label }) => ({
 							value: value,
-							label: label
+							label: label,
 						}))}
-						onChange={value => {
+						onChange={(value) => {
 							this.props.setAttributes({ shareButtonColor: value });
 						}}
 					/>

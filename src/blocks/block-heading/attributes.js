@@ -3,65 +3,65 @@
  */
 const attributes = {
 	isCollapsed: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	heading: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	subheading: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	addSubheading: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	wrapper: {
-		type: "array",
-		source: "query",
-		selector: ".section-heading",
+		type: 'array',
+		source: 'query',
+		selector: '.section-heading',
 		query: {
 			class: {
-				type: "string",
-				source: "attribute",
-				attribute: "class"
-			}
-		}
+				type: 'string',
+				source: 'attribute',
+				attribute: 'class',
+			},
+		},
 	},
 	tagLevel: {
-		type: "number",
-		default: 1
+		type: 'number',
+		default: 1,
 	},
 	displayLevel: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	type: {
-		type: "string",
-		default: "c9-h h"
+		type: 'string',
+		default: 'c9-h h',
 	},
 	backgroundColor: {
-		type: "string"
+		type: 'string',
 	},
 	textColor: {
-		type: "string"
+		type: 'string',
 	},
 	subTextColor: {
-		type: "string"
+		type: 'string',
 	},
 	textAlign: {
-		type: "string",
-		default: "left"
+		type: 'string',
+		default: 'left',
 	},
 	weight: {
-		type: "string"
+		type: 'string',
 	},
 	overrideStyle: {
-		type: "boolean",
-		default: false
-	}
+		type: 'boolean',
+		default: false,
+	},
 };
 
 export default attributes;

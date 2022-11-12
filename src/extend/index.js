@@ -1,3 +1,3 @@
 //import "./font-colors";
-import "./show-hide-inspector";
-import "./space-settings-inspector";
+import './show-hide-inspector';
+import './space-settings-inspector';

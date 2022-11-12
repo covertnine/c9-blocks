@@ -1,7 +1,7 @@
 /**
  * Import CSS
  */
-import "./editor.scss";
+import './editor.scss';
 
 /**
  * WordPress dependencies
@@ -16,34 +16,34 @@ const { PanelBody, SelectControl, Button } = wp.components;
 /**
  * Internal dependencies
  */
-import { paddingOptions, marginOptions, c9SpacingConfig } from "./utils";
+import { paddingOptions, marginOptions, c9SpacingConfig } from './utils';
 
 /**
  * External dependencies
  */
-import assign from "lodash/assign";
-import classnames from "classnames";
+import assign from 'lodash/assign';
+import classnames from 'classnames';
 let initialOpenPanel = false;
-import React from "react";
+import React from 'react';
 
 /**
  * Selected Core Blocks to extend
  */
 const supportedBlocks = [
-	"core/paragraph",
-	"core/group",
-	"core/heading",
-	"core/buttons",
-	"core/button",
-	"core/spacer",
-	"core/quote",
-	"core/pullquote"
+	'core/paragraph',
+	'core/group',
+	'core/heading',
+	'core/buttons',
+	'core/button',
+	'core/spacer',
+	'core/quote',
+	'core/pullquote',
 ];
 
 /**
  * Selected C9 Blocks to extend
  */
-const supportedC9Blocks = ["c9-blocks/heading", "c9-blocks/column"];
+const supportedC9Blocks = ['c9-blocks/heading', 'c9-blocks/column'];
 
 /**
  * Check if core block may be extended.
@@ -74,15 +74,15 @@ function addAttribute(settings, name) {
 	if (allow) {
 		if (!settings.attributes.c9PaddingSpaceSettings) {
 			settings.attributes.c9PaddingSpaceSettings = {
-				type: "object",
+				type: 'object',
 				default: {
 					linked: true,
-					icon: "admin-links",
-					top: "-1",
-					bottom: "-1",
-					left: "-1",
-					right: "-1"
-				}
+					icon: 'admin-links',
+					top: '-1',
+					bottom: '-1',
+					left: '-1',
+					right: '-1',
+				},
 			};
 
 			// add to deprecated items.
@@ -97,13 +97,13 @@ function addAttribute(settings, name) {
 		}
 		if (!settings.attributes.c9MarginSpaceSettings) {
 			settings.attributes.c9MarginSpaceSettings = {
-				type: "object",
+				type: 'object',
 				default: {
 					linked: true,
-					icon: "admin-links",
-					top: "-1",
-					bottom: "-1"
-				}
+					icon: 'admin-links',
+					top: '-1',
+					bottom: '-1',
+				},
 			};
 
 			// add to deprecated items.
@@ -139,7 +139,7 @@ function addSaveProps(extraProps, blockType, attributes) {
 			attributes.c9MarginSpaceSettings
 		);
 		assign(extraProps, {
-			className: classnames(extraProps.className, result)
+			className: classnames(extraProps.className, result),
 		});
 	}
 
@@ -154,13 +154,13 @@ function addSaveProps(extraProps, blockType, attributes) {
  *
  * @return {string} Wrapped component.
  */
-const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
+const withInspectorControl = createHigherOrderComponent((OriginalComponent) => {
 	class C9ShowHideWrapper extends Component {
 		constructor() {
 			super(...arguments);
 			const {
 				attributes: { c9PaddingSpaceSettings, c9MarginSpaceSettings },
-				setAttributes
+				setAttributes,
 			} = this.props;
 
 			this.setAttributes = setAttributes;
@@ -172,7 +172,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 			this.state = {
 				c9PaddingSpaceSettings: c9PaddingSpaceSettings,
 				c9MarginSpaceSettings: c9MarginSpaceSettings,
-				setAttributes: setAttributes
+				setAttributes: setAttributes,
 			};
 		}
 
@@ -185,7 +185,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 					bottom: value,
 					left: value,
 					right: value,
-					icon: this.state.c9PaddingSpaceSettings.icon
+					icon: this.state.c9PaddingSpaceSettings.icon,
 				};
 				this.setState({ c9PaddingSpaceSettings: spacingObject });
 				this.setAttributes({ c9PaddingSpaceSettings: spacingObject });
@@ -202,28 +202,28 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 
 		togglePaddingLinkage = () => {
 			let {
-				attributes: { c9PaddingSpaceSettings }
+				attributes: { c9PaddingSpaceSettings },
 			} = this.props;
 
 			c9PaddingSpaceSettings = Object.assign({}, c9PaddingSpaceSettings);
 			c9PaddingSpaceSettings.linked = !c9PaddingSpaceSettings.linked;
 			c9PaddingSpaceSettings.icon = c9PaddingSpaceSettings.linked
-				? "admin-links"
-				: "editor-unlink";
+				? 'admin-links'
+				: 'editor-unlink';
 			this.setState({ c9PaddingSpaceSettings });
 			this.setAttributes({ c9PaddingSpaceSettings });
 		};
 
 		toggleMarginLinkage = () => {
 			let {
-				attributes: { c9MarginSpaceSettings }
+				attributes: { c9MarginSpaceSettings },
 			} = this.props;
 
 			c9MarginSpaceSettings = Object.assign({}, c9MarginSpaceSettings);
 			c9MarginSpaceSettings.linked = !c9MarginSpaceSettings.linked;
 			c9MarginSpaceSettings.icon = c9MarginSpaceSettings.linked
-				? "admin-links"
-				: "editor-unlink";
+				? 'admin-links'
+				: 'editor-unlink';
 			this.setState({ c9MarginSpaceSettings });
 			this.setAttributes({ c9MarginSpaceSettings });
 		};
@@ -237,7 +237,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 					bottom: value,
 					left: value,
 					right: value,
-					icon: this.state.c9MarginSpaceSettings.icon
+					icon: this.state.c9MarginSpaceSettings.icon,
 				};
 				this.setState({ c9MarginSpaceSettings: spacingObject });
 				this.setAttributes({ c9MarginSpaceSettings: spacingObject });
@@ -259,7 +259,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 			}
 
 			const {
-				attributes: { c9PaddingSpaceSettings, c9MarginSpaceSettings }
+				attributes: { c9PaddingSpaceSettings, c9MarginSpaceSettings },
 			} = this.props;
 
 			// add new Show/Hide controls.
@@ -270,7 +270,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 						<PanelBody
 							title={
 								<Fragment>
-									<span> {__("Spacing Options", "c9-blocks")} </span>
+									<span> {__('Spacing Options', 'c9-blocks')} </span>
 									<span className="c9-ext-badge"> ext </span>
 								</Fragment>
 							}
@@ -289,17 +289,17 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 								<SelectControl
 									options={paddingOptions}
 									value={c9PaddingSpaceSettings.top}
-									onChange={value => this.updatePadding("top", value)}
+									onChange={(value) => this.updatePadding('top', value)}
 								/>
 							</div>
 							<div className="padding-sides-wrapper">
 								<SelectControl
 									options={paddingOptions}
 									value={c9PaddingSpaceSettings.left}
-									onChange={value => this.updatePadding("left", value)}
+									onChange={(value) => this.updatePadding('left', value)}
 								/>
 								<Button
-									label={__("Linked Padding Toggle", "c9-blocks")}
+									label={__('Linked Padding Toggle', 'c9-blocks')}
 									icon={this.state.c9PaddingSpaceSettings.icon}
 									onClick={this.togglePaddingLinkage}
 									ref={this.state.linkedPaddingRef}
@@ -307,14 +307,14 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 								<SelectControl
 									options={paddingOptions}
 									value={c9PaddingSpaceSettings.right}
-									onChange={value => this.updatePadding("right", value)}
+									onChange={(value) => this.updatePadding('right', value)}
 								/>
 							</div>
 							<div className="padding-bottom-wrapper">
 								<SelectControl
 									options={paddingOptions}
 									value={c9PaddingSpaceSettings.bottom}
-									onChange={value => this.updatePadding("bottom", value)}
+									onChange={(value) => this.updatePadding('bottom', value)}
 								/>
 							</div>
 
@@ -331,12 +331,12 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 								<SelectControl
 									options={marginOptions}
 									value={c9MarginSpaceSettings.top}
-									onChange={value => this.updateMargin("top", value)}
+									onChange={(value) => this.updateMargin('top', value)}
 								/>
 							</div>
 							<div className="margin-sides-wrapper">
 								<Button
-									label={__("Linked Padding Toggle", "c9-blocks")}
+									label={__('Linked Padding Toggle', 'c9-blocks')}
 									icon={this.state.c9MarginSpaceSettings.icon}
 									onClick={this.toggleMarginLinkage}
 									ref={this.state.linkedMarginRef}
@@ -346,7 +346,7 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 								<SelectControl
 									options={marginOptions}
 									value={c9MarginSpaceSettings.bottom}
-									onChange={value => this.updateMargin("bottom", value)}
+									onChange={(value) => this.updateMargin('bottom', value)}
 								/>
 							</div>
 						</PanelBody>
@@ -357,10 +357,10 @@ const withInspectorControl = createHigherOrderComponent(OriginalComponent => {
 	}
 
 	return C9ShowHideWrapper;
-}, "withInspectorControl");
+}, 'withInspectorControl');
 
-const withClientIdClassName = createHigherOrderComponent(BlockListBlock => {
-	return props => {
+const withClientIdClassName = createHigherOrderComponent((BlockListBlock) => {
+	return (props) => {
 		let result = [];
 		const { attributes } = props;
 		if (attributes.c9PaddingSpaceSettings && attributes.c9MarginSpaceSettings) {
@@ -376,26 +376,26 @@ const withClientIdClassName = createHigherOrderComponent(BlockListBlock => {
 			/>
 		);
 	};
-}, "withClientIdClassName");
+}, 'withClientIdClassName');
 
 // Init filters.
 addFilter(
-	"blocks.registerBlockType",
-	"c9-blocks/space-settings/additional-attributes",
+	'blocks.registerBlockType',
+	'c9-blocks/space-settings/additional-attributes',
 	addAttribute
 );
 addFilter(
-	"editor.BlockEdit",
-	"c9-blocks/space-settings/additional-attributes",
+	'editor.BlockEdit',
+	'c9-blocks/space-settings/additional-attributes',
 	withInspectorControl
 );
 addFilter(
-	"editor.BlockListBlock",
-	"c9-blocks/space-settings/additional-attributes",
+	'editor.BlockListBlock',
+	'c9-blocks/space-settings/additional-attributes',
 	withClientIdClassName
 );
 addFilter(
-	"blocks.getSaveContent.extraProps",
-	"c9-blocks/space-settings/save-props",
+	'blocks.getSaveContent.extraProps',
+	'c9-blocks/space-settings/save-props',
 	addSaveProps
 );

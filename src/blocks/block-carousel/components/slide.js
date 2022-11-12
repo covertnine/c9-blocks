@@ -12,9 +12,9 @@ const { withSelect, withDispatch } = wp.data;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
-import times from "lodash/times";
-import constant from "lodash/constant";
+import classnames from 'classnames';
+import times from 'lodash/times';
+import constant from 'lodash/constant';
 
 /**
  * Create a Slide wrapper Component
@@ -74,20 +74,20 @@ class Slide extends Component {
 	render() {
 		// eslint-disable-next-line no-unused-vars
 		let {
-			className = "",
+			className = '',
 			hasChildBlocks,
 			rootBlock,
-			updateBlockAttributes
+			updateBlockAttributes,
 		} = this.props;
 
 		const ALLOWED_BLOCKS = getBlockTypes()
-			.map(block => block.name)
+			.map((block) => block.name)
 			.filter(
-				name =>
-					"c9-blocks/carousel" != name && "c9-blocks/image-carousel" != name
+				(name) =>
+					'c9-blocks/carousel' != name && 'c9-blocks/image-carousel' != name
 			);
 
-		const refCallback = async element => {
+		const refCallback = async (element) => {
 			const limit = 20;
 			let currCount = 0;
 			if (element) {
@@ -95,13 +95,14 @@ class Slide extends Component {
 				while (0 === config.height && currCount < limit) {
 					currCount++;
 					// wait and check again
-					await new Promise(r => setTimeout(r, 500));
+					await new Promise((r) => setTimeout(r, 500));
 					config = element.getBoundingClientRect();
 				}
 
 				if (rootBlock) {
-					if (!this.isSizeChanged(rootBlock.attributes.slideSizes,
-						config.height)) {
+					if (
+						!this.isSizeChanged(rootBlock.attributes.slideSizes, config.height)
+					) {
 						return;
 					}
 
@@ -116,7 +117,7 @@ class Slide extends Component {
 			}
 		};
 
-		className = classnames(className, "c9-carousel-slide");
+		className = classnames(className, 'c9-carousel-slide');
 
 		return (
 			<div
@@ -138,12 +139,12 @@ class Slide extends Component {
 	}
 }
 
-registerBlockType("c9-blocks/carousel-slide", {
-	title: __("C9 Carousel Slide", "c9-blocks"),
+registerBlockType('c9-blocks/carousel-slide', {
+	title: __('C9 Carousel Slide', 'c9-blocks'),
 
-	category: "common",
+	category: 'common',
 
-	parent: ["c9-blocks/carousel"],
+	parent: ['c9-blocks/carousel'],
 
 	icon: (
 		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -155,32 +156,31 @@ registerBlockType("c9-blocks/carousel-slide", {
 	supports: {
 		inserter: false,
 		className: false,
-		reusable: false
+		reusable: false,
 	},
 
 	attributes: {
 		id: {
-			type: "number"
+			type: 'number',
 		},
 		slideActive: {
-			type: "number"
+			type: 'number',
 		},
 		slides: {
-			type: "number"
+			type: 'number',
 		},
 		slideEqualHeight: {
-			type: "boolean"
+			type: 'boolean',
 		},
 		slideHeightCallback: {
-			type: "number"
-		}
+			type: 'number',
+		},
 	},
 
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { getBlockOrder, getBlock, getBlockHierarchyRootClientId } = select(
-				"core/block-editor"
-			);
+			const { getBlockOrder, getBlock, getBlockHierarchyRootClientId } =
+				select('core/block-editor');
 
 			const { clientId } = ownProps;
 
@@ -188,27 +188,27 @@ registerBlockType("c9-blocks/carousel-slide", {
 				hasChildBlocks: 0 < getBlockOrder(clientId).length,
 				rootBlock: clientId
 					? getBlock(getBlockHierarchyRootClientId(clientId))
-					: null
+					: null,
 			};
 		}),
-		withDispatch(dispatch => {
-			const { updateBlockAttributes } = dispatch("core/block-editor");
+		withDispatch((dispatch) => {
+			const { updateBlockAttributes } = dispatch('core/block-editor');
 
 			return {
-				updateBlockAttributes
+				updateBlockAttributes,
 			};
-		})
+		}),
 	])(Slide),
 
 	save: function (props) {
 		const { id } = props.attributes;
-		let { className = "" } = props;
+		let { className = '' } = props;
 
 		className = classnames(
 			className,
-			"c9-carousel-slide",
-			"carousel-item",
-			0 === id ? "active" : null
+			'c9-carousel-slide',
+			'carousel-item',
+			0 === id ? 'active' : null
 		);
 
 		return (
@@ -216,24 +216,24 @@ registerBlockType("c9-blocks/carousel-slide", {
 				<InnerBlocks.Content />
 			</div>
 		);
-	}
+	},
 });
 
 /* Add the vertical column alignment class to the column container block. */
 const withClientIdClassName = wp.compose.createHigherOrderComponent(
-	BlockListBlock => {
-		return props => {
+	(BlockListBlock) => {
+		return (props) => {
 			const blockName = props.block.name;
 
-			if ("c9-blocks/carousel-slide" === blockName) {
+			if ('c9-blocks/carousel-slide' === blockName) {
 				return (
 					<BlockListBlock
 						{...props}
 						className={classnames(
-							"carousel-item",
+							'carousel-item',
 							props.attributes.slideActive === props.attributes.id
-								? "active"
-								: "c9-equal-height-check"
+								? 'active'
+								: 'c9-equal-height-check'
 						)}
 					/>
 				);
@@ -242,11 +242,11 @@ const withClientIdClassName = wp.compose.createHigherOrderComponent(
 			}
 		};
 	},
-	"withClientIdClassName"
+	'withClientIdClassName'
 );
 
 wp.hooks.addFilter(
-	"editor.BlockListBlock",
-	"c9-blocks/add-vertical-align-class",
+	'editor.BlockListBlock',
+	'c9-blocks/add-vertical-align-class',
 	withClientIdClassName
 );

@@ -3,22 +3,16 @@
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const {
-	Button,
-	Popover,
-	ColorIndicator,
-	ColorPicker,
-	TextControl,
-	Tooltip
-} = wp.components;
+const { Button, Popover, ColorIndicator, ColorPicker, TextControl, Tooltip } =
+	wp.components;
 
 class CustomPalette extends Component {
 	constructor() {
 		super(...arguments);
 		this.state = {
 			isVisible: false,
-			color: "",
-			name: ""
+			color: '',
+			name: '',
 		};
 	}
 
@@ -49,7 +43,7 @@ class CustomPalette extends Component {
 	/**
 	 * Update current color.
 	 */
-	changeColor = value => {
+	changeColor = (value) => {
 		this.setState({ color: value });
 	};
 
@@ -64,36 +58,36 @@ class CustomPalette extends Component {
 					>
 						<ColorPicker
 							color={
-								undefined === this.state.color || "" === this.state.color
+								undefined === this.state.color || '' === this.state.color
 									? this.props.colorValue
 									: this.state.color
 							}
-							onChangeComplete={color => this.changeColor(color.hex)}
+							onChangeComplete={(color) => this.changeColor(color.hex)}
 							disableAlpha
 						/>
 						<TextControl
-							label={__("Name:")}
+							label={__('Name:')}
 							value={
-								undefined === this.state.name || "" === this.state.name
+								undefined === this.state.name || '' === this.state.name
 									? this.props.nameValue
 									: this.state.name
 							}
-							onChange={value => this.setState({ name: value })}
+							onChange={(value) => this.setState({ name: value })}
 						/>
 					</Popover>
 				)}
 				{this.state.isVisible && (
-					<Tooltip text={__("Edit Color")}>
+					<Tooltip text={__('Edit Color')}>
 						<Button
-							className={"c9-color-icon-indicate"}
+							className={'c9-color-icon-indicate'}
 							onClick={this.toggleClose}
 						>
 							<ColorIndicator
 								className="c9-advanced-color-indicate"
 								colorValue={
-									"transparent" === this.state.color ||
+									'transparent' === this.state.color ||
 									undefined === this.state.color ||
-									"" === this.state.color
+									'' === this.state.color
 										? this.props.colorDefault
 										: this.state.color
 								}
@@ -102,17 +96,17 @@ class CustomPalette extends Component {
 					</Tooltip>
 				)}
 				{!this.state.isVisible && (
-					<Tooltip text={__("Edit Color")}>
+					<Tooltip text={__('Edit Color')}>
 						<Button
-							className={"c9-color-icon-indicate"}
+							className={'c9-color-icon-indicate'}
 							onClick={this.toggleVisible}
 						>
 							<ColorIndicator
 								className="c9-advanced-color-indicate"
 								colorValue={
-									"transparent" === this.state.color ||
+									'transparent' === this.state.color ||
 									undefined === this.state.color ||
-									"" === this.state.color
+									'' === this.state.color
 										? this.props.colorDefault
 										: this.state.color
 								}

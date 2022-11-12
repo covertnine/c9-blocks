@@ -9,7 +9,7 @@ const { getBlockType } = wp.blocks;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 /**
  * Create a C9CustomHeading wrapper Component
  */
@@ -21,15 +21,15 @@ export default class C9CustomHeading extends Component {
 	render() {
 		const {
 			attributes: { textAlign, anchor },
-			className = ""
+			className = '',
 		} = this.props;
 
 		const extraProps = useBlockProps
 			? useBlockProps.save()
 			: applyFilters(
-					"blocks.getSaveContent.extraProps",
+					'blocks.getSaveContent.extraProps',
 					this.props,
-					getBlockType("c9-blocks/heading"),
+					getBlockType('c9-blocks/heading'),
 					this.props.attributes
 			  );
 
@@ -37,9 +37,9 @@ export default class C9CustomHeading extends Component {
 			<div
 				{...extraProps}
 				className={classnames(
-					"section-heading",
-					applyFilters("c9-blocks.blocks.className", className),
-					textAlign ? `text-${textAlign}` : "text-left"
+					'section-heading',
+					applyFilters('c9-blocks.blocks.className', className),
+					textAlign ? `text-${textAlign}` : 'text-left'
 				)}
 				style={{ backgroundColor: this.props.attributes.backgroundColor }}
 				id={anchor ? anchor : null}

@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import RemoveButton from "../../../components/remove-button";
-import toggleOpenIcon from "../../../../assets/toggle-open";
+import RemoveButton from '../../../components/remove-button';
+import toggleOpenIcon from '../../../../assets/toggle-open';
 
 /**
  * WordPress dependencies
@@ -18,8 +18,8 @@ const { withSelect, withDispatch } = wp.data;
 /**
  * External Dependencies.
  */
-import React from "react";
-import classnames from "classnames";
+import React from 'react';
+import classnames from 'classnames';
 
 class Toggle extends Component {
 	constructor() {
@@ -46,11 +46,11 @@ class Toggle extends Component {
 
 		const id = $(
 			`div[data-block="${clientId}"] .c9-toggles-toggle .c9-toggles-item-content.collapse`
-		).attr("id");
+		).attr('id');
 
 		// remove each hook from collapse and expand event
-		$(`#${id}`).off("show.bs.collapse", "**");
-		$(`#${id}`).off("hide.bs.collapse", "**");
+		$(`#${id}`).off('show.bs.collapse', '**');
+		$(`#${id}`).off('hide.bs.collapse', '**');
 
 		const parentToggle = this.getParentToggle(this.props.rootBlock);
 		if (parentToggle && parentToggle.clientId) {
@@ -63,13 +63,13 @@ class Toggle extends Component {
 	/**
 	 * Retrieves the parent block.
 	 */
-	getParentToggle = rootBlock => {
+	getParentToggle = (rootBlock) => {
 		const { block } = this.props;
 
 		let result = false;
 
 		if (rootBlock.innerBlocks && rootBlock.innerBlocks.length) {
-			rootBlock.innerBlocks.forEach(item => {
+			rootBlock.innerBlocks.forEach((item) => {
 				if (!result && item.clientId === block.clientId) {
 					result = rootBlock;
 				} else if (!result) {
@@ -90,7 +90,7 @@ class Toggle extends Component {
 		if (
 			!isSelectedBlockInRoot &&
 			null != this.toggleDisplayRef.current &&
-			!this.toggleDisplayRef.current.className.includes("show")
+			!this.toggleDisplayRef.current.className.includes('show')
 		) {
 			setAttributes({ active: false });
 		}
@@ -102,7 +102,7 @@ class Toggle extends Component {
 			setAttributes,
 			isSelected,
 			isSelectedBlockInRoot,
-			className = ""
+			className = '',
 		} = this.props;
 
 		const { heading, active, anchor } = attributes;
@@ -114,25 +114,25 @@ class Toggle extends Component {
 						controls={[
 							{
 								icon: toggleOpenIcon,
-								title: __("Collapse"),
+								title: __('Collapse'),
 								onClick: () => {
 									this.toggleBtnRef.current.click();
 									let element = this.toggleDisplayRef.current;
 									if (element) {
 										setTimeout(() => {
 											setAttributes({
-												active: element.className.includes("show")
+												active: element.className.includes('show'),
 											});
 										}, 350);
 									}
 								},
-								isActive: active
-							}
+								isActive: active,
+							},
 						]}
 					/>
 				</BlockControls>
 				<div
-					className={classnames("c9-toggles-toggle", className)}
+					className={classnames('c9-toggles-toggle', className)}
 					id={anchor ? anchor : null}
 				>
 					<div
@@ -143,12 +143,12 @@ class Toggle extends Component {
 							<RichText
 								tagName="span"
 								className="c9-toggles-toggle-label"
-								placeholder={__("Collapsible Group Item…")}
+								placeholder={__('Collapsible Group Item…')}
 								value={heading}
-								onChange={value => {
+								onChange={(value) => {
 									setAttributes({ heading: value });
 								}}
-								allowedFormats={["bold", "italic", "strikethrough"]}
+								allowedFormats={['bold', 'italic', 'strikethrough']}
 								isSelected={isSelected}
 								keepPlaceholderOnFocus
 							/>
@@ -159,7 +159,7 @@ class Toggle extends Component {
 									if (element) {
 										setTimeout(() => {
 											setAttributes({
-												active: element.current.className.includes("show")
+												active: element.current.className.includes('show'),
 											});
 										}, 350);
 									}
@@ -172,7 +172,7 @@ class Toggle extends Component {
 							</button>
 							<RemoveButton
 								show={isSelectedBlockInRoot}
-								tooltipText={__("Remove toggle item?")}
+								tooltipText={__('Remove toggle item?')}
 								onRemove={() => {
 									const parentToggle = this.getParentToggle(
 										this.props.rootBlock
@@ -186,7 +186,7 @@ class Toggle extends Component {
 									}
 								}}
 								style={{
-									top: "10px"
+									top: '10px',
 								}}
 							/>
 						</div>
@@ -207,34 +207,34 @@ class Toggle extends Component {
 	}
 }
 
-registerBlockType("c9-blocks/toggles-toggle", {
-	title: __("C9 Toggle Item"),
-	parent: ["c9-blocks/toggles"],
-	icon: "minus",
-	category: "common",
+registerBlockType('c9-blocks/toggles-toggle', {
+	title: __('C9 Toggle Item'),
+	parent: ['c9-blocks/toggles'],
+	icon: 'minus',
+	category: 'common',
 	supports: {
 		inserter: false,
 		className: false,
 		anchor: true,
-		reusable: false
+		reusable: false,
 	},
 	attributes: {
 		heading: {
-			type: "array",
-			source: "children",
-			selector: ".c9-toggles-toggle-label",
-			default: "Toggle Item"
+			type: 'array',
+			source: 'children',
+			selector: '.c9-toggles-toggle-label',
+			default: 'Toggle Item',
 		},
 		active: {
-			type: "boolean",
-			default: false
+			type: 'boolean',
+			default: false,
 		},
 		toggleNumber: {
-			type: "number"
+			type: 'number',
 		},
 		id: {
-			type: "number"
-		}
+			type: 'number',
+		},
 	},
 
 	edit: compose([
@@ -243,8 +243,8 @@ registerBlockType("c9-blocks/toggles-toggle", {
 				getBlockHierarchyRootClientId,
 				getBlock,
 				isBlockSelected,
-				hasSelectedInnerBlock
-			} = select("core/block-editor");
+				hasSelectedInnerBlock,
+			} = select('core/block-editor');
 
 			const { clientId } = ownProps;
 
@@ -254,25 +254,25 @@ registerBlockType("c9-blocks/toggles-toggle", {
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
 				rootBlock: clientId
 					? getBlock(getBlockHierarchyRootClientId(clientId))
-					: null
+					: null,
 			};
 		}),
-		withDispatch(dispatch => {
-			const { removeBlock } = dispatch("core/block-editor");
+		withDispatch((dispatch) => {
+			const { removeBlock } = dispatch('core/block-editor');
 
 			return {
-				removeBlock
+				removeBlock,
 			};
-		})
+		}),
 	])(Toggle),
 
-	save: function(props) {
+	save: function (props) {
 		const {
-			attributes: { heading, toggleNumber, id, anchor }
+			attributes: { heading, toggleNumber, id, anchor },
 		} = props;
 
 		return (
-			<div className={"c9-toggles-toggle"} id={anchor ? anchor : null}>
+			<div className={'c9-toggles-toggle'} id={anchor ? anchor : null}>
 				<div
 					className="c9-toggles-item-heading"
 					id={`c9-toggles-heading${toggleNumber}-${id}`}
@@ -301,5 +301,5 @@ registerBlockType("c9-blocks/toggles-toggle", {
 				</div>
 			</div>
 		);
-	}
+	},
 });

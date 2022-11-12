@@ -14,7 +14,7 @@ export default class RemoveButton extends Component {
 		super(...arguments);
 
 		this.state = {
-			confirmed: -1
+			confirmed: -1,
 		};
 	}
 
@@ -23,15 +23,15 @@ export default class RemoveButton extends Component {
 			onRemove,
 			show,
 			style,
-			tooltipText = __("Remove block?", "c9-blocks"),
-			tooltipRemoveText = __("Remove", "c9-blocks"),
-			tooltipCancelText = __("Cancel", "c9-blocks")
+			tooltipText = __('Remove block?', 'c9-blocks'),
+			tooltipRemoveText = __('Remove', 'c9-blocks'),
+			tooltipCancelText = __('Cancel', 'c9-blocks'),
 		} = this.props;
 
 		const { confirmed } = this.state;
 
 		if (!show) {
-			return "";
+			return '';
 		}
 
 		return (
@@ -40,7 +40,7 @@ export default class RemoveButton extends Component {
 				onClick={() => {
 					if (-1 === confirmed) {
 						this.setState({
-							confirmed: 0
+							confirmed: 0,
 						});
 					}
 				}}
@@ -51,12 +51,12 @@ export default class RemoveButton extends Component {
 						className="c9-component-remove-button-confirm"
 						onClose={() => {
 							this.setState({
-								confirmed: -1
+								confirmed: -1,
 							});
 						}}
 						onFocusOutside={() => {
 							this.setState({
-								confirmed: -1
+								confirmed: -1,
 							});
 						}}
 					>
@@ -71,7 +71,7 @@ export default class RemoveButton extends Component {
 							className="c9-component-remove-button-confirm-nope"
 							onClick={() => {
 								this.setState({
-									confirmed: -1
+									confirmed: -1,
 								});
 							}}
 						>
@@ -79,7 +79,7 @@ export default class RemoveButton extends Component {
 						</Button>
 					</Popover>
 				) : (
-					""
+					''
 				)}
 				<SVG
 					xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,11 @@ export default class RemoveButton extends Component {
 					focusable="false"
 					width="1em"
 					height="1em"
-					style={{ transform: "rotate(360deg)", height: "1.2em", width: "auto" }}
+					style={{
+						transform: 'rotate(360deg)',
+						height: '1.2em',
+						width: 'auto',
+					}}
 					preserveAspectRatio="xMidYMid meet"
 					viewBox="0 0 20 20"
 				>

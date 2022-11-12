@@ -11,7 +11,7 @@ const SectionButton = ({
 	insertBlocks,
 	open,
 	close,
-	onHover
+	onHover,
 }) => {
 	return (
 		<button
@@ -41,10 +41,10 @@ const SectionButton = ({
 	);
 };
 
-export default withDispatch(dispatch => {
-	const { insertBlocks } = dispatch("core/block-editor");
+export default withDispatch((dispatch) => {
+	const { insertBlocks } = dispatch('core/block-editor');
 
 	return {
-		insertBlocks
+		insertBlocks,
 	};
 })(SectionButton);

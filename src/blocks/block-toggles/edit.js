@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import Inspector from "./components/inspector";
-import BlockSelector from "../../components/block-selector";
+import Inspector from './components/inspector';
+import BlockSelector from '../../components/block-selector';
 
 /**
  * WordPress dependencies
@@ -16,10 +16,10 @@ const { Button } = wp.components;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
-import cryptoRandomString from "crypto-random-string";
+import classnames from 'classnames';
+import cryptoRandomString from 'crypto-random-string';
 
-const ALLOWED_BLOCKS = ["c9-blocks/toggles-toggle"];
+const ALLOWED_BLOCKS = ['c9-blocks/toggles-toggle'];
 
 class Edit extends Component {
 	constructor() {
@@ -43,13 +43,13 @@ class Edit extends Component {
 	componentWillUnmount() {
 		const $ = window.jQuery;
 
-		$(".c9-toggles-toggle").each(function() {
+		$('.c9-toggles-toggle').each(function () {
 			// grab collapse id
-			const id = $(".c9-toggles-item-content.collapse", this).attr("id");
+			const id = $('.c9-toggles-item-content.collapse', this).attr('id');
 
 			// remove each hook from collapse and expand event
-			$(`#${id}`).off("show.bs.collapse", "**");
-			$(`#${id}`).off("hide.bs.collapse", "**");
+			$(`#${id}`).off('show.bs.collapse', '**');
+			$(`#${id}`).off('hide.bs.collapse', '**');
 		});
 	}
 
@@ -60,7 +60,7 @@ class Edit extends Component {
 		const result = [];
 
 		for (let k = 1; k <= toggleCount; k++) {
-			result.push(["c9-blocks/toggles-toggle", { toggleNumber: k, id }]);
+			result.push(['c9-blocks/toggles-toggle', { toggleNumber: k, id }]);
 		}
 
 		return result;
@@ -74,12 +74,12 @@ class Edit extends Component {
 			attributes: { toggleCount },
 			block,
 			setAttributes,
-			updateBlockAttributes
+			updateBlockAttributes,
 		} = this.props;
 
 		if (block && toggleCount !== block.innerBlocks.length) {
 			setAttributes({
-				toggleCount: block.innerBlocks.length
+				toggleCount: block.innerBlocks.length,
 			});
 
 			let k = 1;
@@ -96,7 +96,7 @@ class Edit extends Component {
 						const $ = window.jQuery;
 						$(
 							`div[data-block="${child.clientId}"] .c9-toggles-toggle`
-						).removeClass("toggle-collapse-ready");
+						).removeClass('toggle-collapse-ready');
 					}
 				}
 				k += 1;
@@ -106,25 +106,25 @@ class Edit extends Component {
 		const $ = window.jQuery;
 
 		setTimeout(() => {
-			$(".c9-toggles-toggle:not(.toggle-collapse-ready)").each(function() {
+			$('.c9-toggles-toggle:not(.toggle-collapse-ready)').each(function () {
 				const $this = $(this);
-				$this.addClass("toggle-collapse-ready");
+				$this.addClass('toggle-collapse-ready');
 
 				// grab collapse id
-				const id = $(".c9-toggles-item-content.collapse", this).attr("id");
+				const id = $('.c9-toggles-item-content.collapse', this).attr('id');
 
 				// grab rotate arrow id
-				const iconId = $(".c9-toggles-item-heading", this).attr("id");
+				const iconId = $('.c9-toggles-item-heading', this).attr('id');
 
 				// insert hook into collapse and expand event
-				$(`#${id}`).on("show.bs.collapse", () => {
+				$(`#${id}`).on('show.bs.collapse', () => {
 					$(`#${iconId} button.c9-toggles-item-collapse > svg`).toggleClass(
-						"c9-toggle-item-expand"
+						'c9-toggle-item-expand'
 					);
 				});
-				$(`#${id}`).on("hide.bs.collapse", () => {
+				$(`#${id}`).on('hide.bs.collapse', () => {
 					$(`#${iconId} button.c9-toggles-item-collapse > svg`).toggleClass(
-						"c9-toggle-item-expand"
+						'c9-toggle-item-expand'
 					);
 				});
 			});
@@ -132,12 +132,8 @@ class Edit extends Component {
 	}
 
 	checkBlockIdAndUpdate() {
-		const {
-			attributes,
-			setAttributes,
-			block,
-			updateBlockAttributes
-		} = this.props;
+		const { attributes, setAttributes, block, updateBlockAttributes } =
+			this.props;
 
 		const { instanceId } = attributes;
 
@@ -148,12 +144,12 @@ class Edit extends Component {
 				document.querySelectorAll(`#accordion-${attributes.instanceId}`).length
 		) {
 			const newInstanceId = parseInt(
-				cryptoRandomString({ length: 4, type: "numeric" })
+				cryptoRandomString({ length: 4, type: 'numeric' })
 			);
 
 			setAttributes({
 				instanceId: newInstanceId,
-				anchor: `accordion-${newInstanceId}`
+				anchor: `accordion-${newInstanceId}`,
 			});
 
 			if (block) {
@@ -172,8 +168,8 @@ class Edit extends Component {
 			attributes,
 			isSelectedBlockInRoot,
 			addToggle,
-			className = "",
-			setAttributes
+			className = '',
+			setAttributes,
 		} = this.props;
 
 		const { toggleCount } = attributes;
@@ -193,21 +189,21 @@ class Edit extends Component {
 				<BlockSelector text="Toggles" />
 				<div
 					className={classnames(
-						applyFilters("c9-blocks.blocks.className", className),
-						"accordion"
+						applyFilters('c9-blocks.blocks.className', className),
+						'accordion'
 					)}
 					id={`accordion-${instanceId}`}
 				>
 					{createElement(
-						"div",
+						'div',
 						{},
 						// Workaround logic for this bug https://github.com/WordPress/gutenberg/issues/9897
-						"undefined" !== typeof this.props.insertBlocksAfter
+						'undefined' !== typeof this.props.insertBlocksAfter
 							? createElement(InnerBlocks, {
 									allowedBlocks: ALLOWED_BLOCKS,
-									template: this.getTogglesTemplate(toggleCount, instanceId)
+									template: this.getTogglesTemplate(toggleCount, instanceId),
 							  })
-							: createElement("div")
+							: createElement('div')
 					)}
 				</div>
 				{isSelectedBlockInRoot ? (
@@ -218,11 +214,11 @@ class Edit extends Component {
 								addToggle(instanceId);
 							}}
 						>
-							{__("Add Toggle", "c9-blocks")}
+							{__('Add Toggle', 'c9-blocks')}
 						</Button>
 					</div>
 				) : (
-					""
+					''
 				)}
 			</Fragment>
 		);

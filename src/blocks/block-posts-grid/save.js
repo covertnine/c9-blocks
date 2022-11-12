@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import Container from "./components/container";
+import Container from './components/container';
 
 /**
  * WordPress dependencies

@@ -7,7 +7,7 @@ const { applyFilters } = wp.hooks;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 /**
  * Create a ShareLinks wrapper Component
@@ -24,21 +24,21 @@ export default class ShareLinks extends Component {
 				shareButtonShape,
 				shareButtonSize,
 				shareButtonColor,
-				shareAlignment
+				shareAlignment,
 			},
-			className = ""
+			className = '',
 		} = this.props;
 
 		return (
 			<div
 				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
+					applyFilters('c9-blocks.blocks.className', className),
 					shareButtonStyle,
 					shareButtonShape,
 					shareButtonSize,
 					shareButtonColor,
 					shareAlignment,
-					"c9-block-sharing"
+					'c9-block-sharing'
 				)}
 			>
 				{this.props.children}

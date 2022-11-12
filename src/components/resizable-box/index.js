@@ -4,7 +4,7 @@
 import classnames from 'classnames';
 import { Resizable } from 're-resizable';
 
-function ResizableBox( { className, refHandle, showHandle = false, ...props } ) {
+function ResizableBox({ className, refHandle, showHandle = false, ...props }) {
 	// Removes the inline styles in the drag handles.
 	const handleStylesOverrides = {
 		width: null,
@@ -21,59 +21,59 @@ function ResizableBox( { className, refHandle, showHandle = false, ...props } ) 
 
 	return (
 		<Resizable
-			className={ classnames(
+			className={classnames(
 				'components-resizable-box__container',
 				showHandle && 'has-show-handle',
 				className
-            ) }
-            ref={refHandle}
-			handleClasses={ {
+			)}
+			ref={refHandle}
+			handleClasses={{
 				top: classnames(
 					handleClassName,
 					sideHandleClassName,
-					'components-resizable-box__handle-top',
+					'components-resizable-box__handle-top'
 				),
 				right: classnames(
 					handleClassName,
 					sideHandleClassName,
-					'components-resizable-box__handle-right',
+					'components-resizable-box__handle-right'
 				),
 				bottom: classnames(
 					handleClassName,
 					sideHandleClassName,
-					'components-resizable-box__handle-bottom',
+					'components-resizable-box__handle-bottom'
 				),
 				left: classnames(
 					handleClassName,
 					sideHandleClassName,
-					'components-resizable-box__handle-left',
+					'components-resizable-box__handle-left'
 				),
 				topLeft: classnames(
 					handleClassName,
 					cornerHandleClassName,
 					'components-resizable-box__handle-top',
-					'components-resizable-box__handle-left',
+					'components-resizable-box__handle-left'
 				),
 				topRight: classnames(
 					handleClassName,
 					cornerHandleClassName,
 					'components-resizable-box__handle-top',
-					'components-resizable-box__handle-right',
+					'components-resizable-box__handle-right'
 				),
 				bottomRight: classnames(
 					handleClassName,
 					cornerHandleClassName,
 					'components-resizable-box__handle-bottom',
-					'components-resizable-box__handle-right',
+					'components-resizable-box__handle-right'
 				),
 				bottomLeft: classnames(
 					handleClassName,
 					cornerHandleClassName,
 					'components-resizable-box__handle-bottom',
-					'components-resizable-box__handle-left',
+					'components-resizable-box__handle-left'
 				),
-			} }
-			handleStyles={ {
+			}}
+			handleStyles={{
 				top: handleStylesOverrides,
 				right: handleStylesOverrides,
 				bottom: handleStylesOverrides,
@@ -82,8 +82,8 @@ function ResizableBox( { className, refHandle, showHandle = false, ...props } ) 
 				topRight: handleStylesOverrides,
 				bottomRight: handleStylesOverrides,
 				bottomLeft: handleStylesOverrides,
-			} }
-			{ ...props }
+			}}
+			{...props}
 		/>
 	);
 }

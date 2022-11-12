@@ -1,18 +1,18 @@
 /**
  * Internal dependencies
  */
-import Edit from "./edit";
-import Save from "./save";
-import attributes from "./attributes";
+import Edit from './edit';
+import Save from './save';
+import attributes from './attributes';
 
 /**
  * Styles
  */
-import "./styles/style.scss";
+import './styles/style.scss';
 
-import Icon from "../../../assets/icon-c9-toggles.svg";
+import Icon from '../../../assets/icon-c9-toggles.svg';
 
-import cryptoRandomString from "crypto-random-string";
+import cryptoRandomString from 'crypto-random-string';
 
 /**
  * WordPress dependencies
@@ -22,109 +22,108 @@ const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 const { registerBlockType, createBlock } = wp.blocks;
 
-registerBlockType("c9-blocks/toggles", {
-	title: __("C9 Toggles", "c9-blocks"),
+registerBlockType('c9-blocks/toggles', {
+	title: __('C9 Toggles', 'c9-blocks'),
 	icon: Icon,
-	category: "c9-blocks",
+	category: 'c9-blocks',
 	supports: {
-		anchor: true
+		anchor: true,
 	},
 	styles: [
-		{ name: "default", label: __("Default", "c9-blocks") },
+		{ name: 'default', label: __('Default', 'c9-blocks') },
 		{
-			name: "toggles-small",
-			label: __("Small", "c9-blocks"),
-			isSecondary: true
-		}
+			name: 'toggles-small',
+			label: __('Small', 'c9-blocks'),
+			isSecondary: true,
+		},
 	],
-	keywords: [__("responsive", "c9-blocks")],
+	keywords: [__('responsive', 'c9-blocks')],
 	description: __(
-		"Hide or show content with a toggleable heading link. Great for FAQ content.",
-		"c9-blocks"
+		'Hide or show content with a toggleable heading link. Great for FAQ content.',
+		'c9-blocks'
 	),
 	example: {
 		attributes: {
-			toggleCount: 3
+			toggleCount: 3,
 		},
 		innerBlocks: [
 			{
-				name: "c9-blocks/toggles-toggle",
+				name: 'c9-blocks/toggles-toggle',
 				attributes: {
 					toggleNumber: 1,
 					heading: [
 						{
-							type: "span",
+							type: 'span',
 							props: {
-								children: ["What are Toggles?"]
-							}
-						}
-					]
+								children: ['What are Toggles?'],
+							},
+						},
+					],
 				},
 				innerBlocks: [
 					{
-						name: "core/paragraph",
+						name: 'core/paragraph',
 						attributes: {
 							content:
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis."
-						}
-					}
-				]
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis.',
+						},
+					},
+				],
 			},
 			{
-				name: "c9-blocks/toggles-toggle",
+				name: 'c9-blocks/toggles-toggle',
 				attributes: {
 					toggleNumber: 2,
 					heading: [
 						{
-							type: "span",
+							type: 'span',
 							props: {
-								children: ["How do you open them?"]
-							}
-						}
-					]
+								children: ['How do you open them?'],
+							},
+						},
+					],
 				},
 				innerBlocks: [
 					{
-						name: "core/paragraph",
+						name: 'core/paragraph',
 						attributes: {
 							content:
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis."
-						}
-					}
-				]
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis.',
+						},
+					},
+				],
 			},
 			{
-				name: "c9-blocks/toggles-toggle",
+				name: 'c9-blocks/toggles-toggle',
 				attributes: {
 					toggleNumber: 3,
 					heading: [
 						{
-							type: "span",
+							type: 'span',
 							props: {
-								children: ["Duplicate as needed."]
-							}
-						}
-					]
+								children: ['Duplicate as needed.'],
+							},
+						},
+					],
 				},
 				innerBlocks: [
 					{
-						name: "core/paragraph",
+						name: 'core/paragraph',
 						attributes: {
 							content:
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis."
-						}
-					}
-				]
-			}
-		]
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sociis natoque penatibus et magnis dis.',
+						},
+					},
+				],
+			},
+		],
 	},
 	attributes,
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
-			const { getBlock, isBlockSelected, hasSelectedInnerBlock } = select(
-				"core/block-editor"
-			);
+			const { getBlock, isBlockSelected, hasSelectedInnerBlock } =
+				select('core/block-editor');
 
 			const { clientId } = ownProps;
 
@@ -132,30 +131,31 @@ registerBlockType("c9-blocks/toggles", {
 				block: getBlock(clientId),
 				isSelectedBlockInRoot:
 					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
-				instanceId: parseInt(cryptoRandomString({ length: 4, type: "numeric" }))
+				instanceId: parseInt(
+					cryptoRandomString({ length: 4, type: 'numeric' })
+				),
 			};
 		}),
 		withDispatch((dispatch, ownProps) => {
-			const { insertBlock, updateBlockAttributes } = dispatch(
-				"core/block-editor"
-			);
+			const { insertBlock, updateBlockAttributes } =
+				dispatch('core/block-editor');
 
 			const { clientId } = ownProps;
 
 			return {
 				updateBlockAttributes,
-				addToggle: id =>
+				addToggle: (id) =>
 					insertBlock(
-						createBlock("c9-blocks/toggles-toggle", { id }),
+						createBlock('c9-blocks/toggles-toggle', { id }),
 						undefined,
 						clientId
-					)
+					),
 			};
-		})
+		}),
 	])(Edit),
 
 	// Save the attributes and markup
-	save: props => {
+	save: (props) => {
 		return <Save {...props} />;
-	}
+	},
 });

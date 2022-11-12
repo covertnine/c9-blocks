@@ -1,7 +1,7 @@
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 /**
  * WordPress dependencies
@@ -30,7 +30,7 @@ export default class Save extends Component {
 				<li
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
-					className={0 === i ? "active" : null}
+					className={0 === i ? 'active' : null}
 				/>
 			);
 		}
@@ -49,17 +49,17 @@ export default class Save extends Component {
 			slideTime,
 			slideMaxHeight,
 			slideEqualHeight,
-			verticalAlign
+			verticalAlign,
 		} = this.props.attributes;
 
-		const { className = "" } = this.props;
+		const { className = '' } = this.props;
 
 		return (
 			<div
 				id={`c9-carousel-indicator-${instanceId}`}
 				className={classnames(
-					applyFilters("c9-blocks.blocks.className", className),
-					"carousel slide"
+					applyFilters('c9-blocks.blocks.className', className),
+					'carousel slide'
 				)}
 				data-ride="carousel"
 				data-interval={autoSlide ? slideTime : false}
@@ -77,8 +77,8 @@ export default class Save extends Component {
 				)}
 				<div
 					className={classnames(
-						"carousel-inner",
-						verticalAlign ? "c9-is-vertically-aligned-" + verticalAlign : null
+						'carousel-inner',
+						verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
 					)}
 				>
 					<InnerBlocks.Content />

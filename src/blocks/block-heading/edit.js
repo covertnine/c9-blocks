@@ -1,10 +1,10 @@
 /**
  * Internal dependencies
  */
-import CustomHeading from "./components/custom-heading";
-import Inspector from "./components/inspector";
-import HeadingToolbar from "./components/heading-toolbar";
-import SubheadingToolbar from "./components/subheading-toolbar";
+import CustomHeading from './components/custom-heading';
+import Inspector from './components/inspector';
+import HeadingToolbar from './components/heading-toolbar';
+import SubheadingToolbar from './components/subheading-toolbar';
 
 /**
  * WordPress dependencies
@@ -17,7 +17,7 @@ const { Component } = wp.element;
 /**
  * External Dependencies.
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export default class Edit extends Component {
 	constructor() {
@@ -35,8 +35,8 @@ export default class Edit extends Component {
 	 * @return {string} Appropriate css class based on configuration.
 	 */
 	c9TextStyleConfig(type, displayLevel, tagLevel, override) {
-		if (!override && "c9-txl display-" != type) {
-			return type.split(" ")[0];
+		if (!override && 'c9-txl display-' != type) {
+			return type.split(' ')[0];
 		} else if (0 == displayLevel) {
 			return `${type}${tagLevel}`;
 		} else {
@@ -62,8 +62,8 @@ export default class Edit extends Component {
 				weight,
 				overrideStyle,
 				subheading,
-				addSubheading
-			}
+				addSubheading,
+			},
 		} = this.props;
 
 		// Save the block markup for the front end
@@ -72,11 +72,11 @@ export default class Edit extends Component {
 				<BlockControls>
 					<AlignmentToolbar
 						value={textAlign}
-						onChange={value => setAttributes({ textAlign: value })}
+						onChange={(value) => setAttributes({ textAlign: value })}
 					/>
 					<SubheadingToolbar
 						value={addSubheading}
-						onChange={value => {
+						onChange={(value) => {
 							setAttributes({ addSubheading: value });
 						}}
 					/>
@@ -92,16 +92,16 @@ export default class Edit extends Component {
 								tagLevel,
 								overrideStyle
 							),
-							weight ? `font-weight-${weight}` : null
+							weight ? `font-weight-${weight}` : null,
 						])}
 						style={{
 							backgroundColor: backgroundColor,
-							color: textColor
+							color: textColor,
 						}}
 						keepPlaceholderOnFocus={true}
-						placeholder={__("Write heading…", "c9-blocks")}
+						placeholder={__('Write heading…', 'c9-blocks')}
 						value={heading}
-						onChange={value => setAttributes({ heading: value })}
+						onChange={(value) => setAttributes({ heading: value })}
 					/>
 
 					{addSubheading && (
@@ -117,13 +117,13 @@ export default class Edit extends Component {
 							<RichText
 								tagName="small"
 								className="text-muted"
-								placeholder={__("Write subheading…", "c9-blocks")}
+								placeholder={__('Write subheading…', 'c9-blocks')}
 								style={{
-									color: subTextColor
+									color: subTextColor,
 								}}
 								keepPlaceholderOnFocus={true}
 								value={subheading}
-								onChange={value => setAttributes({ subheading: value })}
+								onChange={(value) => setAttributes({ subheading: value })}
 							/>
 						</div>
 					)}
@@ -134,7 +134,7 @@ export default class Edit extends Component {
 							minLevel={1}
 							maxLevel={7}
 							selectedLevel={tagLevel}
-							onChange={newLevel => setAttributes({ tagLevel: newLevel })}
+							onChange={(newLevel) => setAttributes({ tagLevel: newLevel })}
 							isCollapsed={isCollapsed}
 						/>
 					</div>

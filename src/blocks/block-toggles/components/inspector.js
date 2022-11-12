@@ -13,9 +13,6 @@ export default class Inspector extends Component {
 	}
 
 	render() {
-		return (
-			<InspectorControls>
-			</InspectorControls>
-		);
+		return <InspectorControls></InspectorControls>;
 	}
 }
