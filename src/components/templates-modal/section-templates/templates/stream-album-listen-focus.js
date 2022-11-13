@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/stream-album-listen-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/stream-album-listen-focus.svg`}
+		/>
+	),
 	title: 'Stream Album Listen Focus',
 	description: '150 Words • Spotify Link • List • 3 Images',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":3,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#181818","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":78,"focalPoint":{"x":"0.56","y":"0.89"}} -->

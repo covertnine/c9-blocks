@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/contact-short.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/contact-short.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Contact Short Page',
 	description: `Lead people to the right person, the right way. If you only have a single location or minimal contact information, then this is the landing page that gets messages into your inbox.`,

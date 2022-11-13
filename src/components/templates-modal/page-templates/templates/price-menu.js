@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/price-menu.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/price-menu.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Restaurant Menu',
 	description: `Showcase your latest and tastiest with the Restaurant-style Menu page. Easily add pricing, imagery, and tantalizing descriptions to each option. The template also includes image carousels and a toggle for daily specials.`,

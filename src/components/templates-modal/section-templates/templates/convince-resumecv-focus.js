@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/convince-resume-cv-focus.svg";
-
 export default {
-	icon: Icon,
-	title: "Convince Resume/CV Focus",
-	description: "150 Words • Resume • Background",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/convince-resume-cv-focus.svg`}
+		/>
+	),
+	title: 'Convince Resume/CV Focus',
+	description: '150 Words • Resume • Background',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#000000","overlayOpacity":7,"blendMode":"normal","minScreenHeight":90,"focalPoint":{"x":"0.63","y":"1.00"}} -->
 <div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:90vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","minScreenHeight":100} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column" style="min-height:100vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
@@ -132,5 +135,5 @@ export default {
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.7);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:63% 100%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

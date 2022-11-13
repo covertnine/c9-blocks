@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/team-member-bios.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/team-member-bios.svg`}
+		/>
+	),
 	title: 'Introduce Team Focus',
 	description: '150 Words • 3-4 People • Background Photo',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"focalPoint":{"x":"0.50","y":"0.46"}} -->

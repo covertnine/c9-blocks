@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/introduce-profile-contact.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/introduce-profile-contact.svg`}
+		/>
+	),
 	title: 'Introduce Profile Contact',
 	description: '150 Words • Button Links • Headlines • Photos',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":2} -->

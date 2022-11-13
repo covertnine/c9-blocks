@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/inform-icons-focus-12.svg";
-
 export default {
-	icon: Icon,
-	title: "Inform Icon Focus 12",
-	description: "1 Carousel • 12 Labels • 12 Icons",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-icons-focus-12.svg`}
+		/>
+	),
+	title: 'Inform Icon Focus 12',
+	description: '1 Carousel • 12 Labels • 12 Icons',
 	markup: `<!-- wp:c9-blocks/carousel {"instanceId":0,"showIndicators":false,"autoSlide":false,"slideMaxHeight":300,"slideSizes":[113,130,113],"verticalAlign":"center"} -->
 <div id="c9-carousel-indicator-0" class="c9-carousel carousel slide container" dataride="carousel" style="height:300px"><div class="carousel-inner c9-is-vertically-aligned-center"><!-- wp:c9-blocks/carousel-slide {"id":0,"slideActive":2,"slides":3} -->
 <div class="c9-carousel-slide carousel-item active"><!-- wp:c9-blocks/column-container {"columns":4,"layout":"c9-4-col-equal"} -->
@@ -136,5 +139,5 @@ export default {
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
 <!-- /wp:c9-blocks/carousel-slide --></div><a class="carousel-control-prev" href="#c9-carousel-indicator-0" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-carousel-indicator-0" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
-<!-- /wp:c9-blocks/carousel -->`
+<!-- /wp:c9-blocks/carousel -->`,
 };

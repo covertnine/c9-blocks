@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/faqs-2-col-small-toggles.svg";
-
 export default {
-	icon: Icon,
-	title: "Inform FAQ Focus",
-	description: "75-150 Words • Headline • Image",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/faqs-2-col-small-toggles.svg`}
+		/>
+	),
+	title: 'Inform FAQ Focus',
+	description: '75-150 Words • Headline • Image',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":9,"containerHue":"#f0f0f0"} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(240,240,240,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideright","containerWidth":"container-narrow","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"}} -->
 <div class="container-narrow c9-column-container p-0 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
@@ -50,5 +53,5 @@ export default {
 <!-- /wp:c9-blocks/toggles --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

@@ -1,8 +1,10 @@
-// Does exist yet
-import Icon from '../../../../../assets/section-template-icons/inform-boxed-profile-contact.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-boxed-profile-contact.svg`}
+		/>
+	),
 	title: 'Inform Boxed Profile Contact',
 	description: '50 Words • Photo • Headline • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":3,"containerHue":"#ededed","minScreenHeight":80} -->

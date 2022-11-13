@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/browse-video-media-carousel.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/browse-video-media-carousel.svg`}
+		/>
+	),
 	title: 'Browse Video Media Carousel',
 	description: '75 Words • Video Links • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":4} -->

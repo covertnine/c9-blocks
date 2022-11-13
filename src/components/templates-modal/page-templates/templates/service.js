@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/service.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/service.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Service Tour',
 	description: `Take your future customers and clients through your process and give them all the information they need to keep you in mind when they make decisions. Do you have testimonials ready to go? Drop those in and get users clicking on your call-to-action button which is all ready to go. Starter content includes a video clip or YouTube video, call-to-action heading, subheading/button, FAQ, brand logo carousel, 3-5 vertical images, detailed service descriptions, service lists, photo and text testimonials(2-3 options), horizontal images with headings (3), blog posts or links to additional content (3), hero image and call-to-action subheading/button`,

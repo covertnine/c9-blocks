@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/event.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/event.svg`}
+		/>
+	),
 	type: 'conversion',
 	title: 'Ticketed Event',
 	description: `Publish the who, what, where, when, why, how (<- italics) for an individual or multi-day show or festival. Drop in the details, photos, and media for your performing artist(s) and fans will have all the information they need to get tickets on the spot.`,

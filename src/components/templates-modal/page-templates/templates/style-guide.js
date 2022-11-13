@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/style-guide.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/style-guide.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Style Guide',
 	description: `Create a style guide of nearly all of the C9 Blocks to test out layouts, typography, buttons, or to view the full web style guide for the site.`,

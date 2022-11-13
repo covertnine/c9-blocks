@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/lead-gen-3.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/lead-gen-3.svg`}
+		/>
+	),
 	type: 'conversion',
 	title: 'Lead Generation 3',
 	description: `Close the deal after a user has hit one of the other lead generation landing page templates. There’s a placeholder for your form, a short and concise headline, short features list, and vertical image carousel gallery for a final point of interest.`,

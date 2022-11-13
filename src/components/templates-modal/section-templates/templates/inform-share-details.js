@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/inform-share-details.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-share-details.svg`}
+		/>
+	),
 	title: 'Inform + Share Details',
 	description: '175 Words • Vertical Image • Logos • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":3} -->

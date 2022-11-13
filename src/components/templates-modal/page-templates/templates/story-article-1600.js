@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/c9-editorial-1600.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/c9-editorial-1600.svg`}
+		/>
+	),
 	type: 'awareness',
 	title: 'Story Article 1600',
 	description: `This template has room for more words and has more slots for photos to weave an interesting brand story or background for someone new to you.`,

@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/contact-short.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/contact-short.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Contact Page',
 	description: `Your team has multiple points of contacts or departments, with a few different methods of getting in touch. Your users will appreciate being directed to the right point of contact. This landing page has a place for everything and a placeholder for your form plugin of choice.`,

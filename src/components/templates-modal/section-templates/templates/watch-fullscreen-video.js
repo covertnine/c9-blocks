@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/fullscreen-video-large-heading-button.svg";
-
 export default {
-	icon: Icon,
-	title: "Watch Fullscreen Video",
-	description: "Video File • Video Link • Headline",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/fullscreen-video-large-heading-button.svg`}
+		/>
+	),
+	title: 'Watch Fullscreen Video',
+	description: 'Video File • Video Link • Headline',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#000000","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":71,"containerVideoURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
 <div class="c9-grid p-3 c9-scroll c9-grid-has-video" style="min-height:71vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideright","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideright"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
@@ -32,5 +35,5 @@ export default {
 <!-- /wp:buttons --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.8);mix-blend-mode:normal"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:71vh"><source src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4" type="video/mp4"/></video></div></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

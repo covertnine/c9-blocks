@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/videos.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/videos.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Videos',
 	description: `Share a collection of videos just like you were Netflix! Complete with a featured video streaming in the background of the page title.`,

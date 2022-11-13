@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/inform-feature-focus-4.svg";
-
 export default {
-	icon: Icon,
-	title: "Inform Feature Focus 4",
-	description: "100 Words • 4 Icons • Button Link",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-feature-focus-4.svg`}
+		/>
+	),
+	title: 'Inform Feature Focus 4',
+	description: '100 Words • 4 Icons • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#eeeeee"} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(238,238,238,1)"><!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":10,"layout":"c9-3-col-wideleft"} -->
 <div class="container alignwide c9-column-container c9-scroll c9-layout-columns-3 c9-3-col-wideleft" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
@@ -76,5 +79,5 @@ export default {
 <!-- /wp:c9-blocks/heading --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

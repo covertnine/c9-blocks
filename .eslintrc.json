@@ -14,7 +14,9 @@
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly",
-		"wp": "readonly"
+		"wp": "readonly",
+		"c9_blocks_params": "readonly",
+		"c9_blocks_assets": "readonly"
 	},
 	"parser": "@babel/eslint-parser",
 	"parserOptions": {

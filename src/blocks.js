@@ -10,11 +10,6 @@
  */
 
 /**
- * Register block category + side menu.
- */
-import './update-category';
-
-/**
  * Block extensions.
  */
 import './extend';

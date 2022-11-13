@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/inform-map-embed-focus.svg";
-
 export default {
-	icon: Icon,
-	title: "Inform Map Embed Focus",
-	description: "Address • Map Embed Code • Button Link",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-map-embed-focus.svg`}
+		/>
+	),
+	title: 'Inform Map Embed Focus',
+	description: 'Address • Map Embed Code • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":8,"containerHue":"#f4f4f4","minScreenHeight":64} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 <div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
@@ -30,5 +33,5 @@ export default {
 <!-- /wp:group --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

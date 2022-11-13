@@ -267,24 +267,30 @@ function c9_blocks_cgb_editor_assets()
 		array()
 	);
 
+	// plugin registration
+	wp_enqueue_script(
+		'c9_blocks-registration-js',
+		plugins_url('dist/blocks.registration.build.js', dirname(__FILE__)),
+		array('c9_blocks-vendor', 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-api', 'youtube-api'),
+		filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.registration.build.js'),
+		true
+	);
+
+	wp_localize_script(
+		'c9_blocks-registration-js',
+		'c9_blocks_assets',
+		array(
+			'asset_folder' => plugins_url( 'assets', __DIR__ )
+		)
+	);
+
 	// Scripts.
 	wp_enqueue_script(
 		'c9_blocks-cgb-block-js', // Handle.
 		plugins_url('dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
-		array('c9_blocks-vendor', 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-api', 'youtube-api'), // Dependencies, defined above.
+		array('c9_blocks-registration-js'), // Dependencies, defined above.
 		filemtime(plugin_dir_path(__DIR__) . 'dist/blocks.build.js'), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
-	);
-
-	// Add local variables to reference.
-	wp_localize_script(
-		'c9_blocks-update-category',
-		'c9_blocks_params',
-		array(
-			'colors'      => get_option('c9_blocks_colors'),
-			'orig_colors' => get_option('c9_orig_colors'),
-			'disable_youtube_api' => get_option('c9_blocks_disable_youtube_api'),
-		)
 	);
 
 	// Add local variables to reference.

@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/convince-testimonial-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/convince-testimonial-focus.svg`}
+		/>
+	),
 	title: 'Convince Testimonial Focus',
 	description: '300 words • 3 Testimonials • Headlines',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":5,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->

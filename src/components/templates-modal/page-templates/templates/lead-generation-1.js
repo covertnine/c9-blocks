@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/lead-gen-1.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/lead-gen-1.svg`}
+		/>
+	),
 	type: 'conversion',
 	title: 'Lead Generation 1',
 	description: `Publish a landing page geared towards building trust by offering generous content and expertise followed by a signup or lead gen form to progress  potential customers down the sales funnel.`,

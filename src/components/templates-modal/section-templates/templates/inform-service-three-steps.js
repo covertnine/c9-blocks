@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/inform-service-three-steps.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-service-three-steps.svg`}
+		/>
+	),
 	title: 'Inform Service Three Steps',
 	description: '175 Words • 2 Testimonials • Photo Background',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#313131","bgImgSize":"","overlayHue":"#1c1c1c","overlayOpacity":6,"blendMode":"normal","minScreenHeight":90,"focalPoint":{"x":"0.50","y":"0.00"},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"}} -->

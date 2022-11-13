@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/lead-gen-2.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/lead-gen-2.svg`}
+		/>
+	),
 	type: 'conversion',
 	title: 'Lead Generation 2',
 	description: `Inform and entice potential customers or clients with a widescreen video that helps tell a broader story. There’s plenty of room to break up longer-form text with an image carousel. Include vertical photos, a short FAQ, and a place to tell a friend or click a call-to-action button.`,

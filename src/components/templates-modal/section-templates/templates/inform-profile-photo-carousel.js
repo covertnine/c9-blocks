@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/inform-profile-photo-carousel.svg";
-
 export default {
-	icon: Icon,
-	title: "Inform Profile Photo Carousel",
-	description: "150 Words • Photo Gallery • Logo Icon",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-profile-photo-carousel.svg`}
+		/>
+	),
+	title: 'Inform Profile Photo Carousel',
+	description: '150 Words • Photo Gallery • Logo Icon',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":13} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":9,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-9 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
@@ -42,5 +45,5 @@ export default {
 <!-- /wp:c9-blocks/image-carousel --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/launch-release.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/launch-release.svg`}
+		/>
+	),
 	type: 'awareness',
 	title: 'Project Launch',
 	recommended: `Video clip, YouTube video, purchase link, audio embeds (3), about copywriting, 3-5 “hero” images, blog posts (3)`,

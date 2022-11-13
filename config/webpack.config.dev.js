@@ -29,6 +29,7 @@ module.exports = {
 		'blocks.frontend': paths.pluginBlocksFrontendJs,
 		'blocks.editor': paths.pluginBlocksEditorJs,
 		'blocks.bootstrap': paths.pluginBlocksBootstrapJs,
+		'blocks.registration': paths.pluginBlocksRegisterJs,
 	},
 	output: {
 		pathinfo: true,

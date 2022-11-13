@@ -217,7 +217,7 @@ body .c9-templates-modal {
 			grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
 			grid-auto-rows: minmax(min-content, max-content);
 
-			@media (min-width:1500px) {
+			@media (min-width: 1500px) {
 				grid-template-columns: repeat(3, 1fr);
 			}
 
@@ -226,7 +226,7 @@ body .c9-templates-modal {
 				border-radius: 0;
 				padding: 5px;
 				background: white;
-				font-family: "helvetica neue", helvetica, sans-serif;
+				font-family: 'helvetica neue', helvetica, sans-serif;
 				text-transform: uppercase;
 				padding: 0;
 
@@ -247,8 +247,8 @@ body .c9-templates-modal {
 				span {
 					display: block;
 					font-weight: bold;
-					color: #576D7B;
-					letter-spacing: .4px;
+					color: #576d7b;
+					letter-spacing: 0.4px;
 					text-transform: uppercase;
 					text-align: left;
 					padding-top: 1px;
@@ -278,13 +278,12 @@ body .c9-templates-modal {
 				}
 
 				p {
-					color: #7A7A7A;
+					color: #7a7a7a;
 					font-size: 11px;
 					text-transform: none;
-					letter-spacing: .1px;
+					letter-spacing: 0.1px;
 					margin: 0px 5px 8px 7px;
 					text-align: left;
-
 				}
 
 				img {
@@ -294,17 +293,16 @@ body .c9-templates-modal {
 		}
 
 		.c9-reusable-list {
-			@media (min-width:1500px) {
+			@media (min-width: 1500px) {
 				grid-template-columns: repeat(4, 1fr);
 			}
 		}
 
 		.c9-section-options {
-			@media (min-width:1600px) {
+			@media (min-width: 1600px) {
 				grid-template-columns: repeat(4, 1fr);
 			}
 		}
-
 
 		.c9-section-options {
 			button:not(.btn-clear) {
@@ -381,8 +379,21 @@ body .c9-templates-modal {
 			.c9-layout-button-content:after {
 				content: '';
 				background: rgba(255, 255, 255, 0);
-				background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(47%, rgba(255, 255, 255, 0)), color-stop(96%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-				background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 47%, rgba(255, 255, 255, 1) 96%, rgba(255, 255, 255, 1) 100%);
+				background: -webkit-gradient(
+					left top,
+					left bottom,
+					color-stop(0%, rgba(255, 255, 255, 0)),
+					color-stop(47%, rgba(255, 255, 255, 0)),
+					color-stop(96%, rgba(255, 255, 255, 1)),
+					color-stop(100%, rgba(255, 255, 255, 1))
+				);
+				background: linear-gradient(
+					to bottom,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0) 47%,
+					rgba(255, 255, 255, 1) 96%,
+					rgba(255, 255, 255, 1) 100%
+				);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
 				position: absolute;
 				z-index: 3;
@@ -392,7 +403,7 @@ body .c9-templates-modal {
 				left: 0;
 				right: 0;
 				opacity: 1;
-				transition: opacity .5s ease-out;
+				transition: opacity 0.5s ease-out;
 			}
 
 			.c9-layout-button-content:hover:after {
@@ -400,7 +411,7 @@ body .c9-templates-modal {
 			}
 
 			.c9-layout-button-content p:before {
-				content: "";
+				content: '';
 				background: white;
 				height: calc(100% + 10px);
 				width: calc(100% + 10px);
@@ -433,7 +444,8 @@ body .c9-templates-modal {
 				margin-left: 0px;
 			}
 
-			svg {
+			svg,
+			.svg-img {
 				width: 30%;
 				border: 1px solid #f1f1f1;
 			}
@@ -479,9 +491,6 @@ body .c9-templates-modal {
 					span {
 						font-size: 11px;
 					}
-
-
-
 				}
 			}
 
@@ -503,7 +512,7 @@ body .c9-templates-modal {
 					.block-editor-block-preview__content {
 						transform: scale(1) !important;
 
-						>div>.block-editor-block-list__layout>.wp-block>* {
+						> div > .block-editor-block-list__layout > .wp-block > * {
 							// width: 60vw;
 						}
 					}
@@ -530,8 +539,8 @@ body .c9-templates-modal {
 			h4 {
 				display: block;
 				font-weight: bold;
-				color: #576D7B;
-				letter-spacing: .4px;
+				color: #576d7b;
+				letter-spacing: 0.4px;
 				text-transform: uppercase;
 				text-align: left;
 				padding-top: 1px;
@@ -599,7 +608,7 @@ body .c9-templates-modal {
 			}
 
 			.c9-template-tabs-tab span {
-				transition: color .3s ease-in;
+				transition: color 0.3s ease-in;
 			}
 
 			.c9-template-tabs-tab:hover span,
@@ -621,7 +630,11 @@ body .c9-templates-modal {
 		max-width: 50vw;
 	}
 
-	body .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs .c9-template-tabs-tab {
+	body
+		.c9-templates-modal
+		.c9-component-modal-tab-panel
+		.components-tab-panel__tabs
+		.c9-template-tabs-tab {
 		font-size: 12px;
 		padding: 10px 14px;
 		margin-right: 4px;
@@ -646,10 +659,14 @@ body .c9-templates-modal {
 	body .c9-templates-modal .c9-component-modal-tab-panel .c9-reusable-list {
 		grid-template-columns: repeat(2, 1fr);
 	}
-
 }
 
-body .c9-templates-modal .c9-component-modal-tab-panel .c9-layout-options button p {
+body
+	.c9-templates-modal
+	.c9-component-modal-tab-panel
+	.c9-layout-options
+	button
+	p {
 	margin-left: 0px;
 }
 

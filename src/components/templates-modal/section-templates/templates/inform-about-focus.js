@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/inform-about-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-about-focus.svg`}
+		/>
+	),
 	title: 'Inform About Focus',
 	description: '100 Words • Multiple Headings',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":9,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#f4f4f4","overlayHue":"#232323","overlayOpacity":1,"blendMode":"normal","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->

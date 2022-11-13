@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/inform-profile-photo-focus.svg";
-
 export default {
-	icon: Icon,
-	title: "Inform Profile Photo Focus",
-	description: "100 Words • 2 Headlines • Background Photo",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-profile-photo-focus.svg`}
+		/>
+	),
+	title: 'Inform Profile Photo Focus',
+	description: '100 Words • 2 Headlines • Background Photo',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":6,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/guitar-band-solo-vertical-portrait.jpg","bgImgSize":"","bgCustomX":{"size":50,"unit":"%"},"overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"1.00","y":"0.92"},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
 <div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:75vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0} -->
 <div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
@@ -28,5 +31,5 @@ export default {
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-custom" style="background-position:100% 92%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/guitar-band-solo-vertical-portrait.jpg);background-repeat:no-repeat;background-size:50% auto"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

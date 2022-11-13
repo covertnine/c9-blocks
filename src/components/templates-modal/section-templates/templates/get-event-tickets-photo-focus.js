@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/get-event-tickets-photo-focus.svg";
-
 export default {
-	icon: Icon,
-	title: "Get Event Tickets Photo Focus",
-	description: "Headlines • Background Photo • Button Link",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/get-event-tickets-photo-focus.svg`}
+		/>
+	),
+	title: 'Get Event Tickets Photo Focus',
+	description: 'Headlines • Background Photo • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":7,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","overlayHue":"#121212","overlayOpacity":7,"blendMode":"normal","minScreenHeight":70,"focalPoint":{"x":"0.53","y":"1.00"}} -->
 <div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:70vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 <div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
@@ -30,5 +33,5 @@ export default {
 <!-- /wp:button --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(18,18,18,.7);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:53% 100%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

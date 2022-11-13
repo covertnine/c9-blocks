@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/widescreen-video-simple-big-heading.svg";
-
 export default {
-	icon: Icon,
-	title: "Watch Video + Instructions",
-	description: "Video • Tabs • Heading • 200 Words",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/widescreen-video-simple-big-heading.svg`}
+		/>
+	),
+	title: 'Watch Video + Instructions',
+	description: 'Video • Tabs • Heading • 200 Words',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"//c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#141414","overlayOpacity":9,"blendMode":"normal","minScreenHeight":84,"containerVideoURL":"//c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
 	<div class="c9-grid p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:84vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"bottom","minScreenHeight":-4} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-equal" style="min-height:-4vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
@@ -48,5 +51,5 @@ export default {
 	<!-- /wp:c9-blocks/horizontal-tabs --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(20,20,20,.9);mix-blend-mode:normal"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:84vh"><source src="//c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4" type="video/mp4"/></video></div></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:50% 50%;background-image:url(//c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-	<!-- /wp:c9-blocks/grid -->`
+	<!-- /wp:c9-blocks/grid -->`,
 };

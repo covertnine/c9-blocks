@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/c9-editorial-2000.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/c9-editorial-2000.svg`}
+		/>
+	),
 	type: 'awareness',
 	title: 'Story Article 2000',
 	description: `A long form template for a long story, tutorial, or opinion about a topic that starts at 2,000 words in length.`,

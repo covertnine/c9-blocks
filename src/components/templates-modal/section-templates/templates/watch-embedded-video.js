@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/watch-embedded-video.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/watch-embedded-video.svg`}
+		/>
+	),
 	title: 'Watch Embedded Video',
 	description: '50 Words • Button Link • Video Embed',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":3} -->

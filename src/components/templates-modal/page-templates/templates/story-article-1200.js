@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/c9-editorial-1200.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/c9-editorial-1200.svg`}
+		/>
+	),
 	type: 'awareness',
 	title: 'Story Article 1200',
 	description: `A beginning of a very long story, article, tutorial, or in-depth opinion about a topic that starts at 1,200 words in length. Add more tables, charts, videos, or even e-commerce products to this template, so people don't get bored with filler.`,

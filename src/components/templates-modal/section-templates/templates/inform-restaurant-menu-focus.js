@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/inform-restaurant-menu-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-restaurant-menu-focus.svg`}
+		/>
+	),
 	title: 'Inform Restaurant Menu Focus',
 	description: '625+ Words • Headlines • Photos',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":4,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/shawn-ang-nmpW_WwwVSc-unsplash.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":80,"focalPoint":{"x":0.5345622119815668,"y":1}} -->

@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/media.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/media.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Media',
 	description: `Show off your best work, videos, demo reels, or share embedded audio files with album artwork on a short landing page made with artists, videographers, photographers, and/or musicians in mind.`,

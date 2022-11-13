@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/inform-feature-focus-3.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-feature-focus-3.svg`}
+		/>
+	),
 	title: 'Inform Feature Focus 3',
 	description: '260 Words • 3 Icons • 3 Button Links',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#e6e6e6"} -->

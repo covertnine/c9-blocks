@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/about-corporate.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/about-corporate.svg`}
+		/>
+	),
 	type: 'awareness',
 	title: 'About Corporate',
 	description: `An About page with all the essential elements to jumpstart the process of “know, like, and trust.” Complete with a hero header, testimonials, individual profiles, history, services overview, FAQ, and a “call-to-action.” Simply add and subtract the blocks most useful to you.`,

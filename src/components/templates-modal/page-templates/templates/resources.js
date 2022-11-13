@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/resources.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/resources.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Resources',
 	description: `A page to organize resources in one location with a Search Block, posts or articles of any post type or category, a hero header image with a few paragraphs or headings of instructions to direct your users to your well-documented knowledgebase. Cap it off with a call-to-action to subscribe to your newsletter for updates.`,

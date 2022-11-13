@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/stream-discography-listen-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/stream-discography-listen-focus.svg`}
+		/>
+	),
 	title: 'Stream Discography',
 	description: '3 Spotify Links • 3 Images • Photo',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#030303","overlayHue":"#212121","overlayOpacity":8,"minScreenHeight":10,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"0.51","y":"0.00"}} -->

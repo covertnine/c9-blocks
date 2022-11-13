@@ -29,6 +29,7 @@ module.exports = {
 	dotenv: resolvePlugin('.env'),
 	pluginSrc: resolvePlugin('src'),
 	pluginBlocksJs: resolvePlugin('src/blocks.js'),
+	pluginBlocksRegisterJs: resolvePlugin('src/register.js'),
 	pluginBlocksFrontendJs: resolvePlugin('src/frontend.js'),
 	pluginBlocksBootstrapJs: resolvePlugin('src/vendor.js'),
 	pluginBlocksEditorJs: resolvePlugin('src/editor.js'),

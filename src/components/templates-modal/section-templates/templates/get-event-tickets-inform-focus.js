@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/get-event-tickets-inform-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/get-event-tickets-inform-focus.svg`}
+		/>
+	),
 	title: 'Get Event Tickets Inform Focus',
 	description: '75 Words • Headline • Photo • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":8,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg","overlayHue":"#000000","blendMode":"normal","minScreenHeight":79,"focalPoint":{"x":"0.07","y":"0.85"}} -->

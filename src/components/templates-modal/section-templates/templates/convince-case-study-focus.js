@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/convince-case-study-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/convince-case-study-focus.svg`}
+		/>
+	),
 	title: 'Convince Case Study Focus',
 	description: '125 Words • Image Gallery • Headlines',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#0a0a0a","overlayOpacity":9,"blendMode":"normal","focalPoint":{"x":"0.57","y":"1.00"}} -->

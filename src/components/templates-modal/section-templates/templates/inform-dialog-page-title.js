@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/inform-dialog-page-title.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-dialog-page-title.svg`}
+		/>
+	),
 	title: 'Inform Dialog Page Title',
 	description: '850+ Words • Headlines • Background Image',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-122-2.jpg","bgImgSize":"","bgCustomX":{"size":100,"unit":"%"},"overlayHue":"#e3e3e3","overlayOpacity":7,"minScreenHeight":85,"focalPoint":{"x":"0.50","y":"0.00"},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->

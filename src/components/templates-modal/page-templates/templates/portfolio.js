@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/portfolio.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/portfolio.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Portfolio',
 	description: `Showcase a range of different works in this clean portfolio landing page template that has: Image carousels with captions for three examples, sections for describing each example and your role, an extra large header that works great with photos or textures, followed by an image gallery and a place for a short bio.`,

@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/browse-image-gallery-carousel.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/browse-image-gallery-carousel.svg`}
+		/>
+	),
 	title: 'Browse Image Gallery Carousel',
 	description: '50 Words • Image Gallery • Background Photo',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":6,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg","containerHue":"#000000","overlayHue":"#000000","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90} -->

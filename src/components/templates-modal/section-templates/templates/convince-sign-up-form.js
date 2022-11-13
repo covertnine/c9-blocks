@@ -1,9 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/convince-sign-up-form.svg";
-
 export default {
-	icon: Icon,
-	title: "Convince Sign Up Form",
-	description: "50 Words • Headline • Form",
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/convince-sign-up-form.svg`}
+		/>
+	),
+	title: 'Convince Sign Up Form',
+	description: '50 Words • Headline • Form',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#070707","overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":100,"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
 <div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:100vh;background-color:rgba(7,7,7,1)"><!-- wp:c9-blocks/column-container {"align":"full","columns":1,"columnMaxWidth":600,"layout":"c9-1-col-equal","containerWidth":"container-fluid","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":false,"top":"5","bottom":"5","left":"5","right":"5","icon":"editor-unlink"}} -->
 <div class="container-fluid alignfull c9-column-container my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center c9-1-col-equal c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:600px"><!-- wp:c9-blocks/column -->
@@ -46,5 +49,5 @@ export default {
 <!-- /wp:group --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(40,40,40,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-cover" style="background-position:28.110599078341014% 57.638888888888886%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
-<!-- /wp:c9-blocks/grid -->`
+<!-- /wp:c9-blocks/grid -->`,
 };

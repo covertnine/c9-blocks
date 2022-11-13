@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/c9-pricing.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/c9-pricing.svg`}
+		/>
+	),
 	type: 'consideration',
 	title: 'Pricing',
 	description: `Tabs full of different pricing structures. Hourly, unlimited, or per project layouts will all work well with this template.`,

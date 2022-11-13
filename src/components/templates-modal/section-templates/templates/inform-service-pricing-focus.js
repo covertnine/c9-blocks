@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/inform-service-pricing-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/inform-service-pricing-focus.svg`}
+		/>
+	),
 	title: 'Inform Service Pricing Focus',
 	description: '500+ Words • Headlines • Tabs • Background Image',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg","containerHue":"#000000","overlayHue":"#070707","overlayOpacity":9,"blendMode":"normal","minScreenHeight":80,"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"focalPoint":{"x":"0.52","y":"0.18"}} -->

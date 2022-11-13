@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/section-template-icons/stream-single-listen-focus.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/stream-single-listen-focus.svg`}
+		/>
+	),
 	title: 'Stream Single Listen Focus',
 	description: '100 Words • Spotify Link • Headlines',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":5,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","overlayHue":"#1d1d1d","overlayOpacity":7,"blendMode":"normal","minScreenHeight":100,"focalPoint":{"x":"0.54","y":"1.00"}} -->

@@ -1,10 +1,12 @@
-import Icon from "../../../../../assets/section-template-icons/offer-details-list-image-gallery-share.svg";
-
 export default {
-	icon: Icon,
-	title: "Offer Details List + Image Gallery + Share",
-	markup:
-		`<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerPadding":{"linked":true,"icon":"admin-links","top":"5","bottom":"5","left":"5","right":"5"}} -->
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/section-template-icons/offer-details-list-image-gallery-share.svg`}
+		/>
+	),
+	title: 'Offer Details List + Image Gallery + Share',
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerPadding":{"linked":true,"icon":"admin-links","top":"5","bottom":"5","left":"5","right":"5"}} -->
 		<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":8,"layout":"c9-2-col-equal"} -->
 		<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-8 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 		<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Offer","subheading":"Details","addSubheading":true,"tagLevel":3} -->
@@ -44,5 +46,5 @@ export default {
 		<!-- wp:c9-blocks/social-share {"linkedin":true,"email":true,"reddit":true,"shareAlignment":"center","shareButtonSize":"c9-share-size-large","shareButtonColor":"c9-share-color-social"} /--></div></div>
 		<!-- /wp:c9-blocks/column --></div></div>
 		<!-- /wp:c9-blocks/column-container --></div>
-		<!-- /wp:c9-blocks/grid -->`
+		<!-- /wp:c9-blocks/grid -->`,
 };

@@ -1,7 +1,10 @@
-import Icon from '../../../../../assets/page-template-icons/about-creative.svg';
-
 export default {
-	icon: Icon,
+	icon: (
+		<img
+			className="svg-img"
+			src={`${c9_blocks_assets.asset_folder}/page-template-icons/about-creative.svg`}
+		/>
+	),
 	type: 'awareness',
 	title: 'About Creative',
 	description: `Our second About page puts your creative side on display with photography or artwork. This landing page template works for an individual, or a small group with a short about section, testimonials, a simple photo gallery, mission statement,  profile photo, map embed, and a call-to-action video with a button at the bottom.`,
