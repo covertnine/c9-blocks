@@ -48,7 +48,7 @@ module.exports = {
 				'blocks.editor.build.js',
 			],
 		}),
-		new NodePolyfillPlugin(),
+		new NodePolyfillPlugin({ excludeAliases: ['console'] }),
 		new ImageMinimizerPlugin({
 			minimizer: {
 				implementation: ImageMinimizerPlugin.imageminMinify,
