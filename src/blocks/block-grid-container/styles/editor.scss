@@ -1511,6 +1511,18 @@ body.folded
 		.editor-styles-wrapper
 		.wp-block[data-type='c9-blocks/grid']
 		.container:not(.carousel.slide)
+		.container,
+	body.folded
+		.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type='c9-blocks/grid']
+		.container-fluid:not(.carousel.slide)
+		.container,
+	body:not(.folded)
+		.is-sidebar-opened
+		.editor-styles-wrapper
+		.wp-block[data-type='c9-blocks/grid']
+		.container-fluid:not(.carousel.slide)
 		.container {
 		margin-left: auto;
 		margin-right: auto;
