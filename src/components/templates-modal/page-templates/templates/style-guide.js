@@ -63,7 +63,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(38,38,38,.8);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:51.61290322580645% 17.6056338028169%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":1,"rows":3,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
+	<!-- wp:c9-blocks/grid {"instanceId":1,"rows":4,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Paragraphs","tagLevel":3} -->
@@ -83,27 +83,27 @@ export default {
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:heading {"level":1} -->
-	<h1 class="">Tab Heading One</h1>
+	<h1 class="">Heading H1</h1>
 	<!-- /wp:heading -->
 	
 	<!-- wp:heading -->
-	<h2 class="">Tab Heading One</h2>
+	<h2 class="">Heading H2</h2>
 	<!-- /wp:heading -->
 	
 	<!-- wp:heading {"level":3} -->
-	<h3 class="">Tab Heading One</h3>
+	<h3 class="">Heading H3</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:heading {"level":4} -->
-	<h4 class="">Tab Heading One</h4>
+	<h4 class="">Heading H4</h4>
 	<!-- /wp:heading -->
 	
 	<!-- wp:heading {"level":5} -->
-	<h5 class="">Tab Heading One</h5>
+	<h5 class="">Heading H5</h5>
 	<!-- /wp:heading -->
 	
 	<!-- wp:heading {"level":6} -->
-	<h6 class="">Tab Heading One</h6>
+	<h6 class="">Heading H6</h6>
 	<!-- /wp:heading -->
 	
 	<!-- wp:spacer {"height":"35px"} -->
@@ -200,11 +200,11 @@ export default {
 	
 	<!-- wp:code -->
 	<pre class="wp-block-code"><code>.the-best-styles {
-		  font-family: 'Oswald', sans-serif;
-		  color: black; /* like your soul */
-		  font-size: 1.6em;
-		  padding: 420px;
-		}</code></pre>
+			  font-family: 'Oswald', sans-serif;
+			  color: black; /* like your soul */
+			  font-size: 1.6em;
+			  padding: 420px;
+			}</code></pre>
 	<!-- /wp:code --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->
@@ -235,11 +235,85 @@ export default {
 	<!-- /wp:paragraph --><cite>Guy Fawkes.</cite></blockquote>
 	<!-- /wp:quote --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
+	<!-- /wp:c9-blocks/column-container -->
+	
+	<!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal"} -->
+	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading -->
+	<h2 class="">List Items</h2>
+	<!-- /wp:heading -->
+	
+	<!-- wp:list -->
+	<ul class=""><!-- wp:list-item -->
+	<li>List Item One</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Two</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Three<!-- wp:list -->
+	<ul class=""><!-- wp:list-item -->
+	<li>Inner List Item One</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>Inner List Item Two</li>
+	<!-- /wp:list-item --></ul>
+	<!-- /wp:list --></li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Four</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Five</li>
+	<!-- /wp:list-item --></ul>
+	<!-- /wp:list --></div></div>
+	<!-- /wp:c9-blocks/column -->
+	
+	<!-- wp:c9-blocks/column -->
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading -->
+	<h2 class="">Ordered List Items</h2>
+	<!-- /wp:heading -->
+	
+	<!-- wp:list {"ordered":true} -->
+	<ol class=""><!-- wp:list-item -->
+	<li>List Item One</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Two</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Three<!-- wp:list {"ordered":true} -->
+	<ol class=""><!-- wp:list-item -->
+	<li>Inner List Item One</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>Inner List Item Two</li>
+	<!-- /wp:list-item --></ol>
+	<!-- /wp:list --></li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Four</li>
+	<!-- /wp:list-item -->
+	
+	<!-- wp:list-item -->
+	<li>List Item Five</li>
+	<!-- /wp:list-item --></ol>
+	<!-- /wp:list --></div></div>
+	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"instanceId":2,"rows":3,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-	<div class="c9-grid p-5 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":2,"rows":3,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"className":"p-5"} -->
+	<div class="c9-grid p-5 p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:separator {"opacity":"css"} -->
 	<hr class="wp-block-separator has-css-opacity"/>
@@ -440,8 +514,8 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"instanceId":4,"rows":2} -->
-	<div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":4,"rows":2,"className":"p-5"} -->
+	<div class="c9-grid p-5 p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"C9 Tables","type":"c9-txl display-","textAlign":"center"} -->
 	<div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1">C9 Tables</h1></div>
@@ -707,7 +781,7 @@ export default {
 	<!-- /wp:spacer -->
 	
 	<!-- wp:cover {"url":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","id":2791,"dimRatio":50,"isDark":false,"align":"wide"} -->
-	<div class="wp-block-cover alignwide is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-2791" src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+	<div class="wp-block-cover alignwide is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-2791" alt="" src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 	<p class="has-text-align-center has-large-font-size">Cover Block Wide</p>
 	<!-- /wp:paragraph --></div></div>
 	<!-- /wp:cover -->
@@ -752,8 +826,8 @@ export default {
 	<div style="height:31px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:cover {"url":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","id":3053,"dimRatio":50,"isDark":false,"align":"full"} -->
-	<div class="wp-block-cover alignfull is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-3053" src="https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+	<!-- wp:cover {"url":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","id":3053,"dimRatio":50,"align":"full"} -->
+	<div class="wp-block-cover alignfull"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-3053" alt="" src="https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 	<p class="has-text-align-center has-large-font-size">Cover Block Full</p>
 	<!-- /wp:paragraph --></div></div>
 	<!-- /wp:cover -->
