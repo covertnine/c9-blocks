@@ -10,8 +10,6 @@
 		"lint": "eslint \"src/**/*.{js,jsx}\"",
 		"lint:fix": "eslint --fix \"src/**/**/*.{js,jsx}\"",
 		"test": "jest",
-		"test:e2e": "wp-scripts test-e2e",
-		"wp-env": "wp-env",
 		"prepare": "husky install"
 	},
 	"dependencies": {
