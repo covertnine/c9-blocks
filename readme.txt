@@ -69,7 +69,7 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 == Changelog ==
 
 = 1.6.0 =
-Further edits to templates for WordPress 6.1.1 compatibility. Fixed video background bug, updated build tools.
+Further edits to templates for WordPress 6.1.1 compatibility. Fixed video background bug, updated build tools, updated section + page templates.
 
 = 1.5.2 =
 Updates for WordPress 6.1. Fixes to horizontal tabs, carousels, lists. Updates to build tools for webpack5. Updating templates and sections.
