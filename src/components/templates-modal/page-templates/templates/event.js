@@ -68,15 +68,15 @@ export default {
 	
 	<!-- wp:list -->
 	<ul class=""><!-- wp:list-item -->
-	<li><strong>Something</strong> you need to know</li>
+	<li class=""><strong>Something</strong> you need to know</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>One more thing you need to know</li>
+	<li class="">One more thing you need to know</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>A <a href="#">link</a> to something you need</li>
+	<li class="">A <a href="#">link</a> to something you need</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list -->
 	
@@ -192,8 +192,8 @@ export default {
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->
 	
-	<!-- wp:c9-blocks/column-container {"align":"full","columns":1,"layout":"one-column","containerWidth":"container-fluid","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
-	<div class="container-fluid alignfull c9-column-container my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Get Tickets","buttonSize":"c9-button-size-extralarge","ctaBackgroundColor":"#e7e7e7","disableToolbar":true} -->
 	<div style="background-color:rgba(231,231,231,1);text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h"><p>Get your tickets for the lowest price available now by clicking on the button!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Get Tickets</a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
@@ -336,59 +336,59 @@ export default {
 	
 	<!-- wp:list {"ordered":true,"className":"is-style-light-text"} -->
 	<ol class="is-style-light-text"><!-- wp:list-item -->
-	<li><strong>45</strong></li>
+	<li class=""><strong>45</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Handwritten</strong></li>
+	<li class=""><strong>Handwritten</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Here Comes My Man</strong></li>
+	<li class=""><strong>Here Comes My Man</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Mulholland Drive</strong></li>
+	<li class=""><strong>Mulholland Drive</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Keepsake</strong></li>
+	<li class=""><strong>Keepsake</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Too Much Blood</strong></li>
+	<li class=""><strong>Too Much Blood</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Howl</strong></li>
+	<li class=""><strong>Howl</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Biloxi Parish</strong></li>
+	<li class=""><strong>Biloxi Parish</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Desire</strong></li>
+	<li class=""><strong>Desire</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Mae</strong></li>
+	<li class=""><strong>Mae</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>National Anthem</strong></li>
+	<li class=""><strong>National Anthem</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Blue Dahlia</strong></li>
+	<li class=""><strong>Blue Dahlia</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Silver</strong></li>
+	<li class=""><strong>Silver</strong></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>You Got Lucky</strong></li>
+	<li class=""><strong>You Got Lucky</strong></li>
 	<!-- /wp:list-item --></ol>
 	<!-- /wp:list --></div></div>
 	<!-- /wp:c9-blocks/column -->
