@@ -124,8 +124,8 @@ export default {
 	
 	<!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":4,"layout":"c9-2-col-wideright","containerWidth":"container-narrow","overlayHue":"#f7f7f9","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(247,247,249,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"align":"center","id":246} -->
-	<figure class="wp-block-image aligncenter"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/10/099992.jpg" alt="" class="wp-image-246"/><figcaption class="wp-element-caption"><strong>Suzy Jameson</strong></figcaption></figure>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"sizeSlug":"large"} -->
+	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2019/10/099992.jpg" alt=""/><figcaption class="wp-element-caption"><strong>Suzy Jameson</strong></figcaption></figure>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
