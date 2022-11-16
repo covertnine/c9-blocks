@@ -3,7 +3,7 @@
 /**
  * Plugin Name: C9 Blocks
  * Plugin URI: https://www.covertnine.com
- * Description: 10 new Gutenberg blocks with section templates and page templates. With C9 Blocks + Themes, the digital agency is built right into the code.
+ * Description: 10 new Gutenberg blocks with block templates. With C9, the agency is in the code.
  * Author: COVERT NINE
  * Author URI: https://www.covertnine.com
  * Version: 1.6.0
