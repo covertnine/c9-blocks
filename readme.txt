@@ -69,7 +69,7 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 == Changelog ==
 
 = 1.6.0 =
-Further edits to templates for WordPress 6.1.1 compatibility. Fixed video background bug, updated build tools, updated section + page templates.
+Further edits to templates for WordPress 6.1.1 compatibility. Fixed video background bug, updated build tools, updated section + page templates. 
 
 = 1.5.2 =
 Updates for WordPress 6.1. Fixes to horizontal tabs, carousels, lists. Updates to build tools for webpack5. Updating templates and sections.
@@ -262,8 +262,6 @@ Compatibility updates for WP 5.4 release to deprecated code. Fixed video backgro
 
 == Demo Videos ==
 
-We're constantly updating videos on the [C9 Docs](https://c9.covertnine.com) site, as well as on our [YouTube Channel](https://www.youtube.com/covertnine).
-
 **Creating marketing-focused landing pages with C9 Blocks + C9 Starter Theme**
 
 https://www.youtube.com/watch?v=8qyP5abkoe4
@@ -326,21 +324,16 @@ C9 Blocks has an addon called C9 Animation that comes with our [C9 Early Access 
 * [C9 Blocks Documentation](https://c9.covertnine.com/documentation/)
 * [C9 Starter Theme Documentation](https://c9.covertnine.com/c9-theme/)
 * [C9 Admin Dashboard Documentation](https://c9.covertnine.com/c9-admin-plugin/)
-* [Sample Content](https://c9.covertnine.com/sample-content/)
 
 
 
 == Support ==
 
-Please visit our support forum: [Here](https://www.covertnine.com/community/support/)
+Documentation, tutorials and demo content can be found [Here](https://c9.covertnine.com/)
 
 Get premium paid support: [Here](https://www.covertnine.com/get-support)
 
-Main documentation can be found [Here](https://c9.covertnine.com/documentation/)
-
 The Blocks Development Guide lives [Here](https://c9.covertnine.com/c9-blocks-development/)
-
-Tutorials and demo content can be found [Here](https://c9.covertnine.com/)
 
 Additional tutorials, C9 Themes, and WordPress content from COVERT NINE [Here](https://www.covertnine.com)
 
