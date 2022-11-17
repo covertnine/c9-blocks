@@ -3,7 +3,7 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.9
-Tested up to: 6.1
+Tested up to: 6.1.1
 Stable tag: 1.6.0
 Requires PHP: 7.1
 License: GPLv3
@@ -295,10 +295,10 @@ Get an overview of each of the blocks and the latest documentation by heading ov
 == C9 Starter WordPress Theme ==
 The [C9 Starter Theme](https://wordpress.org/themes/c9-starter) is a responsive and minimal, CSS Grid-based, Bootstrap 4 theme that utilizes most of Bootstrap's components and works seamlessly with C9 Blocks and the Gutenberg block editor. It's based on [Understrap](https://understrap.com/), but with an innovative approach to using Gutenberg's editing system.
 
-If you're an agency working on behalf of a client and want to build your own style guide and/or themes on top of the [C9 Starter Theme](https://c9.covertnine.com), included is a client boilerplate folder and full child theme support. Join the [C9 Early Access List](https://www.covertnine.com/forms/c9-beta) with a simple email signup to get four example themes along with all of our other WordPress tools emailed to you with tips on how to build your own block-based WordPress websites.
+If you're an agency working on behalf of a client and want to build your own style guide and/or themes on top of the [C9 Starter Theme](https://c9.covertnine.com), included is a client boilerplate folder and full child theme support. Join the [C9 early access list](https://www.covertnine.com/forms/c9-beta) with a simple email signup to get four example themes along with all of our other WordPress tools emailed to you with tips on how to build your own block-based WordPress websites.
 
 == C9 Blocks Animation with Greensock (GSAP) ==
-C9 Blocks has an addon called C9 Animation that comes with our [C9 Early Access List](https://www.covertnine.com/forms/c9-beta) when you sign up. Unlock the power of buttery-smooth animations that run cross-browser and cross-device, all from within the visual block editor.
+C9 Blocks has an addon called C9 Animation that comes with our [C9 Early access list](https://www.covertnine.com/forms/c9-beta) when you sign up. Unlock the power of buttery-smooth animations that run cross-browser and cross-device, all from within the visual block editor.
 
 [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/)
 
@@ -328,8 +328,6 @@ C9 Blocks has an addon called C9 Animation that comes with our [C9 Early Access 
 
 
 == Support ==
-
-Documentation, tutorials and demo content can be found [Here](https://c9.covertnine.com/)
 
 Get premium paid support: [Here](https://www.covertnine.com/get-support)
 
