@@ -1,11 +1,21 @@
 const { __ } = wp.i18n;
 const { useState, useEffect, Fragment } = wp.element;
-const { Popover, ToolbarButton, ToolbarGroup, KeyboardShortcuts } =
+const { Popover, ToolbarButton, ToolbarGroup, KeyboardShortcuts, Button } =
 	wp.components;
 const { BlockControls, __experimentalLinkControl: LinkControl } =
 	wp.blockEditor;
 const { rawShortcut, displayShortcut } = wp.keycodes;
+
+import styled from 'styled-components';
 import { link, linkOff } from '@wordpress/icons';
+
+const StyledButton = styled(Button)`
+	padding-left: 16px !important;
+	svg {
+		height: 24px;
+		width: 24px;
+	}
+`;
 
 function URLPicker({
 	isSelected,
@@ -34,10 +44,9 @@ function URLPicker({
 	}, []);
 
 	const urlIsSet = !!url[slideActive];
-	const urlIsSetandSelected = urlIsSet && isSelected;
-	const openLinkControl = () => {
+	const toggleLinkControl = () => {
 		startPause();
-		setIsURLPickerOpen(true);
+		setIsURLPickerOpen((isURLPickerOpen) => !isURLPickerOpen);
 		return false; // prevents default behaviour for event
 	};
 	const unlinkButton = () => {
@@ -46,9 +55,8 @@ function URLPicker({
 		setAttributes({
 			link,
 		});
-		setIsURLPickerOpen(false);
 	};
-	const linkControl = (isURLPickerOpen || urlIsSetandSelected) && (
+	const linkControl = isURLPickerOpen && (
 		<Popover
 			className="c9-url-picker"
 			position="bottom center"
@@ -73,38 +81,37 @@ function URLPicker({
 					}
 				}}
 			/>
+			{urlIsSet && (
+				<StyledButton
+					label={__('Remove custom link', 'c9-blocks')}
+					icon={linkOff}
+					style={{}}
+					onClick={unlinkButton}
+				>
+					{__('Remove custom link', 'c9-blocks')}
+				</StyledButton>
+			)}
 		</Popover>
 	);
 	return (
 		<Fragment>
 			<BlockControls>
 				<ToolbarGroup>
-					{!urlIsSet && (
-						<ToolbarButton
-							name="link"
-							icon={link}
-							title={__('Link')}
-							shortcut={displayShortcut.primary('k')}
-							onClick={openLinkControl}
-						/>
-					)}
-					{urlIsSetandSelected && (
-						<ToolbarButton
-							name="link"
-							icon={linkOff}
-							title={__('Unlink')}
-							shortcut={displayShortcut.primaryShift('k')}
-							onClick={unlinkButton}
-							isActive={true}
-						/>
-					)}
+					<ToolbarButton
+						name="link"
+						icon={link}
+						title={__('Link')}
+						shortcut={displayShortcut.primary('k')}
+						onClick={toggleLinkControl}
+						isActive={isURLPickerOpen}
+					/>
 				</ToolbarGroup>
 			</BlockControls>
 			{isSelected && (
 				<KeyboardShortcuts
 					bindGlobal
 					shortcuts={{
-						[rawShortcut.primary('k')]: openLinkControl,
+						[rawShortcut.primary('k')]: toggleLinkControl,
 						[rawShortcut.primaryShift('k')]: unlinkButton,
 					}}
 				/>
