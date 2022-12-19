@@ -257,9 +257,10 @@ class Edit extends Component {
 							{tabsData.map((tabData, i) => {
 								const { slug, title } = tabData;
 								const selected = tabActive === slug;
+								console.log(slug);
 
 								return (
-									<div className="c9-tab-admin-wrapper" key={slug}>
+									<div className="c9-tab-admin-wrapper" key={i}>
 										<RichText
 											style={{
 												backgroundColor: tabBackgroundColor,
