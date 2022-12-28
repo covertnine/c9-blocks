@@ -69,7 +69,7 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 == Changelog ==
 
 = 1.6.1 =
-Bug fix on entry for vertical tabs. Link dialog fix on carousels. Alignment fixes for some blocks in posts.
+Bug fix on entry for vertical tabs. Link dialog fix on carousels. Alignment fixes for some blocks in posts. CTA bar font size fix.
 
 = 1.6.0 =
 Further edits to templates for WordPress 6.1.1 compatibility. Fixed video background bug, updated build tools, updated section + page templates. 
