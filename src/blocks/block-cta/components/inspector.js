@@ -152,7 +152,7 @@ export default class Inspector extends Component {
 			ctaLayout,
 			ctaPadding,
 			ctaMargin,
-			dropCap,
+			//dropCap,
 			imgURL,
 			imgID,
 			imgAttach,
@@ -243,7 +243,7 @@ export default class Inspector extends Component {
 			<InspectorControls key="inspector">
 				<PanelBody title={__('Text Settings')} className="blocks-font-size">
 					<FontSizePicker value={fontSize.size} onChange={setFontSize} />
-					<ToggleControl
+					{/* <ToggleControl
 						label={__('Drop Cap')}
 						checked={!!dropCap}
 						onChange={() => setAttributes({ dropCap: !dropCap })}
@@ -252,7 +252,7 @@ export default class Inspector extends Component {
 								? __('Showing large initial letter.')
 								: __('Toggle to show a large initial letter.')
 						}
-					/>
+					/> */}
 				</PanelBody>
 				<PanelBody>
 					<RadioControl

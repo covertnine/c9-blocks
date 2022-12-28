@@ -259,7 +259,7 @@ class Edit extends Component {
 								const selected = tabActive === slug;
 
 								return (
-									<div className="c9-tab-admin-wrapper" key={slug}>
+									<div className="c9-tab-admin-wrapper" key={i}>
 										<RichText
 											style={{
 												backgroundColor: tabBackgroundColor,

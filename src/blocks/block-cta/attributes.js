@@ -143,7 +143,7 @@ const attributes = {
 		type: 'string',
 	},
 	customFontSize: {
-		type: 'number',
+		type: 'string',
 	},
 	dropCap: {
 		type: 'boolean',

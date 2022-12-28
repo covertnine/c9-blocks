@@ -7,7 +7,7 @@ import CallToAction from './components/cta';
  * WordPress dependencies
  */
 const { Component } = wp.element;
-const { RichText, getFontSizeClass } = wp.blockEditor;
+const { RichText } = wp.blockEditor;
 
 /**
  * External Dependencies.
@@ -58,13 +58,9 @@ export default class Save extends Component {
 				imgAlt,
 				ctaLayout,
 				type,
-				fontSize,
 				customFontSize,
-				dropCap,
 			},
 		} = this.props;
-
-		const fontSizeClass = getFontSizeClass(fontSize);
 
 		return (
 			<CallToAction {...this.props} save={true}>
@@ -86,13 +82,10 @@ export default class Save extends Component {
 					{ctaText && (
 						<RichText.Content
 							tagName="div"
-							className={classnames('c9-cta-text', type, {
-								[fontSizeClass]: fontSizeClass,
-								'has-drop-cap': dropCap,
-							})}
+							className={classnames('c9-cta-text', type)}
 							style={{
+								fontSize: customFontSize ? customFontSize : '1.6rem',
 								color: ctaTextColor,
-								fontSize: fontSizeClass ? undefined : customFontSize,
 							}}
 							value={ctaText}
 						/>

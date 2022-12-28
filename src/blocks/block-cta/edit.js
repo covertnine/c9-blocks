@@ -24,10 +24,10 @@ import classnames from 'classnames';
 /**
  * Browser dependencies
  */
-const { getComputedStyle } = window;
-const querySelector = window.document.querySelector.bind(document);
+//const { getComputedStyle } = window;
+//const querySelector = window.document.querySelector.bind(document);
 
-const PARAGRAPH_DROP_CAP_SELECTOR = 'p.has-drop-cap';
+//const PARAGRAPH_DROP_CAP_SELECTOR = 'p.has-drop-cap';
 
 class Edit extends Component {
 	constructor() {
@@ -40,17 +40,17 @@ class Edit extends Component {
 
 	// DropCap effect adapted from
 	// https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/paragraph/edit.js
-	useDropCapMinimumHeight(isDropCap) {
-		let minimumHeight;
-		const element = querySelector(PARAGRAPH_DROP_CAP_SELECTOR);
-		if (isDropCap && element) {
-			minimumHeight = getComputedStyle(element, 'first-letter').height;
-		} else if (minimumHeight) {
-			minimumHeight = undefined;
-		}
+	// useDropCapMinimumHeight(isDropCap) {
+	// 	let minimumHeight;
+	// 	const element = querySelector(PARAGRAPH_DROP_CAP_SELECTOR);
+	// 	if (isDropCap && element) {
+	// 		minimumHeight = getComputedStyle(element, 'first-letter').height;
+	// 	} else if (minimumHeight) {
+	// 		minimumHeight = undefined;
+	// 	}
 
-		return minimumHeight;
-	}
+	// 	return minimumHeight;
+	// }
 
 	/**
 	 * Returns appropriate css class for given width and text/button option.
@@ -89,7 +89,7 @@ class Edit extends Component {
 				ctaWidth,
 				ctaTextColor,
 				ctaLayout,
-				dropCap,
+				//dropCap,
 				align,
 				type,
 				disableToolbar,
@@ -97,9 +97,10 @@ class Edit extends Component {
 			isSelectedBlockInRoot,
 			setAttributes,
 			fontSize,
+			customFontSize,
 		} = this.props;
 
-		const dropCapMinimumHeight = this.useDropCapMinimumHeight(dropCap);
+		//const dropCapMinimumHeight = this.useDropCapMinimumHeight(dropCap);
 
 		let currWidth;
 		if (0 != align.length) {
@@ -161,18 +162,20 @@ class Edit extends Component {
 							className={classnames(
 								this.layoutClass(ctaLayout, 'text'),
 								'c9-cta-text',
-								type,
-								{
-									'has-drop-cap': dropCap,
-									[fontSize.class]: fontSize.class,
-								}
+								type
+								// {
+								// 	'has-drop-cap': dropCap,
+								// 	[fontSize.class]: fontSize.class,
+								// }
 							)}
 							style={{
-								fontSize: fontSize.size ? fontSize.size + 'px' : undefined,
+								fontSize: customFontSize ? customFontSize : fontSize.size,
 								color: ctaTextColor,
-								minHeight: dropCapMinimumHeight,
+								//minHeight: dropCapMinimumHeight,
 							}}
-							onChange={(value) => setAttributes({ ctaText: value })}
+							onChange={(value) =>
+								setAttributes({ ctaText: value, fontSize: fontSize.size })
+							}
 						/>
 					</div>
 					<div
