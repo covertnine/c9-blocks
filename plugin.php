@@ -6,7 +6,7 @@
  * Description: 10 new Gutenberg blocks with block templates. With C9, the agency is in the code.
  * Author: COVERT NINE
  * Author URI: https://www.covertnine.com
- * Version: 1.6.1
+ * Version: 1.6.2
  * License: GPLv3
  * Text Domain: c9-blocks
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
