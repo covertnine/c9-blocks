@@ -200,10 +200,10 @@ export default {
 	
 	<!-- wp:code -->
 	<pre class="wp-block-code"><code>.the-best-styles {
-		font-family: 'Oswald', sans-serif;
-		color: black; /* like your soul */
-		font-size: 1.6em;
-		padding: 420px;
+	font-family: 'Oswald', sans-serif;
+	color: black; /* like your soul */
+	font-size: 1.6em;
+	padding: 420px;
 	}</code></pre>
 	<!-- /wp:code --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
@@ -245,31 +245,31 @@ export default {
 	
 	<!-- wp:list -->
 	<ul class=""><!-- wp:list-item -->
-	<li>List Item One</li>
+	<li class="">List Item One</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Two</li>
+	<li class="">List Item Two</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Three<!-- wp:list -->
+	<li class="">List Item Three<!-- wp:list -->
 	<ul class=""><!-- wp:list-item -->
-	<li>Inner List Item One</li>
+	<li class="">Inner List Item One</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>Inner List Item Two</li>
+	<li class="">Inner List Item Two</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list --></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Four</li>
+	<li class="">List Item Four</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Five</li>
+	<li class="">List Item Five</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list --></div></div>
 	<!-- /wp:c9-blocks/column -->
@@ -281,31 +281,31 @@ export default {
 	
 	<!-- wp:list {"ordered":true} -->
 	<ol class=""><!-- wp:list-item -->
-	<li>List Item One</li>
+	<li class="">List Item One</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Two</li>
+	<li class="">List Item Two</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Three<!-- wp:list {"ordered":true} -->
+	<li class="">List Item Three<!-- wp:list {"ordered":true} -->
 	<ol class=""><!-- wp:list-item -->
-	<li>Inner List Item One</li>
+	<li class="">Inner List Item One</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>Inner List Item Two</li>
+	<li class="">Inner List Item Two</li>
 	<!-- /wp:list-item --></ol>
 	<!-- /wp:list --></li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Four</li>
+	<li class="">List Item Four</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>List Item Five</li>
+	<li class="">List Item Five</li>
 	<!-- /wp:list-item --></ol>
 	<!-- /wp:list --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
@@ -471,13 +471,15 @@ export default {
 	
 	<!-- wp:c9-blocks/vertical-tabs {"tabsData":[{"slug":"tab-1","title":"Tab 1"},{"slug":"tab-2","title":"Tab 2"},{"slug":"tab-3","title":"Tab 3"},{"slug":"tab-4","title":"Tab 4"}],"instanceId":0,"tabContentBackgroundColor":"#f4f4f4"} -->
 	<div class="c9-vertical-tabs row" data-tab-active="tab-1"><div class="col-xs-12 col-sm-3"><div class="nav flex-column nav-pills" role="tablist"><a data-toggle="pill" role="tab" href="#vtab-tab-1-0" class="nav-link active" id="tab-button-tab-1">Tab 1</a><a data-toggle="pill" role="tab" href="#vtab-tab-2-0" class="nav-link" id="tab-button-tab-2">Tab 2</a><a data-toggle="pill" role="tab" href="#vtab-tab-3-0" class="nav-link" id="tab-button-tab-3">Tab 3</a><a data-toggle="pill" role="tab" href="#vtab-tab-4-0" class="nav-link" id="tab-button-tab-4">Tab 4</a></div></div><div class="col-xs-12 col-sm-9"><div class="c9-tabs-content tab-content" style="background-color:#f4f4f4"><!-- wp:c9-blocks/vertical-tabs-tab {"slug":"tab-1","tabActive":"tab-1","id":0} -->
-	<!-- wp:c9-blocks/heading {"heading":"Tab One Heading","tagLevel":3} -->
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:c9-blocks/heading {"heading":"Tab One Heading","tagLevel":3} -->
 	<div class="section-heading c9-heading text-left"><h3 class="c9-h">Tab One Heading</h3></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:paragraph -->
 	<p class="">Mauris malesuada condimentum metus, ac elementum neque auctor vitae. Vivamus in turpis quis dolor pulvinar gravida eget ut augue. Cras facilisis, risus et pretium convallis, magna libero rutrum neque, dignissim viverra augue ante at nunc. Donec hendrerit at elit id eleifend. Sed scelerisque metus venenatis, tristique enim a, aliquam felis. Nam a bibendum ligula. Proin accumsan sagittis tortor vitae scelerisque. </p>
-	<!-- /wp:paragraph -->
+	<!-- /wp:paragraph --></div>
+	<!-- /wp:group -->
 	<!-- /wp:c9-blocks/vertical-tabs-tab -->
 	
 	<!-- wp:c9-blocks/vertical-tabs-tab {"slug":"tab-2","tabActive":"tab-1","id":0} -->
@@ -563,8 +565,8 @@ export default {
 	
 	<!-- wp:c9-blocks/carousel {"instanceId":0,"autoSlide":false,"slideMaxHeight":-1} -->
 	<div id="c9-carousel-indicator-0" class="c9-carousel carousel slide container" data-ride="carousel" data-interval="false" data-wrap="true" style="min-height:-1px"><ol class="carousel-indicators"><li data-target="#c9-carousel-indicator-0" data-slide-to="0" class="active"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="1"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="2"></li></ol><div class="carousel-inner"><!-- wp:c9-blocks/carousel-slide {"id":0,"slideActive":0,"slides":3} -->
-	<div class="c9-carousel-slide carousel-item active"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<div class="c9-carousel-slide carousel-item active"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":4,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
+	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:embed {"url":"https://www.youtube.com/watch?v=zu3JyJr5eeM","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
 	<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 	https://www.youtube.com/watch?v=zu3JyJr5eeM
@@ -780,7 +782,7 @@ export default {
 	<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:cover {"url":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","id":2791,"dimRatio":50,"isDark":false,"align":"wide"} -->
+	<!-- wp:cover {"url":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","id":2791,"dimRatio":50,"isDark":false,"align":"wide","c9ContainerWidth":""} -->
 	<div class="wp-block-cover alignwide is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-2791" alt="" src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 	<p class="has-text-align-center has-large-font-size"><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-color-light-color">Cover Block Wide</mark></p>
 	<!-- /wp:paragraph --></div></div>
@@ -790,35 +792,15 @@ export default {
 	<h2 class="has-text-align-center">Call To Action Bar</h2>
 	<!-- /wp:heading -->
 	
-	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonSize":"c9-button-size-large","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","fontSize":"small"} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh has-small-font-size"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-large" style="color:#ffffff">Sign Up</a></div></div></div>
+	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonSize":"c9-button-size-extralarge","buttonShape":"round","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","customFontSize":"4.8rem"} -->
+	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="font-size:4.8rem"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-round c9-button-size-extralarge" style="color:#ffffff">Sign Up</a></div></div></div>
 	<!-- /wp:c9-blocks/cta -->
 	
-	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonTextColor":"#21a77a","buttonSize":"c9-button-size-extralarge","buttonShape":"outline","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","fontSize":"normal"} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh has-normal-font-size"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-extralarge" style="color:#21a77a">Sign Up</a></div></div></div>
+	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonTextColor":"#21a77a","buttonSize":"c9-button-size-extralarge","buttonShape":"outline","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","customFontSize":"3rem"} -->
+	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="font-size:3rem"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-extralarge" style="color:#21a77a">Sign Up</a></div></div></div>
 	<!-- /wp:c9-blocks/cta -->
 	
-	<!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Sign Up","buttonTextColor":"#272727","buttonSize":"c9-button-size-extralarge","buttonShape":"outline","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","fontSize":"medium"} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h has-medium-font-size"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-extralarge" style="color:#272727">Sign Up</a></div></div></div>
-	<!-- /wp:c9-blocks/cta -->
-	
-	<!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Sign Up","buttonTextColor":"#272727","buttonSize":"c9-button-size-small","buttonShape":"outline","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","fontSize":"large"} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h has-large-font-size"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-small" style="color:#272727">Sign Up</a></div></div></div>
-	<!-- /wp:c9-blocks/cta -->
-	
-	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonTextColor":"#272727","buttonShape":"outline","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","customFontSize":21} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="font-size:21px"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-medium" style="color:#272727">Sign Up</a></div></div></div>
-	<!-- /wp:c9-blocks/cta -->
-	
-	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonSize":"c9-button-size-extralarge","buttonShape":"round","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","fontSize":"huge"} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh has-huge-font-size"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-round c9-button-size-extralarge" style="color:#ffffff">Sign Up</a></div></div></div>
-	<!-- /wp:c9-blocks/cta -->
-	
-	<!-- wp:c9-blocks/cta {"type":"c9-p","buttonText":"Sign Up","buttonBackgroundColor":"#000000","buttonSize":"c9-button-size-extralarge","ctaBackgroundColor":"#f8f8f8","align":"wide"} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container alignwide p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-p"><p>Wide orientation with background setting options are available from WordPress Inspector in backend. Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff;background-color:#000000">Sign Up</a></div></div></div>
-	<!-- /wp:c9-blocks/cta -->
-	
-	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonBackgroundColor":"#000000","buttonSize":"c9-button-size-small","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full"} -->
-	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh"><p>Full orientation with background setting options are available from WordPress Inspector in backend. Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-small" style="color:#ffffff;background-color:#000000">Sign Up</a></div></div></div>
+	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign Up","buttonTextColor":"#272727","buttonShape":"outline","ctaWidth":"container-fluid","ctaBackgroundColor":"#f8f8f8","align":"full","customFontSize":"2.5rem"} -->
+	<div style="background-color:rgba(248,248,248,1);text-align:left" class="c9-cta c9-block-cta container-fluid alignfull p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="font-size:2.5rem"><p>Sign up for emails to get notified about our upcoming releases.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-medium" style="color:#272727">Sign Up</a></div></div></div>
 	<!-- /wp:c9-blocks/cta -->`,
 };

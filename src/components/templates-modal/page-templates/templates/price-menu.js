@@ -23,8 +23,8 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:50vh"><source src="//cortex.covertnine.com/wp-content/uploads/2019/08/restaurant-video-bg-web.mov" type="video/mp4"/></video></div></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"get started","buttonAlignment":"center","buttonTextColor":"#313131","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"align":"wide"} -->
-	<div style="text-align:center" class="c9-cta c9-block-cta container alignwide p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh"><p>Make a reservation, buy a ring, get engaged, high five.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="#" target="_blank" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-medium" style="color:#313131">get started<span class="sr-only">(Link opens in new window)</span></a></div></div></div>
+	<!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"get started","buttonAlignment":"center","buttonTextColor":"#313131","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"align":"wide","customFontSize":"3rem"} -->
+	<div style="text-align:center" class="c9-cta c9-block-cta container alignwide p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh" style="font-size:3rem"><p>Make a reservation, buy a ring, get engaged, high five.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="#" target="_blank" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-medium" style="color:#313131">get started<span class="sr-only">(Link opens in new window)</span></a></div></div></div>
 	<!-- /wp:c9-blocks/cta -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":1,"rows":2,"containerImgURL":"//cortex.covertnine.com/wp-content/uploads/2019/08/shawn-ang-nmpW_WwwVSc-unsplash.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":80,"focalPoint":{"x":0.5345622119815668,"y":1},"className":"p-5"} -->
@@ -40,15 +40,15 @@ export default {
 	<div class="wp-block-group has-covertnine-palette-1-background-color has-background"><!-- wp:group {"style":{"color":{"background":"#ffffff"}}} -->
 	<div class="wp-block-group has-background" style="background-color:#ffffff"><!-- wp:list -->
 	<ul class=""><!-- wp:list-item -->
-	<li><strong>Saturday </strong>10am until 3pm</li>
+	<li class=""><strong>Saturday </strong>10am until 3pm</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Sunday</strong> 10am until 2pm</li>
+	<li class=""><strong>Sunday</strong> 10am until 2pm</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Click the C9 Grid block to change background image settings in the sidebar panel</strong></li>
+	<li class=""><strong>Click the C9 Grid block to change background image settings in the sidebar panel</strong></li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list --></div>
 	<!-- /wp:group --></div>
@@ -186,19 +186,19 @@ export default {
 	<div class="c9-horizontal-tabs" data-tab-active="tab-weekday"><ul class="nav nav-tabs d-flex nav-justified" role="tablist"><li class="nav-item"><a data-toggle="tab" role="tab" href="#htab-tab-weekday-0" class="nav-link active" id="tab-button-tab-weekday">WeekDay</a></li><li class="nav-item"><a data-toggle="tab" role="tab" href="#htab-tab-weekend-0" class="nav-link" id="tab-button-tab-weekend">WeekEnd</a></li></ul><div class="c9-tabs-content tab-content"><!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-weekday","tabActive":"tab-weekday","id":0} -->
 	<!-- wp:list -->
 	<ul class=""><!-- wp:list-item -->
-	<li><strong>Monday </strong>$5 Burgers</li>
+	<li class=""><strong>Monday </strong>$5 Burgers</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Tuesday</strong> $6 Hot Dogs</li>
+	<li class=""><strong>Tuesday</strong> $6 Hot Dogs</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Thursday</strong> $8 Cocktails</li>
+	<li class=""><strong>Thursday</strong> $8 Cocktails</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>Friday</strong> $4 Shots</li>
+	<li class=""><strong>Friday</strong> $4 Shots</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list -->
 	<!-- /wp:c9-blocks/horizontal-tabs-tab -->

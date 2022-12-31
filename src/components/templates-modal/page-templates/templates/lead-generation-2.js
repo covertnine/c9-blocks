@@ -10,7 +10,7 @@ export default {
 	description: `Inform and entice potential customers or clients with a widescreen video that helps tell a broader story. There’s plenty of room to break up longer-form text with an image carousel. Include vertical photos, a short FAQ, and a place to tell a friend or click a call-to-action button.`,
 	recommended: `Two video clips or YouTube videos, 3-5 vertical photos, FAQ, about copy, heading, subheading, and short description text for header`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":7,"containerImgURL":"//c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#141414","overlayOpacity":9,"blendMode":"normal","minScreenHeight":84,"containerVideoURL":"//c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4","className":"p-3"} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:84vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"bottom","minScreenHeight":-4} -->
+	<div class="c9-grid p-3 p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:84vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"bottom","minScreenHeight":-4} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-equal" style="min-height:-4vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Page Heading","displayLevel":"4","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","overrideStyle":true,"animateScrub":true,"animateStart":"0px 100%","animateEnd":"85px 25%"} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-4 font-weight-bold" style="color:#ffffff">Page Heading</h1></div>
@@ -36,15 +36,15 @@ export default {
 	<div class="c9-horizontal-tabs" data-tab-active="tab-step-1"><ul class="nav nav-tabs d-flex nav-justified" role="tablist"><li class="nav-item"><a style="background-color:#000000" data-toggle="tab" role="tab" href="#htab-tab-step-1-1" class="nav-link active" id="tab-button-tab-step-1">Step 1</a></li><li class="nav-item"><a style="background-color:#000000" data-toggle="tab" role="tab" href="#htab-tab-step-2-1" class="nav-link" id="tab-button-tab-step-2">Step 2</a></li><li class="nav-item"><a style="background-color:#000000" data-toggle="tab" role="tab" href="#htab-tab-step-3-1" class="nav-link" id="tab-button-tab-step-3">Step 3</a></li></ul><div class="c9-tabs-content tab-content" style="background-color:#000000"><!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-step-1","tabActive":"tab-step-1","id":1} -->
 	<!-- wp:list {"className":"is-style-light-text"} -->
 	<ul class="is-style-light-text"><!-- wp:list-item -->
-	<li><strong>BEFORE WATCHING THE VIDEO</strong><br>Make sure to put on headphones so you don't piss off your neighbors or co-workers with the obnoxious audio.</li>
+	<li class=""><strong>BEFORE WATCHING THE VIDEO</strong><br>Make sure to put on headphones so you don't piss off your neighbors or co-workers with the obnoxious audio.</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>DURING THE VIDEO</strong><br>Bask, in the glory of noise canceling headphones and complete disregard for your job responsibilities while you chuckle along.</li>
+	<li class=""><strong>DURING THE VIDEO</strong><br>Bask, in the glory of noise canceling headphones and complete disregard for your job responsibilities while you chuckle along.</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>AFTER THE VIDEO</strong><br>Pretend as if nothing has happened, close the tab, and move on with your life surfing the web</li>
+	<li class=""><strong>AFTER THE VIDEO</strong><br>Pretend as if nothing has happened, close the tab, and move on with your life surfing the web</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list -->
 	<!-- /wp:c9-blocks/horizontal-tabs-tab -->
@@ -52,15 +52,15 @@ export default {
 	<!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-step-2","tabActive":"tab-step-1","id":1} -->
 	<!-- wp:list {"className":"is-style-light-text"} -->
 	<ul class="is-style-light-text"><!-- wp:list-item -->
-	<li><strong>BEFORE WATCHING THE VIDEO</strong><br>Make sure to put on headphones so you don't piss off your neighbors or co-workers with the obnoxious audio.</li>
+	<li class=""><strong>BEFORE WATCHING THE VIDEO</strong><br>Make sure to put on headphones so you don't piss off your neighbors or co-workers with the obnoxious audio.</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>DURING THE VIDEO</strong><br>Bask, in the glory of noise canceling headphones and complete disregard for your job responsibilities while you chuckle along.</li>
+	<li class=""><strong>DURING THE VIDEO</strong><br>Bask, in the glory of noise canceling headphones and complete disregard for your job responsibilities while you chuckle along.</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>AFTER THE VIDEO</strong><br>Pretend as if nothing has happened, close the tab, and move on with your life surfing the web</li>
+	<li class=""><strong>AFTER THE VIDEO</strong><br>Pretend as if nothing has happened, close the tab, and move on with your life surfing the web</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list -->
 	<!-- /wp:c9-blocks/horizontal-tabs-tab -->
@@ -68,15 +68,15 @@ export default {
 	<!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-step-3","tabActive":"tab-step-1","id":1} -->
 	<!-- wp:list {"className":"is-style-light-text"} -->
 	<ul class="is-style-light-text"><!-- wp:list-item -->
-	<li><strong>BEFORE WATCHING THE VIDEO</strong><br>Make sure to put on headphones so you don't piss off your neighbors or co-workers with the obnoxious audio.</li>
+	<li class=""><strong>BEFORE WATCHING THE VIDEO</strong><br>Make sure to put on headphones so you don't piss off your neighbors or co-workers with the obnoxious audio.</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>DURING THE VIDEO</strong><br>Bask, in the glory of noise canceling headphones and complete disregard for your job responsibilities while you chuckle along.</li>
+	<li class=""><strong>DURING THE VIDEO</strong><br>Bask, in the glory of noise canceling headphones and complete disregard for your job responsibilities while you chuckle along.</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li><strong>AFTER THE VIDEO</strong><br>Pretend as if nothing has happened, close the tab, and move on with your life surfing the web</li>
+	<li class=""><strong>AFTER THE VIDEO</strong><br>Pretend as if nothing has happened, close the tab, and move on with your life surfing the web</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list -->
 	<!-- /wp:c9-blocks/horizontal-tabs-tab --></div></div>
@@ -212,8 +212,8 @@ export default {
 	<!-- wp:c9-blocks/grid {"instanceId":5,"containerHue":"#000000","className":"p-5"} -->
 	<div class="c9-grid p-5 p-3 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"buttonText":"SUbscribe","buttonBackgroundColor":"#21a77a","buttonSize":"c9-button-size-extralarge","ctaPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":19} -->
-	<div style="text-align:left" class="c9-cta c9-block-cta container"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text" style="color:#ffffff;font-size:19px"><p><strong>Subscribe to our emails and we'll send you $50 in the mail. Don't believe us? Try me.</strong></p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff;background-color:#21a77a">SUbscribe</a></div></div></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"buttonText":"SUbscribe","buttonBackgroundColor":"#21a77a","buttonSize":"c9-button-size-extralarge","ctaPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":"2.5rem"} -->
+	<div style="text-align:left" class="c9-cta c9-block-cta container"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text" style="font-size:2.5rem;color:#ffffff"><p><strong>Subscribe to our emails and we'll send you $50 in the mail. Don't believe us? Try me.</strong></p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff;background-color:#21a77a">SUbscribe</a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>

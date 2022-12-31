@@ -211,13 +211,11 @@ export default {
 	<div class="section-heading c9-heading text-left"><h1 class="c9-h">Learn more</h1><div class="c9-h h1"><small class="text-muted">&nbsp;read the details in these blog posts</small></div></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:c9-blocks/post-grid {"postsToShow":3,"columns":3,"align":"wide","imageSize":"medium_large"} /-->
-	
 	<!-- wp:c9-blocks/grid {"instanceId":6,"containerHue":"#000000","className":"p-5"} -->
 	<div class="c9-grid p-5 p-3 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Buy Tickets","buttonAlignment":"center","buttonBackgroundColor":"#ea1818","buttonSize":"c9-button-size-extralarge","ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":29} -->
-	<div style="text-align:center" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="color:#ffffff;font-size:29px"><p>Purchase tickets now.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff;background-color:#ea1818">Buy Tickets</a></div></div></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Buy Tickets","buttonAlignment":"center","buttonBackgroundColor":"#ea1818","buttonSize":"c9-button-size-extralarge","ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":"3rem"} -->
+	<div style="text-align:center" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="font-size:3rem;color:#ffffff"><p>Purchase tickets now.</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff;background-color:#ea1818">Buy Tickets</a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>

@@ -35,12 +35,12 @@ export default {
 	
 	<!-- wp:html -->
 	<form method="post" enctype="multipart/form-data" id="gform_1" action="" class="mb-5 mt-5 d-block w-100">
-	
-	<input type="text" name="input_1.6" id="input_1_1_6" value="" aria-label="Last name" aria-invalid="false" placeholder="Enter name" class="mb-2 d-block w-100">
-	<br>
-	<input name="input_2" id="input_1_2" type="text" value="" class="d-block w-100" placeholder="Enter Email" aria-invalid="false">
-	
-	</form>
+		
+		<input type="text" name="input_1.6" id="input_1_1_6" value="" aria-label="Last name" aria-invalid="false" placeholder="Enter name" class="mb-2 d-block w-100">
+		<br>
+		<input name="input_2" id="input_1_2" type="text" value="" class="d-block w-100" placeholder="Enter Email" aria-invalid="false">
+		
+		</form>
 	<!-- /wp:html -->
 	
 	<!-- wp:buttons {"className":"mt-5","layout":{"type":"flex","justifyContent":"center"},"c9ShowHideSettings":[false,false,false],"c9PaddingSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1","left":"-1","right":"-1"},"c9MarginSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1"}} -->
@@ -84,15 +84,15 @@ export default {
 	
 	<!-- wp:list -->
 	<ul class=""><!-- wp:list-item -->
-	<li><strong>Something</strong> you need to know</li>
+	<li class=""><strong>Something</strong> you need to know</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>One more thing you need to know</li>
+	<li class="">One more thing you need to know</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>A <a href="https://c9.covertnine.com/lead-gen-3/?preview_id=431&amp;preview_nonce=0ad17639a2&amp;preview=true#">link</a> to something you need</li>
+	<li class="">A <a href="https://c9.covertnine.com/lead-gen-3/?preview_id=431&amp;preview_nonce=0ad17639a2&amp;preview=true#">link</a> to something you need</li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list -->
 	
@@ -209,7 +209,7 @@ export default {
 	<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Enter Now","buttonSize":"c9-button-size-extralarge","ctaBackgroundColor":"#e7e7e7","disableToolbar":true,"className":"p-3"} -->
-	<div style="background-color:rgba(231,231,231,1);text-align:left" class="c9-cta p-3 c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h"><p>Enter as many times as you want, tell a friend for more entries!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Enter Now</a></div></div></div>
+	<div style="background-color:rgba(231,231,231,1);text-align:left" class="c9-cta p-3 c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h" style="font-size:1.6rem"><p>Enter as many times as you want, tell a friend for more entries!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Enter Now</a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>

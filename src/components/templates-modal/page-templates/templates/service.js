@@ -256,31 +256,31 @@ export default {
 	
 	<!-- wp:list -->
 	<ul class=""><!-- wp:list-item -->
-	<li>Download documents from link</li>
+	<li class="">Download documents from link</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>Fill out and return documents to client</li>
+	<li class="">Fill out and return documents to client</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>Review forms with internal team</li>
+	<li class="">Review forms with internal team</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>Send superfluous status emails</li>
+	<li class="">Send superfluous status emails</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>Erroneaously misspell corporate words</li>
+	<li class="">Erroneaously misspell corporate words</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>Try not to die of eating too many hamburgers</li>
+	<li class="">Try not to die of eating too many hamburgers</li>
 	<!-- /wp:list-item -->
 	
 	<!-- wp:list-item -->
-	<li>It's harder than you think </li>
+	<li class="">It's harder than you think </li>
 	<!-- /wp:list-item --></ul>
 	<!-- /wp:list --></div></div>
 	<!-- /wp:c9-blocks/column -->
@@ -320,8 +320,8 @@ export default {
 	<!-- wp:c9-blocks/grid {"instanceId":56,"containerHue":"#363636","minScreenHeight":10,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 	<div class="c9-grid c9-scroll" style="min-height:10vh;background-color:rgba(54,54,54,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Watch Video","buttonAlignment":"center","buttonTextColor":"#00d084","buttonSize":"c9-button-size-large","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"ctaTextColor":"#eeeeee","disableToolbar":true} -->
-	<div style="text-align:center" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh" style="color:#eeeeee"><p>Watch our video walk through to get a guided tour.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="https://www.youtube.com/watch?v=Hls3Tp7JS8E" target="_blank" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-large" style="color:#00d084">Watch Video<span class="sr-only">(Link opens in new window)</span></a></div></div></div>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Watch Video","buttonAlignment":"center","buttonTextColor":"#00d084","buttonSize":"c9-button-size-large","buttonShape":"outline","buttonTarget":true,"ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"ctaTextColor":"#eeeeee","disableToolbar":true,"customFontSize":"2.5rem"} -->
+	<div style="text-align:center" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh" style="font-size:2.5rem;color:#eeeeee"><p>Watch our video walk through to get a guided tour.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="https://www.youtube.com/watch?v=Hls3Tp7JS8E" target="_blank" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-outline c9-button-size-large" style="color:#00d084">Watch Video<span class="sr-only">(Link opens in new window)</span></a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>
