@@ -96,19 +96,19 @@ export default {
 	<div id="c9-carousel-indicator-0" class="c9-carousel carousel slide container" data-ride="carousel" data-interval="false" data-wrap="true" style="min-height:-1px"><ol class="carousel-indicators"><li data-target="#c9-carousel-indicator-0" data-slide-to="0" class="active"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="1"></li><li data-target="#c9-carousel-indicator-0" data-slide-to="2"></li></ol><div class="carousel-inner"><!-- wp:c9-blocks/carousel-slide {"id":0,"slideActive":0,"slides":3} -->
 	<div class="c9-carousel-slide carousel-item active"><!-- wp:gallery {"columns":4,"linkTo":"none","sizeSlug":"full"} -->
 	<figure class="wp-block-gallery has-nested-images columns-4 is-cropped"><!-- wp:image {"id":3086,"sizeSlug":"full","linkDestination":"none"} -->
-	<figure class="wp-block-image size-full"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-1.png" alt="" class="wp-image-3086"/></figure>
+	<figure class="wp-block-image size-full"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-1.png" alt="" class="wp-image-3086"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3087,"sizeSlug":"full","linkDestination":"none"} -->
-	<figure class="wp-block-image size-full"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-2.png" alt="" class="wp-image-3087"/></figure>
+	<figure class="wp-block-image size-full"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-2.png" alt="" class="wp-image-3087"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3088,"sizeSlug":"full","linkDestination":"none"} -->
-	<figure class="wp-block-image size-full"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-3.png" alt="" class="wp-image-3088"/></figure>
+	<figure class="wp-block-image size-full"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-3.png" alt="" class="wp-image-3088"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3090,"sizeSlug":"full","linkDestination":"none"} -->
-	<figure class="wp-block-image size-full"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-4.png" alt="" class="wp-image-3090"/></figure>
+	<figure class="wp-block-image size-full"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-4.png" alt="" class="wp-image-3090"/></figure>
 	<!-- /wp:image --></figure>
 	<!-- /wp:gallery --></div>
 	<!-- /wp:c9-blocks/carousel-slide -->
@@ -116,19 +116,19 @@ export default {
 	<!-- wp:c9-blocks/carousel-slide {"id":1,"slideActive":0,"slides":3} -->
 	<div class="c9-carousel-slide carousel-item"><!-- wp:gallery {"columns":4,"linkTo":"none"} -->
 	<figure class="wp-block-gallery has-nested-images columns-4 is-cropped"><!-- wp:image {"id":3090,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-4.png" alt="" class="wp-image-3090"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-4.png" alt="" class="wp-image-3090"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3088,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-3.png" alt="" class="wp-image-3088"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-3.png" alt="" class="wp-image-3088"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3087,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-2.png" alt="" class="wp-image-3087"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-2.png" alt="" class="wp-image-3087"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3086,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-1.png" alt="" class="wp-image-3086"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-1.png" alt="" class="wp-image-3086"/></figure>
 	<!-- /wp:image --></figure>
 	<!-- /wp:gallery --></div>
 	<!-- /wp:c9-blocks/carousel-slide -->
@@ -136,19 +136,19 @@ export default {
 	<!-- wp:c9-blocks/carousel-slide {"id":2,"slideActive":0,"slides":3} -->
 	<div class="c9-carousel-slide carousel-item"><!-- wp:gallery {"columns":4,"linkTo":"none"} -->
 	<figure class="wp-block-gallery has-nested-images columns-4 is-cropped"><!-- wp:image {"id":3090,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-4.png" alt="" class="wp-image-3090"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-4.png" alt="" class="wp-image-3090"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3088,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-3.png" alt="" class="wp-image-3088"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-3.png" alt="" class="wp-image-3088"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3087,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-2.png" alt="" class="wp-image-3087"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-2.png" alt="" class="wp-image-3087"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:image {"id":3086,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://c9-starter.local/wp-content/uploads/2020/10/c9-starter-img-1.png" alt="" class="wp-image-3086"/></figure>
+	<figure class="wp-block-image size-large"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-starter-img-1.png" alt="" class="wp-image-3086"/></figure>
 	<!-- /wp:image --></figure>
 	<!-- /wp:gallery --></div>
 	<!-- /wp:c9-blocks/carousel-slide --></div><a class="carousel-control-prev" href="#c9-carousel-indicator-0" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-carousel-indicator-0" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
@@ -159,7 +159,7 @@ export default {
 	<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Get Tickets","buttonSize":"c9-button-size-extralarge","ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"ctaBackgroundColor":"#e7e7e7","disableToolbar":true} -->
-	<div style="background-color:rgba(231,231,231,1);text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h"><p>Get your tickets for the lowest price available now by clicking on the button!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Get Tickets</a></div></div></div>
+	<div style="background-color:rgba(231,231,231,1);text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h" style="font-size:1.6rem"><p>Get your tickets for the lowest price available now by clicking on the button!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Get Tickets</a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>
