@@ -20,12 +20,11 @@
 }
 
 .editor-styles-wrapper .c9-heading {
-	font-size: 10px;
 	margin-bottom: 1.2em;
 	padding: 5px 0px;
 }
 
-.is-selected[data-type="c9-blocks/heading"] {
+.is-selected[data-type='c9-blocks/heading'] {
 	z-index: 21;
 }
 
@@ -44,17 +43,25 @@
 	line-height: 1.1;
 }
 
-div[data-type="c9-blocks/heading"] small.block-editor-rich-text__editable.text-muted {
+div[data-type='c9-blocks/heading']
+	small.block-editor-rich-text__editable.text-muted {
 	margin-left: 0.5em;
 }
 
-div[data-type="c9-blocks/heading"] .editor-block-list__block-edit.block-editor-block-list__block-edit,
-div[data-type="c9-blocks/column-container"] .editor-block-list__block-edit.block-editor-block-list__block-edit .c9-column-innner .wp-block[data-type="c9-blocks/heading"]>.editor-block-list__block-edit.block-editor-block-list__block-edit {
+div[data-type='c9-blocks/heading']
+	.editor-block-list__block-edit.block-editor-block-list__block-edit,
+div[data-type='c9-blocks/column-container']
+	.editor-block-list__block-edit.block-editor-block-list__block-edit
+	.c9-column-innner
+	.wp-block[data-type='c9-blocks/heading']
+	> .editor-block-list__block-edit.block-editor-block-list__block-edit {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
-div[data-type="c9-blocks/heading"] .block-editor-block-list__block>.block-editor-block-list__insertion-point {
+div[data-type='c9-blocks/heading']
+	.block-editor-block-list__block
+	> .block-editor-block-list__insertion-point {
 	top: 8px;
 	z-index: 24;
 }
@@ -65,32 +72,32 @@ div[data-type="c9-blocks/heading"] .block-editor-block-list__block>.block-editor
 
 .editor-styles-wrapper .c9-heading .h1.c9-txl,
 .editor-styles-wrapper .c9-heading h1.c9-txl {
-	font-size: 8em;
+	font-size: 8rem;
 }
 
 .editor-styles-wrapper .c9-heading .h2.c9-txl,
 .editor-styles-wrapper .c9-heading h2.c9-txl {
-	font-size: 7.3em;
+	font-size: 7.3rem;
 }
 
 .editor-styles-wrapper .c9-heading .h3.c9-txl,
 .editor-styles-wrapper .c9-heading h3.c9-txl {
-	font-size: 6.5em;
+	font-size: 6.5rem;
 }
 
 .editor-styles-wrapper .c9-heading .h4.c9-txl,
 .editor-styles-wrapper .c9-heading h4.c9-txl {
-	font-size: 5.8em;
+	font-size: 5.8rem;
 }
 
 .editor-styles-wrapper .c9-heading .h5.c9-txl,
 .editor-styles-wrapper .c9-heading h5.c9-txl {
-	font-size: 5em;
+	font-size: 5rem;
 }
 
 .editor-styles-wrapper .c9-heading .h6.c9-txl,
 .editor-styles-wrapper .c9-heading h6.c9-txl {
-	font-size: 4.3em;
+	font-size: 4.3rem;
 }
 
 .editor-styles-wrapper .c9-heading div.c9-txl *,
