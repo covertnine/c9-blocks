@@ -74,7 +74,7 @@ const attributes = {
 	},
 	blendMode: {
 		type: 'string',
-		default: 'overlay',
+		default: 'normal',
 	},
 	linkedValToggle: {
 		type: 'boolean',

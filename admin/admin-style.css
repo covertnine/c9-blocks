@@ -6,7 +6,7 @@
 
 .c9-admin-wrapper p {
 	font-size: 16px;
-	margin: 1.4em 0;
+	margin: 2.4em 0;
 }
 
 button {
@@ -28,7 +28,7 @@ button:hover {
 }
 
 #wpcontent li:before {
-	content: "";
+	content: '';
 	background-image: url(../assets/fa-icons/chevron-circle-right-solid.svg);
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -116,6 +116,7 @@ p {
 
 .c9-admin-hero {
 	min-height: 600px;
+	max-width: 1140px;
 }
 
 .c9-content-wrapper {
@@ -156,7 +157,7 @@ p {
 }
 
 .c9-arrow-after:after {
-	content: " ";
+	content: ' ';
 	height: 1em;
 	width: 1em;
 	position: absolute;
@@ -169,7 +170,13 @@ p {
 }
 
 .c9-section-templates {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(white),
+		to(white)
+	);
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	display: -webkit-box;
@@ -199,7 +206,13 @@ p {
 }
 
 .c9-section-examples {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(white),
+		to(white)
+	);
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	text-align: center;
@@ -270,7 +283,7 @@ p {
 	color: #c9292c;
 	font-size: 1.8em;
 	font-weight: 700;
-	line-height: 1.5;
+	line-height: 1.1;
 }
 
 .c9-if-you-love .c9-click-preview {
@@ -280,15 +293,17 @@ p {
 .c9-if-you-love-content {
 	display: -webkit-box;
 	display: flex;
+	background-color: #3b3b3b;
+	padding-bottom: 6vh;
 }
 
 .c9-if-you-love-content .c9-content-left {
-	width: 50%;
+	width: 60%;
 }
 
 .c9-if-you-love-content .c9-content-right {
-	width: 50%;
-	padding: 5vh 12vw 7vh 6vw;
+	width: 40%;
+	padding: 5vh 8vw 7vh 2vw;
 	box-sizing: border-box;
 }
 
@@ -307,7 +322,13 @@ p {
 
 .c9-awareness-consideration-conversion {
 	width: 100%;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(white),
+		to(white)
+	);
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	margin-top: 3vh;
@@ -354,7 +375,13 @@ p {
 }
 
 .c9-build-your-own {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f1), to(#f4f4f1));
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(#f4f4f1),
+		to(#f4f4f1)
+	);
 	background-image: linear-gradient(#f4f4f1, #f4f4f1);
 	background-repeat: no-repeat;
 }
@@ -430,7 +457,13 @@ p {
 }
 
 .c9-blocks-list .c9-block {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(white),
+		to(white)
+	);
 	background-image: linear-gradient(white, white);
 	background-repeat: no-repeat;
 	text-align: center;
@@ -457,7 +490,13 @@ p {
 }
 
 .c9-how-to {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f1), to(#f4f4f1));
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(#f4f4f1),
+		to(#f4f4f1)
+	);
 	background-image: linear-gradient(#f4f4f1, #f4f4f1);
 	background-repeat: no-repeat;
 	padding-left: 10em;
@@ -489,14 +528,20 @@ p {
 .c9-who-are-we {
 	display: -webkit-box;
 	display: flex;
+	padding-bottom: 7vh;
 }
 
 .c9-who-are-we .c9-content-left {
-	width: 30%;
+	width: 15%;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
 
 .c9-who-are-we .c9-content-right {
-	width: 70%;
+	width: 85%;
+	padding-right: 14vw;
 }
 
 .c9-who-are-we p {
@@ -544,7 +589,10 @@ p {
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: 1.4em;
+	font-size: 12px !important;
+	white-space: nowrap;
+	font-weight: 200;
+	letter-spacing: 0.8px;
 }
 
 .c9-support-forums-contact p {
@@ -566,7 +614,7 @@ p {
 	margin-top: 2em;
 }
 
-.c9-who-are-we .c9-social>a {
+.c9-who-are-we .c9-social > a {
 	width: 30px;
 }
 
@@ -715,7 +763,13 @@ p {
 	.c9-admin-hero {
 		background-size: cover !important;
 		background-position: center;
-		background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)) !important;
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			from(white),
+			to(white)
+		) !important;
 		background-image: linear-gradient(white, white) !important;
 	}
 
@@ -778,7 +832,7 @@ p {
 		margin-top: 0;
 	}
 
-	.c9-who-are-we .c9-social>a {
+	.c9-who-are-we .c9-social > a {
 		width: 30%;
 	}
 
