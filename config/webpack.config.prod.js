@@ -4,7 +4,7 @@ const autoprefixer = require('autoprefixer');
 const babelPreset = require('./babel-preset');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+//const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 // const BundleAnalyzerPlugin =
 // 	require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -44,7 +44,6 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].build.css',
 		}),
-		new CssMinimizerPlugin(),
 		new CleanWebpackPlugin({
 			protectWebpackAssets: false,
 			cleanAfterEveryBuildPatterns: [
@@ -118,7 +117,6 @@ module.exports = {
 									}),
 								],
 							},
-							sourceMap: true,
 						},
 					},
 					// "sass" loader converts SCSS to CSS.
@@ -128,6 +126,7 @@ module.exports = {
 							// Add common CSS file for variables and mixins.
 							additionalData: '@import "./src/block-colors.scss";\n',
 							sassOptions: {
+								fiber: false,
 								outputStyle: 'compressed',
 							},
 						},
@@ -177,6 +176,7 @@ module.exports = {
 					},
 				},
 			}),
+			//new CssMinimizerPlugin(),
 		],
 		splitChunks: {
 			cacheGroups: {
