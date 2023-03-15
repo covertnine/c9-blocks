@@ -83,7 +83,7 @@
 		"svg-url-loader": "^8.0.0",
 		"terser-webpack-plugin": "^5.3.6",
 		"url-loader": "^4.1.1",
-		"webpack": "^5.74.0",
+		"webpack": "^5.76.0",
 		"webpack-bundle-analyzer": "^4.7.0"
 	},
 	"browserslist": [
