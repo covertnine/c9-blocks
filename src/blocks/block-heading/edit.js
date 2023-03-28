@@ -5,7 +5,8 @@ import CustomHeading from './components/custom-heading';
 import Inspector from './components/inspector';
 import HeadingToolbar from './components/heading-toolbar';
 import SubheadingToolbar from './components/subheading-toolbar';
-
+// eslint-disable-next-line no-unused-vars
+import { createBlock, getDefaultBlockName } from '@wordpress/blocks';
 /**
  * WordPress dependencies
  */
@@ -64,8 +65,11 @@ export default class Edit extends Component {
 				subheading,
 				addSubheading,
 			},
+			onReplace,
+			clientId,
+			attributes,
 		} = this.props;
-
+		const { createBlock, getDefaultBlockName } = wp.blocks;
 		// Save the block markup for the front end
 		return (
 			<Fragment>
@@ -102,6 +106,26 @@ export default class Edit extends Component {
 						placeholder={__('Write heading…', 'c9-blocks')}
 						value={heading}
 						onChange={(value) => setAttributes({ heading: value })}
+						onSplit={(value, isOriginal) => {
+							let block;
+
+							if (isOriginal || value) {
+								block = createBlock('c9-blocks/heading', {
+									...attributes,
+									content: value,
+								});
+							} else {
+								block = createBlock(getDefaultBlockName() ?? 'core/paragraph');
+							}
+
+							if (isOriginal) {
+								block.clientId = clientId;
+							}
+
+							return block;
+						}}
+						onReplace={onReplace}
+						onRemove={() => onReplace([])}
 					/>
 
 					{addSubheading && (
