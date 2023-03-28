@@ -69,7 +69,7 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 == Changelog ==
 
 = 1.6.7 =
-Fixed bugs and updated packages and blocks for WordPress 6.2
+Fixed bugs and updated packages and blocks for WordPress 6.2. Revised C9 Heading block to create new block on enter.
 
 = 1.6.6 =
 Fixed production build tools that was causing some backend mobile editing issues for some browsers.
