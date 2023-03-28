@@ -29,7 +29,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"align":"wide","columns":3,"columnsGap":4,"layout":"c9-3-col-wideright","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
-<div class="container alignwide c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-bottom c9-3-col-wideright"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+<div class="container alignwide c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-is-vertically-aligned-bottom c9-3-col-wideright"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Small Plates","subheading":"served all day","addSubheading":true,"tagLevel":5,"overrideStyle":true} -->
 <div class="section-heading c9-heading text-left"><h5 class="c9-h h5">Small Plates</h5><div class="c9-h h5"><small class="text-muted">&nbsp;served all day</small></div></div>
 <!-- /wp:c9-blocks/heading -->

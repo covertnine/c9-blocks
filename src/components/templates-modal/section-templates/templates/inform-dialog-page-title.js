@@ -170,6 +170,6 @@ export default {
 <!-- /wp:c9-blocks/toggles-toggle --></div>
 <!-- /wp:c9-blocks/toggles --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(227,227,227,.7);mix-blend-mode:overlay"></div><div class="c9-image-container c9-image-mobile-bottom-center c9-image-mobile-size-cover" style="background-position:50% 0%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-122-2.jpg);background-repeat:no-repeat;background-size:100% auto"></div></div>
+<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(227,227,227,.7);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-bottom-center c9-image-mobile-size-cover" style="background-position:50% 0%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-122-2.jpg);background-repeat:no-repeat;background-size:100% auto"></div></div>
 <!-- /wp:c9-blocks/grid -->`,
 };

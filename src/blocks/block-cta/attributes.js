@@ -41,7 +41,7 @@ const attributes = {
 	},
 	blendMode: {
 		type: 'string',
-		default: 'overlay',
+		default: 'normal',
 	},
 	ctaTitle: {
 		type: 'array',

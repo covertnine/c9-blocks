@@ -10,7 +10,7 @@ export default {
 	description: `An About page with all the essential elements to jumpstart the process of “know, like, and trust.” Complete with a hero header, testimonials, individual profiles, history, services overview, FAQ, and a “call-to-action.” Simply add and subtract the blocks most useful to you.`,
 	recommended: `company name, slogan, short mission statement, logo image, history copywriting, 3 photo images, testimonials with photos (2), service list, testimonials with copy only (2), FAQ, map embed, call-to-action link`,
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":11,"containerHue":"#171717","minScreenHeight":50,"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 c9-scroll" style="min-height:50vh;background-color:rgba(23,23,23,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"bottom","minScreenHeight":0} -->
+	<div class="c9-grid p-3 c9-scroll" style="min-height:50vh;background-color:rgba(23,23,23,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"bottom","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Company Name","type":"c9-txl display-","textColor":"#ffffff","weight":"normal"} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-normal" style="color:#ffffff">Company Name</h1></div>
@@ -34,7 +34,7 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":20,"rows":5,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0} -->
+	<div class="c9-grid p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"what we do","subheading":"pricing","addSubheading":true,"tagLevel":2,"type":"c9-txl display-","textAlign":"center","weight":"bold","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h2 class="c9-txl display-2 font-weight-bold">what we do</h2><div class="c9-txl display-2"><small class="text-muted">&nbsp;pricing</small></div></div>
@@ -121,7 +121,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container -->
 	
 	<!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#e2e2e2","minScreenHeight":15,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:15vh"><div class="c9-overlay-container" style="background-color:rgba(226,226,226,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:15vh"><div class="c9-overlay-container" style="background-color:rgba(226,226,226,.5);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Duplicating content, and adding new rows only takes a few clicks with the C9 Grid block, and designs will automatically scale to fit inside of smaller device screens.","tagLevel":5,"displayLevel":"4","textColor":"#313131","textAlign":"center"} -->
 	<div class="section-heading c9-heading text-center"><h5 class="c9-h" style="color:#313131">Duplicating content, and adding new rows only takes a few clicks with the C9 Grid block, and designs will automatically scale to fit inside of smaller device screens.</h5></div>
 	<!-- /wp:c9-blocks/heading -->
@@ -134,7 +134,7 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#313131","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"},"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1);--mobile-height:auto;--mobile-width:100%"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","minScreenHeight":0} -->
+	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1);--mobile-height:auto;--mobile-width:100%"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer {"height":"155px"} -->
 	<div style="height:155px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -192,7 +192,7 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":3,"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#ebebeb","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#ebebeb","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(235,235,235,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.","tagLevel":5,"displayLevel":"4","textColor":"#313131","textAlign":"center","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h5 class="c9-h h4" style="color:#313131">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</h5></div>
@@ -206,8 +206,8 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":4,"rows":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayHue":"#f8f8f8","minScreenHeight":0,"animateVal":"fadeLeft","animateDelay":686,"animateScrub":true,"animateStart":"0px 100%","animateEnd":"138px 50%","animateCustom":{"before":{"x":-300},"after":{}}} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(248,248,248,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	<div class="c9-grid p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayHue":"#f8f8f8","minScreenHeight":0,"animateVal":"fadeLeft","animateDelay":686,"animateScrub":true,"animateStart":"0px 100%","animateEnd":"138px 50%","animateCustom":{"before":{"x":-300},"after":{}}} -->
+	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(248,248,248,.5);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","disableToolbar":true,"fontSize":"medium"} -->
 	<div style="text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-sh" style="font-size:1.6rem"><p>Sign up today for a 30% off annual discount and waiving all fees, today!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Sign up</a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
@@ -276,7 +276,7 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":5,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/portrait-dark-vert.jpg","bgImgSize":"","bgCustomY":{"size":100,"unit":"%"},"bgImgAttach":true,"overlayHue":"#000000","overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"0.00","y":"0.50"},"focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 c9-fixed c9-grid-has-background" style="min-height:75vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","minScreenHeight":0} -->
+	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:75vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer {"height":"106px"} -->
 	<div style="height:106px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -306,7 +306,7 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":6,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#f4f4f4","bgImgAttach":true,"overlayHue":"#232323","overlayOpacity":3,"blendMode":"normal","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 c9-fixed c9-grid-has-background" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"top","minScreenHeight":41,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"top","minScreenHeight":41,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-top one-column" style="min-height:41vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"History","subheading":"subheading","addSubheading":true,"tagLevel":3,"type":"c9-txl display-","textAlign":"center","weight":"bold"} -->
 	<div class="section-heading c9-heading text-center"><h3 class="c9-txl display-3 font-weight-bold">History</h3><div class="c9-txl display-3"><small class="text-muted">&nbsp;subheading</small></div></div>
@@ -340,7 +340,7 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":7,"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":9,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0} -->
+	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":9,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-9 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:paragraph {"dropCap":true,"fontSize":"small"} -->
 	<p class="has-drop-cap has-small-font-size"><strong>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality.</strong></p>
@@ -384,8 +384,8 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":8,"containerHue":"#f4f4f4","minScreenHeight":64,"className":"p-5"} -->
-	<div class="c9-grid p-5 p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
-	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<div class="c9-grid p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,.5);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:html -->
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2972.925326227983!2d-87.63594088430501!3d41.8299060764073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c14278e92f5%3A0x2f864f668f4a90b8!2sGuaranteed%20Rate%20Field!5e0!3m2!1sen!2sus!4v1567193833384!5m2!1sen!2sus" style="border:0;" allowfullscreen="" width="600" height="350" frameborder="0"></iframe>
 	<!-- /wp:html --></div></div>

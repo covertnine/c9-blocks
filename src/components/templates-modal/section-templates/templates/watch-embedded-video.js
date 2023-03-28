@@ -9,7 +9,7 @@ export default {
 	description: '50 Words • Button Link • Video Embed',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":3} -->
 <div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"layout":"c9-2-col-equal","overlayHue":"#e4e9ea","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
-<div class="container alignwide c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-overlay-container" style="background-color:rgba(228,233,234,.5);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+<div class="container alignwide c9-column-container p-3 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-overlay-container" style="background-color:rgba(228,233,234,.5);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Watch the Video","tagLevel":3,"displayLevel":"1","textAlign":"center","weight":"bold","overrideStyle":true} -->
 <div class="section-heading c9-heading text-center"><h3 class="c9-h h1 font-weight-bold">Watch the Video</h3></div>
 <!-- /wp:c9-blocks/heading -->

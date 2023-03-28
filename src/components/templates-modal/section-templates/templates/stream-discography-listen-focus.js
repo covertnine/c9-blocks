@@ -25,7 +25,7 @@ export default {
 <!-- /wp:c9-blocks/column-container -->
 
 <!-- wp:c9-blocks/column-container {"columns":3,"columnsGap":3,"layout":"c9-3-col-equal","overlayHue":"#0b0b0b","overlayOpacity":9,"minScreenHeight":0,"containerMargin":{"linked":false,"top":"5","bottom":"5","left":"-1","right":"-1","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
-<div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-3-col-equal"><div class="c9-overlay-container" style="background-color:rgba(11,11,11,.9);mix-blend-mode:overlay"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-3 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
+<div class="container c9-column-container p-3 my-5 c9-scroll c9-layout-columns-3 c9-3-col-equal"><div class="c9-overlay-container" style="background-color:rgba(11,11,11,.9);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-3 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:image {"id":3157,"sizeSlug":"large","className":"img-fluid"} -->
 <figure class="wp-block-image size-large img-fluid"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-a-1024x1024.jpg" alt="" class="wp-image-3157"/></figure>
 <!-- /wp:image -->
@@ -60,6 +60,6 @@ https://open.spotify.com/album/5baJxk2fGaLorySaf6173S?si=8-F5eOhyQ1ut_CkWnAUonQ
 </div></figure>
 <!-- /wp:core-embed/spotify --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(33,33,33,.8);mix-blend-mode:overlay"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:51% 0%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(33,33,33,.8);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:51% 0%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 <!-- /wp:c9-blocks/grid -->`,
 };

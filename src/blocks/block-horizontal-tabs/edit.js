@@ -264,7 +264,7 @@ class Edit extends Component {
 							const selected = tabActive === slug;
 
 							return (
-								<li className="nav-item" key={slug}>
+								<li className="nav-item" key={i}>
 									<RichText
 										style={{
 											backgroundColor: tabBackgroundColor,
