@@ -30,7 +30,6 @@ registerBlockType('c9-blocks/toggles', {
 		anchor: true,
 	},
 	styles: [
-		{ name: 'default', label: __('Default', 'c9-blocks') },
 		{
 			name: 'toggles-small',
 			label: __('Small', 'c9-blocks'),

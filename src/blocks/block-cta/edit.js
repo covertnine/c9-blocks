@@ -157,7 +157,6 @@ class Edit extends Component {
 							tagName="div"
 							multiline="p"
 							placeholder={__('Call To Action Text', 'c9-blocks')}
-							keepPlaceholderOnFocus
 							value={ctaText}
 							className={classnames(
 								this.layoutClass(ctaLayout, 'text'),
@@ -186,7 +185,6 @@ class Edit extends Component {
 						<RichText
 							tagName="a"
 							placeholder={__('Button text...', 'c9-blocks')}
-							keepPlaceholderOnFocus={true}
 							value={buttonText}
 							allowedFormats={[]}
 							className={classnames(

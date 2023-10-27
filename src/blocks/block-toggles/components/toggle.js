@@ -150,7 +150,7 @@ class Toggle extends Component {
 								}}
 								allowedFormats={['bold', 'italic', 'strikethrough']}
 								isSelected={isSelected}
-								keepPlaceholderOnFocus
+								//keepPlaceholderOnFocus no longer needed
 							/>
 							<button
 								className="c9-toggles-item-collapse"

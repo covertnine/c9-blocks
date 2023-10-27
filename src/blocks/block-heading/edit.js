@@ -102,7 +102,6 @@ export default class Edit extends Component {
 							backgroundColor: backgroundColor,
 							color: textColor,
 						}}
-						keepPlaceholderOnFocus={true}
 						placeholder={__('Write heading…', 'c9-blocks')}
 						value={heading}
 						onChange={(value) => setAttributes({ heading: value })}
@@ -145,7 +144,6 @@ export default class Edit extends Component {
 								style={{
 									color: subTextColor,
 								}}
-								keepPlaceholderOnFocus={true}
 								value={subheading}
 								onChange={(value) => setAttributes({ subheading: value })}
 							/>

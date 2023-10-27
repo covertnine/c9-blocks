@@ -278,7 +278,7 @@ class Edit extends Component {
 										id={`tab-button-${slug}`}
 										placeholder={__('Tab label', 'c9-blocks')}
 										value={title}
-										unstableOnFocus={() => setAttributes({ tabActive: slug })}
+										onFocus={() => setAttributes({ tabActive: slug })}
 										onChange={(value) => {
 											if (tabs[i]) {
 												const newSlug = this.getUniqueSlug(value, tabs[i]);
@@ -308,7 +308,6 @@ class Edit extends Component {
 											}
 										}}
 										allowedFormats={['bold', 'italic', 'strikethrough']}
-										keepPlaceholderOnFocus
 									/>
 									<RemoveButton
 										show={isSelectedBlockInRoot}

@@ -458,7 +458,6 @@ class Edit extends Component {
 										});
 									}}
 									allowedFormats={['bold', 'italic', 'strikethrough']}
-									keepPlaceholderOnFocus
 								/>
 								<RichText
 									tagName="p"
@@ -476,7 +475,6 @@ class Edit extends Component {
 										});
 									}}
 									allowedFormats={['bold', 'italic', 'strikethrough']}
-									keepPlaceholderOnFocus
 								/>
 							</div>
 							{isSelectedBlockInRoot && (

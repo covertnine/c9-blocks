@@ -31,10 +31,80 @@ class Edit extends Component {
 
 	componentDidMount() {
 		this.checkToggleCountAndUpdate();
+		this.updateInstanceId();
 	}
-	componentDidUpdate() {
-		this.checkToggleCountAndUpdate();
-		this.checkBlockIdAndUpdate();
+	componentDidUpdate(prevProps) {
+		const { block, attributes } = this.props;
+
+		if (block.innerBlocks.length !== prevProps.block.innerBlocks.length) {
+			this.updateToggleCount();
+		}
+
+		if (attributes.instanceId !== prevProps.attributes.instanceId) {
+			this.updateBlockId();
+		}
+
+		this.updateInstanceId();
+	}
+
+	updateInstanceId() {
+		const { attributes, setAttributes, instanceId } = this.props; // Corrected line
+		if (attributes.instanceId === undefined) {
+			setAttributes({ instanceId: instanceId });
+		}
+	}
+
+	updateToggleCount() {
+		const { block, setAttributes, updateBlockAttributes } = this.props;
+
+		if (block) {
+			setAttributes({ toggleCount: block.innerBlocks.length });
+
+			let k = 1;
+			for (let child of block.innerBlocks) {
+				if (child.attributes.toggleNumber !== k) {
+					updateBlockAttributes(child.clientId, { toggleNumber: k });
+
+					if (
+						child.attributes.toggleNumber &&
+						child.attributes.toggleNumber > k
+					) {
+						const $ = window.jQuery;
+						$(
+							`div[data-block="${child.clientId}"] .c9-toggles-toggle`
+						).removeClass('toggle-collapse-ready');
+					}
+				}
+				k += 1;
+			}
+		}
+	}
+
+	updateBlockId() {
+		const { attributes, setAttributes, block, updateBlockAttributes } =
+			this.props;
+		const { instanceId } = attributes;
+
+		if (
+			instanceId !== undefined &&
+			document.querySelectorAll(`#accordion-${instanceId}`).length > 1
+		) {
+			const newInstanceId = parseInt(
+				cryptoRandomString({ length: 4, type: 'numeric' })
+			);
+			setAttributes({
+				instanceId: newInstanceId,
+				anchor: `accordion-${newInstanceId}`,
+			});
+
+			if (block) {
+				for (let child of block.innerBlocks) {
+					if (newInstanceId !== child.attributes.id) {
+						updateBlockAttributes(child.clientId, { id: newInstanceId });
+					}
+				}
+			}
+		}
 	}
 
 	/**
@@ -169,18 +239,11 @@ class Edit extends Component {
 			isSelectedBlockInRoot,
 			addToggle,
 			className = '',
-			setAttributes,
 		} = this.props;
 
-		const { toggleCount } = attributes;
+		const { toggleCount, instanceId } = attributes;
 
-		let instanceId = attributes.instanceId;
-
-		if (instanceId === undefined) {
-			// set default random id if not set
-			instanceId = this.props.instanceId;
-			setAttributes({ instanceId });
-		}
+		//let instanceId = attributes.instanceId;
 
 		return (
 			<Fragment>
