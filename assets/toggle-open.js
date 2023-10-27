@@ -5,7 +5,7 @@ export default (
 		x="0px"
 		y="0px"
 		viewBox="0 0 24.1 24.1"
-		style={{ enableBackground: "new 0 0 24.1 24.1" }}
+		style={{ enableBackground: 'new 0 0 24.1 24.1' }}
 	>
 		<style type="text/css">
 			{`

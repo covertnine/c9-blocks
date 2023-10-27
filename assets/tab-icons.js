@@ -7,7 +7,7 @@ const tabIcons = {
 			x="0px"
 			y="0px"
 			viewBox="0 0 24.1 24.1"
-			style={{ enableBackground: "new 0 0 24.1 24.1" }}
+			style={{ enableBackground: 'new 0 0 24.1 24.1' }}
 		>
 			<style type="text/css">
 				{`.st0{fill:none;}
@@ -42,7 +42,7 @@ const tabIcons = {
 			x="0px"
 			y="0px"
 			viewBox="0 0 24.1 24.1"
-			style={{ enableBackground: "new 0 0 24.1 24.1" }}
+			style={{ enableBackground: 'new 0 0 24.1 24.1' }}
 		>
 			<style type="text/css">
 				{`.st0{fill:none;}
@@ -75,7 +75,7 @@ const tabIcons = {
 				<line className="st1" x1="19.3" y1="5.3" x2="10" y2="5.3" />
 			</g>
 		</svg>
-	)
+	),
 };
 
 export default tabIcons;

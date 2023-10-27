@@ -9,7 +9,7 @@ const icons = {
 			x="0px"
 			y="0px"
 			viewBox="0 0 20 20"
-			style={{ enableBackground: "new 0 0 20 20;" }}
+			style={{ enableBackground: 'new 0 0 20 20' }}
 		>
 			<style type="text/css">
 				{`
@@ -44,7 +44,7 @@ const icons = {
 			x="0px"
 			y="0px"
 			viewBox="0 0 20 20"
-			style={{ enableBackground: "new 0 0 20 20;" }}
+			style={{ enableBackground: 'new 0 0 20 20' }}
 		>
 			<style type="text/css">
 				{`
@@ -85,7 +85,7 @@ const icons = {
 			x="0px"
 			y="0px"
 			viewBox="0 0 20 20"
-			style={{ enableBackground: "new 0 0 20 20;" }}
+			style={{ enableBackground: 'new 0 0 20 20' }}
 		>
 			<style type="text/css">
 				{`
@@ -112,7 +112,7 @@ const icons = {
 				</G>
 			</G>
 		</SVG>
-	)
+	),
 };
 
 export default icons;
