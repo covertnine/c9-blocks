@@ -584,7 +584,7 @@ export default class Inspector extends Component {
 						/>{' '}
 					</div>
 					<hr />
-					<h5 className="margin-label"> Margins </h5>
+					<h5 className="margin-label">{__('Margin', 'c9-blocks')} </h5>
 					<p className="components-base-control__label">
 						{' '}
 						{__('Configure margin for top and bottom', 'c9-blocks')}{' '}

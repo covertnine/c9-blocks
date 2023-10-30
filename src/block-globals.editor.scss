@@ -522,3 +522,7 @@ body
 .components-input-control__container > .components-input-control__backdrop {
 	min-width: 70px !important;
 }
+
+.components-panel__body h2 ~ div > .components-button {
+	margin-top: 8px;
+}

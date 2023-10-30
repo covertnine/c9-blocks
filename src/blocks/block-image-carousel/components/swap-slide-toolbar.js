@@ -35,12 +35,13 @@ export function SwapSlideToolbar({
 }) {
 	return (
 		<ToolbarGroup label={__('Change Widths', 'c9-blocks')}>
-			{widthControls.map((control) => {
-				const { isLeft } = control;
+			{widthControls.map((control, index) => {
+				const { isLeft, ...buttonProps } = control;
+				const key = control.title || index;
 				return (
 					<ToolbarButton
-						key={control.title}
-						{...control}
+						key={key}
+						{...buttonProps}
 						onClick={() => {
 							const $ = window.jQuery;
 							const activeSlide = $('div.active', carouselRef.current).index();

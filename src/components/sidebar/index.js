@@ -110,7 +110,7 @@ class Sidebar extends Component {
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
-							key="saved-panel-button"
+							key="saved-panel-button-saved"
 							onClick={() => {
 								this.setState({
 									isModalOpen: 'saved-blocks',
@@ -123,7 +123,7 @@ class Sidebar extends Component {
 						<Button
 							className="plugin-c9-panel-button is-large"
 							isSecondary
-							key="saved-panel-button"
+							key="saved-panel-button-tutorial"
 							onClick={() => {
 								this.setState({
 									loading: true,

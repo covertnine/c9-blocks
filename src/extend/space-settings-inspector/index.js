@@ -38,6 +38,7 @@ const supportedBlocks = [
 	'core/spacer',
 	'core/quote',
 	'core/pullquote',
+	'core/image',
 ];
 
 /**
@@ -279,7 +280,7 @@ const withInspectorControl = createHigherOrderComponent((OriginalComponent) => {
 								initialOpenPanel = !initialOpenPanel;
 							}}
 						>
-							<h5 className="padding-label">Padding</h5>
+							<h5 className="padding-label">{__('Padding', 'c9-blocks')}</h5>
 
 							<p className="components-base-control__label">
 								Configure between different levels of padding for each side.
@@ -320,11 +321,13 @@ const withInspectorControl = createHigherOrderComponent((OriginalComponent) => {
 
 							<hr />
 
-							<h5 className="margin-label">Margins</h5>
+							<h5 className="margin-label">{__('Margin', 'c9-blocks')}</h5>
 
 							<p className="components-base-control__label">
-								Configure between different levels of margin for top and bottom
-								sides.
+								{__(
+									'Configure between different levels of margin for top and bottom sides.',
+									'c9-blocks'
+								)}
 							</p>
 
 							<div className="margin-top-wrapper">

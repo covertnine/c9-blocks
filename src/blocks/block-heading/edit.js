@@ -46,7 +46,6 @@ export default class Edit extends Component {
 	}
 
 	render() {
-		// Setup the attributes
 		const {
 			setAttributes,
 			isCollapsed,
@@ -65,7 +64,6 @@ export default class Edit extends Component {
 				subheading,
 				addSubheading,
 			},
-			onReplace,
 			clientId,
 			attributes,
 		} = this.props;
@@ -123,8 +121,8 @@ export default class Edit extends Component {
 
 							return block;
 						}}
-						onReplace={onReplace}
-						onRemove={() => onReplace([])}
+						onReplace={this.props.onReplace}
+						onRemove={() => this.props.onReplace([])}
 					/>
 
 					{addSubheading && (

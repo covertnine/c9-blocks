@@ -37,7 +37,7 @@ export default class Inspector extends Component {
 		return (
 			<InspectorControls>
 				<BaseControl />
-				<PanelBody>
+				<PanelBody className="c9-side-image-carousel">
 					<RangeControl
 						label={__('Number of slides to produce', 'c9-blocks')}
 						value={slides}
@@ -124,7 +124,7 @@ export default class Inspector extends Component {
 					<hr />
 
 					<p className="components-base-control__label">
-						Vertical alignment for slides
+						{__('Vertical alignment for slides', 'c9-blocks')}
 					</p>
 					<VerticalAlignmentToolbar
 						value={verticalAlign}

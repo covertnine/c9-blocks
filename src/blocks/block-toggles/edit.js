@@ -239,6 +239,7 @@ class Edit extends Component {
 			isSelectedBlockInRoot,
 			addToggle,
 			className = '',
+			insertBlocksAfter, // Destructure out insertBlocksAfter
 		} = this.props;
 
 		const { toggleCount, instanceId } = attributes;
@@ -261,7 +262,7 @@ class Edit extends Component {
 						'div',
 						{},
 						// Workaround logic for this bug https://github.com/WordPress/gutenberg/issues/9897
-						'undefined' !== typeof this.props.insertBlocksAfter
+						'undefined' !== typeof insertBlocksAfter
 							? createElement(InnerBlocks, {
 									allowedBlocks: ALLOWED_BLOCKS,
 									template: this.getTogglesTemplate(toggleCount, instanceId),

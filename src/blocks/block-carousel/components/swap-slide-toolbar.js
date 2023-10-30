@@ -37,11 +37,11 @@ export function SwapSlideToolbar({
 	return (
 		<ToolbarGroup label={__('Change Widths', 'c9-blocks')}>
 			{widthControls.map((control) => {
-				const { isLeft } = control;
+				const { isLeft, ...buttonProps } = control;
 				return (
 					<ToolbarButton
 						key={control.title}
-						{...control}
+						{...buttonProps}
 						onClick={() => {
 							const $ = window.jQuery;
 							let config = { opacity: 0, marginLeft: '200px' };

@@ -18,9 +18,9 @@ const icons = {
    .st2{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
    .st3{fill:none;stroke:#231F20;stroke-width:0.5;stroke-miterlimit:10;}`}
 			</style>
-			<Path class="st0" d="M0,20h20V0H0V20z" />
+			<Path className="st0" d="M0,20h20V0H0V20z" />
 			<G>
-				<Rect y="-4.9" class="st1" width="20" height="20" />
+				<Rect y="-4.9" className="st1" width="20" height="20" />
 				<G>
 					<Path d="M0.9,1.7V9h18.2V1.7H0.9z" />
 				</G>
@@ -54,8 +54,8 @@ const icons = {
    .st3{fill:none;stroke:#231F20;stroke-width:0.5;stroke-miterlimit:10;}`}
 			</style>
 			<G id="Layer_1">
-				<Rect class="st0" width="20" height="20" />
-				<Path class="st1" d="M0,20h20V0H0V20z" />
+				<Rect className="st0" width="20" height="20" />
+				<Path className="st1" d="M0,20h20V0H0V20z" />
 				<G>
 					<Path d="M19.1,13.4V6.1H0.9v7.3H19.1z" />
 				</G>
@@ -94,9 +94,9 @@ const icons = {
    .st2{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
    .st3{fill:none;stroke:#231F20;stroke-width:0.5;stroke-miterlimit:10;}`}
 			</style>
-			<Path class="st0" d="M0,20h20V0H0V20z" />
+			<Path className="st0" d="M0,20h20V0H0V20z" />
 			<G>
-				<Rect y="5.6" class="st1" width="20" height="20" />
+				<Rect y="5.6" className="st1" width="20" height="20" />
 				<G>
 					<path d="M19.1,19v-7.3H0.9V19H19.1z" />
 				</G>

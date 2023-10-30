@@ -339,6 +339,7 @@ class Edit extends Component {
 		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
+					key={i} // Adding unique key here to avoid React warning
 					data-target={`#c9-image-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={classnames(
@@ -409,6 +410,7 @@ class Edit extends Component {
 
 			template.push(
 				<div
+					key={i} // Adding unique key here to avoid React warning
 					ref={refCallback}
 					className={classnames(
 						'carousel-item',
@@ -440,6 +442,7 @@ class Edit extends Component {
 						<Fragment>
 							<img src={url[i]} className="d-block w-100" />
 							<div
+								key={i}
 								className={classnames(
 									'carousel-caption d-none d-md-block',
 									isSelectedBlockInRoot ? 'editor-selected-lift' : null
@@ -644,6 +647,7 @@ class Edit extends Component {
 						{this.createIndicators(slides, instanceId)}
 					</ol>
 					<div
+						key={instanceId}
 						className={classnames(
 							'carousel-inner',
 							verticalAlign ? 'c9-is-vertically-aligned-' + verticalAlign : null
@@ -714,7 +718,7 @@ class Edit extends Component {
 					}}
 				/>
 				{isSelectedBlockInRoot && 1 < slides && (
-					<div className="c9-add-remove-rows">
+					<div className="c9-add-remove-rows" key={instanceId}>
 						<Button
 							label={__(
 								`Remove Current Slide (#${slideActive + 1})`,

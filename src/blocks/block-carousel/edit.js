@@ -142,6 +142,7 @@ class Edit extends Component {
 		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
+					key={i}
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={classnames(

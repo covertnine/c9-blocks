@@ -32,11 +32,12 @@ export function SubheadingToolbar({
 	return (
 		<ToolbarGroup label={__('Subheading', 'c9-blocks')}>
 			{enableControls.map((control, index) => {
-				const { enabled } = control;
+				//destructure to remove 'enabled' from the rest of the control props
+				const { enabled, ...buttonProps } = control;
 				return (
 					<ToolbarButton
 						key={`${control.title}-${enabled}-${index}`} // Ensuring uniqueness
-						{...control}
+						{...buttonProps}
 						isActive={value === enabled}
 						onClick={applyOrUnset(enabled)}
 					/>

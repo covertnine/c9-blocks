@@ -28,6 +28,7 @@ export default class Save extends Component {
 		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
+					key={i}
 					data-target={`#c9-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={0 === i ? 'active' : null}
