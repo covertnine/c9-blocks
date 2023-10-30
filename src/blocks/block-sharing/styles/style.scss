@@ -239,8 +239,52 @@
 	font-family: fontawesome, sans-serif;
 }
 
-@media only screen and (max-width: 667px) {
+.c9-social-share .c9-share-tiktok:before {
+	content: '';
+	background-image: url('../../../../assets/fa-icons/tiktok.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
 
+.c9-social-share.c9-share-size-small .c9-share-tiktok {
+	width: 36px;
+	height: 36px;
+	max-height: 36px;
+}
+
+.c9-social-share.c9-share-size-medium .c9-share-tiktok {
+	width: 48px;
+	height: 48px;
+	max-height: 48px;
+}
+
+.c9-social-share.c9-share-size-large .c9-share-tiktok {
+	width: 55px;
+	height: 55px;
+	max-height: 55px;
+}
+
+.c9-social-share.c9-share-size-small .c9-share-tiktok:before {
+	width: 15px;
+	height: 12px;
+}
+
+.c9-social-share.c9-share-size-medium .c9-share-tiktok:before {
+	width: 22px;
+	height: 16px;
+}
+
+.c9-social-share.c9-share-size-large .c9-share-tiktok:before {
+	width: 28px;
+	height: 23px;
+}
+
+.c9-share-tiktok > .fab.fa-tiktok {
+	display: none;
+}
+
+@media only screen and (max-width: 667px) {
 	.c9-block-sharing.c9-share-icon-only a {
 		min-width: 33px;
 		width: 33px;
