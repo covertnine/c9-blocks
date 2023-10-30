@@ -13,13 +13,16 @@
 		"prepare": "husky install"
 	},
 	"dependencies": {
+		"@babel/traverse": "^7.23.2",
 		"@wordpress/block-editor": "^12.12.0",
 		"@wordpress/i18n": "^4.21.0",
 		"@wordpress/icons": "^9.12.0",
 		"babel-runtime": "^6.26.0",
+		"browserify-sign": "^4.2.2",
 		"classnames": "^2.3.2",
 		"crypto-browserify": "^3.12.0",
 		"dayjs": "^1.9.6",
+		"fast-xml-parser": "^4.1.2",
 		"json5": "^1.0.2",
 		"lodash": "^4.17.21",
 		"memize": "^1.1.0",
