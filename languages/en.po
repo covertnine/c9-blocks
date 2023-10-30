@@ -1,0 +1,1743 @@
+# Copyright (C) 2023 COVERT NINE
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: C9 Blocks 1.6.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/c9-blocks\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-10-30 16:24-0500\n"
+"PO-Revision-Date: 2023-10-30 16:24-0500\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Domain: c9-blocks\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+
+#. Plugin Name of the plugin
+#: src/components/sidebar/index.js:70
+msgid "C9 Blocks"
+msgstr "C9 Blocks"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.covertnine.com"
+msgstr "https://www.covertnine.com"
+
+#. Description of the plugin
+msgid ""
+"10 new Gutenberg blocks with block templates. With C9, the agency is in the "
+"code."
+msgstr ""
+"10 new Gutenberg blocks with block templates. With C9, the agency is in the "
+"code."
+
+#. Author of the plugin
+msgid "COVERT NINE"
+msgstr "COVERT NINE"
+
+#: src/blocks/block-horizontal-tabs/components/horizontal-tab/index.php:50
+#: src/blocks/block-horizontal-tabs/components/horizontal-tab/index.js:59
+msgid "C9 Horizontal Tab"
+msgstr "C9 Horizontal Tab"
+
+#: src/blocks/block-post-grid/index.php:406
+msgid "C9 Post and Page Grid"
+msgstr "C9 Post and Page Grid"
+
+#: src/blocks/block-post-grid/index.php:408
+msgid "post"
+msgstr "post"
+
+#: src/blocks/block-post-grid/index.php:409
+msgid "page"
+msgstr "page"
+
+#: src/blocks/block-post-grid/index.php:410
+msgid "grid"
+msgstr "grid"
+
+#: src/blocks/block-post-grid/index.php:412
+msgid ""
+"Display responsive grids with post content of any kind with filtering, "
+"sorting, and flexible layout settings."
+msgstr ""
+"Display responsive grids with post content of any kind with filtering, "
+"sorting, and flexible layout settings."
+
+#: src/blocks/block-sharing/index.php:157 src/blocks/block-sharing/edit.js:68
+msgid "Share on Twitter"
+msgstr "Share on Twitter"
+
+#: src/blocks/block-sharing/index.php:174 src/blocks/block-sharing/edit.js:80
+msgid "Share on Facebook"
+msgstr "Share on Facebook"
+
+#: src/blocks/block-sharing/index.php:191 src/blocks/block-sharing/edit.js:92
+msgid "Share on Instagram"
+msgstr "Share on Instagram"
+
+#: src/blocks/block-sharing/index.php:208 src/blocks/block-sharing/edit.js:104
+msgid "Share on Tiktok"
+msgstr "Share on Tiktok"
+
+#: src/blocks/block-sharing/index.php:225 src/blocks/block-sharing/edit.js:116
+msgid "Share on Pinterest"
+msgstr "Share on Pinterest"
+
+#: src/blocks/block-sharing/index.php:242 src/blocks/block-sharing/edit.js:128
+msgid "Share on LinkedIn"
+msgstr "Share on LinkedIn"
+
+#: src/blocks/block-sharing/index.php:259
+msgid "Share on Reddit"
+msgstr "Share on Reddit"
+
+#: src/blocks/block-sharing/index.php:275 src/blocks/block-sharing/edit.js:152
+msgid "Share via Email"
+msgstr "Share via Email"
+
+#: src/blocks/block-vertical-tabs/components/vertical-tab/index.php:50
+#: src/blocks/block-vertical-tabs/components/vertical-tab/index.js:58
+msgid "C9 Vertical Tab"
+msgstr "C9 Vertical Tab"
+
+#: src/init.php:25
+msgid "COVERT NINE Blocks"
+msgstr "COVERT NINE Blocks"
+
+#: src/init.php:47
+msgid "Config C9 Blocks Color Palette"
+msgstr "Config C9 Blocks Color Palette"
+
+#: src/init.php:63
+msgid "Config Theme Color Palette"
+msgstr "Config Theme Color Palette"
+
+#: src/init.php:78
+msgid "Config C9 Blocks Youtube API Usage"
+msgstr "Config C9 Blocks Youtube API Usage"
+
+#: src/blocks/block-carousel/components/inspector.js:40
+#: src/blocks/block-image-carousel/components/inspector.js:42
+msgid "Number of slides to produce"
+msgstr "Number of slides to produce"
+
+#: src/blocks/block-carousel/components/inspector.js:54
+#: src/blocks/block-image-carousel/components/inspector.js:86
+msgid "Note: Changing the slide count can cause loss of content."
+msgstr "Note: Changing the slide count can cause loss of content."
+
+#: src/blocks/block-carousel/components/inspector.js:63
+#: src/blocks/block-image-carousel/components/inspector.js:95
+msgid "Transition type"
+msgstr "Transition type"
+
+#: src/blocks/block-carousel/components/inspector.js:66
+#: src/blocks/block-image-carousel/components/inspector.js:98
+msgid "Slide"
+msgstr "Slide"
+
+#: src/blocks/block-carousel/components/inspector.js:67
+#: src/blocks/block-image-carousel/components/inspector.js:99
+msgid "Fade"
+msgstr "Fade"
+
+#: src/blocks/block-carousel/components/inspector.js:68
+#: src/blocks/block-column-container/components/inspector.js:300
+#: src/blocks/block-column-container/components/inspector.js:311
+#: src/blocks/block-cta/components/inspector.js:194
+#: src/blocks/block-cta/components/inspector.js:205
+#: src/blocks/block-grid-container/components/inspector.js:370
+#: src/blocks/block-grid-container/components/inspector.js:405
+#: src/blocks/block-image-carousel/components/inspector.js:100
+#: src/blocks/block-post-grid/components/inspector.js:255
+#: src/blocks/block-post-grid/components/inspector.js:266
+#: src/blocks/block-posts-grid/components/inspector.js:291
+#: src/blocks/block-posts-grid/components/inspector.js:302
+#: src/extend/space-settings-inspector/utils.js:4
+#: src/extend/space-settings-inspector/utils.js:15
+msgid "None"
+msgstr "None"
+
+#: src/blocks/block-carousel/components/inspector.js:76
+#: src/blocks/block-image-carousel/components/inspector.js:116
+msgid "Height in pixels"
+msgstr "Height in pixels"
+
+#: src/blocks/block-carousel/components/inspector.js:96
+#: src/blocks/block-image-carousel/components/inspector.js:137
+msgid "Wrap around"
+msgstr "Wrap around"
+
+#: src/blocks/block-carousel/components/inspector.js:101
+#: src/blocks/block-image-carousel/components/inspector.js:142
+msgid "Enable auto slide"
+msgstr "Enable auto slide"
+
+#: src/blocks/block-carousel/components/inspector.js:107
+#: src/blocks/block-image-carousel/components/inspector.js:148
+msgid "Time in between slides (ms)"
+msgstr "Time in between slides (ms)"
+
+#: src/blocks/block-carousel/components/inspector.js:116
+#: src/blocks/block-image-carousel/components/inspector.js:157
+msgid "Show controls"
+msgstr "Show controls"
+
+#: src/blocks/block-carousel/components/inspector.js:121
+#: src/blocks/block-image-carousel/components/inspector.js:162
+msgid "Show indicators"
+msgstr "Show indicators"
+
+#: src/blocks/block-carousel/components/slide.js:143
+msgid "C9 Carousel Slide"
+msgstr "C9 Carousel Slide"
+
+#: src/blocks/block-carousel/components/swap-slide-toolbar.js:15
+#: src/blocks/block-image-carousel/components/swap-slide-toolbar.js:15
+msgid "Swap Slide toward Left"
+msgstr "Swap Slide toward Left"
+
+#: src/blocks/block-carousel/components/swap-slide-toolbar.js:20
+#: src/blocks/block-image-carousel/components/swap-slide-toolbar.js:20
+msgid "Swap Slide toward Right"
+msgstr "Swap Slide toward Right"
+
+#: src/blocks/block-carousel/components/swap-slide-toolbar.js:38
+#: src/blocks/block-image-carousel/components/swap-slide-toolbar.js:37
+#: src/components/width-toolbar/index.js:41
+msgid "Change Widths"
+msgstr "Change Widths"
+
+#: src/blocks/block-carousel/index.js:27
+msgid "C9 Carousel"
+msgstr "C9 Carousel"
+
+#: src/blocks/block-carousel/index.js:33
+#: src/blocks/block-image-carousel/index.js:33
+msgid "carousel"
+msgstr "carousel"
+
+#: src/blocks/block-carousel/index.js:33
+#: src/blocks/block-column-container/index.js:45
+#: src/blocks/block-grid-container/index.js:36
+#: src/blocks/block-horizontal-tabs/index.js:33
+#: src/blocks/block-image-carousel/index.js:33
+#: src/blocks/block-posts-grid/index.js:33 src/blocks/block-toggles/index.js:39
+#: src/blocks/block-vertical-tabs/index.js:33
+msgid "responsive"
+msgstr "responsive"
+
+#: src/blocks/block-carousel/index.js:34
+msgid ""
+"Display animated carousel of any kind of content including columns, videos, "
+"images, buttons, and text."
+msgstr ""
+"Display animated carousel of any kind of content including columns, videos, "
+"images, buttons, and text."
+
+#: src/blocks/block-column-container/components/column.js:102
+msgid "Column"
+msgstr "Column"
+
+#: src/blocks/block-column-container/components/inspector.js:294
+#: src/blocks/block-grid-container/components/inspector.js:355
+#: src/blocks/block-posts-grid/components/inspector.js:285
+msgid "Pixel (px)"
+msgstr "Pixel (px)"
+
+#: src/blocks/block-column-container/components/inspector.js:295
+#: src/blocks/block-grid-container/components/inspector.js:359
+#: src/blocks/block-posts-grid/components/inspector.js:286
+msgid "Percent (%)"
+msgstr "Percent (%)"
+
+#: src/blocks/block-column-container/components/inspector.js:296
+#: src/blocks/block-grid-container/components/inspector.js:363
+#: src/blocks/block-posts-grid/components/inspector.js:287
+msgid "Em (em)"
+msgstr "Em (em)"
+
+#: src/blocks/block-column-container/components/inspector.js:301
+#: src/blocks/block-cta/components/inspector.js:195
+#: src/blocks/block-grid-container/components/inspector.js:374
+#: src/blocks/block-post-grid/components/inspector.js:256
+#: src/blocks/block-posts-grid/components/inspector.js:292
+#: src/extend/space-settings-inspector/utils.js:5
+msgid "Padding 0"
+msgstr "Padding 0"
+
+#: src/blocks/block-column-container/components/inspector.js:302
+#: src/blocks/block-cta/components/inspector.js:196
+#: src/blocks/block-grid-container/components/inspector.js:378
+#: src/blocks/block-post-grid/components/inspector.js:257
+#: src/blocks/block-posts-grid/components/inspector.js:293
+#: src/extend/space-settings-inspector/utils.js:6
+msgid "Padding 1"
+msgstr "Padding 1"
+
+#: src/blocks/block-column-container/components/inspector.js:303
+#: src/blocks/block-cta/components/inspector.js:197
+#: src/blocks/block-grid-container/components/inspector.js:382
+#: src/blocks/block-post-grid/components/inspector.js:258
+#: src/blocks/block-posts-grid/components/inspector.js:294
+#: src/extend/space-settings-inspector/utils.js:7
+msgid "Padding 2"
+msgstr "Padding 2"
+
+#: src/blocks/block-column-container/components/inspector.js:304
+#: src/blocks/block-cta/components/inspector.js:198
+#: src/blocks/block-grid-container/components/inspector.js:386
+#: src/blocks/block-post-grid/components/inspector.js:259
+#: src/blocks/block-posts-grid/components/inspector.js:295
+#: src/extend/space-settings-inspector/utils.js:8
+msgid "Padding 3"
+msgstr "Padding 3"
+
+#: src/blocks/block-column-container/components/inspector.js:305
+#: src/blocks/block-cta/components/inspector.js:199
+#: src/blocks/block-grid-container/components/inspector.js:390
+#: src/blocks/block-post-grid/components/inspector.js:260
+#: src/blocks/block-posts-grid/components/inspector.js:296
+#: src/extend/space-settings-inspector/utils.js:9
+msgid "Padding 4"
+msgstr "Padding 4"
+
+#: src/blocks/block-column-container/components/inspector.js:306
+#: src/blocks/block-cta/components/inspector.js:200
+#: src/blocks/block-grid-container/components/inspector.js:394
+#: src/blocks/block-post-grid/components/inspector.js:261
+#: src/blocks/block-posts-grid/components/inspector.js:297
+#: src/extend/space-settings-inspector/utils.js:10
+msgid "Padding 5"
+msgstr "Padding 5"
+
+#: src/blocks/block-column-container/components/inspector.js:307
+#: src/blocks/block-column-container/components/inspector.js:318
+#: src/blocks/block-cta/components/inspector.js:201
+#: src/blocks/block-cta/components/inspector.js:212
+#: src/blocks/block-grid-container/components/inspector.js:398
+#: src/blocks/block-grid-container/components/inspector.js:433
+#: src/blocks/block-post-grid/components/inspector.js:262
+#: src/blocks/block-post-grid/components/inspector.js:273
+#: src/blocks/block-posts-grid/components/inspector.js:298
+#: src/blocks/block-posts-grid/components/inspector.js:309
+#: src/extend/space-settings-inspector/utils.js:11
+#: src/extend/space-settings-inspector/utils.js:22
+msgid "Auto"
+msgstr "Auto"
+
+#: src/blocks/block-column-container/components/inspector.js:312
+#: src/blocks/block-cta/components/inspector.js:206
+#: src/blocks/block-grid-container/components/inspector.js:409
+#: src/blocks/block-post-grid/components/inspector.js:267
+#: src/blocks/block-posts-grid/components/inspector.js:303
+#: src/extend/space-settings-inspector/utils.js:16
+msgid "Margin 0"
+msgstr "Margin 0"
+
+#: src/blocks/block-column-container/components/inspector.js:313
+#: src/blocks/block-cta/components/inspector.js:207
+#: src/blocks/block-grid-container/components/inspector.js:413
+#: src/blocks/block-post-grid/components/inspector.js:268
+#: src/blocks/block-posts-grid/components/inspector.js:304
+#: src/extend/space-settings-inspector/utils.js:17
+msgid "Margin 1"
+msgstr "Margin 1"
+
+#: src/blocks/block-column-container/components/inspector.js:314
+#: src/blocks/block-cta/components/inspector.js:208
+#: src/blocks/block-grid-container/components/inspector.js:417
+#: src/blocks/block-post-grid/components/inspector.js:269
+#: src/blocks/block-posts-grid/components/inspector.js:305
+#: src/extend/space-settings-inspector/utils.js:18
+msgid "Margin 2"
+msgstr "Margin 2"
+
+#: src/blocks/block-column-container/components/inspector.js:315
+#: src/blocks/block-cta/components/inspector.js:209
+#: src/blocks/block-grid-container/components/inspector.js:421
+#: src/blocks/block-post-grid/components/inspector.js:270
+#: src/blocks/block-posts-grid/components/inspector.js:306
+#: src/extend/space-settings-inspector/utils.js:19
+msgid "Margin 3"
+msgstr "Margin 3"
+
+#: src/blocks/block-column-container/components/inspector.js:316
+#: src/blocks/block-cta/components/inspector.js:210
+#: src/blocks/block-grid-container/components/inspector.js:425
+#: src/blocks/block-post-grid/components/inspector.js:271
+#: src/blocks/block-posts-grid/components/inspector.js:307
+#: src/extend/space-settings-inspector/utils.js:20
+msgid "Margin 4"
+msgstr "Margin 4"
+
+#: src/blocks/block-column-container/components/inspector.js:317
+#: src/blocks/block-cta/components/inspector.js:211
+#: src/blocks/block-grid-container/components/inspector.js:429
+#: src/blocks/block-post-grid/components/inspector.js:272
+#: src/blocks/block-posts-grid/components/inspector.js:308
+#: src/extend/space-settings-inspector/utils.js:21
+msgid "Margin 5"
+msgstr "Margin 5"
+
+#: src/blocks/block-column-container/components/inspector.js:322
+#: src/blocks/block-cta/components/inspector.js:174
+#: src/blocks/block-grid-container/components/inspector.js:440
+#: src/blocks/block-posts-grid/components/inspector.js:313
+msgid "Cover"
+msgstr "Cover"
+
+#: src/blocks/block-column-container/components/inspector.js:323
+#: src/blocks/block-cta/components/inspector.js:175
+#: src/blocks/block-grid-container/components/inspector.js:444
+#: src/blocks/block-posts-grid/components/inspector.js:314
+msgid "Contain"
+msgstr "Contain"
+
+#: src/blocks/block-column-container/components/inspector.js:324
+#: src/blocks/block-grid-container/components/inspector.js:448
+#: src/blocks/block-posts-grid/components/inspector.js:315
+msgid "Custom"
+msgstr "Custom"
+
+#: src/blocks/block-column-container/components/inspector.js:328
+#: src/blocks/block-grid-container/components/inspector.js:455
+#: src/blocks/block-posts-grid/components/inspector.js:319
+msgid "no-repeat"
+msgstr "no-repeat"
+
+#: src/blocks/block-column-container/components/inspector.js:329
+#: src/blocks/block-grid-container/components/inspector.js:459
+#: src/blocks/block-posts-grid/components/inspector.js:320
+msgid "repeat"
+msgstr "repeat"
+
+#: src/blocks/block-column-container/components/inspector.js:330
+#: src/blocks/block-grid-container/components/inspector.js:463
+#: src/blocks/block-posts-grid/components/inspector.js:321
+msgid "round"
+msgstr "round"
+
+#: src/blocks/block-column-container/components/inspector.js:331
+#: src/blocks/block-grid-container/components/inspector.js:467
+#: src/blocks/block-posts-grid/components/inspector.js:322
+msgid "space"
+msgstr "space"
+
+#: src/blocks/block-column-container/components/inspector.js:354
+#: src/blocks/block-grid-container/components/inspector.js:514
+#: src/blocks/block-posts-grid/components/inspector.js:368
+msgid "Window Height (vh)"
+msgstr "Window Height (vh)"
+
+#: src/blocks/block-column-container/components/inspector.js:363
+#: src/blocks/block-post-grid/components/inspector.js:328
+msgid "Columns"
+msgstr "Columns"
+
+#: src/blocks/block-column-container/components/inspector.js:374
+msgid "Note: Changing the column count can cause loss of content."
+msgstr "Note: Changing the column count can cause loss of content."
+
+#: src/blocks/block-column-container/components/inspector.js:384
+#: src/blocks/block-column-container/components/inspector.js:385
+#: src/blocks/block-column-container/edit.js:130
+msgid "Column Layout"
+msgstr "Column Layout"
+
+#: src/blocks/block-column-container/components/inspector.js:405
+msgid "Change the layout of your columns."
+msgstr "Change the layout of your columns."
+
+#: src/blocks/block-column-container/components/inspector.js:411
+msgid "Column Gap"
+msgstr "Column Gap"
+
+#: src/blocks/block-column-container/components/inspector.js:412
+msgid "Adjust the spacing between columns."
+msgstr "Adjust the spacing between columns."
+
+#: src/blocks/block-column-container/components/inspector.js:424
+msgid "Adjust the width of the content inside the container wrapper."
+msgstr "Adjust the width of the content inside the container wrapper."
+
+#: src/blocks/block-column-container/components/inspector.js:437
+msgid "Center Columns In Container"
+msgstr "Center Columns In Container"
+
+#: src/blocks/block-column-container/components/inspector.js:438
+msgid "Center the columns in the container when max-width is used."
+msgstr "Center the columns in the container when max-width is used."
+
+#: src/blocks/block-column-container/components/inspector.js:454
+msgid "Responsive Columns"
+msgstr "Responsive Columns"
+
+#: src/blocks/block-column-container/components/inspector.js:455
+msgid "Columns will be adjusted to fit on tablets and mobile devices."
+msgstr "Columns will be adjusted to fit on tablets and mobile devices."
+
+#: src/blocks/block-column-container/components/inspector.js:470
+msgid "Reverse Mobile Column Order"
+msgstr "Reverse Mobile Column Order"
+
+#: src/blocks/block-column-container/components/inspector.js:471
+msgid ""
+"Columns will be in reversed order on mobile devices allowing you to show the "
+"right columns first when grid columns stack on top of each other on smaller "
+"browsers."
+msgstr ""
+"Columns will be in reversed order on mobile devices allowing you to show the "
+"right columns first when grid columns stack on top of each other on smaller "
+"browsers."
+
+#: src/blocks/block-column-container/components/inspector.js:484
+#: src/blocks/block-cta/components/inspector.js:369
+#: src/blocks/block-grid-container/components/inspector.js:546
+#: src/blocks/block-post-grid/components/inspector.js:544
+#: src/blocks/block-posts-grid/components/inspector.js:376
+#: src/extend/space-settings-inspector/index.js:274
+msgid "Spacing Options"
+msgstr "Spacing Options"
+
+#: src/blocks/block-column-container/components/inspector.js:507
+#: src/blocks/block-column-container/components/inspector.js:544
+#: src/blocks/block-cta/components/inspector.js:395
+#: src/blocks/block-cta/components/inspector.js:434
+#: src/blocks/block-grid-container/components/inspector.js:568
+#: src/blocks/block-grid-container/components/inspector.js:601
+#: src/blocks/block-post-grid/components/inspector.js:570
+#: src/blocks/block-post-grid/components/inspector.js:609
+#: src/blocks/block-posts-grid/components/inspector.js:402
+#: src/blocks/block-posts-grid/components/inspector.js:441
+#: src/extend/space-settings-inspector/index.js:303
+#: src/extend/space-settings-inspector/index.js:342
+msgid "Linked Padding Toggle"
+msgstr "Linked Padding Toggle"
+
+#: src/blocks/block-column-container/components/inspector.js:559
+#: src/blocks/block-cta/components/inspector.js:450
+#: src/blocks/block-grid-container/components/inspector.js:616
+#: src/blocks/block-posts-grid/components/inspector.js:456
+msgid "Background Settings"
+msgstr "Background Settings"
+
+#: src/blocks/block-column-container/components/inspector.js:564
+#: src/blocks/block-column-container/components/inspector.js:575
+#: src/blocks/block-cta/components/inspector.js:455
+#: src/blocks/block-cta/components/inspector.js:466
+#: src/blocks/block-grid-container/components/inspector.js:621
+#: src/blocks/block-grid-container/components/inspector.js:633
+#: src/blocks/block-posts-grid/components/inspector.js:461
+#: src/blocks/block-posts-grid/components/inspector.js:472
+msgid "Background Image"
+msgstr "Background Image"
+
+#: src/blocks/block-column-container/components/inspector.js:571
+#: src/blocks/block-cta/components/inspector.js:462
+#: src/blocks/block-grid-container/components/inspector.js:628
+#: src/blocks/block-posts-grid/components/inspector.js:468
+msgid "Edit image"
+msgstr "Edit image"
+
+#: src/blocks/block-column-container/components/inspector.js:581
+#: src/blocks/block-cta/components/inspector.js:472
+#: src/blocks/block-grid-container/components/inspector.js:638
+#: src/blocks/block-image-carousel/edit.js:486
+#: src/blocks/block-posts-grid/components/inspector.js:478
+msgid "Remove Image"
+msgstr "Remove Image"
+
+#: src/blocks/block-column-container/components/inspector.js:585
+#: src/blocks/block-cta/components/inspector.js:476
+#: src/blocks/block-grid-container/components/inspector.js:643
+#: src/blocks/block-grid-container/components/inspector.js:1154
+#: src/blocks/block-image-carousel/edit.js:511
+#: src/blocks/block-posts-grid/components/inspector.js:482
+#: src/blocks/block-posts-grid/components/inspector.js:923
+#: src/components/remove-button/index.js:27
+msgid "Remove"
+msgstr "Remove"
+
+#: src/blocks/block-column-container/components/inspector.js:590
+#: src/blocks/block-column-container/components/inspector.js:806
+#: src/blocks/block-cta/components/inspector.js:481
+#: src/blocks/block-grid-container/components/inspector.js:647
+#: src/blocks/block-grid-container/components/inspector.js:936
+#: src/blocks/block-posts-grid/components/inspector.js:487
+#: src/blocks/block-posts-grid/components/inspector.js:723
+msgid "Focal Point Picker"
+msgstr "Focal Point Picker"
+
+#: src/blocks/block-column-container/components/inspector.js:601
+#: src/blocks/block-grid-container/components/inspector.js:660
+#: src/blocks/block-grid-container/components/inspector.js:685
+#: src/blocks/block-post-grid/components/inspector.js:629
+#: src/blocks/block-posts-grid/components/inspector.js:497
+#: src/blocks/block-posts-grid/components/inspector.js:518
+msgid "Overlay Color"
+msgstr "Overlay Color"
+
+#: src/blocks/block-column-container/components/inspector.js:610
+#: src/blocks/block-cta/components/inspector.js:502
+#: src/blocks/block-grid-container/components/inspector.js:672
+#: src/blocks/block-grid-container/components/inspector.js:697
+#: src/blocks/block-post-grid/components/inspector.js:638
+#: src/blocks/block-posts-grid/components/inspector.js:506
+#: src/blocks/block-posts-grid/components/inspector.js:527
+msgid "Opacity"
+msgstr "Opacity"
+
+#: src/blocks/block-column-container/components/inspector.js:621
+#: src/blocks/block-cta/components/inspector.js:514
+#: src/blocks/block-grid-container/components/inspector.js:710
+#: src/blocks/block-posts-grid/components/inspector.js:538
+msgid "Blend Mode"
+msgstr "Blend Mode"
+
+#: src/blocks/block-column-container/components/inspector.js:624
+#: src/blocks/block-cta/components/inspector.js:517
+#: src/blocks/block-grid-container/components/inspector.js:715
+#: src/blocks/block-posts-grid/components/inspector.js:541
+msgid "Overlay"
+msgstr "Overlay"
+
+#: src/blocks/block-column-container/components/inspector.js:625
+#: src/blocks/block-cta/components/inspector.js:518
+#: src/blocks/block-grid-container/components/inspector.js:719
+#: src/blocks/block-posts-grid/components/inspector.js:542
+msgid "Normal"
+msgstr "Normal"
+
+#: src/blocks/block-column-container/components/inspector.js:628
+#: src/blocks/block-cta/components/inspector.js:521
+#: src/blocks/block-grid-container/components/inspector.js:723
+#: src/blocks/block-posts-grid/components/inspector.js:545
+msgid "Multiply"
+msgstr "Multiply"
+
+#: src/blocks/block-column-container/components/inspector.js:630
+#: src/blocks/block-cta/components/inspector.js:523
+#: src/blocks/block-grid-container/components/inspector.js:727
+#: src/blocks/block-posts-grid/components/inspector.js:547
+msgid "Screen"
+msgstr "Screen"
+
+#: src/blocks/block-column-container/components/inspector.js:631
+#: src/blocks/block-cta/components/inspector.js:524
+#: src/blocks/block-grid-container/components/inspector.js:731
+#: src/blocks/block-posts-grid/components/inspector.js:548
+msgid "Darken"
+msgstr "Darken"
+
+#: src/blocks/block-column-container/components/inspector.js:632
+#: src/blocks/block-cta/components/inspector.js:525
+#: src/blocks/block-grid-container/components/inspector.js:735
+#: src/blocks/block-posts-grid/components/inspector.js:549
+msgid "Lighten"
+msgstr "Lighten"
+
+#: src/blocks/block-column-container/components/inspector.js:635
+#: src/blocks/block-cta/components/inspector.js:528
+#: src/blocks/block-grid-container/components/inspector.js:739
+#: src/blocks/block-posts-grid/components/inspector.js:552
+msgid "Color Dodge"
+msgstr "Color Dodge"
+
+#: src/blocks/block-column-container/components/inspector.js:639
+#: src/blocks/block-cta/components/inspector.js:532
+#: src/blocks/block-grid-container/components/inspector.js:743
+#: src/blocks/block-posts-grid/components/inspector.js:556
+msgid "Color Burn"
+msgstr "Color Burn"
+
+#: src/blocks/block-column-container/components/inspector.js:643
+#: src/blocks/block-cta/components/inspector.js:536
+#: src/blocks/block-grid-container/components/inspector.js:747
+#: src/blocks/block-posts-grid/components/inspector.js:560
+msgid "Hard Light"
+msgstr "Hard Light"
+
+#: src/blocks/block-column-container/components/inspector.js:647
+#: src/blocks/block-cta/components/inspector.js:540
+#: src/blocks/block-grid-container/components/inspector.js:751
+#: src/blocks/block-posts-grid/components/inspector.js:564
+msgid "Soft Light"
+msgstr "Soft Light"
+
+#: src/blocks/block-column-container/components/inspector.js:651
+#: src/blocks/block-cta/components/inspector.js:544
+#: src/blocks/block-grid-container/components/inspector.js:755
+#: src/blocks/block-posts-grid/components/inspector.js:568
+msgid "Difference"
+msgstr "Difference"
+
+#: src/blocks/block-column-container/components/inspector.js:655
+#: src/blocks/block-cta/components/inspector.js:548
+#: src/blocks/block-grid-container/components/inspector.js:759
+#: src/blocks/block-posts-grid/components/inspector.js:572
+msgid "Exclusion"
+msgstr "Exclusion"
+
+#: src/blocks/block-column-container/components/inspector.js:657
+#: src/blocks/block-cta/components/inspector.js:550
+#: src/blocks/block-grid-container/components/inspector.js:763
+#: src/blocks/block-posts-grid/components/inspector.js:574
+msgid "Hue"
+msgstr "Hue"
+
+#: src/blocks/block-column-container/components/inspector.js:660
+#: src/blocks/block-cta/components/inspector.js:553
+#: src/blocks/block-grid-container/components/inspector.js:767
+#: src/blocks/block-posts-grid/components/inspector.js:577
+msgid "Saturation"
+msgstr "Saturation"
+
+#: src/blocks/block-column-container/components/inspector.js:662
+#: src/blocks/block-cta/components/inspector.js:555
+#: src/blocks/block-grid-container/components/inspector.js:771
+#: src/blocks/block-posts-grid/components/inspector.js:579
+msgid "Color"
+msgstr "Color"
+
+#: src/blocks/block-column-container/components/inspector.js:665
+#: src/blocks/block-cta/components/inspector.js:558
+#: src/blocks/block-grid-container/components/inspector.js:775
+#: src/blocks/block-posts-grid/components/inspector.js:582
+msgid "Luminosity"
+msgstr "Luminosity"
+
+#: src/blocks/block-column-container/components/inspector.js:678
+#: src/blocks/block-cta/components/inspector.js:571
+#: src/blocks/block-grid-container/components/inspector.js:790
+#: src/blocks/block-posts-grid/components/inspector.js:595
+msgid "Scroll | Fixed"
+msgstr "Scroll | Fixed"
+
+#: src/blocks/block-column-container/components/inspector.js:688
+#: src/blocks/block-column-container/components/inspector.js:853
+#: src/blocks/block-grid-container/components/inspector.js:802
+#: src/blocks/block-grid-container/components/inspector.js:981
+#: src/blocks/block-posts-grid/components/inspector.js:605
+#: src/blocks/block-posts-grid/components/inspector.js:770
+msgid "Choose between cover, contain, or custom."
+msgstr "Choose between cover, contain, or custom."
+
+#: src/blocks/block-column-container/components/inspector.js:702
+#: src/blocks/block-column-container/components/inspector.js:738
+#: src/blocks/block-column-container/components/inspector.js:868
+#: src/blocks/block-column-container/components/inspector.js:904
+#: src/blocks/block-grid-container/components/inspector.js:818
+#: src/blocks/block-grid-container/components/inspector.js:860
+#: src/blocks/block-grid-container/components/inspector.js:997
+#: src/blocks/block-grid-container/components/inspector.js:1039
+#: src/blocks/block-posts-grid/components/inspector.js:619
+#: src/blocks/block-posts-grid/components/inspector.js:655
+#: src/blocks/block-posts-grid/components/inspector.js:785
+#: src/blocks/block-posts-grid/components/inspector.js:821
+msgid "Auto | Manual"
+msgstr "Auto | Manual"
+
+#: src/blocks/block-column-container/components/inspector.js:778
+#: src/blocks/block-grid-container/components/inspector.js:905
+#: src/blocks/block-posts-grid/components/inspector.js:695
+msgid "Choose between no-repeat, repeat, round or space."
+msgstr "Choose between no-repeat, repeat, round or space."
+
+#: src/blocks/block-column-container/components/inspector.js:789
+#: src/blocks/block-grid-container/components/inspector.js:918
+#: src/blocks/block-posts-grid/components/inspector.js:706
+msgid "Mobile Background"
+msgstr "Mobile Background"
+
+#: src/blocks/block-column-container/components/inspector.js:791
+#: src/blocks/block-grid-container/components/inspector.js:920
+#: src/blocks/block-posts-grid/components/inspector.js:708
+msgid "Same as Desktop | Change"
+msgstr "Same as Desktop | Change"
+
+#: src/blocks/block-column-container/components/inspector.js:800
+#: src/blocks/block-grid-container/components/inspector.js:930
+#: src/blocks/block-posts-grid/components/inspector.js:717
+msgid "Mobile Background Settings"
+msgstr "Mobile Background Settings"
+
+#: src/blocks/block-column-container/components/inspector.js:851
+#: src/blocks/block-cta/components/inspector.js:579
+#: src/blocks/block-grid-container/components/inspector.js:800
+#: src/blocks/block-grid-container/components/inspector.js:979
+#: src/blocks/block-posts-grid/components/inspector.js:603
+#: src/blocks/block-posts-grid/components/inspector.js:768
+msgid "Size"
+msgstr "Size"
+
+#: src/blocks/block-column-container/components/inspector.js:866
+#: src/blocks/block-grid-container/components/inspector.js:816
+#: src/blocks/block-grid-container/components/inspector.js:995
+#: src/blocks/block-posts-grid/components/inspector.js:617
+#: src/blocks/block-posts-grid/components/inspector.js:783
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: src/blocks/block-column-container/components/inspector.js:902
+#: src/blocks/block-grid-container/components/inspector.js:858
+#: src/blocks/block-grid-container/components/inspector.js:1037
+#: src/blocks/block-posts-grid/components/inspector.js:653
+#: src/blocks/block-posts-grid/components/inspector.js:819
+msgid "Vertical"
+msgstr "Vertical"
+
+#: src/blocks/block-column-container/components/inspector.js:956
+#: src/blocks/block-column-container/edit.js:279
+#: src/blocks/block-column-container/edit.js:319
+msgid "1 Column"
+msgstr "1 Column"
+
+#: src/blocks/block-column-container/components/inspector.js:964
+#: src/blocks/block-column-container/edit.js:327
+msgid "2 Columns - 50/50"
+msgstr "2 Columns - 50/50"
+
+#: src/blocks/block-column-container/components/inspector.js:970
+#: src/blocks/block-column-container/edit.js:333
+msgid "2 Columns - 75/25"
+msgstr "2 Columns - 75/25"
+
+#: src/blocks/block-column-container/components/inspector.js:976
+#: src/blocks/block-column-container/edit.js:339
+msgid "2 Columns - 25/75"
+msgstr "2 Columns - 25/75"
+
+#: src/blocks/block-column-container/components/inspector.js:984
+#: src/blocks/block-column-container/edit.js:347
+msgid "3 Columns - 33/33/33"
+msgstr "3 Columns - 33/33/33"
+
+#: src/blocks/block-column-container/components/inspector.js:990
+#: src/blocks/block-column-container/edit.js:353
+msgid "3 Columns - 25/50/25"
+msgstr "3 Columns - 25/50/25"
+
+#: src/blocks/block-column-container/components/inspector.js:996
+#: src/blocks/block-column-container/edit.js:359
+msgid "3 Columns - 50/25/25"
+msgstr "3 Columns - 50/25/25"
+
+#: src/blocks/block-column-container/components/inspector.js:1002
+#: src/blocks/block-column-container/edit.js:365
+msgid "3 Columns - 25/25/50"
+msgstr "3 Columns - 25/25/50"
+
+#: src/blocks/block-column-container/components/inspector.js:1010
+#: src/blocks/block-column-container/edit.js:373
+msgid "4 Columns - 25/25/25/25"
+msgstr "4 Columns - 25/25/25/25"
+
+#: src/blocks/block-column-container/components/inspector.js:1016
+#: src/blocks/block-column-container/edit.js:379
+msgid "4 Columns - 40/20/20/20"
+msgstr "4 Columns - 40/20/20/20"
+
+#: src/blocks/block-column-container/components/inspector.js:1022
+#: src/blocks/block-column-container/edit.js:385
+msgid "4 Columns - 20/20/20/40"
+msgstr "4 Columns - 20/20/20/40"
+
+#: src/blocks/block-column-container/components/inspector.js:1030
+#: src/blocks/block-column-container/edit.js:303
+#: src/blocks/block-column-container/edit.js:393
+msgid "5 Columns"
+msgstr "5 Columns"
+
+#: src/blocks/block-column-container/components/inspector.js:1038
+#: src/blocks/block-column-container/edit.js:309
+#: src/blocks/block-column-container/edit.js:401
+msgid "6 Columns"
+msgstr "6 Columns"
+
+#: src/blocks/block-column-container/edit.js:131
+msgid "Column Number"
+msgstr "Column Number"
+
+#: src/blocks/block-column-container/edit.js:135
+msgid "Select a layout for this column."
+msgstr "Select a layout for this column."
+
+#: src/blocks/block-column-container/edit.js:136
+msgid "Select the number of columns for this layout."
+msgstr "Select the number of columns for this layout."
+
+#: src/blocks/block-column-container/edit.js:142
+msgid "Select Row Columns"
+msgstr "Select Row Columns"
+
+#: src/blocks/block-column-container/edit.js:175
+msgid "Select Column Layout"
+msgstr "Select Column Layout"
+
+#: src/blocks/block-column-container/edit.js:206
+msgid "Return to Column Selection"
+msgstr "Return to Column Selection"
+
+#: src/blocks/block-column-container/edit.js:285
+msgid "2 Columns"
+msgstr "2 Columns"
+
+#: src/blocks/block-column-container/edit.js:291
+msgid "3 Columns"
+msgstr "3 Columns"
+
+#: src/blocks/block-column-container/edit.js:297
+msgid "4 Columns"
+msgstr "4 Columns"
+
+#: src/blocks/block-column-container/index.js:30
+msgid "C9 Column Container"
+msgstr "C9 Column Container"
+
+#: src/blocks/block-column-container/index.js:45
+#: src/blocks/block-horizontal-tabs/index.js:32
+#: src/blocks/block-vertical-tabs/index.js:32
+msgid "container"
+msgstr "container"
+
+#: src/blocks/block-cta/components/inspector.js:216
+msgid "Paragraph"
+msgstr "Paragraph"
+
+#: src/blocks/block-cta/components/inspector.js:217
+#: src/blocks/block-heading/components/inspector.js:49
+msgid "Heading"
+msgstr "Heading"
+
+#: src/blocks/block-cta/components/inspector.js:220
+#: src/blocks/block-heading/components/inspector.js:52
+#: src/blocks/block-heading/components/subheading-toolbar.js:33
+msgid "Subheading"
+msgstr "Subheading"
+
+#: src/blocks/block-cta/components/inspector.js:259
+msgid "Content Width"
+msgstr "Content Width"
+
+#: src/blocks/block-cta/components/inspector.js:272
+msgid "Button Configurations"
+msgstr "Button Configurations"
+
+#: src/blocks/block-cta/components/inspector.js:275
+msgid "Open link in new window"
+msgstr "Open link in new window"
+
+#: src/blocks/block-cta/components/inspector.js:281
+msgid "Button Size"
+msgstr "Button Size"
+
+#: src/blocks/block-cta/components/inspector.js:293
+msgid "Button Shape"
+msgstr "Button Shape"
+
+#: src/blocks/block-cta/components/inspector.js:310
+#: src/blocks/block-heading/components/inspector.js:104
+msgid "Font Type"
+msgstr "Font Type"
+
+#: src/blocks/block-cta/components/inspector.js:311
+msgid "Choose between paragraph, heading, or subheading."
+msgstr "Choose between paragraph, heading, or subheading."
+
+#: src/blocks/block-cta/components/inspector.js:323
+msgid "Message Text Color"
+msgstr "Message Text Color"
+
+#: src/blocks/block-cta/components/inspector.js:328
+#: src/blocks/block-heading/components/inspector.js:160
+#: src/blocks/block-horizontal-tabs/components/inspector.js:87
+#: src/blocks/block-vertical-tabs/components/inspector.js:70
+msgid "Text Color"
+msgstr "Text Color"
+
+#: src/blocks/block-cta/components/inspector.js:341
+msgid "Button Colors"
+msgstr "Button Colors"
+
+#: src/blocks/block-cta/components/inspector.js:346
+msgid "Button Text Color"
+msgstr "Button Text Color"
+
+#: src/blocks/block-cta/components/inspector.js:352
+msgid "Button Color"
+msgstr "Button Color"
+
+#: src/blocks/block-cta/components/inspector.js:372
+#: src/blocks/block-grid-container/components/inspector.js:549
+#: src/blocks/block-post-grid/components/inspector.js:547
+#: src/blocks/block-posts-grid/components/inspector.js:379
+#: src/extend/space-settings-inspector/index.js:283
+msgid "Padding"
+msgstr "Padding"
+
+#: src/blocks/block-cta/components/inspector.js:375
+#: src/blocks/block-post-grid/components/inspector.js:550
+#: src/blocks/block-posts-grid/components/inspector.js:382
+msgid "Configure between different levels of padding for each side."
+msgstr "Configure between different levels of padding for each side."
+
+#: src/blocks/block-cta/components/inspector.js:419
+#: src/blocks/block-post-grid/components/inspector.js:594
+#: src/blocks/block-posts-grid/components/inspector.js:426
+#: src/extend/space-settings-inspector/index.js:327
+msgid "Configure between different levels of margin for top and bottom sides."
+msgstr "Configure between different levels of margin for top and bottom sides."
+
+#: src/blocks/block-cta/components/inspector.js:489
+#: src/blocks/block-cta/components/inspector.js:491
+#: src/blocks/block-grid-container/components/inspector.js:658
+#: src/blocks/block-heading/components/inspector.js:165
+#: src/blocks/block-horizontal-tabs/components/inspector.js:64
+#: src/blocks/block-horizontal-tabs/components/inspector.js:82
+#: src/blocks/block-horizontal-tabs/components/inspector.js:108
+#: src/blocks/block-post-grid/components/inspector.js:627
+#: src/blocks/block-posts-grid/components/inspector.js:495
+#: src/blocks/block-vertical-tabs/components/inspector.js:47
+#: src/blocks/block-vertical-tabs/components/inspector.js:65
+#: src/blocks/block-vertical-tabs/components/inspector.js:91
+msgid "Background Color"
+msgstr "Background Color"
+
+#: src/blocks/block-cta/components/inspector.js:569
+#: src/blocks/block-grid-container/components/inspector.js:788
+#: src/blocks/block-posts-grid/components/inspector.js:593
+msgid "Attachment"
+msgstr "Attachment"
+
+#: src/blocks/block-cta/components/inspector.js:581
+msgid "Choose between cover or contain."
+msgstr "Choose between cover or contain."
+
+#: src/blocks/block-cta/edit.js:159
+msgid "Call To Action Text"
+msgstr "Call To Action Text"
+
+#: src/blocks/block-cta/edit.js:187
+msgid "Button text..."
+msgstr "Button text..."
+
+#: src/blocks/block-cta/edit.js:227
+msgid "Apply"
+msgstr "Apply"
+
+#: src/blocks/block-cta/index.js:24
+msgid "C9 Call To Action"
+msgstr "C9 Call To Action"
+
+#: src/blocks/block-cta/index.js:27
+msgid "call to action"
+msgstr "call to action"
+
+#: src/blocks/block-cta/index.js:27
+msgid "cta"
+msgstr "cta"
+
+#: src/blocks/block-cta/index.js:29
+msgid ""
+"Get users to action with stylized text, colors, and buttons in one "
+"responsive block."
+msgstr ""
+"Get users to action with stylized text, colors, and buttons in one "
+"responsive block."
+
+#: src/blocks/block-grid-container/components/inspector.js:528
+msgid "Number of rows to produce"
+msgstr "Number of rows to produce"
+
+#: src/blocks/block-grid-container/components/inspector.js:538
+msgid "Note: Changing the row count can cause loss of content."
+msgstr "Note: Changing the row count can cause loss of content."
+
+#: src/blocks/block-grid-container/components/inspector.js:552
+msgid "Configure padding for each side"
+msgstr "Configure padding for each side"
+
+#: src/blocks/block-grid-container/components/inspector.js:587
+#: src/extend/space-settings-inspector/index.js:324
+msgid "Margin"
+msgstr "Margin"
+
+#: src/blocks/block-grid-container/components/inspector.js:590
+msgid "Configure margin for top and bottom"
+msgstr "Configure margin for top and bottom"
+
+#: src/blocks/block-grid-container/components/inspector.js:683
+#: src/blocks/block-posts-grid/components/inspector.js:516
+msgid "Color Overlay"
+msgstr "Color Overlay"
+
+#: src/blocks/block-grid-container/components/inspector.js:903
+#: src/blocks/block-posts-grid/components/inspector.js:693
+msgid "Repeat"
+msgstr "Repeat"
+
+#: src/blocks/block-grid-container/components/inspector.js:1089
+#: src/blocks/block-posts-grid/components/inspector.js:865
+msgid "Video Options"
+msgstr "Video Options"
+
+#: src/blocks/block-grid-container/components/inspector.js:1091
+#: src/blocks/block-posts-grid/components/inspector.js:867
+msgid "Media Type"
+msgstr "Media Type"
+
+#: src/blocks/block-grid-container/components/inspector.js:1125
+#: src/blocks/block-grid-container/components/inspector.js:1138
+#: src/blocks/block-posts-grid/components/inspector.js:895
+#: src/blocks/block-posts-grid/components/inspector.js:907
+msgid "Background Video"
+msgstr "Background Video"
+
+#: src/blocks/block-grid-container/components/inspector.js:1133
+#: src/blocks/block-posts-grid/components/inspector.js:903
+msgid "Edit Video"
+msgstr "Edit Video"
+
+#: src/blocks/block-grid-container/components/inspector.js:1149
+#: src/blocks/block-posts-grid/components/inspector.js:919
+msgid "Remove Video"
+msgstr "Remove Video"
+
+#: src/blocks/block-grid-container/components/inspector.js:1168
+#: src/blocks/block-posts-grid/components/inspector.js:938
+msgid "Given YouTube ID/URL is not correctly formatted!"
+msgstr "Given YouTube ID/URL is not correctly formatted!"
+
+#: src/blocks/block-grid-container/components/inspector.js:1183
+#: src/blocks/block-posts-grid/components/inspector.js:951
+msgid "Set"
+msgstr "Set"
+
+#: src/blocks/block-grid-container/components/inspector.js:1187
+#: src/blocks/block-posts-grid/components/inspector.js:955
+msgid "Reset"
+msgstr "Reset"
+
+#: src/blocks/block-grid-container/edit.js:93
+#: src/blocks/block-grid-container/edit.js:102
+msgid "Remove Bottom Row"
+msgstr "Remove Bottom Row"
+
+#: src/blocks/block-grid-container/edit.js:105
+#: src/blocks/block-grid-container/edit.js:114
+msgid "Add Row"
+msgstr "Add Row"
+
+#: src/blocks/block-grid-container/index.js:30
+msgid "C9 Grid"
+msgstr "C9 Grid"
+
+#: src/blocks/block-grid-container/index.js:38
+msgid ""
+"C9 Grids with column containers help display content for all types of "
+"devices."
+msgstr ""
+"C9 Grids with column containers help display content for all types of "
+"devices."
+
+#: src/blocks/block-heading/components/inspector.js:42
+msgid "Default"
+msgstr "Default"
+
+#: src/blocks/block-heading/components/inspector.js:43
+msgid "Light (300)"
+msgstr "Light (300)"
+
+#: src/blocks/block-heading/components/inspector.js:44
+msgid "Normal (400)"
+msgstr "Normal (400)"
+
+#: src/blocks/block-heading/components/inspector.js:45
+msgid "Bold (700)"
+msgstr "Bold (700)"
+
+#: src/blocks/block-heading/components/inspector.js:54
+msgid "Text-XL"
+msgstr "Text-XL"
+
+#: src/blocks/block-heading/components/inspector.js:58
+msgid "Same as Tag"
+msgstr "Same as Tag"
+
+#: src/blocks/block-heading/components/inspector.js:59
+msgid "H1"
+msgstr "H1"
+
+#: src/blocks/block-heading/components/inspector.js:60
+#: src/blocks/block-post-grid/components/inspector.js:247
+msgid "H2"
+msgstr "H2"
+
+#: src/blocks/block-heading/components/inspector.js:61
+#: src/blocks/block-post-grid/components/inspector.js:248
+msgid "H3"
+msgstr "H3"
+
+#: src/blocks/block-heading/components/inspector.js:62
+#: src/blocks/block-post-grid/components/inspector.js:249
+msgid "H4"
+msgstr "H4"
+
+#: src/blocks/block-heading/components/inspector.js:63
+#: src/blocks/block-post-grid/components/inspector.js:250
+msgid "H5"
+msgstr "H5"
+
+#: src/blocks/block-heading/components/inspector.js:64
+#: src/blocks/block-post-grid/components/inspector.js:251
+msgid "H6"
+msgstr "H6"
+
+#: src/blocks/block-heading/components/inspector.js:72
+msgid "Subheading Options"
+msgstr "Subheading Options"
+
+#: src/blocks/block-heading/components/inspector.js:75
+msgid "Enable Additional Subheading"
+msgstr "Enable Additional Subheading"
+
+#: src/blocks/block-heading/components/inspector.js:82
+msgid "Subheading Colors"
+msgstr "Subheading Colors"
+
+#: src/blocks/block-heading/components/inspector.js:92
+msgid "Element Tag Type"
+msgstr "Element Tag Type"
+
+#: src/blocks/block-heading/components/inspector.js:105
+msgid "Choose between heading, subheading, or text-xl."
+msgstr "Choose between heading, subheading, or text-xl."
+
+#: src/blocks/block-heading/components/inspector.js:115
+msgid "Override Base Tag Style"
+msgstr "Override Base Tag Style"
+
+#: src/blocks/block-heading/components/inspector.js:122
+msgid "Font Size"
+msgstr "Font Size"
+
+#: src/blocks/block-heading/components/inspector.js:123
+msgid "Choose between different heading sizes."
+msgstr "Choose between different heading sizes."
+
+#: src/blocks/block-heading/components/inspector.js:133
+msgid "Text Settings"
+msgstr "Text Settings"
+
+#: src/blocks/block-heading/components/inspector.js:136
+msgid "Text Alignment"
+msgstr "Text Alignment"
+
+#: src/blocks/block-heading/components/inspector.js:145
+msgid "Font Weight"
+msgstr "Font Weight"
+
+#: src/blocks/block-heading/components/inspector.js:146
+msgid "Choose between light, normal, or bold."
+msgstr "Choose between light, normal, or bold."
+
+#: src/blocks/block-heading/components/inspector.js:154
+#: src/blocks/block-post-grid/components/inspector.js:624
+msgid "Color Settings"
+msgstr "Color Settings"
+
+#: src/blocks/block-heading/components/subheading-toolbar.js:15
+msgid "Enable Subheading"
+msgstr "Enable Subheading"
+
+#: src/blocks/block-heading/edit.js:103
+msgid "Write heading…"
+msgstr "Write heading…"
+
+#: src/blocks/block-heading/edit.js:141
+msgid "Write subheading…"
+msgstr "Write subheading…"
+
+#: src/blocks/block-heading/index.js:25
+msgid "C9 Heading"
+msgstr "C9 Heading"
+
+#: src/blocks/block-heading/index.js:32
+msgid "heading"
+msgstr "heading"
+
+#: src/blocks/block-heading/index.js:33
+msgid "c9"
+msgstr "c9"
+
+#: src/blocks/block-heading/index.js:34
+msgid "covertnine"
+msgstr "covertnine"
+
+#: src/blocks/block-heading/index.js:37
+msgid ""
+"An advanced heading block with inline subheading font, custom colors, and "
+"style settings."
+msgstr ""
+"An advanced heading block with inline subheading font, custom colors, and "
+"style settings."
+
+#: src/blocks/block-horizontal-tabs/components/inspector.js:41
+#: src/blocks/block-vertical-tabs/components/inspector.js:32
+msgid "Tabs Align"
+msgstr "Tabs Align"
+
+#: src/blocks/block-horizontal-tabs/components/inspector.js:57
+#: src/blocks/block-vertical-tabs/components/inspector.js:40
+msgid "Block Color Settings"
+msgstr "Block Color Settings"
+
+#: src/blocks/block-horizontal-tabs/components/inspector.js:76
+#: src/blocks/block-vertical-tabs/components/inspector.js:59
+msgid "Tab Color Settings"
+msgstr "Tab Color Settings"
+
+#: src/blocks/block-horizontal-tabs/components/inspector.js:101
+#: src/blocks/block-vertical-tabs/components/inspector.js:84
+msgid "Tab Content Color Settings"
+msgstr "Tab Content Color Settings"
+
+#: src/blocks/block-horizontal-tabs/edit.js:279
+#: src/blocks/block-vertical-tabs/edit.js:277
+msgid "Tab label"
+msgstr "Tab label"
+
+#: src/blocks/block-horizontal-tabs/edit.js:314
+#: src/blocks/block-vertical-tabs/edit.js:312
+msgid "Remove tab?"
+msgstr "Remove tab?"
+
+#: src/blocks/block-horizontal-tabs/edit.js:336
+#: src/blocks/block-vertical-tabs/edit.js:334
+msgid "Add Tab"
+msgstr "Add Tab"
+
+#: src/blocks/block-horizontal-tabs/index.js:24
+msgid "C9 Horizontal Tabs"
+msgstr "C9 Horizontal Tabs"
+
+#: src/blocks/block-horizontal-tabs/index.js:31
+#: src/blocks/block-vertical-tabs/index.js:31
+msgid "tabs"
+msgstr "tabs"
+
+#: src/blocks/block-horizontal-tabs/index.js:35
+msgid ""
+"Display tabbed content with a horizontal button interface for switching "
+"between multiple types of content."
+msgstr ""
+"Display tabbed content with a horizontal button interface for switching "
+"between multiple types of content."
+
+#: src/blocks/block-image-carousel/components/inspector.js:108
+msgid "Enable custom manual heights"
+msgstr "Enable custom manual heights"
+
+#: src/blocks/block-image-carousel/components/inspector.js:127
+msgid "Vertical alignment for slides"
+msgstr "Vertical alignment for slides"
+
+#: src/blocks/block-image-carousel/components/inspector.js:167
+msgid "Responsive image loading"
+msgstr "Responsive image loading"
+
+#: src/blocks/block-image-carousel/components/url-picker.js:86
+#: src/blocks/block-image-carousel/components/url-picker.js:91
+msgid "Remove custom link"
+msgstr "Remove custom link"
+
+#: src/blocks/block-image-carousel/edit.js:453
+msgid "Slide label"
+msgstr "Slide label"
+
+#: src/blocks/block-image-carousel/edit.js:467
+msgid "Nulla vitae elit libero, a pharetra augue mollis interdum."
+msgstr "Nulla vitae elit libero, a pharetra augue mollis interdum."
+
+#: src/blocks/block-image-carousel/index.js:27
+msgid "C9 Image Carousel"
+msgstr "C9 Image Carousel"
+
+#: src/blocks/block-image-carousel/index.js:34
+msgid ""
+"Display an animated carousel of images with captions with custom settings "
+"for navigation."
+msgstr ""
+"Display an animated carousel of images with captions with custom settings "
+"for navigation."
+
+#: src/blocks/block-post-grid/components/image.js:116
+msgid ""
+"There is no image generated for the selected image size, so a fallback image "
+"size is being used."
+msgstr ""
+"There is no image generated for the selected image size, so a fallback image "
+"size is being used."
+
+#: src/blocks/block-post-grid/components/image.js:125
+msgid "Learn more about image sizes (opens in a new tab)"
+msgstr "Learn more about image sizes (opens in a new tab)"
+
+#: src/blocks/block-post-grid/components/image.js:131
+msgid "Learn more "
+msgstr "Learn more "
+
+#: src/blocks/block-post-grid/components/inspector.js:210
+msgid "All categories"
+msgstr "All categories"
+
+#: src/blocks/block-post-grid/components/inspector.js:222
+msgid "All tags"
+msgstr "All tags"
+
+#: src/blocks/block-post-grid/components/inspector.js:236
+msgid "div"
+msgstr "div"
+
+#: src/blocks/block-post-grid/components/inspector.js:237
+msgid "header"
+msgstr "header"
+
+#: src/blocks/block-post-grid/components/inspector.js:238
+msgid "section"
+msgstr "section"
+
+#: src/blocks/block-post-grid/components/inspector.js:239
+msgid "article"
+msgstr "article"
+
+#: src/blocks/block-post-grid/components/inspector.js:240
+msgid "main"
+msgstr "main"
+
+#: src/blocks/block-post-grid/components/inspector.js:241
+msgid "aside"
+msgstr "aside"
+
+#: src/blocks/block-post-grid/components/inspector.js:242
+msgid "footer"
+msgstr "footer"
+
+#: src/blocks/block-post-grid/components/inspector.js:308
+msgid "Content Type"
+msgstr "Content Type"
+
+#: src/blocks/block-post-grid/components/inspector.js:320
+msgid "Number of items to offset"
+msgstr "Number of items to offset"
+
+#: src/blocks/block-post-grid/components/inspector.js:340
+msgid "Grid Content"
+msgstr "Grid Content"
+
+#: src/blocks/block-post-grid/components/inspector.js:342
+msgid "Filter by Category"
+msgstr "Filter by Category"
+
+#: src/blocks/block-post-grid/components/inspector.js:352
+msgid "Category"
+msgstr "Category"
+
+#: src/blocks/block-post-grid/components/inspector.js:362
+msgid "Filter by Tag"
+msgstr "Filter by Tag"
+
+#: src/blocks/block-post-grid/components/inspector.js:372
+msgid "Tag"
+msgstr "Tag"
+
+#: src/blocks/block-post-grid/components/inspector.js:390
+msgid "Display Section Title"
+msgstr "Display Section Title"
+
+#: src/blocks/block-post-grid/components/inspector.js:400
+msgid "Section Title"
+msgstr "Section Title"
+
+#: src/blocks/block-post-grid/components/inspector.js:409
+msgid "Display Featured Image"
+msgstr "Display Featured Image"
+
+#: src/blocks/block-post-grid/components/inspector.js:419
+msgid "Image Size"
+msgstr "Image Size"
+
+#: src/blocks/block-post-grid/components/inspector.js:428
+msgid "Display Title"
+msgstr "Display Title"
+
+#: src/blocks/block-post-grid/components/inspector.js:438
+msgid "Display Author"
+msgstr "Display Author"
+
+#: src/blocks/block-post-grid/components/inspector.js:449
+msgid "Display Date"
+msgstr "Display Date"
+
+#: src/blocks/block-post-grid/components/inspector.js:459
+msgid "Display Excerpt"
+msgstr "Display Excerpt"
+
+#: src/blocks/block-post-grid/components/inspector.js:469
+msgid "Excerpt Length"
+msgstr "Excerpt Length"
+
+#: src/blocks/block-post-grid/components/inspector.js:477
+msgid "Display Continue Reading Link"
+msgstr "Display Continue Reading Link"
+
+#: src/blocks/block-post-grid/components/inspector.js:487
+msgid "Customize Continue Reading Text"
+msgstr "Customize Continue Reading Text"
+
+#: src/blocks/block-post-grid/components/inspector.js:497
+msgid "Grid Markup"
+msgstr "Grid Markup"
+
+#: src/blocks/block-post-grid/components/inspector.js:502
+msgid "Post Grid Section Tag"
+msgstr "Post Grid Section Tag"
+
+#: src/blocks/block-post-grid/components/inspector.js:508
+msgid "Change the post grid section tag to match your content hierarchy."
+msgstr "Change the post grid section tag to match your content hierarchy."
+
+#: src/blocks/block-post-grid/components/inspector.js:515
+msgid "Section Title Heading Tag"
+msgstr "Section Title Heading Tag"
+
+#: src/blocks/block-post-grid/components/inspector.js:521
+msgid "Change the post/page section title tag to match your content hierarchy."
+msgstr ""
+"Change the post/page section title tag to match your content hierarchy."
+
+#: src/blocks/block-post-grid/components/inspector.js:529
+msgid "Post Title Heading Tag"
+msgstr "Post Title Heading Tag"
+
+#: src/blocks/block-post-grid/components/inspector.js:535
+msgid "Change the post/page title tag to match your content hierarchy."
+msgstr "Change the post/page title tag to match your content hierarchy."
+
+#: src/blocks/block-post-grid/edit.js:172
+msgid "C9 Blocks Post Grid"
+msgstr "C9 Blocks Post Grid"
+
+#: src/blocks/block-post-grid/edit.js:177
+msgid "No posts found."
+msgstr "No posts found."
+
+#: src/blocks/block-post-grid/edit.js:194
+msgid "Grid View"
+msgstr "Grid View"
+
+#: src/blocks/block-post-grid/edit.js:200
+msgid "List View"
+msgstr "List View"
+
+#: src/blocks/block-post-grid/edit.js:292
+#: src/blocks/block-post-grid/edit.js:311
+msgid "(Untitled)"
+msgstr "(Untitled)"
+
+#: src/blocks/block-posts-grid/index.js:27
+msgid "C9 Posts Grid"
+msgstr "C9 Posts Grid"
+
+#: src/blocks/block-posts-grid/index.js:34
+msgid ""
+"Display responsive grids with post content of any kind with filtering, "
+"sorting, and flexible layout settings. (Includes customizable outer "
+"container)"
+msgstr ""
+"Display responsive grids with post content of any kind with filtering, "
+"sorting, and flexible layout settings. (Includes customizable outer "
+"container)"
+
+#: src/blocks/block-sharing/components/inspector.js:130
+msgid "Sharing Button Options"
+msgstr "Sharing Button Options"
+
+#: src/blocks/block-sharing/edit.js:140
+msgid "Share on reddit"
+msgstr "Share on reddit"
+
+#: src/blocks/block-sharing/index.js:20
+msgid "C9 Social Share"
+msgstr "C9 Social Share"
+
+#: src/blocks/block-sharing/index.js:23
+msgid ""
+"Add buttons for social media share links to any page or post with custom "
+"color and shape settings."
+msgstr ""
+"Add buttons for social media share links to any page or post with custom "
+"color and shape settings."
+
+#: src/blocks/block-sharing/index.js:35
+msgid "share"
+msgstr "share"
+
+#: src/blocks/block-sharing/index.js:35
+msgid "social"
+msgstr "social"
+
+#: src/blocks/block-toggles/edit.js:281
+msgid "Add Toggle"
+msgstr "Add Toggle"
+
+#: src/blocks/block-toggles/index.js:26
+msgid "C9 Toggles"
+msgstr "C9 Toggles"
+
+#: src/blocks/block-toggles/index.js:35
+msgid "Small"
+msgstr "Small"
+
+#: src/blocks/block-toggles/index.js:40
+msgid ""
+"Hide or show content with a toggleable heading link. Great for FAQ content."
+msgstr ""
+"Hide or show content with a toggleable heading link. Great for FAQ content."
+
+#: src/blocks/block-vertical-tabs/components/vertical-align-toolbar.js:18
+#: src/components/vertical-alignment-toolbar/index.js:18
+msgid "Vertical Align Top"
+msgstr "Vertical Align Top"
+
+#: src/blocks/block-vertical-tabs/components/vertical-align-toolbar.js:23
+#: src/components/vertical-alignment-toolbar/index.js:23
+msgid "Vertical Align Middle"
+msgstr "Vertical Align Middle"
+
+#: src/blocks/block-vertical-tabs/components/vertical-align-toolbar.js:28
+#: src/components/vertical-alignment-toolbar/index.js:28
+msgid "Vertical Align Bottom"
+msgstr "Vertical Align Bottom"
+
+#: src/blocks/block-vertical-tabs/components/vertical-align-toolbar.js:46
+#: src/components/vertical-alignment-toolbar/index.js:46
+msgid "Change Vertical Alignment"
+msgstr "Change Vertical Alignment"
+
+#: src/blocks/block-vertical-tabs/index.js:24
+msgid "C9 Vertical Tabs"
+msgstr "C9 Vertical Tabs"
+
+#: src/blocks/block-vertical-tabs/index.js:35
+msgid ""
+"Display tabbed content with a vertical button interface for switching "
+"between multiple types of content."
+msgstr ""
+"Display tabbed content with a vertical button interface for switching "
+"between multiple types of content."
+
+#: src/components/pause-toolbar/index.js:13
+msgid "Pause"
+msgstr "Pause"
+
+#: src/components/pause-toolbar/index.js:31
+msgid "Pause?"
+msgstr "Pause?"
+
+#: src/components/remove-button/index.js:26
+msgid "Remove block?"
+msgstr "Remove block?"
+
+#: src/components/remove-button/index.js:28
+msgid "Cancel"
+msgstr "Cancel"
+
+#: src/components/show-hide-toolbar/index.js:13
+msgid "Mobile"
+msgstr "Mobile"
+
+#: src/components/show-hide-toolbar/index.js:17
+msgid "Tablet"
+msgstr "Tablet"
+
+#: src/components/show-hide-toolbar/index.js:21
+msgid "Desktop"
+msgstr "Desktop"
+
+#: src/components/show-hide-toolbar/index.js:38
+msgid "Change Show/Hide Settings"
+msgstr "Change Show/Hide Settings"
+
+#: src/components/sidebar/index.js:75
+msgid "C9 Blocks Sidebar"
+msgstr "C9 Blocks Sidebar"
+
+#: src/components/sidebar/index.js:89
+msgid "Page Templates"
+msgstr "Page Templates"
+
+#: src/components/sidebar/index.js:108
+msgid "Section Templates"
+msgstr "Section Templates"
+
+#: src/components/sidebar/index.js:121
+msgid "Saved Templates"
+msgstr "Saved Templates"
+
+#: src/components/sidebar/index.js:140
+msgid "Video Tutorials"
+msgstr "Video Tutorials"
+
+#: src/components/sidebar/index.js:151
+msgid "Clear Page"
+msgstr "Clear Page"
+
+#: src/components/sidebar/index.js:156
+msgid "Disable YouTube API Usage?"
+msgstr "Disable YouTube API Usage?"
+
+#: src/components/sidebar/index.js:160
+msgid "Customize Theme Colors"
+msgstr "Customize Theme Colors"
+
+#: src/components/templates-modal/index.js:280
+msgid "Pre-designed ready to use pages."
+msgstr "Pre-designed ready to use pages."
+
+#: src/components/templates-modal/index.js:291
+msgid "Simple sections to construct your page."
+msgstr "Simple sections to construct your page."
+
+#: src/components/templates-modal/index.js:305
+msgid "Saved Block Templates By User."
+msgstr "Saved Block Templates By User."
+
+#: src/components/templates-modal/index.js:315
+msgid "How To's"
+msgstr "How To's"
+
+#: src/components/templates-modal/index.js:409
+msgid "Manage all saved blocks"
+msgstr "Manage all saved blocks"
+
+#: src/components/width-toolbar/index.js:13
+msgid "Narrow Width"
+msgstr "Narrow Width"
+
+#: src/components/width-toolbar/index.js:18
+msgid "Wide Width"
+msgstr "Wide Width"
+
+#: src/components/width-toolbar/index.js:23
+msgid "Full Width"
+msgstr "Full Width"
+
+#: src/extend/font-colors/index.js:147
+msgid "Font Color"
+msgstr "Font Color"

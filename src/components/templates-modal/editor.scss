@@ -4,8 +4,8 @@ body .c9-templates-modal {
 
 	.c9-modal-manage-reusable {
 		position: absolute;
-		bottom: 0px;
-		left: 0px;
+		top: 75px;
+		right: 75px;
 		text-transform: uppercase;
 		text-decoration: none;
 		font-weight: 700;
@@ -50,6 +50,7 @@ body .c9-templates-modal {
 
 		/* Corrects inability to style clickable `input` types in iOS */
 		-webkit-appearance: none;
+		appearance: none;
 	}
 
 	.components-modal__icon-container svg {
@@ -497,10 +498,6 @@ body .c9-templates-modal {
 			&.c9-preview-enabled {
 				.c9-reusable-list-container {
 					width: 100%;
-
-					.c9-reusable-list {
-						// grid-template-columns: repeat(3, 1fr);
-					}
 				}
 
 				.c9-reusable-preview {
@@ -511,10 +508,6 @@ body .c9-templates-modal {
 
 					.block-editor-block-preview__content {
 						transform: scale(1) !important;
-
-						> div > .block-editor-block-list__layout > .wp-block > * {
-							// width: 60vw;
-						}
 					}
 				}
 			}

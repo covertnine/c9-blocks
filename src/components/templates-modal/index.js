@@ -406,7 +406,7 @@ class TemplatesModal extends Component {
 													className="c9-modal-manage-reusable"
 													href="edit.php?post_type=wp_block"
 												>
-													manage all reusable blocks
+													{__('Manage all saved blocks', 'c9-blocks')}
 												</a>
 											</div>
 										</div>

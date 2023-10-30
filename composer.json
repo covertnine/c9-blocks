@@ -1,0 +1,5 @@
+{
+	"require": {
+		"wp-cli/i18n-command": "^2.4"
+	}
+}
