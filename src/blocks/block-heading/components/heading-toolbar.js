@@ -17,6 +17,7 @@ class HeadingToolbar extends Component {
 	createLevelControl(targetLevel, selectedLevel, onChange) {
 		return (
 			<ToolbarButton
+				key={`heading-level-${targetLevel}`} // for uniqueness
 				icon={'heading'}
 				// translators: %s: heading level e.g: "1", "2", "3"
 				title={sprintf(__('Heading %d'), targetLevel)}

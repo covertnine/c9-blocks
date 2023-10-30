@@ -88,7 +88,7 @@ class Inspector extends Component {
 						</Fragment>
 					)}
 				</PanelBody>
-				<PanelBody>
+				<PanelBody className="c9-heading-element-type">
 					<p>{__('Element Tag Type', 'c9-blocks')}</p>
 					<HeadingToolbar
 						isCollapsed={false}
