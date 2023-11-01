@@ -36,9 +36,11 @@ registerBlockType('c9-blocks/carousel', {
 		'c9-blocks'
 	),
 	example: {
+		viewportWidth: '300',
 		attributes: {
 			slides: 3,
-			autoSlide: false,
+			autoSlide: true,
+			transitionType: 'fade',
 			slideMaxHeight: 728.140625,
 			slideEqualHeight: true,
 			slideSizes: [728.140625, 728.140625, 728.140625],

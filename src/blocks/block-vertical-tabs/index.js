@@ -37,6 +37,7 @@ registerBlockType('c9-blocks/vertical-tabs', {
 		'c9-blocks'
 	),
 	example: {
+		viewportWidth: '300',
 		attributes: {
 			tabsData: [
 				{ slug: 'tab-1', title: 'Tab 1' },

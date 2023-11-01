@@ -36,6 +36,7 @@ registerBlockType('c9-blocks/posts-grid', {
 		'c9-blocks'
 	),
 	example: {
+		viewportWidth: '280',
 		attributes: {},
 		innerBlocks: [
 			{

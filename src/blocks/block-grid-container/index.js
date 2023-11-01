@@ -41,8 +41,10 @@ registerBlockType('c9-blocks/grid', {
 	),
 
 	example: {
+		viewportWidth: '300',
 		attributes: {
 			rows: 1,
+			align: 'full',
 		},
 		innerBlocks: [
 			{
@@ -50,8 +52,9 @@ registerBlockType('c9-blocks/grid', {
 				attributes: {
 					columns: 2,
 					layout: 'c9-2-col-equal',
-					containerWidth: 'container-narrow',
-					align: 'narrow',
+					align: 'full',
+					responsiveToggle: false,
+					containerWidth: 'container-fluid',
 					columnsGap: 10,
 				},
 

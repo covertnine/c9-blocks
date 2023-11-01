@@ -32,12 +32,15 @@ registerBlockType('c9-blocks/cta', {
 	),
 
 	example: {
+		viewportWidth: '280',
 		attributes: {
 			type: 'c9-h',
 			buttonText: 'Sign Up Now',
 			ctaBackgroundColor: '#ededed',
 			fontSize: 'larger',
-			customFontSize: 32,
+			customFontSize: 20,
+			align: 'full',
+			ctaWidth: 'container-fluid',
 			ctaText: [
 				{
 					type: 'p',

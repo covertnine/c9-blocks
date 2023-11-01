@@ -40,6 +40,7 @@ registerBlockType('c9-blocks/heading', {
 	),
 
 	example: {
+		viewportWidth: '280',
 		attributes: {
 			heading: 'Headlines H1-H6',
 			subheading: 'Subheading H1-H6',

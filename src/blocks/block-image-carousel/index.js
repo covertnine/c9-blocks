@@ -36,6 +36,7 @@ registerBlockType('c9-blocks/image-carousel', {
 		'c9-blocks'
 	),
 	example: {
+		viewportWidth: '280',
 		attributes: {
 			autoSlide: false,
 			url: [

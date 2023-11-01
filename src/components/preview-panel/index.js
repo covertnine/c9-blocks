@@ -20,7 +20,13 @@ function PreviewPanel({ item }) {
 				<div className="block-editor-inserter__preview-content">
 					<BlockPreview
 						__experimentalPadding={0}
-						viewportWidth={1440}
+						viewportWidth={0}
+						maxHeight={900}
+						additionalStyles={[
+							{
+								css: 'body{width: 460px !important;}div{max-height:900px !important;max-width:460px !important;}',
+							},
+						]}
 						blocks={item}
 					/>
 				</div>

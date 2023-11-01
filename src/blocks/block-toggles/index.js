@@ -42,6 +42,7 @@ registerBlockType('c9-blocks/toggles', {
 		'c9-blocks'
 	),
 	example: {
+		viewportWidth: '280',
 		attributes: {
 			toggleCount: 3,
 		},
@@ -77,7 +78,7 @@ registerBlockType('c9-blocks/toggles', {
 						{
 							type: 'span',
 							props: {
-								children: ['How do you open them?'],
+								children: ['How do you open?'],
 							},
 						},
 					],

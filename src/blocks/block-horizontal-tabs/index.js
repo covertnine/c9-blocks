@@ -37,6 +37,7 @@ registerBlockType('c9-blocks/horizontal-tabs', {
 		'c9-blocks'
 	),
 	example: {
+		viewportWidth: '280',
 		attributes: {
 			buttonsAlign: 'center',
 			tabsData: [

@@ -25,7 +25,7 @@ export default {
 
 <!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","width":92,"height":69} -->
-<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/feather-logo-white.png" alt="" width="92" height="69"/><figcaption>Logo</figcaption></figure></div>
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/08/feather-logo-white.png" alt="" width="92" height="69"/><figcaption>Logo</figcaption></figure></div>
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
 <!-- /wp:c9-blocks/column-container --></div>

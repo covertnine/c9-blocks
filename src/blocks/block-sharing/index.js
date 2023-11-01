@@ -25,6 +25,7 @@ registerBlockType('c9-blocks/social-share', {
 		'c9-blocks'
 	),
 	example: {
+		viewportWidth: '280',
 		attributes: {
 			linkedin: true,
 			email: true,
