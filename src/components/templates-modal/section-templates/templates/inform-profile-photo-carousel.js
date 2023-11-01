@@ -35,7 +35,7 @@ export default {
 <!-- /wp:separator -->
 
 <!-- wp:image {"align":"center","width":29,"height":49,"className":"aligncenter is-resized"} -->
-<div class="wp-block-image aligncenter is-resized"><figure class="aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" width="29" height="49"/></figure></div>
+<div class="wp-block-image aligncenter is-resized"><figure class="aligncenter is-resized"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" width="29" height="49"/></figure></div>
 <!-- /wp:image --></div></div>
 <!-- /wp:c9-blocks/column -->
 

@@ -371,7 +371,7 @@ export default {
 	<!-- /wp:spacer -->
 	
 	<!-- wp:image {"align":"center","width":29,"height":49,"className":"aligncenter is-resized"} -->
-	<figure class="wp-block-image aligncenter is-resized"><img src="//cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" width="29" height="49"/></figure>
+	<figure class="wp-block-image aligncenter is-resized"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/08/C9-logo-gradient-transparent.png" alt="" width="29" height="49"/></figure>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
