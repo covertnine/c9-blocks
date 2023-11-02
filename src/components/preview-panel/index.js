@@ -20,13 +20,14 @@ function PreviewPanel({ item }) {
 				<div className="block-editor-inserter__preview-content">
 					<BlockPreview
 						__experimentalPadding={0}
-						viewportWidth={0}
-						maxHeight={900}
-						additionalStyles={[
-							{
-								css: 'body{width: 460px !important;}div{max-height:900px !important;max-width:460px !important;}',
-							},
-						]}
+						viewportWidth={1140}
+						maxHeight={3500}
+						//minHeight={1200}
+						//additionalStyles={[
+						//	{
+						//		css: 'body{width: 440px !important;}.c9-grid,.c9-grid div{max-height:800px !important;min-height: none !important;max-width:440px !important;}',
+						//	},
+						//]}
 						blocks={item}
 					/>
 				</div>

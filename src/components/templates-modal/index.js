@@ -261,7 +261,7 @@ class TemplatesModal extends Component {
 				);
 			});
 			pageTypes.push(
-				<Fragment>
+				<Fragment key={type}>
 					<PageTypeHeading name={type} description={PageTypes[type]} />
 					<div className="c9-layout-options">{layoutItems}</div>
 				</Fragment>
@@ -375,6 +375,7 @@ class TemplatesModal extends Component {
 															);
 															return (
 																<ReusableButton
+																	key={obj.id} // Adding a unique key prop
 																	icon={blockType.icon}
 																	label={__(obj.name, 'c9-blocks')}
 																	reusable={obj.content}

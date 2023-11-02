@@ -210,7 +210,7 @@ export default {
 	<!-- /wp:c9-blocks/horizontal-tabs-tab --></div></div>
 	<!-- /wp:c9-blocks/horizontal-tabs --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:53.45622119815668% 100%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/shawn-ang-nmpW_WwwVSc-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:53.45622119815668% 100%;background-image:url(https://cortex.covertnine.com/wp-content/uploads/2019/08/shawn-ang-nmpW_WwwVSc-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#eeeeee","minScreenHeight":67,"className":"p-5"} -->
@@ -426,6 +426,6 @@ export default {
 	<div class="section-heading c9-heading text-left"><h5 class="c9-h h5 font-weight-light">Steak Bites</h5><div class="c9-h h5"><small class="text-muted">&nbsp;$6</small></div></div>
 	<!-- /wp:c9-blocks/heading --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.8);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:47.004608294930875% 86.41975308641975%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.8);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:47.004608294930875% 86.41975308641975%;background-image:url(https://cortex.covertnine.com/wp-content/uploads/2019/08/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->`,
 };

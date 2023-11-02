@@ -32,7 +32,7 @@ export default class Save extends Component {
 		for (let i = 0; i < slides; i++) {
 			indicators.push(
 				<li
-					key={i}
+					key={id}
 					data-target={`#c9-image-carousel-indicator-${id}`}
 					data-slide-to={i}
 					className={0 == i ? 'active' : null}
@@ -64,14 +64,17 @@ export default class Save extends Component {
 		for (let i = 0; i < slides; i++) {
 			const Wrapper = link[i]
 				? ({ children }) => (
-						<a href={link[i]} target={linkTarget} rel={newRel}>
+						<a href={link[i]} target={linkTarget} rel={newRel} key={i}>
 							{children}
 						</a>
 				  )
 				: Fragment;
 
 			template.push(
-				<div className={classnames('carousel-item', 0 == i ? 'active' : null)}>
+				<div
+					className={classnames('carousel-item', 0 == i ? 'active' : null)}
+					key={i}
+				>
 					<Wrapper>
 						{url[i] && (
 							<img

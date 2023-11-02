@@ -69,7 +69,7 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 == Changelog ==
 
 = 1.6.8 =
-Fixed a bug causing horizontal blocks to be uneditable. Updated dev packages. Fixed sidebar fields hard to see on some views. Minor bug fixes and tweaks to some templates and interface elements. Added translations folder and initial english translation files.
+Fixed a bug causing horizontal blocks to be uneditable. Updated dev packages. Fixed sidebar fields hard to see on some views. Minor bug fixes and tweaks to some templates and interface elements. Added translations folder and initial english translation files. Adjusted patterns, and preview code to account for new preview dialog features.
 
 = 1.6.7 =
 Fixed bugs and updated packages and blocks for WordPress 6.2. Revised C9 Heading block to create new block on enter.

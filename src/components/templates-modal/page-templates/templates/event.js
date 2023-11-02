@@ -320,7 +320,7 @@ export default {
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(47,47,47,.5);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-bottom-center c9-image-mobile-size-cover" style="background-position:52.995391705069125% 42.36111111111111%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(47,47,47,1);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-bottom-center c9-image-mobile-size-cover" style="background-position:52.995391705069125% 42.36111111111111%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":24,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#181818","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":78,"focalPoint":{"x":"0.37","y":"0.03"},"className":"p-5"} -->

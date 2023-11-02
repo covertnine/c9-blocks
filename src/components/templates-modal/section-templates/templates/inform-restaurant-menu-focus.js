@@ -280,6 +280,6 @@ export default {
 <!-- /wp:c9-blocks/toggles-toggle --></div>
 <!-- /wp:c9-blocks/toggles --></div></div>
 <!-- /wp:c9-blocks/column --></div></div>
-<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:53.45622119815668% 100%;background-image:url(//cortex.covertnine.com/wp-content/uploads/2019/08/shawn-ang-nmpW_WwwVSc-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:53.45622119815668% 100%;background-image:url(https://cortex.covertnine.com/wp-content/uploads/2019/08/shawn-ang-nmpW_WwwVSc-unsplash.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 <!-- /wp:c9-blocks/grid -->`,
 };

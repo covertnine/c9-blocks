@@ -61,7 +61,7 @@ const attributes = {
 	},
 	overlayOpacity: {
 		type: 'number',
-		default: 5,
+		default: 10,
 	},
 	blendMode: {
 		type: 'string',

@@ -53,7 +53,7 @@ const attributes = {
 	},
 	overlayOpacity: {
 		type: 'number',
-		default: 5,
+		default: 10,
 	},
 	blendMode: {
 		type: 'string',
@@ -82,10 +82,10 @@ const attributes = {
 		default: {
 			linked: true,
 			icon: 'admin-links',
-			top: '5',
-			bottom: '5',
-			left: '5',
-			right: '5',
+			top: '3',
+			bottom: '3',
+			left: '3',
+			right: '3',
 		},
 	},
 	focalPoint: {

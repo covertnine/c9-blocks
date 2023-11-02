@@ -36,6 +36,6 @@ export default {
 	<div class="wp-block-button aligncenter"><a class="wp-block-button__link has-color-primary-background-color has-background wp-element-button" href="#">Get Tickets</a></div>
 	<!-- /wp:button --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.5);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:7.000000000000001% 85%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,1);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:7.000000000000001% 85%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->`,
 };

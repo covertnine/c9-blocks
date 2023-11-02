@@ -28,7 +28,7 @@ export default {
 	
 	<!-- wp:c9-blocks/social-share {"linkedin":true,"email":true,"reddit":true,"shareAlignment":"center","shareButtonSize":"c9-share-size-small","shareButtonColor":"c9-share-color-social"} /--></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.5);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-center-left c9-image-mobile-size-cover" style="background-position:52% 100%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,1);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-center-left c9-image-mobile-size-cover" style="background-position:52% 100%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":1,"rows":3,"className":"p-5"} -->

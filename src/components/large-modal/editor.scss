@@ -56,10 +56,10 @@
 }
 
 /* block preview updates */
-// .block-editor-block-preview__container .block-editor-block-preview__content {
-// 	width: 100vw;
-// 	min-width: 100vw;
-// }
+.block-editor-block-preview__container .block-editor-block-preview__content {
+	width: 100vw;
+	min-width: 100vw;
+}
 .block-editor-block-patterns-list
 	.block-editor-block-preview__container
 	> .block-editor-block-preview__content

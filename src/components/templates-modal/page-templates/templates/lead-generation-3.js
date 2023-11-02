@@ -55,7 +55,7 @@ export default {
 	
 	<!-- wp:c9-blocks/grid {"instanceId":5499,"rows":3} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#efefef","containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
-	<div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(239,239,239,.5);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	<div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(239,239,239,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"width":"66.66%"} -->
 	<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading -->
