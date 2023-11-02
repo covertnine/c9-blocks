@@ -56,7 +56,9 @@
 }
 
 /* block preview updates */
-.block-editor-block-preview__container .block-editor-block-preview__content {
+.c9-modal-preview
+	.block-editor-block-preview__container
+	.block-editor-block-preview__content {
 	width: 100vw;
 	min-width: 100vw;
 }
