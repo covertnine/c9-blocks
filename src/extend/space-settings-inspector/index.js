@@ -39,6 +39,7 @@ const supportedBlocks = [
 	'core/quote',
 	'core/pullquote',
 	'core/image',
+	'core/gallery',
 ];
 
 /**

@@ -524,22 +524,24 @@ export default class Inspector extends Component {
 				</BaseControl>{' '}
 				{lockMovement && (
 					<PanelBody>
-						<RangeControl
-							label={__('Number of rows to produce', 'c9-blocks')}
-							value={rows}
-							onChange={(value) => {
-								setAttributes({
-									rows: value,
-								});
-								updateRows(rows, value);
-							}}
-							min={1}
-							max={20}
-							help={__(
-								'Note: Changing the row count can cause loss of content.',
-								'c9-blocks'
-							)}
-						/>{' '}
+						<div className="c9-input-wrapper">
+							<RangeControl
+								label={__('Number of rows to produce', 'c9-blocks')}
+								value={rows}
+								onChange={(value) => {
+									setAttributes({
+										rows: value,
+									});
+									updateRows(rows, value);
+								}}
+								min={1}
+								max={20}
+								help={__(
+									'Note: Changing the row count can cause loss of content.',
+									'c9-blocks'
+								)}
+							/>{' '}
+						</div>
 					</PanelBody>
 				)}{' '}
 				<PanelBody

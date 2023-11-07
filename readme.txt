@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.9
 Tested up to: 6.4
-Stable tag: 1.6.9
+Stable tag: 1.7.0
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -67,6 +67,9 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.7.0 =
+Added spacer extension to galleries. Minor WordPress 6.4 bug fixes.
 
 = 1.6.9 =
 Adjustment to inspector fields to show more characters, and visibility extension set to expand by default

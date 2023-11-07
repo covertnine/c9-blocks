@@ -418,36 +418,36 @@ export default class Inspector extends Component {
 					/>
 
 					<hr />
-
-					<RangeControl
-						label={__('Column Inner Max Width (px)')}
-						help={__(
-							'Adjust the width of the content inside the container wrapper.',
-							'c9-blocks'
-						)}
-						value={columnMaxWidth}
-						onChange={(value) => setAttributes({ columnMaxWidth: value })}
-						min={0}
-						max={2000}
-						step={1}
-					/>
-
-					{0 < columnMaxWidth && (
-						<ToggleControl
-							label={__('Center Columns In Container', 'c9-blocks')}
+					<div className="c9-input-wrapper">
+						<RangeControl
+							label={__('Column Inner Max Width (px)')}
 							help={__(
-								'Center the columns in the container when max-width is used.',
+								'Adjust the width of the content inside the container wrapper.',
 								'c9-blocks'
 							)}
-							checked={centerColumns}
-							onChange={() =>
-								setAttributes({
-									centerColumns: !centerColumns,
-								})
-							}
+							value={columnMaxWidth}
+							onChange={(value) => setAttributes({ columnMaxWidth: value })}
+							min={0}
+							max={2000}
+							step={1}
 						/>
-					)}
 
+						{0 < columnMaxWidth && (
+							<ToggleControl
+								label={__('Center Columns In Container', 'c9-blocks')}
+								help={__(
+									'Center the columns in the container when max-width is used.',
+									'c9-blocks'
+								)}
+								checked={centerColumns}
+								onChange={() =>
+									setAttributes({
+										centerColumns: !centerColumns,
+									})
+								}
+							/>
+						)}
+					</div>
 					<hr />
 
 					<ToggleControl

@@ -518,8 +518,12 @@ body
 	margin-right: calc((-100vw + 100%) / 2) !important;
 }
 
-.components-input-control__container > .components-input-control__input,
-.components-input-control__container > .components-input-control__backdrop {
+.c9-input-wrapper
+	.components-input-control__container
+	> .components-input-control__input,
+.c9-input-wrapper
+	.components-input-control__container
+	> .components-input-control__backdrop {
 	min-width: 70px !important;
 }
 
