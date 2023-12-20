@@ -312,7 +312,7 @@ body .editor-styles-wrapper {
 		margin-bottom: 0px;
 	}
 
-	.wp-block .wp-block {
+	.wp-block .wp-block:not(.alignright):not(.alignleft) {
 		z-index: 20;
 	}
 
