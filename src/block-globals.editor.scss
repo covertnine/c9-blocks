@@ -493,11 +493,13 @@ body
 }
 
 /* backend widths for alignfull/alignwide and c9 grid inside of posts */
-.is-sidebar-opened
+.post-type-post
+	.is-sidebar-opened
 	.editor-styles-wrapper
 	.edit-post-visual-editor__post-title-wrapper
 	> [data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)),
-.is-sidebar-opened
+.post-type-post
+	.is-sidebar-opened
 	.editor-styles-wrapper
 	.block-editor-block-list__layout.is-root-container
 	> [data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
