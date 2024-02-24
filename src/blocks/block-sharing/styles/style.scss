@@ -239,6 +239,11 @@
 	font-family: fontawesome, sans-serif;
 }
 
+/* compatibility with wp 6.4.3 */
+.c9-social-sharing .fa-facebook-f:before {
+	content: '\f09a';
+}
+
 .c9-social-share .c9-share-tiktok:before {
 	content: '';
 	background-image: url('../../../../assets/fa-icons/tiktok.svg');

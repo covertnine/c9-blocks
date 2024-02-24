@@ -3,9 +3,12 @@
  *
  * CSS for both Frontend+Backend.
  */
+.c9-vertical-tabs > div {
+	box-sizing: border-box;
+}
 
 .c9-vertical-tabs {
-	>.nav.nav-tabs {
+	> .nav.nav-tabs {
 		list-style: none;
 	}
 
@@ -23,7 +26,7 @@
 	font-size: 16px;
 	padding: 13px 20px;
 	font-weight: 700;
-	letter-spacing: .005em;
+	letter-spacing: 0.005em;
 	text-decoration: none;
 }
 
@@ -36,17 +39,32 @@
 }
 
 @media only screen and (max-width: 1024px) {
-
-	.c9-layout-columns-6 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
-	.c9-layout-columns-5 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
-	.c9-layout-columns-4 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link,
-	.c9-layout-columns-3 .c9-is-responsive-column .c9-vertical-tabs .nav-pills .nav-link {
+	.c9-layout-columns-6
+		.c9-is-responsive-column
+		.c9-vertical-tabs
+		.nav-pills
+		.nav-link,
+	.c9-layout-columns-5
+		.c9-is-responsive-column
+		.c9-vertical-tabs
+		.nav-pills
+		.nav-link,
+	.c9-layout-columns-4
+		.c9-is-responsive-column
+		.c9-vertical-tabs
+		.nav-pills
+		.nav-link,
+	.c9-layout-columns-3
+		.c9-is-responsive-column
+		.c9-vertical-tabs
+		.nav-pills
+		.nav-link {
 		font-size: 1em;
 	}
 }
 
 .c9-vertical-tabs .nav-pills .nav-link.active,
-.c9-vertical-tabs .nav-pills .show>.nav-link,
+.c9-vertical-tabs .nav-pills .show > .nav-link,
 .c9-vertical-tabs .nav-pills .nav-link.active {
 	color: #2b2b2b;
 	background-color: #ccc;

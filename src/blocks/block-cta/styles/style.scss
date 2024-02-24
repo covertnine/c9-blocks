@@ -4,6 +4,13 @@
 	padding-bottom: 20px;
 }
 
+.c9-cta,
+.c9-cta-content,
+.c9-cta .row,
+.c9-cta .c9-cta-button {
+	box-sizing: border-box;
+}
+
 .c9-cta .c9-cta-content {
 	display: flex;
 	align-items: center;

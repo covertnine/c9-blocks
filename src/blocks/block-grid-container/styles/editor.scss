@@ -7,6 +7,11 @@
 
 /* aligns toolbar properly to left edge*/
 
+:root {
+	--red: #cf2e2e;
+	--teal: #20c997;
+}
+
 .components-popover.wp-block-popover
 	.components-popover__content
 	.block-editor-block-contextual-toolbar[data-type='c9-blocks/grid'][data-align='full'],
