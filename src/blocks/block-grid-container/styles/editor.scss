@@ -1412,6 +1412,15 @@ body.folded
 		margin-right: calc((-100vw + 280px + 100%) / 2);
 	}
 
+	/* wp 6.4.3 WP 2024 theme updates */
+	body.post-type-page
+		.is-sidebar-opened
+		.editor-styles-wrapper
+		.is-root-container
+		> .wp-block[data-type='c9-blocks/grid']:not(.alignwide):not(.alignfull) {
+		max-width: calc(100vw - 280px);
+	}
+
 	/* WP 5.5 updates */
 	body.folded
 		.is-sidebar-opened

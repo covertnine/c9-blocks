@@ -71,7 +71,6 @@
 }
 
 @media only screen and (max-width: 1024px) {
-
 	.c9-posts-grid.c9-fixed .c9-image-container,
 	.c9-posts-grid.c9-fixed .c9-video-container {
 		background-attachment: local;
@@ -106,10 +105,13 @@
 	z-index: 6;
 }
 
-.c9-posts-grid-has-video>.c9-video-container>.c9-embed-container,
-.c9-posts-grid-has-video>.c9-video-container>.c9-embed-container iframe,
-.c9-posts-grid-has-video>.c9-video-container>.c9-embed-container,
-.c9-posts-grid-has-video>.c9-video-container>.c9-embed-container .c9-video-custom {
+.c9-posts-grid-has-video > .c9-video-container > .c9-embed-container,
+.c9-posts-grid-has-video > .c9-video-container > .c9-embed-container iframe,
+.c9-posts-grid-has-video > .c9-video-container > .c9-embed-container,
+.c9-posts-grid-has-video
+	> .c9-video-container
+	> .c9-embed-container
+	.c9-video-custom {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -120,14 +122,14 @@
 }
 
 @media (min-aspect-ratio: 16/9) {
-	.c9-posts-grid-has-video>.c9-video-container>.c9-embed-container {
+	.c9-posts-grid-has-video > .c9-video-container > .c9-embed-container {
 		height: 300%;
 		top: -100%;
 	}
 }
 
 @media (max-aspect-ratio: 16/9) {
-	.c9-posts-grid-has-video>.c9-video-container>.c9-embed-container {
+	.c9-posts-grid-has-video > .c9-video-container > .c9-embed-container {
 		width: 300%;
 		left: -100%;
 	}
@@ -199,28 +201,41 @@
 }
 
 @media only screen and (min-width: 1px) and (max-width: 667px) {
-	.page.page-template-default .entry .entry-content>.c9-posts-grid {
+	.page.page-template-default .entry .entry-content > .c9-posts-grid {
 		margin-left: -1em;
 		margin-right: -1em;
 	}
 
-	.page.page-template-default .post-inner>.entry-content>.c9-posts-grid {
+	.page.page-template-default .post-inner > .entry-content > .c9-posts-grid {
 		margin-left: calc((58em - 100vw) / 2);
 		margin-right: calc((58em - 100vw) / 2);
+	}
+
+	/* wp 6.4 updates for Twenty Twenthy Four theme */
+	body
+		.wp-site-blocks
+		.entry-content.is-layout-constrained
+		> .c9-posts-grid:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+		margin-left: calc((-100vw + 100%) / 2) !important;
+		margin-right: calc((-100vw + 100%) / 2) !important;
+		max-width: 100vw;
+		width: 100vw;
+		box-sizing: border-box;
 	}
 }
 
 @media only screen and (min-width: 1px) and (max-width: 375px) {
-	.page.page-template-default .post-inner>.entry-content>.c9-posts-grid {
+	.page.page-template-default .post-inner > .entry-content > .c9-posts-grid {
 		margin-left: -2em;
 		margin-right: -2em;
 	}
 }
 
 @media only screen and (min-width: 1px) {
-
-	.page-template-default .entry-content>.c9-posts-grid,
-	.page-template-default .entry-content>.c9-posts-grid:not(.alignwide):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	.page-template-default .entry-content > .c9-posts-grid,
+	.page-template-default
+		.entry-content
+		> .c9-posts-grid:not(.alignwide):not(.alignleft):not(.alignright):not(.is-style-wide) {
 		width: 100vw;
 		max-width: 100vw;
 		margin: 0px;
@@ -238,7 +253,6 @@
 }
 
 @media only screen and (min-width: 576px) {
-
 	.c9-posts-grid .container-narrow,
 	.c9-posts-grid .container,
 	.c9-posts-grid .container.alignwide,
@@ -253,30 +267,32 @@
 		margin-bottom: 0px;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container-narrow {
+	.page-template-default .entry-content > .c9-posts-grid .container-narrow {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container {
+	.page-template-default .entry-content > .c9-posts-grid .container {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container.alignwide {
+	.page-template-default .entry-content > .c9-posts-grid .container.alignwide {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container-fluid.alignfull,
-	.page-template-default .entry-content>.c9-posts-grid .container-fluid {
+	.page-template-default
+		.entry-content
+		> .c9-posts-grid
+		.container-fluid.alignfull,
+	.page-template-default .entry-content > .c9-posts-grid .container-fluid {
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 }
 
 @media only screen and (min-width: 768px) {
-
 	.c9-posts-grid .container-narrow,
 	.c9-posts-grid .container,
 	.c9-posts-grid .container.alignwide,
@@ -285,16 +301,19 @@
 		overflow: visible;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid,
-	.page-template-default .entry-content>.container-fluid,
-	.page-template-default .entry-content>.c9-posts-grid:not(.alignwide):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	.page-template-default .entry-content > .c9-posts-grid,
+	.page-template-default .entry-content > .container-fluid,
+	.page-template-default
+		.entry-content
+		> .c9-posts-grid:not(.alignwide):not(.alignleft):not(.alignright):not(.is-style-wide) {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 100%) / 2);
 		margin-right: calc((-100vw + 100%) / 2);
 	}
 
-	.entry-content>.c9-posts-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
+	.entry-content
+		> .c9-posts-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
 		max-width: 100vw;
 	}
 
@@ -325,25 +344,25 @@
 }
 
 @media only screen and (min-width: 992px) {
-	.page-template-default .entry-content>.c9-posts-grid {
+	.page-template-default .entry-content > .c9-posts-grid {
 		width: 100vw;
 		max-width: 100vw;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container.alignwide {
+	.page-template-default .entry-content > .c9-posts-grid .container.alignwide {
 		padding-left: 5px;
 		padding-right: 5px;
 		width: 100%;
 		max-width: 1260px;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container-fluid {
+	.page-template-default .entry-content > .c9-posts-grid .container-fluid {
 		width: 100vw;
 		padding-left: 0px;
 		padding-right: 0px;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container {
+	.page-template-default .entry-content > .c9-posts-grid .container {
 		max-width: 1140px;
 	}
 }
@@ -354,16 +373,15 @@
 		margin: 0 auto;
 	}
 
-	.page-template-default .entry-content>.c9-posts-grid .container.alignwide {
+	.page-template-default .entry-content > .c9-posts-grid .container.alignwide {
 		max-width: 1368px;
 		margin-left: 0px;
 		margin-right: 0px;
 	}
-
 }
 
 @media only screen and (min-width: 1500px) {
-	.page-template-default .entry-content>.c9-posts-grid .container.alignwide {
+	.page-template-default .entry-content > .c9-posts-grid .container.alignwide {
 		width: 1368px;
 		max-width: 1368px;
 	}
