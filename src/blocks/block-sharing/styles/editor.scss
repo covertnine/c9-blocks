@@ -1,6 +1,10 @@
 /**
  * Editor styles for the admin
  */
+/* compatibility with wp 6.4.3 */
+.wp-block[data-type='c9-blocks/social-share'] .fa-facebook-f:before {
+	content: '\f09a';
+}
 
 .c9-block-sharing {
 	margin-bottom: 0;

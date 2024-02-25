@@ -41,7 +41,7 @@ div[data-type="c9-blocks/post-grid"]{z-index:12}div[data-type="c9-blocks/post-gr
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/blocks/block-sharing/styles/editor.scss ***!
   \****************************************************************************************************************************************************************************************************************************************/
-.c9-block-sharing{margin-bottom:0}.c9-block-sharing .c9-share-list a:hover{color:#fff}
+.wp-block[data-type="c9-blocks/social-share"] .fa-facebook-f:before{content:""}.c9-block-sharing{margin-bottom:0}.c9-block-sharing .c9-share-list a:hover{color:#fff}
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/blocks/block-toggles/styles/editor.scss ***!
   \****************************************************************************************************************************************************************************************************************************************/
