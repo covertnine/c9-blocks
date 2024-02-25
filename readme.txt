@@ -3,8 +3,8 @@ Contributors: ttoomey, htmercury, lgdrew, samirillion, malzdesigns
 Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.9
-Tested up to: 6.4.2
-Stable tag: 1.7.1
+Tested up to: 6.4.3
+Stable tag: 1.7.2
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ https://www.youtube.com/watch?v=zu3JyJr5eeM
 
 The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper right corner after installing the WordPress plugin.
 
-Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 supported theme](https://www.covertnine.com/c9-blocks-plugin) with the C9 Blocks plugin, but it also works with the [Twenty Twenty One](https://2021.covertnine.com), Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter), [C9 Work](https://wordpress.org/themes/c9-work) theme, or [C9 Togo](https://wordpress.org/themes/c9-togo) theme to see C9 Blocks in action, or signup for the [C9 early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free! We currently have four blocks-based themes and four child themes available for early access list subscribers and an exclusive [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/) to animate any core WordPress blocks or C9 Blocks.
+Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 supported theme](https://www.covertnine.com/c9-blocks-plugin) with the C9 Blocks plugin, but it also works with the [Twenty Twenty Four](https://wordpress.org/themes/twentytwentyfour/), [Twenty Twenty One](https://2021.covertnine.com), Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter), [C9 Work](https://wordpress.org/themes/c9-work) theme, or [C9 Togo](https://wordpress.org/themes/c9-togo) theme to see C9 Blocks in action, or signup for the [C9 early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free! We currently have four blocks-based themes and four child themes available for early access list subscribers and an exclusive [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/) to animate any core WordPress blocks or C9 Blocks.
 
 For an overview of each of the blocks, and more up to date documentation, head over to our [documentation site](https://c9.covertnine.com)
 
