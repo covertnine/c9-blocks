@@ -32,6 +32,11 @@ html {
 	margin-bottom: 20px;
 }
 
+/* overrides display table for center aligned images in Twenty Twenty Four */
+.c9-grid .wp-block-image.aligncenter {
+	display: block;
+}
+
 /* adds spacing to separators in c9-grid */
 .c9-grid .wp-block-separator {
 	margin-bottom: 30px;

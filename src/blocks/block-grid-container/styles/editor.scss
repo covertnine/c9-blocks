@@ -90,6 +90,13 @@
 	display: none;
 }
 
+/* overrides display table for center aligned images in Twenty Twenty Four */
+.c9-grid .wp-block-image.aligncenter div {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* overrides default paragraph margin added to editor styles */
 .editor-styles-wrapper .c9-grid p[data-block] {
 	margin-top: 0px;
