@@ -13,13 +13,13 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-[COVERT NINE](https://www.covertnine.com)'s C9 Blocks plugin provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but designed to give organizations a head start on creating landing pages with specific purposes for their audience.
+[COVERT NINE](https://www.covertnine.com)'s C9 Blocks plugin provides 10 new Gutenberg blocks, plus an interface for creating pages from section templates, or fully-built page templates. Block landing page templates are usable for any purpose but are designed to give organizations a head start on creating landing pages with specific purposes for their audience.
 
 https://www.youtube.com/watch?v=zu3JyJr5eeM
 
-The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion) and can be accessed from the feather logo icon in the upper right corner after installing the WordPress plugin.
+The landing page templates are organized in a modal by the "content journey" step (Awareness, Consideration, Conversion). After installing the plugin, they can be accessed from the feather logo icon in the upper right corner.
 
-Plugin can be installed from the WordPress admin via file upload, or by cloning the Github repo. We recommend using a [C9 supported theme](https://www.covertnine.com/c9-blocks-plugin) with the C9 Blocks plugin, but it also works with the [Twenty Twenty Four](https://wordpress.org/themes/twentytwentyfour/), [Twenty Twenty One](https://2021.covertnine.com), Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter), [C9 Work](https://wordpress.org/themes/c9-work) theme, or [C9 Togo](https://wordpress.org/themes/c9-togo) theme to see C9 Blocks in action, or signup for the [C9 early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free! We currently have four blocks-based themes and four child themes available for early access list subscribers and an exclusive [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/) to animate any core WordPress blocks or C9 Blocks.
+Plugin can be installed from the WordPress admin via file upload or by cloning the Github repo. We recommend using a [C9 supported theme](https://www.covertnine.com/c9-blocks-plugin) with the C9 Blocks plugin, but it also works with the [Twenty Twenty Four](https://wordpress.org/themes/twentytwentyfour/), [Twenty Twenty One](https://2021.covertnine.com), Twenty Twenty and Twenty Nineteen WordPress themes. We recommend using the [C9 Starter](https://wordpress.org/themes/c9-starter), [C9 Work](https://wordpress.org/themes/c9-work) theme, or [C9 Togo](https://wordpress.org/themes/c9-togo) theme to see C9 Blocks in action, or signup for the [C9 early access list](https://www.covertnine.com/forms/c9-beta) to get all of our premium themes and plugins for free! We currently have four blocks-based themes and four child themes available for early access list subscribers and an exclusive [C9 Blocks Animation Plugin](https://c9.covertnine.com/c9-animation-plugin/) to animate any core WordPress blocks or C9 Blocks.
 
 For an overview of each of the blocks, and more up to date documentation, head over to our [documentation site](https://c9.covertnine.com)
 
@@ -67,6 +67,9 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.7.2 =
+Bug fixes and updates for WordPress Twenty Twenty Four theme compatibility and Wordpress 6.4.3.
 
 = 1.7.1 =
 Fixed bug where you can't click images in grids that are floated. Fixed some JS errors related to react.
@@ -344,10 +347,10 @@ C9 Blocks has an addon called C9 Animation that comes with our [C9 Early access 
 * [C9 Togo](https://togo.covertnine.com)
 * [C9 Music](https://music.covertnine.com)
 * [Twenty Twenty One](https://2021.covertnine.com)
+* [Twenty Twenty Four](https://2024.covertnine.com)
 
 == Follow Along ==
 
-* [COVERT NINE Twitter](https://twitter.com/covertnine)
 * [COVERT NINE GitHub](https://github.com/covertnine)
 * [COVERT NINE Website](https://www.covertnine.com)
 
