@@ -226,30 +226,31 @@ class ColorAppender extends Component {
 						{__('Add Color')}
 					</Button>
 				</div>
-				{undefined !== c9Colors.palette && undefined !== c9Colors.palette[0] && (
-					<Fragment>
-						<ToggleControl
-							label={__('Use only C9 Blocks Colors?')}
-							checked={
-								undefined !== c9Colors.override ? c9Colors.override : false
-							}
-							onChange={(value) => {
-								let newColors;
-								const newC9Colors = this.state.c9Colors;
-								if (true === value) {
-									newColors = newC9Colors.palette;
-									newC9Colors.override = true;
-								} else {
-									newC9Colors.override = false;
-									newColors = [...origColors, ...newC9Colors.palette];
+				{undefined !== c9Colors.palette &&
+					undefined !== c9Colors.palette[0] && (
+						<Fragment>
+							<ToggleControl
+								label={__('Use only C9 Blocks Colors?')}
+								checked={
+									undefined !== c9Colors.override ? c9Colors.override : false
 								}
-								this.setState({ c9Colors: newC9Colors });
-								this.setState({ colors: newColors });
-								this.saveConfig();
-							}}
-						/>
-					</Fragment>
-				)}
+								onChange={(value) => {
+									let newColors;
+									const newC9Colors = this.state.c9Colors;
+									if (true === value) {
+										newColors = newC9Colors.palette;
+										newC9Colors.override = true;
+									} else {
+										newC9Colors.override = false;
+										newColors = [...origColors, ...newC9Colors.palette];
+									}
+									this.setState({ c9Colors: newC9Colors });
+									this.setState({ colors: newColors });
+									this.saveConfig();
+								}}
+							/>
+						</Fragment>
+					)}
 			</div>
 		);
 	}
