@@ -6,6 +6,9 @@ const StyledDiv = styled.div`
 	width: 450px;
 	border: 1px solid #ddd;
 	border-radius: 0px;
+	position: absolute;
+	padding: 0;
+	background-color: #fff;
 `;
 
 /**
@@ -20,14 +23,14 @@ function PreviewPanel({ item }) {
 				<div className="block-editor-inserter__preview-content">
 					<BlockPreview
 						__experimentalPadding={0}
-						viewportWidth={1140}
-						maxHeight={3500}
+						viewportWidth={1200}
+						maxHeight={4500}
 						//minHeight={1200}
-						//additionalStyles={[
-						//	{
-						//		css: 'body{width: 440px !important;}.c9-grid,.c9-grid div{max-height:800px !important;min-height: none !important;max-width:440px !important;}',
-						//	},
-						//]}
+						additionalStyles={[
+							{
+								css: '.block-selector,.components-resizable-box__handle{visibility:hidden;}',
+							},
+						]}
 						blocks={item}
 					/>
 				</div>
