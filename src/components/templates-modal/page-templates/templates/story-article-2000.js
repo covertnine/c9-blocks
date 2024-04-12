@@ -9,8 +9,8 @@ export default {
 	title: 'Story Article 2000',
 	description: `A long form template for a long story, tutorial, or opinion about a topic that starts at 2,000 words in length.`,
 	recommended: `Potrait Photo • Multiple Hero Images • Photo Gallery • Quotes • Testimonials • Button and Call to Action`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg","bgImgSize":"","bgCustomX":{"size":50,"unit":"%"},"bgCustomY":{"size":"auto","unit":"%"},"overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"1.00","y":"0.61"},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"},"className":"p-5"} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:75vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg","bgImgSize":"contain","bgCustomX":{"size":50,"unit":"%"},"bgCustomY":{"size":"auto","unit":"%"},"overlayOpacity":6,"minScreenHeight":45,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.74,"y":0.58},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:45vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"1800 Words Goal: 14 minute read","tagLevel":4,"displayLevel":"5","type":"c9-sh subhead-h","weight":"light","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h4 class="c9-sh subhead-h5 font-weight-light">1800 Words Goal: 14 minute read</h4></div>
@@ -32,7 +32,7 @@ export default {
 	<!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-custom" style="background-position:100% 61%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg);background-repeat:no-repeat;background-size:50% auto"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-custom" style="background-position:74% 57.99999999999999%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg);background-repeat:no-repeat;background-size:contain"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#f2f2f2","minScreenHeight":15,"containerPadding":{"linked":true,"top":"1","bottom":"1","left":"1","right":"1","icon":"admin-links"}} -->
@@ -225,7 +225,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171.jpg","bgImgAttach":true,"overlayHue":"#333333","overlayOpacity":7,"blendMode":"normal","minScreenHeight":90,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171.jpg","bgImgAttach":true,"overlayHue":"#333333","overlayOpacity":7,"minScreenHeight":90} -->
 	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:90vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"PHOTO BREAK","type":"c9-txl display-","textColor":"#f7f7f9","textAlign":"center"} -->
@@ -235,7 +235,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(51,51,51,.7);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:50% 50%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":4,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":4} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideright","containerWidth":"container-narrow","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideright" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3067,"sizeSlug":"large","linkDestination":"media"} -->
@@ -287,11 +287,11 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:image {"align":"full","id":2796,"sizeSlug":"full","linkDestination":"media"} -->
+	<!-- wp:image {"id":2796,"sizeSlug":"full","linkDestination":"media","align":"full"} -->
 	<figure class="wp-block-image alignfull size-full"><a href="https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-50.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-50.jpg" alt="" class="wp-image-2796"/></a><figcaption class="wp-element-caption">Photo by <strong>the person who made the theme yo</strong>, it's okay to use.</figcaption></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":5,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":5} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":690,"layout":"one-column","containerWidth":"container-narrow"} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column c9-columns-center" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:690px"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph {"dropCap":true,"fontSize":"medium"} -->
@@ -349,7 +349,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":7,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#f4f4f4","bgImgAttach":true,"overlayHue":"#232323","overlayOpacity":1,"blendMode":"normal","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":7,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#f4f4f4","bgImgAttach":true,"overlayHue":"#232323","overlayOpacity":1,"minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"top","minScreenHeight":41,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-top one-column" style="min-height:41vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"THE END.","subheading":"subheading","tagLevel":3,"type":"c9-txl display-","textAlign":"center","weight":"bold"} -->

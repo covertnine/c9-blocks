@@ -9,7 +9,7 @@ export default {
 	title: 'About Corporate',
 	description: `An About page with all the essential elements to jumpstart the process of “know, like, and trust.” Complete with a hero header, testimonials, individual profiles, history, services overview, FAQ, and a “call-to-action.” Simply add and subtract the blocks most useful to you.`,
 	recommended: `company name, slogan, short mission statement, logo image, history copywriting, 3 photo images, testimonials with photos (2), service list, testimonials with copy only (2), FAQ, map embed, call-to-action link`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":11,"containerHue":"#171717","minScreenHeight":50,"className":"p-5"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":11,"containerHue":"#171717","minScreenHeight":50} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:50vh;background-color:rgba(23,23,23,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"bottom","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Company Name","type":"c9-txl display-","textColor":"#ffffff","weight":"normal"} -->
@@ -33,7 +33,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":20,"rows":5,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":20,"rows":5,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="c9-grid p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"what we do","subheading":"pricing","addSubheading":true,"tagLevel":2,"type":"c9-txl display-","textAlign":"center","weight":"bold","overrideStyle":true} -->
@@ -133,7 +133,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#313131","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"},"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":2,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#313131","bgImgAttach":true,"overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"bgCustomYMobile":{"size":100,"unit":"%"}} -->
 	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1);--mobile-height:auto;--mobile-width:100%"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer {"height":"155px"} -->
@@ -191,7 +191,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.9);mix-blend-mode:multiply"></div><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-custom" style="background-position:50% 50%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":3,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":3} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#ebebeb","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(235,235,235,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.","tagLevel":5,"displayLevel":"4","textColor":"#313131","textAlign":"center","overrideStyle":true} -->
@@ -205,7 +205,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":4,"rows":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":4,"rows":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="c9-grid p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayHue":"#f8f8f8","minScreenHeight":0,"animateVal":"fadeLeft","animateDelay":686,"animateScrub":true,"animateStart":"0px 100%","animateEnd":"138px 50%","animateCustom":{"before":{"x":-300},"after":{}}} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(248,248,248,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","disableToolbar":true,"fontSize":"medium"} -->
@@ -275,7 +275,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":5,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/portrait-dark-vert.jpg","bgImgSize":"","bgCustomY":{"size":100,"unit":"%"},"bgImgAttach":true,"overlayHue":"#000000","overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"0.00","y":"0.50"},"focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":5,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/portrait-dark-vert.jpg","bgImgSize":"","bgCustomY":{"size":100,"unit":"%"},"bgImgAttach":true,"overlayHue":"#000000","overlayOpacity":6,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":"0.00","y":"0.50"},"focalPointMobile":{"x":0.75,"y":0.25},"overrideMobile":true} -->
 	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:75vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:spacer {"height":"106px"} -->
@@ -305,7 +305,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.6);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-top-right c9-image-mobile-size-cover" style="background-position:0% 50%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/portrait-dark-vert.jpg);background-repeat:no-repeat;background-size:auto 100%"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":6,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#f4f4f4","bgImgAttach":true,"overlayHue":"#232323","overlayOpacity":3,"blendMode":"normal","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":6,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#f4f4f4","bgImgAttach":true,"overlayHue":"#232323","overlayOpacity":3,"blendMode":"normal","minScreenHeight":60,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 	<div class="c9-grid p-3 c9-fixed c9-grid-has-background" style="min-height:60vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"top","minScreenHeight":41,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-top one-column" style="min-height:41vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"top"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-top"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"History","subheading":"subheading","addSubheading":true,"tagLevel":3,"type":"c9-txl display-","textAlign":"center","weight":"bold"} -->
@@ -339,7 +339,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(35,35,35,.3);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:50% 50%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":7,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":7} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":9,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-9 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:paragraph {"dropCap":true,"fontSize":"small"} -->
@@ -383,7 +383,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":8,"containerHue":"#f4f4f4","minScreenHeight":64,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":8,"containerHue":"#f4f4f4","minScreenHeight":64} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:html -->

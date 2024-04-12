@@ -28,7 +28,7 @@ function PreviewPanel({ item }) {
 						//minHeight={1200}
 						additionalStyles={[
 							{
-								css: '.block-selector,.components-resizable-box__handle{visibility:hidden;}',
+								css: '.block-selector,.components-resizable-box__handle{visibility:hidden;} .block-editor-iframe__body.editor-styles-wrapper .wp-block:not(.alignwide):not(.alignfull):not(.wp-social-link) {max-width:1200px;}',
 							},
 						]}
 						blocks={item}

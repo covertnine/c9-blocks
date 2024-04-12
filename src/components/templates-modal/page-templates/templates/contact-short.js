@@ -9,7 +9,7 @@ export default {
 	title: 'Contact Short Page',
 	description: `Lead people to the right person, the right way. If you only have a single location or minimal contact information, then this is the landing page that gets messages into your inbox.`,
 	recommended: `Large heading, address, contact phone, placeholder for contact form, contact button for live-chat, embedded map with an address`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-207-2.jpg","containerHue":"#3f3f3f","overlayHue":"#0b0b0b","overlayOpacity":8,"blendMode":"color-burn","minScreenHeight":27,"focalPoint":{"x":"0.58","y":"0.67"},"className":"p-5"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-207-2.jpg","containerHue":"#3f3f3f","overlayHue":"#0b0b0b","overlayOpacity":8,"blendMode":"color-burn","minScreenHeight":27,"focalPoint":{"x":"0.58","y":"0.67"}} -->
   <div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:27vh;background-color:rgba(63,63,63,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center","minScreenHeight":0} -->
   <div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
   <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Get in touch","subheading":"We're here to help","addSubheading":true,"displayLevel":"2","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
@@ -19,7 +19,7 @@ export default {
   <!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(11,11,11,.8);mix-blend-mode:color-burn"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:57.99999999999999% 67%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-207-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
   <!-- /wp:c9-blocks/grid -->
   
-  <!-- wp:c9-blocks/grid {"instanceId":1,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"className":"p-5"} -->
+  <!-- wp:c9-blocks/grid {"instanceId":1,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
   <div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":6,"layout":"c9-2-col-wideleft","minScreenHeight":0,"containerMargin":{"linked":false,"top":"5","bottom":"-1","left":"-1","right":"-1","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
   <div class="container c9-column-container mt-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-6 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
   <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:group {"style":{"color":{"background":"#fafafa"}}} -->

@@ -9,7 +9,7 @@ export default {
 	title: 'Contact Page',
 	description: `Your team has multiple points of contacts or departments, with a few different methods of getting in touch. Your users will appreciate being directed to the right point of contact. This landing page has a place for everything and a placeholder for your form plugin of choice.`,
 	recommended: `Large heading with contact form, multiple points of phone contact, multiple addresses, several paragraphs of instructions, a call-to-action bar + button, multiple phone numbers, header call-to-action + button, one hero image`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"className":"p-5"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0} -->
   <div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerWidth":"container-fluid","containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2.jpg","overlayHue":"#080808","overlayOpacity":8,"blendMode":"normal","minScreenHeight":50,"focalPoint":{"x":"0.49","y":"0.18"}} -->
   <div class="container-fluid alignfull c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal c9-columns-has-background" style="min-height:50vh"><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:49% 18%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(8,8,8,.8);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
   <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Contact","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","weight":"light"} -->
@@ -31,7 +31,7 @@ export default {
   <!-- /wp:c9-blocks/column-container --></div>
   <!-- /wp:c9-blocks/grid -->
   
-  <!-- wp:c9-blocks/grid {"instanceId":1,"rows":5,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"className":"p-5"} -->
+  <!-- wp:c9-blocks/grid {"instanceId":1,"rows":5,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
   <div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":6,"layout":"c9-2-col-wideleft","minScreenHeight":0,"containerMargin":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
   <div class="container c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-6 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
   <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Sed diam ex, maximus faucibus iaculis eu, interdum sit amet leo. ","tagLevel":2,"weight":"light"} -->
@@ -204,7 +204,7 @@ export default {
   <!-- /wp:c9-blocks/column-container --></div>
   <!-- /wp:c9-blocks/grid -->
   
-  <!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#f4f4f4","minScreenHeight":64,"className":"p-5"} -->
+  <!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#f4f4f4","minScreenHeight":64} -->
   <div class="c9-grid p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
   <div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
   <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:html -->

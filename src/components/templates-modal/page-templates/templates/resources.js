@@ -9,7 +9,7 @@ export default {
 	title: 'Resources',
 	description: `A page to organize resources in one location with a Search Block, posts or articles of any post type or category, a hero header image with a few paragraphs or headings of instructions to direct your users to your well-documented knowledgebase. Cap it off with a call-to-action to subscribe to your newsletter for updates.`,
 	recommended: `Articles or blog posts (6), hero image, 2-3 paragraphs or headings, FAQ, call-to-action bar + button`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg","bgCustomX":{"size":200,"unit":"%"},"minScreenHeight":85,"focalPoint":{"x":0.17511520737327188,"y":0.1231737012987013},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true,"className":"p-5"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg","bgCustomX":{"size":200,"unit":"%"},"minScreenHeight":85,"focalPoint":{"x":0.17511520737327188,"y":0.1231737012987013},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
 	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:85vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Resources","type":"c9-txl display-","textColor":"#ffffff"} -->
@@ -79,7 +79,7 @@ export default {
 	<div class="c9-posts-grid px-5 pt-5 c9-scroll" style="min-height:20vh;background-color:rgba(247,247,249,1)"><!-- wp:c9-blocks/post-grid {"displayPostDate":true,"displayPostExcerpt":true,"displayPostLink":true,"columns":3,"imageSize":"c9-feature-medium-crop","bgPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1","left":"5","right":"5"}} /--></div>
 	<!-- /wp:c9-blocks/posts-grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="c9-grid p-3 my-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"FAQ Toggles","subheading":"with image carousels","addSubheading":true} -->
@@ -137,7 +137,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":3,"containerHue":"#eaeaea","className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":3,"containerHue":"#eaeaea"} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(234,234,234,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Sign up","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","disableToolbar":true,"customFontSize":"2.5rem"} -->

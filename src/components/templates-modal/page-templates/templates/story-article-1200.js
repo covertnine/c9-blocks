@@ -9,8 +9,8 @@ export default {
 	title: 'Story Article 1200',
 	description: `A beginning of a very long story, article, tutorial, or in-depth opinion about a topic that starts at 1,200 words in length. Add more tables, charts, videos, or even e-commerce products to this template, so people don't get bored with filler.`,
 	recommended: `1200+ Words • Hero Image • Video • Spotify Embed Link • Testimonials • Button and Call to Action`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#000000","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":71,"containerVideoURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4","className":"p-5"} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-video" style="min-height:71vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerHue":"#000000","overlayHue":"#000000","overlayOpacity":8,"minScreenHeight":45,"containerVideoURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4"} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-video" style="min-height:45vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Live Event Coverage","displayLevel":"2","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-2 font-weight-bold" style="color:#ffffff">Live Event Coverage</h1></div>
@@ -20,9 +20,9 @@ export default {
 	<div class="section-heading c9-heading text-left"><h2 class="c9-sh subhead-h5 font-weight-light" style="color:#979797">By Author McNameNamey</h2></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"},"c9ShowHideSettings":[false,false,false],"c9PaddingSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1","left":"-1","right":"-1"},"c9MarginSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1"}} -->
-	<div class="wp-block-buttons"><!-- wp:button {"align":"center","style":{"color":{"text":"#f9f9f9"}},"className":"is-style-default is-style-outline"} -->
-	<div class="wp-block-button aligncenter is-style-default is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="https://www.youtube.com/watch?v=zq6sgA1tmoQ" style="color:#f9f9f9">View Video</a></div>
+	<!-- wp:buttons {"layout":{"type":"flex"}} -->
+	<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"text":"#f9f9f9"}},"className":"is-style-outline"} -->
+	<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="https://www.youtube.com/watch?v=zq6sgA1tmoQ" style="color:#f9f9f9">View Video</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div></div>
 	<!-- /wp:c9-blocks/column -->
@@ -30,10 +30,10 @@ export default {
 	<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.8);mix-blend-mode:normal"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:71vh"><source src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4" type="video/mp4"/></video></div></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.8);mix-blend-mode:normal"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-0" class="c9-video-custom" playsinline autoplay muted loop style="min-height:45vh"><source src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-website-2019-bg.mp4" type="video/mp4"/></video></div></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":1,"rows":2,"className":"p-5"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":1,"rows":2} -->
 	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":690,"layout":"one-column","containerWidth":"container-narrow"} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column c9-columns-center" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:690px"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:paragraph {"dropCap":true,"fontSize":"medium"} -->
@@ -52,9 +52,9 @@ export default {
 	<p class="">Nunc vel risus commodo viverra maecenas accumsan lacus vel. Amet mauris commodo quis imperdiet massa tincidunt nunc. Enim eu turpis egestas pretium aenean. Eu tincidunt tortor aliquam nulla facilisi cras. Id velit ut tortor pretium viverra suspendisse potenti nullam. At elementum eu facilisis sed odio morbi quis. Nunc faucibus a pellentesque sit amet porttitor. In eu mi bibendum neque. Venenatis urna cursus eget nunc scelerisque viverra. </p>
 	<!-- /wp:paragraph -->
 	
-	<!-- wp:embed {"url":"https://open.spotify.com/playlist/37i9dQZF1DX0GDEVNHvE3h?si=7XD2Oi87S0Gg-O6qGJSEjA","type":"rich","providerNameSlug":"spotify","responsive":true,"className":"wp-embed-aspect-9-16 wp-has-aspect-ratio"} -->
-	<figure class="wp-block-embed is-type-rich is-provider-spotify wp-block-embed-spotify wp-embed-aspect-9-16 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-	https://open.spotify.com/playlist/37i9dQZF1DX0GDEVNHvE3h?si=7XD2Oi87S0Gg-O6qGJSEjA
+	<!-- wp:embed {"url":"https://open.spotify.com/album/4Jh3PDPicP3QwWpktQS7Yh?si=GHMVonJHTwarooT8E0Cw8A","type":"rich","providerNameSlug":"spotify","responsive":true,"className":""} -->
+	<figure class="wp-block-embed is-type-rich is-provider-spotify wp-block-embed-spotify"><div class="wp-block-embed__wrapper">
+	https://open.spotify.com/album/4Jh3PDPicP3QwWpktQS7Yh?si=GHMVonJHTwarooT8E0Cw8A
 	</div></figure>
 	<!-- /wp:embed -->
 	
