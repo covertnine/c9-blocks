@@ -9,9 +9,9 @@ export default {
 	title: 'Story Article 2000',
 	description: `A long form template for a long story, tutorial, or opinion about a topic that starts at 2,000 words in length.`,
 	recommended: `Potrait Photo • Multiple Hero Images • Photo Gallery • Quotes • Testimonials • Button and Call to Action`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg","bgImgSize":"contain","bgCustomX":{"size":50,"unit":"%"},"bgCustomY":{"size":"auto","unit":"%"},"overlayOpacity":6,"minScreenHeight":45,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.74,"y":0.58},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:45vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg","bgImgSize":"contain","bgCustomX":{"size":50,"unit":"%"},"bgCustomY":{"size":"auto","unit":"%"},"overlayOpacity":6,"minScreenHeight":45,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.75,"y":0.54},"bgImgSizeMobile":"","focalPointMobile":{"x":1,"y":0.49},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:45vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"responsiveToggle":false,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0} -->
+	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"1800 Words Goal: 14 minute read","tagLevel":4,"displayLevel":"5","type":"c9-sh subhead-h","weight":"light","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h4 class="c9-sh subhead-h5 font-weight-light">1800 Words Goal: 14 minute read</h4></div>
 	<!-- /wp:c9-blocks/heading -->
@@ -24,15 +24,15 @@ export default {
 	<div class="section-heading c9-heading text-left"><h5 class="c9-h h6 font-weight-bold">It's the apocalypse. Everybody run. The beaches are turning black.</h5></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:paragraph -->
-	<p class="">Click near the edge of any container to change the background image, column settings, or color settings for each block on the site.</p>
+	<!-- wp:paragraph {"c9ShowHideSettings":[true,false,false]} -->
+	<p class=" d-none d-md-block">Click near the edge of any container to change the background image, column settings, or color settings for each block on the site.</p>
 	<!-- /wp:paragraph --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-custom" style="background-position:74% 57.99999999999999%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg);background-repeat:no-repeat;background-size:contain"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-image-container c9-image-mobile-center-right c9-image-mobile-size-custom" style="background-position:75% 54%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/black-sand-vertical.jpg);background-repeat:no-repeat;background-size:contain"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#f2f2f2","minScreenHeight":15,"containerPadding":{"linked":true,"top":"1","bottom":"1","left":"1","right":"1","icon":"admin-links"}} -->
