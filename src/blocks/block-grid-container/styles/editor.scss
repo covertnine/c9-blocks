@@ -541,6 +541,67 @@ body
 		.container-narrow {
 		min-width: auto;
 	}
+
+	/* added for wp 6.5*/
+	.is-sidebar-opened .c9-grid.p-0 .container-fluid.alignfull {
+		width: calc(100vw - 280px);
+	}
+
+	.is-sidebar-opened .c9-grid.p-1 .container-fluid.alignfull {
+		width: calc(100vw - 0.5rem - 280px);
+	}
+
+	.is-sidebar-opened .c9-grid.p-2 .container-fluid.alignfull {
+		width: calc(100vw - 1rem - 280px);
+	}
+
+	.is-sidebar-opened .c9-grid.p-3 .container-fluid.alignfull {
+		width: calc(100vw - 2rem - 280px);
+	}
+
+	.is-sidebar-opened .c9-grid.p-4 .container-fluid.alignfull {
+		width: calc(100vw - 3rem - 280px);
+	}
+
+	.is-sidebar-opened .c9-grid.p-5 .container-fluid.alignfull {
+		width: calc(100vw - 6rem - 280px);
+	}
+
+	.edit-post-layout:not(.is-sidebar-opened)
+		.c9-grid.p-0
+		.container-fluid.alignfull {
+		width: 100vw;
+	}
+
+	.edit-post-layout:not(.is-sidebar-opened)
+		.c9-grid.p-1
+		.container-fluid.alignfull {
+		width: calc(100vw - 0.5rem);
+	}
+
+	.edit-post-layout:not(.is-sidebar-opened)
+		.c9-grid.p-2
+		.container-fluid.alignfull {
+		width: calc(100vw - 1rem);
+	}
+
+	.edit-post-layout:not(.is-sidebar-opened)
+		.c9-grid.p-3
+		.container-fluid.alignfull {
+		width: calc(100vw - 2rem);
+	}
+
+	.edit-post-layout:not(.is-sidebar-opened)
+		.c9-grid.p-4
+		.container-fluid.alignfull {
+		width: calc(100vw - 3rem);
+	}
+
+	.edit-post-layout:not(.is-sidebar-opened)
+		.c9-grid.p-5
+		.container-fluid.alignfull {
+		width: calc(100vw - 6rem);
+	}
 }
 
 body
@@ -1063,7 +1124,9 @@ body.folded
 	body:not(.folded)
 		.is-sidebar-opened
 		.is-root-container.is-layout-constrained
-		> .wp-block[data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+		> .wp-block[data-type='c9-blocks/grid']:where(
+			:not(.alignleft):not(.alignright):not(.alignfull)
+		) {
 		margin-left: calc((-100vw + 100% + 280px) / 2) !important;
 		margin-right: calc((-100vw + 100% + 280px) / 2) !important;
 	}
@@ -1462,7 +1525,9 @@ body.folded
 	body.folded
 		.is-sidebar-opened
 		.is-root-container.is-layout-constrained
-		> .wp-block[data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+		> .wp-block[data-type='c9-blocks/grid']:where(
+			:not(.alignleft):not(.alignright):not(.alignfull)
+		) {
 		margin-left: calc((-100vw + 100% + 317px) / 2) !important;
 		margin-right: calc((-100vw + 100% + 317px) / 2) !important;
 	}
