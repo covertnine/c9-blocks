@@ -264,7 +264,9 @@ html {
 /* preventing margin below last items that are embeds */
 .c9-grid .c9-column-inner > .wp-block-embed:last-child,
 .c9-grid
-	.wp-block-embed:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter):last-child {
+	.wp-block-embed:not(.alignwide):not(.alignfull):not(.alignleft):not(
+		.alignright
+	):not(.aligncenter):last-child {
 	margin-bottom: 0px;
 }
 
@@ -310,7 +312,9 @@ html {
 .page-template-default
 	.post-inner
 	> .entry-content
-	> .c9-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	> .c9-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(
+		.alignright
+	):not(.is-style-wide) {
 	width: 100vw;
 	max-width: 100vw;
 }
@@ -438,7 +442,9 @@ html {
 	.page-template-default .entry-content > .container-fluid,
 	.page-template-default
 		.entry-content
-		> .c9-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+		> .c9-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(
+			.alignright
+		):not(.is-style-wide) {
 		width: 100vw;
 		max-width: 100vw;
 		margin-left: calc((-100vw + 100%) / 2);
@@ -499,7 +505,9 @@ html {
 	.page-template-default .entry-content > .c9-grid,
 	.page-template-default
 		.entry-content
-		> .c9-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
+		> .c9-grid:not(.alignwide):not(.alignfull):not(.alignleft):not(
+			.alignright
+		):not(.is-style-wide),
 	.single .entry-content > .c9-grid {
 		width: 100vw;
 		max-width: 100vw;
@@ -523,8 +531,14 @@ html {
 		padding-right: 0px;
 	}
 
-	.page-template-default .entry-content > .c9-grid .container,
-	.page-template-fullwidthpage .entry-content > .c9-grid > .container {
+	.page-template-default
+		.entry-content
+		> .c9-grid
+		.container:not(.c9-block-post-grid),
+	.page-template-fullwidthpage
+		.entry-content
+		> .c9-grid
+		> .container:not(.c9-block-post-grid) {
 		max-width: 1140px;
 	}
 }

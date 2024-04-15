@@ -1609,12 +1609,12 @@ body.folded
 		.is-sidebar-opened
 		.editor-styles-wrapper
 		.wp-block[data-type='c9-blocks/grid']
-		.container:not(.carousel.slide),
+		.container:not(.carousel.slide):not([data-type='c9-blocks/post-grid']),
 	body.folded
 		.is-sidebar-opened
 		.editor-styles-wrapper
 		.wp-block[data-type='c9-blocks/grid']
-		.container:not(.carousel.slide) {
+		.container:not(.carousel.slide):not([data-type='c9-blocks/post-grid']) {
 		width: 1140px;
 		max-width: 1140px;
 		margin-left: 0;

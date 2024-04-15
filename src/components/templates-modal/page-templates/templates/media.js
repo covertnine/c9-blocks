@@ -9,9 +9,9 @@ export default {
 	title: 'Media',
 	description: `Show off your best work, videos, demo reels, or share embedded audio files with album artwork on a short landing page made with artists, videographers, photographers, and/or musicians in mind.`,
 	recommended: `Multiple video clips, audio embeds, logos, hero imagery, a single testimonial`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg","containerHue":"#000000","overlayHue":"#313131","overlayOpacity":6,"blendMode":"multiply","minScreenHeight":80,"videoType":"embed","containerVideoID":"vbv_aZuXMIw"} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-	<div class="container c9-column-container p-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg","containerHue":"#000000","overlayHue":"#313131","overlayOpacity":6,"blendMode":"multiply","minScreenHeight":40,"videoType":"embed","containerVideoID":"vbv_aZuXMIw"} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:40vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"center","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="container c9-column-container p-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Video Collection","type":"c9-txl display-","textColor":"#ffffff","weight":"bold"} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-bold" style="color:#ffffff">Video Collection</h1></div>
 	<!-- /wp:c9-blocks/heading -->
@@ -20,17 +20,17 @@ export default {
 	<div class="section-heading c9-heading text-left"><h1 class="c9-sh font-weight-light" style="color:#eeeeee">Carousels, Grids, Backgrounds</h1></div>
 	<!-- /wp:c9-blocks/heading --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.6);mix-blend-mode:multiply"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><div id="player-vbv_aZuXMIw-0" class="c9-video" video-id="vbv_aZuXMIw" style="min-height:80vh"></div></div></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:50% 50%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.6);mix-blend-mode:multiply"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><div id="player-vbv_aZuXMIw-0" class="c9-video" video-id="vbv_aZuXMIw" style="min-height:40vh"></div></div></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:50% 50%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":11,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","overlayHue":"#1d1d1d","overlayOpacity":7,"blendMode":"normal","minScreenHeight":100,"focalPoint":{"x":"0.54","y":"1.00"}} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:100vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":60,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-	<div class="container c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:60vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<!-- wp:c9-blocks/grid {"instanceId":11,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","overlayHue":"#1d1d1d","overlayOpacity":7,"minScreenHeight":56,"focalPoint":{"x":"0.54","y":"1.00"}} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:56vh"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-equal","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="container c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Listen to the new single now","subheading":"For Free","addSubheading":true,"displayLevel":"4","textColor":"#eeeeee","weight":"light","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-h h4 font-weight-light" style="color:#eeeeee">Listen to the new single now</h1><div class="c9-h h4"><small class="text-muted">&nbsp;For Free</small></div></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:embed {"url":"https://open.spotify.com/track/79QQtQJe6wWoIDQh4NVimi?si=yEMWcgceT8yQB6HSKUXZcA","type":"rich","providerNameSlug":"spotify","allowResponsive":false,"responsive":true} -->
+	<!-- wp:embed {"url":"https://open.spotify.com/track/79QQtQJe6wWoIDQh4NVimi?si=yEMWcgceT8yQB6HSKUXZcA","type":"rich","providerNameSlug":"spotify","allowResponsive":false,"responsive":true,"className":""} -->
 	<figure class="wp-block-embed is-type-rich is-provider-spotify wp-block-embed-spotify"><div class="wp-block-embed__wrapper">
 	https://open.spotify.com/track/79QQtQJe6wWoIDQh4NVimi?si=yEMWcgceT8yQB6HSKUXZcA
 	</div></figure>
@@ -38,8 +38,9 @@ export default {
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Song Lyrics","tagLevel":3,"displayLevel":"1","type":"c9-txl display-","textColor":"#ffffff","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-left"><h3 class="c9-txl display-1" style="color:#ffffff">Song Lyrics</h3></div>
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:group {"layout":{"type":"constrained"},"c9PaddingSpaceSettings":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
+	<div class="wp-block-group p-3"><!-- wp:c9-blocks/heading {"heading":"Song Lyrics","tagLevel":3,"displayLevel":"4","type":"c9-txl display-","textColor":"#ffffff","overrideStyle":true} -->
+	<div class="section-heading c9-heading text-left"><h3 class="c9-txl display-4" style="color:#ffffff">Song Lyrics</h3></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:paragraph {"textColor":"color-light"} -->
@@ -56,13 +57,14 @@ export default {
 	
 	<!-- wp:paragraph {"textColor":"color-light"} -->
 	<p class="has-color-light-color has-text-color">Nisi vitae suscipit tellus mauris. Risus at ultrices mi tempus imperdiet nulla malesuada. Nam aliquam sem et tortor consequat id porta nibh venenatis.&nbsp;</p>
-	<!-- /wp:paragraph --></div></div>
+	<!-- /wp:paragraph --></div>
+	<!-- /wp:group --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(29,29,29,.7);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:54% 100%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":2} -->
-	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#f2f2f2","overlayOpacity":10,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","overlayHue":"#f2f2f2","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-1 one-column"><div class="c9-overlay-container" style="background-color:rgba(242,242,242,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.","tagLevel":5,"displayLevel":"4","textColor":"#000000","textAlign":"center","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h5 class="c9-h h4" style="color:#000000">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</h5></div>
@@ -76,7 +78,7 @@ export default {
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":18} -->
-	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerWidth":"container-fluid","containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#000000","overlayOpacity":8,"blendMode":"normal","minScreenHeight":58,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":"0.80","y":"0.11"}} -->
+	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerWidth":"container-fluid","containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#000000","overlayOpacity":8,"minScreenHeight":58,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":"0.80","y":"0.11"}} -->
 	<div class="container-fluid alignfull c9-column-container p-5 c9-scroll c9-layout-columns-2 c9-2-col-equal c9-columns-has-background" style="min-height:58vh"><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:80% 11%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.8);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/carousel {"instanceId":2,"verticalAlign":"center"} -->
 	<div id="c9-carousel-indicator-2" class="c9-carousel carousel slide container" data-ride="carousel" data-interval="5000" data-wrap="true" style="min-height:250px"><ol class="carousel-indicators"><li data-target="#c9-carousel-indicator-2" data-slide-to="0" class="active"></li><li data-target="#c9-carousel-indicator-2" data-slide-to="1"></li><li data-target="#c9-carousel-indicator-2" data-slide-to="2"></li></ol><div class="carousel-inner c9-is-vertically-aligned-center"><!-- wp:c9-blocks/carousel-slide {"id":0,"slideActive":0,"slides":3} -->
@@ -119,7 +121,7 @@ export default {
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:button {"textColor":"color-light","align":"center","className":"is-style-outline"} -->
+	<!-- wp:button {"textColor":"color-light","className":"aligncenter is-style-outline"} -->
 	<div class="wp-block-button aligncenter is-style-outline"><a class="wp-block-button__link has-color-light-color has-text-color wp-element-button" href="#">Subscribe</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:group --></div></div>

@@ -9,9 +9,9 @@ export default {
 	title: 'Pricing',
 	description: `Tabs full of different pricing structures. Hourly, unlimited, or per project layouts will all work well with this template.`,
 	recommended: `Multiple headings • Background Image • Details with pricing information in bullet form. Optional forms for a special offer or email list signup. `,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#070707","overlayOpacity":9,"blendMode":"normal","minScreenHeight":80,"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"focalPoint":{"x":"0.48","y":"0.83"}} -->
-	<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":43,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-	<div class="container-narrow c9-column-container p-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column c9-columns-center" style="min-height:43vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:605px"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#070707","overlayOpacity":9,"minScreenHeight":80,"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"focalPoint":{"x":"0.48","y":"0.83"}} -->
+	<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":30,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="container-narrow c9-column-container p-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column c9-columns-center" style="min-height:30vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:605px"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Pricing","subheading":"Rates","addSubheading":true,"displayLevel":"1","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1" style="color:#ffffff">Pricing</h1><div class="c9-txl display-1"><small class="text-muted">&nbsp;Rates</small></div></div>
 	<!-- /wp:c9-blocks/heading -->
@@ -26,7 +26,7 @@ export default {
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->
 	
-	<!-- wp:c9-blocks/column-container {"align":"full","columns":1,"columnsGap":4,"layout":"c9-1-col-equal","containerWidth":"container-fluid","verticalAlign":"bottom","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"animateEase":"slow(0.7, 0.7, false)","animateScrub":true,"animateStart":"0px 100%","animateEnd":"1018px 75%","animateCustom":{"before":{"autoAlpha":0.5},"after":{}}} -->
+	<!-- wp:c9-blocks/column-container {"align":"full","columns":1,"columnsGap":4,"layout":"c9-1-col-equal","containerWidth":"container-fluid","verticalAlign":"bottom","blendMode":"multiply","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"}} -->
 	<div class="container-fluid alignfull c9-column-container p-0 my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom c9-1-col-equal"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/horizontal-tabs {"tabActive":"tab-subscriptions","buttonsAlign":"center","tabsData":[{"slug":"tab-per-project","title":"Per Project"},{"slug":"tab-subscriptions","title":"Subscriptions"},{"slug":"tab-hourly","title":"Hourly"}],"instanceId":0,"tabContentBackgroundColor":"#ffffff"} -->
 	<div class="c9-horizontal-tabs" data-tab-active="tab-subscriptions"><ul class="nav nav-tabs d-flex justify-content-center" role="tablist"><li class="nav-item"><a data-toggle="tab" role="tab" href="#htab-tab-per-project-0" class="nav-link" id="tab-button-tab-per-project">Per Project</a></li><li class="nav-item"><a data-toggle="tab" role="tab" href="#htab-tab-subscriptions-0" class="nav-link active" id="tab-button-tab-subscriptions">Subscriptions</a></li><li class="nav-item"><a data-toggle="tab" role="tab" href="#htab-tab-hourly-0" class="nav-link" id="tab-button-tab-hourly">Hourly</a></li></ul><div class="c9-tabs-content tab-content" style="background-color:#ffffff"><!-- wp:c9-blocks/horizontal-tabs-tab {"slug":"tab-per-project","tabActive":"tab-subscriptions","id":0} -->
@@ -50,7 +50,7 @@ export default {
 	<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"c9ShowHideSettings":[false,false,false],"c9PaddingSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1","left":"-1","right":"-1"},"c9MarginSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1"}} -->
+	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 	<div class="wp-block-buttons"><!-- wp:button -->
 	<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Contact to get started</a></div>
 	<!-- /wp:button --></div>
@@ -500,23 +500,23 @@ export default {
 	<hr class="wp-block-separator has-css-opacity"/>
 	<!-- /wp:separator -->
 	
-	<!-- wp:group {"backgroundColor":"color-primary","animateVal":"fadeUp","animateEase":"expo.out","animateDelay":661,"animateSpeed":1556,"animateCustom":{"before":{},"after":{}}} -->
+	<!-- wp:group {"backgroundColor":"color-primary"} -->
 	<div class="wp-block-group has-color-primary-background-color has-background"><!-- wp:c9-blocks/heading {"heading":"\u003cstrong\u003eEnter your email to redeem the offer!\u003c/strong\u003e","tagLevel":3,"displayLevel":"5","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h3 class="c9-h h5" style="color:#ffffff"><strong>Enter your email to redeem the offer!</strong></h3></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:html -->
 	<form method="post" enctype="multipart/form-data" id="gform_1" action="" class="mb-5 mt-5 d-block w-100">
-		
-		<input type="text" name="input_1.6" id="input_1_1_6" value="" aria-label="Last name" aria-invalid="false" placeholder="Enter name" class="mb-2 d-block w-100">
-		<br>
-		<input name="input_2" id="input_1_2" type="text" value="" class="d-block w-100" placeholder="Enter Email" aria-invalid="false">
-		
-		</form>
+			
+			<input type="text" name="input_1.6" id="input_1_1_6" value="" aria-label="Last name" aria-invalid="false" placeholder="Enter name" class="mb-2 d-block w-100">
+			<br>
+			<input name="input_2" id="input_1_2" type="text" value="" class="d-block w-100" placeholder="Enter Email" aria-invalid="false">
+			
+			</form>
 	<!-- /wp:html -->
 	
-	<!-- wp:buttons {"className":"mt-5","layout":{"type":"flex","justifyContent":"center"},"c9ShowHideSettings":[false,false,false],"c9PaddingSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1","left":"-1","right":"-1"},"c9MarginSpaceSettings":{"linked":true,"icon":"admin-links","top":"-1","bottom":"-1"}} -->
-	<div class="wp-block-buttons mt-5"><!-- wp:button {"align":"center","style":{"color":{"background":"#cb282b"}}} -->
+	<!-- wp:buttons {"className":"mt-5","layout":{"type":"flex","justifyContent":"center"}} -->
+	<div class="wp-block-buttons mt-5"><!-- wp:button {"style":{"color":{"background":"#cb282b"}},"className":"aligncenter"} -->
 	<div class="wp-block-button aligncenter"><a class="wp-block-button__link has-background wp-element-button" href="#" style="background-color:#cb282b">Submit</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>

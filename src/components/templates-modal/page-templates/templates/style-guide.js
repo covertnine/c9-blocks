@@ -9,9 +9,9 @@ export default {
 	title: 'Style Guide',
 	description: `Create a style guide of nearly all of the C9 Blocks to test out layouts, typography, buttons, or to view the full web style guide for the site.`,
 	recommended: `Typography, buttons, and all elements needed to build out all of the style guide components needed for a website.`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#000000","overlayHue":"#262626","overlayOpacity":8,"minScreenHeight":90,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"focalPoint":{"x":0.5161290322580645,"y":0.176056338028169}} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:90vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0} -->
-	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190622-disney-alaska-vacation-66-2.jpg","containerHue":"#000000","overlayHue":"#262626","overlayOpacity":8,"minScreenHeight":50,"containerPadding":{"linked":false,"top":"3","bottom":"3","left":"5","right":"5","icon":"editor-unlink"},"focalPoint":{"x":0.5161290322580645,"y":0.176056338028169}} -->
+	<div class="c9-grid py-3 pl-5 pr-5 c9-scroll c9-grid-has-background" style="min-height:50vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"5","left":"-1","right":"-1"}} -->
+	<div class="container-narrow c9-column-container py-5 my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Subheading","tagLevel":3,"type":"c9-sh subhead-h","textColor":"#FEC50A"} -->
 	<div class="section-heading c9-heading text-left"><h3 class="c9-sh" style="color:#FEC50A">Subheading</h3></div>
 	<!-- /wp:c9-blocks/heading -->
@@ -24,8 +24,8 @@ export default {
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1" style="color:#ffffff">Style Guide</h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:spacer -->
-	<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- wp:spacer {"height":"40px"} -->
+	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
 	<!-- wp:c9-blocks/horizontal-tabs {"buttonsAlign":"center","tabsData":[{"slug":"tab-1","title":"Tab 1"},{"slug":"tab-2","title":"Tab 2"},{"slug":"tab-3","title":"Tab 3"}],"instanceId":0,"tabContentBackgroundColor":"#ffffff"} -->
@@ -234,11 +234,11 @@ export default {
 	
 	<!-- wp:code -->
 	<pre class="wp-block-code"><code>.the-best-styles {
-	  font-family: 'Oswald', sans-serif;
-	  color: black; /* like your soul */
-	  font-size: 1.6em;
-	  padding: 420px;
-	}</code></pre>
+		  font-family: 'Oswald', sans-serif;
+		  color: black; /* like your soul */
+		  font-size: 1.6em;
+		  padding: 420px;
+		}</code></pre>
 	<!-- /wp:code --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->

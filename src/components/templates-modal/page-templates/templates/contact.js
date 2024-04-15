@@ -9,9 +9,9 @@ export default {
 	title: 'Contact Page',
 	description: `Your team has multiple points of contacts or departments, with a few different methods of getting in touch. Your users will appreciate being directed to the right point of contact. This landing page has a place for everything and a placeholder for your form plugin of choice.`,
 	recommended: `Large heading with contact form, multiple points of phone contact, multiple addresses, several paragraphs of instructions, a call-to-action bar + button, multiple phone numbers, header call-to-action + button, one hero image`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0} -->
-  <div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerWidth":"container-fluid","containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2.jpg","overlayHue":"#080808","overlayOpacity":8,"blendMode":"normal","minScreenHeight":50,"focalPoint":{"x":"0.49","y":"0.18"}} -->
-  <div class="container-fluid alignfull c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal c9-columns-has-background" style="min-height:50vh"><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:49% 18%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(8,8,8,.8);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+  <div class="c9-grid p-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"full","columns":2,"columnsGap":10,"layout":"c9-2-col-equal","containerWidth":"container-fluid","containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2.jpg","overlayHue":"#080808","overlayOpacity":8,"minScreenHeight":40,"focalPoint":{"x":"0.49","y":"0.18"}} -->
+  <div class="container-fluid alignfull c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal c9-columns-has-background" style="min-height:40vh"><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:49% 18%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190621-disney-alaska-vacation-138-2.jpg);background-repeat:no-repeat;background-size:cover"></div><div class="c9-overlay-container" style="background-color:rgba(8,8,8,.8);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
   <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Contact","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","weight":"light"} -->
   <div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1 font-weight-light" style="color:#ffffff">Contact</h1></div>
   <!-- /wp:c9-blocks/heading --></div></div>
@@ -23,7 +23,7 @@ export default {
   <!-- /wp:c9-blocks/heading -->
   
   <!-- wp:buttons -->
-  <div class="wp-block-buttons"><!-- wp:button {"textColor":"color-success","align":"center","className":"is-style-outline"} -->
+  <div class="wp-block-buttons"><!-- wp:button {"textColor":"color-success","className":"aligncenter is-style-outline"} -->
   <div class="wp-block-button aligncenter is-style-outline"><a class="wp-block-button__link has-color-success-color has-text-color wp-element-button" href="#">LIVE CHAT</a></div>
   <!-- /wp:button --></div>
   <!-- /wp:buttons --></div></div>
@@ -62,7 +62,7 @@ export default {
   <div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
   <!-- /wp:spacer -->
   
-  <!-- wp:button {"align":"center"} -->
+  <!-- wp:button {"className":"aligncenter"} -->
   <div class="wp-block-button aligncenter"><a class="wp-block-button__link wp-element-button" href="#">Email Us</a></div>
   <!-- /wp:button --></div></div>
   <!-- /wp:c9-blocks/column -->
@@ -98,15 +98,15 @@ export default {
   
   <!-- wp:list -->
   <ul class=""><!-- wp:list-item -->
-  <li><a href="#">Live Chat</a></li>
+  <li class=""><a href="#">Live Chat</a></li>
   <!-- /wp:list-item -->
   
   <!-- wp:list-item -->
-  <li><a href="#">Forums</a></li>
+  <li class=""><a href="#">Forums</a></li>
   <!-- /wp:list-item -->
   
   <!-- wp:list-item -->
-  <li><a href="#">Documentation</a></li>
+  <li class=""><a href="#">Documentation</a></li>
   <!-- /wp:list-item --></ul>
   <!-- /wp:list --></div></div>
   <!-- /wp:c9-blocks/column --></div></div>
@@ -172,40 +172,40 @@ export default {
   <!-- /wp:c9-blocks/column --></div></div>
   <!-- /wp:c9-blocks/column-container -->
   
-  <!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":665,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0} -->
-  <div class="container-narrow c9-column-container c9-scroll c9-layout-columns-1 one-column c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:665px"><!-- wp:c9-blocks/column -->
+  <!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":665,"layout":"one-column","containerWidth":"container-narrow","minScreenHeight":0,"containerMargin":{"linked":false,"icon":"editor-unlink","top":"-1","bottom":"5"}} -->
+  <div class="container-narrow c9-column-container mb-5 c9-scroll c9-layout-columns-1 one-column c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:665px"><!-- wp:c9-blocks/column -->
   <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Email Sales","subheading":"Response time 24/7","addSubheading":true,"tagLevel":3} -->
   <div class="section-heading c9-heading text-left"><h3 class="c9-h">Email Sales</h3><div class="c9-h h3"><small class="text-muted">&nbsp;Response time 24/7</small></div></div>
   <!-- /wp:c9-blocks/heading -->
   
   <!-- wp:html -->
   <form id="contact" action="" method="post">
-      <fieldset>
-        <input class="d-block w-100 mb-3" placeholder="Your name" type="text" tabindex="1" required="" autofocus="">
-      </fieldset>
-      <fieldset>
-        <input class="d-block w-100 mb-3" placeholder="Your Email Address" type="email" tabindex="2" required="">
-      </fieldset>
-      <fieldset>
-        <input class="d-block w-100 mb-3" placeholder="Your Phone Number" type="tel" tabindex="3" required="">
-      </fieldset>
-      <fieldset>
-        <input class="d-block w-100 mb-3" placeholder="Your Web Site starts with http://" type="url" tabindex="4" required="">
-      </fieldset>
-      <fieldset>
-        <textarea class="d-block w-100 mb-3" placeholder="Type your Message Here...." tabindex="5" required=""></textarea>
-      </fieldset>
-      <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-      </fieldset>
-    </form>
+        <fieldset>
+          <input class="d-block w-100 mb-3" placeholder="Your name" type="text" tabindex="1" required="" autofocus="">
+        </fieldset>
+        <fieldset>
+          <input class="d-block w-100 mb-3" placeholder="Your Email Address" type="email" tabindex="2" required="">
+        </fieldset>
+        <fieldset>
+          <input class="d-block w-100 mb-3" placeholder="Your Phone Number" type="tel" tabindex="3" required="">
+        </fieldset>
+        <fieldset>
+          <input class="d-block w-100 mb-3" placeholder="Your Web Site starts with http://" type="url" tabindex="4" required="">
+        </fieldset>
+        <fieldset>
+          <textarea class="d-block w-100 mb-3" placeholder="Type your Message Here...." tabindex="5" required=""></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+      </form>
   <!-- /wp:html --></div></div>
   <!-- /wp:c9-blocks/column --></div></div>
   <!-- /wp:c9-blocks/column-container --></div>
   <!-- /wp:c9-blocks/grid -->
   
   <!-- wp:c9-blocks/grid {"instanceId":2,"containerHue":"#f4f4f4","minScreenHeight":64} -->
-  <div class="c9-grid p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+  <div class="c9-grid p-3 c9-scroll" style="min-height:64vh;background-color:rgba(244,244,244,1)"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","verticalAlign":"center","overlayHue":"#ffffff","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
   <div class="container c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-equal" style="min-height:10vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
   <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:html -->
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2972.925326227983!2d-87.63594088430501!3d41.8299060764073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c14278e92f5%3A0x2f864f668f4a90b8!2sGuaranteed%20Rate%20Field!5e0!3m2!1sen!2sus!4v1567193833384!5m2!1sen!2sus" style="border:0;" allowfullscreen="" width="600" height="350" frameborder="0"></iframe>
@@ -214,7 +214,7 @@ export default {
   
   <!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
   <div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:paragraph {"align":"center"} -->
-  <p class="has-text-align-center"><strong>Headquarters</strong> (Not the bar)<br>2999 N. Chicago Ave.<br>Chicago, Illinois 60666</p>
+  <p class="has-text-align-center"><strong>Headquarters</strong><br>2999 N. Chicago Ave.<br>Chicago, Illinois 60666</p>
   <!-- /wp:paragraph -->
   
   <!-- wp:paragraph {"align":"center"} -->
@@ -227,7 +227,7 @@ export default {
   <!-- wp:c9-blocks/grid {"instanceId":3,"containerHue":"#ebebeb","minScreenHeight":10,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
   <div class="c9-grid my-5 c9-scroll" style="min-height:10vh;background-color:rgba(235,235,235,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnsGap":4,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0,"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
   <div class="container-narrow c9-column-container p-3 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-4 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-  <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Call us","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","disableToolbar":true,"customFontSize":25} -->
+  <div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-sh","buttonText":"Call us","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","disableToolbar":true} -->
   <div style="text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-sh" style="font-size:1.6rem"><p>Prefer to speak with a real live person? </p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="tel:8005551000" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Call us</a></div></div></div>
   <!-- /wp:c9-blocks/cta --></div></div>
   <!-- /wp:c9-blocks/column --></div></div>

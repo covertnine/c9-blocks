@@ -9,9 +9,9 @@ export default {
 	title: 'Resources',
 	description: `A page to organize resources in one location with a Search Block, posts or articles of any post type or category, a hero header image with a few paragraphs or headings of instructions to direct your users to your well-documented knowledgebase. Cap it off with a call-to-action to subscribe to your newsletter for updates.`,
 	recommended: `Articles or blog posts (6), hero image, 2-3 paragraphs or headings, FAQ, call-to-action bar + button`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg","bgCustomX":{"size":200,"unit":"%"},"minScreenHeight":85,"focalPoint":{"x":0.17511520737327188,"y":0.1231737012987013},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:85vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg","bgCustomX":{"size":200,"unit":"%"},"minScreenHeight":45,"focalPoint":{"x":0.17511520737327188,"y":0.1231737012987013},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:45vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1"},"containerPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1","left":"-1","right":"-1"}} -->
+	<div class="container c9-column-container pt-5 mt-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Resources","type":"c9-txl display-","textColor":"#ffffff"} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1" style="color:#ffffff">Resources</h1></div>
 	<!-- /wp:c9-blocks/heading -->
@@ -32,8 +32,8 @@ export default {
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->
 	
-	<!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":0} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	<!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-equal","overlayHue":"#ffffff","minScreenHeight":0,"containerMargin":{"linked":false,"icon":"editor-unlink","top":"-1","bottom":"5"},"containerPadding":{"linked":false,"icon":"editor-unlink","top":"-1","bottom":"5","left":"-1","right":"-1"}} -->
+	<div class="container c9-column-container pb-5 mb-5 c9-scroll c9-layout-columns-2 c9-2-col-equal"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:group {"backgroundColor":"covertnine-palette-1"} -->
 	<div class="wp-block-group has-covertnine-palette-1-background-color has-background"><!-- wp:c9-blocks/heading {"heading":"Get started.","tagLevel":4} -->
 	<div class="section-heading c9-heading text-left"><h4 class="c9-h">Get started.</h4></div>
@@ -53,30 +53,28 @@ export default {
 	<!-- /wp:group --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
-	<!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"></div></div>
+	<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"id":2452,"width":"128px","height":"auto","sizeSlug":"large","align":"center"} -->
+	<figure class="wp-block-image aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2020/04/c9-apple-touch-logo-512.png" alt="Logo" class="wp-image-2452" style="width:128px;height:auto"/></figure>
+	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --><div class="c9-image-container c9-image-mobile-bottom-center c9-image-mobile-size-cover" style="background-position:17.51152073732719% 12.31737012987013%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-51-2.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#e6e6e6","containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
-	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(230,230,230,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-	<div class="container-narrow c9-column-container my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:search {"label":"Search for exactly what you need","placeholder":"Search resources...","buttonText":"Search"} /--></div></div>
+	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#e6e6e6","minScreenHeight":10,"containerPadding":{"linked":false,"top":"3","bottom":"3","left":"5","right":"5","icon":"editor-unlink"}} -->
+	<div class="c9-grid py-3 pl-5 pr-5 c9-scroll" style="min-height:10vh;background-color:rgba(230,230,230,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":false,"icon":"editor-unlink","top":"-1","bottom":"-1","left":"5","right":"5"}} -->
+	<div class="container-narrow c9-column-container px-5 my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"c9PaddingSpaceSettings":{"linked":false,"icon":"editor-unlink","top":"-1","bottom":"-1","left":"5","right":"5"}} -->
+	<div class="c9-block-layout-column c9-column text-left px-5"><div class="c9-column-innner"><!-- wp:search {"label":"Search for exactly what you need","placeholder":"Search resources...","buttonText":"Search","align":"center"} /--></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:spacer {"height":"60px"} -->
-	<div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-	
-	<!-- wp:c9-blocks/heading {"heading":"Articles","tagLevel":2,"type":"c9-txl display-","textAlign":"center","overrideStyle":true} -->
-	<div class="section-heading c9-heading text-center"><h2 class="c9-txl display-2">Articles</h2></div>
+	<!-- wp:c9-blocks/heading {"heading":"Articles","tagLevel":2,"type":"c9-txl display-","textAlign":"center","overrideStyle":true,"c9PaddingSpaceSettings":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1","left":"-1","right":"-1"},"c9MarginSpaceSettings":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1"}} -->
+	<div class="section-heading c9-heading pt-5 mt-5 text-center"><h2 class="c9-txl display-2">Articles</h2></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:c9-blocks/posts-grid {"instanceId":0,"containerHue":"#f7f7f9","containerPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1","left":"5","right":"5"}} -->
-	<div class="c9-posts-grid px-5 pt-5 c9-scroll" style="min-height:20vh;background-color:rgba(247,247,249,1)"><!-- wp:c9-blocks/post-grid {"displayPostDate":true,"displayPostExcerpt":true,"displayPostLink":true,"columns":3,"imageSize":"c9-feature-medium-crop","bgPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1","left":"5","right":"5"}} /--></div>
+	<!-- wp:c9-blocks/posts-grid {"instanceId":0,"containerPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1","left":"5","right":"5"}} -->
+	<div class="c9-posts-grid px-5 pt-5 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/post-grid {"displayPostDate":true,"displayPostExcerpt":true,"displayPostLink":true,"columns":3,"imageSize":"c9-feature-medium-crop","bgPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"-1","left":"5","right":"5"}} /--></div>
 	<!-- /wp:c9-blocks/posts-grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":2,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->

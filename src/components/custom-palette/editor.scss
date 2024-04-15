@@ -6,22 +6,33 @@
 	padding: 0;
 }
 
-.c9-block-default-palette .components-color-palette__item-wrapper {padding: 2px;}
+.c9-block-default-palette .components-color-palette__item-wrapper {
+	padding: 2px;
+}
 
 .c9-custom-color-settings-container .c9-color-icon-indicate:hover {
 	transform: scale(1);
 	height: auto;
 }
 
-.c9-custom-color-settings-container .c9-color-icon-indicate .component-color-indicator.c9-advanced-color-indicate {
+.c9-custom-color-settings-container
+	.c9-color-icon-indicate
+	.component-color-indicator.c9-advanced-color-indicate {
 	width: 28px;
 	height: 28px;
 	border-radius: 50%;
 	margin: 0;
 }
 
-.components-popover.popover-color .components-popover__content>div>.components-base-control {padding: 16px 16px 12px;}
+.components-popover.popover-color
+	.components-popover__content
+	> div
+	> .components-base-control {
+	padding: 16px 16px 12px;
+}
 
-.components-popover.popover-color>.components-popover__content>.components-base-control {
+.components-popover.popover-color
+	> .components-popover__content
+	> .components-base-control {
 	padding: 0 10px;
 }
