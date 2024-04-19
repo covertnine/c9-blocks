@@ -9,10 +9,11 @@ export default {
 	title: 'Ticketed Event',
 	description: `Publish the who, what, where, when, why, how (<- italics) for an individual or multi-day show or festival. Drop in the details, photos, and media for your performing artist(s) and fans will have all the information they need to get tickets on the spot.`,
 	recommended: `Heading, subheading, dates, logo, ticket button link, event information and flyer, talent information, large hero imagery (3), audio embeds, FAQ toggles, vertical photo`,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":9,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.5529953917050692,"y":0.4722222222222222},"containerVideoURL":"https://cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4"} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:75vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Event Name","displayLevel":"1","textColor":"#ffffff","textAlign":"center"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":9,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":7,"blendMode":"multiply","minScreenHeight":35,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":0.5529953917050692,"y":0.4722222222222222},"containerVideoURL":"https://cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4"} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background c9-grid-has-video" style="min-height:35vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="container-narrow c9-column-container my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:group {"layout":{"type":"constrained"},"c9PaddingSpaceSettings":{"linked":false,"top":"-1","bottom":"-1","left":"5","right":"5","icon":"editor-unlink"}} -->
+	<div class="wp-block-group px-5"><!-- wp:c9-blocks/heading {"heading":"Event Name","displayLevel":"1","textColor":"#ffffff","textAlign":"center"} -->
 	<div class="section-heading c9-heading text-center"><h1 class="c9-h" style="color:#ffffff">Event Name</h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
@@ -29,25 +30,26 @@ export default {
 	<!-- /wp:spacer -->
 	
 	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"textColor":"color-light","align":"center","className":"is-style-default is-style-outline"} -->
+	<div class="wp-block-buttons"><!-- wp:button {"textColor":"color-light","className":"aligncenter is-style-default is-style-outline"} -->
 	<div class="wp-block-button aligncenter is-style-default is-style-outline"><a class="wp-block-button__link has-color-light-color has-text-color wp-element-button" href="#">get tickets</a></div>
 	<!-- /wp:button --></div>
-	<!-- /wp:buttons --></div></div>
+	<!-- /wp:buttons --></div>
+	<!-- /wp:group --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column {"textAlign":"center","verticalAlign":"center"} -->
-	<div class="c9-block-layout-column c9-column text-center c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"align":"center","id":3142,"width":205,"height":305,"sizeSlug":"large","linkDestination":"media"} -->
-	<figure class="wp-block-image aligncenter size-large is-resized"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-event-placeholder-flyer.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-event-placeholder-flyer-683x1024.jpg" alt="" class="wp-image-3142" width="205" height="305"/></a></figure>
+	<div class="c9-block-layout-column c9-column text-center c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:image {"id":3142,"width":"205px","height":"305px","sizeSlug":"large","linkDestination":"media","align":"center"} -->
+	<figure class="wp-block-image aligncenter size-large is-resized"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-event-placeholder-flyer.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-event-placeholder-flyer-683x1024.jpg" alt="" class="wp-image-3142" style="width:205px;height:305px"/></a></figure>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
-	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-9" class="c9-video-custom" playsinline autoplay muted loop style="min-height:75vh"><source src="https://cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4" type="video/mp4"/></video></div></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:55.29953917050692% 47.22222222222222%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
+	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(49,49,49,.7);mix-blend-mode:multiply"></div><div class="c9-video-container d-none d-sm-block"><div class="c9-embed-container"><video id="containerVideo-9" class="c9-video-custom" playsinline autoplay muted loop style="min-height:35vh"><source src="https://cortex.covertnine.com/wp-content/uploads/2019/08/concert-video.mp4.mp4" type="video/mp4"/></video></div></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:55.29953917050692% 47.22222222222222%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":19,"rows":2} -->
-	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","overlayHue":"#efefef","overlayOpacity":7,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","overlayHue":"#efefef","overlayOpacity":7,"minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container-narrow c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-overlay-container" style="background-color:rgba(239,239,239,.7);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading -->
-	<h2 class="">Event Information</h2>
+	<h2 class="wp-block-heading">Event Information</h2>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"fontSize":"small"} -->
@@ -209,7 +211,7 @@ export default {
 	<div class="section-heading c9-heading text-center"><h3 class="c9-h">Lineup Friday</h3></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/IMG_9779.jpg","bgImgAttach":true,"overlayHue":"#0c0c0c","overlayOpacity":8,"blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.5299539170506913,"y":0.4236111111111111}} -->
+	<!-- wp:c9-blocks/grid {"instanceId":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/IMG_9779.jpg","bgImgAttach":true,"overlayHue":"#0c0c0c","overlayOpacity":8,"minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.5299539170506913,"y":0.4236111111111111}} -->
 	<div class="c9-grid p-3 my-5 c9-fixed c9-grid-has-background" style="min-height:75vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Talent Name","displayLevel":"3","type":"c9-txl display-","textColor":"#e7e7e7","overrideStyle":true} -->
@@ -231,7 +233,7 @@ export default {
 	<!-- /wp:spacer -->
 	
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons"><!-- wp:button {"align":"center","style":{"color":{"text":"#e9e9e9"}},"className":"is-style-outline"} -->
+	<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"text":"#e9e9e9"}},"className":"aligncenter is-style-outline"} -->
 	<div class="wp-block-button aligncenter is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" style="color:#e9e9e9">Get Tickets</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div></div>
@@ -252,7 +254,7 @@ export default {
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:c9-blocks/grid {"instanceId":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30024945142_81051e05cb_o.jpg","bgImgAttach":true,"minScreenHeight":85,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.4838709677419355,"y":0.6388888888888888},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
-	<div class="c9-grid p-3 my-5 c9-fixed c9-grid-has-background" style="min-height:85vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","overlayHue":"#ffffff","overlayOpacity":10,"minScreenHeight":5,"containerMargin":{"linked":false,"top":"-1","bottom":"5","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="c9-grid p-3 my-5 c9-fixed c9-grid-has-background" style="min-height:85vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","overlayHue":"#ffffff","minScreenHeight":5,"containerMargin":{"linked":false,"top":"-1","bottom":"5","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container c9-column-container p-5 mb-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft" style="min-height:5vh"><div class="c9-overlay-container" style="background-color:rgba(255,255,255,1);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Talent Name","displayLevel":"3","type":"c9-txl display-","textColor":"#313131","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-3" style="color:#313131">Talent Name</h1></div>
@@ -277,7 +279,7 @@ export default {
 	<!-- /wp:spacer -->
 	
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"color-primary","align":"center"} -->
+	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"color-primary","className":"aligncenter"} -->
 	<div class="wp-block-button aligncenter"><a class="wp-block-button__link has-color-primary-background-color has-background wp-element-button" href="#">Get Tickets</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div></div>
@@ -297,7 +299,7 @@ export default {
 	<div class="section-heading c9-heading text-center"><h3 class="c9-h">Lineup Sunday</h3></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","bgImgAttach":true,"overlayHue":"#2f2f2f","blendMode":"normal","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.5299539170506913,"y":0.4236111111111111},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
+	<!-- wp:c9-blocks/grid {"instanceId":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","bgImgAttach":true,"overlayHue":"#2f2f2f","minScreenHeight":75,"containerMargin":{"linked":true,"unit":"px","top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"focalPoint":{"x":0.5299539170506913,"y":0.4236111111111111},"focalPointMobile":{"x":0.5,"y":0.75},"overrideMobile":true} -->
 	<div class="c9-grid p-3 my-5 c9-fixed c9-grid-has-background" style="min-height:75vh"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"bottom","minScreenHeight":0} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Talent Name","displayLevel":"3","type":"c9-txl display-","textColor":"#ffffff","overrideStyle":true} -->
@@ -309,13 +311,13 @@ export default {
 	<!-- /wp:c9-blocks/heading --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
-	<!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"$19 / ADVANCED","tagLevel":5,"textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
+	<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"$19 / ADVANCED","tagLevel":5,"textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h5 class="c9-h h5" style="color:#ffffff">$19 / ADVANCED</h5></div>
 	<!-- /wp:c9-blocks/heading -->
 	
 	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"align":"center","style":{"color":{"background":"#c9282a"}}} -->
+	<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#c9282a"}},"className":"aligncenter"} -->
 	<div class="wp-block-button aligncenter"><a class="wp-block-button__link has-background wp-element-button" style="background-color:#c9282a">Get Tickets</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div></div>
@@ -323,7 +325,7 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(47,47,47,1);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-bottom-center c9-image-mobile-size-cover" style="background-position:52.995391705069125% 42.36111111111111%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":24,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#181818","overlayOpacity":10,"blendMode":"multiply","minScreenHeight":78,"focalPoint":{"x":"0.37","y":"0.03"}} -->
+	<!-- wp:c9-blocks/grid {"instanceId":24,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/homo-riot-vertical.jpg","overlayHue":"#181818","blendMode":"multiply","minScreenHeight":78,"focalPoint":{"x":"0.37","y":"0.03"}} -->
 	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:78vh"><!-- wp:c9-blocks/column-container {"align":"wide","columns":2,"columnsGap":10,"layout":"c9-2-col-wideright","verticalAlign":"center","minScreenHeight":80,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container alignwide c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideright" style="min-height:80vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Listen","subheading":"Spotify Album Listen","addSubheading":true,"displayLevel":"3","textColor":"#ffffff","weight":"bold","overrideStyle":true} -->
@@ -390,8 +392,8 @@ export default {
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
-	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:embed {"url":"https://open.spotify.com/album/1ti02OHxoRIdf8DAZqC2mu?si=r4iEXg8JS22kJewszyebxQ","type":"rich","providerNameSlug":"spotify","responsive":true,"className":"wp-embed-aspect-21-9 wp-has-aspect-ratio"} -->
-	<figure class="wp-block-embed is-type-rich is-provider-spotify wp-block-embed-spotify wp-embed-aspect-21-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:embed {"url":"https://open.spotify.com/album/1ti02OHxoRIdf8DAZqC2mu?si=r4iEXg8JS22kJewszyebxQ","type":"rich","providerNameSlug":"spotify","allowResponsive":false,"responsive":true,"className":""} -->
+	<figure class="wp-block-embed is-type-rich is-provider-spotify wp-block-embed-spotify"><div class="wp-block-embed__wrapper">
 	https://open.spotify.com/album/1ti02OHxoRIdf8DAZqC2mu?si=r4iEXg8JS22kJewszyebxQ
 	</div></figure>
 	<!-- /wp:embed --></div></div>
@@ -420,13 +422,13 @@ export default {
 	<div style="height:33px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:image {"align":"center","id":3192,"width":51,"height":38,"sizeSlug":"large"} -->
-	<figure class="wp-block-image aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/feather-logo-white.svg" alt="" class="wp-image-3192" width="51" height="38"/></figure>
+	<!-- wp:image {"id":3192,"width":"51px","height":"38px","sizeSlug":"large","align":"center"} -->
+	<figure class="wp-block-image aligncenter size-large is-resized"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/feather-logo-white.svg" alt="" class="wp-image-3192" style="width:51px;height:38px"/></figure>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/image-carousel {"instanceId":7,"url":["https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-b-1024x1024.jpg","https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-a-1024x1024.jpg","https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-c-1024x1024.jpg"],"id":[3158,3157,3159],"captionTitle":[null,null,null],"captionContent":[null,null,null],"slideMaxHeight":455,"className":"container"} -->
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/image-carousel {"instanceId":7,"url":["https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-b-1024x1024.jpg","https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-a-1024x1024.jpg","https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-c-1024x1024.jpg"],"id":[3158,3157,3159],"slideMaxHeight":455,"className":"container"} -->
 	<div id="c9-image-carousel-indicator-7" class="c9-image-carousel container carousel slide container" data-ride="carousel" data-interval="5000" data-wrap="true" style="min-height:455px"><ol class="carousel-indicators"><li data-target="#c9-image-carousel-indicator-7" data-slide-to="0" class="active"></li><li data-target="#c9-image-carousel-indicator-7" data-slide-to="1"></li><li data-target="#c9-image-carousel-indicator-7" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-b-1024x1024.jpg" class="d-block w-100"/></div><div class="carousel-item"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-a-1024x1024.jpg" class="d-block w-100"/></div><div class="carousel-item"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-album-c-1024x1024.jpg" class="d-block w-100"/></div></div><a class="carousel-control-prev" href="#c9-image-carousel-indicator-7" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#c9-image-carousel-indicator-7" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
 	<!-- /wp:c9-blocks/image-carousel --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
