@@ -68,6 +68,9 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 
 == Changelog ==
 
+= 1.7.4 =
+Updated compatibility with WordPress 6.5.2
+
 = 1.7.3 =
 Fixed issue with template preview from C9 Templates modal with new block markup for WordPress 6.5.2.
 
