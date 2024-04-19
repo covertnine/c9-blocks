@@ -7,11 +7,7 @@ export default {
 	),
 	title: 'Inform Profile Photo Focus',
 	description: '100 Words • 2 Headlines • Background Photo',
-	markup: `<!-- wp:paragraph -->
-	<p class=""></p>
-	<!-- /wp:paragraph -->
-	
-	<!-- wp:c9-blocks/grid {"instanceId":6,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/guitar-band-solo-vertical-portrait.jpg","bgImgSize":"","bgCustomX":{"size":50,"unit":"%"},"overlayOpacity":6,"minScreenHeight":50,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":1,"y":0.73},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":6,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/guitar-band-solo-vertical-portrait.jpg","bgImgSize":"","bgCustomX":{"size":50,"unit":"%"},"overlayOpacity":6,"minScreenHeight":50,"containerMargin":{"linked":true,"unit":"px","top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"},"focalPoint":{"x":1,"y":0.73},"bgImgSizeMobile":"","focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true,"bgCustomXMobile":{"size":200,"unit":"px"}} -->
 	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:50vh;--mobile-height:200px;--mobile-width:auto"><!-- wp:c9-blocks/column-container {"columns":2,"layout":"c9-2-col-wideleft","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
 	<div class="container c9-column-container p-5 my-5 c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-center c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Credentials or Title","tagLevel":4,"type":"c9-sh subhead-h","weight":"light","overrideStyle":true} -->
