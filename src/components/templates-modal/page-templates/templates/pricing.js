@@ -9,9 +9,9 @@ export default {
 	title: 'Pricing',
 	description: `Tabs full of different pricing structures. Hourly, unlimited, or per project layouts will all work well with this template.`,
 	recommended: `Multiple headings • Background Image • Details with pricing information in bullet form. Optional forms for a special offer or email list signup. `,
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#070707","overlayOpacity":9,"minScreenHeight":80,"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"focalPoint":{"x":"0.48","y":"0.83"}} -->
-	<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:80vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":30,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
-	<div class="container-narrow c9-column-container p-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column c9-columns-center" style="min-height:30vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:605px"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#070707","overlayOpacity":9,"minScreenHeight":40,"containerPadding":{"linked":true,"top":"0","bottom":"0","left":"0","right":"0","icon":"admin-links"},"focalPoint":{"x":"0.48","y":"0.83"}} -->
+	<div class="c9-grid p-0 c9-scroll c9-grid-has-background" style="min-height:40vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":1,"columnMaxWidth":605,"layout":"one-column","containerWidth":"container-narrow","verticalAlign":"center","minScreenHeight":0,"containerPadding":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="container-narrow c9-column-container p-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:605px"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Pricing","subheading":"Rates","addSubheading":true,"displayLevel":"1","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h1 class="c9-txl display-1" style="color:#ffffff">Pricing</h1><div class="c9-txl display-1"><small class="text-muted">&nbsp;Rates</small></div></div>
 	<!-- /wp:c9-blocks/heading -->
@@ -471,25 +471,25 @@ export default {
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(7,7,7,.9);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:48% 83%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg);background-repeat:no-repeat;background-size:cover"></div></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#000000"} -->
-	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"columnsGap":0,"layout":"one-column"} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-0 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Signup Now","buttonBackgroundColor":"#21a77a","buttonTextColor":"#000000","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":"2.5rem"} -->
-	<div style="text-align:left" class="c9-cta c9-block-cta container p-5"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-h" style="font-size:2.5rem;color:#ffffff"><p>If pay as you go isn't your thing, call about our flexible spend retainers. Available for select clients only.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#000000;background-color:#21a77a">Signup Now</a></div></div></div>
+	<!-- wp:c9-blocks/grid {"instanceId":1,"containerHue":"#000000","minScreenHeight":10,"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+	<div class="c9-grid c9-scroll" style="min-height:10vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"columnsGap":0,"layout":"one-column","verticalAlign":"center","minScreenHeight":0} -->
+	<div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-0 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Signup Now","buttonBackgroundColor":"#21a77a","buttonTextColor":"#000000","buttonSize":"c9-button-size-extralarge","ctaLayout":"three-quarters","ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"ctaTextColor":"#ffffff","disableToolbar":true,"customFontSize":"2.5rem"} -->
+	<div style="text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-9"><div class="c9-cta-text c9-h" style="font-size:2.5rem;color:#ffffff"><p>If pay as you go isn't your thing, call about our flexible spend retainers. Available for select clients only.</p></div></div><div class="c9-cta-button col-12 col-md-3"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#000000;background-color:#21a77a">Signup Now</a></div></div></div>
 	<!-- /wp:c9-blocks/cta --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --></div>
 	<!-- /wp:c9-blocks/grid -->
 	
-	<!-- wp:c9-blocks/grid {"instanceId":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#070707","overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":100,"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:100vh;background-color:rgba(7,7,7,1)"><!-- wp:c9-blocks/column-container {"align":"full","columns":1,"columnMaxWidth":600,"layout":"c9-1-col-equal","containerWidth":"container-fluid","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":false,"top":"5","bottom":"5","left":"5","right":"5","icon":"editor-unlink"}} -->
-	<div class="container-fluid alignfull c9-column-container my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center c9-1-col-equal c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:600px"><!-- wp:c9-blocks/column -->
+	<!-- wp:c9-blocks/grid {"instanceId":2,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/09/20190619-disney-alaska-vacation-171-2.jpg","containerHue":"#070707","overlayHue":"#282828","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":10,"focalPoint":{"x":0.28110599078341014,"y":0.5763888888888888},"focalPointMobile":{"x":0.75,"y":0.5},"overrideMobile":true} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:10vh;background-color:rgba(7,7,7,1)"><!-- wp:c9-blocks/column-container {"align":"full","columns":1,"columnMaxWidth":600,"layout":"c9-1-col-equal","containerWidth":"container-fluid","verticalAlign":"center","minScreenHeight":0,"containerMargin":{"linked":false,"top":"5","bottom":"5","left":"5","right":"5","icon":"editor-unlink"},"containerPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"5","left":"-1","right":"-1"}} -->
+	<div class="container-fluid alignfull c9-column-container py-5 my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-center c9-1-col-equal c9-columns-center"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column" style="max-width:600px"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Offer Headline","displayLevel":"4","type":"c9-txl display-","textColor":"#ffffff","textAlign":"center","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-center"><h1 class="c9-txl display-4" style="color:#ffffff">Offer Headline</h1></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:separator {"opacity":"css"} -->
-	<hr class="wp-block-separator has-css-opacity"/>
+	<!-- wp:separator {"style":{"color":{"background":"#f6f6f6"}}} -->
+	<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#f6f6f6;color:#f6f6f6"/>
 	<!-- /wp:separator -->
 	
 	<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#efefef"}},"fontSize":"medium"} -->
@@ -507,12 +507,12 @@ export default {
 	
 	<!-- wp:html -->
 	<form method="post" enctype="multipart/form-data" id="gform_1" action="" class="mb-5 mt-5 d-block w-100">
-			
-			<input type="text" name="input_1.6" id="input_1_1_6" value="" aria-label="Last name" aria-invalid="false" placeholder="Enter name" class="mb-2 d-block w-100">
-			<br>
-			<input name="input_2" id="input_1_2" type="text" value="" class="d-block w-100" placeholder="Enter Email" aria-invalid="false">
-			
-			</form>
+							
+							<input type="text" name="input_1.6" id="input_1_1_6" value="" aria-label="Last name" aria-invalid="false" placeholder="Enter name" class="mb-2 d-block w-100">
+							<br>
+							<input name="input_2" id="input_1_2" type="text" value="" class="d-block w-100" placeholder="Enter Email" aria-invalid="false">
+							
+							</form>
 	<!-- /wp:html -->
 	
 	<!-- wp:buttons {"className":"mt-5","layout":{"type":"flex","justifyContent":"center"}} -->

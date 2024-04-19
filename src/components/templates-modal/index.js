@@ -191,10 +191,12 @@ class TemplatesModal extends Component {
 		};
 
 		// convert above to React DOM elements
-		const sectionItems = Object.keys(sections).map((k) => {
+		const sectionItems = Object.keys(sections).map((k, index) => {
+			// Create a unique key combining the key and the index
+			const uniqueKey = `section-${k}-${index}`;
 			return (
 				<SectionButton
-					key={SectionTemplates[k].title}
+					key={uniqueKey}
 					onHover={onHover}
 					open={() => {
 						this.setUpdateState('updating');
@@ -224,15 +226,17 @@ class TemplatesModal extends Component {
 		const pageTypes = [];
 
 		// Build out the whole pagetypes thing with headings mixed in
-		Object.keys(PageTypes).forEach((type) => {
+		Object.keys(PageTypes).forEach((type, typeIndex) => {
 			const layoutsByType = Object.keys(PageTemplates).filter((k) => {
 				return PageTemplates[k].type === type;
 			});
 
-			const layoutItems = layoutsByType.map((name) => {
+			const layoutItems = layoutsByType.map((name, index) => {
+				// Create a unique key for each layout item using the name and the index
+				const layoutKey = `layout-${type}-${name}-${index}`;
 				return (
 					<LayoutButton
-						key={name}
+						key={layoutKey}
 						onHover={onHover}
 						open={() => {
 							this.setUpdateState('updating');
@@ -260,10 +264,14 @@ class TemplatesModal extends Component {
 					/>
 				);
 			});
+			// Use the type and typeIndex to create a unique key for each Fragment
+			const fragmentKey = `fragment-${type}-${typeIndex}`;
 			pageTypes.push(
-				<Fragment key={type}>
+				<Fragment key={fragmentKey}>
 					<PageTypeHeading name={type} description={PageTypes[type]} />
-					<div className="c9-layout-options">{layoutItems}</div>
+					<div className="c9-layout-options" key={type}>
+						{layoutItems}
+					</div>
 				</Fragment>
 			);
 		});
