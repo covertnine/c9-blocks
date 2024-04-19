@@ -4,7 +4,7 @@ Donate link: https://www.covertnine.com/about
 Tags: blocks, gutenberg, page builder, block, marketing, block editor, gutenberg blocks, editor, landing page, responsive, blocks
 Requires at least: 5.9
 Tested up to: 6.4.3
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -67,6 +67,9 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 6. Tutorials in the modal to show how to use the blocks plugin and how to build landing pages.
 
 == Changelog ==
+
+= 1.7.3 =
+Fixed issue with template preview from C9 Templates modal with new block markup for WordPress 6.5.2.
 
 = 1.7.2 =
 Bug fixes and updates for WordPress Twenty Twenty Four theme compatibility and Wordpress 6.4.3.
