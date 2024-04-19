@@ -7,20 +7,16 @@ export default {
 	),
 	title: 'Convince Resume/CV Focus',
 	description: '150 Words • Resume • Background',
-	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#000000","overlayOpacity":7,"blendMode":"normal","minScreenHeight":90,"focalPoint":{"x":"0.63","y":"1.00"}} -->
-	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:90vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","minScreenHeight":100} -->
-	<div class="container c9-column-container c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column" style="min-height:100vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":2,"rows":4,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg","containerHue":"#000000","overlayHue":"#000000","overlayOpacity":7,"minScreenHeight":10,"focalPoint":{"x":"0.63","y":"1.00"}} -->
+	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:10vh;background-color:rgba(0,0,0,1)"><!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","verticalAlign":"bottom","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":false,"icon":"editor-unlink","top":"5","bottom":"5","left":"-1","right":"-1"}} -->
+	<div class="container c9-column-container py-5 my-5 c9-scroll c9-layout-columns-1 c9-is-vertically-aligned-bottom one-column"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:c9-blocks/heading {"heading":"Click on the outer edge of the C9 Grid block to change its background.","tagLevel":5,"displayLevel":"3","type":"c9-sh subhead-h","textColor":"#ffffff","weight":"light","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h5 class="c9-sh subhead-h3 font-weight-light" style="color:#ffffff">Click on the outer edge of the C9 Grid block to change its background.</h5></div>
 	<!-- /wp:c9-blocks/heading -->
 	
-	<!-- wp:c9-blocks/heading {"heading":"Introduce yourself with your biggest headline.","type":"c9-txl display-","textColor":"#ffffff","weight":"bold"} -->
-	<div class="section-heading c9-heading text-left"><h1 class="c9-txl display-1 font-weight-bold" style="color:#ffffff">Introduce yourself with your biggest headline.</h1></div>
-	<!-- /wp:c9-blocks/heading -->
-	
-	<!-- wp:spacer -->
-	<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer --></div></div>
+	<!-- wp:c9-blocks/heading {"heading":"Introduce yourself with your biggest headline.","type":"c9-txl display-","textColor":"#ffffff","weight":"bold","c9PaddingSpaceSettings":{"linked":false,"icon":"editor-unlink","top":"-1","bottom":"5","left":"-1","right":"-1"}} -->
+	<div class="section-heading c9-heading pb-5 text-left"><h1 class="c9-txl display-1 font-weight-bold" style="color:#ffffff">Introduce yourself with your biggest headline.</h1></div>
+	<!-- /wp:c9-blocks/heading --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->
 	
@@ -202,8 +198,8 @@ export default {
 	
 	<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column"} -->
 	<div class="container c9-column-container c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"align":"center","id":329,"width":53,"height":53} -->
-	<figure class="wp-block-image aligncenter is-resized"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/10/feather-logo-white.svg" alt="" class="wp-image-329" width="53" height="53"/></figure>
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":329,"width":"53px","height":"53px","align":"center"} -->
+	<figure class="wp-block-image aligncenter is-resized"><img src="https://cortex.covertnine.com/wp-content/uploads/2019/10/feather-logo-white.svg" alt="" class="wp-image-329" style="width:53px;height:53px"/></figure>
 	<!-- /wp:image --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container --><div class="c9-overlay-container" style="background-color:rgba(0,0,0,.7);mix-blend-mode:normal"></div><div class="c9-image-container c9-image-mobile-size-cover" style="background-position:63% 100%;background-image:url(https://c9.covertnine.com/wp-content/uploads/2020/10/trees-vertical-alt.jpg);background-repeat:no-repeat;background-size:cover"></div></div>

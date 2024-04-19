@@ -28,7 +28,7 @@ function PreviewPanel({ item }) {
 						//minHeight={1200}
 						additionalStyles={[
 							{
-								css: '.block-selector,.components-resizable-box__handle{visibility:hidden;} .block-editor-iframe__body.editor-styles-wrapper .wp-block:not(.alignwide):not(.alignfull):not(.wp-social-link) {max-width:1200px;}',
+								css: '.block-selector,.components-resizable-box__handle{visibility:hidden;display:none;} .block-editor-iframe__body.editor-styles-wrapper .wp-block:not(.alignwide):not(.alignfull):not(.wp-social-link) {max-width:1200px;} .editor-styles-wrapper .c9-grid [data-block], .editor-styles-wrapper .is-root-container>.c9-grid .block-editor-block-list__block:not(.wp-block-separator):not(.rich-text) {margin-top: 0px; margin-bottom: 0px;}',
 							},
 						]}
 						blocks={item}

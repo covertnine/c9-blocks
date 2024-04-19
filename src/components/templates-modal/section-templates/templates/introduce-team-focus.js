@@ -7,11 +7,7 @@ export default {
 	),
 	title: 'Introduce Team Focus',
 	description: '150 Words • 3-4 People • Background Photo',
-	markup: `<!-- wp:paragraph -->
-	<p class=""></p>
-	<!-- /wp:paragraph -->
-	
-	<!-- wp:c9-blocks/grid {"instanceId":0,"rows":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"focalPoint":{"x":"0.50","y":"0.46"}} -->
+	markup: `<!-- wp:c9-blocks/grid {"instanceId":0,"rows":3,"containerImgURL":"https://c9.covertnine.com/wp-content/uploads/2020/10/30055127781_732e6b081b_o.jpg","containerHue":"#313131","overlayHue":"#313131","overlayOpacity":9,"blendMode":"multiply","minScreenHeight":90,"focalPoint":{"x":"0.50","y":"0.46"}} -->
 	<div class="c9-grid p-3 c9-scroll c9-grid-has-background" style="min-height:90vh;background-color:rgba(49,49,49,1)"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","verticalAlign":"bottom","minScreenHeight":0} -->
 	<div class="container-narrow c9-column-container c9-scroll c9-layout-columns-2 c9-is-vertically-aligned-bottom c9-2-col-wideleft"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"bottom"} -->
 	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-bottom"><div class="c9-column-innner"><!-- wp:spacer -->

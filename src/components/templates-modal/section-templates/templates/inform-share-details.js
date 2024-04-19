@@ -8,10 +8,11 @@ export default {
 	title: 'Inform + Share Details',
 	description: '175 Words • Vertical Image • Logos • Button Link',
 	markup: `<!-- wp:c9-blocks/grid {"instanceId":1,"rows":3} -->
-	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","overlayHue":"#efefef","overlayOpacity":7,"blendMode":"normal","minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
-	<div class="container-narrow c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-overlay-container" style="background-color:rgba(239,239,239,.7);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:heading -->
-	<h2 class="">Event Information</h2>
+	<div class="c9-grid p-3 c9-scroll" style="min-height:20vh"><!-- wp:c9-blocks/column-container {"align":"narrow","columns":2,"columnsGap":10,"layout":"c9-2-col-wideleft","containerWidth":"container-narrow","overlayHue":"#efefef","overlayOpacity":7,"minScreenHeight":0,"containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"}} -->
+	<div class="container-narrow c9-column-container p-3 my-5 c9-scroll c9-layout-columns-2 c9-2-col-wideleft"><div class="c9-overlay-container" style="background-color:rgba(239,239,239,.7);mix-blend-mode:normal"></div><div class="c9-layout-column-wrap c9-block-layout-column-gap-10 c9-is-responsive-column"><!-- wp:c9-blocks/column {"verticalAlign":"center"} -->
+	<div class="c9-block-layout-column c9-column text-left c9-is-vertically-aligned-center"><div class="c9-column-innner"><!-- wp:group {"layout":{"type":"constrained"},"c9PaddingSpaceSettings":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="wp-block-group p-5"><!-- wp:heading -->
+	<h2 class="wp-block-heading">Event Information</h2>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"fontSize":"small"} -->
@@ -42,7 +43,8 @@ export default {
 	<!-- wp:list-item -->
 	<li class="">A <a href="#">link</a> to something you need</li>
 	<!-- /wp:list-item --></ul>
-	<!-- /wp:list -->
+	<!-- /wp:list --></div>
+	<!-- /wp:group -->
 	
 	<!-- wp:spacer {"height":"30px"} -->
 	<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -56,7 +58,8 @@ export default {
 	<!-- /wp:c9-blocks/column -->
 	
 	<!-- wp:c9-blocks/column -->
-	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:image {"id":3142,"sizeSlug":"large","linkDestination":"media"} -->
+	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:group {"layout":{"type":"constrained"},"c9PaddingSpaceSettings":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"}} -->
+	<div class="wp-block-group p-5"><!-- wp:image {"id":3142,"sizeSlug":"large","linkDestination":"media"} -->
 	<figure class="wp-block-image size-large"><a href="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-event-placeholder-flyer.jpg"><img src="https://c9.covertnine.com/wp-content/uploads/2020/10/c9-event-placeholder-flyer-683x1024.jpg" alt="" class="wp-image-3142"/></a></figure>
 	<!-- /wp:image -->
 	
@@ -82,7 +85,8 @@ export default {
 	
 	<!-- wp:c9-blocks/heading {"heading":"4320 Westward Way\u003cbr\u003eChicago, IL 60666","tagLevel":5,"displayLevel":"6","type":"c9-sh subhead-h","weight":"light","overrideStyle":true} -->
 	<div class="section-heading c9-heading text-left"><h5 class="c9-sh subhead-h6 font-weight-light">4320 Westward Way<br>Chicago, IL 60666</h5></div>
-	<!-- /wp:c9-blocks/heading --></div></div>
+	<!-- /wp:c9-blocks/heading --></div>
+	<!-- /wp:group --></div></div>
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->
 	
@@ -156,7 +160,7 @@ export default {
 	<!-- /wp:c9-blocks/column --></div></div>
 	<!-- /wp:c9-blocks/column-container -->
 	
-	<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","overlayOpacity":10,"blendMode":"normal","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
+	<!-- wp:c9-blocks/column-container {"columns":1,"layout":"one-column","containerMargin":{"linked":true,"top":"5","bottom":"5","left":"5","right":"5","icon":"admin-links"},"containerPadding":{"linked":true,"top":"-1","bottom":"-1","left":"-1","right":"-1","icon":"admin-links"}} -->
 	<div class="container c9-column-container my-5 c9-scroll c9-layout-columns-1 one-column" style="min-height:10vh"><div class="c9-layout-column-wrap c9-block-layout-column-gap-2 c9-is-responsive-column"><!-- wp:c9-blocks/column -->
 	<div class="c9-block-layout-column c9-column text-left"><div class="c9-column-innner"><!-- wp:c9-blocks/cta {"type":"c9-h","buttonText":"Get Tickets","buttonSize":"c9-button-size-extralarge","ctaPadding":{"linked":true,"top":"3","bottom":"3","left":"3","right":"3","icon":"admin-links"},"ctaBackgroundColor":"#e7e7e7","disableToolbar":true} -->
 	<div style="background-color:rgba(231,231,231,1);text-align:left" class="c9-cta c9-block-cta container p-3"><div class="row"><div class="c9-cta-content col-12 col-md-8"><div class="c9-cta-text c9-h" style="font-size:1.6rem"><p>Get your tickets for the lowest price available now by clicking on the button!</p></div></div><div class="c9-cta-button col-12 col-md-4"><a href="#" target="_self" rel="noopener noreferrer" class="wp-block-button__link c9-button-shape-square c9-button-size-extralarge" style="color:#ffffff">Get Tickets</a></div></div></div>
