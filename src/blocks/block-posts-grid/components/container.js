@@ -114,16 +114,16 @@ export default class Container extends Component {
 
         return styles;
     }
-
     c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint) {
         const styles = {};
-
-        const sanitizedUrl = sanitizeUrl(url);
+    
+        // Custom URL sanitization to ensure the URL is safe
+        const sanitizedUrl = this.sanitizeUrl(url);
         if (sanitizedUrl) {
             styles.backgroundImage = `url(${sanitizedUrl})`;
             styles.backgroundRepeat = DOMPurify.sanitize(repeat);
         }
-
+    
         if (size && size.length > 0) {
             styles.backgroundSize = DOMPurify.sanitize(size);
         } else {
@@ -133,14 +133,25 @@ export default class Container extends Component {
                 'auto' !== bgY.size ? `${DOMPurify.sanitize(bgY.size)}${DOMPurify.sanitize(bgY.unit)}` : `${DOMPurify.sanitize(bgY.size)}`;
             styles.backgroundSize = `${horizontal} ${vertical}`;
         }
-
+    
         if (focalPoint) {
             styles.backgroundPosition = `${DOMPurify.sanitize(focalPoint.x * 100)}% ${DOMPurify.sanitize(focalPoint.y * 100)}%`;
         }
-
+    
         return styles;
     }
-
+    
+    // Custom URL sanitizer function to ensure valid URLs
+    sanitizeUrl(url) {
+        try {
+            const sanitizedUrl = new URL(url);
+            return sanitizedUrl.href; // Return the full URL if it's valid
+        } catch (e) {
+            console.error('Invalid URL:', url); // Log invalid URLs for debugging
+            return ''; // Return an empty string if URL is invalid
+        }
+    }
+    
     c9OverlayStyles(hue, opacity, blend) {
         const styles = {};
 
@@ -156,8 +167,12 @@ export default class Container extends Component {
         const r = parseInt(hex.slice(1, 3), 16);
         const g = parseInt(hex.slice(3, 5), 16);
         const b = parseInt(hex.slice(5, 7), 16);
-        const opacity = alpha === 10 ? 1 : `.${alpha}`;
-        return `rgba(${DOMPurify.sanitize(r)},${DOMPurify.sanitize(g)},${DOMPurify.sanitize(b)},${DOMPurify.sanitize(opacity)})`;
+    
+        // Ensure alpha is in the correct range
+        const opacity = alpha === 10 ? 1 : alpha / 10; // If alpha is 10, set opacity to 1; otherwise, divide alpha by 10.
+    
+        // Sanitize values using DOMPurify
+        return `rgba(${DOMPurify.sanitize(r)}, ${DOMPurify.sanitize(g)}, ${DOMPurify.sanitize(b)}, ${DOMPurify.sanitize(opacity)})`;
     }
 
     render() {

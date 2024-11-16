@@ -5,331 +5,263 @@
  * that are used across the project.
 */
 body .editor-styles-wrapper {
-	padding: 0px;
+    padding: 0px;
 }
 
 .editor-styles-wrapper .editor-post-title {
-	padding: 12px;
+    padding: 12px;
 }
 
-.components-toolbar
-	> div
-	> .components-toolbar__control.components-button.has-icon.is-pressed
-	.dashicons-heading:before,
+.components-toolbar>div>.components-toolbar__control.components-button.has-icon.is-pressed .dashicons-heading:before,
 .is-tablet-preview .dashicons-heading:before,
 .is-mobile-preview .dashicons-heading:before {
-	color: #fff;
+    color: #fff;
 }
 
-.components-toolbar
-	> div
-	> .components-toolbar__control.components-button.has-icon
-	.dashicons-heading:before {
-	color: #1e1e1e;
-	font-family: dashicons, sans-serif;
-	content: '\f10e' !important;
+.components-toolbar>div>.components-toolbar__control.components-button.has-icon .dashicons-heading:before {
+    color: #1e1e1e;
+    font-family: dashicons, sans-serif;
+    content: '\f10e' !important;
 }
 
 /*for adjusting for post/page container grids for some themes*/
 @media only screen and (min-width: 768px) {
-	/* to unset widths on backend editor for some themes */
-	body .editor-styles-wrapper .editor-writing-flow {
-		max-width: 100%;
-		margin: 0px;
-	}
+
+    /* to unset widths on backend editor for some themes */
+    body .editor-styles-wrapper .editor-writing-flow {
+        max-width: 100%;
+        margin: 0px;
+    }
 }
 
 /*adjustment to tooltip font size */
 .components-tooltip.components-popover .components-popover__content {
-	font-size: 11px;
+    font-size: 11px;
 }
 
 /* adjustment to backend social icons from conflict with core social icons */
-.is-root-container
-	.wp-block-social-links:not(.has-small-icon-size):not(.has-large-icon-size):not(.has-huge-icon-size)
-	.wp-social-link
-	button {
-	font-size: 24px;
+.is-root-container .wp-block-social-links:not(.has-small-icon-size):not(.has-large-icon-size):not(.has-huge-icon-size) .wp-social-link button {
+    font-size: 24px;
 }
 
-.is-root-container
-	.wp-block-social-links.has-small-icon-size
-	.wp-social-link
-	button {
-	font-size: 16px;
+.is-root-container .wp-block-social-links.has-small-icon-size .wp-social-link button {
+    font-size: 16px;
 }
 
-.is-root-container
-	.wp-block-social-links.has-large-icon-size
-	.wp-social-link
-	button {
-	font-size: 36px;
+.is-root-container .wp-block-social-links.has-large-icon-size .wp-social-link button {
+    font-size: 36px;
 }
 
-.is-root-container
-	.wp-block-social-links.has-huge-icon-size
-	.wp-social-link
-	button {
-	font-size: 48px;
+.is-root-container .wp-block-social-links.has-huge-icon-size .wp-social-link button {
+    font-size: 48px;
 }
 
 /* adjustment to toolbar position to align with containers and move off edge of screen*/
-.editor-styles-wrapper > .popover-slot .components-popover__content {
-	padding-left: 15px;
+.editor-styles-wrapper>.popover-slot .components-popover__content {
+    padding-left: 15px;
 }
 
-.components-panel__body .padding-sides-wrapper > .components-base-control {
-	margin-bottom: 0 !important;
+.components-panel__body .padding-sides-wrapper>.components-base-control {
+    margin-bottom: 0 !important;
 }
 
 /* adjustment to image replacement drop down that has overflow issues from hidden label */
-.block-editor-link-control
-	.components-external-link
-	> .components-visually-hidden {
-	display: none;
+.block-editor-link-control .components-external-link>.components-visually-hidden {
+    display: none;
 }
 
 /* inspector sidebar adjustments*/
 .block-editor-block-styles__item-label {
-	font-size: 11px;
-	letter-spacing: 0.2px;
+    font-size: 11px;
+    letter-spacing: 0.2px;
 }
 
 /* prevents width of content from pushing the sidebar off screen for full alignment items*/
 .interface-interface-skeleton__content {
-	width: 0px;
+    width: calc(100vw - 280px);
 }
 
 .block-editor-block-inspector .components-base-control {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .c9-grid-mobile-focal {
-	padding: 0px;
+    padding: 0px;
 }
 
-.edit-post-sidebar
-	.c9-youtube-disable
-	.components-base-control
-	.components-base-control__field {
-	margin-bottom: 20px;
+.edit-post-sidebar .c9-youtube-disable .components-base-control .components-base-control__field {
+    margin-bottom: 20px;
 }
 
 .components-base-control__field .components-focal-point-picker-wrapper,
 .c9-grid-mobile-focal .components-focal-point-picker-wrapper {
-	padding: 0px;
-	height: auto;
+    padding: 0px;
+    height: auto;
 }
 
 .components-panel__body.is-opened .components-panel__body.is-opened {
-	padding-left: 0px;
-	padding-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-.components-panel__body
-	.editor-block-types-list__list-item
-	.editor-block-types-list__item
-	.editor-block-types-list__item-icon
-	.block-editor-block-icon {
-	width: 48px;
-	height: 48px;
+.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon {
+    width: 48px;
+    height: 48px;
 }
 
-.components-panel__body
-	.editor-block-types-list__list-item
-	.editor-block-types-list__item
-	.editor-block-types-list__item-icon
-	.block-editor-block-icon
-	svg,
-.block-editor-block-types-list__item
-	.block-editor-block-types-list__item-icon
-	.block-editor-block-icon
-	svg {
-	min-width: 48px;
-	min-height: 48px;
-	max-width: 48px;
-	max-height: 48px;
+.components-panel__body .editor-block-types-list__list-item .editor-block-types-list__item .editor-block-types-list__item-icon .block-editor-block-icon svg,
+.block-editor-block-types-list__item .block-editor-block-types-list__item-icon .block-editor-block-icon svg {
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
 }
 
-.block-editor-block-types-list__item
-	.block-editor-block-types-list__item-title {
-	font-size: 10px;
-	line-height: 1;
+.block-editor-block-types-list__item .block-editor-block-types-list__item-title {
+    font-size: 10px;
+    line-height: 1;
 }
 
-.c9-grid
-	.components-icon-button:not(:disabled):not([aria-disabled='true']):not(.is-default):not(.blocks-gallery-item__remove) {
-	background-color: #fff;
+.c9-grid .components-icon-button:not(:disabled):not([aria-disabled='true']):not(.is-default):not(.blocks-gallery-item__remove) {
+    background-color: #fff;
 }
 
 /* makes embeds min width narrower for inner column embeds */
 @media (min-width: 600px) {
-	.c9-grid .wp-block-embed {
-		min-width: 200px;
-	}
+    .c9-grid .wp-block-embed {
+        min-width: 200px;
+    }
 }
 
 .wp-block {
-	z-index: 10;
+    z-index: 10;
 }
 
 .wp-block.is-selected {
-	z-index: 12;
+    z-index: 12;
 }
 
 /* leaves just enough room for inbetween block inserter, more closely resembling frontend */
 .editor-styles-wrapper .c9-grid [data-block],
-.editor-styles-wrapper
-	.is-root-container
-	> .c9-grid
-	.block-editor-block-list__block:not(.wp-block-separator):not(.rich-text) {
-	margin-top: 5px;
-	margin-bottom: 5px;
+.editor-styles-wrapper .is-root-container>.c9-grid .block-editor-block-list__block:not(.wp-block-separator):not(.rich-text) {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .editor-styles-wrapper .c9-grid .wp-block-separator {
-	margin-bottom: 30px;
-	margin-top: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
-.wp-block > .block-editor-block-list__insertion-point {
-	z-index: 18;
-	height: 22px;
-	top: 0px;
+.wp-block>.block-editor-block-list__insertion-point {
+    z-index: 18;
+    height: 22px;
+    top: 0px;
 }
 
 /* inspector buttons height changes to override WP defaults */
 .components-panel__body.plugin-c9-panel .components-button.is-small,
 .components-panel__body.plugin-c9-panel .components-button.is-large,
-.block-editor-editor-skeleton__sidebar
-	.components-button.is-small.c9-column-selector-button {
-	height: auto;
+.block-editor-editor-skeleton__sidebar .components-button.is-small.c9-column-selector-button {
+    height: auto;
 }
 
 /* WP 5.5 bugs from new WP skin */
 .components-button-group .components-button.c9-column-selector-button {
-	display: inline-block;
-	height: auto;
-	border: none;
-	padding: 0;
-	box-shadow: none;
-	margin-right: 8px;
+    display: inline-block;
+    height: auto;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    margin-right: 8px;
 }
 
-.components-panel__body > div > button:first-child ~ span {
-	display: block;
-	margin-top: 10px;
+.components-panel__body>div>button:first-child~span {
+    display: block;
+    margin-top: 10px;
 }
 
 .components-panel__body.plugin-c9-panel .plugin-c9-panel-button {
-	height: auto;
-	display: block;
-	margin: 0px 0px 10px 0px;
-	padding: 8px 0px;
-	width: 100%;
-	border-radius: 0px;
-	border: 1px solid #f0f0f0;
-	box-shadow: none;
-	color: #191e23;
+    height: auto;
+    display: block;
+    margin: 0px 0px 10px 0px;
+    padding: 8px 0px;
+    width: 100%;
+    border-radius: 0px;
+    border: 1px solid #f0f0f0;
+    box-shadow: none;
+    color: #191e23;
 }
 
 .components-panel__body.plugin-c9-panel .plugin-c9-panel-button:hover {
-	color: #0075af;
-	border: 1px solid #0075af;
-	box-shadow: none;
+    color: #0075af;
+    border: 1px solid #0075af;
+    box-shadow: none;
 }
 
 .components-panel__body.plugin-c9-panel .plugin-c9-panel-button svg {
-	display: block;
-	margin: 0px auto 4px auto;
+    display: block;
+    margin: 0px auto 4px auto;
 }
 
 /* adding position relative so fonts will display in heading dashicons */
-.block-editor-block-inspector
-	.components-toolbar[icon='heading']
-	.components-toolbar
-	div:first-child
-	.components-button.has-icon:before {
-	left: 2px;
-	right: 2px;
+.block-editor-block-inspector .components-toolbar[icon='heading'] .components-toolbar div:first-child .components-button.has-icon:before {
+    left: 2px;
+    right: 2px;
 }
 
 .components-toolbar__control.components-button[data-subscript] svg {
-	width: 30px;
-	height: 30px;
-	padding: 3px;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
 }
 
-.block-editor-block-list__layout
-	.wp-block
-	.block-editor-block-list__layout
-	.block-editor-block-list__empty-block-inserter,
-.block-editor-block-list__layout
-	.wp-block
-	.block-editor-block-list__layout
-	.block-editor-default-block-appender
-	.block-editor-inserter {
-	right: 8px;
+.block-editor-block-list__layout .wp-block .block-editor-block-list__layout .block-editor-block-list__empty-block-inserter,
+.block-editor-block-list__layout .wp-block .block-editor-block-list__layout .block-editor-default-block-appender .block-editor-inserter {
+    right: 8px;
 }
 
 /* toolbar adjustment for 5.7 */
-.block-editor-block-toolbar .components-button.has-icon > .dashicon {
-	margin-right: 2px;
+.block-editor-block-toolbar .components-button.has-icon>.dashicon {
+    margin-right: 2px;
 }
 
 @media only screen and (min-width: 600px) {
-	.edit-post-visual-editor
-		.wp-block
-		> .wp-block
-		> .block-editor-block-contextual-toolbar
-		.block-editor-block-toolbar,
-	.edit-post-visual-editor
-		.wp-block[data-align='full']
-		> .wp-block
-		> .block-editor-block-contextual-toolbar
-		.block-editor-block-toolbar,
-	.edit-post-visual-editor
-		.wp-block[data-align='wide']
-		> .wp-block
-		> .block-editor-block-contextual-toolbar
-		.block-editor-block-toolbar {
-		z-index: 15;
-	}
 
-	/*adjustments to first editor block list layout to give space to title and more accurate widths*/
-	.editor-styles-wrapper
-		.editor-writing-flow
-		> div
-		> div
-		> div
-		> .editor-block-list__layout {
-		padding-left: 0px;
-		padding-right: 0px;
-		margin-top: 0px;
-	}
+    .edit-post-visual-editor .wp-block>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
+    .edit-post-visual-editor .wp-block[data-align='full']>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar,
+    .edit-post-visual-editor .wp-block[data-align='wide']>.wp-block>.block-editor-block-contextual-toolbar .block-editor-block-toolbar {
+        z-index: 15;
+    }
 
-	.edit-post-visual-editor .editor-post-title__block {
-		margin-bottom: 0px;
-	}
+    /*adjustments to first editor block list layout to give space to title and more accurate widths*/
+    .editor-styles-wrapper .editor-writing-flow>div>div>div>.editor-block-list__layout {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 0px;
+    }
 
-	.wp-block .wp-block:not(.alignright):not(.alignleft) {
-		z-index: 20;
-	}
+    .edit-post-visual-editor .editor-post-title__block {
+        margin-bottom: 0px;
+    }
 
-	.wp-block.is-selected .wp-block,
-	.wp-block.has-child-selected .wp-block.is-selected {
-		z-index: 26;
-	}
+    .wp-block .wp-block:not(.alignright):not(.alignleft) {
+        z-index: 20;
+    }
 
-	.editor-block-list__side-inserter.block-editor-block-list__side-inserter {
-		z-index: 21;
-		position: relative;
-	}
+    .wp-block.is-selected .wp-block,
+    .wp-block.has-child-selected .wp-block.is-selected {
+        z-index: 26;
+    }
 
-	.editor-block-list__side-inserter.block-editor-block-list__side-inserter
-		.editor-inserter-with-shortcuts.block-editor-inserter-with-shortcuts {
-		z-index: 22;
-	}
+    .editor-block-list__side-inserter.block-editor-block-list__side-inserter {
+        z-index: 21;
+        position: relative;
+    }
+
+    .editor-block-list__side-inserter.block-editor-block-list__side-inserter .editor-inserter-with-shortcuts.block-editor-inserter-with-shortcuts {
+        z-index: 22;
+    }
 }
 
 /****************************************************************************************/
@@ -339,144 +271,83 @@ body .editor-styles-wrapper {
 .editor-styles-wrapper .editor-default-block-appender,
 .editor-styles-wrapper .editor-post-title,
 .editor-styles-wrapper .editor-post-title__block {
-	width: 100%;
-	max-width: 1140px;
+    width: 100%;
+    max-width: 1140px;
 }
 
 @media only screen and (min-width: 576px) {
-	.editor-post-title,
-	.editor-post-title__block {
-		width: 100%;
-		max-width: 1140px;
-	}
 
-	.editor-styles-wrapper .editor-block-list__block.wp-block[data-align='wide'] {
-		width: 100%;
-		max-width: 1200px;
-		margin: 0px auto;
-	}
+    .editor-post-title,
+    .editor-post-title__block {
+        width: 100%;
+        max-width: 1140px;
+    }
+
+    .editor-styles-wrapper .editor-block-list__block.wp-block[data-align='wide'] {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0px auto;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-	.editor-styles-wrapper .wp-block.editor-block-list__block {
-		margin-left: auto;
-		margin-right: auto;
-	}
+    .editor-styles-wrapper .wp-block.editor-block-list__block {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media only screen and (min-width: 992px) {
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.wp-block[data-type='c9-blocks/grid'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.container[data-align='full'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.container[data-align='wide'] {
-		max-width: 100%;
-		overflow: visible;
-	}
 
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/paragraph'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/heading'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/block'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/button'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/columns'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/image'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/spacer'] {
-		max-width: 100vw;
-	}
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .wp-block[data-type='c9-blocks/grid'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align='full'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align='wide'] {
+        max-width: 100%;
+        overflow: visible;
+    }
 
-	body
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/paragraph'],
-	body
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/paragraph'][data-empty='true'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/paragraph'][data-empty='true'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/paragraph'],
-	body
-		.is-root-container
-		.is-root-container:not(.is-layout-constrained)
-		> .block-list-appender.wp-block {
-		max-width: 1140px;
-	}
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/paragraph'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/heading'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/block'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/button'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/columns'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/image'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/spacer'] {
+        max-width: 100vw;
+    }
+
+    body .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/paragraph'],
+    body .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/paragraph'][data-empty='true'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/paragraph'][data-empty='true'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/paragraph'],
+    body .is-root-container .is-root-container:not(.is-layout-constrained)>.block-list-appender.wp-block {
+        max-width: 1140px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
-	.editor-styles-wrapper
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block.is-reusable {
-		max-width: 100vw;
-	}
+    .editor-styles-wrapper .is-root-container:not(.is-layout-constrained) .wp-block.is-reusable {
+        max-width: 100vw;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
-	.editor-styles-wrapper .editor-default-block-appender,
-	.editor-styles-wrapper .editor-post-title,
-	.editor-styles-wrapper .editor-post-title__block,
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/paragraph'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/heading'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/block'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/button'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/columns'],
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.is-root-container:not(.is-layout-constrained)
-		.wp-block[data-type='core/image'] {
-		max-width: 1140px;
-	}
 
-	body:not(.folded)
-		.edit-post-layout.is-sidebar-opened
-		.container[data-align='wide'] {
-		max-width: 1200px;
-	}
+    .editor-styles-wrapper .editor-default-block-appender,
+    .editor-styles-wrapper .editor-post-title,
+    .editor-styles-wrapper .editor-post-title__block,
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/paragraph'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/heading'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/block'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/button'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/columns'],
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .is-root-container:not(.is-layout-constrained) .wp-block[data-type='core/image'] {
+        max-width: 1140px;
+    }
+
+    body:not(.folded) .edit-post-layout.is-sidebar-opened .container[data-align='wide'] {
+        max-width: 1200px;
+    }
 }
 
 /* with sidebar pages to account for sidebar */
@@ -498,54 +369,33 @@ body .editor-styles-wrapper {
 .right-sidebarpage .wp-block[data-type='core/block'],
 .right-sidebarpage .wp-block[data-type='core/button'],
 .right-sidebarpage .wp-block[data-type='core/image'] {
-	max-width: 925px;
+    max-width: 925px;
 }
 
 /* modal fix for c9 blocks */
-body
-	.c9-templates-modal
-	.c9-component-modal-tab-panel
-	.components-tab-panel__tabs {
-	margin-top: 20px;
+body .c9-templates-modal .c9-component-modal-tab-panel .components-tab-panel__tabs {
+    margin-top: 20px;
 }
 
 /* backend widths for alignfull/alignwide and c9 grid inside of posts */
-.post-type-post
-	.is-sidebar-opened
-	.editor-styles-wrapper
-	.edit-post-visual-editor__post-title-wrapper
-	> [data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)),
-.post-type-post
-	.is-sidebar-opened
-	.editor-styles-wrapper
-	.block-editor-block-list__layout.is-root-container
-	> [data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-	margin-left: calc((-100vw + 280px + 100%) / 2) !important;
-	margin-right: calc((-100vw + 280px + 100%) / 2) !important;
+.post-type-post .is-sidebar-opened .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper>[data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)),
+.post-type-post .is-sidebar-opened .editor-styles-wrapper .block-editor-block-list__layout.is-root-container>[data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    margin-left: calc((-100vw + 280px + 100%) / 2) !important;
+    margin-right: calc((-100vw + 280px + 100%) / 2) !important;
 }
 
 /* backend widths for alignfull/alignwide and c9 grid inside of posts without sidebar opened */
-.edit-post-layout:not(.is-sidebar-opened)
-	.editor-styles-wrapper
-	.edit-post-visual-editor__post-title-wrapper
-	> [data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)),
-.edit-post-layout:not(.is-sidebar-opened)
-	.editor-styles-wrapper
-	.block-editor-block-list__layout.is-root-container
-	> [data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-	margin-left: calc((-100vw + 100%) / 2) !important;
-	margin-right: calc((-100vw + 100%) / 2) !important;
+.edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper>[data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)),
+.edit-post-layout:not(.is-sidebar-opened) .editor-styles-wrapper .block-editor-block-list__layout.is-root-container>[data-type='c9-blocks/grid']:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    margin-left: calc((-100vw + 100%) / 2) !important;
+    margin-right: calc((-100vw + 100%) / 2) !important;
 }
 
-.c9-input-wrapper
-	.components-input-control__container
-	> .components-input-control__input,
-.c9-input-wrapper
-	.components-input-control__container
-	> .components-input-control__backdrop {
-	min-width: 70px !important;
+.c9-input-wrapper .components-input-control__container>.components-input-control__input,
+.c9-input-wrapper .components-input-control__container>.components-input-control__backdrop {
+    min-width: 70px !important;
 }
 
-.components-panel__body h2 ~ div > .components-button {
-	margin-top: 8px;
+.components-panel__body h2~div>.components-button {
+    margin-top: 8px;
 }

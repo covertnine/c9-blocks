@@ -20,71 +20,76 @@ const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 const { registerBlockType } = wp.blocks;
-const { sanitizeText } = wp.helpers; // Import sanitization helper
 
 import cryptoRandomString from 'crypto-random-string';
 
+// JavaScript sanitization for text
+const sanitizeText = (text) => {
+  // Safely encode the text and remove any special characters
+  return encodeURIComponent(text);
+};
+
 registerBlockType('c9-blocks/posts-grid', {
-	title: __('C9 Posts Grid', 'c9-blocks'),
-	icon: Icon,
-	category: 'c9-blocks',
-	supports: {
-		// fill in features
-	},
-	keywords: [__('responsive', 'c9-blocks')],
-	description: __(
-		'Display responsive grids with post content of any kind with filtering, sorting, and flexible layout settings. (Includes customizable outer container)',
-		'c9-blocks'
-	),
-	example: {
-		viewportWidth: '280',
-		attributes: {},
-		innerBlocks: [
-			{
-				name: 'c9-blocks/post-grid',
-				attributes: {
-					displayPostDate: true,
-					displayPostExcerpt: true,
-					displayPostAuthor: true,
-					displayPostLink: true,
-					displaySectionTitle: true,
-					columns: 3,
-					excerptLength: 20,
-					sectionTitle: 'The Latest News', // Sanitize user-generated content
-					imageSize: 'c9-feature-medium-crop',
-				},
-			},
-		],
-	},
-	attributes,
+  title: __('C9 Posts Grid', 'c9-blocks'),
+  icon: Icon,
+  category: 'c9-blocks',
+  supports: {
+    // fill in features
+  },
+  keywords: [__('responsive', 'c9-blocks')],
+  description: __(
+    'Display responsive grids with post content of any kind with filtering, sorting, and flexible layout settings. (Includes customizable outer container)',
+    'c9-blocks'
+  ),
+  example: {
+    viewportWidth: '280',
+    attributes: {},
+    innerBlocks: [
+      {
+        name: 'c9-blocks/post-grid',
+        attributes: {
+          displayPostDate: true,
+          displayPostExcerpt: true,
+          displayPostAuthor: true,
+          displayPostLink: true,
+          displaySectionTitle: true,
+          columns: 3,
+          excerptLength: 20,
+          sectionTitle: 'The Latest News', // Example sanitized content
+          imageSize: 'c9-feature-medium-crop',
+        },
+      },
+    ],
+  },
+  attributes,
 
-	// Render the block components
-	edit: compose([
-		withSelect((select, ownProps) => {
-			const { isBlockSelected, hasSelectedInnerBlock } =
-				select('core/block-editor');
+  // Render the block components
+  edit: compose([
+    withSelect((select, ownProps) => {
+      const { isBlockSelected, hasSelectedInnerBlock } =
+        select('core/block-editor');
 
-			const { clientId } = ownProps;
+      const { clientId } = ownProps;
 
-			return {
-				isSelectedBlockInRoot:
-					isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
-				instanceId: parseInt(
-					cryptoRandomString({ length: 4, type: 'numeric' })
-				),
-			};
-		}),
-	])(Edit),
+      return {
+        isSelectedBlockInRoot:
+          isBlockSelected(clientId) || hasSelectedInnerBlock(clientId, true),
+        instanceId: parseInt(
+          cryptoRandomString({ length: 4, type: 'numeric' })
+        ),
+      };
+    }),
+  ])(Edit),
 
-	// Save the attributes and markup
-	save: (props) => {
-		const { attributes } = props;
+  // Save the attributes and markup
+  save: (props) => {
+    const { attributes } = props;
 
-		// Example of sanitizing before save
-		const sanitizedSectionTitle = sanitizeText(attributes.sectionTitle);
+    // Example of sanitizing before save
+    const sanitizedSectionTitle = sanitizeText(attributes.sectionTitle);
 
-		return <Save {...props} sanitizedSectionTitle={sanitizedSectionTitle} />;
-	},
+    return <Save {...props} sanitizedSectionTitle={sanitizedSectionTitle} />;
+  },
 
-	deprecated: Deprecated,
+  deprecated: Deprecated,
 });
