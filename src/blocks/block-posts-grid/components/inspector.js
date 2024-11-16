@@ -943,7 +943,7 @@ export default class Inspector extends Component {
 						)}
 
 					{'embed' == videoType && (
-						<div>
+						<div style={{ padding: '0px !important'}}>
 							<TextControl
 								label="YouTube URL or Youtube ID"
 								value={this.state.ID}

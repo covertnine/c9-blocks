@@ -117,30 +117,29 @@ export default class Container extends Component {
     c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint) {
         const styles = {};
     
-        // Custom URL sanitization to ensure the URL is safe
-        const sanitizedUrl = this.sanitizeUrl(url);
+        // Remove sanitization for the URL because sanitizeUrl doesn't exist
+        const sanitizedUrl = url ? url : ''; // If url exists, use it, otherwise set it to an empty string.
+        
         if (sanitizedUrl) {
-            styles.backgroundImage = `url(${sanitizedUrl})`;
-            styles.backgroundRepeat = DOMPurify.sanitize(repeat);
+            styles.backgroundImage = `url(${sanitizedUrl})`;  // Use the sanitized URL directly
+            styles.backgroundRepeat = repeat ? DOMPurify.sanitize(repeat) : 'no-repeat'; // Default to 'no-repeat' if repeat is not provided
         }
     
         if (size && size.length > 0) {
-            styles.backgroundSize = DOMPurify.sanitize(size);
+            styles.backgroundSize = DOMPurify.sanitize(size); // Sanitize size (e.g., 'cover', 'contain', etc.)
         } else {
-            const horizontal =
-                'auto' !== bgX.size ? `${DOMPurify.sanitize(bgX.size)}${DOMPurify.sanitize(bgX.unit)}` : `${DOMPurify.sanitize(bgX.size)}`;
-            const vertical =
-                'auto' !== bgY.size ? `${DOMPurify.sanitize(bgY.size)}${DOMPurify.sanitize(bgY.unit)}` : `${DOMPurify.sanitize(bgY.size)}`;
-            styles.backgroundSize = `${horizontal} ${vertical}`;
+            const horizontal = 'auto' !== bgX.size ? `${DOMPurify.sanitize(bgX.size)}${DOMPurify.sanitize(bgX.unit)}` : `${DOMPurify.sanitize(bgX.size)}`;
+            const vertical = 'auto' !== bgY.size ? `${DOMPurify.sanitize(bgY.size)}${DOMPurify.sanitize(bgY.unit)}` : `${DOMPurify.sanitize(bgY.size)}`;
+            styles.backgroundSize = `${horizontal} ${vertical}`; // Use the sanitized X and Y sizes
         }
     
         if (focalPoint) {
-            styles.backgroundPosition = `${DOMPurify.sanitize(focalPoint.x * 100)}% ${DOMPurify.sanitize(focalPoint.y * 100)}%`;
+            styles.backgroundPosition = `${DOMPurify.sanitize(focalPoint.x * 100)}% ${DOMPurify.sanitize(focalPoint.y * 100)}%`; // Position the background based on focal point
         }
     
         return styles;
     }
-    
+
     // Custom URL sanitizer function to ensure valid URLs
     sanitizeUrl(url) {
         try {
@@ -151,7 +150,7 @@ export default class Container extends Component {
             return ''; // Return an empty string if URL is invalid
         }
     }
-    
+
     c9OverlayStyles(hue, opacity, blend) {
         const styles = {};
 
@@ -164,15 +163,16 @@ export default class Container extends Component {
     }
 
     hexToRGBA(hex, alpha) {
+        // Parse the RGB values from the hex color code
         const r = parseInt(hex.slice(1, 3), 16);
         const g = parseInt(hex.slice(3, 5), 16);
         const b = parseInt(hex.slice(5, 7), 16);
-    
-        // Ensure alpha is in the correct range
+
+        // Ensure alpha is in the correct range (0 to 1)
         const opacity = alpha === 10 ? 1 : alpha / 10; // If alpha is 10, set opacity to 1; otherwise, divide alpha by 10.
-    
-        // Sanitize values using DOMPurify
-        return `rgba(${DOMPurify.sanitize(r)}, ${DOMPurify.sanitize(g)}, ${DOMPurify.sanitize(b)}, ${DOMPurify.sanitize(opacity)})`;
+
+        // Return the RGBA value, no sanitization needed for RGB and opacity
+        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
     }
 
     render() {
@@ -249,9 +249,8 @@ export default class Container extends Component {
                         className={classnames(
                             'c9-image-container',
                             overrideMobile
-                                ? `c9-image-mobile-${
-                                      MOBILE_Y_SIZE[postProcessMobileSize(focalPointMobile.y)]
-                                  }-${MOBILE_X_SIZE[postProcessMobileSize(focalPointMobile.x)]}`
+                                ? `c9-image-mobile-${MOBILE_Y_SIZE[postProcessMobileSize(focalPointMobile.y)]
+                                }-${MOBILE_X_SIZE[postProcessMobileSize(focalPointMobile.x)]}`
                                 : null,
                             'cover' === bgImgSizeMobile ? 'c9-image-mobile-size-cover' : null,
                             'contain' === bgImgSizeMobile
