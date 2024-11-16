@@ -69,7 +69,7 @@ Yes, you will need to have WordPress 5.9 or later installed to take advantage of
 == Changelog ==
 
 = 1.7.6 =
-Updated C9 Posts Grid to fix security bug. Updated build tools for React and Node.
+Updated C9 Posts Grid to fix security bug. Updated build tools for React and Node. Some bug fixes for WordPress 6.7
 
 = 1.7.5 =
 Removed width support for cover block causing some issues in backend. Core width controls work just fine.
