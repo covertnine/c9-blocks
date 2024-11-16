@@ -2,115 +2,106 @@
  * Start
  *
  * The create-guten-block CLI starts here.
- *
- * TODO:
- *  - checkRequiredFiles
- *  - printBuildError
  */
 'use strict';
 
-// Do this as the first thing so that any code reading it knows the right env.
+// Set environment variables
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 
-// Makes the script crash on unhandled rejections instead of silently
-// ignoring them. In the future, promise rejections that are not handled will
-// terminate the Node.js process with a non-zero exit code.
+// Catch unhandled promise rejections
 process.on('unhandledRejection', (err) => {
-	throw err;
+    throw err;
 });
 
-const ora = require('ora');
-const chalk = require('chalk');
 const webpack = require('webpack');
 const config = require('../config/webpack.config.dev');
 const formatWebpackMessages = require('../config/formatWebpackMessage');
+const kleur = require('kleur');
+const readline = require('readline');
 
-// Don't run below node 8.
+// Ensure Node.js version compatibility
 const currentNodeVersion = process.versions.node;
-const semver = currentNodeVersion.split('.');
-const major = semver[0];
+const [major] = currentNodeVersion.split('.').map(Number);
 
-// If below Node 8.
-if (8 > major) {
-	console.error(
-		chalk.red(
-			'You are running Node ' +
-				currentNodeVersion +
-				'.\n' +
-				'Create Guten Block requires Node 8 or higher. \n' +
-				'Kindly, update your version of Node.'
-		)
-	);
-	process.exit(1);
+if (major < 8) {
+    console.error(
+        kleur.red(
+            `ERROR: You are running Node ${currentNodeVersion}. Create Guten Block requires Node 8 or higher. Please update your version of Node.`
+        )
+    );
+    process.exit(1);
 }
 
-// Init the spinner.
-const spinner = new ora({ text: '' });
+// Spinner utility using dynamic import for `cli-spinners`
+async function startSpinner(message) {
+    const { default: cliSpinners } = await import('cli-spinners');
+    let i = 0;
+    const spinner = cliSpinners.dots;
+    const interval = setInterval(() => {
+        readline.cursorTo(process.stdout, 0);
+        process.stdout.write(`${kleur.green(spinner.frames[i])} ${message}`);
+        i = (i + 1) % spinner.frames.length;
+    }, spinner.interval);
 
-// Create the production build and print the deployment instructions.
+    return () => {
+        clearInterval(interval);
+        readline.cursorTo(process.stdout, 0);
+        readline.clearLine(process.stdout, 0);
+    };
+}
+
+// Function to handle the build process
 async function build(webpackConfig) {
-	// Compiler Instance.
-	const compiler = await webpack(webpackConfig);
+    const compiler = webpack(webpackConfig);
 
-	// Run the compiler.
-	compiler.watch({}, (err, stats) => {
-		if (err) {
-			return console.log(err);
-		}
+    const stopSpinner = await startSpinner('Building and watching for changes...');
 
-		// Get the messages formatted.
-		const messages = formatWebpackMessages(stats.toJson({}, true));
+    compiler.watch({}, (err, stats) => {
+        stopSpinner();
 
-		// If there are errors just show the errors.
-		if (messages.errors.length) {
-			// Only keep the first error. Others are often indicative
-			// of the same problem, but confuse the reader with noise.
-			if (1 < messages.errors.length) {
-				messages.errors.length = 1;
-			}
+        if (err) {
+            console.error(kleur.red(`Compilation error: ${err.message}`));
+            return;
+        }
 
-			// Formatted errors.
-			console.log('\n❌ ', chalk.black.bgRed(' Failed to compile. \n'));
-			const logErrors = console.log('\n👉 ', messages.errors.join('\n\n'));
-			console.log('\n');
-			spinner.start(
-				chalk.dim(
-					"Watching for changes... let's fix this... (Press CTRL + C to stop)."
-				)
-			);
-			return logErrors;
-		}
+        const messages = formatWebpackMessages(stats.toJson({}, true));
 
-		// CI.
-		if (
-			process.env.CI &&
-			('string' !== typeof process.env.CI ||
-				'false' !== process.env.CI.toLowerCase()) &&
-			messages.warnings.length
-		) {
-			console.log(
-				chalk.yellow(
-					'\nTreating warnings as errors because process.env.CI = true.\n' +
-						'Most CI servers set it automatically.\n'
-				)
-			);
-			return console.log(messages.warnings.join('\n\n'));
-		}
+        // Handle errors
+        if (messages.errors.length) {
+            console.error(kleur.red('\n❌ Failed to compile.'));
+            console.error(messages.errors.join('\n\n'));
+            console.log(kleur.yellow('\nWatching for changes... (Press CTRL + C to stop).'));
+            return;
+        }
 
-		// Start the build.
-		console.log(`\n${chalk.dim("Let's build and compile the files...")}`);
-		console.log('\n✅ ', chalk.black.bgGreen(' Compiled successfully! \n'));
-		console.log(
-			chalk.dim('   Note that the development build is not optimized. \n'),
-			chalk.dim('  To create a production build, use'),
-			chalk.green('npm'),
-			chalk.white('run build\n\n')
-		);
-		return spinner.start(
-			`${chalk.dim('Watching for changes... (Press CTRL + C to stop).')}`
-		);
-	});
+        // Handle warnings
+        if (
+            process.env.CI &&
+            messages.warnings.length &&
+            process.env.CI.toLowerCase() === 'true'
+        ) {
+            console.warn(
+                kleur.yellow(
+                    'Treating warnings as errors because process.env.CI is set to true.\n'
+                )
+            );
+            console.warn(messages.warnings.join('\n\n'));
+            return;
+        }
+
+        // Successful compilation
+        console.log(kleur.green('\n✅ Compiled successfully!'));
+        console.log(
+            kleur.dim('Note: The development build is not optimized. To create a production build, use `npm run build`.')
+        );
+        console.log(kleur.dim('Watching for changes... (Press CTRL + C to stop).'));
+        startSpinner('Watching for changes...');
+    });
 }
 
-build(config);
+// Start the build
+build(config).catch((err) => {
+    console.error(kleur.red(`Error during build: ${err.message}`));
+    process.exit(1);
+});

@@ -14,7 +14,13 @@
 // This is quite hacky and hopefully won't be needed when Webpack fixes this.
 // https://github.com/webpack/webpack/issues/2878
 
-const chalk = require('chalk');
+let chalk;
+
+// Dynamically import chalk to support ESM format
+(async () => {
+	chalk = (await import('chalk')).default;
+})();
+
 const friendlySyntaxErrorLabel = 'Syntax error:';
 
 function isLikelyASyntaxError(message) {
@@ -86,7 +92,7 @@ function formatMessage(message, isError) {
 		);
 	}
 
-	lines[0] = chalk.inverse(lines[0]);
+	lines[0] = chalk ? chalk.inverse(lines[0]) : lines[0];
 
 	// Reassemble the message.
 	message = lines.join('\n');
