@@ -9,6 +9,12 @@ import VideoBox from '../components/video-box';
  */
 const { Component } = wp.element;
 const { applyFilters } = wp.hooks;
+const { sanitizeUrl } = wp.url;
+
+/**
+ * External Dependencies
+ */
+import DOMPurify from 'dompurify';
 
 const MOBILE_Y_SIZE = {
 	0.25: 'top',
@@ -34,8 +40,8 @@ export default class Container extends Component {
 		let classes = [];
 		// abstract side class assignment
 		function assignSideClasses(sideClass, level) {
-			if (-1 != level) {
-				classes.push(`${sideClass}-${level}`);
+			if (-1 !== level) {
+				classes.push(`${sideClass}-${DOMPurify.sanitize(level)}`);
 			}
 		}
 
@@ -44,28 +50,30 @@ export default class Container extends Component {
 			padding.top === padding.left &&
 			padding.top === padding.bottom &&
 			padding.top === padding.right &&
-			-1 != padding.top
+			-1 !== padding.top
 		) {
-			classes.push(`p-${padding.top}`);
+			classes.push(`p-${DOMPurify.sanitize(padding.top)}`);
 		} else if (padding.top === padding.bottom && 0 <= padding.top) {
-			classes.push(`py-${padding.top}`);
+			classes.push(`py-${DOMPurify.sanitize(padding.top)}`);
 			assignSideClasses('pl', padding.left);
 			assignSideClasses('pr', padding.right);
 		} else if (padding.left === padding.right && 0 <= padding.left) {
-			classes.push(`px-${padding.left}`);
+			classes.push(`px-${DOMPurify.sanitize(padding.left)}`);
 			assignSideClasses('pt', padding.top);
 			assignSideClasses('pb', padding.bottom);
 		} else {
-			['top', 'bottom', 'left', 'right'].map((s) =>
+			['top', 'bottom', 'left', 'right'].forEach((s) =>
 				assignSideClasses(`p${s[0]}`, padding[s])
 			);
 		}
 
 		// margin
-		if (margin.top === margin.bottom && -1 != margin.top) {
-			classes.push(`my-${margin.top}`);
+		if (margin.top === margin.bottom && -1 !== margin.top) {
+			classes.push(`my-${DOMPurify.sanitize(margin.top)}`);
 		} else {
-			['top', 'bottom'].map((s) => assignSideClasses(`m${s[0]}`, margin[s]));
+			['top', 'bottom'].forEach((s) =>
+				assignSideClasses(`m${s[0]}`, margin[s])
+			);
 		}
 
 		return classes;
@@ -75,7 +83,7 @@ export default class Container extends Component {
 		const styles = {};
 
 		if (height) {
-			styles.minHeight = `${height}vh`;
+			styles.minHeight = `${DOMPurify.sanitize(height)}vh`;
 		}
 
 		if (hue) {
@@ -90,9 +98,13 @@ export default class Container extends Component {
 
 		if (allowMobile && !bgSize) {
 			styles['--mobile-height'] =
-				'auto' != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
+				'auto' !== bgX.size
+					? `${DOMPurify.sanitize(bgX.size)}${DOMPurify.sanitize(bgX.unit)}`
+					: `${DOMPurify.sanitize(bgX.size)}`;
 			styles['--mobile-width'] =
-				'auto' != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+				'auto' !== bgY.size
+					? `${DOMPurify.sanitize(bgY.size)}${DOMPurify.sanitize(bgY.unit)}`
+					: `${DOMPurify.sanitize(bgY.size)}`;
 		}
 
 		return styles;
@@ -101,24 +113,30 @@ export default class Container extends Component {
 	c9BackgroundStyles(url, size, bgX, bgY, repeat, focalPoint) {
 		const styles = {};
 
-		if (focalPoint) {
-			styles.backgroundPosition = `${focalPoint.x * 100}% ${
-				focalPoint.y * 100
-			}%`;
+		const sanitizedUrl = sanitizeUrl(url);
+		if (sanitizedUrl) {
+			styles.backgroundImage = `url(${sanitizedUrl})`;
+			styles.backgroundRepeat = DOMPurify.sanitize(repeat);
 		}
 
-		if (url) {
-			styles.backgroundImage = `url(${url})`;
-			styles.backgroundRepeat = repeat;
-		}
-		if (0 < size.length) {
-			styles.backgroundSize = size;
+		if (size && size.length > 0) {
+			styles.backgroundSize = DOMPurify.sanitize(size);
 		} else {
-			let horizontal =
-				'auto' != bgX.size ? `${bgX.size}${bgX.unit}` : `${bgX.size}`;
-			let vertical =
-				'auto' != bgY.size ? `${bgY.size}${bgY.unit}` : `${bgY.size}`;
+			const horizontal =
+				'auto' !== bgX.size
+					? `${DOMPurify.sanitize(bgX.size)}${DOMPurify.sanitize(bgX.unit)}`
+					: `${DOMPurify.sanitize(bgX.size)}`;
+			const vertical =
+				'auto' !== bgY.size
+					? `${DOMPurify.sanitize(bgY.size)}${DOMPurify.sanitize(bgY.unit)}`
+					: `${DOMPurify.sanitize(bgY.size)}`;
 			styles.backgroundSize = `${horizontal} ${vertical}`;
+		}
+
+		if (focalPoint) {
+			styles.backgroundPosition = `${DOMPurify.sanitize(focalPoint.x * 100)}% ${DOMPurify.sanitize(
+				focalPoint.y * 100
+			)}%`;
 		}
 
 		return styles;
@@ -129,26 +147,22 @@ export default class Container extends Component {
 
 		if (hue) {
 			styles.backgroundColor = this.hexToRGBA(hue, opacity);
-			styles.mixBlendMode = `${blend}`;
+			styles.mixBlendMode = DOMPurify.sanitize(blend);
 		}
 
 		return styles;
 	}
 
 	hexToRGBA(hex, alpha) {
-		let r = parseInt(hex.slice(1, 3), 16),
-			g = parseInt(hex.slice(3, 5), 16),
-			b = parseInt(hex.slice(5, 7), 16);
+		const r = parseInt(hex.slice(1, 3), 16);
+		const g = parseInt(hex.slice(3, 5), 16);
+		const b = parseInt(hex.slice(5, 7), 16);
 
-		var opacity;
+		const opacity = alpha === 10 ? 1 : `.${DOMPurify.sanitize(alpha)}`;
 
-		if (10 === alpha) {
-			opacity = 1;
-		} else {
-			opacity = '.' + alpha;
-		}
-
-		return `rgba(${r},${g},${b},${opacity})`;
+		return `rgba(${DOMPurify.sanitize(r)},${DOMPurify.sanitize(g)},${DOMPurify.sanitize(
+			b
+		)},${DOMPurify.sanitize(opacity)})`;
 	}
 
 	render() {
@@ -194,13 +208,13 @@ export default class Container extends Component {
 				)}
 				style={{
 					...this.c9ContainerStyles(
-						minScreenHeight,
-						containerHue,
-						containerOpacity
+						DOMPurify.sanitize(minScreenHeight),
+						DOMPurify.sanitize(containerHue),
+						DOMPurify.sanitize(containerOpacity)
 					),
 					...this.c9ContainerStylesMobile(
-						overrideMobile,
-						bgImgSizeMobile,
+						DOMPurify.sanitize(overrideMobile),
+						DOMPurify.sanitize(bgImgSizeMobile),
 						bgCustomXMobile,
 						bgCustomYMobile
 					),
@@ -214,12 +228,12 @@ export default class Container extends Component {
 						className={classnames(
 							'c9-image-container',
 							overrideMobile
-								? `c9-image-mobile-${MOBILE_Y_SIZE[focalPointMobile.y]}-${
-										MOBILE_X_SIZE[focalPointMobile.x]
+								? `c9-image-mobile-${MOBILE_Y_SIZE[DOMPurify.sanitize(focalPointMobile.y)]}-${
+										MOBILE_X_SIZE[DOMPurify.sanitize(focalPointMobile.x)]
 								  }`
 								: null,
-							'cover' == bgImgSizeMobile ? 'c9-image-mobile-size-cover' : null,
-							'contain' == bgImgSizeMobile
+							'cover' === bgImgSizeMobile ? 'c9-image-mobile-size-cover' : null,
+							'contain' === bgImgSizeMobile
 								? 'c9-image-mobile-size-contain'
 								: null,
 							!bgImgSizeMobile ? 'c9-image-mobile-size-custom' : null
@@ -237,7 +251,11 @@ export default class Container extends Component {
 				{!!overlayHue && (
 					<div
 						className="c9-overlay-container"
-						style={this.c9OverlayStyles(overlayHue, overlayOpacity, blendMode)}
+						style={this.c9OverlayStyles(
+							DOMPurify.sanitize(overlayHue),
+							DOMPurify.sanitize(overlayOpacity),
+							DOMPurify.sanitize(blendMode)
+						)}
 					/>
 				)}
 				{this.props.children}

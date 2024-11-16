@@ -10,9 +10,10 @@ const { Component } = wp.element;
  * External Dependencies.
  */
 import React from 'react';
+import DOMPurify from 'dompurify'; // Import for sanitization
 
 /**
- * Create an VideoBox Controls wrapper Component
+ * Create a VideoBox Controls wrapper Component
  */
 export default class VideoBox extends Component {
 	constructor() {
@@ -25,8 +26,8 @@ export default class VideoBox extends Component {
 			setAttributes,
 		} = this.props;
 
-		this.containerVideoURL = containerVideoURL;
-		this.containerVideoID = containerVideoID;
+		this.containerVideoURL = DOMPurify.sanitize(containerVideoURL); // Sanitize URL
+		this.containerVideoID = DOMPurify.sanitize(containerVideoID); // Sanitize ID
 		this.setAttributes = setAttributes;
 		this.preview = preview;
 
@@ -39,7 +40,7 @@ export default class VideoBox extends Component {
 		let { instanceId } = this.props.attributes;
 
 		if (instanceId === undefined) {
-			// set default random id if not set
+			// Set default random id if not set
 			instanceId = this.props.instanceId;
 		}
 
@@ -48,6 +49,7 @@ export default class VideoBox extends Component {
 		}
 
 		let videoID = this.containerVideoID;
+		let sanitizedInstanceId = DOMPurify.sanitize(instanceId);
 
 		let loadYT = window.YT;
 
@@ -60,7 +62,7 @@ export default class VideoBox extends Component {
 				window.onYouTubeIframeAPIReady = () => resolve(window.YT);
 			});
 			loadYT.then((YT) => {
-				let player = new YT.Player(`player-${videoID}-${instanceId}`, {
+				let player = new YT.Player(`player-${videoID}-${sanitizedInstanceId}`, {
 					playerVars: {
 						autoplay: 1,
 						controls: 0,
@@ -71,7 +73,6 @@ export default class VideoBox extends Component {
 						enablejsapi: 1,
 						loop: 1,
 						showinfo: 0,
-						// eslint-disable-next-line camelcase
 						iv_load_policy: 3,
 						rel: 0,
 						modestbranding: 1,
@@ -86,7 +87,7 @@ export default class VideoBox extends Component {
 				this.preview = player;
 			});
 		} else {
-			let player = new loadYT.Player(`player-${videoID}-${instanceId}`, {
+			let player = new loadYT.Player(`player-${videoID}-${sanitizedInstanceId}`, {
 				playerVars: {
 					autoplay: 1,
 					controls: 0,
@@ -97,7 +98,6 @@ export default class VideoBox extends Component {
 					enablejsapi: 1,
 					loop: 1,
 					showinfo: 0,
-					// eslint-disable-next-line camelcase
 					iv_load_policy: 3,
 					rel: 0,
 					modestbranding: 1,
@@ -128,6 +128,7 @@ export default class VideoBox extends Component {
 			this.videoContainerRef.current.style.opacity = 1;
 		}
 	}
+
 	componentDidMount() {
 		const init = this.setYoutube;
 		setTimeout(() => init(), 500);
@@ -144,14 +145,17 @@ export default class VideoBox extends Component {
 			},
 		} = this.props;
 
+		const sanitizedVideoURL = DOMPurify.sanitize(containerVideoURL); // Sanitize video URL
+		const sanitizedInstanceId = DOMPurify.sanitize(instanceId);
+		const sanitizedVideoID = DOMPurify.sanitize(containerVideoID);
+
 		const c9VideoStyles = (videoType, containerVideoURL, minScreenHeight) => {
 			const styles = {};
-			styles.minHeight = `${minScreenHeight}vh`;
-
+			styles.minHeight = `${DOMPurify.sanitize(minScreenHeight)}vh`;
 			return styles;
 		};
 
-		if (containerVideoURL && 'upload' == videoType) {
+		if (sanitizedVideoURL && 'upload' === videoType) {
 			return (
 				<div
 					className="c9-video-container d-none d-sm-block"
@@ -159,27 +163,22 @@ export default class VideoBox extends Component {
 				>
 					<div className="c9-embed-container">
 						<video
-							id={`containerVideo-${instanceId}`}
+							id={`containerVideo-${sanitizedInstanceId}`}
 							className="c9-video-custom"
-							playsinline="playsinline"
-							autoPlay="autoplay"
-							muted="muted"
-							loop="loop"
+							playsInline
+							autoPlay
+							muted
+							loop
 							onCanPlayThrough={this.canPlay}
 							ref={this.videoRef}
-							style={c9VideoStyles(
-								videoType,
-								containerVideoURL,
-								minScreenHeight
-							)}
+							style={c9VideoStyles(videoType, sanitizedVideoURL, minScreenHeight)}
 						>
-							<source src={`${containerVideoURL}`} type="video/mp4" />
+							<source src={`${sanitizedVideoURL}`} type="video/mp4" />
 						</video>
 					</div>
 				</div>
 			);
 		} else {
-			// return <WpEmbedPreview html={previewHTML} />;
 			return (
 				<div
 					className="c9-video-container d-none d-sm-block"
@@ -187,14 +186,10 @@ export default class VideoBox extends Component {
 				>
 					<div className="c9-embed-container">
 						<div
-							id={`player-${containerVideoID}-${instanceId}`}
+							id={`player-${sanitizedVideoID}-${sanitizedInstanceId}`}
 							className="c9-video"
-							video-id={containerVideoID}
-							style={c9VideoStyles(
-								videoType,
-								containerVideoURL,
-								minScreenHeight
-							)}
+							video-id={sanitizedVideoID}
+							style={c9VideoStyles(videoType, sanitizedVideoURL, minScreenHeight)}
 						/>
 					</div>
 				</div>

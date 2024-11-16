@@ -11,18 +11,22 @@ const attributes = {
 	},
 	containerImgURL: {
 		type: 'string',
+		sanitize: value => typeof value === 'string' ? value : '',
 	},
 	containerHue: {
 		type: 'string',
 		default: undefined,
+		sanitize: value => typeof value === 'string' ? value : undefined,
 	},
 	containerOpacity: {
 		type: 'number',
 		default: 10,
+		validate: value => Number.isFinite(value) ? value : 10,
 	},
 	bgImgSize: {
 		type: 'string',
 		default: 'cover',
+		sanitize: value => typeof value === 'string' ? value : 'cover',
 	},
 	bgCustomX: {
 		type: 'object',
@@ -30,6 +34,10 @@ const attributes = {
 			size: 'auto',
 			unit: 'px',
 		},
+		validate: value =>
+			typeof value === 'object' && value.size && value.unit
+				? value
+				: { size: 'auto', unit: 'px' },
 	},
 	bgCustomY: {
 		type: 'object',
@@ -37,6 +45,10 @@ const attributes = {
 			size: 'auto',
 			unit: 'px',
 		},
+		validate: value =>
+			typeof value === 'object' && value.size && value.unit
+				? value
+				: { size: 'auto', unit: 'px' },
 	},
 	bgImgRepeat: {
 		type: 'string',
@@ -102,10 +114,12 @@ const attributes = {
 	containerVideoURL: {
 		type: 'string',
 		default: '',
+		sanitize: (value) => sanitizeHTML(value), // Sanitize the video URL
 	},
 	containerVideoID: {
 		type: 'string',
 		default: '',
+		sanitize: (value) => sanitizeHTML(value), // Sanitize the video ID
 	},
 	cannotEmbed: {
 		type: 'boolean',

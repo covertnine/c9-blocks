@@ -21,6 +21,23 @@ const {
 /**
  * External Dependencies.
  */
+
+// Helper functions for sanitization
+const sanitizeInput = (input) => {
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.innerHTML;
+};
+
+const sanitizeURL = (url) => {
+    try {
+        const sanitizedUrl = new URL(url);
+        return sanitizedUrl.toString();
+    } catch {
+        return '';
+    }
+};
+
 import React from 'react';
 import debounce from 'lodash/debounce';
 
@@ -213,7 +230,7 @@ export default class Inspector extends Component {
 	};
 
 	updateID = (value) => {
-		this.setState({ ID: value });
+		this.setState({ ID: sanitizeInput(value) });
 	};
 
 	submitID = () => {
@@ -224,10 +241,10 @@ export default class Inspector extends Component {
 		let result;
 
 		if ((result = this.state.ID.match(checkURL))) {
-			this.setAttributes({ containerVideoID: result[1], cannotEmbed: false });
+			this.setAttributes({ containerVideoID: sanitizeInput(result[1]), cannotEmbed: false });
 			this.setState({ ID: result[1] });
 		} else if ((result = this.state.ID.match(checkAlphaNumeric))) {
-			this.setAttributes({ containerVideoID: result[0], cannotEmbed: false });
+			this.setAttributes({ containerVideoID: sanitizeInput(result[0]), cannotEmbed: false });
 			this.setState({ ID: result[0] });
 		} else {
 			if (this.preview && this.preview.i) {

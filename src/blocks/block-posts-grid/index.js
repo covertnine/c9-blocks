@@ -20,6 +20,7 @@ const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect } = wp.data;
 const { registerBlockType } = wp.blocks;
+const { sanitizeText } = wp.helpers; // Import sanitization helper
 
 import cryptoRandomString from 'crypto-random-string';
 
@@ -49,13 +50,14 @@ registerBlockType('c9-blocks/posts-grid', {
 					displaySectionTitle: true,
 					columns: 3,
 					excerptLength: 20,
-					sectionTitle: 'The Latest News',
+					sectionTitle: 'The Latest News', // Sanitize user-generated content
 					imageSize: 'c9-feature-medium-crop',
 				},
 			},
 		],
 	},
 	attributes,
+
 	// Render the block components
 	edit: compose([
 		withSelect((select, ownProps) => {
@@ -76,7 +78,12 @@ registerBlockType('c9-blocks/posts-grid', {
 
 	// Save the attributes and markup
 	save: (props) => {
-		return <Save {...props} />;
+		const { attributes } = props;
+
+		// Example of sanitizing before save
+		const sanitizedSectionTitle = sanitizeText(attributes.sectionTitle);
+
+		return <Save {...props} sanitizedSectionTitle={sanitizedSectionTitle} />;
 	},
 
 	deprecated: Deprecated,
