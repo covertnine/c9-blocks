@@ -16,5 +16,5 @@ jobs:
           remote-host: ${{ secrets.C9CLOUD_HOST }}
           remote-user: ${{ secrets.C9CLOUD_USER }}
           remote-password: ${{ secrets.C9CLOUD_PASS }}
-          remote-path: /
+          remote-path: /c9-blocks
           remote-port: 22
