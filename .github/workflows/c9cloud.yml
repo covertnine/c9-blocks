@@ -1,0 +1,20 @@
+name: Deploy to c9cloud
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  SFTP-Deploy-Action:
+    name: SFTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: SFTP-Deploy-Action
+        uses: milanmk/actions-file-deployer@master
+        with:
+          remote-protocol: sftp
+          remote-host: ${{ secrets.C9CLOUD_HOST }}
+          remote-user: ${{ secrets.C9CLOUD_USER }}
+          remote-password: ${{ secrets.C9CLOUD_PASS }}
+          remote-path: /
+          remote-port: 22
