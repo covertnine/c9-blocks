@@ -1,0 +1,22 @@
+name: Deploy zipball to c9cloud
+on:
+  release:
+  push:
+    tags:
+      - "*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: deploy files to server
+        uses: sahilNR/release-upload-sftp@v4
+        with:
+          package_name: 'c9-blocks'
+          username: ${{ secrets.C9CLOUD_USER }}
+          server: ${{ secrets.C9CLOUD_HOST }}
+          port: 22
+          ssh_private_key: ${{ secrets.C9CLOUD_SSHKEY }}
+          local_path: './*'
+          remote_path: /
