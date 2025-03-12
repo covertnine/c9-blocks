@@ -50,7 +50,7 @@
 		"@babel/plugin-transform-runtime": "^7.19.6",
 		"@babel/preset-env": "^7.20.2",
 		"@babel/preset-react": "^7.24.1",
-		"@babel/runtime": "^7.20.1",
+		"@babel/runtime": "^7.26.10",
 		"@svgr/webpack": "^4.3.3",
 		"@wordpress/jest-preset-default": "^10.2.0",
 		"acorn": "^8.8.1",
