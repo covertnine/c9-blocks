@@ -37,3 +37,6 @@ import './blocks/block-vertical-tabs/components/vertical-tab';
 import './blocks/block-toggles/components/toggle.js';
 import './blocks/block-carousel/components/slide.js';
 import './blocks/block-post-grid';
+
+// transform controls
+import './blocks/transforms';
